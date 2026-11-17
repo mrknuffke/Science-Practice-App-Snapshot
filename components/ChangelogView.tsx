@@ -27,6 +27,18 @@ const ChangelogView: React.FC<ChangelogViewProps> = ({ onBack }) => {
   // Format: "Feature description. Feature requested by **User Name**!" or "Thanks to **User Name** for the report"
   const changelogData: DateGroup[] = [
     {
+      date: 'November 17, 2026',
+      entries: [
+        {
+          version: 'v.17Nov.01',
+          title: 'Source Code for Teachers',
+          changes: [
+            '🧩 **Source code for teachers.** The code behind the app, its simulations and the textbooks is now on GitHub, free to borrow. Find it on the Teachers page.',
+          ],
+        },
+      ],
+    },
+    {
       date: 'November 8, 2026',
       entries: [
         {
