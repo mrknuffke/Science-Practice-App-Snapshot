@@ -4,4 +4,4 @@
  */
 
 /** History-free public copy of this codebase, built by scripts/public-snapshot/build-snapshot.sh. */
-export const PUBLIC_SOURCE_REPO_URL = 'https://github.com/mrknuffke/Science-Practice-App-Snapshot-';
+export const PUBLIC_SOURCE_REPO_URL = 'https://github.com/mrknuffke/Science-Practice-App-Snapshot';
