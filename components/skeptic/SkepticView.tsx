@@ -473,7 +473,7 @@ export const SkepticView: React.FC<SkepticViewProps> = ({ onBack, course }) => {
                     <label className="text-xs font-semibold text-slate-300 block mb-1.5">
                       Your Methodological Defense & Protocol Adjustment:
                     </label>
-                    <textarea
+                    <textarea aria-label="Your Methodological Defense & Protocol Adjustment"
                       rows={3}
                       value={rebuttal}
                       onChange={e => handleRebuttalChange(challenge.id, e.target.value)}

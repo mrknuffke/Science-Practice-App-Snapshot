@@ -978,7 +978,7 @@ const FlashcardView: React.FC<FlashcardViewProps> = ({
               {/* WRITE MODE INPUT */}
               {isWriteMode && !isFlipped && (
                 <form onSubmit={handleWriteSubmit} className="w-full mt-6 max-w-md mx-auto relative z-10" onClick={e => e.stopPropagation()}>
-                  <input
+                  <input aria-label={isReverse ? 'Type the term' : 'Type the definition'}
                     type="text"
                     value={writeAnswer}
                     onChange={(e) => setWriteAnswer(e.target.value)}

@@ -152,7 +152,7 @@ export const SavedDecksModal: React.FC<SavedDecksModalProps> = ({
                   Cancel
                 </button>
               </div>
-              <textarea
+              <textarea aria-label="Deck JSON"
                 value={importText}
                 onChange={e => setImportText(e.target.value)}
                 placeholder='{"title": "My Deck", "course": "AP Biology", "cards": [{"term": "...", "definition": "..."}]}'

@@ -463,7 +463,7 @@ export const HeatingCurvesTab: React.FC = () => {
               <span className="text-amber-600 dark:text-amber-400 font-mono text-xs">Units: {curChallenge.unit}</span>
             </div>
             <div className="flex gap-2">
-              <input
+              <input aria-label="Your calculated value"
                 type="number"
                 step="any"
                 placeholder={`Calculated value in ${curChallenge.unit}`}
@@ -526,7 +526,7 @@ export const HeatingCurvesTab: React.FC = () => {
               <span>Sample Mass</span>
               <span className="text-amber-600 dark:text-amber-400 font-mono">{mass} g</span>
             </div>
-            <input
+            <input aria-label="Sample mass"
               type="range"
               min="10"
               max="150"
@@ -544,7 +544,7 @@ export const HeatingCurvesTab: React.FC = () => {
               <span>Initial Temp (T_i)</span>
               <span className="text-amber-600 dark:text-amber-400 font-mono">{tInitial} °C</span>
             </div>
-            <input
+            <input aria-label="Initial temperature"
               type="range"
               min={substance.tMelt - 40}
               max={substance.tMelt + 10}
@@ -562,7 +562,7 @@ export const HeatingCurvesTab: React.FC = () => {
               <span>Target Final Temp (T_f)</span>
               <span className="text-amber-600 dark:text-amber-400 font-mono">{tFinal} °C</span>
             </div>
-            <input
+            <input aria-label="Target final temperature"
               type="range"
               min={substance.tBoil - 10}
               max={substance.tBoil + 50}
@@ -580,7 +580,7 @@ export const HeatingCurvesTab: React.FC = () => {
               <span>Heat Source Power</span>
               <span className="text-rose-600 dark:text-rose-400 font-mono">{powerWatts} W</span>
             </div>
-            <input
+            <input aria-label="Heat source power"
               type="range"
               min="200"
               max="1500"

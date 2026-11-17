@@ -365,7 +365,7 @@ export const RegulatoryModelerView: React.FC<RegulatoryModelerViewProps> = ({ on
                 <span>Component Decay Rate</span>
                 <span className="text-emerald-600">{(decayRate * 100).toFixed(0)}% / tick</span>
               </label>
-              <input
+              <input aria-label="Component decay rate"
                 type="range" min={0.01} max={0.5} step={0.01} value={decayRate}
                 onChange={e => setDecayRate(parseFloat(e.target.value))}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"

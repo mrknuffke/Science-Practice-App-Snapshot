@@ -116,14 +116,14 @@ export const JeopardySetupDashboard: React.FC<JeopardySetupDashboardProps> = ({
                                     <label className="text-[10px] font-black text-indigo-500 mb-2 uppercase tracking-[0.2em] flex items-center gap-2">
                                         <BookOpen className="w-3 h-3" /> {isWholeCourse ? "Course or Subject Name" : "Topic or Unit"}
                                     </label>
-                                    <input type="text" placeholder={isWholeCourse ? "e.g. AP Biology, HS Chemistry" : "e.g. Stoichiometry"} value={topic} onChange={(e) => setTopic(e.target.value)}
+                                    <input aria-label={isWholeCourse ? 'Course' : 'Topic'} type="text" placeholder={isWholeCourse ? "e.g. AP Biology, HS Chemistry" : "e.g. Stoichiometry"} value={topic} onChange={(e) => setTopic(e.target.value)}
                                         className="w-full bg-slate-50 border-2 border-slate-100 p-5 rounded-2xl outline-none focus:border-indigo-600 transition-all font-bold text-slate-800" />
                                 </div>
                                 <div className="group">
                                     <label className="text-[10px] font-black text-indigo-500 mb-2 uppercase tracking-[0.2em] flex items-center gap-2">
                                         <GraduationCap className="w-3 h-3" /> Grade Level
                                     </label>
-                                    <select value={gradeLevel} onChange={(e) => setGradeLevel(e.target.value)}
+                                    <select aria-label="Grade Level" value={gradeLevel} onChange={(e) => setGradeLevel(e.target.value)}
                                         className="w-full bg-slate-50 border-2 border-slate-100 p-5 rounded-2xl outline-none focus:border-indigo-600 transition-all font-bold text-slate-800 appearance-none">
                                         <option>Elementary</option><option>Middle School</option><option>High School</option><option>AP / College</option>
                                     </select>
@@ -134,7 +134,7 @@ export const JeopardySetupDashboard: React.FC<JeopardySetupDashboardProps> = ({
                                     <label className="text-[10px] font-black text-indigo-500 mb-2 uppercase tracking-[0.2em] flex items-center gap-2">
                                         <LayoutList className="w-3 h-3" /> {isWholeCourse ? "Syllabus / Units to Cover (Optional)" : "Subtopics / AP Units"}
                                     </label>
-                                    <input type="text" placeholder={isWholeCourse ? "e.g. Units 1-8, Genetics, Ecology" : "e.g. Unit 7, Natural Selection"} value={standards} onChange={(e) => setStandards(e.target.value)}
+                                    <input aria-label={isWholeCourse ? 'Units or themes' : 'Standards'} type="text" placeholder={isWholeCourse ? "e.g. Units 1-8, Genetics, Ecology" : "e.g. Unit 7, Natural Selection"} value={standards} onChange={(e) => setStandards(e.target.value)}
                                         className="w-full bg-slate-50 border-2 border-slate-100 p-5 rounded-2xl outline-none focus:border-indigo-600 font-bold text-slate-800" />
                                 </div>
                                 <div className="group">

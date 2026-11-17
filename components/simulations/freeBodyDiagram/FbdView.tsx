@@ -228,12 +228,12 @@ Respond as JSON array: [{"preset":"...","label":"...","context":"..."},...]`;
                         <span className="text-xs font-bold text-cyan-600">{inclineAngle}°</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <input
+                        <input aria-label="Incline angle"
                           type="range" min={5} max={60} step={5} value={inclineAngle}
                           onChange={e => setInclineAngle(parseInt(e.target.value))}
                           className="flex-1 h-3 rounded-lg appearance-none cursor-pointer accent-cyan-600"
                         />
-                        <input
+                        <input aria-label="Incline angle in degrees"
                           type="number" min={5} max={60} step={5} value={inclineAngle}
                           onChange={e => setInclineAngle(Math.max(5, Math.min(60, parseInt(e.target.value) || 5)))}
                           className="w-14 px-2 py-1.5 border border-slate-200 rounded-lg text-xs font-bold text-center focus:outline-none focus:ring-2 focus:ring-cyan-400"
@@ -267,7 +267,7 @@ Respond as JSON array: [{"preset":"...","label":"...","context":"..."},...]`;
                   {/* Object label */}
                   <div>
                     <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Object Label</label>
-                    <input
+                    <input aria-label="Object Label"
                       type="text" value={objectLabel}
                       onChange={e => setObjectLabel(e.target.value)}
                       maxLength={10}
@@ -279,7 +279,7 @@ Respond as JSON array: [{"preset":"...","label":"...","context":"..."},...]`;
                   {/* Context / scenario description */}
                   <div>
                     <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Context (optional)</label>
-                    <textarea
+                    <textarea aria-label="Context (optional)"
                       value={context}
                       onChange={e => setContext(e.target.value)}
                       rows={2}

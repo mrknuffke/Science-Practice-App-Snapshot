@@ -417,7 +417,7 @@ const CalculationView: React.FC<CalculationViewProps> = ({
           </button>
 
           <div className="relative flex-1">
-            <input
+            <input aria-label="Your math problem"
               ref={inputRef}
               type="text"
               value={input}

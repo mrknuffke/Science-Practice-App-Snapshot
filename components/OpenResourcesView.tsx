@@ -544,7 +544,7 @@ export const OpenResourcesView: React.FC<OpenResourcesViewProps> = ({
           <div className="flex items-center gap-2">
             <div className="relative flex-1 sm:w-60">
               <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-              <input
+              <input aria-label="Search resources"
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}

@@ -141,7 +141,7 @@ const ReflectionView: React.FC<ReflectionViewProps> = ({ onBack }) => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Lesson Topic <span className="text-rose-400">*</span></label>
-                                <input
+                                <input aria-label="Lesson Topic"
                                     type="text"
                                     value={topic}
                                     onChange={e => setTopic(e.target.value)}
@@ -151,7 +151,7 @@ const ReflectionView: React.FC<ReflectionViewProps> = ({ onBack }) => {
                             </div>
                             <div>
                                 <label className="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Course / Subject <span className="text-slate-500">(optional)</span></label>
-                                <input
+                                <input aria-label="Course / Subject (optional)"
                                     type="text"
                                     value={course}
                                     onChange={e => setCourse(e.target.value)}

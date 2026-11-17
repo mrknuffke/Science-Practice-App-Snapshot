@@ -2670,7 +2670,7 @@ const AppContent: React.FC = () => {
           <div className="w-full max-w-md mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800/50">
             <label className="text-slate-400 dark:text-slate-500 text-[10px] font-black uppercase tracking-widest mb-3 block">Or explore a specific topic directly</label>
             <div className="flex gap-2">
-              <input
+              <input aria-label="Or explore a specific topic directly"
                 type="text"
                 value={customTopic}
                 onChange={(e) => setCustomTopic(e.target.value)}

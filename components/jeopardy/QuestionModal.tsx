@@ -109,7 +109,7 @@ export const QuestionModal: React.FC<QuestionModalProps> = ({
                                     <label className="text-[10px] font-black text-indigo-400 uppercase tracking-widest block mb-4">Enter Wager (Min: $100 — Max: ${maxWager})</label>
                                     <div className="relative">
                                         <span className="absolute left-6 top-1/2 -translate-y-1/2 text-4xl font-black text-indigo-400">$</span>
-                                        <input type="number" step="100" value={wagerValue} onChange={(e) => onWagerChange(parseInt(e.target.value) || 0)}
+                                        <input aria-label="Wager" type="number" step="100" value={wagerValue} onChange={(e) => onWagerChange(parseInt(e.target.value) || 0)}
                                             className="w-full bg-slate-800 border-2 border-slate-700 p-8 pl-14 rounded-[2rem] outline-none text-5xl font-black text-white focus:border-indigo-500 transition-all" />
                                     </div>
                                 </div>

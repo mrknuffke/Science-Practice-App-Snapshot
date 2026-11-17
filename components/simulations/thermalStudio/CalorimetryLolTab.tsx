@@ -273,7 +273,7 @@ export const CalorimetryLolTab: React.FC = () => {
               <span className="text-amber-600 dark:text-amber-400 font-mono text-xs">Units: {curChallenge.unit}</span>
             </div>
             <div className="flex gap-2">
-              <input
+              <input aria-label="Your calculated value"
                 type="number"
                 step="any"
                 placeholder={`Calculated value in ${curChallenge.unit}`}
@@ -340,7 +340,7 @@ export const CalorimetryLolTab: React.FC = () => {
                 {saltMass.toFixed(1)} g ({moles.toFixed(3)} mol)
               </span>
             </div>
-            <input
+            <input aria-label="Solute mass"
               type="range"
               min="5"
               max="35"
@@ -358,7 +358,7 @@ export const CalorimetryLolTab: React.FC = () => {
               <span>Calorimeter Water Mass</span>
               <span className="text-sky-600 dark:text-sky-400 font-mono">{waterMass} g</span>
             </div>
-            <input
+            <input aria-label="Calorimeter water mass"
               type="range"
               min="50"
               max="200"
@@ -376,7 +376,7 @@ export const CalorimetryLolTab: React.FC = () => {
               <span>Initial Water Temp (T_i)</span>
               <span className="text-sky-600 dark:text-sky-400 font-mono">{waterTemp} °C</span>
             </div>
-            <input
+            <input aria-label="Initial water temperature"
               type="range"
               min="15"
               max="30"

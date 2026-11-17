@@ -115,7 +115,7 @@ Shipped work from March to September 2026 is in [`docs/archive/FEATURES_SHIPPED_
     - ~~Memoization audit for expensive computations~~: **done 2026-09-28 (Sprint 6).** Memoized `visualConfigMap` and registry projection mapping in `components/SimulationsHub.tsx`.
 *   **Accessibility Audit:**
     - ~~Focus management in modals~~: **done 2026-11-02.** `hooks/useDialog.ts` (focus in on open, Tab kept inside, Escape closes, focus returns to the opener, `role="dialog"` with a name) at 36 call sites (modals, the mobile menu drawer and the sim About panel). Not applied: Jeopardy's projector-screen question and Final Jeopardy overlays, which run their own Space/Escape scheme. Guarded by `tests/unit/useDialog.test.tsx`.
-    - ~~ARIA label completeness (buttons)~~: **done 2026-11-02.** 46 icon-only buttons named; `services/__tests__/a11yButtons.test.ts` fails on any new one. Form fields and images not audited yet.
+    - ~~ARIA label completeness (buttons)~~: **done 2026-11-02.** 46 icon-only buttons named; `services/__tests__/a11yButtons.test.ts` fails on any new one. ~~Form fields~~ **done 2026-11-04:** 203 inputs, text areas and selects named (from their visible label where one exists); `services/__tests__/a11yFormFields.test.ts` fails on any new one. Images not audited yet.
     - Keyboard navigation: game shortcuts fixed (stale state, `useWindowKeydown`); Who Am I?'s hover-only edit button now shows on keyboard focus. A full tab-order pass is still open.
     - Screen reader testing: needs a person with VoiceOver or NVDA; not started.
 

@@ -309,21 +309,21 @@ export const LabView: React.FC<LabViewProps & { selectedTrack: LabTrack; onTrack
                         {/* Headers Input */}
                         <div className="grid grid-cols-2 gap-2 max-w-lg mb-2 p-2 bg-slate-900/50 rounded border border-slate-800">
                             <div className="flex gap-1">
-                                <input
+                                <input aria-label="X-axis label"
                                     value={labState.dataHeaders.xLabel} onChange={e => updateHeaders('xLabel', e.target.value)}
                                     className="w-2/3 bg-transparent text-xs text-slate-300 font-bold placeholder-slate-600 border-none focus:ring-0 p-0" placeholder="Label X"
                                 />
-                                <input
+                                <input aria-label="X-axis unit"
                                     value={labState.dataHeaders.xUnit} onChange={e => updateHeaders('xUnit', e.target.value)}
                                     className="w-1/3 bg-transparent text-[10px] text-slate-500 placeholder-slate-700 border-none focus:ring-0 p-0 text-right" placeholder="(unit)"
                                 />
                             </div>
                             <div className="flex gap-1">
-                                <input
+                                <input aria-label="Y-axis label"
                                     value={labState.dataHeaders.yLabel} onChange={e => updateHeaders('yLabel', e.target.value)}
                                     className="w-2/3 bg-transparent text-xs text-slate-300 font-bold placeholder-slate-600 border-none focus:ring-0 p-0" placeholder="Label Y"
                                 />
-                                <input
+                                <input aria-label="Y-axis unit"
                                     value={labState.dataHeaders.yUnit} onChange={e => updateHeaders('yUnit', e.target.value)}
                                     className="w-1/3 bg-transparent text-[10px] text-slate-500 placeholder-slate-700 border-none focus:ring-0 p-0 text-right" placeholder="(unit)"
                                 />
@@ -334,12 +334,12 @@ export const LabView: React.FC<LabViewProps & { selectedTrack: LabTrack; onTrack
                         <div className="grid grid-cols-2 gap-2 max-w-lg max-h-40 overflow-y-auto pr-1 custom-scrollbar">
                             {labState.dataTable.map((row, i) => (
                                 <React.Fragment key={i}>
-                                    <input
+                                    <input aria-label={`Row ${i + 1} x value`}
                                         value={row.x} onChange={e => updateRow(i, 'x', e.target.value)}
                                         className="bg-slate-900 border border-slate-700 rounded p-1.5 text-sm text-center focus:border-emerald-500/50 focus:outline-none transition-colors"
                                         placeholder={`x${i + 1}`}
                                     />
-                                    <input
+                                    <input aria-label={`Row ${i + 1} y value`}
                                         value={row.y} onChange={e => updateRow(i, 'y', e.target.value)}
                                         className="bg-slate-900 border border-slate-700 rounded p-1.5 text-sm text-center focus:border-emerald-500/50 focus:outline-none transition-colors"
                                         placeholder={`y${i + 1}`}
@@ -461,7 +461,7 @@ export const LabView: React.FC<LabViewProps & { selectedTrack: LabTrack; onTrack
                     </div>
 
                     <div className="relative max-w-5xl mx-auto">
-                        <textarea
+                        <textarea aria-label="Message the lab assistant"
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
                             onKeyDown={handleKeyDown}

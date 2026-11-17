@@ -35,13 +35,13 @@ export const AiReviseCategoryModal: React.FC<{
                     </ul>
                 </div>
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">New Category Title (edit to change)</label>
-                <input
+                <input aria-label="New Category Title (edit to change)"
                     value={newTitle}
                     onChange={(e) => setNewTitle(e.target.value)}
                     className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-2xl font-bold text-slate-800 focus:border-indigo-500 focus:outline-none mb-6"
                 />
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">What Should Change? <span className="text-slate-300 normal-case font-medium tracking-normal">(optional — describe what you want the AI to do)</span></label>
-                <textarea
+                <textarea aria-label="What Should Change?"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     rows={4}
@@ -85,7 +85,7 @@ export const AiReviseQuestionModal: React.FC<{
                     <p className="text-sm font-bold text-slate-600 leading-snug"><RenderHTML text={question.answer} /></p>
                 </div>
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">Tell the AI What You Want Changed</label>
-                <textarea
+                <textarea aria-label="Tell the AI What You Want Changed"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     rows={4}
@@ -129,13 +129,13 @@ export const AiReviseFinalModal: React.FC<{
                     <p className="text-sm font-bold text-slate-600 leading-snug"><RenderHTML text={final.answer} /></p>
                 </div>
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">Final Jeopardy Category (edit to change)</label>
-                <input
+                <input aria-label="Final Jeopardy Category (edit to change)"
                     value={newCategory}
                     onChange={(e) => setNewCategory(e.target.value)}
                     className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-2xl font-bold text-slate-800 focus:border-indigo-500 focus:outline-none mb-6"
                 />
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">What Should Change? <span className="text-slate-300 normal-case font-medium tracking-normal">(optional)</span></label>
-                <textarea
+                <textarea aria-label="What Should Change? (optional)"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     rows={4}

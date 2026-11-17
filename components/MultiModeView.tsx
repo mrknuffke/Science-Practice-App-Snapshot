@@ -288,7 +288,7 @@ export const MultiModeView: React.FC<MultiModeViewProps> = ({
                                 {explanationLoading && <div className="text-center text-indigo-400 text-sm animate-pulse">Thinking...</div>}
                             </div>
                             <div className="p-3 border-t border-slate-200 bg-white flex gap-2">
-                                <input
+                                <input aria-label="Ask the Explanation Partner"
                                     type="text"
                                     value={explanationInput}
                                     onChange={(e) => dispatch({ type: 'SET_EXPLANATION_INPUT', payload: e.target.value })}
@@ -324,7 +324,7 @@ export const MultiModeView: React.FC<MultiModeViewProps> = ({
                                 {calculationLoading && <div className="text-center text-teal-400 text-sm animate-pulse">Calculating...</div>}
                             </div>
                             <div className="p-3 border-t border-slate-200 bg-white flex gap-2">
-                                <input
+                                <input aria-label="Ask the Calculation Partner"
                                     type="text"
                                     value={calculationInput}
                                     onChange={(e) => dispatch({ type: 'SET_CALCULATION_INPUT', payload: e.target.value })}

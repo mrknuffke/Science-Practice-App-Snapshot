@@ -201,7 +201,7 @@ const SquareMatchView: React.FC<SquareMatchViewProps> = ({ onBack, course, topic
                                         <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-1">
                                             <BookOpen className="w-3 h-3" /> Topic for AI Pairs
                                         </label>
-                                        <input
+                                        <input aria-label="Topic for AI Pairs"
                                             type="text"
                                             value={selectedTopic}
                                             onChange={(e) => setSelectedTopic(e.target.value)}
@@ -215,7 +215,7 @@ const SquareMatchView: React.FC<SquareMatchViewProps> = ({ onBack, course, topic
 
                                     <div>
                                         <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Grade Level</label>
-                                        <select
+                                        <select aria-label="Grade Level"
                                             value={gradeLevel}
                                             onChange={(e) => setGradeLevel(e.target.value)}
                                             className="w-full bg-slate-50 border-2 border-slate-200 p-3 rounded-xl outline-none focus:border-indigo-600 font-bold text-slate-800 text-sm"
@@ -284,7 +284,7 @@ const SquareMatchView: React.FC<SquareMatchViewProps> = ({ onBack, course, topic
                                             <span>Math vs Concepts</span>
                                             <span className="text-indigo-600">{mathMix}% Math</span>
                                         </label>
-                                        <input
+                                        <input aria-label="Math versus concepts mix"
                                             type="range"
                                             min="0"
                                             max="100"
@@ -314,7 +314,7 @@ const SquareMatchView: React.FC<SquareMatchViewProps> = ({ onBack, course, topic
                                                 {silliness > 66 && "Chaos"}
                                             </span>
                                         </label>
-                                        <input
+                                        <input aria-label="Fun factor"
                                             type="range"
                                             min="0"
                                             max="100"
@@ -345,13 +345,13 @@ const SquareMatchView: React.FC<SquareMatchViewProps> = ({ onBack, course, topic
                                         <div className="mt-4 space-y-3">
                                             <div>
                                                 <label className="text-xs font-bold text-emerald-500 mb-1 block">Upload PDF (max 2MB)</label>
-                                                <input type="file" accept=".pdf" onChange={handleSourceFileChange}
+                                                <input aria-label="Upload PDF (max 2MB)" type="file" accept=".pdf" onChange={handleSourceFileChange}
                                                     className="w-full bg-white border border-emerald-100 p-2 rounded-lg text-xs file:mr-2 file:py-1 file:px-2 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-emerald-100 file:text-emerald-600" />
                                                 {sourceFile && <p className="text-xs text-emerald-600 mt-1 font-bold">✓ {sourceFile.name}</p>}
                                             </div>
                                             <div>
                                                 <label className="text-xs font-bold text-emerald-500 mb-1 block">Or Paste Notes</label>
-                                                <textarea placeholder="Paste class notes, vocab..."
+                                                <textarea aria-label="Or Paste Notes" placeholder="Paste class notes, vocab..."
                                                     value={sourceText} onChange={(e) => setSourceText(e.target.value)} rows={3}
                                                     className="w-full bg-white border border-emerald-100 p-2 rounded-lg text-xs resize-none" />
                                             </div>
@@ -405,13 +405,13 @@ const SquareMatchView: React.FC<SquareMatchViewProps> = ({ onBack, course, topic
                                         <div key={p.id} className="group flex items-center gap-2 p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-indigo-200 transition-colors">
                                             {editingId === p.id ? (
                                                 <div className="flex-1 grid grid-cols-2 gap-2">
-                                                    <input
+                                                    <input aria-label="Term"
                                                         className="p-2 border rounded-lg text-sm"
                                                         value={editTerm}
                                                         onChange={e => setEditTerm(e.target.value)}
                                                         placeholder="Term"
                                                     />
-                                                    <input
+                                                    <input aria-label="Match"
                                                         className="p-2 border rounded-lg text-sm"
                                                         value={editMatch}
                                                         onChange={e => setEditMatch(e.target.value)}

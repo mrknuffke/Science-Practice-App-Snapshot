@@ -293,7 +293,7 @@ export const ConceptMapView: React.FC<ConceptMapViewProps> = ({ onBack, course }
             <span className="text-[11px] font-black uppercase tracking-wider text-slate-400">
               Topic Preset:
             </span>
-            <select
+            <select aria-label="Topic preset"
               value={selectedPresetId}
               onChange={e => loadPreset(e.target.value)}
               className="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-xs font-bold focus:outline-none focus:ring-2 focus:ring-violet-500"

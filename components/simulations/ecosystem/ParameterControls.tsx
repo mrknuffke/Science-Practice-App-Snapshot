@@ -91,7 +91,7 @@ export const ParameterControls: React.FC<ParameterControlsProps> = ({
               <span>Plant Density</span>
               <span className="text-emerald-600">{Math.round(parameters.seedPlantDensity * 100)}%</span>
             </label>
-            <input
+            <input aria-label="Plant density"
               type="range"
               min={0.1}
               max={0.9}
@@ -108,7 +108,7 @@ export const ParameterControls: React.FC<ParameterControlsProps> = ({
               <span>Starting Herbivores</span>
               <span className="text-blue-600">{parameters.seedHerbivores}</span>
             </label>
-            <input
+            <input aria-label="Starting herbivores"
               type="range"
               min={10}
               max={150}
@@ -125,7 +125,7 @@ export const ParameterControls: React.FC<ParameterControlsProps> = ({
               <span>Starting Carnivores</span>
               <span className="text-slate-600">{parameters.seedCarnivores}</span>
             </label>
-            <input
+            <input aria-label="Starting carnivores"
               type="range"
               min={5}
               max={50}
@@ -145,7 +145,7 @@ export const ParameterControls: React.FC<ParameterControlsProps> = ({
             <span>Plant Regrowth Time</span>
             <span className="text-emerald-600">{parameters.plantRegrowthTime} ticks</span>
           </label>
-          <input
+          <input aria-label="Plant regrowth time"
             type="range"
             min={5}
             max={50}
@@ -161,7 +161,7 @@ export const ParameterControls: React.FC<ParameterControlsProps> = ({
             <span>Herbivore Reproduction Chance</span>
             <span className="text-blue-600">{(parameters.herbivoreReproduceChance * 100).toFixed(1)}% / tick</span>
           </label>
-          <input
+          <input aria-label="Herbivore reproduction chance"
             type="range"
             min={0.01}
             max={0.15}
@@ -177,7 +177,7 @@ export const ParameterControls: React.FC<ParameterControlsProps> = ({
             <span>Carnivore Reproduction Chance</span>
             <span className="text-slate-600">{(parameters.carnivoreReproduceChance * 100).toFixed(1)}% / tick</span>
           </label>
-          <input
+          <input aria-label="Carnivore reproduction chance"
             type="range"
             min={0.01}
             max={0.15}
@@ -193,7 +193,7 @@ export const ParameterControls: React.FC<ParameterControlsProps> = ({
             <span>Energy from Plant</span>
             <span className="text-emerald-600">{parameters.herbivoreEnergyFromPlant} units</span>
           </label>
-          <input
+          <input aria-label="Energy from a plant"
             type="range"
             min={1}
             max={20}
@@ -209,7 +209,7 @@ export const ParameterControls: React.FC<ParameterControlsProps> = ({
             <span>Energy from Herbivore</span>
             <span className="text-slate-600">{parameters.carnivoreEnergyFromHerbivore} units</span>
           </label>
-          <input
+          <input aria-label="Energy from a herbivore"
             type="range"
             min={5}
             max={50}

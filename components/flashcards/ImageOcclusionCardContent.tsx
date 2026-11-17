@@ -190,7 +190,7 @@ export const ImageOcclusionCardContent: React.FC<ImageOcclusionCardContentProps>
         onClick={e => e.stopPropagation()}
       >
         <form onSubmit={handleCheck} className="flex items-center gap-2">
-          <input
+          <input aria-label="Name the hidden feature"
             ref={inputRef}
             type="text"
             value={userGuess}

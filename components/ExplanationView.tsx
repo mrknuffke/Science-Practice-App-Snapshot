@@ -203,7 +203,7 @@ const ExplanationView: React.FC<ExplanationViewProps> = ({
       <div className="bg-white dark:bg-[#1E212A] border-t border-slate-200 dark:border-slate-800/80 p-4 shrink-0 z-20 transition-colors duration-300">
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto relative flex items-center gap-2.5">
           <div className="relative flex-1">
-            <input
+            <input aria-label="Your explanation"
               ref={inputRef}
               type="text"
               value={input}

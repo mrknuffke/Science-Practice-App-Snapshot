@@ -104,7 +104,7 @@ export const TestCreatorConfigView: React.FC<TestCreatorConfigViewProps> = ({
                             <div className="space-y-4">
                                 <div>
                                     <label className="block text-xs font-bold uppercase text-slate-500 mb-1">Course / Subject</label>
-                                    <input
+                                    <input aria-label="Course / Subject"
                                         type="text"
                                         value={localConfig.course}
                                         onChange={(e) => updateConfig({ course: e.target.value })}
@@ -114,7 +114,7 @@ export const TestCreatorConfigView: React.FC<TestCreatorConfigViewProps> = ({
                                 </div>
                                 <div>
                                     <label className="block text-xs font-bold uppercase text-slate-500 mb-1">Unit Title</label>
-                                    <input
+                                    <input aria-label="Unit Title"
                                         type="text"
                                         value={localConfig.unitTitle}
                                         onChange={(e) => updateConfig({ unitTitle: e.target.value })}
@@ -132,7 +132,7 @@ export const TestCreatorConfigView: React.FC<TestCreatorConfigViewProps> = ({
                     {activeSection === 'standards' && (
                         <div className="bg-white p-6 rounded-b-xl border-x border-b border-amber-200 -mt-4 mb-6 shadow-inner animate-in slide-in-from-top-2">
                             <label className="block text-xs font-bold uppercase text-slate-500 mb-1">Power Standards / Learning Objectives</label>
-                            <textarea
+                            <textarea aria-label="Power Standards / Learning Objectives"
                                 value={localConfig.powerStandards}
                                 onChange={(e) => updateConfig({ powerStandards: e.target.value })}
                                 className="w-full p-3 rounded-lg border border-slate-300 h-32 text-sm"
@@ -170,14 +170,14 @@ export const TestCreatorConfigView: React.FC<TestCreatorConfigViewProps> = ({
                                         <span>Multiple Choice</span>
                                         <span>{localConfig.mcqCount}</span>
                                     </div>
-                                    <input type="range" min="0" max="50" value={localConfig.mcqCount} onChange={(e) => updateConfig({ mcqCount: parseInt(e.target.value) })} className="w-full accent-amber-500" />
+                                    <input aria-label="Number of multiple choice questions" type="range" min="0" max="50" value={localConfig.mcqCount} onChange={(e) => updateConfig({ mcqCount: parseInt(e.target.value) })} className="w-full accent-amber-500" />
                                 </div>
                                 <div>
                                     <div className="flex justify-between text-xs font-bold uppercase text-slate-500 mb-1">
                                         <span>Short Answer</span>
                                         <span>{localConfig.saCount}</span>
                                     </div>
-                                    <input type="range" min="0" max="20" value={localConfig.saCount} onChange={(e) => updateConfig({ saCount: parseInt(e.target.value) })} className="w-full accent-amber-500" />
+                                    <input aria-label="Number of short answer questions" type="range" min="0" max="20" value={localConfig.saCount} onChange={(e) => updateConfig({ saCount: parseInt(e.target.value) })} className="w-full accent-amber-500" />
                                 </div>
                             </div>
                             <button onClick={() => setActiveSection('output')} className="w-full mt-6 py-3 bg-slate-800 text-white rounded-lg font-bold hover:bg-slate-700 transition-colors">Next: Output Options</button>

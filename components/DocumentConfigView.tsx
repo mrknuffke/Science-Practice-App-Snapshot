@@ -126,7 +126,7 @@ export const DocumentConfigView: React.FC<DocumentConfigViewProps> = ({
                 <label className="text-xs font-bold uppercase tracking-widest text-slate-400">{label}</label>
                 <span className="text-white font-black">{value}{suffix}</span>
             </div>
-            <input
+            <input aria-label={label}
                 type="range"
                 min={min}
                 max={max}
@@ -175,11 +175,11 @@ export const DocumentConfigView: React.FC<DocumentConfigViewProps> = ({
                     <div className="grid grid-cols-2 gap-4 mb-6">
                         <div>
                             <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1 block">Error Detection</label>
-                            <input type="number" min="0" max="5" value={config.errorCount} onChange={(e) => onUpdateConfig({ errorCount: parseInt(e.target.value) || 0 })} className="w-full bg-slate-800 border-slate-700 rounded-lg p-2 text-white font-bold text-center" />
+                            <input aria-label="Error Detection" type="number" min="0" max="5" value={config.errorCount} onChange={(e) => onUpdateConfig({ errorCount: parseInt(e.target.value) || 0 })} className="w-full bg-slate-800 border-slate-700 rounded-lg p-2 text-white font-bold text-center" />
                         </div>
                         <div>
                             <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1 block">Analogies</label>
-                            <input type="number" min="0" max="5" value={config.analogyCount || 0} onChange={(e) => onUpdateConfig({ analogyCount: parseInt(e.target.value) || 0 })} className="w-full bg-slate-800 border-slate-700 rounded-lg p-2 text-white font-bold text-center" />
+                            <input aria-label="Analogies" type="number" min="0" max="5" value={config.analogyCount || 0} onChange={(e) => onUpdateConfig({ analogyCount: parseInt(e.target.value) || 0 })} className="w-full bg-slate-800 border-slate-700 rounded-lg p-2 text-white font-bold text-center" />
                         </div>
                     </div>
 
@@ -250,11 +250,11 @@ export const DocumentConfigView: React.FC<DocumentConfigViewProps> = ({
                     <div className="grid grid-cols-2 gap-4 mb-6">
                         <div>
                             <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1 block">Analogies</label>
-                            <input type="number" min="0" max="5" value={config.analogyCount || 0} onChange={(e) => onUpdateConfig({ analogyCount: parseInt(e.target.value) || 0 })} className="w-full bg-slate-800 border-slate-700 rounded-lg p-2 text-white font-bold text-center" />
+                            <input aria-label="Analogies" type="number" min="0" max="5" value={config.analogyCount || 0} onChange={(e) => onUpdateConfig({ analogyCount: parseInt(e.target.value) || 0 })} className="w-full bg-slate-800 border-slate-700 rounded-lg p-2 text-white font-bold text-center" />
                         </div>
                         <div>
                             <label className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1 block">Odd One Out</label>
-                            <input type="number" min="0" max="5" value={config.oddOneOutCount || 0} onChange={(e) => onUpdateConfig({ oddOneOutCount: parseInt(e.target.value) || 0 })} className="w-full bg-slate-800 border-slate-700 rounded-lg p-2 text-white font-bold text-center" />
+                            <input aria-label="Odd One Out" type="number" min="0" max="5" value={config.oddOneOutCount || 0} onChange={(e) => onUpdateConfig({ oddOneOutCount: parseInt(e.target.value) || 0 })} className="w-full bg-slate-800 border-slate-700 rounded-lg p-2 text-white font-bold text-center" />
                         </div>
                     </div>
 
@@ -274,7 +274,7 @@ export const DocumentConfigView: React.FC<DocumentConfigViewProps> = ({
             return (
                 <div>
                     <label className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2 block">Number of Problems</label>
-                    <input
+                    <input aria-label="Number of Problems"
                         type="number"
                         min="1"
                         max="20"
@@ -341,7 +341,7 @@ export const DocumentConfigView: React.FC<DocumentConfigViewProps> = ({
                         {/* Course Input */}
                         <div className="relative" ref={courseBoxRef}>
                             <label className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3 block flex items-center gap-2"><BookOpen className="w-4 h-4" /> 1. Subject / Course</label>
-                            <input
+                            <input aria-label="Subject / Course"
                                 ref={courseInputRef}
                                 type="text"
                                 value={courseQuery}
@@ -366,7 +366,7 @@ export const DocumentConfigView: React.FC<DocumentConfigViewProps> = ({
                         {/* Topic Input */}
                         <div className={`relative transition-all duration-500 ${!courseQuery ? 'opacity-50 pointer-events-none blur-sm' : 'opacity-100'}`} ref={topicBoxRef}>
                             <label className="text-xs font-black text-slate-500 uppercase tracking-widest mb-3 block flex items-center gap-2"><ArrowRight className="w-4 h-4" /> 2. Topic / Unit</label>
-                            <input
+                            <input aria-label="Topic / Unit"
                                 ref={topicInputRef}
                                 type="text"
                                 value={topicQuery}

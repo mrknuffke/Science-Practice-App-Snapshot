@@ -105,7 +105,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onUpdate, 
                                     <div className={`p-4 rounded-2xl border transition-all group ${transparent ? 'bg-slate-50 border-slate-200 hover:border-indigo-400' : 'bg-slate-800/50 border-slate-700/50 hover:border-indigo-500/30'}`}>
                                         <div className="flex justify-between items-center mb-2">
                                             <label className="text-sm text-indigo-400 uppercase font-black tracking-wide">Multiple Choice</label>
-                                            <input
+                                            <input aria-label="Multiple Choice"
                                                 type="number"
                                                 min="0"
                                                 max="10"
@@ -120,7 +120,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onUpdate, 
                                     <div className={`p-4 rounded-2xl border transition-all group ${transparent ? 'bg-slate-50 border-slate-200 hover:border-indigo-400' : 'bg-slate-800/50 border-slate-700/50 hover:border-indigo-500/30'}`}>
                                         <div className="flex justify-between items-center mb-2">
                                             <label className="text-sm text-indigo-400 uppercase font-black tracking-wide">Short Answer</label>
-                                            <input
+                                            <input aria-label="Short Answer"
                                                 type="number"
                                                 min="0"
                                                 max="10"
@@ -139,7 +139,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onUpdate, 
                                     <div className={`p-4 rounded-2xl border transition-all group ${transparent ? 'bg-slate-50 border-slate-200 hover:border-teal-400' : 'bg-slate-800/50 border-slate-700/50 hover:border-teal-500/30'}`}>
                                         <div className="flex justify-between items-center mb-2">
                                             <label className="text-sm text-teal-400 uppercase font-black tracking-wide">Error Check</label>
-                                            <input
+                                            <input aria-label="Error Check"
                                                 type="number"
                                                 min="0"
                                                 max="10"
@@ -154,7 +154,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onUpdate, 
                                     <div className={`p-4 rounded-2xl border transition-all group ${transparent ? 'bg-slate-50 border-slate-200 hover:border-teal-400' : 'bg-slate-800/50 border-slate-700/50 hover:border-teal-500/30'}`}>
                                         <div className="flex justify-between items-center mb-2">
                                             <label className="text-sm text-teal-400 uppercase font-black tracking-wide">Odd One Out</label>
-                                            <input
+                                            <input aria-label="Odd One Out"
                                                 type="number"
                                                 min="0"
                                                 max="10"
@@ -173,7 +173,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onUpdate, 
                                     <div className={`p-4 rounded-2xl border transition-all group ${transparent ? 'bg-slate-50 border-slate-200 hover:border-amber-400' : 'bg-slate-800/50 border-slate-700/50 hover:border-amber-500/30'}`}>
                                         <div className="flex justify-between items-center mb-2">
                                             <label className="text-sm text-amber-400 uppercase font-black tracking-wide">Fill in the Blank</label>
-                                            <input
+                                            <input aria-label="Fill in the Blank"
                                                 type="number"
                                                 min="0"
                                                 max="10"
@@ -188,7 +188,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onUpdate, 
                                     <div className={`p-4 rounded-2xl border transition-all group ${transparent ? 'bg-slate-50 border-slate-200 hover:border-amber-400' : 'bg-slate-800/50 border-slate-700/50 hover:border-amber-500/30'}`}>
                                         <div className="flex justify-between items-center mb-2">
                                             <label className="text-sm text-amber-400 uppercase font-black tracking-wide">Analogies</label>
-                                            <input
+                                            <input aria-label="Analogies"
                                                 type="number"
                                                 min="0"
                                                 max="10"
@@ -212,7 +212,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onUpdate, 
                         {mode === 'frq' && (
                             <div>
                                 <label className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 block">Question Style</label>
-                                <select
+                                <select aria-label="Question Style"
                                     value={config.questionStyle || 'Standard'}
                                     onChange={(e) => onUpdate({ questionStyle: e.target.value })}
                                     className="w-full bg-slate-900 border border-slate-700 text-white text-base font-bold rounded-xl px-4 py-3 focus:outline-none focus:border-indigo-500 transition-colors"
@@ -240,7 +240,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ config, onUpdate, 
 
                             <div className={`bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 transition-opacity ${(config.timerDuration === 0) ? 'opacity-50 pointer-events-none' : 'opacity-100'}`}>
                                 <div className="flex items-center gap-4">
-                                    <input
+                                    <input aria-label="Timer length"
                                         type="range"
                                         min="5"
                                         max="60"

@@ -381,7 +381,7 @@ const WhoAmIPreviewView: React.FC<WhoAmIPreviewViewProps> = ({
                             <div className="mb-4 pb-4 border-b border-slate-200">
                                 {editingPuzzle === pIdx ? (
                                     <div className="space-y-2">
-                                        <input
+                                        <input aria-label="Entity name"
                                             type="text"
                                             value={editValue}
                                             onChange={(e) => setEditValue(e.target.value)}
@@ -428,7 +428,7 @@ const WhoAmIPreviewView: React.FC<WhoAmIPreviewViewProps> = ({
                                     >
                                         {editingClue?.puzzleIdx === pIdx && editingClue?.clueIdx === cIdx ? (
                                             <div className="space-y-2">
-                                                <textarea
+                                                <textarea aria-label="Clue text"
                                                     value={editValue}
                                                     onChange={(e) => setEditValue(e.target.value)}
                                                     className="w-full bg-slate-50 border-2 border-indigo-500 rounded-lg px-3 py-2 text-sm font-medium focus:outline-none resize-none"
@@ -537,7 +537,7 @@ const WhoAmIPreviewView: React.FC<WhoAmIPreviewViewProps> = ({
                         <div {...saveDialog} className="bg-white rounded-2xl p-6 max-w-md w-full shadow-2xl">
                             <h3 id="whoami-save-title" className="text-2xl font-black text-slate-900 mb-4">Save Game</h3>
                             <p className="text-slate-600 mb-4">Give this game a memorable name so you can reuse it with other classes.</p>
-                            <input
+                            <input aria-label="Game name"
                                 type="text"
                                 value={gameName}
                                 onChange={(e) => setGameName(e.target.value)}
@@ -590,7 +590,7 @@ const WhoAmIPreviewView: React.FC<WhoAmIPreviewViewProps> = ({
                                 <p className="text-sm text-slate-600 mb-3">
                                     Copy this JSON to share with colleagues or save as a backup.
                                 </p>
-                                <textarea
+                                <textarea aria-label="Game JSON to copy"
                                     value={shareJSON}
                                     readOnly
                                     className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 font-mono text-xs resize-none focus:outline-none focus:border-indigo-500"
@@ -613,7 +613,7 @@ const WhoAmIPreviewView: React.FC<WhoAmIPreviewViewProps> = ({
                                 <p className="text-sm text-slate-600 mb-3">
                                     Paste JSON from a shared game to load it.
                                 </p>
-                                <textarea
+                                <textarea aria-label="Game JSON to import"
                                     value={importJSON}
                                     onChange={(e) => setImportJSON(e.target.value)}
                                     placeholder="Paste game JSON here..."

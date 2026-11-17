@@ -17,7 +17,7 @@ export const InputModal: React.FC<InputModalProps> = ({ isOpen, title, defaultVa
         <div className="fixed inset-0 z-[150] bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-6 animate-in fade-in duration-200">
             <div {...dialog} className="bg-white rounded-[2rem] p-8 w-full max-w-lg shadow-2xl space-y-6">
                 <h3 id="input-modal-title" className="text-2xl font-black text-slate-900">{title}</h3>
-                <input
+                <input aria-label={title}
                     autoFocus
                     type="text"
                     value={value}

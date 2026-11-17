@@ -203,7 +203,7 @@ routing wiring.
 | Splitting a large component, typing errors, linting | [TECHNICAL_DEBT_PREVENTION.md](TECHNICAL_DEBT_PREVENTION.md) |
 
 - **Large files: search, then read a range.** `docs/textbook/CHANGELOG.md`, `App.tsx`, `components/ChangelogView.tsx` and `FEATURE_TRACKER.md` each cost over 20k tokens to read whole. Use `grep -n`, then Read with `offset` and `limit`. New changelog entries go at the top, so the first 60 lines are enough.
-- **Code size and types:** components stay under 600 lines, never use `any` (use `unknown`), and ESLint warnings stay at 0. Modals use `useDialog`, keyboard shortcuts use `useWindowKeydown`, icon-only buttons get an `aria-label` (see TECHNICAL_DEBT_PREVENTION.md).
+- **Code size and types:** components stay under 600 lines, never use `any` (use `unknown`), and ESLint warnings stay at 0. Modals use `useDialog`, keyboard shortcuts use `useWindowKeydown`, icon-only buttons and form fields get an `aria-label` (see TECHNICAL_DEBT_PREVENTION.md).
 - **Mermaid diagrams** (`components/MermaidDiagram.tsx`): generate one only when it genuinely helps, keep the user's switch to turn diagrams off, and never force a sequence diagram on a general concept.
 
 ## Special Notes

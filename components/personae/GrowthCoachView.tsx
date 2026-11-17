@@ -296,7 +296,7 @@ export const GrowthCoachView: React.FC<GrowthCoachViewProps> = ({ onBack, course
               Describe what question you missed, what you answered, and what the correct explanation was:
             </p>
 
-            <textarea
+            <textarea aria-label="The question you missed and your answer"
               value={errorDescription}
               onChange={e => setErrorDescription(e.target.value)}
               placeholder="e.g. I picked B because I thought catalysts increase the total energy released..."
@@ -448,7 +448,7 @@ export const GrowthCoachView: React.FC<GrowthCoachViewProps> = ({ onBack, course
                 className="flex items-center gap-2"
               >
                 <div className="relative flex-1">
-                  <input
+                  <input aria-label="Your reasoning"
                     type="text"
                     value={input}
                     onChange={e => setInput(e.target.value)}

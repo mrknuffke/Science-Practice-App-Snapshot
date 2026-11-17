@@ -480,7 +480,7 @@ export const DiagramLabelingView: React.FC<DiagramLabelingViewProps> = ({
                     {viewMode === 'quiz' && (
                       <div className="mt-2" onClick={e => e.stopPropagation()}>
                         {interactionStyle === 'typing' ? (
-                          <input
+                          <input aria-label={`Name feature ${callout.number}`}
                             type="text"
                             value={guess}
                             onChange={e => handleUpdateGuess(callout.id, e.target.value)}

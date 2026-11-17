@@ -224,7 +224,7 @@ const TabooGameView: React.FC<TabooGameViewProps> = ({ onBack, course, topic }) 
                             <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-1">
                                 <BookOpen className="w-3 h-3" /> Topic
                             </label>
-                            <input
+                            <input aria-label="Topic"
                                 type="text"
                                 value={selectedTopic}
                                 onChange={(e) => setSelectedTopic(e.target.value)}
@@ -235,7 +235,7 @@ const TabooGameView: React.FC<TabooGameViewProps> = ({ onBack, course, topic }) 
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Course</label>
-                                <input
+                                <input aria-label="Course"
                                     type="text"
                                     value={selectedCourse}
                                     onChange={(e) => setSelectedCourse(e.target.value)}
@@ -244,7 +244,7 @@ const TabooGameView: React.FC<TabooGameViewProps> = ({ onBack, course, topic }) 
                             </div>
                             <div>
                                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Grade Level</label>
-                                <select
+                                <select aria-label="Grade Level"
                                     value={gradeLevel}
                                     onChange={(e) => setGradeLevel(e.target.value)}
                                     className="w-full bg-slate-50 border-2 border-slate-200 p-3 rounded-xl outline-none focus:border-rose-500 font-bold text-slate-800 text-sm"
@@ -277,7 +277,7 @@ const TabooGameView: React.FC<TabooGameViewProps> = ({ onBack, course, topic }) 
                                 <span>Forbidden Words per Card</span>
                                 <span className="text-rose-600">{forbiddenCount}</span>
                             </label>
-                            <input
+                            <input aria-label="Forbidden words per card"
                                 type="range"
                                 min={3}
                                 max={7}
@@ -374,11 +374,11 @@ const TabooGameView: React.FC<TabooGameViewProps> = ({ onBack, course, topic }) 
                             <div key={c.id} className="bg-white rounded-2xl border-4 border-rose-600 overflow-hidden hover:shadow-xl transition-shadow">
                                 {editingId === c.id ? (
                                     <div className="p-4 space-y-2">
-                                        <input value={editTerm} onChange={e => setEditTerm(e.target.value)} placeholder="Term" className="w-full p-2 border-2 border-rose-300 rounded-lg text-base font-bold" autoFocus />
-                                        <input value={editCategory} onChange={e => setEditCategory(e.target.value)} placeholder="Category" className="w-full p-2 border rounded-lg text-xs" />
+                                        <input aria-label="Term" value={editTerm} onChange={e => setEditTerm(e.target.value)} placeholder="Term" className="w-full p-2 border-2 border-rose-300 rounded-lg text-base font-bold" autoFocus />
+                                        <input aria-label="Category" value={editCategory} onChange={e => setEditCategory(e.target.value)} placeholder="Category" className="w-full p-2 border rounded-lg text-xs" />
                                         <div className="space-y-1">
                                             {editForbidden.map((w, i) => (
-                                                <input
+                                                <input aria-label={`Forbidden word ${i + 1}`}
                                                     key={i}
                                                     value={w}
                                                     onChange={e => updateForbiddenAt(i, e.target.value)}

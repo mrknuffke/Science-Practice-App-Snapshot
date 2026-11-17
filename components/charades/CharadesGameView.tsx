@@ -251,7 +251,7 @@ const CharadesGameView: React.FC<CharadesGameViewProps> = ({ onBack, course, top
                             <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-1">
                                 <BookOpen className="w-3 h-3" /> Topic
                             </label>
-                            <input
+                            <input aria-label="Topic"
                                 type="text"
                                 value={selectedTopic}
                                 onChange={(e) => setSelectedTopic(e.target.value)}
@@ -262,7 +262,7 @@ const CharadesGameView: React.FC<CharadesGameViewProps> = ({ onBack, course, top
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Course</label>
-                                <input
+                                <input aria-label="Course"
                                     type="text"
                                     value={selectedCourse}
                                     onChange={(e) => setSelectedCourse(e.target.value)}
@@ -271,7 +271,7 @@ const CharadesGameView: React.FC<CharadesGameViewProps> = ({ onBack, course, top
                             </div>
                             <div>
                                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Grade Level</label>
-                                <select
+                                <select aria-label="Grade Level"
                                     value={gradeLevel}
                                     onChange={(e) => setGradeLevel(e.target.value)}
                                     className="w-full bg-slate-50 border-2 border-slate-200 p-3 rounded-xl outline-none focus:border-fuchsia-500 font-bold text-slate-800 text-sm"
@@ -414,26 +414,26 @@ const CharadesGameView: React.FC<CharadesGameViewProps> = ({ onBack, course, top
                             <div key={c.id} className="bg-white rounded-2xl border border-slate-200 p-4 hover:border-fuchsia-300 transition-colors">
                                 {editingId === c.id ? (
                                     <div className="space-y-2">
-                                        <input
+                                        <input aria-label="Term"
                                             value={editTerm}
                                             onChange={e => setEditTerm(e.target.value)}
                                             placeholder="Term"
                                             className="w-full p-2 border-2 border-fuchsia-300 rounded-lg text-sm font-bold"
                                             autoFocus
                                         />
-                                        <input
+                                        <input aria-label="Category"
                                             value={editCategory}
                                             onChange={e => setEditCategory(e.target.value)}
                                             placeholder="Category"
                                             className="w-full p-2 border rounded-lg text-xs"
                                         />
-                                        <input
+                                        <input aria-label="Hint"
                                             value={editHint}
                                             onChange={e => setEditHint(e.target.value)}
                                             placeholder="Hint (optional)"
                                             className="w-full p-2 border rounded-lg text-xs"
                                         />
-                                        <select
+                                        <select aria-label="Difficulty"
                                             value={editDifficulty}
                                             onChange={e => setEditDifficulty(e.target.value as CharadesCard['difficulty'])}
                                             className="w-full p-2 border rounded-lg text-xs"

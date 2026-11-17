@@ -181,7 +181,7 @@ export const ConceptMapInspector: React.FC<ConceptMapInspectorProps> = ({
                   <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 mb-1">
                     Concept Name *
                   </label>
-                  <input
+                  <input aria-label="Concept Name"
                     type="text"
                     value={customLabel}
                     onChange={e => setCustomLabel(e.target.value)}
@@ -195,7 +195,7 @@ export const ConceptMapInspector: React.FC<ConceptMapInspectorProps> = ({
                   <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 mb-1">
                     Category
                   </label>
-                  <select
+                  <select aria-label="Category"
                     value={customCategory}
                     onChange={e => setCustomCategory(e.target.value)}
                     className="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -217,7 +217,7 @@ export const ConceptMapInspector: React.FC<ConceptMapInspectorProps> = ({
                   <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 mb-1">
                     Description (Optional)
                   </label>
-                  <textarea
+                  <textarea aria-label="Description (Optional)"
                     value={customDescription}
                     onChange={e => setCustomDescription(e.target.value)}
                     placeholder="Brief definition or role..."
@@ -261,7 +261,7 @@ export const ConceptMapInspector: React.FC<ConceptMapInspectorProps> = ({
                   <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 mb-1">
                     Label
                   </label>
-                  <input
+                  <input aria-label="Label"
                     type="text"
                     value={selectedNode.label}
                     onChange={e => onUpdateNode(selectedNode.id, { label: e.target.value })}
@@ -273,7 +273,7 @@ export const ConceptMapInspector: React.FC<ConceptMapInspectorProps> = ({
                   <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 mb-1">
                     Category
                   </label>
-                  <select
+                  <select aria-label="Category"
                     value={selectedNode.category || 'General'}
                     onChange={e => onUpdateNode(selectedNode.id, { category: e.target.value })}
                     className="w-full px-3 py-2 text-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -295,7 +295,7 @@ export const ConceptMapInspector: React.FC<ConceptMapInspectorProps> = ({
                   <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 mb-1">
                     Description
                   </label>
-                  <textarea
+                  <textarea aria-label="Description"
                     value={selectedNode.description || ''}
                     onChange={e => onUpdateNode(selectedNode.id, { description: e.target.value })}
                     rows={2}
@@ -349,7 +349,7 @@ export const ConceptMapInspector: React.FC<ConceptMapInspectorProps> = ({
                   <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 mb-1">
                     Linking Phrase
                   </label>
-                  <input
+                  <input aria-label="Linking Phrase"
                     type="text"
                     value={selectedEdge.label}
                     onChange={e => onUpdateEdge(selectedEdge.id, { label: e.target.value })}

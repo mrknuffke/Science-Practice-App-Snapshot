@@ -766,7 +766,7 @@ export const MotionTrackerView: React.FC<MotionTrackerViewProps> = ({ onBack }) 
                 )}
                 {showDistanceInput && (
                   <div className="flex gap-2 pt-1">
-                    <input
+                    <input aria-label="Distance in meters"
                       type="number"
                       step="0.01"
                       placeholder="Distance (m)"

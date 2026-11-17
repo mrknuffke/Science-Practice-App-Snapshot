@@ -111,7 +111,7 @@ const Slider: React.FC<SliderProps> = ({
         {formatValue ? formatValue(value) : value}
       </span>
     </div>
-    <input
+    <input aria-label={label}
       type="range"
       min={min}
       max={max}

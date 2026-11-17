@@ -199,6 +199,8 @@ import { CountdownTimer } from './CountdownTimer';
   (not the backdrop). It moves focus in, keeps Tab inside, closes on Escape and returns focus to the
   opener. Leave out `onClose` for a dialog the student must answer.
 - **Icon-only buttons** need `aria-label`; `services/__tests__/a11yButtons.test.ts` fails otherwise.
+- **Form fields** (`input`, `textarea`, `select`) need a name too: `aria-label` matching the visible label, a wrapping `<label>`, or `id` plus `<label htmlFor>`. Placeholder text is not a name. Guarded by `services/__tests__/a11yFormFields.test.ts`. Prefer `aria-label` in components that can render twice, where a fixed `id` would repeat.
+- **Simulation tests:** check every particle every step, but collect problems into an array and `expect` once. An `expect()` per particle per step made two `chemUnit4Models` tests take 2 to 4 s and brush the 5 s limit under parallel load.
 - **Markdown inside a button or option:** pass `INLINE_PARAGRAPHS` (or `SPACED_PARAGRAPHS`) from
   `MarkdownRenderer.tsx`, not an inline `components={{ p: ... }}` object, which re-renders the
   markdown on every render.

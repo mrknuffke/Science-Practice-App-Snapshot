@@ -136,7 +136,7 @@ const InterviewScriptView: React.FC<InterviewScriptViewProps> = ({ onBack }) => 
                         <div className="space-y-6">
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 uppercase tracking-wide mb-2">Topic or Standard</label>
-                                <input
+                                <input aria-label="Topic or Standard"
                                     type="text"
                                     value={topic}
                                     onChange={e => setTopic(e.target.value)}
@@ -229,7 +229,7 @@ const InterviewScriptView: React.FC<InterviewScriptViewProps> = ({ onBack }) => 
                         <div className="space-y-4 mb-8">
                             {questions.map((q, idx) => (
                                 <div key={idx} className="group relative">
-                                    <textarea
+                                    <textarea aria-label={`Question ${idx + 1}`}
                                         value={q}
                                         onChange={(e) => handleQuestionEdit(idx, e.target.value)}
                                         rows={2}

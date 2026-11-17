@@ -280,7 +280,7 @@ export const VocabRelaySetup: React.FC<VocabRelaySetupProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="text-xs text-slate-400 block mb-1">Target Course</label>
-              <input
+              <input aria-label="Target Course"
                 type="text"
                 value={customCourse}
                 onChange={e => setCustomCourse(e.target.value as CourseType)}
@@ -290,7 +290,7 @@ export const VocabRelaySetup: React.FC<VocabRelaySetupProps> = ({
             </div>
             <div>
               <label className="text-xs text-slate-400 block mb-1">Topic / Unit</label>
-              <input
+              <input aria-label="Topic / Unit"
                 type="text"
                 value={customTopic}
                 onChange={e => setCustomTopic(e.target.value)}
@@ -317,7 +317,7 @@ export const VocabRelaySetup: React.FC<VocabRelaySetupProps> = ({
                 <span>Total Laps (Rounds):</span>
                 <span className="font-bold text-cyan-400">{totalLaps}</span>
               </div>
-              <input
+              <input aria-label="Total laps"
                 type="range"
                 min={1}
                 max={3}
@@ -332,7 +332,7 @@ export const VocabRelaySetup: React.FC<VocabRelaySetupProps> = ({
                 <span>Terms per Runner:</span>
                 <span className="font-bold text-cyan-400">{termsPerRunner}</span>
               </div>
-              <input
+              <input aria-label="Terms per runner"
                 type="range"
                 min={3}
                 max={6}
@@ -347,7 +347,7 @@ export const VocabRelaySetup: React.FC<VocabRelaySetupProps> = ({
                 <span>Timer per Term:</span>
                 <span className="font-bold text-cyan-400">{turnSeconds}s</span>
               </div>
-              <input
+              <input aria-label="Seconds per term"
                 type="range"
                 min={15}
                 max={45}
@@ -375,7 +375,7 @@ export const VocabRelaySetup: React.FC<VocabRelaySetupProps> = ({
                   className="bg-slate-900/90 rounded-xl p-3 border border-slate-700/80 space-y-2.5"
                 >
                   <div className="flex items-center justify-between">
-                    <input
+                    <input aria-label="Team name"
                       type="text"
                       value={team.name}
                       onChange={e => {
@@ -404,7 +404,7 @@ export const VocabRelaySetup: React.FC<VocabRelaySetupProps> = ({
                         <span className="text-[10px] font-mono text-slate-500 w-4">
                           {rIdx + 1}.
                         </span>
-                        <input
+                        <input aria-label={`Runner ${rIdx + 1} name`}
                           type="text"
                           value={runner}
                           onChange={e => handleUpdateRunnerName(tIdx, rIdx, e.target.value)}

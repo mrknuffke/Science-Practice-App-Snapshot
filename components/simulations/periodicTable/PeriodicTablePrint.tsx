@@ -115,19 +115,19 @@ export const PeriodicTablePrint: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-4 w-full items-end">
           <div className="flex-1 space-y-1.5">
             <label className="block text-xs font-bold text-slate-500 uppercase">Top Right Detail</label>
-            <select value={detail1} onChange={e => setDetail1(e.target.value as PrintDetail)} className="w-full p-2 text-sm font-semibold text-slate-800 rounded-lg border border-slate-300 bg-slate-50">
+            <select aria-label="Top Right Detail" value={detail1} onChange={e => setDetail1(e.target.value as PrintDetail)} className="w-full p-2 text-sm font-semibold text-slate-800 rounded-lg border border-slate-300 bg-slate-50">
               {Object.entries(DETAIL_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
             </select>
           </div>
           <div className="flex-1 space-y-1.5">
             <label className="block text-xs font-bold text-slate-500 uppercase">Bottom Detail</label>
-            <select value={detail2} onChange={e => setDetail2(e.target.value as PrintDetail)} className="w-full p-2 text-sm font-semibold text-slate-800 rounded-lg border border-slate-300 bg-slate-50">
+            <select aria-label="Bottom Detail" value={detail2} onChange={e => setDetail2(e.target.value as PrintDetail)} className="w-full p-2 text-sm font-semibold text-slate-800 rounded-lg border border-slate-300 bg-slate-50">
               {Object.entries(DETAIL_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
             </select>
           </div>
           <div className="flex-1 space-y-1.5">
             <label className="block text-xs font-bold text-slate-500 uppercase">Color Scheme</label>
-            <select value={colorMode} onChange={e => setColorMode(e.target.value as typeof colorMode)} className="w-full p-2 text-sm font-semibold text-slate-800 rounded-lg border border-slate-300 bg-slate-50">
+            <select aria-label="Color Scheme" value={colorMode} onChange={e => setColorMode(e.target.value as typeof colorMode)} className="w-full p-2 text-sm font-semibold text-slate-800 rounded-lg border border-slate-300 bg-slate-50">
               <option value="color">Full Color (Thick Borders)</option>
               <option value="grayscale">Grayscale (Thick Borders)</option>
               <option value="bw">Black & White</option>

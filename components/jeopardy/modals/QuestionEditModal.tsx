@@ -26,7 +26,7 @@ export const QuestionEditModal: React.FC<QuestionEditModalProps> = ({ isOpen, qD
                 <div className="space-y-4 overflow-y-auto custom-scrollbar flex-1 p-2">
                     <div>
                         <label className="text-xs font-black text-slate-400 uppercase tracking-widest block mb-2">Clue Text</label>
-                        <textarea value={q} onChange={e => setQ(e.target.value)} className="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-xl font-medium min-h-[100px] outline-none focus:border-indigo-500" />
+                        <textarea aria-label="Clue Text" value={q} onChange={e => setQ(e.target.value)} className="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-xl font-medium min-h-[100px] outline-none focus:border-indigo-500" />
                     </div>
                     <div>
                         <div className="flex justify-between items-center mb-2">
@@ -43,11 +43,11 @@ export const QuestionEditModal: React.FC<QuestionEditModalProps> = ({ isOpen, qD
                                 {loadingAns ? <Loader2 className="w-3 h-3 animate-spin" /> : <Wand2 className="w-3 h-3" />} Auto-Generate Answer
                             </button>
                         </div>
-                        <textarea value={a} onChange={e => setA(e.target.value)} className="w-full bg-emerald-50/50 border-2 border-emerald-100 p-4 rounded-xl font-medium min-h-[80px] outline-none focus:border-emerald-500" />
+                        <textarea aria-label="Answer key" value={a} onChange={e => setA(e.target.value)} className="w-full bg-emerald-50/50 border-2 border-emerald-100 p-4 rounded-xl font-medium min-h-[80px] outline-none focus:border-emerald-500" />
                     </div>
                     <div>
                         <label className="text-xs font-black text-indigo-400 uppercase tracking-widest block mb-2">Hint</label>
-                        <textarea value={h} onChange={e => setH(e.target.value)} className="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-xl font-medium min-h-[60px] outline-none focus:border-indigo-500" />
+                        <textarea aria-label="Hint" value={h} onChange={e => setH(e.target.value)} className="w-full bg-slate-50 border-2 border-slate-100 p-4 rounded-xl font-medium min-h-[60px] outline-none focus:border-indigo-500" />
                     </div>
                 </div>
                 <div className="flex gap-4 shrink-0">

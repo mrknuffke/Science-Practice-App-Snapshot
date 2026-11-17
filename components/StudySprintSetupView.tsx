@@ -170,7 +170,7 @@ export const StudySprintSetupView: React.FC<StudySprintSetupViewProps> = ({
               <label className="block text-sm font-bold text-slate-300 mb-2">
                 Course <span className="text-red-400">*</span>
               </label>
-              <input
+              <input aria-label="Course"
                 type="text"
                 value={course}
                 onChange={(e) => setCourse(e.target.value as CourseType)}
@@ -183,7 +183,7 @@ export const StudySprintSetupView: React.FC<StudySprintSetupViewProps> = ({
               <label className="block text-sm font-bold text-slate-300 mb-2">
                 Grade Level <span className="text-red-400">*</span>
               </label>
-              <input
+              <input aria-label="Grade Level"
                 type="text"
                 value={gradeLevel}
                 onChange={(e) => setGradeLevel(e.target.value)}
@@ -196,7 +196,7 @@ export const StudySprintSetupView: React.FC<StudySprintSetupViewProps> = ({
               <label className="block text-sm font-bold text-slate-300 mb-2">
                 Units (Optional)
               </label>
-              <input
+              <input aria-label="Units (Optional)"
                 type="text"
                 value={units}
                 onChange={(e) => setUnits(e.target.value)}
@@ -209,7 +209,7 @@ export const StudySprintSetupView: React.FC<StudySprintSetupViewProps> = ({
               <label className="block text-sm font-bold text-slate-300 mb-2">
                 Topics <span className="text-red-400">*</span>
               </label>
-              <textarea
+              <textarea aria-label="Topics"
                 value={topics}
                 onChange={(e) => setTopics(e.target.value)}
                 placeholder="e.g., Photosynthesis, Cellular Respiration, Enzyme Kinetics"
@@ -225,7 +225,7 @@ export const StudySprintSetupView: React.FC<StudySprintSetupViewProps> = ({
               <label className="block text-sm font-bold text-slate-300 mb-2">
                 Subtopic Focus (Optional)
               </label>
-              <input
+              <input aria-label="Subtopic Focus (Optional)"
                 type="text"
                 value={subtopicFocus}
                 onChange={(e) => setSubtopicFocus(e.target.value)}
@@ -290,7 +290,7 @@ export const StudySprintSetupView: React.FC<StudySprintSetupViewProps> = ({
               <div className="mb-5">
                 <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Topics / Foci</label>
                 <div className="flex gap-2">
-                  <textarea
+                  <textarea aria-label="Topics / Foci"
                     value={editableTopics}
                     onChange={(e) => setEditableTopics(e.target.value)}
                     rows={2}
@@ -327,7 +327,7 @@ export const StudySprintSetupView: React.FC<StudySprintSetupViewProps> = ({
                     <div className="mt-3 flex flex-col gap-3">
                       <div className="flex items-center gap-2">
                         <label className="text-xs font-bold text-slate-400 whitespace-nowrap">Task Focus:</label>
-                        <input
+                        <input aria-label="Task Focus"
                           type="text"
                           value={task.focus || ''}
                           onChange={(e) => handleUpdateTaskFocus(index, e.target.value)}
@@ -337,7 +337,7 @@ export const StudySprintSetupView: React.FC<StudySprintSetupViewProps> = ({
                       </div>
                       <div className="flex items-center gap-2">
                         <label className="text-xs font-bold text-slate-400 whitespace-nowrap">Swap Type:</label>
-                        <select
+                        <select aria-label="Swap Type"
                           value={task.type}
                           onChange={(e) => handleSwapTask(index, e.target.value as StudySprintTask['type'])}
                           className="bg-slate-800 border border-slate-600 rounded px-2 py-1 text-sm text-white focus:outline-none focus:border-indigo-500"

@@ -22,20 +22,20 @@ export const FinalJeopardyEditModal: React.FC<{
                     <button aria-label="Close" onClick={onClose} className="p-3 bg-slate-100 rounded-full hover:bg-rose-50 hover:text-rose-600 transition-all shrink-0"><X className="w-5 h-5" /></button>
                 </div>
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">Category</label>
-                <input
+                <input aria-label="Category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                     className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-2xl font-bold text-slate-800 focus:border-indigo-500 focus:outline-none mb-5"
                 />
                 <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-2">Clue</label>
-                <textarea
+                <textarea aria-label="Clue"
                     value={clue}
                     onChange={(e) => setClue(e.target.value)}
                     rows={4}
                     className="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-2xl text-slate-800 focus:border-indigo-500 focus:outline-none resize-none mb-5"
                 />
                 <label className="text-[10px] font-black text-emerald-500 uppercase tracking-widest block mb-2">Answer</label>
-                <textarea
+                <textarea aria-label="Answer"
                     value={answer}
                     onChange={(e) => setAnswer(e.target.value)}
                     rows={3}

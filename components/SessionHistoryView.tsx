@@ -138,7 +138,7 @@ export const SessionHistoryView: React.FC<SessionHistoryViewProps> = ({
         </div>
 
         <div className="flex gap-4 flex-wrap">
-          <input
+          <input aria-label="Search sessions"
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -146,7 +146,7 @@ export const SessionHistoryView: React.FC<SessionHistoryViewProps> = ({
             className="flex-1 bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800/50 rounded-xl px-4 py-2 text-[#1A1C21] dark:text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500"
           />
 
-          <select
+          <select aria-label="Sort sessions"
             value={sortMode}
             onChange={(e) => setSortMode(e.target.value as SortMode)}
             className="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800/50 rounded-xl px-4 py-2 text-[#1A1C21] dark:text-white focus:outline-none focus:border-indigo-500"

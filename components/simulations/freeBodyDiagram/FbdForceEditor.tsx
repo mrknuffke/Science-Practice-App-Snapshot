@@ -37,7 +37,7 @@ const SliderNumber: React.FC<SliderNumberProps> = ({
       </div>
       {/* Slider row */}
       <div className="flex items-center gap-2">
-        <input
+        <input aria-label={label}
           type="range"
           min={min}
           max={max}
@@ -47,7 +47,7 @@ const SliderNumber: React.FC<SliderNumberProps> = ({
           className="flex-1 h-3 rounded-lg appearance-none cursor-pointer"
           style={{ accentColor }}
         />
-        <input
+        <input aria-label={`${label} value`}
           type="number"
           min={min}
           max={max}
@@ -83,7 +83,7 @@ export const FbdForceEditor: React.FC<FbdForceEditorProps> = ({ force, onUpdate,
       {/* Label */}
       <div>
         <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Label</label>
-        <input
+        <input aria-label="Label"
           type="text"
           value={force.label}
           onChange={e => onUpdate({ label: e.target.value })}

@@ -63,7 +63,7 @@ const RubricTranslatorView: React.FC<RubricTranslatorViewProps> = ({ course, onB
                     {/* INPUT SIDE */}
                     <div className="space-y-4">
                         <label className="block text-xs font-bold text-slate-500 uppercase tracking-widest">Original Rubric Text</label>
-                        <textarea
+                        <textarea aria-label="Original Rubric Text"
                             className="w-full h-[400px] p-4 rounded-xl border-2 border-slate-200 focus:border-indigo-500 focus:outline-none resize-none font-medium text-slate-700 bg-slate-50"
                             placeholder="Paste rubric requirements here..."
                             value={inputText}

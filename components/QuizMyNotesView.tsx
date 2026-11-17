@@ -192,7 +192,7 @@ export const QuizMyNotesView: React.FC<QuizMyNotesViewProps> = ({
                     <div className="grid grid-cols-2 gap-4 mb-4">
                         <div>
                             <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Course Name</label>
-                            <input
+                            <input aria-label="Course Name"
                                 type="text"
                                 value={courseInput}
                                 onChange={(e) => setCourseInput(e.target.value)}
@@ -202,7 +202,7 @@ export const QuizMyNotesView: React.FC<QuizMyNotesViewProps> = ({
                         </div>
                         <div>
                             <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Topic</label>
-                            <input
+                            <input aria-label="Topic"
                                 type="text"
                                 value={topicInput}
                                 onChange={(e) => setTopicInput(e.target.value)}
@@ -215,7 +215,7 @@ export const QuizMyNotesView: React.FC<QuizMyNotesViewProps> = ({
                     <p className="text-[10px] text-slate-400 italic mb-4">* Tip: This feature works for any subject (History, Literature, etc.), not just Science!</p>
 
                     <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Study Materials (Text)</label>
-                    <textarea
+                    <textarea aria-label="Study Materials (Text)"
                         className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-indigo-500 transition-colors resize-none mb-4 font-medium leading-relaxed min-h-[150px]"
                         placeholder="Paste your notes here..."
                         value={textInput}

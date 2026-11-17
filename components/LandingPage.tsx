@@ -541,7 +541,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
           </div>
           
           <div className="space-y-2">
-            <input
+            <input aria-label="Topic to explore"
               type="text"
               value={customTopic}
               onChange={(e) => setCustomTopic(e.target.value)}

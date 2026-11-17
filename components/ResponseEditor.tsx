@@ -195,7 +195,7 @@ const ResponseEditor: React.FC<ResponseEditorProps> = ({
 
       {/* Text Area */}
       <div className="relative">
-        <textarea
+        <textarea aria-label={placeholder || 'Your response'}
           ref={textareaRef}
           value={value}
           onChange={(e) => onChange(e.target.value)}

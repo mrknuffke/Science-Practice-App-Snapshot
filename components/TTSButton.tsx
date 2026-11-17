@@ -322,7 +322,7 @@ export const TTSButton: React.FC<TTSButtonProps> = ({
                         <label className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                             Voice
                         </label>
-                        <select
+                        <select aria-label="Voice"
                             value={selectedVoiceUri || 'auto'}
                             onChange={(e) => handleVoiceChange(e.target.value)}
                             className="w-full text-[11px] bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg p-1.5 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-cyan-500"

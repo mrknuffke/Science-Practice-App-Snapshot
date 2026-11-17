@@ -98,20 +98,22 @@ describe('4-1a: the collision sandbox', () => {
 			const s = m.newSystem(o);
 			s.counting = true;
 			const n = s.parts.length;
+			// Collect problems and assert once: an expect() per particle per step (about 250,000 calls)
+			// made this test brush its 5 s limit when the whole suite ran in parallel.
+			const problems: string[] = [];
 			for (let i = 0; i < 600; i++) {
 				m.step(s, 1 / 60);
-				expect(s.parts.length).toBe(n);
+				if (s.parts.length !== n) problems.push(`step ${i}: ${s.parts.length} particles, expected ${n}`);
 				for (const p of s.parts) {
-					expect(p.x).toBeGreaterThanOrEqual(0);
-					expect(p.x).toBeLessThanOrEqual(m.W);
-					expect(p.y).toBeGreaterThanOrEqual(0);
-					expect(p.y).toBeLessThanOrEqual(m.H);
+					if (!(p.x >= 0 && p.x <= m.W && p.y >= 0 && p.y <= m.H)) problems.push(`step ${i}: particle at (${p.x}, ${p.y}) left the vessel`);
 				}
+				if (problems.length > 5) break;
 			}
+			expect(problems).toEqual([]);
 			expect(s.parts.filter((p: { t: string }) => p.t === 'A').length).toBe(o.nA);
 			expect(s.parts.filter((p: { t: string }) => p.t === 'B').length).toBe(m.NB);
 		}
-	}, 20_000); // 1,200 steps with a check on every particle: about 5 s under a loaded full suite
+	});
 
 	it('moves every free particle at the speed its temperature gives, and no faster at 15 than at 95', () => {
 		const s = m.newSystem({ T: 95, nA: 25 });
@@ -185,16 +187,17 @@ describe('4-1b: the enzyme simulator', () => {
 	it('keeps every substrate inside the vessel, and never more than the slider says', () => {
 		const s = m.newSystem({ ...base, S: 80 });
 		s.counting = true;
+		// One assertion at the end, as in the 4-1a vessel test above (per-particle expect() calls were slow).
+		const problems: string[] = [];
 		for (let i = 0; i < 600; i++) {
 			m.step(s, 1 / 60);
-			expect(s.subs.length).toBe(80);
+			if (s.subs.length !== 80) problems.push(`step ${i}: ${s.subs.length} substrates, expected 80`);
 			for (const p of s.subs) {
-				expect(p.x).toBeGreaterThanOrEqual(0);
-				expect(p.x).toBeLessThanOrEqual(m.W);
-				expect(p.y).toBeGreaterThanOrEqual(0);
-				expect(p.y).toBeLessThanOrEqual(m.H);
+				if (!(p.x >= 0 && p.x <= m.W && p.y >= 0 && p.y <= m.H)) problems.push(`step ${i}: substrate at (${p.x}, ${p.y}) left the vessel`);
 			}
+			if (problems.length > 5) break;
 		}
+		expect(problems).toEqual([]);
 	});
 });
 

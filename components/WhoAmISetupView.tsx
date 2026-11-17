@@ -123,7 +123,7 @@ const WhoAmISetupView: React.FC<WhoAmISetupViewProps> = ({
                                     Subject Area
                                 </label>
                                 <div className="relative">
-                                    <select
+                                    <select aria-label="Subject Area"
                                         value={course}
                                         onChange={(e) => setCourse(e.target.value as CourseType)}
                                         className="w-full appearance-none bg-slate-50 border-2 border-slate-200 text-slate-800 font-bold text-base rounded-2xl px-5 py-3 focus:outline-none focus:border-indigo-500 focus:bg-white transition-all shadow-sm"
@@ -140,7 +140,7 @@ const WhoAmISetupView: React.FC<WhoAmISetupViewProps> = ({
                                 <label className="block text-sm font-black text-slate-400 uppercase tracking-widest mb-3">
                                     Topic or Entity List
                                 </label>
-                                <textarea
+                                <textarea aria-label="Topic or Entity List"
                                     value={topic}
                                     onChange={(e) => setTopic(e.target.value)}
                                     placeholder="e.g. 'Cell Organelles' or 'Einstein, Newton, Curie, Darwin'"
@@ -216,7 +216,7 @@ const WhoAmISetupView: React.FC<WhoAmISetupViewProps> = ({
                                         {silliness > 66 && "Chaos"}
                                     </span>
                                 </label>
-                                <input
+                                <input aria-label="Fun factor"
                                     type="range"
                                     min="0"
                                     max="100"
@@ -240,14 +240,14 @@ const WhoAmISetupView: React.FC<WhoAmISetupViewProps> = ({
                                 <div className="mt-4 space-y-3">
                                     <div>
                                         <label className="text-xs font-bold text-emerald-500 mb-1 block">Upload PDF (max 2MB)</label>
-                                        <input type="file" accept=".pdf" onChange={handleSourceFileChange}
+                                        <input aria-label="Upload PDF (max 2MB)" type="file" accept=".pdf" onChange={handleSourceFileChange}
                                             className="w-full bg-white border border-emerald-100 p-2 rounded-lg text-xs file:mr-2 file:py-1 file:px-2 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-emerald-100 file:text-emerald-600" />
                                         {sourceFile && <p className="text-xs text-emerald-600 mt-1 font-bold">✓ {sourceFile.name}</p>}
                                         {sourceError && <p className="text-xs text-red-500 mt-1">{sourceError}</p>}
                                     </div>
                                     <div>
                                         <label className="text-xs font-bold text-emerald-500 mb-1 block">Or Paste Notes</label>
-                                        <textarea placeholder="Paste class notes, vocab..."
+                                        <textarea aria-label="Or Paste Notes" placeholder="Paste class notes, vocab..."
                                             value={sourceText} onChange={(e) => setSourceText(e.target.value)} rows={3}
                                             className="w-full bg-white border border-emerald-100 p-2 rounded-lg text-xs resize-none" />
                                     </div>

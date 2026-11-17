@@ -253,7 +253,7 @@ export const LearningLoopView: React.FC<LearningLoopViewProps> = ({
               </div>
 
               <div className="max-w-xl flex gap-3">
-                <input
+                <input aria-label="Topic to master"
                   type="text"
                   value={topic}
                   onChange={e => setTopic(e.target.value)}
@@ -308,7 +308,7 @@ export const LearningLoopView: React.FC<LearningLoopViewProps> = ({
                 {questions.map(q => (
                   <div key={q.id} className="space-y-2">
                     <label className="text-xs font-black text-slate-500 dark:text-slate-400 block">{q.question}</label>
-                    <textarea
+                    <textarea aria-label={q.question}
                       value={answers[q.id] || ''}
                       onChange={e => setAnswers(prev => ({ ...prev, [q.id]: e.target.value }))}
                       placeholder={q.placeholder}
@@ -438,7 +438,7 @@ export const LearningLoopView: React.FC<LearningLoopViewProps> = ({
                     <h4 className="text-xs font-black text-[#1A1C21] dark:text-[#F8F9FB] font-rounded">Your Research Workspace</h4>
                     <p className="text-[10px] text-slate-400">Jot down facts, descriptions, and mechanism notes from your exploration.</p>
                   </div>
-                  <textarea
+                  <textarea aria-label="Research notes"
                     value={researchNotes}
                     onChange={e => setResearchNotes(e.target.value)}
                     placeholder="Capture key concepts and notes here as you search..."
@@ -482,7 +482,7 @@ export const LearningLoopView: React.FC<LearningLoopViewProps> = ({
                       <h4 className="text-xs font-black text-[#1A1C21] dark:text-[#F8F9FB] font-rounded">Socratic Explanation</h4>
                       <p className="text-[10px] text-slate-400">Explain the concept simply in your own words, as if teaching a child. Avoid jargon.</p>
                     </div>
-                    <textarea
+                    <textarea aria-label="Your explanation"
                       value={teachBackText}
                       onChange={e => setTeachBackText(e.target.value)}
                       placeholder="Write your simplified explanation..."
@@ -520,7 +520,7 @@ export const LearningLoopView: React.FC<LearningLoopViewProps> = ({
                   <div className="bento-card border border-rose-100 dark:border-rose-950/20 p-5 space-y-3 bg-rose-500/[0.01] flex-1">
                     <h4 className="text-xs font-black text-rose-500 font-rounded">Where are you still shaky?</h4>
                     <p className="text-[10px] text-slate-400 leading-normal">Jot down any parts where you had to guess or felt unsure of the science.</p>
-                    <textarea
+                    <textarea aria-label="Parts you are unsure about"
                       value={shakyAreas}
                       onChange={e => setShakyAreas(e.target.value)}
                       placeholder="e.g., I'm still not 100% sure about the gradient dynamics..."

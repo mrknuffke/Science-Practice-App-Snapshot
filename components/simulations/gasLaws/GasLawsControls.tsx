@@ -78,7 +78,7 @@ export const GasLawsControls: React.FC<GasLawsControlsProps> = ({
           <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">Volume</h3>
           <span className="text-xs font-bold text-sky-600">{volumePercent}%</span>
         </div>
-        <input
+        <input aria-label="Volume"
           type="range"
           min={pistonMin}
           max={pistonMax}

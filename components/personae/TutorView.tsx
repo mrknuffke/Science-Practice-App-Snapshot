@@ -390,7 +390,7 @@ export const TutorView: React.FC<TutorViewProps> = ({ onBack, course }) => {
                 className="flex items-center gap-2"
               >
                 <div className="relative flex-1">
-                  <input
+                  <input aria-label="Your next step or question"
                     type="text"
                     value={input}
                     onChange={e => setInput(e.target.value)}
@@ -462,7 +462,7 @@ export const TutorView: React.FC<TutorViewProps> = ({ onBack, course }) => {
               </div>
 
               {/* Textarea for Scratchpad */}
-              <textarea
+              <textarea aria-label="Scratchpad"
                 value={scratchpad}
                 onChange={e => setScratchpad(e.target.value)}
                 placeholder="Track given values, dimensional analysis multipliers, molar masses, or intermediate steps here..."

@@ -190,7 +190,7 @@ export const SubjectLibraryView: React.FC<SubjectLibraryViewProps> = ({
 
         {/* Dynamic Search box */}
         <div className="max-w-md relative">
-          <input
+          <input aria-label="Search courses"
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}

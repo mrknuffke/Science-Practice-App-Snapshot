@@ -398,7 +398,7 @@ export const WelcomeHeroTile: React.FC<WelcomeHeroTileProps> = ({
                 Hey there! What should we call you? 👋
               </h1>
               <div className="flex items-center gap-2 max-w-sm w-full">
-                <input
+                <input aria-label="Your name"
                   type="text"
                   value={tempUsername}
                   onChange={(e) => setTempUsername(e.target.value)}
@@ -558,7 +558,7 @@ export const WelcomeHeroTile: React.FC<WelcomeHeroTileProps> = ({
 
             {/* Advisor Input Bottom */}
             <div className="w-full flex gap-2 pt-2 border-t border-slate-100 dark:border-slate-800/50">
-              <input
+              <input aria-label="Message your study buddy"
                 type="text"
                 placeholder="Ask your companion more questions..."
                 value={advisorPrompt}
@@ -582,7 +582,7 @@ export const WelcomeHeroTile: React.FC<WelcomeHeroTileProps> = ({
             
             {/* Conversational advisor prompt launcher */}
             <div className="w-full max-w-md relative my-1">
-              <input
+              <input aria-label="Message your study buddy"
                 type="text"
                 placeholder="Ask AI: What should I study today?"
                 value={advisorPrompt}

@@ -163,7 +163,7 @@ export const APReviewCatalogView: React.FC<APReviewCatalogViewProps> = ({
           </div>
           <div className="w-full md:w-80 relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
-            <input
+            <input aria-label="Search courses"
               type="text"
               value={filter}
               onChange={e => setFilter(e.target.value)}

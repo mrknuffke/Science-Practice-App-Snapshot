@@ -699,7 +699,7 @@ export const APReviewTutorView: React.FC<APReviewTutorViewProps> = ({
                                   <div className="flex-1"><MarkdownRenderer content={p.question} /></div>
                                   <span className="text-[10px] font-bold text-slate-400 tracking-wider shrink-0">({p.points}pt)</span>
                                 </div>
-                                <textarea
+                                <textarea aria-label={`Your answer for part ${p.letter}`}
                                   value={frqAnswers[p.letter] || ''}
                                   onChange={e => setFrqAnswers(prev => ({ ...prev, [p.letter]: e.target.value }))}
                                   placeholder="Type your structured explanation..."
@@ -800,7 +800,7 @@ export const APReviewTutorView: React.FC<APReviewTutorViewProps> = ({
           onSubmit={handleSendMessage}
           className="p-4 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-[#15171C] flex gap-3 items-center shrink-0 z-10"
         >
-          <input
+          <input aria-label="Message your study buddy"
             type="text"
             value={input}
             onChange={e => setInput(e.target.value)}

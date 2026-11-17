@@ -280,7 +280,7 @@ const BingoGameView: React.FC<BingoGameViewProps> = ({ onBack, course, topic }) 
                             <div className="flex flex-col gap-3">
                                 <div>
                                     <label className="text-[10px] font-bold text-slate-400 uppercase">Term</label>
-                                    <input
+                                    <input aria-label="Term"
                                         className="w-full p-2 border rounded-lg text-sm font-bold bg-white"
                                         value={editTermData.term}
                                         onChange={e => setEditTermData(prev => ({ ...prev, term: e.target.value }))}
@@ -300,7 +300,7 @@ const BingoGameView: React.FC<BingoGameViewProps> = ({ onBack, course, topic }) 
                                     {(editTermData.clues || []).map((clue, idx) => (
                                         <div key={idx} className="flex gap-2 items-start">
                                             <span className="text-xs font-bold text-slate-400 mt-2">{idx + 1}.</span>
-                                            <textarea
+                                            <textarea aria-label="Clue"
                                                 className="w-full p-2 border rounded-lg text-sm bg-white resize-y min-h-[40px]"
                                                 value={clue}
                                                 onChange={e => {
@@ -440,7 +440,7 @@ const BingoGameView: React.FC<BingoGameViewProps> = ({ onBack, course, topic }) 
                                         <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-1">
                                             <BookOpen className="w-3 h-3" /> Topic Source
                                         </label>
-                                        <select
+                                        <select aria-label="Topic Source"
                                             value={selectedPresetId}
                                             onChange={(e) => handlePresetChange(e.target.value)}
                                             className="w-full bg-slate-50 border-2 border-slate-200 p-3 rounded-xl outline-none focus:border-sky-600 transition-all font-bold text-slate-800 text-sm"
@@ -459,7 +459,7 @@ const BingoGameView: React.FC<BingoGameViewProps> = ({ onBack, course, topic }) 
                                     {/* Grade Level ALWAYS shown for AI sizing now since all presets hit AI */}
                                     <div>
                                         <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Target Grade Level</label>
-                                        <select
+                                        <select aria-label="Target Grade Level"
                                             value={gradeLevel}
                                             onChange={(e) => setGradeLevel(e.target.value)}
                                             className="w-full bg-slate-50 border-2 border-slate-200 p-3 rounded-xl outline-none focus:border-sky-600 transition-all font-bold text-slate-800 text-sm"
@@ -480,7 +480,7 @@ const BingoGameView: React.FC<BingoGameViewProps> = ({ onBack, course, topic }) 
                                                     <div key={opt.id}>
                                                         <label className="block text-xs font-bold text-slate-600 mb-2">{opt.label}</label>
                                                         {opt.type === 'select' ? (
-                                                            <select
+                                                            <select aria-label={opt.label}
                                                                 className="w-full bg-white border border-slate-200 p-2 rounded-lg text-sm text-slate-700 font-medium"
                                                                 value={selectedValues[0] || opt.defaultValues[0]}
                                                                 onChange={(e) => handleConfigChange(opt.id, e.target.value, false)}
@@ -525,7 +525,7 @@ const BingoGameView: React.FC<BingoGameViewProps> = ({ onBack, course, topic }) 
                                                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 flex items-center gap-1">
                                                     <Wand2 className="w-3 h-3" /> Custom Topic
                                                 </label>
-                                                <input
+                                                <input aria-label="Custom Topic"
                                                     type="text"
                                                     value={customTopic}
                                                     onChange={(e) => setCustomTopic(e.target.value)}
@@ -541,7 +541,7 @@ const BingoGameView: React.FC<BingoGameViewProps> = ({ onBack, course, topic }) 
 
                                     <div>
                                         <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Number of Boards</label>
-                                        <input
+                                        <input aria-label="Number of Boards"
                                             type="number"
                                             min="1"
                                             max="50"
@@ -554,7 +554,7 @@ const BingoGameView: React.FC<BingoGameViewProps> = ({ onBack, course, topic }) 
 
                                     <div>
                                         <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Print Layout</label>
-                                        <select
+                                        <select aria-label="Print Layout"
                                             value={printLayout}
                                             onChange={(e) => setPrintLayout(e.target.value as '1-per-page' | '2-per-page')}
                                             className="w-full bg-slate-50 border-2 border-slate-200 p-3 rounded-xl outline-none focus:border-sky-600 transition-all font-bold text-slate-800 text-sm"

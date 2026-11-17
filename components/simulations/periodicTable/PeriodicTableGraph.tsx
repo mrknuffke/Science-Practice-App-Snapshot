@@ -255,21 +255,21 @@ export const PeriodicTableGraph: React.FC<PeriodicTableGraphProps> = ({ selected
       <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
         <div className="flex-1 min-w-[160px]">
           <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">X-Axis</label>
-          <select value={xAxisProp} onChange={e => setXAxisProp(e.target.value as AxisProperty)}
+          <select aria-label="X-Axis" value={xAxisProp} onChange={e => setXAxisProp(e.target.value as AxisProperty)}
             className="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-violet-500">
             {Object.entries(PROPERTY_LABELS).map(([k, l]) => <option key={k} value={k}>{l}</option>)}
           </select>
         </div>
         <div className="flex-1 min-w-[160px]">
           <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Y-Axis</label>
-          <select value={yAxisProp} onChange={e => setYAxisProp(e.target.value as AxisProperty)}
+          <select aria-label="Y-Axis" value={yAxisProp} onChange={e => setYAxisProp(e.target.value as AxisProperty)}
             className="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-violet-500">
             {Object.entries(PROPERTY_LABELS).map(([k, l]) => <option key={k} value={k}>{l}</option>)}
           </select>
         </div>
         <div className="w-32">
           <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">State</label>
-          <select value={filterState} onChange={e => setFilterState(e.target.value as typeof filterState)}
+          <select aria-label="State" value={filterState} onChange={e => setFilterState(e.target.value as typeof filterState)}
             className="w-full p-2 bg-slate-50 border border-slate-200 rounded-lg text-sm font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-violet-500">
             <option value="all">All</option>
             <option value="solid">Solid</option>

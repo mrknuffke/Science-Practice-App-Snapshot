@@ -500,7 +500,7 @@ const PeriodicTableView: React.FC<PeriodicTableViewProps> = ({ course: _course, 
           <div className="flex items-center gap-3 w-full md:w-auto min-w-0">
             <div className="flex-1 min-w-0 md:w-80 md:flex-initial relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-              <input
+              <input aria-label="Search elements"
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -798,7 +798,7 @@ const PeriodicTableView: React.FC<PeriodicTableViewProps> = ({ course: _course, 
                     <span>{kelvinToFahrenheit(temperature).toFixed(0)} °F</span>
                   </div>
                 </div>
-                <input
+                <input aria-label="Temperature"
                   type="range"
                   min="0"
                   max="6000"
@@ -956,7 +956,7 @@ const PeriodicTableView: React.FC<PeriodicTableViewProps> = ({ course: _course, 
               </div>
               <div className="flex gap-2">
                 {!comparisonElement && (
-                  <select
+                  <select aria-label="Compare with element"
                     className="px-3 py-2 bg-green-50 border border-green-200 text-green-700 rounded-xl font-semibold outline-none focus:border-green-500 cursor-pointer shadow-sm hover:bg-green-100 transition-all appearance-none"
                     onChange={(e) => {
                       if (e.target.value) {

@@ -88,7 +88,7 @@ export const ClozeCardContent: React.FC<ClozeCardContentProps> = ({
                   {userInput} ✓
                 </span>
               ) : (
-                <input
+                <input aria-label="Missing word"
                   ref={inputRef}
                   type="text"
                   value={userInput}

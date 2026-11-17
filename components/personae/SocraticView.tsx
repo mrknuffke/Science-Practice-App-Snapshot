@@ -406,7 +406,7 @@ export const SocraticView: React.FC<SocraticViewProps> = ({ onBack, course }) =>
             className="flex items-center gap-2"
           >
             <div className="relative flex-1">
-              <input
+              <input aria-label="Your hypothesis or explanation"
                 type="text"
                 value={input}
                 onChange={e => setInput(e.target.value)}

@@ -51,7 +51,7 @@ export const FinalJeopardyOverlay: React.FC<FinalJeopardyOverlayProps> = ({
                                         </div>
                                         <div className="relative">
                                             <span className="absolute left-6 top-1/2 -translate-y-1/2 text-3xl font-black text-indigo-500">$</span>
-                                            <input type="number" step="100" value={wagers[t.id] || 0} onChange={(e) => setWagers({ ...wagers, [t.id]: parseInt(e.target.value) || 0 })}
+                                            <input aria-label={`Wager for ${t.name}`} type="number" step="100" value={wagers[t.id] || 0} onChange={(e) => setWagers({ ...wagers, [t.id]: parseInt(e.target.value) || 0 })}
                                                 className="w-full bg-slate-800 border-2 border-slate-700 p-6 pl-12 rounded-[2rem] outline-none text-4xl font-black text-white focus:border-indigo-500 transition-all" />
                                         </div>
                                         <div className="text-[9px] font-bold text-slate-400 uppercase">Max Allowed: ${max}</div>

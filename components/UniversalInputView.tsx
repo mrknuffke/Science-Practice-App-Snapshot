@@ -347,7 +347,7 @@ export const UniversalInputView: React.FC<UniversalInputViewProps> = ({
                         <label className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-2 block">
                             2. Choose a Course
                         </label>
-                        <input
+                        <input aria-label="Choose a Course"
                             ref={courseInputRef}
                             type="text"
                             value={courseQuery}
@@ -457,7 +457,7 @@ export const UniversalInputView: React.FC<UniversalInputViewProps> = ({
                         {!multiTopicMode ? (
                             /* Single Topic Input */
                             <div className="relative" ref={topicBoxRef}>
-                                <input
+                                <input aria-label="Topic"
                                     ref={topicInputRef}
                                     type="text"
                                     value={topicQuery}
@@ -492,7 +492,7 @@ export const UniversalInputView: React.FC<UniversalInputViewProps> = ({
                         ) : (
                             /* Multi-Topic Input */
                             <div className="space-y-4">
-                                <textarea
+                                <textarea aria-label="Topics, separated by commas"
                                     value={multiTopicText}
                                     onChange={(e) => handleMultiTopicInput(e.target.value)}
                                     placeholder="Enter topics separated by commas (e.g., Photosynthesis, Cellular Respiration, Calvin Cycle)"

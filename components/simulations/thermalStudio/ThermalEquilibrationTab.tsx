@@ -273,7 +273,7 @@ export const ThermalEquilibrationTab: React.FC = () => {
               <span className="text-amber-600 dark:text-amber-400 font-mono text-xs">Units: {curChallenge.unit}</span>
             </div>
             <div className="flex gap-2">
-              <input
+              <input aria-label="Your calculated value"
                 type="number"
                 step="any"
                 placeholder={`Calculated value in ${curChallenge.unit}`}
@@ -333,7 +333,7 @@ export const ThermalEquilibrationTab: React.FC = () => {
               <span>Metal Mass</span>
               <span className="text-amber-600 dark:text-amber-400 font-mono">{metalMass} g</span>
             </div>
-            <input
+            <input aria-label="Metal mass"
               type="range"
               min="10"
               max="150"
@@ -348,7 +348,7 @@ export const ThermalEquilibrationTab: React.FC = () => {
               <span>Metal Initial Temp (T_i)</span>
               <span className="text-amber-600 dark:text-amber-400 font-mono">{metalTemp} °C</span>
             </div>
-            <input
+            <input aria-label="Metal initial temperature"
               type="range"
               min="40"
               max="180"
@@ -393,7 +393,7 @@ export const ThermalEquilibrationTab: React.FC = () => {
               <span>Liquid Mass</span>
               <span className="text-sky-600 dark:text-sky-400 font-mono">{liquidMass} g</span>
             </div>
-            <input
+            <input aria-label="Liquid mass"
               type="range"
               min="50"
               max="250"
@@ -408,7 +408,7 @@ export const ThermalEquilibrationTab: React.FC = () => {
               <span>Liquid Initial Temp (T_i)</span>
               <span className="text-sky-600 dark:text-sky-400 font-mono">{liquidTemp} °C</span>
             </div>
-            <input
+            <input aria-label="Liquid initial temperature"
               type="range"
               min="10"
               max="35"

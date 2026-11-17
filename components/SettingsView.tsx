@@ -135,7 +135,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             <form onSubmit={handleSaveName} className="flex gap-3 max-w-md w-full items-end mt-4">
               <div className="flex-1 space-y-2">
                 <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wide block">Your Display Name</label>
-                <input
+                <input aria-label="Your Display Name"
                   type="text"
                   value={tempName}
                   onChange={(e) => setTempName(e.target.value)}

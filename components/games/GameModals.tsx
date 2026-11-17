@@ -31,7 +31,7 @@ export const ReviseModal: React.FC<ReviseModalProps> = ({ itemNoun, currentLabel
         </h3>
         <p className={`text-slate-600 text-sm ${explainer ? 'mb-2' : 'mb-3'}`}>Currently: <strong>{currentLabel}</strong></p>
         {explainer && <p className="text-slate-500 mb-3 text-xs">{explainer}</p>}
-        <textarea
+        <textarea aria-label="What to change"
           value={notes}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}

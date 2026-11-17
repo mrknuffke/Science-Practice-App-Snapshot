@@ -19,7 +19,7 @@ export const ScoreAdjustmentModal: React.FC<ScoreAdjustmentModalProps> = ({
         <div className="fixed inset-0 z-[150] bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-6 animate-in fade-in">
             <div {...dialog} className="bg-white rounded-[2rem] p-8 w-full max-w-sm shadow-2xl space-y-6">
                 <h3 id="score-adjust-title" className="text-xl font-black text-slate-800">Adjust Score: {teamName}</h3>
-                <input
+                <input aria-label={`New score for ${teamName}`}
                     type="number"
                     value={score}
                     onChange={e => setScore(parseInt(e.target.value) || 0)}

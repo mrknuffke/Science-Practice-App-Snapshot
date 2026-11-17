@@ -211,7 +211,7 @@ export const ResearchModeView: React.FC<ResearchModeViewProps> = ({
 
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-indigo-300">Research Question / Title</label>
-                            <textarea
+                            <textarea aria-label="Research Question / Title"
                                 value={state.question}
                                 onChange={(e) => handleUpdateField('question', e.target.value)}
                                 placeholder="e.g. What is the effect of soil pH on bean plant growth?"
@@ -221,7 +221,7 @@ export const ResearchModeView: React.FC<ResearchModeViewProps> = ({
 
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-indigo-300">Hypothesis</label>
-                            <textarea
+                            <textarea aria-label="Hypothesis"
                                 value={state.hypothesis}
                                 onChange={(e) => handleUpdateField('hypothesis', e.target.value)}
                                 placeholder="If... then... because..."
@@ -231,7 +231,7 @@ export const ResearchModeView: React.FC<ResearchModeViewProps> = ({
 
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-indigo-300">Methodology & Materials</label>
-                            <textarea
+                            <textarea aria-label="Methodology & Materials"
                                 value={state.methodology}
                                 onChange={(e) => handleUpdateField('methodology', e.target.value)}
                                 placeholder="Briefly describe your procedure and variables..."
@@ -241,7 +241,7 @@ export const ResearchModeView: React.FC<ResearchModeViewProps> = ({
 
                         <div className="space-y-2">
                             <label className="text-sm font-bold text-indigo-300">Data & Observations</label>
-                            <textarea
+                            <textarea aria-label="Data & Observations"
                                 value={state.dataStatus}
                                 onChange={(e) => handleUpdateField('dataStatus', e.target.value)}
                                 placeholder="Summary of data collected so far..."
@@ -331,7 +331,7 @@ export const ResearchModeView: React.FC<ResearchModeViewProps> = ({
                     {/* Input Area */}
                     <div className="p-4 bg-slate-900 border-t border-slate-800">
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Message your mentor"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSendMessage(); } }}

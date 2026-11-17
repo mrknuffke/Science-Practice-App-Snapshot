@@ -30,8 +30,20 @@ are still in old commits (College Board CEDs, PLC references), and his personal 
   `docs/textbook/LICENSE`). Scope: app, all simulations and all three textbooks. Michelle Lee's two
   adapted sims go out under the same license. Student credits in `ChangelogView.tsx` (first name and
   last initial) are fine to publish; full student names would not be.
-- **Still open:** SAS policy on PLC-derived textbook material, the empty public repo on GitHub, and
-  turning on secret scanning there. A trial snapshot passed `tsc -b`, all tests and `vite build`.
+- **Done the same day:** SAS approved publishing; the public repo is
+  https://github.com/mrknuffke/Science-Practice-App-Snapshot (renamed from a trailing-dash name; the
+  session's git proxy only knew the old name, which still redirects). The Teachers page and each book's
+  `about.html` link it (`constants/projectLinks.ts`). Still open: secret scanning on the public repo and
+  renaming this repo to `Science-Practice-App`.
+
+## 2026-11-17 - Form-field names and a faster collision test
+
+- **Form fields:** 203 unnamed inputs, text areas and selects got an `aria-label`, mostly copied from the visible
+  label. `aria-label` rather than `id`/`htmlFor` because several components render the same field twice.
+  Guard: `a11yFormFields.test.ts`. Rule added to CLAUDE.md. Rebuilt from PR #17 (2026-11-04), which went stale
+  when the session notes were rewritten; only the notes conflicted.
+- **Test speed:** two `chemUnit4Models` vessel tests ran 2 to 4 s because of an `expect()` per particle per step;
+  they now collect problems and assert once (same checks, about 30x faster).
 
 ## 2026-11-08 - SAS General Biology Unit 2 (2a Carbon, 2b Ecology) and Island Biogeography (19 simulations)
 
