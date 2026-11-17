@@ -1,0 +1,60 @@
+{
+  "courseName": "IB Chemistry Higher Level",
+  "courseSlug": "ib-chemistry-hl",
+  "practicesLabel": "Inquiry, Chemistry Command Terms and HL Extensions",
+  "practices": "Assessments evaluate Structure and Reactivity core plus all HL Extensions. High emphasis on analytical quantitative calculations, stereochemistry, and organic reaction mechanisms. Strict adherence to command terms. Calculations require rigorous numerical proofs.",
+  "units": [
+    {
+      "unitNumber": "S1",
+      "unitTitle": "Particulate nature of matter (SL + HL)",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Particulate nature of matter and physical changes",
+        "The nuclear atom, isotopes, nuclear symbols",
+        "Electron configurations, subshells (s, p, d) and transition metals (HL Extension)",
+        "Counting particles by mass: The mole, molar mass",
+        "Ideal gases, PV=nRT calculations"
+      ]
+    },
+    {
+      "unitNumber": "S2",
+      "unitTitle": "Models of bonding and structure (SL + HL)",
+      "examWeight": "20%",
+      "keyTopics": [
+        "The ionic model, crystal lattices, formula units",
+        "The covalent model, Lewis structures, coordinate bonds, hybridisation, sigma and pi bonds (HL Extension)",
+        "Macromolecules (silicon dioxide, diamond) and metallic bonding",
+        "From models to real substances, electronegativity differences"
+      ]
+    },
+    {
+      "unitNumber": "R1",
+      "unitTitle": "What drives chemical reactions? (SL + HL)",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Measuring energy changes in chemical reactions, calorimetry",
+        "Enthalpy changes, combustion, neutralization, Hess's Law",
+        "Entropy (S) and thermodynamic spontaneity (Gibbs, G) (HL Extension)",
+        "Born-Haber energy cycles and lattice enthalpies (HL Extension)"
+      ]
+    },
+    {
+      "unitNumber": "R2",
+      "unitTitle": "How much, how fast and how far? (SL + HL)",
+      "examWeight": "35%",
+      "keyTopics": [
+        "Vapour pressure and dynamic equilibria",
+        "Rate laws, concentration-time graphs, and reaction mechanisms (HL Extension)",
+        "Equilibrium law, Kc and Kp calculations",
+        "Proton transfer reactions, strong acids, weak acids and buffer calculations (HL Extension)",
+        "Electron transfer reactions, redox cells, electrolysis, Nernst equations (HL Extension)",
+        "Organic Chemistry: Functional groups, nomenclature, Sn1/Sn2/elimination mechanisms (HL Extension)"
+      ]
+    }
+  ],
+  "examFormat": {
+    "multipleChoice": "Paper 1: 40 MCQs + database analysis (45%), 2 hours",
+    "freeResponse": "Paper 2: Short-answer and extended-response (55%), 2.5 hours"
+  },
+  "antiPatterns": "Ensure students show advanced orbital and thermodynamic reasoning. Out of scope are: memorization of specific enzyme name lists beyond core models; complete listing of industrial manufacture designs (keep to general equilibrium application); and complex organic pathways not specified in the 2025 syllabus."
+}

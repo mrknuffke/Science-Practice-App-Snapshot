@@ -1,0 +1,68 @@
+{
+  "courseName": "IB Physics Higher Level",
+  "courseSlug": "ib-physics-hl",
+  "practicesLabel": "Inquiry, Physics Command Terms and HL Extensions",
+  "practices": "Assessments evaluate core themes across 5 Themes (A to E) plus all HL Extensions. High emphasis on analytical quantitative problems, experimental error evaluation, and higher cognitive command terms. Follow standard IB equations in data booklet format. Calculus is concepts-integrated but calculations are algebra/trig based.",
+  "units": [
+    {
+      "unitNumber": "A",
+      "unitTitle": "Space, time and motion (SL + HL)",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Kinematics: distance, displacement, speed, velocity, acceleration",
+        "Forces and momentum: Newton's Laws, collisions, impulse",
+        "Work, energy and power: conservation of energy, mechanical power",
+        "Rigid body mechanics: torque, rotational inertia, angular momentum (HL Extension)",
+        "Galilean and special relativity (HL Extension)"
+      ]
+    },
+    {
+      "unitNumber": "B",
+      "unitTitle": "The particulate nature of matter (SL + HL)",
+      "examWeight": "15%",
+      "keyTopics": [
+        "Thermal energy transfers, specific heat capacity",
+        "Greenhouse effect, albedo",
+        "Gas laws, ideal gases",
+        "Thermodynamics: engine cycles, entropy, first and second laws (HL Extension)"
+      ]
+    },
+    {
+      "unitNumber": "C",
+      "unitTitle": "Wave behaviour (SL + HL)",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Simple harmonic motion, oscillations",
+        "Wave model, Doppler effect (HL Extension)",
+        "Wave phenomena: reflection, refraction, polarization",
+        "Standing waves and resonance",
+        "Diffraction and resolution limits, Rayleigh criterion (HL Extension)"
+      ]
+    },
+    {
+      "unitNumber": "D",
+      "unitTitle": "Fields (SL + HL)",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Gravitational fields, gravitational field strength",
+        "Electric fields, Coulomb's law, electric potential & equipotentials (HL Extension)",
+        "Magnetic fields, force on moving charges"
+      ]
+    },
+    {
+      "unitNumber": "E",
+      "unitTitle": "Electromagnetic induction (SL + HL)",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Electromagnetic induction, induced EMF, Faraday's & Lenz's laws",
+        "Power generation, transformers, AC circuits & capacitors (HL Extension)",
+        "Quantum and nuclear physics: photoelectric effect, wave duality, radioactive decay (HL Extension)"
+      ]
+    }
+  ],
+  "examFormat": {
+    "multipleChoice": "Paper 1: 40 MCQs + database analysis (45%), 2 hours",
+    "freeResponse": "Paper 2: Short-answer and extended-response (55%), 2.5 hours"
+  },
+  "antiPatterns": "Ensure students show advanced mechanical and electromagnetic cycle calculations. Out of scope are: memorization of historical discovery names beyond standard booklet names; detailed mathematical derivations using advanced vector calculus; and quantum field theory calculations."
+}

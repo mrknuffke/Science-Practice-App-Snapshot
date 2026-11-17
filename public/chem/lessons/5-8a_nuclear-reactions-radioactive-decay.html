@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-8a" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Nuclear Reactions &amp; Radioactive Decay · Gen Chem 5-8a</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 5-8a &middot; Nuclear Reactions &amp; Radioactive Decay</div>
+    <h1>Chemical reactions rearrange atoms. Nuclear reactions turn one element into <span class="flip">another</span>.</h1>
+    <p class="lede">In every chemical reaction so far, atoms kept their identity. A carbon atom went in as carbon and came out as carbon. Inside an unstable nucleus, that rule breaks. The nucleus changes, and the atom becomes a different element. This page shows how decay, fission and fusion change the nucleus, and how much energy they release.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-8</b> Develop models to illustrate the changes in the composition of the nucleus of the atom and the energy released during the processes of fission, fusion, and radioactive decay.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can balance a nuclear equation by counting protons and neutrons. You can model alpha, beta and gamma decay. You can say what a half-life means and compare the energy of nuclear and chemical changes.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Nuclear notation. Alpha, beta and gamma decay. Half-life as half remaining. Fission and fusion as changes to the nucleus. The scale of the energy. The half-life equation, the energy of one fission and chain reactions are Enrichment.</div></div>
+    </div>
+
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Two totals stay the same.</strong> In every nuclear change, the total of protons plus neutrons (<em>A</em>) and the total of protons (<em>Z</em>) match on both sides.</li>
+              <li><strong>Alpha decay.</strong> The nucleus ejects a helium-4 nucleus. <em>A</em> falls by 4 and <em>Z</em> falls by 2 (<strong class="term">alpha decay</strong>).</li>
+              <li><strong>Beta decay.</strong> A neutron changes into a proton and an electron leaves. <em>Z</em> rises by 1 and <em>A</em> stays the same (<strong class="term">beta decay</strong>).</li>
+              <li><strong>Gamma radiation.</strong> An excited nucleus sheds energy as a photon. <em>A</em> and <em>Z</em> do not change (<strong class="term">gamma radiation</strong>).</li>
+              <li><strong>Half-life.</strong> After each <strong class="term">half-life</strong>, half of the sample remains.</li>
+              <li><strong>Fission and fusion.</strong> Fission splits a heavy nucleus. Fusion joins light nuclei. Each releases about a million times more energy per atom than a chemical change.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Three kinds of decay</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 300 170" font-family="var(--display)" role="img" aria-label="Three decay types and what stops each. Alpha, with A down 4 and Z down 2, is stopped by paper. Beta, with Z up 1, is stopped by aluminum. Gamma, with no change in A or Z, is stopped only by thick lead">
+              <text x="154" y="16" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Paper</text>
+              <text x="207" y="16" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Aluminum</text>
+              <text x="264" y="16" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Lead</text>
+              <rect x="150" y="22" width="6" height="140" fill="var(--ink-mute)"/>
+              <rect x="204" y="22" width="8" height="140" fill="var(--ink-soft)"/>
+              <rect x="258" y="22" width="14" height="140" fill="var(--ink)"/>
+              <text x="6" y="44" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)">Alpha α</text>
+              <text x="6" y="60" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">A −4, Z −2</text>
+              <line x1="82" y1="52" x2="146" y2="52" stroke="var(--accent)" stroke-width="2.5"/>
+              <text x="6" y="94" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--cool)">Beta β⁻</text>
+              <text x="6" y="110" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">Z +1</text>
+              <line x1="82" y1="102" x2="200" y2="102" stroke="var(--cool)" stroke-width="2.5"/>
+              <text x="6" y="144" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--good)">Gamma γ</text>
+              <text x="6" y="160" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">no change</text>
+              <line x1="82" y1="152" x2="254" y2="152" stroke="var(--good)" stroke-width="2.5"/>
+            </svg>
+</div>
+<figcaption>alpha stops in paper · beta stops in aluminum · gamma needs thick lead</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> <span>State the two totals that stay the same in a nuclear equation.</span></li>
+              <li><input type="checkbox" disabled> <span>Find the product of an alpha decay and of a beta decay.</span></li>
+              <li><input type="checkbox" disabled> <span>Say how much of a sample remains after 1, 2 and 3 half-lives.</span></li>
+              <li><input type="checkbox" disabled> <span>Compare the energy of a nuclear change with the energy of a chemical change.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 BALANCING NUCLEAR EQUATIONS -->
+<section id="s-balancing" data-toc="Nuclear equations">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Count the particles</span></div>
+    <h2>In a nuclear change, the element can change but two totals cannot.</h2>
+    <p>In a chemical reaction, atoms rearrange their electrons and the nuclei stay untouched. In a nuclear reaction, the nucleus itself changes. We write a nucleus with <strong class="term">nuclear notation</strong>:</p>
+
+    <div class="eq-display"><sup><em>A</em></sup><sub><em>Z</em></sub>X</div>
+
+    <ul>
+      <li><strong>Mass number (<em>A</em>):</strong> the number of protons plus neutrons.</li>
+      <li><strong>Atomic number (<em>Z</em>):</strong> the number of protons.</li>
+    </ul>
+
+    <div class="callout"><div class="label">The one idea to hold onto</div><p>A nuclear equation is balanced when two totals match on both sides. The total of <em>A</em> must match. The total of <em>Z</em> must match.</p></div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a nuclear equation keeps the same element on both sides, like a chemical one. In a nuclear change the element can change. Only the totals of <em>A</em> and <em>Z</em> stay the same.</p></div>
+
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Uranium-238 (<sup>238</sup><sub>92</sub>U) ejects an alpha particle (<sup>4</sup><sub>2</sub>He). What is the other product?</p>",
+  "options": [
+    {
+      "label": "<sup>236</sup><sub>90</sub>Th",
+      "correct": false,
+      "feedback": "An alpha particle has a mass number of 4, not 2. The mass number must fall by 4, from 238 to 234, so that the totals match."
+    },
+    {
+      "label": "<sup>234</sup><sub>90</sub>Th",
+      "correct": true,
+      "feedback": "The alpha particle takes away 4 nucleons and 2 protons. 238 &minus; 4 = 234 and 92 &minus; 2 = 90, so the product is thorium-234."
+    },
+    {
+      "label": "<sup>234</sup><sub>92</sub>U",
+      "correct": false,
+      "feedback": "The mass number is right, but the atomic number also falls. The alpha particle carries away 2 protons, so Z drops from 92 to 90 and the element changes."
+    }
+  ],
+  "reveal": "<p>Check both totals: 238 = 234 + 4, and 92 = 90 + 2.</p>"
+}
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- 02 MODES OF RADIOACTIVE DECAY -->
+<section id="s-modes" data-toc="Alpha, beta and gamma">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Three kinds of decay</span></div>
+    <h2>Unstable nuclei decay by alpha, beta or gamma emission.</h2>
+    <p>A nucleus with too many neutrons, or too much mass, is unstable. It decays by ejecting a particle or a photon.</p>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>1. Alpha decay: a helium-4 nucleus leaves</h4>
+        <p>Heavy nuclei shed mass by ejecting an <strong class="term">alpha particle</strong>, which is a helium-4 nucleus.</p>
+        <div class="eq-display"><sup>238</sup><sub>92</sub>U &rarr; <sup>234</sup><sub>90</sub>Th + <sup>4</sup><sub>2</sub>He</div>
+        <p>The mass number falls by 4. The atomic number falls by 2, so uranium becomes thorium.</p>
+      </div>
+
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>2. Beta decay: a neutron becomes a proton</h4>
+        <p>In a nucleus with too many neutrons, one neutron changes into a proton. The nucleus ejects an electron and an antineutrino.</p>
+        <div class="eq-display"><sup>14</sup><sub>6</sub>C &rarr; <sup>14</sup><sub>7</sub>N + <sup>0</sup><sub>&minus;1</sub>e + &nu;&#772;<sub>e</sub></div>
+        <p>The mass number stays at 14. The atomic number rises by 1, so carbon becomes nitrogen.</p>
+      </div>
+
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>3. Gamma radiation: a photon leaves</h4>
+        <p>After alpha or beta decay, the new nucleus is often excited. It sheds the extra energy as a high-energy photon.</p>
+        <div class="eq-display"><sup>99m</sup><sub>43</sub>Tc &rarr; <sup>99</sup><sub>43</sub>Tc + <sup>0</sup><sub>0</sub>&gamma;</div>
+        <p>The mass number and the atomic number do not change. The element stays the same.</p>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking the electron in beta decay was already inside the nucleus. A nucleus holds only protons and neutrons. The electron is made when a neutron changes into a proton.</p></div>
+
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Carbon-14 (<sup>14</sup><sub>6</sub>C) decays by beta-minus decay. What is the new nucleus?</p>",
+  "options": [
+    {
+      "label": "<sup>10</sup><sub>4</sub>Be",
+      "correct": false,
+      "feedback": "That is the result of an alpha decay, which removes 4 nucleons. Beta decay does not change the mass number."
+    },
+    {
+      "label": "<sup>14</sup><sub>5</sub>B",
+      "correct": false,
+      "feedback": "In beta-minus decay a neutron becomes a proton, so Z goes up by 1. A drop in Z would need a different kind of change."
+    },
+    {
+      "label": "<sup>14</sup><sub>7</sub>N",
+      "correct": true,
+      "feedback": "A neutron becomes a proton and an electron leaves. The mass number stays at 14. Z rises from 6 to 7, which is nitrogen."
+    }
+  ],
+  "reveal": "<p>The electron carries a charge of &minus;1, so the totals still match: 6 = 7 + (&minus;1).</p>"
+}
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- 03 HALF-LIFE -->
+<section id="s-halflife" data-toc="Half-life">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">The clock in the nucleus</span></div>
+    <h2>After each half-life, half of the sample remains.</h2>
+    <p>Hold one atom of carbon-14. You cannot predict when it will decay. It might be in five seconds or in 20,000 years. Now hold a trillion carbon-14 atoms. About half of them decay in every 5,730 years.</p>
+    <p>The <strong class="term">half-life</strong> is the time it takes for half of a sample to decay. Heat, pressure and chemical bonding do not change it, so half-lives work as clocks.</p>
+
+    <figure class="figure figure--wide">
+<div class="diagram">
+      <svg viewBox="0 0 600 240" font-family="var(--display)" role="img" aria-label="Decay curve. The share of parent nuclei falls from 100 percent to 50 percent after one half-life, 25 percent after two, 12.5 percent after three and 6.25 percent after four">
+        <rect x="2" y="2" width="596" height="236" rx="8" fill="var(--card)" stroke="var(--hair)" stroke-width="1"/>
+        <line x1="70" y1="185" x2="560" y2="185" stroke="var(--ink)" stroke-width="1.5"/>
+        <line x1="70" y1="40" x2="70" y2="185" stroke="var(--ink)" stroke-width="1.5"/>
+        <text x="66" y="28" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="start">Parent nuclei left</text>
+        <text x="560" y="222" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="end">Half-lives passed &rarr;</text>
+
+        <line x1="70" y1="40" x2="550" y2="40" stroke="var(--hair)" stroke-width="1"/>
+        <line x1="70" y1="112.5" x2="550" y2="112.5" stroke="var(--hair)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="70" y1="148.8" x2="550" y2="148.8" stroke="var(--hair)" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="62" y="44" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--ink-soft)" text-anchor="end">100%</text>
+        <text x="62" y="116" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--ink-soft)" text-anchor="end">50%</text>
+        <text x="62" y="153" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--ink-soft)" text-anchor="end">25%</text>
+        <text x="62" y="189" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--ink-soft)" text-anchor="end">0%</text>
+
+        <line x1="190" y1="40" x2="190" y2="185" stroke="var(--hair)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="310" y1="40" x2="310" y2="185" stroke="var(--hair)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="430" y1="40" x2="430" y2="185" stroke="var(--hair)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="550" y1="40" x2="550" y2="185" stroke="var(--hair)" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="190" y="204" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">1</text>
+        <text x="310" y="204" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">2</text>
+        <text x="430" y="204" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">3</text>
+        <text x="550" y="204" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">4</text>
+
+        <path d="M70.0 40.0 L80.0 48.1 L90.0 55.8 L100.0 63.1 L110.0 69.9 L120.0 76.4 L130.0 82.5 L140.0 88.2 L150.0 93.7 L160.0 98.8 L170.0 103.6 L180.0 108.2 L190.0 112.5 L200.0 116.6 L210.0 120.4 L220.0 124.0 L230.0 127.5 L240.0 130.7 L250.0 133.7 L260.0 136.6 L270.0 139.3 L280.0 141.9 L290.0 144.3 L300.0 146.6 L310.0 148.8 L320.0 150.8 L330.0 152.7 L340.0 154.5 L350.0 156.2 L360.0 157.8 L370.0 159.4 L380.0 160.8 L390.0 162.2 L400.0 163.4 L410.0 164.7 L420.0 165.8 L430.0 166.9 L440.0 167.9 L450.0 168.9 L460.0 169.8 L470.0 170.6 L480.0 171.4 L490.0 172.2 L500.0 172.9 L510.0 173.6 L520.0 174.2 L530.0 174.8 L540.0 175.4 L550.0 175.9" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="70" cy="40" r="5" fill="var(--card)" stroke="var(--accent)" stroke-width="2.5"/>
+        <circle cx="190" cy="112.5" r="5" fill="var(--card)" stroke="var(--accent)" stroke-width="2.5"/>
+        <circle cx="310" cy="148.8" r="5" fill="var(--card)" stroke="var(--accent)" stroke-width="2.5"/>
+        <circle cx="430" cy="166.9" r="5" fill="var(--card)" stroke="var(--accent)" stroke-width="2.5"/>
+        <circle cx="550" cy="175.9" r="5" fill="var(--card)" stroke="var(--accent)" stroke-width="2.5"/>
+        <text x="204" y="104" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)">50%</text>
+        <text x="324" y="140" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)">25%</text>
+        <text x="444" y="158" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)">12.5%</text>
+        <text x="548" y="166" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--accent)" text-anchor="end">6.25%</text>
+      </svg>
+</div>
+<figcaption><b>Figure 5.6.</b> each half-life removes half of what is left · 100% falls to 50%, then 25%, then 12.5%</figcaption>
+</figure>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a sample is gone after two half-lives. After one half-life, half remain. After two, a quarter remain, not none. The sample never reaches zero in a few steps.</p></div>
+
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A sample holds 80&nbsp;g of iodine-131. Its half-life is 8 days. How much iodine-131 remains after 24 days?</p>",
+  "options": [
+    {
+      "label": "10 g, because 24 days is 3 half-lives",
+      "correct": true,
+      "feedback": "Halve the sample once for each half-life. 80 &rarr; 40 &rarr; 20 &rarr; 10&nbsp;g."
+    },
+    {
+      "label": "0 g, because three half-lives use up the sample",
+      "correct": false,
+      "feedback": "Each half-life removes half of what is left, so some always remains. After three half-lives, one eighth of the sample is still there."
+    },
+    {
+      "label": "20 g, because 24 days is 2 half-lives",
+      "correct": false,
+      "feedback": "A half-life here is 8 days, so 24 days is 3 half-lives, not 2. The sample reaches 20&nbsp;g after 16 days and 10&nbsp;g after 24."
+    }
+  ],
+  "reveal": "<p>Halve once for every half-life that has passed.</p>"
+}
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- 04 THE DECAY LAB -->
+<section id="s-sandbox-decay" data-toc="Decay lab">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Try it</span></div>
+    <h2>Watch 100 atoms decay, and stop at each half-life.</h2>
+    <p>Pick an isotope and press Start run. The run stops at 1, 2, 3 and 4 half-lives so you can record the count.</p>
+
+    <div class="sim-box" data-sim="decay">
+      <div class="label">Simulation</div>
+      <h4>Why can nobody say when one atom will decay, when a whole sample decays on schedule?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a sample starts with 100 atoms of one isotope. About how many atoms remain after one half-life, and after two?</p>",
+  "options": [
+    {
+      "label": "About 75 after one half-life and about 50 after two",
+      "correct": false,
+      "feedback": "Losing a quarter each time sounds reasonable. But a half-life is the time for half of the sample to decay, so about half remain after the first one."
+    },
+    {
+      "label": "About 50 after one half-life and none after two",
+      "correct": false,
+      "feedback": "Half gone after one is right, which makes this tempting. But the next half-life removes half of the 50 that are left, not all of them. About 25 remain."
+    },
+    {
+      "label": "About 50 after one half-life and about 25 after two",
+      "correct": true,
+      "feedback": "Each half-life removes half of what is left. 100 falls to about 50, and then to about 25."
+    }
+  ],
+  "reveal": "<p>Now test it. Watch the grid and the curve, and stop at each half-life.</p>"
+}
+</script>
+      </div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="A grid of 100 atoms beside a curve of atoms left against half-lives. Choose an isotope, then press Start run."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Set up a run">
+        <label class="tool-field" for="decIso"><span class="label">Isotope</span>
+          <select id="decIso" class="form-select">
+            <option value="C14" selected>Carbon-14 (beta decay)</option>
+            <option value="Cs137">Cesium-137 (beta decay)</option>
+            <option value="I131">Iodine-131 (beta decay)</option>
+            <option value="U238">Uranium-238 (alpha decay)</option>
+            <option value="Ra226">Radium-226 (alpha decay)</option>
+          </select>
+        </label>
+        <button type="button" class="btn" id="btnDecStart">Start run</button>
+        <button type="button" class="btn ghost" id="btnDecReset">Start over</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="half"><span class="readout-label">Half-life</span><span class="readout-value">5,730 years</span></div>
+        <div class="readout" data-readout="passed"><span class="readout-label">Half-lives passed</span><span class="readout-value">0.00</span></div>
+        <div class="readout" data-readout="time"><span class="readout-label">Time passed</span><span class="readout-value">0 years</span></div>
+        <div class="readout" data-readout="left"><span class="readout-label">Atoms left</span><span class="readout-value">100 of 100</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="accent"></span>A parent atom that has not decayed</li>
+        <li><span class="key" data-shape="dot" data-token="cool"></span>A daughter atom, after a decay</li>
+        <li><span class="key" data-shape="dot" data-token="warn"></span>An alpha particle (helium-4 nucleus) leaving</li>
+        <li><span class="key" data-shape="dot" data-token="ink" data-size="sm"></span>A beta particle (electron) leaving</li>
+        <li><span class="key" data-shape="line" data-token="accent"></span>Atoms left in this run</li>
+        <li><span class="key" data-shape="dash" data-token="ink"></span>The halving rule: half remain after each half-life</li>
+      </ul>
+      <ol class="try-this">
+        <li>Run carbon-14. Press Start run. At each stop, press Record, then press Play. <button type="button" class="chip" aria-pressed="false" data-preset="c14">Load carbon-14</button> <b>Look for:</b> 49 atoms left after 1 half-life (5,730 years), then 25, 12 and 6. Nobody could say which atom goes next.</li>
+        <li>Run iodine-131. Load it, press Start run, and press Record at 2 half-lives. <button type="button" class="chip" aria-pressed="false" data-preset="i131">Load iodine-131</button> <b>Look for:</b> 25 atoms left after 16 days. Carbon-14 took 11,460 years to reach the same count.</li>
+        <li>Run uranium-238. Load it, press Start run, and press Record at 1 half-life. <button type="button" class="chip" aria-pressed="false" data-preset="u238">Load uranium-238</button> <b>Look for:</b> alpha particles leave in place of electrons. 47 atoms are left after 4.47 billion years.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your carbon-14 row with your iodine-131 row at 2 half-lives. The two half-lives are 5,730 years and 8 days, yet about the same number of atoms are left. What does this show?</p>",
+  "options": [
+    {
+      "label": "The half-life sets the time, but every isotope halves in the same way",
+      "correct": true,
+      "feedback": "Both rows show about 25 atoms left, although the time passed differs enormously. The half-life changes the clock. It does not change the halving."
+    },
+    {
+      "label": "A longer half-life leaves more atoms after two half-lives",
+      "correct": false,
+      "feedback": "A long half-life means a slow clock, which makes this tempting. But after two half-lives every isotope has lost three quarters, however long the half-life is."
+    },
+    {
+      "label": "A shorter half-life decays faster, so fewer atoms are left",
+      "correct": false,
+      "feedback": "A short half-life does decay in less time. But your rows compare equal numbers of half-lives, not equal times, so the counts match."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Half remain after each half-life, for any isotope.</p>"
+}
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- 05 FISSION AND FUSION -->
+<section id="s-energy" data-toc="Fission and fusion">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Splitting and joining</span></div>
+    <h2>Fission and fusion change the nucleus and release far more energy than chemical changes.</h2>
+    <p>In <strong class="term">nuclear fission</strong>, a heavy nucleus splits. A uranium-235 nucleus absorbs a neutron and splits into two smaller nuclei and three neutrons. Nuclear power plants use fission.</p>
+    <div class="eq-display"><sup>235</sup><sub>92</sub>U + <sup>1</sup><sub>0</sub>n &rarr; <sup>141</sup><sub>56</sub>Ba + <sup>92</sup><sub>36</sub>Kr + 3 <sup>1</sup><sub>0</sub>n</div>
+    <p>In <strong class="term">nuclear fusion</strong>, light nuclei join. In the Sun, hydrogen nuclei join to make helium (Lesson 5-1a).</p>
+    <p>In both changes, the total number of protons and neutrons stays the same. In both, the nuclei change, so the elements change.</p>
+
+    <div class="table-wrap"><table class="data-table">
+      <caption>Energy released by one event</caption>
+      <thead><tr><th scope="col">Event</th><th scope="col" class="num">Energy</th></tr></thead>
+      <tbody>
+        <tr><td>One chemical bond forms</td><td class="num">1 to 10 eV</td></tr>
+        <tr><td>One uranium-235 fission</td><td class="num">about 200,000,000 eV</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a nuclear change gives only a little more energy than a chemical one. One fission releases about 200 million eV. Forming a chemical bond releases 1 to 10 eV.</p></div>
+  </div>
+</section>
+
+<!-- 06 THE FISSION LAB -->
+<section id="s-sandbox-fission" data-toc="Fission lab">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Try it</span></div>
+    <h2>Split one uranium-235 nucleus.</h2>
+    <p>Fire a neutron at one nucleus. Count the protons and neutrons before and after, and compare the energy with a chemical bond.</p>
+
+    <div class="sim-box" data-sim="fission">
+      <div class="label">Simulation</div>
+      <h4>What happens to the nucleus when one uranium-235 atom splits?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a uranium-235 nucleus absorbs a neutron and splits. How does the total number of protons plus neutrons after the split compare with the total before?</p>",
+  "options": [
+    {
+      "label": "It is smaller, because some mass turns into energy",
+      "correct": false,
+      "feedback": "Some mass does become energy, which makes this tempting. But protons and neutrons are only regrouped. The count of protons plus neutrons never changes in a nuclear process."
+    },
+    {
+      "label": "It is larger, because the split makes new particles",
+      "correct": false,
+      "feedback": "A split looks like it makes more, because there are more pieces. But the pieces share the same protons and neutrons that went in."
+    },
+    {
+      "label": "It is the same, because every proton and neutron is kept",
+      "correct": true,
+      "feedback": "Every proton and neutron that goes in comes out, in new groups. The total stays at 236."
+    }
+  ],
+  "reveal": "<p>Now fire a neutron and count.</p>"
+}
+</script>
+      </div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="A neutron travels toward a uranium-235 nucleus, beside bars that compare the energy of one chemical bond with the energy of one fission. Press Fire a neutron."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Fire a neutron">
+        <button type="button" class="btn" id="btnFire">Fire a neutron</button>
+        <button type="button" class="btn ghost" id="btnFissionReset">Start over</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="in"><span class="readout-label">Protons and neutrons in</span><span class="readout-value">235 + 1 = 236</span></div>
+        <div class="readout" data-readout="out"><span class="readout-label">Protons and neutrons out</span><span class="readout-value">–</span></div>
+        <div class="readout" data-readout="prot"><span class="readout-label">Protons in and out</span><span class="readout-value">–</span></div>
+        <div class="readout" data-readout="energy"><span class="readout-label">Energy released</span><span class="readout-value">–</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="cool" data-size="sm"></span>A neutron</li>
+        <li><span class="key" data-shape="dot" data-token="warn"></span>Uranium-235, and krypton-92 after the split</li>
+        <li><span class="key" data-shape="dot" data-token="accent"></span>Barium-141, and the bar for one fission</li>
+        <li><span class="key" data-shape="square" data-token="cool"></span>The bar for one chemical bond</li>
+      </ul>
+      <ol class="try-this">
+        <li>Fire a neutron. Press Fire a neutron, watch the split to the end, and press Record. <b>Look for:</b> 236 protons and neutrons go in, and 236 come out (141 + 92 + 3). Protons: 92 in, and 56 + 36 = 92 out.</li>
+        <li>Compare the energy. Look at the bars once the nucleus has split. <b>Look for:</b> one fission releases about 200 million eV. Each step on the bar scale is 1,000 times bigger, and the chemical bond bar stays near the start.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your fission row with the chemical bond bar. One fission releases about 200 million eV. Forming a chemical bond releases 1 to 10 eV. How do the two compare?</p>",
+  "options": [
+    {
+      "label": "A fission releases about 20 times as much",
+      "correct": false,
+      "feedback": "Twenty is the ratio of 200 to 10, which is tempting. But the fission figure is 200 million, not 200."
+    },
+    {
+      "label": "A fission releases more than ten million times as much",
+      "correct": true,
+      "feedback": "200 million divided by 10 is 20 million, and a bond may release as little as 1 eV. So a fission releases at least 20 million times as much."
+    },
+    {
+      "label": "A fission releases about the same, because both rearrange matter",
+      "correct": false,
+      "feedback": "Both do rearrange matter, which makes them seem alike. But a nucleus holds far more energy than the electrons that make a bond."
+    }
+  ],
+  "reveal": "<p>Only the recorded energy answers this. Nuclear changes release energy on a scale chemical changes cannot reach.</p>"
+}
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- 07 MORE ABOUT DECAY AND ENERGY (ENRICHMENT) -->
+<section id="s-more" data-toc="Equation, energy and chain reactions" data-enrichment>
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">More about decay and energy</span><span class="tag-enrichment">Enrichment</span></div>
+    <h2>The half-life equation, the energy of one fission, and chain reactions.</h2>
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Equation, mass defect and chain reactions</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+
+    <h3>The half-life equation</h3>
+    <p>After a time <em>t</em>, the number of nuclei left is <em>N</em>. Here <em>N</em><sub>0</sub> is the starting number and <em>t</em><sub>1/2</sub> is the half-life.</p>
+    <div class="eq-display"><em>N</em> = <em>N</em><sub>0</sub> (1/2)<sup><em>t</em>/<em>t</em><sub>1/2</sub></sup></div>
+    <p>After 3 half-lives, <em>N</em> = <em>N</em><sub>0</sub> &times; (1/2)<sup>3</sup> = <em>N</em><sub>0</sub> / 8.</p>
+
+    <h3>The energy of one fission</h3>
+    <p>Weigh the particles before and after one fission. The products weigh a little less. The missing mass, the mass defect, becomes energy.</p>
+    <ul>
+      <li>Before: uranium-235 (235.0439 u) + neutron (1.0087 u) = <strong>236.0526 u</strong></li>
+      <li>After: barium-141 + krypton-92 + 3 neutrons = <strong>235.8665 u</strong></li>
+      <li>Mass defect: <strong>0.1861 u</strong>, which is about 173 MeV (2.8 &times; 10<sup>&minus;11</sup>&nbsp;J)</li>
+    </ul>
+    <div class="eq-display"><em>E</em> = &Delta;<em>m</em> &middot; <em>c</em><sup>2</sup></div>
+
+    <h3>A chain reaction</h3>
+    <p>Each fission releases neutrons. A neutron can split another nucleus, which releases more neutrons. The number <em>k</em> is how many new fissions each fission causes. If <em>k</em> is above 1, the reaction grows. If <em>k</em> is 1, it holds steady. If <em>k</em> is below 1, it dies out.</p>
+    <p>A reactor holds <em>k</em> at 1 with control rods that absorb neutrons. Dropping every rod at once, called a SCRAM, pushes <em>k</em> far below 1 and stops the chain.</p>
+
+    <div class="sim-box" data-sim="chain">
+      <div class="label">Simulation</div>
+      <h4>What decides whether a chain reaction grows, holds steady or dies out?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: the control rods are pulled out a little, so k is above 1. What happens to the number of fissions in each generation?</p>",
+  "options": [
+    {
+      "label": "It grows from one generation to the next",
+      "correct": true,
+      "feedback": "Above 1, each fission starts more than one new fission. Every generation is bigger than the one before."
+    },
+    {
+      "label": "It stays steady, because every fission releases the same neutrons",
+      "correct": false,
+      "feedback": "Every fission does release the same neutrons, which makes this tempting. But k counts how many of them start a new fission, and above 1 each fission starts more than one."
+    },
+    {
+      "label": "It falls, because some neutrons escape the core",
+      "correct": false,
+      "feedback": "Some neutrons do escape, but k already counts that. When k is above 1, more new fissions start than the fissions that ended."
+    }
+  ],
+  "reveal": "<p>Now test it. Start a run and compare three settings of the control rods.</p>"
+}
+</script>
+      </div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="A reactor core with fuel pins and control rods, beside a bar chart of the fissions in each generation. Set the control rods, then press Start run."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Set up the reactor">
+        <label class="slider-row">Control rods inserted <output>50%</output>
+          <input type="range" id="chainRods" min="0" max="100" step="10" value="50" data-unit="%">
+        </label>
+        <button type="button" class="btn" id="btnChainStart">Start run</button>
+        <button type="button" class="btn ghost" id="btnScram">SCRAM</button>
+        <button type="button" class="btn ghost" id="btnChainReset">Start over</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="k"><span class="readout-label">k</span><span class="readout-value">1.00</span></div>
+        <div class="readout" data-readout="gen"><span class="readout-label">Generation</span><span class="readout-value">0</span></div>
+        <div class="readout" data-readout="fissions"><span class="readout-label">Fissions this generation</span><span class="readout-value">–</span></div>
+        <div class="readout" data-readout="total"><span class="readout-label">Fissions so far</span><span class="readout-value">–</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="warn"></span>A fuel pin that is fissioning</li>
+        <li><span class="key" data-shape="square" data-token="ink"></span>A control rod, which absorbs neutrons</li>
+        <li><span class="key" data-shape="square" data-token="cool"></span>The fissions in one generation</li>
+        <li><span class="key" data-shape="square" data-token="accent"></span>A generation that is off the chart (200 or more)</li>
+      </ul>
+      <ol class="try-this">
+        <li>Hold it steady. Load 50% rods, press Start run, and press Record when it stops. <button type="button" class="chip" aria-pressed="false" data-preset="steady">Load 50% rods</button> <b>Look for:</b> k is 1.00, and generation 5 has 50 fissions, the same as the start.</li>
+        <li>Pull the rods out. Load 30% rods, press Start run, and press Record when it stops. <button type="button" class="chip" aria-pressed="false" data-preset="grow">Load 30% rods</button> <b>Look for:</b> k is 1.20, and generation 5 has 124 fissions. The bars climb.</li>
+        <li>Drop the rods. Load 100% rods, press Start run, and press Record when it stops. <button type="button" class="chip" aria-pressed="false" data-preset="scram">Load 100% rods</button> <b>Look for:</b> k is 0.50, and generation 5 has 2 fissions. The bars shrink toward nothing.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your 1.20 row with your 0.50 row. Both runs started with 50 fissions. What decided whether the chain grew or died out?</p>",
+  "options": [
+    {
+      "label": "How many fissions the reactor started with",
+      "correct": false,
+      "feedback": "Both runs started with 50 fissions, and the results were opposite. The start was the same, so it cannot be the cause."
+    },
+    {
+      "label": "Whether k was above 1 or below 1",
+      "correct": true,
+      "feedback": "With k at 1.20, each generation grew. With k at 0.50, each generation halved. The size of k decided the result."
+    },
+    {
+      "label": "How many generations the reactor ran",
+      "correct": false,
+      "feedback": "Both runs stopped at generation 5. Running longer would only make the difference between them larger."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. The control rods set k, and k sets the fate of the chain.</p>"
+}
+</script>
+    </div>
+    </details>
+  </div>
+</section>
+
+<!-- 08 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">08</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. In every nuclear reaction, the total mass number <em>A</em> and the total atomic number <input class="blank" data-answer="Z" placeholder="?"> stay the same.<br>
+      2. In alpha decay, the nucleus ejects a helium-4 nucleus with 2 protons and 2 <input class="blank" data-answer="neutrons" placeholder="?">.<br>
+      3. In beta-minus decay, a neutron changes into a proton and an <input class="blank" data-answer="electron|beta particle" placeholder="?"> leaves.<br>
+      4. A sample of 80.0 g of iodine-131 decays for 3 half-lives. <input class="blank" data-answer="10|10.0|10 g|10.0 g" placeholder="?"> g of it remain.<br>
+      5. A nuclear change releases about a <input class="blank" data-answer="million|millions" placeholder="?"> times more energy per atom than a chemical change.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 09 SELF-EXPLANATION -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">09</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark">
+      <p>Heating a reactant speeds up a chemical reaction. But boiling carbon-14 in acid, or squeezing it to 100,000 atmospheres, does not change its half-life of 5,730 years.</p>
+      <p>Explain why radioactive decay is not affected by heat, pressure or chemical bonding.</p>
+    </div>
+    <p class="hint">Compare the energy of a chemical bond with the energy inside a nucleus. Write your answer first, then compare it with the model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="Chemical changes involve the electrons, but decay happens in the nucleus..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>Chemical changes use the electrons of an atom. They involve 1 to 10 eV. Decay happens in the nucleus, where the energies are millions of eV.</p>
+        <p>Heat, pressure and bonding are tiny on that scale. The electron cloud also shields the nucleus from outside changes. So the half-life stays fixed.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">10</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS1-8 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks]</span>
+      </div>
+      <div class="exam-q">
+        <p>Archaeologists find a wooden chest in an ancient burial site. They test a 1.00 g carbon sample from the wood. Living trees give 16.0 counts per minute (cpm) for each gram of carbon, from carbon-14. The sample from the chest gives 2.0 cpm. The half-life of carbon-14 (<sup>14</sup><sub>6</sub>C) is 5,730 years.</p>
+        <p class="sub"><b>(a)</b> Write the balanced nuclear equation for the beta decay of carbon-14. [1 mark]</p>
+        <p class="sub"><b>(b)</b> Find how many half-lives have passed since the tree was cut. Find the age of the chest. [2 marks]</p>
+        <p class="sub"><b>(c)</b> Explain why carbon-14 cannot date a dinosaur bone that is 68 million years old. Name an isotope that could. [1 mark]</p>
+      </div>
+      <textarea class="textbox" id="examAns" placeholder="Write your answers for (a), (b) and (c)..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Equation (1 mark):</b> You write <sup>14</sup><sub>6</sub>C &rarr; <sup>14</sup><sub>7</sub>N + <sup>0</sup><sub>&minus;1</sub>e + &nu;&#772;<sub>e</sub>, with <em>A</em> and <em>Z</em> balanced.</li>
+          <li><b>Half-lives (1 mark):</b> You halve 16.0 to 8.0, 4.0 and 2.0, so 3 half-lives have passed.</li>
+          <li><b>Age (1 mark):</b> You find 3 &times; 5,730 = 17,190 years.</li>
+          <li><b>Limit (1 mark):</b> You say almost no carbon-14 is left after 68 million years, and name uranium-238.</li>
+        </ul></div></div>
+
+      <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>Doctors use decay to treat cancer. In targeted alpha therapy, an alpha-emitting isotope such as actinium-225 is attached to an antibody that finds cancer cells. An alpha particle travels less than 50 micrometers. It damages the tumor cell it sits in and spares the healthy tissue around it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-8 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-8</h3>
+    <p>
+      Test your understanding of nuclear changes one question at a time. The adaptive engine covers alpha, beta and gamma radiation, balancing decay equations, half-lives, fission and fusion.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-8" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 5 &middot; 5-8a</div>
+  <p>Next, 5-4a: <strong>Electromagnetic Radiation &amp; Matter</strong> asks which radiation can damage living cells.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="5-8a.js"></script>
+</body>
+</html>

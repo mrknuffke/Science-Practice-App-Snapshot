@@ -1,0 +1,67 @@
+{
+  "courseName": "IB Environmental Systems and Societies SL",
+  "courseSlug": "ib-environmental-systems-and-societies-sl",
+  "practicesLabel": "Inquiry and Systems Practices",
+  "practices": "Assessments evaluate core understanding in Environmental Systems and Societies. Focus on interdisciplinary thinking, systems thinking (inputs, outputs, stores, flows), and evaluating solutions.",
+  "units": [
+    {
+      "unitNumber": "1",
+      "unitTitle": "Foundations of environmental systems and societies",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Environmental value systems (EVS): ecocentric, anthropocentric, technocentric",
+        "Systems and models: open, closed, isolated systems",
+        "Energy and equilibria: laws of thermodynamics, stability",
+        "Sustainability, ecological footprint"
+      ]
+    },
+    {
+      "unitNumber": "2",
+      "unitTitle": "Ecology",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Species and populations, niche, carrying capacity",
+        "Communities and ecosystems, interactions (competition, predation)",
+        "Flows of energy and matter, food chains, pyramids",
+        "Biomes, zonation and ecological succession"
+      ]
+    },
+    {
+      "unitNumber": "3",
+      "unitTitle": "Biodiversity and conservation",
+      "examWeight": "20%",
+      "keyTopics": [
+        "An introduction to biodiversity: genetic, species, habitat",
+        "Origins of biodiversity, natural selection, plate tectonics",
+        "Threats to biodiversity, species extinction, red list",
+        "Conservation of biodiversity, reserves, treaties"
+      ]
+    },
+    {
+      "unitNumber": "4",
+      "unitTitle": "Water and aquatic food production systems",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Water systems and resources, hydrological cycle",
+        "Access to fresh water, water conservation",
+        "Aquatic food production systems, fisheries",
+        "Water pollution, eutrophication"
+      ]
+    },
+    {
+      "unitNumber": "5",
+      "unitTitle": "Soil systems and terrestrial food production",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Introduction to soil systems, soil profile, horizons",
+        "Terrestrial food production systems and food choices",
+        "Soil degradation and conservation strategies"
+      ]
+    }
+  ],
+  "examFormat": {
+    "multipleChoice": "Paper 1: Case Study response (30%), 1 hour",
+    "freeResponse": "Paper 2: Short-answer and structured essays (70%), 2 hours"
+  },
+  "antiPatterns": "Avoid HL extension topics under all circumstances. Never ask questions about: environmental economics (e.g., circular economy details) or advanced ethical systems (1.5), complex population dynamics modeling formulas (2.1), and global environmental international policy histories (5.4). Keep systems thinking simple and conceptual."
+}

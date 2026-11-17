@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" data-book="physics" data-lesson="2-2">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Lesson 2-2: Newton's Second Law &amp; Acceleration | SAS General Physics</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+  <main>
+    <section class="hero" id="s-hero" data-toc="Opening">
+      <div>
+        <div class="label">Lesson 2-2 &middot; Newton's Second Law &amp; Acceleration</div>
+        <h1>The engines pushed no harder. The rocket accelerated three times faster.</h1>
+        <p class="lede">In Lesson 2-1, you studied balanced forces and zero acceleration. Now you study unbalanced forces, which change an object's velocity. You will see how net force and mass set the acceleration.</p>
+        <div class="meta-strip">
+          <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS2-1</b>Analyze data to support the claim that Newton's second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration.</div></div>
+          <div class="meta-block"><div class="k">Objective</div><div class="v">You can use &Sigma;<em>F</em> = <em>ma</em> to find an acceleration, a force or a mass, and explain apparent weight in an elevator.</div></div>
+          <div class="meta-block"><div class="k">Scope</div><div class="v">Net force, mass and acceleration along a line, the direction of acceleration, and apparent weight in an elevator. Forces in two dimensions are Enrichment.</div></div>
+        </div>
+        <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+      </div>
+    </section>
+
+    <section id="sec-01" data-toc="Mission Briefing">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">01</span><span class="label">Hook</span></div>
+        <div class="brief"><div class="label">Mission</div><p><b>Level 2: Force Frontier.</b> Launch Complex 39A, Orbital Readings. In Lesson 2-1, you studied balanced forces and zero acceleration. Now you study the unbalanced forces that change velocity.</p></div>
+        <p>
+          At liftoff, the Saturn V rocket accelerated upward at roughly 12 meters per second squared.
+        </p>
+        <p>
+          Two minutes later, right before first-stage burnout, its acceleration surged to nearly 40 meters per second squared.
+        </p>
+        <p>
+          The rocket engines did not produce more thrust. The engines delivered nearly constant thrust throughout the ascent.
+        </p>
+        <p>
+          Why did the acceleration triple? The rocket burned thousands of kilograms of kerosene and liquid oxygen every second.
+        </p>
+        <p>
+          As vehicle mass plummeted, the same thrust caused much larger acceleration. This connection is <strong class="term" data-term="newtons-second-law">Newton's Second Law of Motion</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="sec-02" data-toc="Second Law &amp; Proportions">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">02</span>
+          <span class="label">The second law</span>
+        </div>
+
+        <h2>Proportional Reasoning &amp; The Second Law</h2>
+        <p>
+          When the vector sum of all external forces is nonzero, the object accelerates. Newton wrote this relationship as:
+        </p>
+
+        <div class="eq-display">
+          &Sigma;<b>F</b> = <em>m</em><b>a</b>
+          &nbsp;&nbsp;&iff;&nbsp;&nbsp;
+          <b>a</b> = &Sigma;<b>F</b> / <em>m</em>
+        </div>
+
+        <p>
+          This equation gives two proportionalities:
+        </p>
+
+        
+        <div class="pair-grid">
+          <div class="card">
+            <h4>
+              Direct: Acceleration &amp; Net Force
+            </h4>
+            <p>
+              Acceleration is directly proportional to net force for constant mass:
+            </p>
+            <div class="eq-display">
+              <em>a</em> &prop; &Sigma;<em>F</em> &nbsp; (constant <em>m</em>)
+            </div>
+            <p>
+              Doubling the net force on an object doubles its acceleration. Tripling net force triples acceleration.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>
+              Inverse: Acceleration &amp; Mass
+            </h4>
+            <p>
+              Acceleration is inversely proportional to mass for constant net force:
+            </p>
+            <div class="eq-display">
+              <em>a</em> &prop; 1 / <em>m</em> &nbsp; (constant &Sigma;<em>F</em>)
+            </div>
+            <p>
+              Doubling object mass cuts acceleration in half. Tripling mass reduces acceleration to one third.
+            </p>
+          </div>
+        </div>
+
+        <h3>Direction of Acceleration</h3>
+        <p>
+          Mass is a positive scalar. Therefore, the acceleration vector always points in the exact direction of the net force vector:
+        </p>
+
+        <div class="eq-display">
+          dir(<b>a</b>) = dir(&Sigma;<b>F</b>)
+        </div>
+
+        <div class="callout"><div class="label">Common mistake</div><p>An object does not always move in the direction of the net force. A car braking while heading north moves north, but its acceleration and net force point south.</p></div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-03" data-toc="Component Equations" data-enrichment>
+      <div class="narrow">
+        <div class="section-tag"><span class="num">03</span><span class="label">Vectors</span><span class="tag-enrichment">Enrichment</span></div>
+        <h2>Forces in Two Dimensions</h2>
+        <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Component Equations in Two Dimensions</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+        <p>
+          In two-dimensional problems, forces act along independent perpendicular axes. We resolve Newton's Second Law into separate component equations:
+        </p>
+
+        <div class="eq-display">
+          &Sigma;<em>F</em><sub>x</sub> = <em>m</em><em>a</em><sub>x</sub>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &Sigma;<em>F</em><sub>y</sub> = <em>m</em><em>a</em><sub>y</sub>
+        </div>
+
+        <p>
+          Forces along the x-axis affect only horizontal acceleration. Forces along the y-axis affect only vertical acceleration.
+        </p>
+
+        
+        <div class="card">
+          <h4>
+            Worked Example: Horizontal Sled with Resistance
+          </h4>
+          <p>
+            A 20-kilogram sled is pulled across icy snow with a horizontal forward force of 70 Newtons. Kinetic friction resists with 30 Newtons.
+          </p>
+
+          <div class="pair-grid">
+            <div class="card">
+              <b>Vertical Axis (y):</b>
+              <div class="eq-lines">
+                &Sigma;<em>F</em><sub>y</sub> = <em>F</em><sub>N</sub> &minus; <em>F</em><sub>g</sub> = 0.<br>
+                <em>F</em><sub>N</sub> = <em>F</em><sub>g</sub> = <em>m</em><em>g</em>.<br>
+                <em>F</em><sub>N</sub> = 20 &times; 9.8 = 196 N.<br>
+                <em>a</em><sub>y</sub> = 0 m/s&sup2; (Equilibrium).
+              </div>
+            </div>
+
+            <div class="card">
+              <b>Horizontal Axis (x):</b>
+              <div class="eq-lines">
+                &Sigma;<em>F</em><sub>x</sub> = <em>F</em><sub>app</sub> &minus; <em>f</em><sub>k</sub>.<br>
+                &Sigma;<em>F</em><sub>x</sub> = 70 N &minus; 30 N = 40 N.<br>
+                <em>a</em><sub>x</sub> = &Sigma;<em>F</em><sub>x</sub> / <em>m</em>.<br>
+                <em>a</em><sub>x</sub> = 40 N / 20 kg = 2.0 m/s&sup2;.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          The vertical forces balance completely. The unbalanced horizontal force causes steady forward acceleration of 2.0 meters per second squared.
+        </p>
+
+        
+      </details>
+      </div>
+    </section>
+
+    <section id="sec-04" data-toc="Dynamic Rig">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">04</span>
+          <span class="label">INTERACTIVE &middot; LABORATORY</span>
+        </div>
+
+        <h2>Dynamic Acceleration Rig</h2>
+        <p>
+          Explore the relationships between applied force, cart mass, friction, and acceleration on a calibrated 100-meter test track:
+        </p>
+
+        
+        <div class="sim-box" data-sim="rig">
+          <div class="label">Simulation</div>
+          <h4>How do net force and mass set acceleration?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a 5 kg cart has an acceleration of 4.0 m/s&sup2; under a 20 N push. You double the mass to 10 kg and keep the push at 20 N. What is the new acceleration?<\/p>",
+  "options": [
+    {
+      "label": "It stays at 4.0 m/s&sup2;, because mass does not matter.",
+      "correct": false,
+      "feedback": "Mass does matter here. Free fall is the special case where the force grows with the mass. A fixed push on a heavier cart gives a smaller acceleration."
+    },
+    {
+      "label": "It doubles to 8.0 m/s&sup2;, because the cart has more matter.",
+      "correct": false,
+      "feedback": "More mass resists the push more. The same force on twice the mass gives less acceleration, not more."
+    },
+    {
+      "label": "It falls to 0 m/s&sup2;, because the cart is too heavy.",
+      "correct": false,
+      "feedback": "The push is still 20 N and no friction opposes it. A net force always gives some acceleration."
+    },
+    {
+      "label": "It halves to 2.0 m/s&sup2;, because the push moves twice the mass.",
+      "correct": true,
+      "feedback": "Acceleration is net force divided by mass: 20 N &divide; 10 kg = 2.0 m/s&sup2;. Twice the mass gives half the acceleration."
+    }
+  ],
+  "reveal": "<p>Now check it. Run the cart, then change one setting at a time.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="stack"><canvas aria-label="A cart on a 100 meter track with an arrow for the applied force and an arrow for friction. Below it, a velocity-time graph of the run, with the area under the line shaded."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="true" data-preset="base">Start: 20 N, 5 kg</button>
+            <button type="button" class="chip" aria-pressed="false" data-preset="force">Double the force</button>
+            <button type="button" class="chip" aria-pressed="false" data-preset="mass">Double the mass</button>
+            <button type="button" class="chip" aria-pressed="false" data-preset="friction">Add friction</button>
+            <label class="slider-row" for="sliderForceApp"><span>Applied force</span> <output>20 N</output>
+              <input type="range" id="sliderForceApp" min="0" max="100" step="1" value="20" data-unit="N" data-digits="0">
+            </label>
+            <label class="slider-row" for="sliderMass"><span>Cart mass</span> <output>5 kg</output>
+              <input type="range" id="sliderMass" min="1" max="20" step="1" value="5" data-unit="kg" data-digits="0">
+            </label>
+            <label class="slider-row" for="sliderFriction"><span>Friction force</span> <output>0 N</output>
+              <input type="range" id="sliderFriction" min="0" max="50" step="1" value="0" data-unit="N" data-digits="0">
+            </label>
+            <button type="button" class="btn" data-restart>Start over</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="fnet"><span class="readout-label">Net force</span><span class="readout-value">20.0 N</span></div>
+            <div class="readout" data-readout="acc"><span class="readout-label">Acceleration</span><span class="readout-value">4.00 m/s&sup2;</span></div>
+            <div class="readout" data-readout="vel"><span class="readout-label">Velocity</span><span class="readout-value">0.0 m/s</span></div>
+            <div class="readout" data-readout="pos"><span class="readout-label">Position</span><span class="readout-value">0.0 m</span></div>
+            <div class="readout" data-readout="time"><span class="readout-label">Time</span><span class="readout-value">0.00 s</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Ready</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="line" data-token="accent"></span>Applied force (the scale bar is 50 N)</li>
+            <li><span class="key" data-shape="line" data-token="warn"></span>Friction force</li>
+            <li><span class="key" data-shape="line" data-token="cool"></span>Velocity of the cart</li>
+            <li><span class="key" data-shape="square" data-token="good"></span>Area under the line (distance traveled)</li>
+          </ul>
+          <ol class="try-this">
+            <li>Keep 20 N and 5 kg. Let the cart run for a few seconds, then press Record. <b>Look for:</b> an acceleration of 4.00 m/s&sup2; and a straight line on the graph.</li>
+            <li>Choose Double the force, then Start over and run again. Press Record. <b>Look for:</b> the acceleration doubles and the line is twice as steep.</li>
+            <li>Choose Double the mass, then Start over and run again. Press Record. <b>Look for:</b> the acceleration halves and the line is half as steep.</li>
+            <li>Choose Add friction, then Start over and run again. Press Record. <b>Look for:</b> the net force is the applied force minus friction.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your row for 20 N with your row for 40 N. The mass and the friction are the same in both. What happened to the acceleration, and why?<\/p>",
+  "options": [
+    {
+      "label": "It stayed the same, because the mass did not change.",
+      "correct": false,
+      "feedback": "The mass is the same, but the net force is not. A larger net force gives a larger acceleration."
+    },
+    {
+      "label": "It halved, because a bigger force is harder to move.",
+      "correct": false,
+      "feedback": "A bigger force pushes harder. It does not resist the motion. The acceleration rose."
+    },
+    {
+      "label": "It doubled, because the net force doubled.",
+      "correct": true,
+      "feedback": "Acceleration is net force divided by mass. With the same mass, twice the net force gives twice the acceleration."
+    },
+    {
+      "label": "It rose by 20 m/s&sup2;, the same as the force.",
+      "correct": false,
+      "feedback": "Force and acceleration have different units. The acceleration rose by a factor of two, not by 20."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. With the mass fixed, the acceleration is proportional to the net force.<\/p>"
+}
+</script>
+</div>
+        
+      </div>
+    </section>
+
+    <section id="sec-05" data-toc="Apparent Weight">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">05</span>
+          <span class="label">Apparent weight</span>
+        </div>
+
+        <h2>Apparent Weight &amp; Elevator Physics</h2>
+        <p>
+          When you stand on a bathroom scale, what does it measure? The scale does not directly read gravitational force.
+        </p>
+        <p>
+          The scale measures the upward normal force (<em>F</em><sub>N</sub>) it exerts against your feet to support you.
+        </p>
+        <p>
+          We call this supporting contact force your <strong class="term" data-term="apparent-weight">apparent weight</strong>. Let upward be positive. Newton's Second Law gives:
+        </p>
+
+        <div class="eq-display">
+          &Sigma;<em>F</em><sub>y</sub> = <em>F</em><sub>N</sub> &minus; <em>m</em><em>g</em> = <em>m</em><em>a</em><sub>y</sub>
+          &nbsp;&nbsp;&implies;&nbsp;&nbsp;
+          <em>F</em><sub>N</sub> = <em>m</em>(<em>g</em> + <em>a</em><sub>y</sub>)
+        </div>
+
+        
+        <div class="pair-grid">
+          <div class="card">
+            <h4>
+              Upward Acceleration
+            </h4>
+            <div class="hint">
+              <em>a</em><sub>y</sub> &gt; 0 (speeding up up, or slowing down down)
+            </div>
+            <div class="eq-display">
+              <em>F</em><sub>N</sub> = <em>m</em>(<em>g</em> + <em>a</em>) &gt; <em>m</em><em>g</em>
+            </div>
+            <p>
+              The scale pushes with extra force to accelerate you upward. You feel heavier than normal.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>
+              Downward Acceleration
+            </h4>
+            <div class="hint">
+              <em>a</em><sub>y</sub> &lt; 0 (speeding up down, or slowing down up)
+            </div>
+            <div class="eq-display">
+              <em>F</em><sub>N</sub> = <em>m</em>(<em>g</em> &minus; |<em>a</em>|) &lt; <em>m</em><em>g</em>
+            </div>
+            <p>
+              The floor drops away slightly. The scale needs less force to support you. You feel lighter.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>
+              Free Fall Weightlessness
+            </h4>
+            <div class="hint">
+              <em>a</em><sub>y</sub> = &minus;<em>g</em> (cable snapped or orbital orbit)
+            </div>
+            <div class="eq-display">
+              <em>F</em><sub>N</sub> = <em>m</em>(<em>g</em> &minus; <em>g</em>) = 0
+            </div>
+            <p>
+              Scale reads zero. True weight still acts, but without support force, apparent weight vanishes.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout"><div class="label">Common mistake</div><p>A downward acceleration does not always mean weightlessness. The scale reads zero only when the acceleration is exactly &minus;<em>g</em>, in free fall.</p></div>
+      </div>
+    </section>
+
+    <section id="sec-06" data-toc="Predictions">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">06</span>
+          <span class="label">Checkpoints</span>
+        </div>
+
+        <h2>Conceptual Prediction Gates</h2>
+        <p>
+          Before testing equations against memory, commit your physical predictions. Committing forces your mind to evaluate force and acceleration dynamics:
+        </p>
+
+        
+        <h3>Scenario A: Pushing Heavy Truck vs. Light Compact Car</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A 2000-kilogram truck and a 1000-kilogram car both have the same net forward force of 4000 newtons. How do their accelerations compare?<\/p>",
+  "options": [
+    {
+      "label": "Both vehicles have the same acceleration because the net force is equal.",
+      "correct": false,
+      "feedback": "The net force is equal, but the masses are not. Acceleration depends on both: <em>a<\/em> = &Sigma;<em>F<\/em> / <em>m<\/em>."
+    },
+    {
+      "label": "The truck accelerates four times more rapidly due to larger momentum.",
+      "correct": false,
+      "feedback": "A larger mass makes the acceleration smaller, not larger. The truck has twice the mass, so it accelerates less."
+    },
+    {
+      "label": "The compact car accelerates twice as rapidly as the heavy truck.",
+      "correct": true,
+      "feedback": "The truck: <em>a<\/em> = 4000 N / 2000 kg = 2.0 m/s&sup2;. The car: <em>a<\/em> = 4000 N / 1000 kg = 4.0 m/s&sup2;. Half the mass gives twice the acceleration."
+    },
+    {
+      "label": "The truck cannot accelerate because its mass exceeds the net force.",
+      "correct": false,
+      "feedback": "Mass is not compared with force. Any net force gives some acceleration: <em>a<\/em> = 4000 N / 2000 kg = 2.0 m/s&sup2;."
+    }
+  ],
+  "reveal": "<p><b>The car accelerates twice as fast.<\/b><br>By Newton's Second Law, acceleration is inversely proportional to mass: <em>a<\/em> = &Sigma;<em>F<\/em> / <em>m<\/em>. For the truck: <em>a<\/em> = 4000 N / 2000 kg = 2.0 m/s&sup2;. For the car: <em>a<\/em> = 4000 N / 1000 kg = 4.0 m/s&sup2;. Half the mass gives twice the acceleration.<\/p>"
+}
+</script>
+</div>
+
+        
+        <h3>Scenario B: Scale Reading in a Descending Elevator</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>An 80-kilogram astronaut stands on a scale in an elevator that accelerates downward at 2.0 m/s&sup2;. What reading does the scale show? (Use <em>g<\/em> = 9.8 m/s&sup2;)<\/p>",
+  "options": [
+    {
+      "label": "944 N, because downward motion adds force to the scale.",
+      "correct": false,
+      "feedback": "A downward acceleration makes the scale push up with less force, not more. 944 N is the reading for an upward acceleration of 2.0 m/s&sup2;."
+    },
+    {
+      "label": "624 N, because downward acceleration reduces the support force needed.",
+      "correct": true,
+      "feedback": "Take up as positive: <em>F<\/em><sub>N<\/sub> &minus; <em>mg<\/em> = <em>ma<\/em> with <em>a<\/em> = &minus;2.0 m/s&sup2;. So <em>F<\/em><sub>N<\/sub> = 80 &times; (9.8 &minus; 2.0) = 624 N."
+    },
+    {
+      "label": "784 N, because gravity never changes on Earth.",
+      "correct": false,
+      "feedback": "784 N is the reading at rest (80 &times; 9.8). Gravity does not change, but the scale reads the support force, and that changes with the acceleration."
+    },
+    {
+      "label": "0 N, because any downward acceleration creates total weightlessness.",
+      "correct": false,
+      "feedback": "A reading of 0 N needs <em>a<\/em> = &minus;<em>g<\/em> = &minus;9.8 m/s&sup2;. This elevator accelerates at only 2.0 m/s&sup2; downward."
+    }
+  ],
+  "reveal": "<p><b>624 N.<\/b><br>Apply Newton's Second Law vertically: <em>F<\/em><sub>N<\/sub> &minus; <em>mg<\/em> = <em>m<\/em><em>a<\/em><sub>y<\/sub>. With a downward acceleration (<em>a<\/em><sub>y<\/sub> = &minus;2.0 m/s&sup2;), <em>F<\/em><sub>N<\/sub> = <em>m<\/em>(<em>g<\/em> &minus; 2.0) = 80 kg &times; 7.8 m/s&sup2; = 624 N. The scale reading drops below the astronaut's true rest weight of 784 N.<\/p>"
+}
+</script>
+</div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-07" data-toc="Retrieval &amp; Practice">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">07</span>
+          <span class="label">Practice</span>
+        </div>
+
+        <h2>Retrieval Practice &amp; ECR Protocol</h2>
+        <p>
+          Solidify the core relationships of Newton's Second Law before tackling multi-body systems and third law interactions:
+        </p>
+
+        
+        <div class="recall">
+<div class="label">Recall</div>
+<ol class="recall-list">
+<li>Acceleration is directly proportional to <input type="text" class="blank" data-answer="net force|force|net-force" aria-label="Blank 1"> when mass is kept constant.</li>
+<li>Acceleration is inversely proportional to <input type="text" class="blank" data-answer="mass" aria-label="Blank 2"> when net force is held constant.</li>
+<li>The direction of an object's acceleration is always identical to the direction of its <input type="text" class="blank" data-answer="net force|net-force|force" aria-label="Blank 3">.</li>
+<li>When an elevator accelerates upward, the apparent weight read by a scale is <input type="text" class="blank" data-answer="greater|larger|higher|more" aria-label="Blank 4"> than true weight.</li>
+<li>During complete free fall, an onboard bathroom scale reads an apparent weight of <input type="text" class="blank" data-answer="0|zero|0 N" aria-label="Blank 5"> Newtons.</li>
+</ol>
+<div class="recall-actions">
+<button class="btn" type="button" data-recall-check>Check</button>
+<button class="btn ghost" type="button" data-recall-reveal>Show answers</button>
+<button class="btn ghost" type="button" data-recall-reset>Reset</button>
+<span class="feedback" data-recall-feedback role="status"></span>
+</div>
+</div>
+
+        
+        <h3>Problem 2.2: Mars Rover Emergency Braking</h3>
+<div class="exam-frame">
+<div class="exam-meta"><span class="exam-src">Written response</span><span class="exam-marks">3 marks</span></div>
+<p class="exam-q">An 800-kilogram robotic rover travels across a flat Martian plain at 15 meters per second. The terrain scanner detects a steep crevasse 30 meters ahead. The emergency magnetic friction brakes can produce a maximum retarding force of 3500 Newtons.</p><p class="exam-q">Will the rover stop safely before reaching the edge of the crevasse?</p><p class="exam-q">Evaluate this scenario using the <b>Evidence &rarr; Claim &rarr; Reasoning (ECR)</b> framework.</p>
+
+<textarea class="textbox" aria-label="Your answer"></textarea>
+<div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+<div class="scheme"><div class="scheme-card"><div class="label">Scoring guide</div><ul class="pts"><li><b>Givens (1 mark):</b> You list <em>m</em> = 800 kg, <em>v</em><sub>i</sub> = 15 m/s, <em>v</em><sub>f</sub> = 0, <em>d</em><sub>limit</sub> = 30 m and <em>F</em><sub>max</sub> = 3500 N.</li><li><b>Calculation (1 mark):</b> You find the needed acceleration, <em>a</em> = &minus;3.75 m/s&sup2;.</li><li>You use &Sigma;<em>F</em> = <em>ma</em> to find the needed force (3000 N) or the stopping distance (25.7 m).</li><li><b>Conclusion (1 mark):</b> You say the rover stops safely.</li><li>You compare 3000 N with 3500 N, or 25.7 m with 30 m.</li></ul></div><div class="scheme-card"><div class="label">Model response (Evidence, Claim, Reasoning)</div><ul class="pts"><li><b>Evidence:</b> Rover mass is 800 kg. Initial velocity is 15 m/s, final velocity is 0 m/s, and available stopping distance is 30 m. Maximum available braking force is 3500 N.</li><li><b>Claim:</b> Yes, the rover will stop safely. The required stopping force of 3000 N is within the 3500 N braking capacity. The rover stops in 25.7 meters.</li><li><b>Reasoning:</b> To stop in 30 m: <em>a</em> = &minus;<em>v</em><sub>i</sub>&sup2; / (2<em>d</em>) = &minus;(15)&sup2; / 60 = &minus;3.75 m/s&sup2;. By Newton's Second Law: &Sigma;<em>F</em> = <em>m</em><em>a</em> = 800 kg &times; 3.75 m/s&sup2; = 3000 N. Because 3000 N &le; 3500 N, the brakes supply sufficient force. At maximum braking (3500 N), actual stopping distance is only 25.7 m.</li></ul></div></div>
+</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/book.js"></script>
+  <script src="../../textbook/core.js"></script>
+  <script src="../../textbook/widgets.js"></script>
+  <script src="../../textbook/sim.js"></script>
+  <script src="../assets/glossary.js"></script>
+  <script src="../assets/draw.js"></script>
+  <script src="../assets/reference-center.js"></script>
+  <script src="2-2.js"></script>
+</body>
+</html>

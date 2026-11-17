@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-7a" data-book="chem">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>The Mole &amp; Molar Mass · Gen Chem 1-7a</title>
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+  <!-- HERO -->
+<main>
+
+  <section id="s-hero" class="hero" data-toc="Opening">
+    <div>
+      <div class="label">Lesson 1-7a &middot; The Mole &amp; Molar Mass</div>
+      <h1>How do you weigh a particle you <span class="flip">cannot see</span>?</h1>
+      
+      <div id="hero-zoom" data-motion="zoom" data-zoom-levels="3" data-zoom-anchor="200,120,40">
+        <!-- Level 1: Macro -->
+        <div data-zoom-level="macro">
+          <svg viewBox="0 0 400 300">
+            <!-- Scale base -->
+            <rect x="70" y="160" width="260" height="95" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="1.6"/>
+            <!-- Digital readout -->
+            <rect x="125" y="195" width="150" height="42" rx="4" fill="var(--paper)" stroke="var(--hair)" stroke-width="1.2"/>
+            <text x="200" y="216" font-family="var(--mono)" style="font-size:var(--dia-header-size);" fill="var(--accent)" text-anchor="middle" dominant-baseline="central" font-weight="700">4.20 g</text>
+            <!-- Scale pan stand and platform -->
+            <line x1="200" y1="145" x2="200" y2="160" stroke="var(--ink)" stroke-width="3"/>
+            <line x1="95" y1="145" x2="305" y2="145" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Weigh paper / boat -->
+            <polygon points="120,145 135,130 265,130 280,145" fill="var(--paper-2)" stroke="var(--ink-mute)" stroke-width="1"/>
+            <!-- Powder heap on weigh paper -->
+            <path d="M 155 130 C 175 88, 225 88, 245 130 Z" fill="var(--card)" stroke="var(--hair)" stroke-width="1.2"/>
+            <!-- Spatula resting to the left -->
+            <path d="M 60 135 C 75 135, 95 125, 130 128 L 150 130 C 158 130, 160 138, 150 138 Z" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+            <!-- Bottom caption -->
+            <text x="200" y="280" font-family="var(--display)" style="font-size:var(--dia-label-size);" text-anchor="middle" fill="var(--ink-soft)">Macro: 4.20 g Sample of NaHCO₃</text>
+          </svg>
+        </div>
+        <!-- Level 2: Meso -->
+        <div data-zoom-level="meso">
+          <svg viewBox="0 0 400 300">
+            <!-- Magnifying circular lens guideline -->
+            <circle cx="200" cy="135" r="95" fill="none" stroke="var(--hair-soft)" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <!-- Zoomed crystalline powder grains -->
+            <g fill="var(--card)" stroke="var(--ink)" stroke-width="1.2">
+              <polygon points="145,95 178,90 190,122 155,132 140,115"/>
+              <polygon points="195,85 235,80 245,112 208,118"/>
+              <polygon points="240,100 275,94 282,126 250,134 238,118"/>
+              <polygon points="125,130 162,125 170,160 135,168 120,148"/>
+              <polygon points="175,130 215,124 225,164 185,170 170,152"/>
+              <polygon points="228,130 268,124 275,160 238,166"/>
+              <polygon points="152,170 192,166 200,200 162,206"/>
+              <polygon points="205,168 245,162 252,198 214,204"/>
+            </g>
+            <text x="200" y="265" font-family="var(--mono)" style="font-size:var(--dia-label-size);" text-anchor="middle" fill="var(--ink-soft)">Meso: Microcrystalline NaHCO₃ Grains</text>
+          </svg>
+        </div>
+        <!-- Level 3: Particulate -->
+        <div data-zoom-level="particulate">
+          <svg viewBox="0 0 400 300">
+            <!-- Alternating lattice of Na+ and HCO3- ions -->
+            <!-- Row 1: y=65 -->
+            <circle cx="100" cy="65" r="14" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="100" y="65" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Na⁺</text>
+
+            <circle cx="165" cy="65" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>
+            <text x="165" y="65" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--accent)">HCO₃⁻</text>
+
+            <circle cx="235" cy="65" r="14" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="235" y="65" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Na⁺</text>
+
+            <circle cx="300" cy="65" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>
+            <text x="300" y="65" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--accent)">HCO₃⁻</text>
+
+            <!-- Row 2: y=118 -->
+            <circle cx="100" cy="118" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>
+            <text x="100" y="118" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--accent)">HCO₃⁻</text>
+
+            <circle cx="165" cy="118" r="14" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="165" y="118" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Na⁺</text>
+
+            <circle cx="235" cy="118" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>
+            <text x="235" y="118" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--accent)">HCO₃⁻</text>
+
+            <circle cx="300" cy="118" r="14" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="300" y="118" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Na⁺</text>
+
+            <!-- Row 3: y=172 -->
+            <circle cx="100" cy="172" r="14" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="100" y="172" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Na⁺</text>
+
+            <circle cx="165" cy="172" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>
+            <text x="165" y="172" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--accent)">HCO₃⁻</text>
+
+            <circle cx="235" cy="172" r="14" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="235" y="172" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Na⁺</text>
+
+            <circle cx="300" cy="172" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>
+            <text x="300" y="172" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--accent)">HCO₃⁻</text>
+
+            <!-- Row 4: y=225 -->
+            <circle cx="100" cy="225" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>
+            <text x="100" y="225" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--accent)">HCO₃⁻</text>
+
+            <circle cx="165" cy="225" r="14" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="165" y="225" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Na⁺</text>
+
+            <circle cx="235" cy="225" r="22" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>
+            <text x="235" y="225" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--accent)">HCO₃⁻</text>
+
+            <circle cx="300" cy="225" r="14" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+            <text x="300" y="225" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Na⁺</text>
+
+            <text x="200" y="275" font-family="var(--mono)" style="font-size:var(--dia-label-size);" text-anchor="middle" fill="var(--ink-mute)">Particulate: Crystal Lattice of NaHCO₃</text>
+          </svg>
+        </div>
+      </div>
+      <p class="hint">4.2 g is easy to measure · the count is the problem this page solves</p>
+
+      <div class="meta-strip">
+        <div class="meta-block">
+          <div class="k">Alignment</div>
+          <div class="v"><b>HS-PS1-7</b> Use mathematical representations to support the claim that atoms, and therefore mass, are conserved during a chemical reaction.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Objective</div>
+          <div class="v">You can explain the mole as a count, not a mass. You can use the periodic table to find the molar mass of a compound. You can scale a recipe and keep its ratios.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Scope</div>
+          <div class="v">Avogadro's number (6.022 &times; 10²³), molar mass in g/mol, formulas of main-group elements and scaling a recipe.</div>
+        </div>
+      </div>
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>The mole:</strong> A mole is 6.022 &times; 10<sup>23</sup> particles (Avogadro's number). Chemists use it like a dozen, to count atoms by weighing them.</li>
+              <li><strong>The mole bridge:</strong> The mole connects a count of particles to a mass in grams.</li>
+              <li><strong>Molar mass (g/mol):</strong> The mass of one mole of a substance. Add up the atomic masses from the periodic table.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>The mole bridge</h4>
+            <svg viewBox="0 0 280 90">
+              <defs>
+                <marker id="syn-arr-27a" markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto" viewBox="0 0 4 4"><path d="M0 0 L4 2 L0 4 z" fill="var(--ink)"/></marker>
+              </defs>
+              <!-- Mass Box -->
+              <rect x="8" y="26" width="68" height="36" rx="4" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2"/>
+              <text x="42" y="44" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Mass (g)</text>
+              
+              <!-- Mass <-> Moles Arrows -->
+              <path d="M80 36 L108 36" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr-27a)"/>
+              <text x="94" y="28" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" fill="var(--ink-soft)">&divide; M</text>
+              <path d="M108 52 L80 52" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr-27a)"/>
+              <text x="94" y="62" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" fill="var(--ink-soft)">&times; M</text>
+              
+              <!-- Moles Box -->
+              <rect x="112" y="24" width="60" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.4"/>
+              <text x="142" y="44" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--accent)">Moles</text>
+              
+              <!-- Moles <-> Count Arrows -->
+              <path d="M176 36 L204 36" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr-27a)"/>
+              <text x="190" y="28" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" fill="var(--ink-soft)">&times; N_A</text>
+              <path d="M204 52 L176 52" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr-27a)"/>
+              <text x="190" y="62" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" fill="var(--ink-soft)">&divide; N_A</text>
+              
+              <!-- Count Box -->
+              <rect x="208" y="26" width="64" height="36" rx="4" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2"/>
+              <text x="240" y="44" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">Particles</text>
+            </svg>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> State what Avogadro's number is and why chemists use it.</li>
+              <li><input type="checkbox" disabled> Calculate the molar mass of an element or a compound.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+    </div>
+  </section>
+
+  <!-- 01 THE CHEMIST'S DOZEN -->
+  <section id="s-dozen" data-toc="The mole concept">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">01</span><span class="label">Counting by weighing</span></div>
+      <h2>The mole is just a massive dozen.</h2>
+      
+      <p>You can't count atoms. No instrument does it, and the numbers would be absurd anyway. So chemists count the way a bakery counts eggs: in a fixed group. A bakery uses a dozen. Chemists use a mole, exactly <strong>6.022 &times; 10²³</strong> of anything. A mole of atoms, molecules, ions or electrons is always that same number. It is called Avogadro's number.</p>
+
+      <p>The number was chosen to make one trick work: <strong>an element's atomic mass in amu equals its molar mass in grams.</strong> One carbon-12 atom weighs 12 amu. One mole of them weighs 12 g. Iron reads 55.85 on the table, and a mole of iron is 55.85 g. The periodic table you already own is secretly a table of gram-sized masses.</p>
+
+      <!-- SVG Bridge V-27a-02 -->
+      <figure class="figure figure--full">
+<div class="diagram">
+        <svg viewBox="0 0 540 180">
+          <defs>
+            <marker id="arr-avogadro" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="var(--ink)"/></marker>
+          </defs>
+
+          <!-- Left: 1 atom carbon-12 -->
+          <g transform="translate(85, 75)">
+            <!-- Outer electron ring -->
+            <circle cx="0" cy="0" r="38" fill="none" stroke="var(--hair)" stroke-width="1" stroke-dasharray="3 3"/>
+            <!-- Electrons on ring -->
+            <circle cx="0" cy="-38" r="2.5" fill="var(--ink)"/>
+            <circle cx="33" cy="-19" r="2.5" fill="var(--ink)"/>
+            <circle cx="33" cy="19" r="2.5" fill="var(--ink)"/>
+            <circle cx="0" cy="38" r="2.5" fill="var(--ink)"/>
+            <circle cx="-33" cy="19" r="2.5" fill="var(--ink)"/>
+            <circle cx="-33" cy="-19" r="2.5" fill="var(--ink)"/>
+            <!-- Nucleus -->
+            <circle cx="0" cy="0" r="17" fill="var(--card)" stroke="var(--ink)" stroke-width="1.5"/>
+            <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="var(--ink)">¹²C</text>
+          </g>
+          <text x="85" y="138" font-family="var(--display)" style="font-size:var(--dia-label-size);" text-anchor="middle" font-weight="700" fill="var(--ink)">1 atom of ¹²C</text>
+          <text x="85" y="156" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" text-anchor="middle" fill="var(--accent)" font-weight="700">Mass: 12.00 amu</text>
+
+          <!-- Middle: Avogadro's Bridge Bracket -->
+          <path d="M 175 62 L 350 62" fill="none" stroke="var(--ink)" stroke-width="2" marker-end="url(#arr-avogadro)"/>
+          <text x="260" y="48" font-family="var(--mono)" style="font-size:var(--dia-header-size);" text-anchor="middle" font-weight="800" fill="var(--ink)">&times; 6.022 &times; 10²³</text>
+          <text x="260" y="86" font-family="var(--display)" style="font-size:var(--dia-label-size);" text-anchor="middle" fill="var(--ink-soft)" font-weight="600">Avogadro's Number</text>
+          <text x="260" y="104" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" text-anchor="middle" fill="var(--ink-mute)">1 mole of carbon atoms</text>
+
+          <!-- Right: 1 mole on balance -->
+          <g transform="translate(450, 75)">
+            <!-- Digital Balance -->
+            <rect x="-55" y="10" width="110" height="42" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.5"/>
+            <rect x="-32" y="24" width="64" height="20" rx="2" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+            <text x="0" y="34" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="700" text-anchor="middle" dominant-baseline="central">12.00 g</text>
+            <!-- Pan Post & Platform -->
+            <line x1="0" y1="5" x2="0" y2="10" stroke="var(--ink)" stroke-width="3"/>
+            <line x1="-48" y1="5" x2="48" y2="5" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/>
+            <!-- Weigh paper & Carbon pile -->
+            <polygon points="-35,5 -25,-4 25,-4 35,5" fill="var(--paper-2)" stroke="var(--ink-mute)" stroke-width="1"/>
+            <path d="M -22 -4 C -12 -30, 12 -30, 22 -4 Z" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="1.2"/>
+          </g>
+          <text x="450" y="138" font-family="var(--display)" style="font-size:var(--dia-label-size);" text-anchor="middle" font-weight="700" fill="var(--ink)">1 mole of ¹²C atoms</text>
+          <text x="450" y="156" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" text-anchor="middle" fill="var(--accent)" font-weight="700">Mass: 12.00 g</text>
+        </svg>
+</div>
+<figcaption>atomic mass units &rarr; grams per mole · Avogadro's number is the bridge</figcaption>
+</figure>
+
+      <p>The mole bridges two scales. It connects unweighable atoms to benchtop measurements on a laboratory balance. You weigh grams. You compute moles. You now know the count.</p>
+      
+      <p>6.022 &times; 10²³ refuses to be pictured, but you can hold it. Eighteen milliliters of water, a couple of sips, is one mole of water molecules. The entire number fits in your mouth. Counting molecules in that sip at one per second would take 19 quadrillion years. That exceeds the age of the universe a million times over. The number is enormous because molecules are that small.</p>
+
+      <div class="callout">
+        <div class="label">The one idea to hold onto</div>
+        <p>The mole is a count, not a mass. A mole of iron and a mole of sulfur hold the same number of atoms but have different masses. A dozen bowling balls and a dozen golf balls both count twelve.</p>
+      </div>
+      <div class="callout"><div class="label">Common mistake</div><p>Thinking a mole of a heavier substance has more particles. A mole of glucose weighs about ten times a mole of water, but both hold 6.022 &times; 10²³ molecules.</p></div>
+      
+    </div>
+  </section>
+
+  <!-- 02 MOLAR MASS -->
+  <section id="s-molarmass" data-toc="Molar mass">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">02</span><span class="label">From amu to grams</span></div>
+      <h2>Scaling up the periodic table.</h2>
+      
+      <p>Look at any element cell on the periodic table. The number at the bottom is the average mass of one atom, in <strong>atomic mass units</strong> (amu). Avogadro's number is the exact factor that scales this tiny mass into grams:</p>
+      
+      <div class="eq-display">1 atom of carbon-12 = 12.00 amu &rarr; 1 mole of carbon-12 = 12.00 g</div>
+      
+      <p>So the atomic mass of an element in amu equals the mass of one mole of that element in grams. We call this the <strong class="term">molar mass</strong>, measured in <strong class="term">grams per mole</strong> (<strong>g/mol</strong>).</p>
+
+      <h3>Calculating the molar mass of a compound</h3>
+      <p>Molar mass is a reading-and-adding job. The formula tells you how many of each atom. The table tells you what each one weighs per mole. Multiply, then add, and the unit is g/mol. Every mistake here is one of two: misreading a subscript, or forgetting that a subscript after a parenthesis multiplies everything inside.</p>
+
+      <h3>Worked example: baking soda (NaHCO₃)</h3>
+      
+      <!-- SVG Worked Example V-27a-03 -->
+      <figure class="figure figure--full">
+<div class="diagram">
+        <svg viewBox="0 0 300 170">
+          <text x="150" y="32" font-family="var(--mono)" style="font-size:var(--dia-atom-size);" text-anchor="middle" font-weight="700" fill="var(--ink)">
+            NaHCO₃
+          </text>
+          <text x="276" y="48" text-anchor="end" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)">g/mol</text>
+          <g font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="start">
+            <text x="24" y="62">Na: 1 &times; 22.99</text>
+            <text x="276" y="62" text-anchor="end">= 22.99</text>
+            <text x="24" y="82">H : 1 &times; 1.01</text>
+            <text x="276" y="82" text-anchor="end">= 1.01</text>
+            <text x="24" y="102">C : 1 &times; 12.01</text>
+            <text x="276" y="102" text-anchor="end">= 12.01</text>
+            <text x="24" y="122">O : 3 &times; 16.00</text>
+            <text x="276" y="122" text-anchor="end">= 48.00</text>
+          </g>
+          <line x1="24" y1="130" x2="276" y2="130" stroke="var(--ink-mute)" stroke-width="1.5"/>
+          <rect x="70" y="138" width="160" height="26" rx="3" fill="var(--paper)" stroke="var(--good)" style="stroke-width: var(--dia-stroke-bond)"/>
+          <text x="150" y="156" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);" text-anchor="middle" fill="var(--ink)">
+            <tspan fill="var(--good)">&Sigma; =</tspan> 84.01 g/mol
+          </text>
+        </svg>
+</div>
+<figcaption>subscripts give the count · the table gives the mass · multiply, then add</figcaption>
+</figure>
+
+      <h3>Your turn: chalk (CaCO₃)</h3>
+      
+      <!-- Scaffold Widget for CaCO3 -->
+      <div data-widget="scaffold">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "table",
+          "table": {
+            "headers": ["Element", "Count", "Atomic Mass (g/mol)", "Subtotal (g/mol)"],
+            "rows": [
+              [
+                {"given": "Calcium (Ca)"},
+                {"given": "1"},
+                {"given": "40.08"},
+                {"blank": {"type": "numeric", "answer": 40.08, "tol": 0.02, "feedback_wrong": "Read calcium's mass straight off the table: 40.08. One calcium."}}
+              ],
+              [
+                {"given": "Carbon (C)"},
+                {"given": "1"},
+                {"given": "12.01"},
+                {"blank": {"type": "numeric", "answer": 12.01, "tol": 0.02, "feedback_wrong": "Read carbon's mass off the table: 12.01. One carbon."}}
+              ],
+              [
+                {"given": "Oxygen (O)"},
+                {"given": "3"},
+                {"given": "16.00"},
+                {"blank": {"type": "numeric", "answer": 48.00, "tol": 0.02, "feedback_wrong": "The subscript 3 multiplies: 3 &times; 16.00. Forgetting a subscript is the classic mistake in this topic."}}
+              ],
+              [
+                {"given": "<strong>Total Molar Mass (CaCO₃)</strong>"},
+                {"given": ""},
+                {"given": ""},
+                {"blank": {"type": "numeric", "answer": 100.09, "tol": 0.05, "feedback_wrong": "Add the subtotals: 40.08 + 12.01 + 48.00.", "feedback_right": "100.09 g/mol. One mole of chalk is about a hundred grams, a mass you can hold."}}
+              ]
+            ]
+          }
+        }
+        </script>
+      </div>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Forgetting the subscript. CaCO₃ has three oxygens, so oxygen adds 3 &times; 16.00 = 48.00 g/mol, not 16.00.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 03 SIGNATURE INTERACTIVE: MOLAR MASS BUILDER -->
+  <section id="s-builder" data-toc="Molar mass builder">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03</span><span class="label">Molar mass builder</span></div>
+      <h2>Build a formula. Calculate the mass.</h2>
+      <p>Pick a molecule or type any formula. The tool reads the formula, builds the molar mass step by step, and sketches the atoms.</p>
+
+      <div class="sim-box" data-sim="molar-mass">
+        <div class="label">Interactive tool</div>
+        <h4>What is the molar mass of this formula?</h4>
+        <div class="sim-stage"><canvas aria-label="A space-filling picture of the atoms in the formula."></canvas></div>
+        <div class="sim-controls" role="group" aria-label="Preset molecules">
+          <button type="button" class="chip" aria-pressed="true" data-formula="H2O">Water</button>
+          <button type="button" class="chip" aria-pressed="false" data-formula="CO2">Carbon dioxide</button>
+          <button type="button" class="chip" aria-pressed="false" data-formula="NaCl">Table salt</button>
+          <button type="button" class="chip" aria-pressed="false" data-formula="NaHCO3">Baking soda</button>
+          <button type="button" class="chip" aria-pressed="false" data-formula="CH4">Methane</button>
+          <button type="button" class="chip" aria-pressed="false" data-formula="C6H12O6">Glucose</button>
+        </div>
+        <div class="sim-controls">
+          <label class="tool-field" for="formulaInput"><span class="label">Formula</span>
+            <input type="text" id="formulaInput" class="formula-input" value="H2O" placeholder="For example H2SO4" autocomplete="off" spellcheck="false">
+          </label>
+          <button type="button" class="btn" id="calcBtn">Calculate</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Molar mass calculation</caption>
+            <thead><tr><th scope="col">Atom</th><th scope="col" class="num">Count</th><th scope="col" class="num">Atomic mass (g/mol)</th><th scope="col" class="num">Subtotal (g/mol)</th></tr></thead>
+            <tbody id="calcTableBody"></tbody>
+          </table>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="formula"><span class="readout-label">Formula</span><span class="readout-value">H₂O</span></div>
+          <div class="readout" data-readout="atoms"><span class="readout-label">Atoms</span><span class="readout-value">3</span></div>
+          <div class="readout" data-readout="total"><span class="readout-label">Molar mass</span><span class="readout-value">18.02 g/mol</span></div>
+        </div>
+        <span class="status-pill" data-state="ok">Molar mass found</span>
+        <p data-sim-note aria-live="polite">Each count times its atomic mass gives a subtotal. The subtotals add to 18.02 g/mol.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="paper-3"></span>Hydrogen</li>
+          <li><span class="key" data-shape="dot" data-token="ink"></span>Carbon</li>
+          <li><span class="key" data-shape="dot" data-token="cool"></span>Nitrogen</li>
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Oxygen</li>
+          <li><span class="key" data-shape="dot" data-token="warn"></span>Chlorine</li>
+          <li><span class="key" data-shape="dot" data-token="ink-mute"></span>Any other element</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 SCALE & PROPORTION -->
+  <section id="s-scale" data-toc="Recipe scaling">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04</span><span class="label">Scale and proportion</span></div>
+      <h2>Recipe ratios and mole ratios.</h2>
+      <p>Avogadro's number is a scaling factor. The proportions never change as you scale.</p>
+      <p>A kitchen recipe lists proportions, such as 3 cups of flour to 1 cup of water (a 3:1 ratio). Bake one loaf or feed a whole school, and you must keep the exact 3:1 flour-to-water ratio. Shift the ratio and the texture collapses.</p>
+      <p>A chemical formula is an atomic recipe too. H₂O needs 2 hydrogen atoms for every 1 oxygen atom, a 2:1 ratio. Scale that up to one mole of H₂O. You get 2 moles of hydrogen atoms (1.204 &times; 10²⁴) and 1 mole of oxygen atoms (6.022 &times; 10²³). The scale grows by 6.022 &times; 10²³, but the hydrogen-to-oxygen ratio stays exactly 2:1.</p>
+      
+      <div class="callout">
+        <div class="label">Why we use moles</div>
+        <p>Atoms are too small to count, so we scale the recipe up by one mole and weigh it in grams. Molar mass is the conversion that turns the counting recipe into a scale reading.</p>
+      </div>
+      <div class="callout"><div class="label">Common mistake</div><p>Mixing up the atom ratio with the mass ratio. In H₂O the atom ratio is 2 hydrogen to 1 oxygen, but oxygen atoms are about 16 times heavier. The hydrogen-to-oxygen mass ratio is only about 1:8.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 05 PREDICT FIRST -->
+  <section id="s-predict" data-toc="Check yourself">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">05</span><span class="label">Check yourself</span></div>
+      <h2>Test your scale reasoning.</h2>
+
+      <!-- Q1 (commit-reveal choice) -->
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "choice",
+          "prompt": "<strong>1. Comparing mole counts:</strong> You weigh out 1.0 mole of water (H₂O, 18.02 g/mol) and 1.0 mole of glucose (C₆H₁₂O₆, 180.16 g/mol) in separate containers. Which container has more molecules?",
+          "options": [
+            {"label": "The water beaker", "correct": false, "feedback": "Water molecules are small, so you might think 1.0 mole packs in more of them. But a mole is a count. Both beakers hold the same number of molecules."},
+            {"label": "The glucose beaker", "correct": false, "feedback": "Glucose has more mass, so it feels like more stuff. But a mole counts molecules, not grams. Ostrich eggs weigh more than chicken eggs, yet a dozen of either is 12."},
+            {"label": "Both beakers hold the same number", "correct": true, "feedback": "A mole is a count. Each beaker holds 1.0 mole, which is 6.022 &times; 10²³ molecules."}
+          ],
+          "reveal": "<p>Glucose molecules have many more atoms, so the glucose beaker weighs about 10 times more. The number of molecules is identical.</p>"
+        }
+        </script>
+      </div>
+
+      <!-- Q2 (commit-reveal choice) -->
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "choice",
+          "prompt": "<strong>2. Molar mass of carbon dioxide:</strong> Methane (CH₄) has a molar mass of 16.04 g/mol. Carbon dioxide (CO₂) has a molar mass of 44.01 g/mol. Why is CO₂ so much heavier than CH₄?",
+          "options": [
+            {"label": "CO₂ has more carbon than CH₄", "correct": false, "feedback": "Carbon is the heaviest atom in methane, which makes it tempting. But each compound has exactly one carbon, and it adds 12.01 g/mol to both."},
+            {"label": "Oxygen atoms weigh far more than hydrogen atoms", "correct": true, "feedback": "Oxygen is 16.00 g/mol and hydrogen is 1.01 g/mol. Two oxygens add 32.00, while four hydrogens add only 4.04."}
+          ],
+          "reveal": "<p>Methane has 4 hydrogen atoms (4 &times; 1.01 = 4.04 g/mol). Carbon dioxide has 2 oxygen atoms (2 &times; 16.00 = 32.00 g/mol). The difference comes from the oxygen.</p>"
+        }
+        </script>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 SELF-EXPLAIN -->
+  <section id="s-explain" data-toc="Self-explain">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">06</span><span class="label">Explain it to yourself</span></div>
+      <h2>A dozen eggs and a dozen watermelons.</h2>
+      
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "free",
+          "prompt": "Use the idea of a dozen eggs and a dozen watermelons. Explain why 1 mole of hydrogen gas (H₂) has a different mass than 1 mole of carbon dioxide gas (CO₂). Both hold the same number of molecules.",
+          "minChars": 30,
+          "reveal": "A mole is a counting unit: exactly 6.022 &times; 10²³ particles, just as a dozen is exactly 12 items. A dozen watermelons has more mass than a dozen eggs because each watermelon is heavier. In the same way, 1 mole of CO₂ has more mass than 1 mole of H₂ because each CO₂ molecule is heavier. A CO₂ molecule holds a carbon and two oxygens. An H₂ molecule holds only two hydrogens. The particle count is the same in both."
+        }
+        </script>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- 07 EXAM PRACTICE -->
+  <section id="s-exam" data-toc="Exam practice">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">07</span><span class="label">Now the way it's marked</span></div>
+      <h2>Calculate a compound's molar mass.</h2>
+      <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+      <div class="exam-frame">
+        <div class="exam-meta">
+          <span class="exam-src">Gen Chem · HS-PS1-7 · constructed response</span>
+          <span class="exam-marks">[3 marks]</span>
+        </div>
+        
+        <div data-widget="commit-reveal">
+          <script type="application/json" class="w-config">
+          {
+            "mode": "free",
+            "prompt": "Calculate the molar mass of sucrose (C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>). Show the element counts and the atomic masses you use. Then say in one sentence what this value means.",
+            "minChars": 40,
+            "reveal": "<p>Now fill in the ledger below to check your arithmetic.</p><div data-widget=\"scaffold\"><script type=\"application/json\" class=\"w-config\">{\"mode\":\"table\",\"table\":{\"headers\":[\"Element\",\"Count\",\"Atomic Mass (g/mol)\",\"Subtotal (g/mol)\"],\"rows\":[[{\"given\":\"Carbon (C)\"},{\"given\":\"12\"},{\"given\":\"12.01\"},{\"blank\":{\"type\":\"numeric\",\"answer\":144.12,\"tol\":0.05,\"feedback_wrong\":\"Multiply: 12 &times; 12.01.\"}}],[{\"given\":\"Hydrogen (H)\"},{\"given\":\"22\"},{\"given\":\"1.01\"},{\"blank\":{\"type\":\"numeric\",\"answer\":22.22,\"tol\":0.05,\"feedback_wrong\":\"Multiply: 22 &times; 1.01.\"}}],[{\"given\":\"Oxygen (O)\"},{\"given\":\"11\"},{\"given\":\"16.00\"},{\"blank\":{\"type\":\"numeric\",\"answer\":176.00,\"tol\":0.05,\"feedback_wrong\":\"Multiply: 11 &times; 16.00.\"}}],[{\"given\":\"<strong>Total Molar Mass (C₁₂H₂₂O₁₁)</strong>\"},{\"given\":\"\"},{\"given\":\"\"},{\"blank\":{\"type\":\"numeric\",\"answer\":342.34,\"tol\":0.05,\"feedback_wrong\":\"Add: 144.12 + 22.22 + 176.00.\",\"feedback_right\":\"342.34 g/mol is the molar mass of sucrose.\"}}]]}}<\/script></div><h4>Scoring guide: 3 marks</h4><ul class=\"pts\"><li><b>Setup (1 mark):</b> You multiply each count by its atomic mass, such as 12 &times; 12.01 for carbon.</li><li><b>Sum (1 mark):</b> You add the subtotals and get <strong>342.34 g/mol</strong>.</li><li><b>Meaning (1 mark):</b> You say the value is the mass in grams of one mole (6.022 &times; 10²³ molecules) of sucrose.</li></ul>"
+          }
+          </script>
+        </div>
+            <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why This Matters</div>
+        <p>A drug molecule must fit its receptor in the body. Pharmacists cannot count molecules, so they use molar mass. Weighing an active ingredient in grams gives the intended number of molecules in each dose.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-7 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-7</h3>
+    <p>
+      Test your understanding of the mole, Avogadro's number, and molar mass calculations. Rapid diagnostic checks target individual arithmetic and conceptual hurdles.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-7" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+  <div class="footer">
+    <div class="label">Gen Chem · Semester 1 · 1-7a</div>
+    <p>The Mole &amp; Molar Mass. Next: using this mass bridge to perform dimensional analysis conversions in the laboratory.</p>
+  </div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="2-7a.js"></script>
+</body>
+</html>

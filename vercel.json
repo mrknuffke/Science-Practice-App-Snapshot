@@ -1,0 +1,53 @@
+{
+  "installCommand": "npm ci",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "chem.sciencepractice.app"
+        }
+      ],
+      "destination": "https://sciencepractice.app/chem/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "physics.sciencepractice.app"
+        }
+      ],
+      "destination": "https://sciencepractice.app/physics/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "bio.sciencepractice.app"
+        }
+      ],
+      "destination": "https://sciencepractice.app/bio/$1",
+      "permanent": true
+    },
+    {
+      "source": "/chem",
+      "destination": "/chem/",
+      "permanent": true
+    },
+    {
+      "source": "/physics",
+      "destination": "/physics/",
+      "permanent": true
+    },
+    {
+      "source": "/bio",
+      "destination": "/bio/",
+      "permanent": true
+    }
+  ]
+}

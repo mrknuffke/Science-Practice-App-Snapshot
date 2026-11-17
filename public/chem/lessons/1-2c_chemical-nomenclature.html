@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-2c" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Chemical Nomenclature · Gen Chem 1-2c</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 1-2c &middot; Chemical Nomenclature</div>
+    <h1>Decoding the chemical language: <span class="flip">from formula to name</span>.</h1>
+    <p class="lede">Sodium hydroxide. Calcium nitrate. Carbon monoxide. A chemical bottle's name is not an arbitrary label: it is a precise instruction manual for what atoms are inside and how they are bonded. By the end, you can name ionic and covalent compounds, write formulas from names, and read the names on safety labels.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-2</b> Construct and revise an explanation for the outcome of a simple chemical reaction based on the outermost electron states of atoms, trends in the periodic table, and knowledge of the patterns of chemical properties.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can classify a compound as ionic or covalent. You can balance ion charges to write a formula, and use Greek prefixes to name covalent molecules.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Names and formulas for ionic compounds, polyatomic ions, and covalent compounds. Roman numerals for transition metals are Enrichment. Do this lesson before Lewis structures (1-3a).</div></div>
+    </div>
+    
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core rules of nomenclature</h4>
+            <ul>
+              <li><strong>Step 1, check for a metal:</strong> If a metal (or ammonium NH<sub>4</sub><sup>+</sup>) is present, the compound is <em>ionic</em>. If only nonmetals are present, it is <em>covalent</em>.</li>
+              <li><strong>Ionic Rules:</strong> Name the cation first, then the anion. Use no Greek prefixes. Charge balance fixes the ratio.</li>
+              <li><strong>Polyatomic Ions:</strong> Polyatomics stay intact as groups (e.g., SO<sub>4</sub><sup>2−</sup> is sulfate; use parentheses if you need more than one: Ca(NO<sub>3</sub>)<sub>2</sub>).</li>
+              <li><strong>Covalent Rules:</strong> Use Greek prefixes (mono-, di-, tri-, tetra-) to report atom counts. End the second element in <em>-ide</em>. Drop <em>mono-</em> on the first element.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Nomenclature Decision Flowchart</h4>
+            <figure class="figure figure--full">
+<div class="diagram">
+              <svg viewBox="0 0 520 196" role="img" aria-label="Flowchart showing decision pathway for chemical nomenclature based on metal presence.">
+                <!-- Decision pill at top -->
+                <rect x="150" y="10" width="220" height="38" rx="8" fill="var(--card)" stroke="var(--ink)" style="stroke-width:var(--dia-stroke-bond);"/>
+                <text x="260" y="34" text-anchor="middle" font-family="var(--display)" font-size="var(--dia-label-size, 12px)" fill="var(--ink)" font-weight="700">Metal or NH₄⁺ Present?</text>
+
+                <!-- Left path (YES -> Ionic) -->
+                <path d="M 200 48 L 135 84" stroke="var(--ink-soft)" style="stroke-width:var(--dia-stroke-bond);" fill="none"/>
+                <polygon points="131,87 141,84 136,78" fill="var(--ink-soft)"/>
+                <rect x="144" y="52" width="36" height="18" rx="4" fill="var(--card)" stroke="var(--ink-soft)" style="stroke-width:var(--dia-stroke);"/>
+                <text x="162" y="65" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" font-weight="700" fill="var(--ink)">YES</text>
+
+                <!-- Right path (NO -> Covalent) -->
+                <path d="M 320 48 L 385 84" stroke="var(--accent)" style="stroke-width:var(--dia-stroke-bond);" fill="none"/>
+                <polygon points="389,87 384,78 379,84" fill="var(--accent)"/>
+                <rect x="340" y="52" width="34" height="18" rx="4" fill="var(--card)" stroke="var(--accent)" style="stroke-width:var(--dia-stroke);"/>
+                <text x="357" y="65" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" font-weight="700" fill="var(--accent)">NO</text>
+
+                <!-- Ionic Branch Card -->
+                <rect x="16" y="86" width="236" height="98" rx="8" fill="var(--card)" stroke="var(--ink-soft)" style="stroke-width:var(--dia-stroke);"/>
+                <rect x="16" y="86" width="236" height="24" rx="8" fill="var(--paper-2)"/>
+                <text x="134" y="102" text-anchor="middle" font-family="var(--display)" font-size="var(--dia-caption-size, 10px)" font-weight="800" letter-spacing="1" fill="var(--ink)">IONIC SYSTEM</text>
+                <text x="28" y="125" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" fill="var(--ink)">• Cation + anion; zero net charge</text>
+                <text x="28" y="142" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" fill="var(--ink-mute)">• Charge balance sets the ratio</text>
+                <text x="28" y="163" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" font-weight="600" fill="var(--ink)">e.g., Na₂O: sodium oxide</text>
+
+                <!-- Covalent Branch Card -->
+                <rect x="268" y="86" width="236" height="98" rx="8" fill="color-mix(in srgb, var(--accent) 6%, var(--card))" stroke="var(--accent)" style="stroke-width:var(--dia-stroke);"/>
+                <rect x="268" y="86" width="236" height="24" rx="8" fill="color-mix(in srgb, var(--accent) 14%, var(--card))"/>
+                <text x="386" y="102" text-anchor="middle" font-family="var(--display)" font-size="var(--dia-caption-size, 10px)" font-weight="800" letter-spacing="1" fill="var(--accent)">COVALENT (MOLECULAR)</text>
+                <text x="280" y="125" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" fill="var(--ink)">• Nonmetals sharing electrons</text>
+                <text x="280" y="142" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" fill="var(--ink-mute)">• Greek prefixes state atom count</text>
+                <text x="280" y="163" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" font-weight="600" fill="var(--accent)">e.g., N₂O₄: dinitrogen tetroxide</text>
+              </svg>
+</div>
+<figcaption>Nomenclature decision pathway: metal presence separates ionic from covalent</figcaption>
+</figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- 01 THE DECISION TREE -->
+  <section id="s-tree" data-toc="1. Decision Tree">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">01</span><span class="label">Decision tree</span></div>
+      <h2>The nomenclature decision tree</h2>
+      <p>Before you write a name or a formula, answer one question: is there a metal present?</p>
+      <p>Chemical naming has two separate systems. Mixing them up is the most common error here. Greek prefixes like <em>di-</em> and <em>tri-</em> belong <strong>only</strong> to covalent compounds. Ionic compounds <strong>never</strong> use prefixes, because charge balance fixes their ratio.</p>
+
+      <div class="nomen-tree-grid">
+        <div class="nomen-branch-card" tabindex="0" role="button" aria-expanded="false" data-expand-branch="ionic" title="Click to enlarge">
+          <div class="branch-expand-cue">Enlarge ↗</div>
+          <h4>Branch A: Ionic compounds</h4>
+          <p><strong>Condition:</strong> Contains a metal cation (or NH<sub>4</sub><sup>+</sup>) plus a nonmetal anion (or polyatomic ion).</p>
+          <ul>
+            <li><strong>Rule:</strong> Cation name + anion name (ending in <em>-ide</em>, or a polyatomic name).</li>
+            <li><strong>No prefixes:</strong> Never write <em>&ldquo;disodium monoxide&rdquo;</em>. Na<sub>2</sub>O is <strong>sodium oxide</strong>, because Na is +1 and O is &minus;2, and 2:1 is the only valid ratio.</li>
+            <li><strong>Ratio:</strong> Charge balance fixes it, so the name never counts atoms.</li>
+          </ul>
+        </div>
+
+        <div class="nomen-branch-card" tabindex="0" role="button" aria-expanded="false" data-expand-branch="covalent" title="Click to enlarge">
+          <div class="branch-expand-cue">Enlarge ↗</div>
+          <h4>Branch B: Covalent compounds</h4>
+          <p><strong>Condition:</strong> Contains <em>only</em> nonmetals sharing valence electrons.</p>
+          <ul>
+            <li><strong>Rule:</strong> [Prefix]-first element + [prefix]-second element-<em>ide</em>.</li>
+            <li><strong>Use prefixes:</strong> Carbon and oxygen can combine as CO (<strong>carbon monoxide</strong>) or CO<sub>2</sub> (<strong>carbon dioxide</strong>). The prefixes tell you the exact molecular count.</li>
+            <li><strong>Exception:</strong> Omit <em>mono-</em> on the first element. Write <em>carbon dioxide</em>, not <em>monocarbon dioxide</em>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Sort: which branch does each formula take?</h3>
+      <p>One question decides everything downstream. Scan each formula for a metal, and watch for the one cation that behaves like a metal without containing one.</p>
+      <div data-widget="sort-classify">
+        <script type="application/json" class="w-config">
+{
+  "categories": [
+    {
+      "id": "ionic",
+      "label": "Ionic: metal or NH₄⁺ present"
+    },
+    {
+      "id": "covalent",
+      "label": "Covalent: nonmetals only"
+    }
+  ],
+  "items": [
+    {
+      "text": "<strong>NaCl<\/strong>",
+      "category": "ionic",
+      "feedback_right": "Sodium is a metal, so this is ionic. Na⁺ and Cl⁻ cancel one-to-one, which is why the formula carries no subscripts at all.",
+      "feedback_wrong": "Sodium sits in group 1, on the metal side of the table, and one metal is all it takes. A formula only goes down the covalent branch when every element in it is a nonmetal."
+    },
+    {
+      "text": "<strong>CO<sub>2<\/sub><\/strong>",
+      "category": "covalent",
+      "feedback_right": "Carbon and oxygen are both nonmetals, so they share instead of transferring. That is exactly why CO₂ needs prefixes: CO and CO₂ are different compounds.",
+      "feedback_wrong": "Hunt for a metal here and you will not find one. With nothing to donate an electron outright, carbon and oxygen share, and the compound is covalent."
+    },
+    {
+      "text": "<strong>CuSO<sub>4<\/sub><\/strong>",
+      "category": "ionic",
+      "feedback_right": "Copper is a metal, so this is ionic. Sulfate travels as one intact SO₄²⁻ unit, canceling Cu²⁺ one-to-one.",
+      "feedback_wrong": "The atoms inside the sulfate cluster really are covalently bonded, and that is what catches most people. But those bonds are internal to the ion. Copper is a metal, and metal plus polyatomic anion is ionic."
+    },
+    {
+      "text": "<strong>N<sub>2<\/sub>O<sub>4<\/sub><\/strong>",
+      "category": "covalent",
+      "feedback_right": "Both elements are nonmetals. The 2 and the 4 are literal atom counts in one molecule, which is why the name reports them: dinitrogen tetroxide.",
+      "feedback_wrong": "Subscripts that large look like the output of charge balancing. They are not; nitrogen and oxygen are both nonmetals, so nothing here transfers an electron. Those numbers count atoms in a molecule."
+    },
+    {
+      "text": "<strong>FeCl<sub>3<\/sub><\/strong>",
+      "category": "ionic",
+      "feedback_right": "Iron is a metal, so this is ionic. The 3 is not a molecular count. It is what charge balance forces when Fe³⁺ meets Cl⁻.",
+      "feedback_wrong": "Three chlorines can read like a molecular count, but iron is a metal. Nobody chose that 3. It is what charge balance forces once Fe³⁺ meets Cl⁻."
+    },
+    {
+      "text": "<strong>CCl<sub>4<\/sub><\/strong>",
+      "category": "covalent",
+      "feedback_right": "Carbon and chlorine are both nonmetals, so all four bonds are shared pairs. The name states the count directly: carbon tetrachloride.",
+      "feedback_wrong": "CCl₄ looks almost exactly like FeCl₃, and that resemblance is the whole trap. Carbon is a nonmetal, so nothing transfers; those four chlorines are bonded, not attracted as ions."
+    },
+    {
+      "text": "<strong>NaOH<\/strong>",
+      "category": "ionic",
+      "feedback_right": "Sodium is a metal, so this is ionic. Hydroxide stays intact as OH⁻ and pairs one-to-one with Na⁺.",
+      "feedback_wrong": "The O-H bond inside hydroxide is genuinely covalent. But that bond sits inside the ion, not between the ion and the sodium. Sodium is a metal, so the compound is ionic."
+    },
+    {
+      "text": "<strong>P<sub>2<\/sub>O<sub>5<\/sub><\/strong>",
+      "category": "covalent",
+      "feedback_right": "Phosphorus and oxygen are both nonmetals, so this is a molecule. Both counts appear in the name: diphosphorus pentoxide.",
+      "feedback_wrong": "Phosphorus sits close enough to the staircase to be misfiled, but it is a nonmetal. No metal means no ion transfer, and no ion transfer means covalent."
+    },
+    {
+      "text": "<strong>NH<sub>4<\/sub>Cl<\/strong>",
+      "category": "ionic",
+      "feedback_right": "There is no metal anywhere, and it is still ionic. Ammonium, NH₄⁺, is a polyatomic cation that behaves exactly like a metal ion, so it pairs with Cl⁻ as ammonium chloride.",
+      "feedback_wrong": "This is the one formula where scanning for a metal fails you. Nitrogen, hydrogen, and chlorine are all nonmetals, but the NH₄ cluster carries a real +1 charge. A cation is a cation, whatever it is built from."
+    }
+  ],
+  "reveal": "<h4>The rule, and its one exception<\/h4><p>Scanning for a metal resolves eight of these nine formulas. Ammonium is the exception worth memorizing now rather than meeting on a test. NH₄⁺ is built entirely from nonmetals and still acts as a cation, so any compound containing it is ionic. Everything downstream depends on getting this branch right. Prefixes belong to the covalent side only. Charge balance belongs to the ionic side.<\/p>"
+}
+</script>
+      </div>
+
+      <h3>Checkpoint: naming across the branches</h3>
+      <p>Commit to an answer before checking. The wrong options here are all things students actually write.</p>
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "A student names CaCl<sub>2<\/sub> &ldquo;dicalcium dichloride.&rdquo; What is wrong with that name?",
+  "options": [
+    {
+      "label": "Calcium is a nonmetal, so it should be <em>calcium dichloride<\/em>.",
+      "correct": false,
+      "feedback": "Calcium sits in group 2, on the metal side of the table. And <em>dichloride<\/em> still has a Greek prefix, which an ionic name never takes, however the first word is fixed."
+    },
+    {
+      "label": "The ending is wrong: the name should be <em>calcium chlorine<\/em>.",
+      "correct": false,
+      "feedback": "The <em>-ide<\/em> ending is correct. The second element in a binary compound ends in <em>-ide<\/em>, so chlorine becomes chloride. The errors are the prefixes."
+    },
+    {
+      "label": "Nothing is wrong: there are 2 calcium and 2 chlorine atoms.",
+      "correct": false,
+      "feedback": "Read the subscript again. It sits after Cl and applies only to chlorine, so there is one calcium, not two. Even with the counts right, an ionic name would not report them."
+    },
+    {
+      "label": "CaCl<sub>2<\/sub> is ionic, and ionic names never use prefixes: <em>calcium chloride<\/em>.",
+      "correct": true,
+      "feedback": "Ca<sup>2+<\/sup> needs exactly two Cl<sup>&minus;<\/sup> to reach neutral, so the 2 is forced rather than chosen. No other calcium chloride exists, so a prefix has nothing to distinguish."
+    }
+  ],
+  "reveal": "<p>Prefixes answer a question ionic compounds never raise. Carbon and oxygen combine as CO or CO<sub>2<\/sub>, so a covalent name has to say which. Calcium and chlorine have exactly one neutral ratio available, so the formula unit is settled before naming even begins.<\/p>"
+}
+</script>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 IONIC COMPOUNDS -->
+  <section id="s-ionic" data-toc="2. Ionic &amp; Charge Balance">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">02</span><span class="label">Ionic compounds</span></div>
+      <h2>Ionic compounds and charge balance</h2>
+      <p>An ionic formula shows a neutral formula unit: the total positive charge equals the total negative charge.</p>
+      <p>An ionic crystal is electrically neutral overall, so the cations and anions must balance to a net charge of zero. You can read main-group ion charges from the column positions on the periodic table.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption>Charges of common main-group ions, by group</caption>
+          <thead>
+            <tr><th scope="col">Group 1</th><th scope="col">Group 2</th><th scope="col">Group 13</th><th scope="col">Group 15</th><th scope="col">Group 16</th><th scope="col">Group 17</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>+1</td><td>+2</td><td>+3</td><td>&minus;3</td><td>&minus;2</td><td>&minus;1</td></tr>
+            <tr><td>Na<sup>+</sup>, K<sup>+</sup></td><td>Mg<sup>2+</sup>, Ca<sup>2+</sup></td><td>Al<sup>3+</sup></td><td>N<sup>3&minus;</sup>, P<sup>3&minus;</sup></td><td>O<sup>2&minus;</sup>, S<sup>2&minus;</sup></td><td>F<sup>&minus;</sup>, Cl<sup>&minus;</sup>, Br<sup>&minus;</sup></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><div class="label">Common mistake</div><p>Forgetting that the charges must cancel. Na<sup>+</sup> and O<sup>2&minus;</sup> need two sodium ions, so the formula is Na<sub>2</sub>O, not NaO.</p></div>
+
+      <div class="sim-box" data-tool="balancer">
+        <div class="label">Interactive tool</div>
+        <h4>How many of each ion make the charges cancel?</h4>
+        <p>Adjust the counts of cations and anions until the net charge reaches zero. Then check the formula and the name.</p>
+        <div class="sim-controls">
+          <label class="tool-field"><span class="label">Cation</span>
+            <select id="cationSelect" class="form-select">
+              <option value="Na|+1|Sodium">Na⁺ (Sodium)</option>
+              <option value="Mg|+2|Magnesium">Mg²⁺ (Magnesium)</option>
+              <option value="Al|+3|Aluminum">Al³⁺ (Aluminum)</option>
+              <optgroup label="Enrichment: transition metals">
+                <option value="Fe|+2|Iron(II)">Fe²⁺ (Iron II)</option>
+                <option value="Fe|+3|Iron(III)">Fe³⁺ (Iron III)</option>
+                <option value="Cu|+1|Copper(I)">Cu⁺ (Copper I)</option>
+                <option value="Cu|+2|Copper(II)">Cu²⁺ (Copper II)</option>
+              </optgroup>
+            </select>
+          </label>
+          <label class="tool-field"><span class="label">Anion</span>
+            <select id="anionSelect" class="form-select">
+              <option value="Cl|-1|chloride">Cl⁻ (Chloride)</option>
+              <option value="O|-2|oxide">O²⁻ (Oxide)</option>
+              <option value="N|-3|nitride">N³⁻ (Nitride)</option>
+              <option value="S|-2|sulfide">S²⁻ (Sulfide)</option>
+              <option value="F|-1|fluoride">F⁻ (Fluoride)</option>
+            </select>
+          </label>
+        </div>
+        <div class="ion-flex-row">
+          <div class="ion-col">
+            <div class="ion-pill cation" id="cationPill">Na⁺</div>
+            <div class="ion-count">
+              <button class="btn ghost" id="decCation" type="button" aria-label="Fewer cations">&minus;</button>
+              <output id="cationCount" aria-label="Number of cations">1</output>
+              <button class="btn ghost" id="incCation" type="button" aria-label="More cations">+</button>
+            </div>
+          </div>
+          <div class="ion-plus" aria-hidden="true">+</div>
+          <div class="ion-col">
+            <div class="ion-pill anion" id="anionPill">Cl⁻</div>
+            <div class="ion-count">
+              <button class="btn ghost" id="decAnion" type="button" aria-label="Fewer anions">&minus;</button>
+              <output id="anionCount" aria-label="Number of anions">1</output>
+              <button class="btn ghost" id="incAnion" type="button" aria-label="More anions">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="sim-readouts" aria-live="polite">
+          <div class="readout"><span class="readout-label">Total charge</span><span class="readout-value" id="netChargeDisplay">0</span></div>
+          <div class="readout"><span class="readout-label">Formula</span><span class="readout-value" id="ionicFormulaOutput">NaCl</span></div>
+          <div class="readout"><span class="readout-label">Name</span><span class="readout-value" id="ionicNameOutput">Sodium chloride</span></div>
+        </div>
+        <span class="status-pill" data-state="ok" id="balanceStatus" role="status">Balanced</span>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Cation (positive ion)</li>
+          <li><span class="key" data-shape="dot" data-token="cool"></span>Anion (negative ion)</li>
+        </ul>
+      </div>
+
+      <h3>Charge-balance ledger</h3>
+      <p>Fill the ledger one row at a time. The last row needs parentheses: decide how many nitrates you need before you decide how to write them. Type formulas without subscript formatting. <em>Na2O</em> and <em>Ca(NO3)2</em> are both accepted.</p>
+      <div data-widget="scaffold">
+        <script type="application/json" class="w-config">
+{
+  "mode": "table",
+  "table": {
+    "headers": [
+      "Cation",
+      "Anion",
+      "How many cations?",
+      "How many anions?",
+      "Formula"
+    ],
+    "rows": [
+      [
+        {
+          "given": "Na⁺"
+        },
+        {
+          "given": "O²⁻"
+        },
+        {
+          "blank": {
+            "type": "numeric",
+            "answer": 2,
+            "tol": 0,
+            "feedback_wrong": "Each Na⁺ brings only +1, and you need +2 to cancel one O²⁻."
+          }
+        },
+        {
+          "blank": {
+            "type": "numeric",
+            "answer": 1,
+            "tol": 0,
+            "feedback_wrong": "One O²⁻ already supplies the full −2."
+          }
+        },
+        {
+          "blank": {
+            "type": "text",
+            "answer": [
+              "Na2O",
+              "Na₂O"
+            ],
+            "feedback_wrong": "Two sodiums, one oxygen. The subscript 1 is never written."
+          }
+        }
+      ],
+      [
+        {
+          "given": "Al³⁺"
+        },
+        {
+          "given": "O²⁻"
+        },
+        {
+          "blank": {
+            "type": "numeric",
+            "answer": 2,
+            "tol": 0,
+            "feedback_wrong": "Smallest total both 3 and 2 divide into is 6. That needs two Al³⁺."
+          }
+        },
+        {
+          "blank": {
+            "type": "numeric",
+            "answer": 3,
+            "tol": 0,
+            "feedback_wrong": "To reach −6 with ions worth −2 each, you need three."
+          }
+        },
+        {
+          "blank": {
+            "type": "text",
+            "answer": [
+              "Al2O3",
+              "Al₂O₃"
+            ],
+            "feedback_wrong": "Two aluminiums against three oxygens: +6 and −6."
+          }
+        }
+      ],
+      [
+        {
+          "given": "Ca²⁺"
+        },
+        {
+          "given": "NO₃⁻"
+        },
+        {
+          "blank": {
+            "type": "numeric",
+            "answer": 1,
+            "tol": 0,
+            "feedback_wrong": "One Ca²⁺ already supplies the full +2."
+          }
+        },
+        {
+          "blank": {
+            "type": "numeric",
+            "answer": 2,
+            "tol": 0,
+            "feedback_wrong": "Each nitrate brings only −1, so it takes two to cancel +2."
+          }
+        },
+        {
+          "blank": {
+            "type": "text",
+            "answer": [
+              "Ca(NO3)2",
+              "Ca(NO₃)₂"
+            ],
+            "feedback_wrong": "Nitrate is multiplied here, so it needs parentheses before the subscript."
+          }
+        }
+      ]
+    ]
+  }
+}
+        </script>
+      </div>
+
+      <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Roman numerals for transition metals</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+        <p>Transition metals (like iron, copper, and cobalt) can form several stable ions with different positive charges, called <strong class="term" data-term="oxidation-state">oxidation states</strong>. The name states the exact charge with a <strong>Roman numeral in parentheses</strong> right after the metal's name.</p>
+        <ul>
+          <li><strong>Fe<sup>2+</sup> + 2 Cl<sup>&minus;</sup> &rarr; FeCl<sub>2</sub></strong>: iron(II) chloride</li>
+          <li><strong>Fe<sup>3+</sup> + 3 Cl<sup>&minus;</sup> &rarr; FeCl<sub>3</sub></strong>: iron(III) chloride</li>
+          <li><strong>Cu<sup>+</sup> + O<sup>2&minus;</sup> &rarr; Cu<sub>2</sub>O</strong>: copper(I) oxide</li>
+          <li><strong>Cu<sup>2+</sup> + O<sup>2&minus;</sup> &rarr; CuO</strong>: copper(II) oxide</li>
+        </ul>
+        <p>The Roman numeral reports the <strong>cation's charge</strong>. It does not report the subscript in the formula.</p>
+
+        <h3>Working backwards: where does the Roman numeral come from?</h3>
+        <p>Every question so far has handed you the cation charge. Here you get only a formula, and you recover the charge from it.</p>
+        <figure class="figure figure--full" id="cucl2Stage">
+<div class="diagram">
+        <svg viewBox="0 0 420 160" role="img">
+          <g class="svg-step-layer" id="state-cucl2-blank" aria-label="One formula unit of copper chloride: one copper ion and two chloride ions, charges not yet known">
+            <rect x="15" y="12" width="390" height="118" rx="6" fill="none" stroke="var(--hair)" style="stroke-width:var(--dia-stroke);"/>
+            <text x="28" y="28" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" fill="var(--ink-mute)" letter-spacing="1">ONE FORMULA UNIT</text>
+            <circle cx="115" cy="68" r="28" fill="color-mix(in srgb, var(--accent) 18%, var(--card))" stroke="var(--accent)" style="stroke-width:var(--dia-stroke-bond);"/>
+            <text x="115" y="73" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-atom-size, 16px)" font-weight="700" fill="var(--ink)">Cu</text>
+            <text x="115" y="114" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 11px)" fill="var(--ink-mute)">charge ?</text>
+            <circle cx="295" cy="46" r="20" fill="color-mix(in srgb, var(--cool) 18%, var(--card))" stroke="var(--cool)" style="stroke-width:var(--dia-stroke);"/>
+            <text x="295" y="51" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 13px)" font-weight="600" fill="var(--ink)">Cl</text>
+            <circle cx="295" cy="90" r="20" fill="color-mix(in srgb, var(--cool) 18%, var(--card))" stroke="var(--cool)" style="stroke-width:var(--dia-stroke);"/>
+            <text x="295" y="95" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 13px)" font-weight="600" fill="var(--ink)">Cl</text>
+            <text x="210" y="148" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 12px)" fill="var(--ink-soft)">CuCl₂</text>
+          </g>
+          <g class="svg-step-layer" id="state-cucl2-anion" aria-label="Each chloride is labelled 1 minus, giving a running total of minus 2" opacity="0" display="none">
+            <rect x="15" y="12" width="390" height="118" rx="6" fill="none" stroke="var(--hair)" style="stroke-width:var(--dia-stroke);"/>
+            <text x="28" y="28" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" fill="var(--ink-mute)" letter-spacing="1">ONE FORMULA UNIT</text>
+            <circle cx="115" cy="68" r="28" fill="color-mix(in srgb, var(--accent) 18%, var(--card))" stroke="var(--accent)" style="stroke-width:var(--dia-stroke-bond);"/>
+            <text x="115" y="73" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-atom-size, 16px)" font-weight="700" fill="var(--ink)">Cu</text>
+            <text x="115" y="114" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 11px)" fill="var(--ink-mute)">charge ?</text>
+            <circle cx="295" cy="46" r="20" fill="color-mix(in srgb, var(--cool) 18%, var(--card))" stroke="var(--cool)" style="stroke-width:var(--dia-stroke);"/>
+            <text x="295" y="51" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 13px)" font-weight="600" fill="var(--ink)">Cl</text>
+            <text x="328" y="40" font-family="var(--mono)" font-size="var(--dia-label-size, 12px)" font-weight="700" fill="var(--accent)">1−</text>
+            <circle cx="295" cy="90" r="20" fill="color-mix(in srgb, var(--cool) 18%, var(--card))" stroke="var(--cool)" style="stroke-width:var(--dia-stroke);"/>
+            <text x="295" y="95" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 13px)" font-weight="600" fill="var(--ink)">Cl</text>
+            <text x="328" y="84" font-family="var(--mono)" font-size="var(--dia-label-size, 12px)" font-weight="700" fill="var(--accent)">1−</text>
+            <text x="210" y="148" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 12px)" fill="var(--ink-soft)">total from anions = −2</text>
+          </g>
+          <g class="svg-step-layer" id="state-cucl2-solved" aria-label="Copper is labelled 2 plus, the unit is neutral, and the compound is copper two chloride" opacity="0" display="none">
+            <rect x="15" y="12" width="390" height="118" rx="6" fill="none" stroke="var(--hair)" style="stroke-width:var(--dia-stroke);"/>
+            <text x="28" y="28" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" fill="var(--ink-mute)" letter-spacing="1">ONE FORMULA UNIT</text>
+            <circle cx="115" cy="68" r="28" fill="color-mix(in srgb, var(--accent) 18%, var(--card))" stroke="var(--accent)" style="stroke-width:var(--dia-stroke-bond);"/>
+            <text x="115" y="73" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-atom-size, 16px)" font-weight="700" fill="var(--ink)">Cu</text>
+            <text x="150" y="52" font-family="var(--mono)" font-size="var(--dia-label-size, 12px)" font-weight="700" fill="var(--good)">2+</text>
+            <text x="115" y="114" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 11px)" font-weight="600" fill="var(--good)">recovered</text>
+            <circle cx="295" cy="46" r="20" fill="color-mix(in srgb, var(--cool) 18%, var(--card))" stroke="var(--cool)" style="stroke-width:var(--dia-stroke);"/>
+            <text x="295" y="51" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 13px)" font-weight="600" fill="var(--ink)">Cl</text>
+            <text x="328" y="40" font-family="var(--mono)" font-size="var(--dia-label-size, 12px)" font-weight="700" fill="var(--accent)">1−</text>
+            <circle cx="295" cy="90" r="20" fill="color-mix(in srgb, var(--cool) 18%, var(--card))" stroke="var(--cool)" style="stroke-width:var(--dia-stroke);"/>
+            <text x="295" y="95" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 13px)" font-weight="600" fill="var(--ink)">Cl</text>
+            <text x="328" y="84" font-family="var(--mono)" font-size="var(--dia-label-size, 12px)" font-weight="700" fill="var(--accent)">1−</text>
+            <text x="210" y="148" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 12px)" font-weight="600" fill="var(--good)">+2 − 2 = 0 · copper(II) chloride</text>
+          </g>
+        </svg>
+</div>
+<figcaption>the anions are the known quantity · neutrality hands back the cation charge</figcaption>
+</figure>
+        <div data-widget="step-builder">
+        <script type="application/json" class="w-config">
+{
+  "diagramId": "cucl2Stage",
+  "steps": [
+    {
+      "state": "state-cucl2-blank",
+      "question": "The label on the bottle says only <strong>CuCl<sub>2</sub></strong>. Chlorine sits in group 17. What charge does each chloride ion carry?",
+      "options": [
+        {
+          "label": "1&minus;",
+          "correct": true,
+          "feedback": "Group 17 is one electron short of a full shell, so chlorine gains exactly one and becomes Cl<sup>&minus;</sup>. Chloride has no other charge to choose from: which is what makes it useful for working backwards."
+        },
+        {
+          "label": "2&minus;",
+          "correct": false,
+          "feedback": "The subscript 2 in the formula counts chloride ions; it does not set their charge. Chlorine needs one electron, not two, so each ion is Cl<sup>&minus;</sup>."
+        },
+        {
+          "label": "1+",
+          "correct": false,
+          "feedback": "Gaining an electron adds negative charge. Chlorine is one of the strongest electron grabbers on the table, so it ends up negative, not positive."
+        }
+      ]
+    },
+    {
+      "state": "state-cucl2-anion",
+      "question": "Two chloride ions are in the formula unit. What total negative charge do they contribute?",
+      "options": [
+        {
+          "label": "&minus;2",
+          "correct": true,
+          "feedback": "Two ions at &minus;1 each. This total is the whole point of the exercise: it is the number copper has to cancel."
+        },
+        {
+          "label": "&minus;1",
+          "correct": false,
+          "feedback": "That is the charge on one chloride, not on both. The subscript tells you there are two of them, so the charges add."
+        },
+        {
+          "label": "&minus;4",
+          "correct": false,
+          "feedback": "This multiplies the count by a 2&minus; charge that chloride never has. Two ions, &minus;1 each, is &minus;2."
+        }
+      ]
+    },
+    {
+      "state": "state-cucl2-solved",
+      "question": "A formula unit carries no overall charge. What must copper's charge be, and how does the name report it?",
+      "options": [
+        {
+          "label": "Cu<sup>2+</sup>: copper(II) chloride",
+          "correct": true,
+          "feedback": "The only value that cancels &minus;2 is +2, and the Roman numeral states it. Notice you were never told copper's charge: you recovered it from the anions and the neutrality requirement."
+        },
+        {
+          "label": "Cu<sup>+</sup>: copper(I) chloride",
+          "correct": false,
+          "feedback": "Copper(I) chloride exists, but its formula is CuCl: one Cu<sup>+</sup> against one Cl<sup>&minus;</sup>. The second chlorine in CuCl<sub>2</sub> is exactly what rules this out."
+        },
+        {
+          "label": "Cu<sup>2+</sup>: copper chloride, no numeral needed",
+          "correct": false,
+          "feedback": "The charge is right and the name is ambiguous. Copper forms both Cu<sup>+</sup> and Cu<sup>2+</sup>, so &ldquo;copper chloride&rdquo; describes two different compounds. The numeral is what separates them."
+        }
+      ]
+    }
+  ],
+  "finale": "<p>You have just run nomenclature backwards. Forwards, the Roman numeral tells you the charge and the charge gives you the formula. Backwards, the anions are the known quantity: total their charge, and neutrality hands you the cation charge you were never given. This is the direction exam questions usually ask for, because it cannot be answered by recall alone.</p>"
+}
+        </script>
+      </div>
+
+        <h3>Checkpoint: charge balance and the Roman numeral</h3>
+        <p>Work out the ratio on paper first, then commit.</p>
+        <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Give the formula and systematic name for the compound formed from Fe<sup>3+</sup> and O<sup>2&minus;</sup>.",
+  "options": [
+    {
+      "label": "FeO, iron oxide",
+      "correct": false,
+      "feedback": "FeO is a real compound, but it pairs Fe<sup>2+</sup> with O<sup>2&minus;</sup>: not the ion you were given. Starting from Fe<sup>3+</sup> you need three units of negative charge, and one O<sup>2&minus;</sup> brings only two. &ldquo;Iron oxide&rdquo; is also incomplete: iron has more than one charge, so the name must say which."
+    },
+    {
+      "label": "Fe<sub>3</sub>O<sub>2</sub>, iron(II) oxide",
+      "correct": false,
+      "feedback": "This is the crossover run backwards. The 3 from Fe<sup>3+</sup> becomes oxygen's subscript and the 2 from O<sup>2&minus;</sup> becomes iron's, not the other way round. Check it and the error shows: Fe<sub>3</sub>O<sub>2</sub> would be +9 against &minus;4."
+    },
+    {
+      "label": "Fe<sub>2</sub>O<sub>3</sub>, iron(III) oxide",
+      "correct": true,
+      "feedback": "Two Fe<sup>3+</sup> give +6, three O<sup>2&minus;</sup> give &minus;6, and the formula unit comes out neutral. The (III) reports iron's charge, which matters here precisely because Fe<sup>2+</sup> would have produced FeO instead."
+    },
+    {
+      "label": "Fe<sub>2</sub>O<sub>3</sub>, diiron trioxide",
+      "correct": false,
+      "feedback": "The formula is right; the name belongs to the other branch. Greek prefixes report atom counts in molecules. Fe<sub>2</sub>O<sub>3</sub> is ionic, so its subscripts come from charge balance and the name carries a Roman numeral instead."
+    }
+  ],
+  "reveal": "<p>The crossover shortcut: each ion's charge becomes the other's subscript: is fast but easy to run in reverse. The check that catches it costs one line: multiply out both totals and confirm they cancel. Fe<sub>2</sub>O<sub>3</sub> gives +6 and &minus;6.</p>"
+}
+        </script>
+      </div>
+
+        <p><strong>On a label.</strong> Copper(II) sulfate (CuSO<sub>4</sub>) is an ionic compound with an environmental hazard label. The Roman numeral (II) reports the Cu<sup>2+</sup> charge, which the SO<sub>4</sub><sup>2&minus;</sup> ion balances.</p>
+
+        <div class="exam-frame">
+        <div class="exam-meta"><span class="exam-src">Gen Chem &middot; HS-PS1-2 &middot; constructed response</span><span class="exam-marks">[4 marks]</span><span class="tag-enrichment">Enrichment</span></div>
+        <p class="exam-q">A stockroom bottle is labeled <strong>&ldquo;Iron(III) oxide&rdquo;</strong> and another is labeled <strong>&ldquo;Sulfur trioxide&rdquo;</strong>.
+          <span class="sub">1. Classify each compound as ionic or covalent and state your reasoning.<br>
+          2. Write the correct chemical formula for both compounds.<br>
+          3. Explain what the Roman numeral (III) in iron(III) oxide and the prefix <em>tri-</em> in sulfur trioxide tell you about their structures.</span></p>
+        <textarea class="textbox" id="examAnsEnrich" aria-label="Your answer" placeholder="1. Classifications and reasoning... 2. Chemical formulas... 3. Roman numeral III and prefix tri-..."></textarea>
+        <div class="actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+        <div class="scheme">
+          <div class="scheme-card">
+            <div class="label">Scoring guide: 4 marks</div>
+            <ul class="pts">
+              <li><b>Classification (1 mark):</b> You say iron(III) oxide is ionic (metal plus nonmetal) and sulfur trioxide is covalent (nonmetals only).</li>
+              <li><b>Formulas (1 mark):</b> You write Fe<sub>2</sub>O<sub>3</sub> and SO<sub>3</sub>.</li>
+              <li><b>Roman numeral (1 mark):</b> You say (III) gives the Fe<sup>3+</sup> charge, and balancing with O<sup>2&minus;</sup> needs a 2:3 ratio.</li>
+              <li><b>Greek prefix (1 mark):</b> You say <em>tri-</em> counts atoms: three oxygen atoms bond to one sulfur atom in SO<sub>3</sub>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 03 POLYATOMIC IONS -->
+  <section id="s-poly" data-toc="3. Polyatomic Ions">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03</span><span class="label">Polyatomic ions</span></div>
+      <h2>Polyatomic ions and formula writing</h2>
+      <p><strong class="term" data-term="polyatomic-ion">Polyatomic ions</strong> are covalently bonded atomic clusters that act as a single unit with a net charge.</p>
+      <div class="callout"><div class="label">Scope note</div><p>Polyatomic ions are not on the unit's external assessment. You still need them for lab work, chemical safety, and later chemistry.</p></div>
+      <p>Polyatomic ions travel together as unbreakable groups. If a formula needs more than one of them, put the whole ion in parentheses before you add the subscript.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption>Common polyatomic ions</caption>
+          <thead><tr><th scope="col">Ion</th><th scope="col">Name</th><th scope="col">Charge</th></tr></thead>
+          <tbody>
+            <tr><td>NH<sub>4</sub><sup>+</sup></td><td>Ammonium</td><td>+1</td></tr>
+            <tr><td>OH<sup>&minus;</sup></td><td>Hydroxide</td><td>&minus;1</td></tr>
+            <tr><td>NO<sub>3</sub><sup>&minus;</sup></td><td>Nitrate</td><td>&minus;1</td></tr>
+            <tr><td>HCO<sub>3</sub><sup>&minus;</sup></td><td>Bicarbonate</td><td>&minus;1</td></tr>
+            <tr><td>SO<sub>4</sub><sup>2&minus;</sup></td><td>Sulfate</td><td>&minus;2</td></tr>
+            <tr><td>CO<sub>3</sub><sup>2&minus;</sup></td><td>Carbonate</td><td>&minus;2</td></tr>
+            <tr><td>PO<sub>4</sub><sup>3&minus;</sup></td><td>Phosphate</td><td>&minus;3</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><div class="label">Worked example: parentheses</div>
+        <p>Combine <strong>Ca<sup>2+</sup></strong> and <strong>NO<sub>3</sub><sup>&minus;</sup></strong>.</p>
+        <p>To balance the +2 charge from calcium, you need <em>two</em> nitrate ions (&minus;1 &times; 2 = &minus;2). Write <strong>Ca(NO<sub>3</sub>)<sub>2</sub></strong>: <em>calcium nitrate</em>.</p>
+        <p>Writing <s>CaNO<sub>32</sub></s> would mean 32 oxygen atoms. Always use parentheses when you multiply a polyatomic ion.</p>
+      </div>
+
+      <h3>From name to formula</h3>
+      <p>So far you have run formula to name. Writing a formula from a name is harder, because the name has no subscripts. You build them by balancing ionic charges.</p>
+      <div data-widget="faded-example">
+        <script type="application/json" class="w-config">
+{
+  "model": {
+    "title": "Worked: <em>calcium nitrate</em> &rarr; formula",
+    "steps": [
+      {
+        "label": "1. Name both ions",
+        "work": "Calcium is group 2, so Ca<sup>2+</sup> &middot; nitrate is the polyatomic NO<sub>3</sub><sup>&minus;</sup>",
+        "why": "The name hands you both ions. Calcium's charge comes from its column; nitrate's comes from the polyatomic table: you look it up, you do not derive it."
+      },
+      {
+        "label": "2. Find the total charge both must reach",
+        "work": "+2 and &minus;1 &rarr; smallest shared total is 2",
+        "why": "Take the least common multiple of the two charge sizes. That is how much positive charge and how much negative charge the finished unit has to carry."
+      },
+      {
+        "label": "3. Count each ion",
+        "work": "2 &divide; 2 = one Ca<sup>2+</sup> &middot; 2 &divide; 1 = two NO<sub>3</sub><sup>&minus;</sup>",
+        "why": "Divide the shared total by each ion's own charge. That is the count of that ion, not its subscript yet."
+      },
+      {
+        "label": "4. Write it, parentheses first",
+        "work": "Ca(NO<sub>3</sub>)<sub>2</sub>",
+        "why": "Nitrate is being multiplied, so bracket the whole group before the subscript goes on. CaNO<sub>32</sub> would claim thirty-two oxygens on one calcium."
+      }
+    ]
+  },
+  "yours": {
+    "title": "Your turn: <em>aluminium sulfate</em> &rarr; formula",
+    "checkMode": "step",
+    "steps": [
+      {
+        "label": "1. Name both ions",
+        "given": "Aluminium is group 13, so Al<sup>3+</sup> &middot; sulfate is the polyatomic SO<sub>4</sub><sup>2&minus;</sup>"
+      },
+      {
+        "label": "2. Find the total charge both must reach",
+        "blank": {
+          "type": "numeric",
+          "answer": 6,
+          "tol": 0,
+          "prompt": "Smallest total that both 3 and 2 divide into (enter it unsigned)",
+          "feedback_wrong": "2 and 3 share no smaller multiple than 6. Charges of 2 alone or 3 alone leave one of the two ions with a fraction, and you cannot have a fraction of an ion.",
+          "feedback_right": "6: the first total that both a 3+ ion and a 2&minus; ion can build exactly."
+        }
+      },
+      {
+        "label": "3a. Count the cations",
+        "blank": {
+          "type": "numeric",
+          "answer": 2,
+          "tol": 0,
+          "prompt": "How many Al³⁺ to reach +6?",
+          "feedback_wrong": "Divide the target by this ion's own charge: 6 &divide; 3.",
+          "feedback_right": "Two Al<sup>3+</sup> give exactly +6."
+        }
+      },
+      {
+        "label": "3b. Count the anions",
+        "blank": {
+          "type": "numeric",
+          "answer": 3,
+          "tol": 0,
+          "prompt": "How many SO₄²⁻ to reach −6?",
+          "feedback_wrong": "Same move on the other side: 6 &divide; 2.",
+          "feedback_right": "Three SO<sub>4</sub><sup>2&minus;</sup> give exactly &minus;6."
+        }
+      },
+      {
+        "label": "4. Write it, parentheses first",
+        "blank": {
+          "type": "text",
+          "answer": [
+            "Al2(SO4)3",
+            "Al₂(SO₄)₃"
+          ],
+          "prompt": "Type the formula (plain text is fine: Al2(SO4)3)",
+          "feedback_wrong": "Sulfate is multiplied, so it needs brackets before its subscript. Two aluminium, three sulfate: and Al2SO43 would read as forty-three oxygens.",
+          "feedback_right": "Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>. Two aluminium at +3 against three sulfate at &minus;2: +6 and &minus;6."
+        }
+      }
+    ]
+  }
+}
+        </script>
+      </div>
+
+      <h3>Checkpoint: parentheses and lowest terms</h3>
+      <p>Two formulas, one answer. Both halves have to be right.</p>
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Write the formulas for <strong>magnesium sulfate<\/strong> (Mg<sup>2+<\/sup> with SO<sub>4<\/sub><sup>2&minus;<\/sup>) and <strong>sodium hydroxide<\/strong> (Na<sup>+<\/sup> with OH<sup>&minus;<\/sup>).",
+  "options": [
+    {
+      "label": "MgSO<sub>4<\/sub> and NaOH",
+      "correct": true,
+      "feedback": "Mg<sup>2+<\/sup> against SO<sub>4<\/sub><sup>2&minus;<\/sup> is +2 against &minus;2, so one of each is enough. Na<sup>+<\/sup> against OH<sup>&minus;<\/sup> is the same story at +1 and &minus;1. When charges already cancel one-to-one, you need no subscripts and no parentheses."
+    },
+    {
+      "label": "Mg<sub>2<\/sub>(SO<sub>4<\/sub>)<sub>2<\/sub> and NaOH",
+      "correct": false,
+      "feedback": "Mg<sub>2<\/sub>(SO<sub>4<\/sub>)<sub>2<\/sub> is neutral, so your charge check passed. That is why it is tempting. It is still not a formula. Ionic formulas report the smallest whole-number ratio, and dividing both subscripts by 2 gives MgSO<sub>4<\/sub>."
+    },
+    {
+      "label": "MgSO<sub>4<\/sub> and Na(OH)<sub>2<\/sub>",
+      "correct": false,
+      "feedback": "Na(OH)<sub>2<\/sub> puts +1 against &minus;2, which leaves the unit at a net &minus;1. One Na<sup>+<\/sup> needs exactly one OH<sup>&minus;<\/sup>. The parentheses do nothing here, because you only need them when a polyatomic ion is multiplied."
+    },
+    {
+      "label": "Mg(SO<sub>4<\/sub>)<sub>2<\/sub> and Na<sub>2<\/sub>OH",
+      "correct": false,
+      "feedback": "Both halves overshoot. Mg(SO<sub>4<\/sub>)<sub>2<\/sub> is +2 against &minus;4, and Na<sub>2<\/sub>OH is +2 against &minus;1. Neither cancels, and a formula unit with a leftover charge is not a formula unit."
+    }
+  ],
+  "reveal": "<p>Parentheses are not decoration and not optional: they are the only way to show that a subscript multiplies a whole group. Ca(NO<sub>3<\/sub>)<sub>2<\/sub> means two nitrates, six oxygens. CaNO<sub>32<\/sub> would mean thirty-two oxygens on one calcium. Use them when a polyatomic ion is multiplied, and never when it is not.<\/p>"
+}
+</script>
+      </div>
+      <div class="callout"><div class="label">Common mistake</div><p>Writing a formula that balances but is not in lowest terms. Mg<sub>2</sub>(SO<sub>4</sub>)<sub>2</sub> is neutral, but the formula is MgSO<sub>4</sub>.</p></div>
+    </div>
+  </section>
+
+  <!-- 04 BINARY COVALENT -->
+  <section id="s-covalent" data-toc="4. Binary Covalent">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04</span><span class="label">Covalent compounds</span></div>
+      <h2>Binary covalent naming</h2>
+      <p>Greek prefixes state the exact number of nonmetal atoms in a molecular formula.</p>
+      <p>Covalent compounds form between nonmetals. Nonmetals can combine in several ratios, such as CO and CO<sub>2</sub>, so charge balance does not fix the formula. Instead, <strong>Greek prefixes</strong> state the number of atoms of each element.</p>
+
+      <div class="prefix-table-grid">
+        <div class="prefix-chip"><span class="num">1</span> mono-</div>
+        <div class="prefix-chip"><span class="num">2</span> di-</div>
+        <div class="prefix-chip"><span class="num">3</span> tri-</div>
+        <div class="prefix-chip"><span class="num">4</span> tetra-</div>
+        <div class="prefix-chip"><span class="num">5</span> penta-</div>
+        <div class="prefix-chip"><span class="num">6</span> hexa-</div>
+        <div class="prefix-chip"><span class="num">7</span> hepta-</div>
+        <div class="prefix-chip"><span class="num">8</span> octa-</div>
+        <div class="prefix-chip"><span class="num">9</span> nona-</div>
+        <div class="prefix-chip"><span class="num">10</span> deca-</div>
+      </div>
+
+      <h3>Three rules for covalent prefixes</h3>
+      <ol>
+        <li><strong>First element:</strong> Keep its element name. Add a prefix if there are 2 or more atoms (N<sub>2</sub>O<sub>4</sub> &rarr; <em>dinitrogen...</em>). If there is only 1 atom, drop <em>mono-</em> (CO<sub>2</sub> &rarr; <em>carbon...</em>, not <em>monocarbon...</em>).</li>
+        <li><strong>Second element:</strong> Always add a prefix, even <em>mono-</em>, and change the ending to <strong>-ide</strong> (CO &rarr; <em>carbon monoxide</em>, N<sub>2</sub>O<sub>4</sub> &rarr; <em>dinitrogen tetroxide</em>).</li>
+        <li><strong>Vowel dropping:</strong> Avoid double vowels like <em>mono-oxide</em> or <em>tetra-oxide</em>. Drop the &lsquo;a&rsquo; or &lsquo;o&rsquo; to write <strong>monoxide</strong> and <strong>tetroxide</strong>.</li>
+      </ol>
+      <div class="callout"><div class="label">Common mistake</div><p>Writing <em>mono-</em> on the first element. CO is carbon monoxide, not monocarbon monoxide.</p></div>
+
+      <h3>Drill: prefix or no prefix?</h3>
+      <p>Four compounds, one decision each. The wrong names in this drill are common ways students mix the two systems.</p>
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+{
+  "mode": "drill",
+  "items": [
+    {
+      "prompt": "Which name is correct for <strong>MgCl<sub>2<\/sub><\/strong>?",
+      "options": [
+        {
+          "label": "magnesium chloride",
+          "correct": true,
+          "feedback": "Magnesium is a metal, so this is ionic and the ratio is not a choice. Mg<sup>2+<\/sup> takes two Cl<sup>&minus;<\/sup> and there is no second magnesium chloride to distinguish it from."
+        },
+        {
+          "label": "magnesium dichloride",
+          "correct": false,
+          "feedback": "There genuinely are two chlorines, which is what makes this tempting. But ionic names never report counts: charge balance already fixed the ratio, so a prefix would only repeat information the formula carries."
+        },
+        {
+          "label": "monomagnesium dichloride",
+          "correct": false,
+          "feedback": "This runs the covalent system on both halves of an ionic compound. Magnesium is a metal; the prefix machinery does not apply here at all."
+        }
+      ]
+    },
+    {
+      "prompt": "Which name is correct for <strong>CO<\/strong>?",
+      "options": [
+        {
+          "label": "carbon oxide",
+          "correct": false,
+          "feedback": "Dropping <em>mono-<\/em> from the second element throws away the only thing separating CO from CO<sub>2<\/sub>. <em>Mono-<\/em> is dropped from the first element only."
+        },
+        {
+          "label": "carbon monoxide",
+          "correct": true,
+          "feedback": "One carbon, so no prefix on the front. One oxygen, so <em>mono-<\/em> stays on the back: and <em>mono-oxide<\/em> collapses to <em>monoxide<\/em>."
+        },
+        {
+          "label": "monocarbon monoxide",
+          "correct": false,
+          "feedback": "The back half is right. The front half is the rule applied in reverse: a single first element drops <em>mono-<\/em>, so carbon stands bare."
+        }
+      ]
+    },
+    {
+      "prompt": "Which name is correct for <strong>K<sub>2<\/sub>O<\/strong>?",
+      "options": [
+        {
+          "label": "dipotassium monoxide",
+          "correct": false,
+          "feedback": "Potassium is a metal, so prefixes are off the table. K<sup>+<\/sup> is +1 and O<sup>2&minus;<\/sup> is &minus;2, which forces 2:1. Nobody chose that ratio, so nothing needs reporting."
+        },
+        {
+          "label": "dipotassium oxide",
+          "correct": false,
+          "feedback": "This puts a prefix on the first word only. Potassium is a metal, so prefixes never apply, on either word. Charge balance already fixed the 2:1 ratio."
+        },
+        {
+          "label": "potassium oxide",
+          "correct": true,
+          "feedback": "Metal plus nonmetal, one possible charge on each, one possible ratio. Cation name, anion name, nothing else."
+        }
+      ]
+    },
+    {
+      "prompt": "Which name is correct for <strong>N<sub>2<\/sub>O<sub>4<\/sub><\/strong>?",
+      "options": [
+        {
+          "label": "nitrogen tetroxide",
+          "correct": false,
+          "feedback": "<em>Mono-<\/em> is the only prefix ever dropped from the first element, and there are two nitrogens here. Without <em>di-<\/em>, this name describes NO<sub>4<\/sub>."
+        },
+        {
+          "label": "dinitrogen tetroxide",
+          "correct": true,
+          "feedback": "Two nitrogens, four oxygens, both counts stated. <em>Tetra-<\/em> before <em>oxide<\/em> doubles a vowel, so it contracts to <em>tetroxide<\/em>: the same housekeeping behind <em>monoxide<\/em>."
+        },
+        {
+          "label": "tetranitrogen dioxide",
+          "correct": false,
+          "feedback": "The prefixes are swapped. <em>Di-<\/em> goes with the 2 nitrogens, and <em>tetra-<\/em> goes with the 4 oxygens."
+        }
+      ]
+    }
+  ],
+  "reveal": "<p>Every miss in this drill is the same mistake wearing different clothes: machinery borrowed from the wrong branch. Prefixes on an ionic name, counts reported where charge balance already settled them, or prefixes attached to the wrong element. Decide which branch you are on first, and the naming rules stop competing.<\/p>"
+}
+</script>
+      </div>
+
+      <h3>Checkpoint: reading prefixes in both directions</h3>
+      <p>One formula to name, one name to write. Prefixes have to survive the round trip.</p>
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Name <strong>N<sub>2<\/sub>O<sub>5<\/sub><\/strong>, and write the formula for <strong>sulfur hexafluoride<\/strong>.",
+  "options": [
+    {
+      "label": "Nitrogen oxide and SF<sub>6<\/sub>",
+      "correct": false,
+      "feedback": "The formula half is right. &ldquo;Nitrogen oxide&rdquo; throws away the information the prefixes carry. NO, NO<sub>2<\/sub>, and N<sub>2<\/sub>O<sub>5<\/sub> are three different substances, and a name without prefixes cannot tell them apart."
+    },
+    {
+      "label": "Dinitrogen pentoxide and SF<sub>6<\/sub>",
+      "correct": true,
+      "feedback": "Two nitrogens give <em>di-<\/em>, five oxygens give <em>penta-<\/em>, and the doubled vowel in <em>penta-oxide<\/em> collapses to <em>pentoxide<\/em>. Running the other direction, <em>hexa-<\/em> attaches to fluoride: six fluorines around one sulfur, SF<sub>6<\/sub>."
+    },
+    {
+      "label": "Dinitrogen pentoxide and S<sub>6<\/sub>F",
+      "correct": false,
+      "feedback": "The name is right and the formula is inverted. A prefix attaches to the element it sits in front of, and <em>hexa-<\/em> sits in front of <em>fluoride<\/em>. So the six counts fluorine atoms: SF<sub>6<\/sub>."
+    },
+    {
+      "label": "Dinitrogen pentoxide and SF<sub>5<\/sub>",
+      "correct": false,
+      "feedback": "The name is right. But <em>hexa-<\/em> means six, not five, so sulfur hexafluoride is SF<sub>6<\/sub>."
+    }
+  ],
+  "reveal": "<p>Reading a covalent name in reverse runs the same operation backwards. Each prefix is a subscript waiting to be written, and it attaches to the element right after it. Dropping a vowel in <em>pentoxide<\/em> or <em>monoxide<\/em> is pronunciation housekeeping and changes no counts.<\/p>"
+}
+</script>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 STORYLINE BRIDGE AND WRITTEN RESPONSE -->
+  <section id="s-exam" data-toc="Storyline Bridge &amp; Exam">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">05</span><span class="label">Safety labels</span></div>
+      <h2>Storyline bridge: decoding GHS chemical labels</h2>
+      <p>Connect systematic chemical names to the hazard labels on the classroom chemical tray.</p>
+      <p>In Block 1.1, you saw real chemical bottles on the front bench. Now you can decode what is inside from the names alone, before you open any lid.</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption>Two bottles from the classroom chemical tray</caption>
+          <thead><tr><th scope="col">Hazard label</th><th scope="col">Name and formula</th><th scope="col">What the name tells you</th></tr></thead>
+          <tbody>
+            <tr><td>Corrosive</td><td>Sodium hydroxide (NaOH)</td><td>An ionic compound of Na<sup>+</sup> and the polyatomic ion OH<sup>&minus;</sup>. It dissolves in water and releases corrosive hydroxide ions.</td></tr>
+            <tr><td>Toxic gas</td><td>Carbon monoxide (CO)</td><td>A covalent compound. The prefix <em>mono-</em> shows 1 oxygen atom. It is a lethal, odorless gas from incomplete combustion.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="exam-frame">
+      <div class="exam-meta"><span class="exam-src">Gen Chem &middot; HS-PS1-2 &middot; constructed response</span><span class="exam-marks">[4 marks]</span></div>
+      <p class="exam-q">A stockroom bottle is labeled <strong>&ldquo;Aluminum oxide&rdquo;</strong> and another is labeled <strong>&ldquo;Sulfur trioxide&rdquo;</strong>.
+        <span class="sub">1. Classify each compound as ionic or covalent and state your reasoning.<br>
+        2. Write the correct chemical formula for both compounds.<br>
+        3. Explain what the 2:3 ratio in aluminum oxide and the prefix <em>tri-</em> in sulfur trioxide each tell you.</span></p>
+      <textarea class="textbox" id="examAns" aria-label="Your answer" placeholder="1. Classifications and reasoning... 2. Chemical formulas... 3. The 2:3 ratio and the prefix tri-..."></textarea>
+      <div class="actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme">
+        <div class="scheme-card">
+          <div class="label">Scoring guide: 4 marks</div>
+          <ul class="pts">
+            <li><b>Classification (1 mark):</b> You say aluminum oxide is ionic (metal plus nonmetal) and sulfur trioxide is covalent (nonmetals only).</li>
+            <li><b>Formulas (1 mark):</b> You write Al<sub>2</sub>O<sub>3</sub> and SO<sub>3</sub>.</li>
+            <li><b>Ratio (1 mark):</b> You say two Al<sup>3+</sup> give +6 and three O<sup>2&minus;</sup> give &minus;6, so the charges cancel.</li>
+            <li><b>Greek prefix (1 mark):</b> You say <em>tri-</em> counts atoms: three oxygen atoms bond to one sulfur atom in SO<sub>3</sub>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><div class="label">Why this matters</div><p>Chemical names tell emergency responders what they are facing. They can work out whether a spilled substance breaks into ions or evaporates as a toxic molecular gas, and that sets the safety plan.</p></div>
+    </div>
+    </div>
+  </section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-2 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-2</h3>
+    <p>
+      Test your mastery of chemical nomenclature, ionic charges, and covalent prefixes one question at a time. The adaptive engine identifies skill gaps and awards an authenticated completion receipt.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-2" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem · Semester 1 · 1-2c</div>
+  <p>Now that you can read chemical names and write formulas, you're ready to draw their 2D electron valence maps in <strong>Lesson 1-3a: Lewis Structures</strong>.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="../assets/elements.js"></script>
+<script src="1-2c.js"></script>
+</body>
+</html>

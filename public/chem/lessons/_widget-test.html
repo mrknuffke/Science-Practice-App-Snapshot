@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-book="chem" data-page="widget-test">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Widget Test Page</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div class="wrap">
+    <div class="label label-accent">Widget Test Bench</div>
+    <h1>Testing the Widget &amp; Motion Framework</h1>
+    <p class="lede">This page is a benchmark test harness for all widgets and primitives built in Gen Chem core assets.</p>
+  </div>
+</section>
+
+<!-- 1. COMMIT-REVEAL CHOICE -->
+<section id="s-cr-choice" class="widget-section" data-toc="CR Choice" data-widget="commit-reveal">
+  <script type="application/json" class="w-config">
+  {
+    "mode": "choice",
+    "prompt": "Pick the correct option. Sulfur gains 2 electrons to reach a full outer shell. What is the charge on the resulting sulfide ion?",
+    "options": [
+      {"label": "S<sup>2+</sup>", "correct": false, "feedback": "Incorrect. Gaining negative electrons results in a negative charge, not a positive one."},
+      {"label": "S<sup>2&ndash;</sup>", "correct": true, "feedback": "Correct! Gaining 2 negative electrons gives the sulfur atom a net 2&ndash; charge, making it S<sup>2&ndash;</sup>."}
+    ],
+    "reveal": "<p>Sulfide (S<sup>2&ndash;</sup>) has a full valence configuration of 2, 8, 8, matching argon.</p>"
+  }
+  </script>
+</section>
+
+<!-- 2. COMMIT-REVEAL FREE -->
+<section id="s-cr-free" class="widget-section" data-toc="CR Free" data-widget="commit-reveal">
+  <script type="application/json" class="w-config">
+  {
+    "mode": "free",
+    "prompt": "Explain why atomic radius decreases as you move left-to-right across a period on the periodic table.",
+    "minChars": 30,
+    "reveal": "As you move across a period, you add protons to the nucleus (increasing nuclear pull) without adding new electron shells. The stronger positive pull draws the same outer shell closer, shrinking the atom."
+  }
+  </script>
+</section>
+
+<!-- 3. COMMIT-REVEAL DRILL -->
+<section id="s-cr-drill" class="widget-section" data-toc="CR Drill" data-widget="commit-reveal">
+  <script type="application/json" class="w-config">
+  {
+    "mode": "drill",
+    "items": [
+      {
+        "prompt": "Classify: 2 H<sub>2</sub> + O<sub>2</sub> &rarr; 2 H<sub>2</sub>O",
+        "options": [
+          {"label": "Synthesis", "correct": true, "feedback": "Correct! Two reactants combine to form one product."},
+          {"label": "Decomposition", "correct": false, "feedback": "Incorrect. Decomposition starts with a single reactant."}
+        ]
+      },
+      {
+        "prompt": "Classify: CH<sub>4</sub> + 2 O<sub>2</sub> &rarr; CO<sub>2</sub> + 2 H<sub>2</sub>O",
+        "options": [
+          {"label": "Decomposition", "correct": false, "feedback": "Incorrect. This is combustion."},
+          {"label": "Combustion", "correct": true, "feedback": "Correct! A hydrocarbon reacts with oxygen to form CO2 and H2O."}
+        ]
+      }
+    ],
+    "reveal": "<p>You have mastered reaction classification!</p>"
+  }
+  </script>
+</section>
+
+<!-- 4. FADED EXAMPLE -->
+<section id="s-faded" class="widget-section" data-toc="Faded Example" data-widget="faded-example">
+  <script type="application/json" class="w-config">
+  {
+    "model": {
+      "title": "Worked Example: Molar Mass of H<sub>2</sub>O",
+      "steps": [
+        {"label": "1. Find atomic masses", "work": "H = 1.01 g/mol · O = 16.00 g/mol", "why": "Read atomic masses from the periodic table."},
+        {"label": "2. Count and multiply", "work": "2 &times; 1.01 (H) = 2.02 · 1 &times; 16.00 (O) = 16.00", "why": "Multiply each atomic mass by its subscript in the formula."},
+        {"label": "3. Add total", "work": "2.02 + 16.00 = 18.02 g/mol", "why": "Sum the masses to find the molar mass of the compound."}
+      ]
+    },
+    "yours": {
+      "title": "Your Turn: Molar Mass of CO<sub>2</sub>",
+      "checkMode": "step",
+      "steps": [
+        {"label": "1. Find atomic masses", "given": "C = 12.01 g/mol · O = 16.00 g/mol"},
+        {
+          "label": "2. Count and multiply",
+          "blank": {
+            "type": "numeric",
+            "answer": 32.00,
+            "tol": 0.05,
+            "prompt": "Mass of oxygen (2 x 16.00)",
+            "feedback_wrong": "Wrong. Multiply O (16.00) by 2.",
+            "feedback_right": "Correct! Oxygen contributes 32.00 g/mol."
+          }
+        },
+        {
+          "label": "3. Add total",
+          "blank": {
+            "type": "numeric",
+            "answer": 44.01,
+            "tol": 0.05,
+            "prompt": "Total mass (12.01 + 32.00)",
+            "feedback_wrong": "Incorrect sum. Add C (12.01) to your O mass (32.00).",
+            "feedback_right": "Great job! Molar mass of CO2 is 44.01 g/mol."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+</section>
+
+<!-- 5. SCAFFOLD: BANK -->
+<section id="s-scaffold-bank" class="widget-section" data-toc="Scaffold Bank" data-widget="scaffold">
+  <script type="application/json" class="w-config">
+  {
+    "mode": "bank",
+    "chain": true,
+    "slots": [
+      {"id": "slot1", "label": "1. Structural Feature"},
+      {"id": "slot2", "label": "2. Molecular Packing"},
+      {"id": "slot3", "label": "3. IMF Strength"}
+    ],
+    "bank": [
+      {"text": "Saturated fat has straight single-bonded carbon chains.", "slot": "slot1", "feedback": "Correct structural feature description."},
+      {"text": "Straight chains pack tightly side-by-side.", "slot": "slot2", "feedback": "Correct molecular packing description."},
+      {"text": "Tight packing maximizes London dispersion forces.", "slot": "slot3", "feedback": "Correct IMF strength description."},
+      {"text": "Distractor: Kinks weaken intramolecular bonds.", "slot": null, "feedback": "Intramolecular bonds are not broken during phase changes!"}
+    ]
+  }
+  </script>
+</section>
+
+<!-- 6. SCAFFOLD: FREE -->
+<section id="s-scaffold-free" class="widget-section" data-toc="Scaffold Free" data-widget="scaffold">
+  <script type="application/json" class="w-config">
+  {
+    "mode": "free",
+    "slots": [
+      {"id": "s1", "label": "1. Solid Fat vs Liquid Oil", "model": "Saturated fats have straight chains that pack tightly side-by-side, maximizing contact and LDF, making them solid at room temperature. Unsaturated fats have kinked chains that pack loosely, weakening LDF and making them liquid."},
+      {"id": "s2", "label": "2. Pastry Lamination", "model": "Solid fat remains in distinct layers separating the flour sheets, trapping steam to rise into flaky layers. Liquid oil would soak in, causing the layers to fuse."}
+    ]
+  }
+  </script>
+</section>
+
+<!-- 7. SCAFFOLD: TABLE -->
+<section id="s-scaffold-table" class="widget-section" data-toc="Scaffold Table" data-widget="scaffold">
+  <script type="application/json" class="w-config">
+  {
+    "mode": "table",
+    "table": {
+      "headers": ["Reactant", "Before (mol)", "Change (mol)", "After (mol)"],
+      "rows": [
+        [
+          {"given": "A"},
+          {"given": "10.00"},
+          {"blank": {"type": "numeric", "answer": -4.00, "tol": 0.05, "feedback_wrong": "Check reactant Change row."}},
+          {"blank": {"type": "numeric", "answer": 6.00, "tol": 0.05, "feedback_wrong": "Check reactant After calculation."}}
+        ],
+        [
+          {"given": "B (product)"},
+          {"given": "0.00"},
+          {"blank": {"type": "numeric", "answer": 2.00, "tol": 0.05, "feedback_wrong": "Check product Change row."}},
+          {"blank": {"type": "numeric", "answer": 2.00, "tol": 0.05, "feedback_wrong": "Check product After calculation."}}
+        ]
+      ]
+    }
+  }
+  </script>
+</section>
+
+<!-- 8. STEP-BUILDER -->
+<section id="s-step-builder" class="widget-section" data-toc="Step Builder" data-widget="step-builder">
+  <div class="diagram" id="dummySvgContainer" style="max-width: 400px; margin: 0 auto 1.5rem;">
+    <!-- Dummy SVG representing state layers -->
+    <svg viewBox="0 0 100 100" style="width: 100%; height: auto; border: 1px solid var(--hair); background: var(--paper);">
+      <!-- State 1 -->
+      <g id="state-start" class="svg-step-layer">
+        <circle cx="50" cy="50" r="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="50" y="55" font-size="6" text-anchor="middle" font-family="var(--mono)">START</text>
+      </g>
+      <!-- State 2 -->
+      <g id="state-middle" class="svg-step-layer" style="display:none; opacity:0;">
+        <circle cx="50" cy="50" r="30" fill="var(--good)" stroke="var(--good)" stroke-width="2" opacity="0.3"/>
+        <circle cx="50" cy="50" r="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="50" y="55" font-size="6" text-anchor="middle" font-family="var(--mono)">MIDDLE</text>
+      </g>
+      <!-- State 3 -->
+      <g id="state-end" class="svg-step-layer" style="display:none; opacity:0;">
+        <rect x="20" y="20" width="60" height="60" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4"/>
+        <circle cx="50" cy="50" r="30" fill="var(--good)" stroke="var(--good)" stroke-width="2" opacity="0.3"/>
+        <circle cx="50" cy="50" r="20" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+        <text x="50" y="55" font-size="6" text-anchor="middle" font-family="var(--mono)">DONE</text>
+      </g>
+    </svg>
+  </div>
+  <script type="application/json" class="w-config">
+  {
+    "diagramId": "dummySvgContainer",
+    "steps": [
+      {
+        "state": "state-start",
+        "question": "Step 1: Carbon has 4 valence electrons. What is its first step toward stability?",
+        "options": [
+          {"label": "Lose 4 electrons", "correct": false, "feedback": "Cheaper to share. Try another move."},
+          {"label": "Share electrons in covalent bonds", "correct": true, "feedback": "Yes! Sharing enables it to complete its octet."}
+        ]
+      },
+      {
+        "state": "state-middle",
+        "question": "Step 2: Carbon forms a bond with oxygen. What type of bond will it form?",
+        "options": [
+          {"label": "Ionic bond", "correct": false, "feedback": "Incorrect. Both are nonmetals."},
+          {"label": "Covalent bond", "correct": true, "feedback": "Yes! They will share electrons."}
+        ]
+      }
+    ],
+    "finale": "<p>You have completed the carbon bonding builder walkthrough!</p>"
+  }
+  </script>
+</section>
+
+<!-- 9. STEP CONTROLLER MOTION PRIMITIVE -->
+<section id="s-step-motion" class="widget-section" data-toc="Step Motion" data-motion="step" data-step-count="3" data-step-start="1" data-step-labels="Initial State|Middle State|Final State">
+  <div style="text-align: center; font-family: var(--display); font-size: 1.2rem; padding: 2rem 0; height: 120px; display: flex; align-items: center; justify-content: center; width: 100%;">
+    <div data-step="1" style="width: 100%;">
+      <span style="font-size: 3rem;">🔴</span>
+      <p>Red Circle - Step 1</p>
+    </div>
+    <div data-step="2" style="width: 100%;">
+      <span style="font-size: 3rem;">🟢</span>
+      <p>Green Circle - Step 2</p>
+    </div>
+    <div data-step="3" style="width: 100%;">
+      <span style="font-size: 3rem;">🔵</span>
+      <p>Blue Circle - Step 3</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. SCRUB CONTROLLER MOTION PRIMITIVE -->
+<section id="s-scrub-motion" class="widget-section" data-toc="Scrub Motion" data-motion="scrub" data-scrub-fn="den-cloud" data-scrub-min="0" data-scrub-max="3.5" data-scrub-step="0.1" data-scrub-value="0.0" data-scrub-label="Electronegativity Difference (ΔEN)" data-scrub-marks="0.0:Covalent|0.4:Polar|1.7:Ionic" data-scrub-target="1.7">
+  <div style="max-width: 400px; margin: 0 auto 1rem; text-align: center;">
+    <svg viewBox="0 0 200 100" style="width: 100%; border: 1px solid var(--hair); background: var(--paper);">
+      <defs>
+        <radialGradient id="cloudGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- Electron Cloud -->
+      <circle class="cloud-gradient" cx="50%" cy="50%" r="40" fill="url(#cloudGrad)" />
+      <!-- Atoms -->
+      <circle class="atom-l" cx="50" cy="50" r="15" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+      <text class="charge-l" x="50" y="55" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--accent)"></text>
+      <text x="50" y="30" text-anchor="middle" font-family="var(--mono)" font-size="10">H</text>
+      
+      <circle class="atom-r" cx="150" cy="50" r="15" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+      <text class="charge-r" x="150" y="55" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--accent)"></text>
+      <text x="150" y="30" text-anchor="middle" font-family="var(--mono)" font-size="10">F</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 11. ZOOM STAGE MOTION PRIMITIVE -->
+<section id="s-zoom-motion" class="widget-section" data-toc="Zoom Motion" data-motion="zoom" data-zoom-levels="2" data-zoom-anchor="50,50,12">
+  <div data-zoom-level="macro" style="width: 100%; height: 100%;">
+    <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+      <rect x="25" y="30" width="50" height="50" rx="4" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="2"/>
+      <path d="M30 45 C 40 45, 60 45, 70 45" fill="none" stroke="var(--accent-soft)" stroke-width="2"/>
+      <text x="50" y="60" text-anchor="middle" font-family="var(--mono)" font-size="8">Macro Beaker</text>
+    </svg>
+  </div>
+  <div data-zoom-level="particulate" style="width: 100%; height: 100%;">
+    <svg viewBox="0 0 100 100" style="width: 100%; height: 100%;">
+      <circle cx="20" cy="30" r="6" fill="var(--accent)" />
+      <circle cx="45" cy="50" r="6" fill="var(--accent)" />
+      <circle cx="70" cy="70" r="6" fill="var(--accent)" />
+      <circle cx="80" cy="25" r="6" fill="var(--accent)" />
+      <text x="50" y="90" text-anchor="middle" font-family="var(--mono)" font-size="8">Particulate Molecules</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 12. MOLECULE RENDERER -->
+<section id="s-molecule-renderer" class="widget-section" data-toc="Molecule Renderer">
+  <div class="wrap">
+    <div class="label label-accent">Molecule Renderer</div>
+    <h2>Data-Driven Molecular Structures</h2>
+    <p>This test bench renders H<sub>2</sub>O, CO<sub>2</sub>, NH<sub>3</sub>, and CH<sub>4</sub> programmatically using the shared <code>MoleculeRenderer</code>.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+      <div class="card" style="text-align: center; padding: 1.5rem; display: flex; flex-direction: column; align-items: center;">
+        <h4 style="margin-bottom: 0.5rem;">Water (H<sub>2</sub>O)</h4>
+        <div class="diagram" style="width: 160px; height: 160px; display: flex; align-items: center; justify-content: center;">
+          <svg id="mol-h2o" style="width: 100%; height: 100%;"></svg>
+        </div>
+      </div>
+      
+      <div class="card" style="text-align: center; padding: 1.5rem; display: flex; flex-direction: column; align-items: center;">
+        <h4 style="margin-bottom: 0.5rem;">Carbon Dioxide (CO<sub>2</sub>)</h4>
+        <div class="diagram" style="width: 160px; height: 160px; display: flex; align-items: center; justify-content: center;">
+          <svg id="mol-co2" style="width: 100%; height: 100%;"></svg>
+        </div>
+      </div>
+      
+      <div class="card" style="text-align: center; padding: 1.5rem; display: flex; flex-direction: column; align-items: center;">
+        <h4 style="margin-bottom: 0.5rem;">Ammonia (NH<sub>3</sub>)</h4>
+        <div class="diagram" style="width: 160px; height: 160px; display: flex; align-items: center; justify-content: center;">
+          <svg id="mol-nh3" style="width: 100%; height: 100%;"></svg>
+        </div>
+      </div>
+      
+      <div class="card" style="text-align: center; padding: 1.5rem; display: flex; flex-direction: column; align-items: center;">
+        <h4 style="margin-bottom: 0.5rem;">Methane (CH<sub>4</sub>)</h4>
+        <div class="diagram" style="width: 160px; height: 160px; display: flex; align-items: center; justify-content: center;">
+          <svg id="mol-ch4" style="width: 100%; height: 100%;"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13. PARTICLE-SCENE RENDERER -->
+<section id="s-particle-renderer" class="widget-section" data-toc="Particle Scene">
+  <div class="wrap">
+    <div class="label label-accent">Particle Scene</div>
+    <h2>Data-Driven Particle-Scene Renderer</h2>
+    <p>Below are two instances of the programmatically rendered particle diagrams. The first demonstrates a correct, conserved phase/reaction sequence. The second intentionally violates particle conservation to test the verification gate and visual error reporting.</p>
+    
+    <h4 style="margin-top: 1.5rem;">1. Conserved Sequence (Solid &rarr; Liquid/Gas with Metal)</h4>
+    <div class="figure figure--full">
+      <div id="particle-conserved-test" class="diagram"></div>
+      <div class="diagram-cap">Conserved System (H, O, and Na atoms are equal across both panels)</div>
+    </div>
+
+    <h4 style="margin-top: 2rem;">2. Violation Sequence (Mismatched particle counts)</h4>
+    <div class="figure figure--full">
+      <div id="particle-error-test" class="diagram"></div>
+      <div class="diagram-cap">Violation System (Before and After counts do not match, triggering verification gate)</div>
+    </div>
+  </div>
+</section>
+
+<!-- 14. PREDICT & RUN -->
+<section id="s-predict-run" class="widget-section" data-toc="Predict & Run" data-widget="predict-run">
+  <script type="application/json" class="w-config">
+  {
+    "predictionType": "choice",
+    "prompt": "Predict what happens to the molecular motion of water as it is heated from ice to liquid water.",
+    "options": [
+      {"label": "The molecular motion increases and particles move faster", "correct": true, "feedback": "Correct prediction! Let's watch the step-by-step phase transition."},
+      {"label": "The molecular motion decreases and particles slow down", "correct": false, "feedback": "Incorrect prediction. Let's run the simulation to see the phase change behavior."}
+    ],
+    "reveal": "<p>When heat is added to a solid, the kinetic energy of the particles increases, causing them to move and vibrate faster, breaking their rigid crystal structure.</p>"
+  }
+  </script>
+  
+  <div data-motion="step" data-step-count="3" data-step-start="1" data-step-labels="Ice (Solid)|Water (Liquid)|Steam (Gas)" style="max-width: 500px; margin: 1.5rem auto;">
+    <div data-step="1" style="text-align: center; padding: 2rem;">
+      <span style="font-size: 3rem;">🧊</span>
+      <p>Ice - Fixed grid structure, vibrating in place</p>
+    </div>
+    <div data-step="2" style="text-align: center; padding: 2rem;">
+      <span style="font-size: 3rem;">💧</span>
+      <p>Liquid - Fluid arrangement, sliding past each other</p>
+    </div>
+    <div data-step="3" style="text-align: center; padding: 2rem;">
+      <span style="font-size: 3rem;">💨</span>
+      <p>Gas - Complete separation, high velocity random motion</p>
+    </div>
+  </div>
+</section>
+
+<!-- 15. DIAGNOSE THE ERROR (EQUATION BALANCING) -->
+<section id="s-diagnose-error" class="widget-section" data-toc="Diagnose Error" data-widget="diagnose-error">
+  <script type="application/json" class="w-config">
+  {
+    "spots": [
+      {"id": "coeff", "correct": true, "feedback": "Excellent balancing check! The coefficient for H<sub>2</sub>O is incorrect. Balancing requires 2 H<sub>2</sub>O, not 3."},
+      {"id": "formula", "correct": false, "feedback": "Incorrect. O<sub>2</sub> is the correct formula for diatomic oxygen gas reactants."},
+      {"id": "op", "correct": false, "feedback": "Incorrect. The yield arrow (&rarr;) is the correct chemical reaction operator here."},
+      {"id": "subscript", "correct": false, "feedback": "Incorrect. H<sub>2</sub> is correct for hydrogen gas."}
+    ],
+    "reveal": "<p>To balance the combustion of hydrogen (2 H<sub>2</sub> + O<sub>2</sub> &rarr; 2 H<sub>2</sub>O), we need a coefficient of 2 for water to conserve oxygen atoms.</p>"
+  }
+  </script>
+  
+  <div class="w-prompt">Find and click the balancing or structural error in the equation below:</div>
+  <div class="w-workspace" style="display: flex; gap: 0.5rem; justify-content: center; align-items: center; font-family: var(--mono, monospace); font-size: 1.5rem; padding: 1.5rem 0; flex-wrap: wrap;">
+    <span>2</span>
+    <span class="w-spot" data-spot-id="formula" style="padding: 0.1rem 0.3rem;">H<sub class="w-spot" data-spot-id="subscript" style="padding: 0.05rem 0.15rem; cursor: pointer;">2</sub></span>
+    <span class="w-spot" data-spot-id="op" style="padding: 0.1rem 0.3rem;">+</span>
+    <span>O<sub>2</sub></span>
+    <span>&rarr;</span>
+    <span class="w-spot" data-spot-id="coeff" style="padding: 0.1rem 0.3rem; font-weight: bold; text-decoration: underline;">3</span>
+    <span>H<sub>2</sub>O</span>
+  </div>
+</section>
+
+<!-- 15b. DIAGNOSE THE ERROR (EQUATION SETUP) -->
+<section id="s-diagnose-setup-error" class="widget-section" data-toc="Diagnose Setup" data-widget="diagnose-error">
+  <script type="application/json" class="w-config">
+  {
+    "spots": [
+      {"id": "mass-term", "correct": false, "feedback": "Incorrect. 36.04 grams of water is the given starting mass, which is set up correctly."},
+      {"id": "conv-1", "correct": false, "feedback": "Incorrect. This conversion factor (1 mol / 18.02 g) correctly converts grams of H<sub>2</sub>O to moles."},
+      {"id": "conv-2-ratio", "correct": true, "feedback": "Excellent! The mole ratio term is inverted. It should be 1 mol O<sub>2</sub> over 2 mol H<sub>2</sub>O to cancel moles of water and solve for oxygen."},
+      {"id": "op-mult", "correct": false, "feedback": "Incorrect. Multiplication is the correct operation between dimensional analysis terms."}
+    ],
+    "reveal": "<p>In dimensional analysis setups, units must cancel diagonally. The mole ratio term must have 2 mol H<sub>2</sub>O in the denominator (bottom) to cancel the preceding mole term.</p>"
+  }
+  </script>
+  
+  <div class="w-prompt">Find and click the incorrect term or operation in this stoichiometry setup calculating moles of O<sub>2</sub> produced from 36.04g of H<sub>2</sub>O:</div>
+  <div class="w-workspace" style="display: flex; gap: 0.75rem; justify-content: center; align-items: center; font-family: var(--mono, monospace); font-size: 1.1rem; padding: 1.5rem 0; flex-wrap: wrap;">
+    <span class="w-spot" data-spot-id="mass-term" style="padding: 0.5rem 0.75rem; border: 1px solid var(--dia-stroke, rgba(0,0,0,0.15)); border-radius: 6px;">36.04 g H<sub>2</sub>O</span>
+    <span class="w-spot" data-spot-id="op-mult" style="font-weight: bold; padding: 0.25rem 0.5rem;">&times;</span>
+    <span class="w-spot" data-spot-id="conv-1" style="display: inline-flex; flex-direction: column; align-items: center; padding: 0.5rem 0.75rem; border: 1px solid var(--dia-stroke, rgba(0,0,0,0.15)); border-radius: 6px;">
+      <span>1 mol H<sub>2</sub>O</span>
+      <span style="border-top: 1px solid var(--ink); width: 100%; margin: 4px 0;"></span>
+      <span>18.02 g H<sub>2</sub>O</span>
+    </span>
+    <span style="font-weight: bold; padding: 0.25rem 0.5rem;">&times;</span>
+    <span class="w-spot" data-spot-id="conv-2-ratio" style="display: inline-flex; flex-direction: column; align-items: center; padding: 0.5rem 0.75rem; border: 1px solid var(--dia-stroke, rgba(0,0,0,0.15)); border-radius: 6px;">
+      <span>2 mol H<sub>2</sub>O</span>
+      <span style="border-top: 1px solid var(--ink); width: 100%; margin: 4px 0;"></span>
+      <span>1 mol O<sub>2</sub></span>
+    </span>
+  </div>
+</section>
+
+<!-- 16. CONSTRUCT WITH LIVE VALIDATION -->
+<section id="s-construct-validate" class="widget-section" data-toc="Construct Validate" data-widget="construct-validate">
+  <script type="application/json" class="w-config">
+  {
+    "items": [
+      {"id": "Al", "label": "Al<sup>3+</sup>", "charge": 3},
+      {"id": "O", "label": "O<sup>2-</sup>", "charge": -2}
+    ],
+    "targetRatio": {
+      "Al": 2,
+      "O": 3
+    },
+    "feedback_right": "Correct! Two Al<sup>3+</sup> ions (+6) balance three O<sup>2-</sup> ions (-6) to make neutral Al<sub>2</sub>O<sub>3</sub>.",
+    "feedback_wrong": "Incorrect ratio. Keep adjusting the counts until you form Al<sub>2</sub>O<sub>3</sub>.",
+    "reveal": "<p>Aluminum oxide forms a crystal lattice with a 2:3 ratio of aluminum cations to oxide anions to achieve charge neutrality.</p>"
+  }
+  </script>
+  <div class="w-prompt">Construct a neutral ionic compound by adjusting the positive Al<sup>3+</sup> and negative O<sup>2&ndash;</sup> ions. Your compound must be electrically neutral to check it.</div>
+</section>
+
+<div class="footer"></div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="../assets/elements.js"></script>
+</body>
+</html>

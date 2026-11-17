@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-6b" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Human Equilibrium &amp; Blood Buffers · Gen Chem 4-6b</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 4-6b &middot; Human Equilibrium &amp; Blood Buffers</div>
+    <h1>A 400-meter sprint pours acid into your blood. Your blood <span class="flip">barely notices</span>.</h1>
+    <p class="lede">During a 400-meter sprint, your muscles pour lactic acid into your blood. Your blood has to stay almost exactly as acidic as it was, or the enzymes in your heart and brain stop working. Part of the defense is an equilibrium that links your blood to your lungs. This page shows how breathing faster or slower shifts it.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-6</b> Refine the design of a chemical system by specifying a change in conditions that would produce increased amounts of products at equilibrium.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can write the equilibrium for carbon dioxide in blood. You can predict which way it shifts when you breathe faster or slower. You can say what that does to how acidic the blood is.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Carbon dioxide in the blood as one equilibrium, and what faster or slower breathing does to it. Buffers, pH values, the linked equilibria and the blood-buffer simulator are Enrichment.</div></div>
+    </div>
+
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>One equilibrium.</strong> Carbon dioxide dissolves in blood and reacts with water: CO<sub>2</sub> + H<sub>2</sub>O &rightleftharpoons; H<sup>+</sup> + HCO<sub>3</sub><sup>&minus;</sup>. More CO<sub>2</sub> means more H<sup>+</sup>, and H<sup>+</sup> makes the blood more acidic.</li>
+              <li><strong>Breathing faster.</strong> You breathe out more CO<sub>2</sub>. Removing a reactant shifts the equilibrium left. The shift uses up H<sup>+</sup>, and the blood becomes less acidic (<strong class="term">alkalosis</strong>).</li>
+              <li><strong>Breathing slower.</strong> CO<sub>2</sub> builds up. The extra reactant shifts the equilibrium right. The shift makes H<sup>+</sup>, and the blood becomes more acidic (<strong class="term">acidosis</strong>).</li>
+              <li><strong>Paper bag.</strong> Rebreathing your own CO<sub>2</sub> raises the CO<sub>2</sub> in the blood and shifts the equilibrium back to the right.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>CO<sub>2</sub> in the blood</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 300 150" font-family="var(--display)" role="img" aria-label="Carbon dioxide gas in the lungs and carbon dioxide dissolved in blood are linked by a double arrow. In the blood, carbon dioxide and water are in equilibrium with hydrogen ions and bicarbonate ions">
+              <rect x="10" y="35" width="84" height="70" rx="6" fill="var(--paper)" stroke="var(--ink-mute)" stroke-width="1.2"/>
+              <text x="52" y="60" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Lungs</text>
+              <text x="52" y="84" style="font-size:var(--dia-header-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="middle">CO₂(g)</text>
+              <text x="108" y="76" style="font-size:var(--dia-atom-size);" fill="var(--ink-mute)" text-anchor="middle">&rightleftharpoons;</text>
+              <rect x="122" y="25" width="168" height="90" rx="6" fill="var(--paper)" stroke="var(--ink-mute)" stroke-width="1.2"/>
+              <text x="206" y="48" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink-soft)" text-anchor="middle">Blood</text>
+              <text x="206" y="72" style="font-size:var(--dia-header-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="middle">CO₂ + H₂O</text>
+              <text x="206" y="90" style="font-size:var(--dia-header-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="middle">⇌ H⁺ + HCO₃⁻</text>
+            </svg>
+</div>
+<figcaption>breathing out takes CO₂ from the blood · the equilibrium shifts to replace it</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> <span>Write the equilibrium for carbon dioxide dissolved in blood.</span></li>
+              <li><input type="checkbox" disabled> <span>Predict how faster breathing shifts it and what that does to the acidity of the blood.</span></li>
+              <li><input type="checkbox" disabled> <span>Predict what slower breathing does.</span></li>
+              <li><input type="checkbox" disabled> <span>Explain why breathing into a paper bag helps during an anxiety attack.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 CO2 IN BLOOD AS ONE EQUILIBRIUM -->
+<section id="s-co2" data-toc="CO₂ in the blood">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">An equilibrium in your blood</span></div>
+    <h2>One equilibrium links your blood to your lungs.</h2>
+    <p>Your cells make carbon dioxide all the time. It dissolves in your blood. There it reacts with water and makes a little acid.</p>
+
+    <div class="eq-display">CO<sub>2</sub>(aq) + H<sub>2</sub>O(l) &rightleftharpoons; H<sup>+</sup>(aq) + HCO<sub>3</sub><sup>&minus;</sup>(aq)</div>
+
+    <p>This is a reversible reaction at dynamic equilibrium, like the one in the Haber process. More CO<sub>2</sub> in the blood means more H<sup>+</sup> ions, and H<sup>+</sup> is what makes a liquid acidic. Your lungs control how much CO<sub>2</sub> stays in your blood. Every breath out removes some.</p>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking CO<sub>2</sub> is only a waste gas with no effect on the blood. Dissolved CO<sub>2</sub> makes H<sup>+</sup>, so the amount of CO<sub>2</sub> in the blood changes how acidic the blood is.</p></div>
+  </div>
+</section>
+
+<!-- 02 BREATHING SHIFTS IT -->
+<section id="s-respiration" data-toc="Breathing shifts it">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Faster and slower breathing</span></div>
+    <h2>Fast breathing, slow breathing, and Le Chatelier.</h2>
+    <p>When you change how fast you breathe, you change the CO<sub>2</sub> in your blood. By Le Chatelier&rsquo;s principle, the equilibrium shifts to work against that change.</p>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Breathing faster: the blood becomes less acidic</h4>
+        <p>During a panic attack or at high altitude, fast, deep breathing removes CO<sub>2</sub> faster than your cells make it. CO<sub>2</sub> is a reactant, so removing it <strong>shifts the equilibrium left (&larr;)</strong>.<br>
+        <span class="eq-line">H<sup>+</sup>(aq) + HCO<sub>3</sub><sup>&minus;</sup>(aq) &rarr; CO<sub>2</sub>(aq) + H<sub>2</sub>O(l)</span><br>
+        The shift uses up H<sup>+</sup>, so the blood becomes <b>less acidic</b>. Doctors call this <strong class="term">alkalosis</strong>. The person feels tingling and lightheaded, and muscles can spasm.<br>
+        <em>Treatment:</em> Breathing into a paper bag makes the person rebreathe their own CO<sub>2</sub>. The CO<sub>2</sub> in the blood rises and the equilibrium shifts right (&rarr;). The H<sup>+</sup> comes back.</p>
+      </div>
+
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Breathing slower: the blood becomes more acidic</h4>
+        <p>During a severe asthma attack, choking or an opioid overdose, breathing is too shallow to remove CO<sub>2</sub>. The CO<sub>2</sub> builds up in the blood. The extra reactant <strong>shifts the equilibrium right (&rarr;)</strong>.<br>
+        <span class="eq-line">CO<sub>2</sub>(aq) + H<sub>2</sub>O(l) &rarr; H<sup>+</sup>(aq) + HCO<sub>3</sub><sup>&minus;</sup>(aq)</span><br>
+        The shift makes H<sup>+</sup>, so the blood becomes <b>more acidic</b>. Doctors call this <strong class="term">acidosis</strong>. Without a ventilator or emergency oxygen, severe acidosis weakens the heart and can cause a coma.</p>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking faster breathing makes the blood more acidic because you take in more air. Faster breathing blows off CO<sub>2</sub>, and CO<sub>2</sub> makes acid. Less CO<sub>2</sub> means less H<sup>+</sup>.</p></div>
+  </div>
+</section>
+
+<!-- 03 BUFFERS AND PH (Enrichment) -->
+<section id="s-buffers" data-toc="Buffers and pH" data-enrichment>
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Acid-base chemistry</span><span class="tag-enrichment">Enrichment</span></div>
+    <h2>How a buffer absorbs a chemical shock.</h2>
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Buffers, pH values and the linked equilibria</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+
+    <h3>A buffer: a weak acid and its conjugate base</h3>
+    <p>Add 1.0 milliliter of 1.0&nbsp;M hydrochloric acid (about 20 drops) to 1.0 liter of pure water. The pH falls from 7.0 to 3.0. That is a <strong>10,000-fold increase in H<sup>+</sup></strong>. Add the same acid to 1.0 liter of human blood, with breathing keeping CO<sub>2</sub> steady, and the pH changes by less than 0.02. A <strong class="term">buffer</strong> makes the difference.</p>
+    <p>A buffer holds large amounts of both a <b>weak acid</b> (a proton donor, <em>HA</em>) and its <b>conjugate base</b> (a proton acceptor, <em>A</em><sup>&minus;</sup>).</p>
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>When strong acid is added</h4>
+        <p>The conjugate base binds the added H<sup>+</sup> and makes weak acid:<br>
+        <span class="eq-line">A<sup>&minus;</sup>(aq) + H<sup>+</sup>(aq) &rarr; HA(aq)</span><br>
+        The free H<sup>+</sup> turns into undissociated weak acid, so the pH barely changes.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>When strong base is added</h4>
+        <p>The weak acid gives up H<sup>+</sup> to neutralize the added hydroxide:<br>
+        <span class="eq-line">HA(aq) + OH<sup>&minus;</sup>(aq) &rarr; A<sup>&minus;</sup>(aq) + H<sub>2</sub>O(l)</span><br>
+        The OH<sup>&minus;</sup> turns into water and conjugate base, so the pH barely changes.</p>
+      </div>
+    </div>
+
+    <h3>The pH window and the bicarbonate chain</h3>
+    <p>Human blood plasma stays between pH 7.35 and 7.45. Below 7.35 is acidosis, which slows the central nervous system. Above 7.45 is alkalosis, which makes nerves overexcitable and muscles spasm. A pH below 6.8 or above 7.8 is quickly fatal.</p>
+    <p>The <b>bicarbonate buffer</b> is the main defense. It links the lungs, the blood and the kidneys in one chain of equilibria.</p>
+
+    <figure class="figure figure--full">
+<div class="diagram">
+      <svg viewBox="0 0 680 150" font-family="var(--display)" role="img" aria-label="The bicarbonate chain: carbon dioxide gas in the lungs is in equilibrium with dissolved carbon dioxide and water, which is in equilibrium with carbonic acid, which is in equilibrium with hydrogen ions and bicarbonate ions">
+        <rect x="0" y="0" width="680" height="150" fill="var(--card)" rx="8" stroke="var(--hair)" stroke-width="1"/>
+
+        <rect x="25" y="30" width="120" height="80" rx="6" fill="var(--paper)" stroke="var(--ink-mute)" stroke-width="1.2"/>
+        <text x="85" y="55" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Lungs (gas)</text>
+        <text x="85" y="86" style="font-size:var(--dia-header-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="middle">CO₂(g)</text>
+        <text x="165" y="78" style="font-size:var(--dia-atom-size);" fill="var(--ink-mute)" text-anchor="middle">&rightleftharpoons;</text>
+
+        <rect x="185" y="30" width="135" height="80" rx="6" fill="var(--paper)" stroke="var(--ink-mute)" stroke-width="1.2"/>
+        <text x="252" y="55" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink-soft)" text-anchor="middle">Dissolved gas</text>
+        <text x="252" y="86" style="font-size:var(--dia-header-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="middle">CO₂(aq) + H₂O</text>
+        <text x="345" y="78" style="font-size:var(--dia-atom-size);" fill="var(--ink-mute)" text-anchor="middle">&rightleftharpoons;</text>
+
+        <rect x="370" y="30" width="120" height="80" rx="6" fill="var(--paper)" stroke="var(--ink-mute)" stroke-width="1.2"/>
+        <text x="430" y="55" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink-soft)" text-anchor="middle">Weak acid</text>
+        <text x="430" y="86" style="font-size:var(--dia-header-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="middle">H₂CO₃(aq)</text>
+        <text x="512" y="78" style="font-size:var(--dia-atom-size);" fill="var(--ink-mute)" text-anchor="middle">&rightleftharpoons;</text>
+
+        <rect x="535" y="30" width="125" height="80" rx="6" fill="var(--paper)" stroke="var(--ink-mute)" stroke-width="1.2"/>
+        <text x="597" y="55" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--good)" text-anchor="middle">Conjugate base</text>
+        <text x="597" y="86" style="font-size:var(--dia-header-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="middle">H⁺ + HCO₃⁻</text>
+      </svg>
+</div>
+<figcaption><b>Figure 4.5.</b> the bicarbonate chain · breathing changes the left end, and the whole chain shifts to follow</figcaption>
+</figure>
+    </details>
+
+  </div>
+</section>
+
+<!-- 04 THE BLOOD BUFFER SIMULATOR (Enrichment) -->
+<section id="s-sandbox" data-toc="Blood-buffer simulator" data-enrichment>
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Try it</span><span class="tag-enrichment">Enrichment</span></div>
+    <h2>Interactive blood-buffer simulator.</h2>
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Acid, base and breathing in blood and in pure water</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+    <p>Add acid or base, change the breathing rate, and compare buffered blood with pure water.</p>
+
+    <div class="sim-box" data-sim="blood">
+      <div class="label">Simulation</div>
+      <h4>How does blood stay near pH 7.4 when acid is added?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: you add the same 5&nbsp;mM of strong acid to blood and to pure water. What happens to the pH of each?</p>",
+  "options": [
+    {
+      "label": "Both fall by about the same amount, because the dose is the same",
+      "correct": false,
+      "feedback": "The same dose makes this tempting. But blood holds a buffer that binds most of the added H<sup>+</sup>. Pure water has nothing to bind it, so all of the H<sup>+</sup> stays free."
+    },
+    {
+      "label": "Water falls by several pH units and blood falls by about 0.1",
+      "correct": true,
+      "feedback": "Pure water has nothing to bind H<sup>+</sup>, so the full 5&nbsp;mM stays free and the pH drops from 7 to 2.3. The bicarbonate in blood binds the added H<sup>+</sup>, so the pH drops by only about 0.1."
+    },
+    {
+      "label": "Blood falls further than water, because blood already holds dissolved acid",
+      "correct": false,
+      "feedback": "Blood does hold dissolved CO<sub>2</sub>, which makes some acid. But blood also holds a base that binds added H<sup>+</sup>. That base makes the fall small, not large."
+    }
+  ],
+  "reveal": "<p>Now check it. Add 5&nbsp;mM of acid to blood, then to pure water, and compare the pH.</p>"
+}
+</script>
+</div>
+      <div class="sim-stage"><canvas aria-label="A pH scale from 1 to 13 with a marker, above a chart of pH over time. Choose blood or pure water, add acid or base, and change the breathing rate."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Choose the liquid and make a change">
+        <button type="button" class="chip" id="btnModeBlood" aria-pressed="true">Buffered blood</button>
+        <button type="button" class="chip" id="btnModeWater" aria-pressed="false">Pure water</button>
+        <label class="slider-row">Breathing rate <output>14 a minute</output>
+          <input type="range" id="respSlider" min="4" max="40" step="1" value="14" data-unit="a minute">
+        </label>
+        <button type="button" class="btn" id="btnAddAcid">Add 5 mM acid</button>
+        <button type="button" class="btn" id="btnAddBase">Add 5 mM base</button>
+        <button type="button" class="btn ghost" id="btnResetHomeo">Start over</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="ph"><span class="readout-label">pH now</span><span class="readout-value">7.40</span></div>
+        <div class="readout" data-readout="liquid"><span class="readout-label">Liquid</span><span class="readout-value">Blood</span></div>
+        <div class="readout" data-readout="rate"><span class="readout-label">Breathing</span><span class="readout-value">14 a minute</span></div>
+        <div class="readout" data-readout="window"><span class="readout-label">Blood state</span><span class="readout-value">Healthy</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="accent"></span>The pH now</li>
+        <li><span class="key" data-shape="square" data-token="good"></span>The healthy window, pH 7.35 to 7.45</li>
+        <li><span class="key" data-shape="line" data-token="accent"></span>The pH over the last 30 seconds</li>
+        <li><span class="key" data-shape="dash" data-token="ink-mute"></span>The moment you made a change</li>
+      </ul>
+      <ol class="try-this">
+        <li>Load blood, press Add 5 mM acid, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="blood">Load blood</button> <b>Look for:</b> the pH falls from 7.40 to 7.30, then creeps back as the kidneys restore bicarbonate.</li>
+        <li>Load pure water, press Add 5 mM acid, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="water">Load pure water</button> <b>Look for:</b> the pH falls from 7.00 to 2.30 and stays there.</li>
+        <li>Load fast breathing, wait a few seconds, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="fast">Load 36 a minute</button> <b>Look for:</b> the pH rises from 7.40 to 7.69, above the healthy window, because the lungs blow off CO<sub>2</sub>.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your Blood row with your Pure water row. Both got the same 5&nbsp;mM of acid. Blood fell by about 0.1 and water fell by about 4.7. What does blood hold that water does not?</p>",
+  "options": [
+    {
+      "label": "More water, so the acid spreads out and becomes weaker",
+      "correct": false,
+      "feedback": "Blood and pure water are both mostly water, and the same dose went into each. Dilution is not the difference. Your Blood row still fell by 0.1, so some H<sup>+</sup> stayed free."
+    },
+    {
+      "label": "A strong base that cancels all of the acid",
+      "correct": false,
+      "feedback": "A strong base would cancel the acid fully, but the pH would not fall at all. Your Blood row fell by 0.1, so the base is weak and it binds most of the H<sup>+</sup>, not all of it."
+    },
+    {
+      "label": "A weak acid and its conjugate base, so the base binds the added H<sup>+</sup>",
+      "correct": true,
+      "feedback": "The conjugate base (bicarbonate) binds most of the added H<sup>+</sup> and makes weak acid. Pure water has nothing to bind it, so all 5&nbsp;mM stays free."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. A buffer holds a weak acid and its conjugate base, and the base takes up added acid.</p>"
+}
+</script>
+</div>
+
+    <h3>Explain the emergency response</h3>
+    <div data-widget="commit-reveal">
+      <script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "In untreated Type 1 diabetes, cells burn fat and release acidic ketone bodies into the blood. The patient breathes deep and fast. This is called Kussmaul breathing. Explain at the particle level how this breathing helps to stabilize the pH of the blood.",
+  "minChars": 40,
+  "reveal": "<p><b>Key points:</b></p><ul><li>Ketone bodies add a lot of free H<sup>+</sup> to the blood plasma, which threatens a dangerous drop in pH.</li><li>Bicarbonate ions bind the extra H<sup>+</sup> and form carbonic acid. The carbonic acid breaks down into dissolved CO<sub>2</sub> and water.</li><li>Deep, fast breathing blows the CO<sub>2</sub> out through the lungs.</li><li>Removing CO<sub>2</sub> shifts the equilibrium left (&larr;). The shift pulls more H<sup>+</sup> into carbonic acid and keeps the pH from crashing.</li></ul>"
+}
+      </script>
+    </div>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS1-6 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks] <span class="tag-enrichment">Enrichment</span></span>
+      </div>
+      <div class="exam-q">
+        <p>A bioreactor grows mammalian cells that need a pH of 4.75 &plusmn; 0.10. The engineer makes 2.0&nbsp;L of buffer from two solutions.<br>
+        &bull; 0.20&nbsp;M acetic acid (CH<sub>3</sub>COOH, a weak acid; <em>K</em><sub>a</sub> = 1.8 &times; 10<sup>&minus;5</sup>)<br>
+        &bull; 0.20&nbsp;M sodium acetate (NaCH<sub>3</sub>COO, which supplies the conjugate base CH<sub>3</sub>COO<sup>&minus;</sup>)</p>
+        <p>During fermentation the cells make 0.050 mol of lactic acid. Lactic acid gives up all of its H<sup>+</sup>.</p>
+        <p class="sub"><b>(a)</b> Write the net ionic equation for how the buffer neutralizes this H<sup>+</sup>. [1 mark]</p>
+        <p class="sub"><b>(b)</b> The acid changes the pH of the buffer by less than 0.15. In 2.0&nbsp;L of pure water the same acid drops the pH from 7.0 to 1.6. Explain the difference at the particle level. [2 marks]</p>
+        <p class="sub"><b>(c)</b> After many days the pH suddenly crashes to 2.5. Explain what happened to the buffer. [1 mark]</p>
+      </div>
+      <textarea class="textbox" id="examAnsEnr" placeholder="Write your equation and your explanations..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Equation (1 mark):</b> You write CH<sub>3</sub>COO<sup>&minus;</sup>(aq) + H<sup>+</sup>(aq) &rarr; CH<sub>3</sub>COOH(aq).</li>
+          <li><b>Buffer (1 mark):</b> You say the acetate ions (0.40 mol) bind the added H<sup>+</sup>, so free H<sup>+</sup> barely changes.</li>
+          <li><b>Pure water (1 mark):</b> You say pure water has nothing to bind H<sup>+</sup>, so all 0.050 mol stays free.</li>
+          <li><b>Capacity (1 mark):</b> You say the acetate ions ran out, so added H<sup>+</sup> stayed free and the pH crashed.</li>
+        </ul></div></div>
+    </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- 05 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. Carbon dioxide dissolves in blood and reacts with water to make H<sup>+</sup> ions and <input class="blank" data-answer="bicarbonate|hydrogen carbonate|HCO3-" placeholder="?"> ions.<br>
+      2. Breathing faster removes CO<sub>2</sub> and shifts the equilibrium to the <input class="blank" data-answer="left|reverse|toward reactants" placeholder="?">.<br>
+      3. Removing CO<sub>2</sub> uses up H<sup>+</sup>, so the blood becomes <input class="blank" data-answer="less|less acidic" placeholder="?"> acidic.<br>
+      4. Breathing too slowly lets CO<sub>2</sub> build up. The equilibrium shifts <input class="blank" data-answer="right|forward|toward products" placeholder="?"> and the blood becomes more acidic.<br>
+      5. Breathing into a paper bag makes a person rebreathe <input class="blank" data-answer="carbon dioxide|CO2|CO₂" placeholder="?">, which shifts the equilibrium back to the right.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 SELF-EXPLANATION -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark">
+      <p>A person in a panic breathes fast and deep. Their hands start to tingle. A nurse tells them to breathe into a paper bag.</p>
+      <p>Use Le Chatelier&rsquo;s principle to explain why this helps.</p>
+    </div>
+    <p class="hint">Start with what fast breathing does to the CO<sub>2</sub> in the blood. Then follow the shift. Write your answer first, then compare it with the model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="Fast breathing removes CO₂ from the blood, so the equilibrium shifts..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>Fast breathing removes CO<sub>2</sub> from the blood. CO<sub>2</sub> is a reactant in CO<sub>2</sub> + H<sub>2</sub>O &rightleftharpoons; H<sup>+</sup> + HCO<sub>3</sub><sup>&minus;</sup>, so removing it shifts the equilibrium left. The shift uses up H<sup>+</sup>. The blood becomes less acidic, and that causes the tingling.</p>
+        <p>Breathing into a bag makes the person rebreathe their own CO<sub>2</sub>. The CO<sub>2</sub> in the blood rises and the equilibrium shifts right. The H<sup>+</sup> comes back, and the blood returns toward its normal acidity.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS1-6 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks]</span>
+      </div>
+      <div class="exam-q">
+        <p>Marcus holds his breath underwater for 60 seconds. His cells keep making CO<sub>2</sub>, and he cannot breathe it out. Carbon dioxide in his blood is in equilibrium:</p>
+        <div class="eq-display">CO<sub>2</sub>(aq) + H<sub>2</sub>O(l) &rightleftharpoons; H<sup>+</sup>(aq) + HCO<sub>3</sub><sup>&minus;</sup>(aq)</div>
+        <p class="sub"><b>(a)</b> As the CO<sub>2</sub> builds up, say which way the equilibrium shifts. Explain using the forward and reverse rates. [2 marks]</p>
+        <p class="sub"><b>(b)</b> Say what happens to how acidic Marcus&rsquo;s blood is, and explain why. [1 mark]</p>
+        <p class="sub"><b>(c)</b> After he surfaces, Marcus breathes fast and deep for a minute. Say which way the equilibrium shifts now, and explain why. [1 mark]</p>
+      </div>
+      <textarea class="textbox" id="examAns" placeholder="Write your answers for (a), (b) and (c)..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Direction (1 mark):</b> You say the equilibrium shifts right, toward H<sup>+</sup> and HCO<sub>3</sub><sup>&minus;</sup>.</li>
+          <li><b>Rates (1 mark):</b> You say more CO<sub>2</sub> raises the forward rate above the reverse rate.</li>
+          <li><b>Acidity (1 mark):</b> You say the blood becomes more acidic, because more H<sup>+</sup> forms.</li>
+          <li><b>Fast breathing (1 mark):</b> You say the equilibrium shifts left, because breathing out removes CO<sub>2</sub>.</li>
+        </ul></div></div>
+
+      <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>Patients with end-stage kidney failure cannot remove acid or rebuild the bicarbonate in their blood. Without treatment, the acid build-up is quickly fatal. A hemodialysis machine works as an artificial kidney. It passes blood across a thin membrane that is bathed in a fluid rich in bicarbonate (32 to 35 mM). Bicarbonate moves into the blood and acid wastes move out. The treatment restores the balance three times a week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-6 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-6</h3>
+    <p>
+      Test your understanding of equilibria in the body one question at a time. The adaptive engine covers the carbonic acid-bicarbonate blood buffer, neutralizing acid, breathing and acid-base balance, and acidosis or alkalosis shifts.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-6" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 4 &middot; 4-6b</div>
+  <p>Unit 4 ends here. Next, 5-1a: <strong>The Life &amp; Energy of the Sun</strong> asks where the energy of the Sun comes from.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="4-6b.js"></script>
+</body>
+</html>

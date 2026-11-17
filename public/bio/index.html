@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-book="bio" data-page="index">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>SAS General Biology</title>
+  <script>
+    if (location.pathname === '/bio') {
+      location.replace('/bio/' + location.search + location.hash);
+    }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script src="../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../textbook/base.css">
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/components.css">
+</head>
+<body class="dashboard">
+
+<!-- Hero -->
+  <main>
+    <section class="dash-hero">
+      <div class="hero-badge">NGSS Life Science Curriculum</div>
+      <h1>SAS General Biology</h1>
+      <p class="hero-desc">
+        Active retrieval practice, submicroscopic models, and physiological feedback loops aligned to the Singapore American School General Biology curriculum. Explore the anchor phenomena, commit to predictions, and master core disciplinary ideas.
+      </p>
+
+      <div class="search-wrap">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search lessons, topics, or standards...">
+      </div>
+    </section>
+
+    <!-- Units Grid -->
+    <section class="curriculum-grid">
+      <!-- Unit 1 -->
+      <article class="unit-card is-live" id="unit-1">
+        <div class="unit-card-main">
+          <figure class="unit-photo">
+            <img src="assets/photos/marathon_berlin_2015.jpg" width="1600" height="1238" alt="Three marathon runners in vests and race bibs stride down a city street, their faces tight with effort." decoding="async">
+            <figcaption>Runners at the 2015 Berlin Marathon. (Photo: Denis Barthel, CC BY-SA 4.0, via Wikimedia Commons.)</figcaption>
+          </figure>
+          <div class="unit-card-header">
+            <span class="unit-num-badge">Unit 1</span>
+            <span class="unit-status-pill">Active Lessons Live</span>
+          </div>
+          <h2 class="unit-title">Homeostasis</h2>
+          <p class="unit-desc">
+            Anchor: Marathon runner passing out. Model cellular respiration, energy transfer to ATP, and internal control via thermoregulation, osmoregulation, and blood glucose loops.
+          </p>
+        </div>
+        <div class="unit-lessons-list" data-unit-lessons="1">
+          <!-- Dynamically populated from lessons.json -->
+        </div>
+      </article>
+
+      <!-- Unit 2 -->
+      <article class="unit-card is-live" id="unit-2">
+        <div class="unit-card-main">
+          <figure class="unit-photo">
+            <img src="assets/photos/forest_central_catchment.jpg" width="1600" height="1071" alt="Inside a dense tropical forest: thin tree trunks rise from a floor of brown leaves under a green canopy." decoding="async">
+            <figcaption>Rainforest in the Central Catchment Nature Reserve, Singapore. (Photo: Jacklee, CC BY-SA 3.0, via Wikimedia Commons.)</figcaption>
+          </figure>
+          <div class="unit-card-header">
+            <span class="unit-num-badge">Unit 2</span>
+            <span class="unit-status-pill">Staging</span>
+          </div>
+          <h2 class="unit-title">Ecology & The Carbon Cycle</h2>
+          <p class="unit-desc">
+            Anchor: Singapore's rainforest and the species it has lost. Trace carbon through photosynthesis and respiration, measure biodiversity, follow energy up food webs, and design a way to protect one threatened species.
+          </p>
+        </div>
+        <div class="unit-lessons-list" data-unit-lessons="2">
+          <!-- Dynamically populated from lessons.json -->
+        </div>
+      </article>
+
+      <!-- Unit 3 -->
+      <article class="unit-card" id="unit-3">
+        <div>
+          <div class="unit-card-header">
+            <span class="unit-num-badge">Unit 3</span>
+            <span class="unit-status-pill">Staging</span>
+          </div>
+          <h2 class="unit-title">Genetics</h2>
+          <p class="unit-desc">
+            Anchor: Duchenne muscular dystrophy. Trace chromosome inheritance, mitosis vs meiosis, DNA transcription, and statistical probability of trait distribution.
+          </p>
+        </div>
+        <div class="unit-lessons-list" data-unit-lessons="3">
+          <!-- Dynamically populated from lessons.json -->
+        </div>
+      </article>
+
+      <!-- Unit 4 -->
+      <article class="unit-card" id="unit-4">
+        <div>
+          <div class="unit-card-header">
+            <span class="unit-num-badge">Unit 4</span>
+            <span class="unit-status-pill">Staging</span>
+          </div>
+          <h2 class="unit-title">Microevolution</h2>
+          <p class="unit-desc">
+            Anchor: Lactose tolerance and bacterial selection. Model the four factors of natural selection, trait proportion shifts, and evolutionary adaptation.
+          </p>
+        </div>
+        <div class="unit-lessons-list" data-unit-lessons="4">
+          <!-- Dynamically populated from lessons.json -->
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="dashboard-footer">
+    <p>
+      SAS General Biology Interactive Textbook &middot; Built for Singapore American School &middot;
+      <a href="about.html">How this book was built</a> &middot;
+      <a href="/">Science Practice App</a>
+    </p>
+  </footer>
+  <script src="assets/book.js"></script>
+  <script src="../textbook/core.js"></script>
+</body>
+</html>

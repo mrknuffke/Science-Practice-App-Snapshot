@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-7b" data-book="chem">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Mole Conversions · Gen Chem 1-7b</title>
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+  <!-- HERO -->
+<main>
+
+  <section id="s-hero" class="hero" data-toc="Opening">
+    <div>
+      <div class="label">Lesson 1-7b &middot; Mole Conversions</div>
+      <h1>Follow the map, and <span class="flip">cancel the units</span>.</h1>
+      <p class="lede">A lab scale reads in grams. A chemical equation counts in moles. How do you convert between what you can weigh and what the atoms need? Use a conversion map and dimensional analysis. Set up the fractions so the units cancel, and the math works out. By the end, you can convert between grams and moles with any molar mass.</p>
+      <div class="meta-strip">
+        <div class="meta-block">
+          <div class="k">Alignment</div>
+          <div class="v"><b>HS-PS1-7</b> Use mathematical representations to support the claim that atoms, and therefore mass, are conserved during a chemical reaction.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Objective</div>
+          <div class="v">You can set up a conversion factor so the units cancel. You can convert grams to moles and moles to grams. You can explain why each setup works.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Scope</div>
+          <div class="v">Grams-to-moles and moles-to-grams conversions, with molar mass as a conversion factor. Empirical formulas appear at the end of the page as an extension.</div>
+        </div>
+      </div>
+      <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Dimensional analysis:</strong> Write a fraction of equal values in different units. Multiply by it to change units safely.</li>
+              <li><strong>Diagonal cancellation:</strong> Set up the grid so the starting unit cancels and the target unit is left.</li>
+              <li><strong>Conversion values:</strong> Molar mass (g/mol) converts grams to moles. Avogadro's number converts moles to particles.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Dimensional analysis setup</h4>
+            <figure class="figure figure--full">
+<div class="diagram">
+              <svg viewBox="0 0 520 180" role="img" aria-label="Dimensional analysis conversion grid showing starting mass multiplying by molar mass ratio, with grams cancelling diagonally to yield moles.">
+                <!-- Header labels -->
+                <text x="95" y="24" text-anchor="middle" font-family="var(--display)" font-size="var(--dia-caption-size, 10px)" font-weight="700" letter-spacing="1" fill="var(--ink-mute)">GIVEN QUANTITY</text>
+                <text x="260" y="24" text-anchor="middle" font-family="var(--display)" font-size="var(--dia-caption-size, 10px)" font-weight="700" letter-spacing="1" fill="var(--accent)">CONVERSION BRIDGE (RATIO = 1)</text>
+                <text x="445" y="24" text-anchor="middle" font-family="var(--display)" font-size="var(--dia-caption-size, 10px)" font-weight="700" letter-spacing="1" fill="var(--ink-mute)">DESIRED RESULT</text>
+
+                <!-- Grid Frame -->
+                <rect x="20" y="36" width="350" height="96" rx="8" fill="var(--card)" stroke="var(--ink-soft)" style="stroke-width:var(--dia-stroke);"/>
+                <!-- Horizontal fraction bar -->
+                <line x1="20" y1="84" x2="370" y2="84" stroke="var(--ink)" style="stroke-width:var(--dia-stroke-bond);"/>
+                <!-- Vertical divider -->
+                <line x1="170" y1="36" x2="170" y2="132" stroke="var(--ink)" style="stroke-width:var(--dia-stroke);"/>
+
+                <!-- Cell 1: Starting quantity in numerator -->
+                <text x="95" y="65" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 13px)" font-weight="700" fill="var(--ink)">36.04 g H₂O</text>
+                <text x="95" y="112" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 11px)" fill="var(--ink-mute)">1 (understood)</text>
+
+                <!-- Cell 2: Conversion factor (1 mol / 18.02 g) -->
+                <text x="270" y="65" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 13px)" font-weight="700" fill="var(--accent)">1 mol H₂O</text>
+                <text x="270" y="112" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 13px)" font-weight="700" fill="var(--ink)">18.02 g H₂O</text>
+
+                <!-- Diagonal cancel slash lines -->
+                <line x1="118" y1="72" x2="150" y2="52" stroke="var(--accent)" stroke-linecap="round" style="stroke-width:var(--dia-stroke-bond);"/>
+                <line x1="292" y1="120" x2="324" y2="100" stroke="var(--accent)" stroke-linecap="round" style="stroke-width:var(--dia-stroke-bond);"/>
+
+                <!-- Diagonal arrow showing cancellation pathway -->
+                <path d="M 152,65 Q 210,84 275,105" fill="none" stroke="var(--accent)" stroke-dasharray="3 3" style="stroke-width:var(--dia-stroke);"/>
+                <rect x="175" y="74" width="70" height="18" rx="4" fill="var(--card)" stroke="var(--accent)" style="stroke-width:var(--dia-stroke);"/>
+                <text x="210" y="86" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 9px)" font-weight="600" fill="var(--accent)">units cancel</text>
+
+                <!-- Equals Sign -->
+                <text x="390" y="88" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-atom-size, 18px)" font-weight="700" fill="var(--ink)">=</text>
+
+                <!-- Result Card -->
+                <rect x="410" y="46" width="95" height="76" rx="8" fill="color-mix(in srgb, var(--accent) 8%, var(--card))" stroke="var(--accent)" style="stroke-width:var(--dia-stroke);"/>
+                <text x="457" y="76" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-atom-size, 16px)" font-weight="800" fill="var(--accent)">2.000</text>
+                <text x="457" y="98" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-label-size, 12px)" font-weight="700" fill="var(--ink)">mol H₂O</text>
+
+                <!-- Subtitle annotation -->
+                <text x="270" y="156" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" fill="var(--ink-mute)">Molar mass equivalence: 1 mol = 18.02 g</text>
+              </svg>
+</div>
+<figcaption>starting grams cancel diagonally against the grams in the molar mass denominator</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> Set up a dimensional analysis grid with matching units.</li>
+              <li><input type="checkbox" disabled> Convert mass to moles, and moles to particle counts.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+    </div>
+  </section>
+
+  <!-- 01 THE MOLE MAP -->
+  <section id="s-map" data-toc="The mole map">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">01</span><span class="label">Hub and spokes</span></div>
+      <h2>The mole is always the central hub.</h2>
+      <p>Follow one rule when you convert quantities in the lab: <strong>always convert through the mole</strong>. The mole links the count of particles to the mass on the scale.</p>
+      
+      <p>This gives you the <strong>mole map</strong>. Molar mass is the bridge. It converts mass in grams to an amount in moles, or moles back to grams.</p>
+
+      <div class="figure figure--full" data-motion="step" data-step-count="4" data-step-labels="Grams &rarr; Moles|Moles &rarr; Grams|Moles &rarr; Particles|Particles &rarr; Moles, the full map">
+
+        <!-- Step 1: Grams -> Moles -->
+        <div class="diagram" data-step="1">
+          <svg viewBox="0 0 480 150" role="img" aria-label="Mole map, step 1: grams converts to moles by dividing by molar mass.">
+            <rect x="20" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="65" y="80" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Grams (g)</text>
+            <rect x="195" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="240" y="80" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Moles (mol)</text>
+            <path d="M 115,65 L 190,65" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#mm-arr-1a)" />
+            <text x="152" y="55" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)">&divide; molar mass</text>
+            <defs>
+              <marker id="mm-arr-1a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" /></marker>
+            </defs>
+          </svg>
+          
+          <!-- Particulate Diagram -->
+          <svg viewBox="0 0 480 130" role="img" aria-label="Particulate view of Grams to Moles transition: bulk water in a beaker on the left, countable groups of water molecules on the right.">
+            <defs>
+              <marker id="part-arr-1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" /></marker>
+            </defs>
+            <!-- Left Panel: Beaker (Bulk Water) -->
+            <path d="M 45,20 L 45,75 L 85,75 L 85,20" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M 45,45 Q 55,42 65,45 T 85,45" fill="none" stroke="var(--water)" stroke-width="1.8" />
+            <path d="M 45,45 Q 55,42 65,45 T 85,45 L 85,75 L 45,75 Z" fill="var(--water)" opacity="0.15" />
+            <text x="65" y="98" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 9px);" fill="var(--ink-soft)">36.04 g H₂O</text>
+            <text x="65" y="112" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--ink-mute)">(bulk water)</text>
+            
+            <!-- Connector Arrow -->
+            <path d="M 125,48 L 175,48" fill="none" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#part-arr-1)" />
+            <text x="150" y="40" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--accent)">&divide; 18.02 g/mol</text>
+            
+            <!-- Right Panel: Moles (Water Molecules Box) -->
+            <rect x="200" y="18" width="80" height="60" rx="4" fill="none" stroke="var(--ink-mute)" stroke-width="1.5" stroke-dasharray="4 3" />
+            <!-- Molecule 1: Canonical bent space-filling H2O -->
+            <circle cx="212" cy="45" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="224" cy="45" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="218" cy="38" style="r: var(--dia-r-atom)" fill="var(--accent)" stroke="var(--ink)" stroke-width="1" />
+            <!-- Molecule 2: Canonical bent space-filling H2O -->
+            <circle cx="256" cy="43" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="268" cy="43" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="262" cy="36" style="r: var(--dia-r-atom)" fill="var(--accent)" stroke="var(--ink)" stroke-width="1" />
+            <!-- Molecule 3: Canonical bent space-filling H2O -->
+            <circle cx="234" cy="67" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="246" cy="67" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="240" cy="60" style="r: var(--dia-r-atom)" fill="var(--accent)" stroke="var(--ink)" stroke-width="1" />
+            
+            <text x="240" y="98" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 9px);" fill="var(--ink-soft)">2.00 mol H₂O</text>
+            <text x="240" y="112" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--ink-mute)">(counted groups)</text>
+          </svg>
+          <div class="diagram-cap">Start in grams, the unit you actually weigh. Dividing by molar mass converts to moles.</div>
+        </div>
+
+        <!-- Step 2: Moles -> Grams -->
+        <div class="diagram" data-step="2">
+          <svg viewBox="0 0 480 150" role="img" aria-label="Mole map, step 2: moles converts back to grams by multiplying by molar mass.">
+            <rect x="20" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="65" y="80" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Grams (g)</text>
+            <rect x="195" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="240" y="80" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Moles (mol)</text>
+            <path d="M 115,65 L 190,65" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#mm-arr-2s)" />
+            <text x="152" y="55" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">&divide; molar mass</text>
+            <path d="M 190,85 L 115,85" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#mm-arr-2a)" />
+            <text x="152" y="102" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)">&times; molar mass</text>
+            <defs>
+              <marker id="mm-arr-2s" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--ink-soft)" /></marker>
+              <marker id="mm-arr-2a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" /></marker>
+            </defs>
+          </svg>
+          
+          <!-- Particulate Diagram -->
+          <svg viewBox="0 0 480 130" role="img" aria-label="Particulate view of Moles to Grams transition: NaCl crystal lattice representing moles on the right, bulk salt pile on a weighing boat on the left.">
+            <defs>
+              <marker id="part-arr-2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" /></marker>
+            </defs>
+            <!-- Left Panel: Weighing Boat (Bulk Salt) -->
+            <polygon points="35,55 45,75 85,75 95,55" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M 45,75 Q 65,48 85,75 Z" fill="var(--ink-mute)" opacity="0.25" />
+            <text x="65" y="98" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 9px);" fill="var(--ink-soft)">146.10 g NaCl</text>
+            <text x="65" y="112" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--ink-mute)">(weighed bulk)</text>
+            
+            <!-- Connector Arrow -->
+            <path d="M 175,48 L 125,48" fill="none" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#part-arr-2)" />
+            <text x="150" y="40" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--accent)">&times; 58.44 g/mol</text>
+            
+            <!-- Right Panel: Moles (NaCl Crystal Lattice Box) -->
+            <rect x="200" y="18" width="80" height="60" rx="4" fill="none" stroke="var(--ink-mute)" stroke-width="1.5" stroke-dasharray="4 3" />
+            <!-- alternating ions -->
+            <!-- y=32 -->
+            <circle cx="218" cy="32" style="r: var(--dia-r-atom-sm)" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="232" cy="32" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="246" cy="32" style="r: var(--dia-r-atom-sm)" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="260" cy="32" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <!-- y=48 -->
+            <circle cx="218" cy="48" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="232" cy="48" style="r: var(--dia-r-atom-sm)" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="246" cy="48" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="260" cy="48" style="r: var(--dia-r-atom-sm)" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="0.8" />
+            <!-- y=64 -->
+            <circle cx="218" cy="64" style="r: var(--dia-r-atom-sm)" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="232" cy="64" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="246" cy="64" style="r: var(--dia-r-atom-sm)" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="260" cy="64" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            
+            <text x="240" y="98" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 9px);" fill="var(--ink-soft)">2.50 mol NaCl</text>
+            <text x="240" y="112" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--ink-mute)">(crystal lattice)</text>
+          </svg>
+          <div class="diagram-cap">The bridge runs both ways: multiplying moles by molar mass gets you back to grams.</div>
+        </div>
+
+        <!-- Step 3: Moles -> Particles -->
+        <div class="diagram" data-step="3">
+          <svg viewBox="0 0 480 150" role="img" aria-label="Mole map, step 3: moles converts to particles by multiplying by Avogadro's number.">
+            <rect x="20" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="65" y="80" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Grams (g)</text>
+            <rect x="195" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="240" y="80" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Moles (mol)</text>
+            <path d="M 115,65 L 190,65" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#mm-arr-3s)" />
+            <path d="M 190,85 L 115,85" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#mm-arr-3s)" />
+            <rect x="370" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="415" y="76" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Particles</text>
+            <text x="415" y="90" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">(atoms, molecules)</text>
+            <path d="M 290,65 L 365,65" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#mm-arr-3a)" />
+            <text x="327" y="55" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)">&times; 6.022&times;10&sup2;&sup3;</text>
+            <defs>
+              <marker id="mm-arr-3s" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--ink-soft)" /></marker>
+              <marker id="mm-arr-3a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" /></marker>
+            </defs>
+          </svg>
+          
+          <!-- Particulate Diagram -->
+          <svg viewBox="0 0 480 130" role="img" aria-label="Particulate view of Moles to Particles transition: group of CO2 molecules representing moles on the left, single highlighted CO2 molecule showing atomic level structure on the right.">
+            <defs>
+              <marker id="part-arr-3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" /></marker>
+            </defs>
+            <!-- Left Panel: Moles (CO2 Molecules Box) -->
+            <rect x="200" y="18" width="80" height="60" rx="4" fill="none" stroke="var(--ink-mute)" stroke-width="1.5" stroke-dasharray="4 3" />
+            <!-- CO2 Molecule 1 -->
+            <circle cx="218" cy="35" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="210" cy="35" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="226" cy="35" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <line x1="210" y1="35" x2="226" y2="35" stroke="var(--ink)" stroke-width="1" />
+            <!-- CO2 Molecule 2 -->
+            <circle cx="254" cy="45" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="246" cy="39" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="262" cy="51" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <line x1="246" y1="39" x2="262" y2="51" stroke="var(--ink)" stroke-width="1" />
+            <!-- CO2 Molecule 3 -->
+            <circle cx="236" cy="62" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="228" cy="62" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="244" cy="62" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <line x1="228" y1="62" x2="244" y2="62" stroke="var(--ink)" stroke-width="1" />
+            
+            <text x="240" y="98" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 9px);" fill="var(--ink-soft)">2.00 mol CO₂</text>
+            <text x="240" y="112" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--ink-mute)">(chemical quantity)</text>
+            
+            <!-- Connector Arrow -->
+            <path d="M 295,48 L 345,48" fill="none" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#part-arr-3)" />
+            <text x="320" y="40" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--accent)">&times; 6.022&times;10&sup2;&sup3;</text>
+            
+            <!-- Right Panel: Particles (Zoomed CO2 Molecule) -->
+            <rect x="375" y="18" width="80" height="60" rx="4" fill="none" stroke="var(--ink)" stroke-width="1.5" />
+            <circle cx="415" cy="48" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2" />
+            <circle cx="399" cy="48" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2" />
+            <circle cx="431" cy="48" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2" />
+            <line x1="399" y1="46" x2="431" y2="46" stroke="var(--ink)" stroke-width="1.2" />
+            <line x1="399" y1="50" x2="431" y2="50" stroke="var(--ink)" stroke-width="1.2" />
+            <text x="415" y="32" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" font-weight="700" text-anchor="middle" fill="var(--accent)">CO₂</text>
+            
+            <text x="415" y="98" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 9px);" fill="var(--ink-soft)">1.204&times;10²⁴ molecules</text>
+            <text x="415" y="112" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--ink-mute)">(individual count)</text>
+          </svg>
+          <div class="diagram-cap">Moles are also the hub for counting: multiply by Avogadro's number (6.022&times;10&sup2;&sup3;) to reach individual particles.</div>
+        </div>
+
+        <!-- Step 4: Particles -> Moles, full map -->
+        <div class="diagram" data-step="4">
+          <svg viewBox="0 0 480 150" role="img" aria-label="Mole map, step 4: the complete map, with particles converting back to moles by dividing by Avogadro's number.">
+            <rect x="20" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="65" y="80" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Grams (g)</text>
+            <rect x="195" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="240" y="80" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Moles (mol)</text>
+            <rect x="370" y="55" width="90" height="40" rx="4" fill="var(--card)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="415" y="76" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-label-size);">Particles</text>
+            <text x="415" y="90" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">(atoms, molecules)</text>
+            <path d="M 115,65 L 190,65" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#mm-arr-4s)" />
+            <text x="152" y="55" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">&divide; molar mass</text>
+            <path d="M 190,85 L 115,85" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#mm-arr-4s)" />
+            <text x="152" y="102" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">&times; molar mass</text>
+            <path d="M 290,65 L 365,65" fill="none" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#mm-arr-4s)" />
+            <text x="327" y="55" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">&times; 6.022&times;10&sup2;&sup3;</text>
+            <path d="M 365,85 L 290,85" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#mm-arr-4a)" />
+            <text x="327" y="102" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)">&divide; 6.022&times;10&sup2;&sup3;</text>
+            <defs>
+              <marker id="mm-arr-4s" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--ink-soft)" /></marker>
+              <marker id="mm-arr-4a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" /></marker>
+            </defs>
+          </svg>
+          
+          <!-- Particulate Diagram -->
+          <svg viewBox="0 0 480 130" role="img" aria-label="Complete particulate mole map: grams (beaker of water), moles (lattice of NaCl), and particles (CO2 molecules count).">
+            <!-- Grams side -->
+            <path d="M 35,30 L 35,70 L 65,70 L 65,30" fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linecap="round" />
+            <path d="M 35,50 Q 45,47 55,50 T 65,50 L 65,70 L 35,70 Z" fill="var(--water)" opacity="0.15" />
+            <path d="M 35,50 Q 45,47 55,50 T 65,50" fill="none" stroke="var(--water)" stroke-width="1.2" />
+            <text x="50" y="85" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--ink-soft)">36.04 g H₂O</text>
+            <text x="50" y="96" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 7px);" fill="var(--ink-mute)">(Grams)</text>
+            
+            <path d="M 75,50 L 105,50" fill="none" stroke="var(--ink-soft)" stroke-width="1" />
+            
+            <!-- Moles center -->
+            <rect x="115" y="25" width="250" height="50" rx="3" fill="none" stroke="var(--ink-mute)" stroke-width="1" stroke-dasharray="3 2" />
+            <text x="240" y="16" text-anchor="middle" font-family="var(--display)" style="font-size:var(--dia-caption-size, 8px);" font-weight="700" fill="var(--accent)">The Mole (mol)</text>
+            <!-- Draw canonical water molecule and some grid items to show variety of what a mole represents -->
+            <!-- water group (left of moles) -->
+            <circle cx="134" cy="52" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.6" />
+            <circle cx="146" cy="52" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.6" />
+            <circle cx="140" cy="45" style="r: var(--dia-r-atom)" fill="var(--accent)" stroke="var(--ink)" stroke-width="0.8" />
+            <!-- NaCl grid group (center of moles) -->
+            <circle cx="230" cy="42" style="r: var(--dia-r-atom-sm)" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="0.6" />
+            <circle cx="240" cy="42" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.6" />
+            <circle cx="230" cy="54" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.6" />
+            <circle cx="240" cy="54" style="r: var(--dia-r-atom-sm)" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="0.6" />
+            <!-- CO2 gas group (right of moles) -->
+            <circle cx="330" cy="48" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.6" />
+            <circle cx="323" cy="48" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.6" />
+            <circle cx="337" cy="48" style="r: var(--dia-r-atom-sm)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.6" />
+            <line x1="323" y1="48" x2="337" y2="48" stroke="var(--ink)" stroke-width="0.8" />
+            
+            <text x="240" y="88" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--ink-soft)">Counted groups of units</text>
+            
+            <path d="M 375,50 L 405,50" fill="none" stroke="var(--ink-soft)" stroke-width="1" />
+            
+            <!-- Particles side -->
+            <rect x="415" y="30" width="40" height="40" rx="3" fill="none" stroke="var(--ink)" stroke-width="1.2" />
+            <circle cx="435" cy="50" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="427" cy="50" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <circle cx="443" cy="50" style="r: var(--dia-r-atom)" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="0.8" />
+            <line x1="427" y1="50" x2="443" y2="50" stroke="var(--ink)" stroke-width="0.8" />
+            <text x="435" y="85" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 8px);" fill="var(--ink-soft)">CO₂ molecule</text>
+            <text x="435" y="96" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 7px);" fill="var(--ink-mute)">(Particles)</text>
+          </svg>
+          <div class="diagram-cap">The complete map. Moles sit at the hub. You never convert grams directly to particles. You always pass through moles.</div>
+        </div>
+      </div>
+
+      <p>This lesson focuses on the grams &harr; moles spoke. The moles &harr; particles spoke uses Avogadro's number (6.022 &times; 10²³) instead of molar mass. Grams never skip the mole.</p>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Converting grams straight to particles. Grams and particles never connect directly. Convert grams to moles first, then moles to particles.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 02 DIMENSIONAL ANALYSIS -->
+  <section id="s-da" data-toc="Dimensional analysis">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">02</span><span class="label">Dimensional analysis</span></div>
+      <h2>Let the units do the work.</h2>
+      <p>Do not memorize when to multiply or divide. Use <strong class="term">dimensional analysis</strong> (the factor-label method). Units behave like variables in algebra. The same unit on top and bottom cancels, and only the unit you want is left.</p>
+      
+      <p>A conversion factor is a fraction. One mole of water (H₂O) equals 18.02 grams, so you can write two fractions that both equal 1:</p>
+      <div class="eq-display">
+        <span class="fraction"><span class="numerator">1 mol H₂O</span><span class="denominator">18.02 g H₂O</span></span> &nbsp;&nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp;&nbsp; <span class="fraction"><span class="numerator">18.02 g H₂O</span><span class="denominator">1 mol H₂O</span></span>
+      </div>
+
+      <p>To convert <strong>36.04 grams of water to moles</strong>, choose the fraction placing grams in the denominator. This cancels the starting unit:</p>
+      
+      <div class="eq-display">
+        36.04 <span class="canceled">g H₂O</span> &times; <span class="fraction"><span class="numerator">1 mol H₂O</span><span class="denominator">18.02 <span class="canceled">g H₂O</span></span></span> = 2.00 mol H₂O
+      </div>
+
+      <p>The starting unit (g H₂O) cancels against the denominator, and you are left with <span class="chem">mol H₂O</span>. The units prove the setup is correct before you touch a calculator.</p>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Putting the starting unit in the numerator. Grams times grams per mole gives g² per mole, which is not moles. Flip the fraction so the unit you want to cancel sits in the denominator.</p></div>
+      
+    </div>
+  </section>
+
+  <!-- 03 SIGNATURE INTERACTIVE: CONVERSION BUILDER -->
+  <section id="s-builder" data-toc="Conversion builder">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03</span><span class="label">Conversion factor builder</span></div>
+      <h2>Set up the math. Watch the units cancel.</h2>
+      <p>Choose the conversion factor card that cancels the starting unit. Then check that the math works.</p>
+
+      <div class="sim-box" data-sim="conversion">
+        <div class="label">Interactive tool</div>
+        <h4>Which conversion factor cancels the starting unit?</h4>
+        <p class="hint" id="problemCounter" aria-live="polite">Problem 1 of 5</p>
+        <p id="problemText">Loading problem...</p>
+        <div class="sim-stage" data-ratio="strip"><canvas aria-label="A picture of the starting amount, an arrow with the conversion factor, and the target amount."></canvas></div>
+        <div class="setup-row">
+          <span class="setup-item" id="startingValue">36.04 g H₂O</span>
+          <span class="setup-op" aria-hidden="true">&times;</span>
+          <div class="slot-box" id="factorSlot" data-filled="false">Choose a card below</div>
+          <span class="setup-op" aria-hidden="true">=</span>
+          <output class="setup-item" id="finalResult" aria-live="polite">?</output>
+        </div>
+        <div class="sim-controls" id="factorCards" role="group" aria-label="Conversion factor cards"></div>
+        <div class="sim-controls">
+          <button type="button" class="btn ghost" id="prevBtn" disabled>&larr; Previous problem</button>
+          <button type="button" class="btn ghost" id="nextBtn" disabled>Next problem &rarr;</button>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="start"><span class="readout-label">Start</span><span class="readout-value">36.04 g H₂O</span></div>
+          <div class="readout" data-readout="target"><span class="readout-label">Target unit</span><span class="readout-value">mol H₂O</span></div>
+          <div class="readout" data-readout="result"><span class="readout-label">Result</span><span class="readout-value">?</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Choose a card</span>
+        <p data-sim-note aria-live="polite">Look for the card that puts the starting unit in the denominator, so the units cancel.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="paper-3"></span>Hydrogen atom</li>
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Oxygen atom</li>
+          <li><span class="key" data-shape="dot" data-token="ink"></span>Carbon atom</li>
+          <li><span class="key" data-shape="dot" data-token="ink-mute"></span>Sodium ion</li>
+          <li><span class="key" data-shape="dot" data-token="warn"></span>Chloride ion</li>
+          <li><span class="key" data-shape="dash" data-token="ink-mute"></span>No factor chosen yet</li>
+          <li><span class="key" data-shape="line" data-token="good"></span>The units cancel</li>
+          <li><span class="key" data-shape="line" data-token="accent"></span>The units do not cancel</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04b EMPIRICAL & MOLECULAR FORMULA DETERMINATION (PS1-7.8 / Block 2.9) -->
+  <section id="s-empirical" data-toc="Empirical formulas (extension)">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04b</span><span class="label">Curricular extension, not assessed</span></div>
+      <h2>Determining empirical and molecular formulas.</h2>
+      <div class="callout">
+        <div class="label">Curricular extension, not assessed</div>
+        <p>This section covers empirical and molecular formulas. Core exams do not assess it. It deepens how you use mole relationships and formulas.</p>
+      </div>
+      <p>An <strong class="term">empirical formula</strong> gives the smallest whole-number mole ratio of the elements in a compound (for example <span class="chem">CH₂O</span>). A <strong class="term">molecular formula</strong> gives the actual number of atoms in one molecule. Glucose is <span class="chem">C₆H₁₂O₆</span>, which is <span class="chem">(CH₂O)₆</span>.</p>
+
+      <div class="interactive">
+        <h3>The four-step empirical formula method</h3>
+        <ol>
+          <li><strong>Percent to mass:</strong> Assume a 100.0 g sample, so each percentage becomes grams (40.0% C is 40.0 g C).</li>
+          <li><strong>Mass to moles:</strong> Divide each element's mass by its atomic mass.</li>
+          <li><strong>Divide by the smallest:</strong> Divide every mole value by the smallest one to get the mole ratio.</li>
+          <li><strong>Multiply until whole:</strong> If a ratio is a decimal (1.5, 1.33, 1.25), multiply every number by 2, 3 or 4 to get whole numbers.</li>
+        </ol>
+        <p><strong>Molecular formula:</strong> Divide the true molar mass by the empirical formula mass to get <em>n</em>. Then multiply each empirical subscript by <em>n</em>.</p>
+      </div>
+
+      <div class="sim-box" data-tool="empirical">
+        <div class="label">Interactive tool</div>
+        <h4>Which empirical formula fits these percentages?</h4>
+        <div class="sim-controls">
+          <label class="tool-field" for="empPresetSelect"><span class="label">Compound</span>
+            <select id="empPresetSelect" class="form-select">
+              <option value="glucose">Glucose (40.0% C, 6.7% H, 53.3% O; 180.16 g/mol)</option>
+              <option value="caffeine">Caffeine (49.48% C, 5.19% H, 28.85% N, 16.48% O; 194.19 g/mol)</option>
+              <option value="vitaminC">Vitamin C (40.92% C, 4.58% H, 54.50% O; 176.12 g/mol)</option>
+            </select>
+          </label>
+          <label class="tool-field" for="empGuessSelect"><span class="label">Your guess, before you see the work</span>
+            <select id="empGuessSelect" class="form-select"></select>
+          </label>
+          <button type="button" class="btn" id="empCheckBtn" disabled>Check and show the work</button>
+        </div>
+        <span class="status-pill" id="empGuessPill" data-state="neutral" hidden></span>
+        <div id="empWorkWrapper" hidden>
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption>Empirical formula work</caption>
+              <thead><tr id="empHeaderRow"></tr></thead>
+              <tbody id="empTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="sim-readouts" aria-live="polite">
+          <div class="readout" data-readout="emp"><span class="readout-label">Empirical formula</span><span class="readout-value">–</span></div>
+          <div class="readout" data-readout="n"><span class="readout-label">Scaling factor n</span><span class="readout-value">–</span></div>
+          <div class="readout" data-readout="mol"><span class="readout-label">Molecular formula</span><span class="readout-value">–</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 PREDICT FIRST -->
+  <section id="s-predict" data-toc="Check yourself">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04</span><span class="label">Check yourself</span></div>
+      <h2>Predict the scale reading.</h2>
+
+      <!-- Q1 -->
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<strong>1. Mass of 2.50 moles of water:</strong> One mole of water has a mass of 18.02 grams. You measure out exactly 2.50 moles of water. What does the scale read?",
+  "options": [
+    {"label": "7.21 grams", "correct": false, "feedback": "7.21 comes from dividing 18.02 by 2.50. That divides grams per mole by moles, which does not give grams. To find grams, multiply the moles by the molar mass."},
+    {"label": "45.05 grams", "correct": true, "feedback": "2.50 mol &times; 18.02 g/mol = 45.05 g. The mol units cancel and grams are left."},
+    {"label": "20.52 grams", "correct": false, "feedback": "20.52 comes from adding 2.50 to 18.02. Amounts in different units cannot be added. Multiply the moles by the molar mass."}
+  ],
+  "reveal": "<h4>The answer: 45.05 grams</h4>\n<p>To convert moles to grams, multiply by the molar mass.<br>\n              <span class=\"chem\">2.50 mol H₂O &times; (18.02 g H₂O / 1 mol H₂O) = 45.05 g H₂O</span><br>\n              The moles cancel, leaving grams.</p>"
+}
+</script>
+</div>
+
+      <!-- Q2 -->
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<strong>2. Moles in a carbon sample:</strong> A sample of pure charcoal holds 36.03 grams of carbon (molar mass 12.01 g/mol). How many moles of carbon atoms are in the sample?",
+  "options": [
+    {"label": "1.00 mole", "correct": false, "feedback": "One mole of carbon is only 12.01 grams. This sample is three times as large, so it holds three moles."},
+    {"label": "12.01 moles", "correct": false, "feedback": "12.01 is the molar mass, not an amount. Grams divided by grams per mole gives moles, so divide 36.03 by 12.01."},
+    {"label": "3.00 moles", "correct": true, "feedback": "36.03 g &divide; 12.01 g/mol = 3.00 mol. The grams cancel and moles are left."}
+  ],
+  "reveal": "<h4>The answer: 3.00 moles</h4>\n<p>To convert grams to moles, divide by the molar mass.<br>\n              <span class=\"chem\">36.03 g carbon &times; (1 mol carbon / 12.01 g carbon) = 3.00 mol carbon</span><br>\n              The grams cancel, leaving moles.</p>"
+}
+</script>
+</div>
+
+    </div>
+  </section>
+
+  <!-- 05 RECALL -->
+  <section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">05</span><span class="label">Say it back</span></div>
+      <h2>Fill the blanks from memory.</h2>
+      <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+      <p class="recall-sentence">
+        Using fractions to cancel units is called <input class="blank" data-answer="dimensional analysis|factor-label method" placeholder="?">.
+        The central hub of every mole conversion is the <input class="blank" data-answer="mole" placeholder="?">.
+        A fraction with equal amounts in different units on top and bottom is a <input class="blank" data-answer="conversion factor" placeholder="?">.
+        To cancel a unit on the starting value, the conversion factor puts that unit in the <input class="blank" data-answer="denominator" placeholder="?">.
+      </p>
+      <div class="recall-actions">
+        <button class="btn" data-recall-check>Check</button>
+        <button class="btn ghost" data-recall-reveal>Show answers</button>
+        <button class="btn ghost" data-recall-reset>Reset</button>
+        <span class="feedback" data-recall-feedback></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 SELF-EXPLAIN -->
+  <section id="s-selfx" data-toc="Self-explain">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">06</span><span class="label">Explain it to yourself</span></div>
+      <div class="selfx-mark"><p>Explain why treating units like variables stops you from multiplying when you should divide.</p></div>
+      <p class="hint">Writing it out forces your brain to organize the idea. Write your answer first, then peek and compare.</p>
+      <textarea class="textbox" id="selfx" placeholder="A correct setup cancels because..."></textarea>
+      <div>
+        <button class="btn ghost" data-peek>Compare with a model answer</button>
+        <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+          <p>Units act like variables, so you can see whether they cancel. A correct setup puts the unwanted unit in the denominator, and it cancels. A wrong setup does not cancel. For example, grams times grams per mole gives g² per mole, which is not moles. Tracking the cancellation guarantees that the unit left over is the one you want, so you never multiply when you should divide.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 EXAM PRACTICE -->
+  <section id="s-exam" data-toc="Exam practice">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">07</span><span class="label">Now the way it's marked</span></div>
+      <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+      <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+      <div class="exam-frame">
+        <div class="exam-meta"><span class="exam-src">Gen Chem · HS-PS1-7 · constructed response</span><span class="exam-marks">[3 marks]</span></div>
+        <p class="exam-q">A recipe needs exactly 126.02 grams of sodium bicarbonate (NaHCO<sub>3</sub>, molar mass 84.01 g/mol).
+          <span class="sub">Calculate the moles of NaHCO<sub>3</sub> required. Show your dimensional analysis setup with every unit and every cancellation written out.</span></p>
+        <textarea class="textbox" id="examAns" placeholder="Write your constructed response here..."></textarea>
+        <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+        <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 3 marks</div>
+          <ul class="pts">
+            <li><b>Start (1 mark):</b> You write the starting value with units: 126.02 g NaHCO₃.</li>
+            <li><b>Setup (1 mark):</b> You put grams in the denominator and show them cancelling.</li>
+            <li><b>Answer (1 mark):</b> You get 1.500 mol NaHCO₃. An answer of 1.50 mol is accepted.</li>
+          </ul></div></div>
+        <div class="callout">
+          <div class="label">Why This Matters</div>
+          <p>Carbon capture needs exact mole conversions. Scrubbers pull carbon dioxide out of exhaust gas. Engineers use factor-label conversions to find the mass of liquid amine that absorbs a given number of CO₂ molecules.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-7 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-7</h3>
+    <p>
+      Practice dimensional analysis, mole-mass conversions, and particle count calculations with live feedback. Earn an authenticated competency certificate upon completing the adaptive sequence.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-7" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+  <div class="footer">
+    <div class="label">Gen Chem · Semester 1 · 1-7b</div>
+    <p>Mole Conversions. Next: applying these conversion factors to calculate reactants and products in stoichiometry equations.</p>
+  </div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="2-7b.js"></script>
+</body>
+</html>

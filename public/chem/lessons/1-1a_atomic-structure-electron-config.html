@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-1a" data-book="chem">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Atomic Structure &amp; Electron Configuration · Gen Chem 1-1a</title>
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+
+<body>
+
+
+  <!-- HERO -->
+<main>
+
+  <section id="s-hero" class="hero" data-toc="Opening">
+    <div>
+      <div class="label">Lesson 1-1a &middot; Atomic Structure &amp; Electron Configuration</div>
+      <h1>The most reactive element on the table is just <span class="flip">one electron short</span> of doing nothing at all.</h1>
+      <p class="lede">Fluorine (configuration <span class="chem">2, 7</span>) will tear an electron off almost anything it touches. Add one electron and you get the configuration of neon (<span class="chem">2, 8</span>), which is chemically inert. The two are neighbors, one electron apart, and that single electron is the whole story. By the end, you can read an atom's structure and count the few electrons that do chemistry.</p>
+      
+      <!-- SVG Fluorine vs Neon V-11a-01 -->
+      <figure class="figure figure--full">
+<div class="diagram">
+        <svg viewBox="0 0 300 130" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Fluorine (2, 7) next to neon (2, 8). Fluorine has one unfilled gap in its outer shell.">
+          <!-- Left side: Fluorine -->
+          <g transform="translate(75, 60)">
+            <!-- Shells -->
+            <circle r="22" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="38" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <!-- Nucleus -->
+            <circle r="11" style="stroke-width: var(--dia-stroke-bond)" fill="var(--card)" stroke="var(--ink)"/>
+            <text y="3" font-family="var(--mono)" font-weight="700" text-anchor="middle" fill="var(--ink)" style="font-size:var(--dia-caption-size, 10px);">9+</text>
+            <!-- Core electrons: shell 1 (2) -->
+            <circle cx="0" cy="-22" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="22" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <!-- Valence electrons: shell 2 (7, vermilion/accent) -->
+            <!-- 7 electrons, 1 gap -->
+            <circle cx="0" cy="-38" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="0" cy="38" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="-38" cy="0" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="38" cy="0" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="-27" cy="27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="27" cy="-27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="-27" cy="-27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <!-- Gap at 27, 27 -->
+            <circle cx="27" cy="27" style="r: var(--dia-r-particle); stroke-width: var(--dia-stroke)" fill="none" stroke="var(--accent)" stroke-dasharray="1.5 1.5"/>
+            <text x="0" y="56" class="d-label" font-family="var(--display)" font-weight="700" text-anchor="middle" fill="var(--ink)" style="font-size:var(--dia-label-size, 12px);">Fluorine (2, 7)</text>
+          </g>
+
+          <!-- Divider -->
+          <line x1="150" y1="15" x2="150" y2="115" stroke="var(--hair)" style="stroke-width: var(--dia-stroke)"/>
+
+          <!-- Right side: Neon -->
+          <g transform="translate(225, 60)">
+            <!-- Shells -->
+            <circle r="22" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="38" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <!-- Nucleus -->
+            <circle r="11" style="stroke-width: var(--dia-stroke-bond)" fill="var(--card)" stroke="var(--ink)"/>
+            <text y="3" font-family="var(--mono)" font-weight="700" text-anchor="middle" fill="var(--ink)" style="font-size:var(--dia-caption-size, 10px);">10+</text>
+            <!-- Core electrons: shell 1 (2) -->
+            <circle cx="0" cy="-22" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="22" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <!-- Valence electrons: shell 2 (8, complete, vermilion/accent) -->
+            <circle cx="0" cy="-38" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="0" cy="38" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="-38" cy="0" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="38" cy="0" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="-27" cy="27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="27" cy="-27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="-27" cy="-27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="27" cy="27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <text x="0" y="56" class="d-label" font-family="var(--display)" font-weight="700" text-anchor="middle" fill="var(--ink)" style="font-size:var(--dia-label-size, 12px);">Neon (2, 8)</text>
+          </g>
+        </svg>
+</div>
+<figcaption>● core electrons &middot; <span class="cap-valence">● valence electrons</span> &middot; <span class="cap-gap"></span> unfilled gap <br>
+          Figure 1-1a.0: One electron separates reactive from inert: Fluorine (2, 7) versus Neon (2, 8).</figcaption>
+</figure>
+
+      <div class="meta-strip">
+        <div class="meta-block">
+          <div class="k">Alignment</div>
+          <div class="v"><b>HS-PS1-1</b> Use the periodic table as a model to predict the relative properties of elements based on the patterns of electrons in the outermost energy level of atoms.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Objective</div>
+          <div class="v">You can build a Bohr diagram and write the shell configuration for an element. You can count its valence electrons and explain why that count sets its reactivity.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Scope</div>
+          <div class="v">Elements 1 to 20, and the main-group elements through krypton (element 36). The transition metals, scandium to zinc, appear only in an Enrichment block.</div>
+        </div>
+      </div>
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Atomic Structure:</strong> Atoms consist of a dense positive nucleus (protons + neutrons) surrounded by electron shells.</li>
+              <li><strong>Shell Energy Levels:</strong> Electrons fill shells from the inside out. Maximum capacities are 2, 8, 18, and 32 (2<em>n</em><sup>2</sup>).</li>
+              <li><strong>Valence Count:</strong> Outermost shell electrons are the valence electrons; they dictate all chemical behavior.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Shell Filling Map</h4>
+            <figure class="figure figure--sm">
+<div class="diagram">
+              <svg viewBox="0 0 280 150" role="img" aria-label="Shell architecture and maximum electron capacities following the 2n² formula for principal energy levels n=1 through 4.">
+                <!-- Nucleus -->
+                <circle cx="35" cy="75" style="r:var(--dia-r-atom)" fill="var(--card)" stroke="var(--ink)" stroke-width="1.5"/>
+                <text x="35" y="78" font-family="var(--mono)" font-weight="700" text-anchor="middle" fill="var(--ink)" style="font-size:var(--dia-caption-size, 10px);">Z+</text>
+
+                <!-- Shell Arcs and Capacities -->
+                <!-- n=1 -->
+                <path d="M 68,38 A 45,45 0 0,1 68,112" fill="none" stroke="var(--shell)" stroke-width="1.2"/>
+                <text x="74" y="44" font-family="var(--mono)" font-weight="700" fill="var(--ink)" style="font-size:var(--dia-caption-size, 10px);">n=1</text>
+                <text x="74" y="58" font-family="var(--display)" font-weight="700" fill="var(--accent)" style="font-size:var(--dia-caption-size, 10px);">max 2e⁻</text>
+
+                <!-- n=2 -->
+                <path d="M 120,26 A 85,85 0 0,1 120,124" fill="none" stroke="var(--shell)" stroke-width="1.2"/>
+                <text x="126" y="32" font-family="var(--mono)" font-weight="700" fill="var(--ink)" style="font-size:var(--dia-caption-size, 10px);">n=2</text>
+                <text x="126" y="46" font-family="var(--display)" font-weight="700" fill="var(--accent)" style="font-size:var(--dia-caption-size, 10px);">max 8e⁻</text>
+
+                <!-- n=3 -->
+                <path d="M 175,16 A 125,125 0 0,1 175,134" fill="none" stroke="var(--shell)" stroke-width="1.2"/>
+                <text x="180" y="22" font-family="var(--mono)" font-weight="700" fill="var(--ink)" style="font-size:var(--dia-caption-size, 10px);">n=3</text>
+                <text x="180" y="36" font-family="var(--display)" font-weight="700" fill="var(--accent)" style="font-size:var(--dia-caption-size, 10px);">max 18e⁻</text>
+
+                <!-- n=4 -->
+                <path d="M 235,10 A 165,165 0 0,1 235,140" fill="none" stroke="var(--shell)" stroke-width="1.2"/>
+                <text x="240" y="16" font-family="var(--mono)" font-weight="700" fill="var(--ink)" style="font-size:var(--dia-caption-size, 10px);">n=4</text>
+                <text x="240" y="30" font-family="var(--display)" font-weight="700" fill="var(--accent)" style="font-size:var(--dia-caption-size, 10px);">max 32e⁻</text>
+
+                <!-- Capacity formula -->
+                <text x="140" y="142" text-anchor="middle" font-family="var(--mono)" fill="var(--ink-soft)" style="font-size:var(--dia-caption-size, 10px);">Capacity formula: 2n² (2 &rarr; 8 &rarr; 18 &rarr; 32)</text>
+              </svg>
+</div>
+<figcaption>Figure 1-1a.S: Shell Architecture: Principal energy levels fill from inside out according to maximum capacity 2n².</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox"> Count protons, neutrons, and electrons given atomic mass &amp; number.</li>
+              <li><input type="checkbox"> Write Bohr electron configuration sequences (e.g. 2, 8, 1).</li>
+              <li><input type="checkbox"> Identify the number of valence electrons for main-group elements.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+    </div>
+  </section>
+
+  <!-- 01 WHAT AN ATOM IS -->
+  <section id="s-parts" data-toc="The parts that matter">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">01</span><span class="label">The parts that actually do
+          chemistry</span></div>
+      <h2>Most of an atom never does chemistry. A handful of electrons do all of it.</h2>
+      <p>An atom is almost entirely empty space around a tiny, dense <strong class="term">nucleus</strong> of protons and neutrons. The proton count is the <strong class="term">atomic number</strong> (<span class="chem">Z</span>). It is the atom's fingerprint: change it and you have a different element. The electrons live in <strong class="term">shells</strong> at set distances out from the nucleus, filling from the inside out.</p>
+      <p>Inner electrons are locked away, and they do nothing chemically. Only the electrons in the outermost shell, the <strong class="term">valence electrons</strong>, get close enough to another atom to be lost, gained, or shared. To predict how an element behaves, you almost always reason about that outer shell alone.</p>
+      <figure class="figure figure--full">
+<div class="diagram"><svg viewBox="0 0 480 210" preserveAspectRatio="xMidYMid meet" role="img"
+          aria-label="A fluorine atom: a nucleus of 9 protons, an inner shell of 2 electrons, and an outer valence shell of 7 electrons highlighted.">
+          <circle class="d-shell" cx="105" cy="105" r="32" />
+          <circle class="d-shell" cx="105" cy="105" r="66" />
+          <circle class="d-nuc" cx="105" cy="105" style="r: var(--dia-r-atom)" /><text class="d-nuc-t" x="105" y="108"
+            text-anchor="middle">9+</text>
+          <!-- inner shell: 2 electrons -->
+          <circle class="d-particle" cx="105" cy="73" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="105" cy="137" style="r: var(--dia-r-particle)" />
+          <!-- valence shell: 7 electrons, in accent -->
+          <circle class="atom-e-val" cx="105" cy="39" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="156" cy="65" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="169" cy="119" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="134" cy="162" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="76" cy="162" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="41" cy="119" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="54" cy="65" style="r: var(--dia-r-particle)" />
+          <line x1="180" y1="55" x2="225" y2="55" style="stroke: var(--accent); stroke-width: var(--dia-stroke-bond);"
+            marker-end="url(#p-arr)" />
+          <text class="d-label" x="232" y="51" style="font-size:var(--dia-label-size);" fill="var(--accent)">7 valence electrons</text>
+          <text class="d-sub" x="232" y="67" style="font-size:var(--dia-caption-size);">the only ones that react</text>
+          <line x1="122" y1="105" x2="225" y2="120" style="stroke: var(--ink); stroke-width: var(--dia-stroke-bond);" marker-end="url(#p-arr2)" />
+          <text class="d-label" x="232" y="116" style="font-size:var(--dia-label-size);">nucleus · 9 protons</text>
+          <text class="d-sub" x="232" y="132" style="font-size:var(--dia-caption-size);">sets the element (Z = 9)</text>
+          <defs>
+            <marker id="p-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+              <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" />
+            </marker>
+            <marker id="p-arr2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+              <path d="M0 0 L6 3 L0 6 z" fill="var(--ink)" />
+            </marker>
+          </defs>
+        </svg>
+</div>
+<figcaption>● inner electron · ● valence electron · fluorine, 2 + 7</figcaption>
+</figure>
+      <div class="callout">
+        <div class="label">The one idea to hold onto</div>
+        <p>An atom's chemistry is almost entirely about its outermost electrons. Building the shells, writing the configuration, and counting valence all serve one job: finding and reading that outer shell.</p>
+      </div>
+      <div class="callout"><div class="label">Common mistake</div><p>Counting every electron as a valence electron. Fluorine has 9 electrons, but only the 7 in its outer shell take part in chemistry.</p></div>
+      <div class="more-wrap">
+        <button class="more-toggle" data-more="the neutron aside">Show the neutron aside →</button>
+        <div class="more-body">
+          <p>Neutrons add mass without charge. They do not change the electron arrangement, so they do not change how an element bonds or reacts. Atoms of one element with different neutron counts are <strong class="term">isotopes</strong>. Isotopes matter for mass and nuclear behavior, not for chemical reactivity. That is why this page reasons from protons and electrons.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 BUILDER -->
+  <section id="s-builder" data-toc="Build any atom">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">02</span><span class="label">Build an atom</span></div>
+      <h2>Build any atom, one proton at a time.</h2>
+      <p>Electrons fill from the inside out. The first shell holds <strong>2</strong>, and the next holds <strong>8</strong>. Step up one proton at a time and watch each new electron find its place. The shell configuration is the count in each shell, written out.</p>
+      <div class="sim-box" data-sim="bohr">
+        <div class="label">Simulation</div>
+        <h4>How do the electrons fill the shells as the proton count rises?</h4>
+        <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: chlorine has 17 protons. How are its 17 electrons arranged in shells?<\/p>",
+  "options": [
+    {
+      "label": "8, 8, 1",
+      "correct": false,
+      "feedback": "The first shell holds only 2, not 8. The first two electrons go there, then 8 fill shell 2, which leaves 7 for shell 3."
+    },
+    {
+      "label": "2, 8, 7",
+      "correct": true,
+      "feedback": "Shell 1 takes 2, shell 2 takes 8, and the last 7 go to shell 3."
+    },
+    {
+      "label": "2, 15",
+      "correct": false,
+      "feedback": "Shell 2 holds 8, not 15. It fills to 8 before any electron goes to shell 3."
+    }
+  ],
+  "reveal": "<p>Now check it. Move the slider to 17 and read the configuration.<\/p>"
+}
+</script>
+        </div>
+        <div class="sim-stage" data-ratio="wide"><canvas aria-label="A Bohr model of fluorine: a nucleus with 9 protons and rings holding 2 and 7 electrons. The 7 outer electrons are valence electrons."></canvas></div>
+        <div class="sim-controls">
+          <label class="slider-row" for="bohrZ"><span>Protons (Z)</span> <output>9 (F)</output>
+            <input type="range" id="bohrZ" min="1" max="36" step="1" value="9" data-digits="0">
+          </label>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="el"><span class="readout-label">Element</span><span class="readout-value">Fluorine</span></div>
+          <div class="readout" data-readout="z"><span class="readout-label">Protons</span><span class="readout-value">9</span></div>
+          <div class="readout" data-readout="shells"><span class="readout-label">Shells</span><span class="readout-value">2</span></div>
+          <div class="readout" data-readout="config"><span class="readout-label">Configuration</span><span class="readout-value">2, 7</span></div>
+          <div class="readout" data-readout="val"><span class="readout-label">Valence electrons</span><span class="readout-value">7</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Predict to start</span>
+        <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="ink-mute"></span>Inner electron</li>
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Valence electron (outer shell)</li>
+          <li><span class="key" data-token="ink"></span>Nucleus, labeled with its protons</li>
+          <li><span class="key" data-shape="line" data-token="ink-mute"></span>Shell</li>
+        </ul>
+        <ol class="try-this">
+          <li>Load sodium and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="Na">Load sodium</button> <b>Look for:</b> shells 1 and 2 are full (2 and 8), and one electron sits alone in shell 3.</li>
+          <li>Load chlorine and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="Cl">Load chlorine</button> <b>Look for:</b> 7 valence electrons, one short of a full shell of 8.</li>
+          <li>Load argon and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="Ar">Load argon</button> <b>Look for:</b> shell 3 holds 8, and the status says the outer shell is full.</li>
+          <li>Load potassium and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="K">Load potassium</button> <b>Look for:</b> shell 4 opens while shell 3 stays at 8.</li>
+        </ol>
+      </div>
+      <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows for sodium (Z = 11) and potassium (Z = 19). What is the same, and what does it predict?<\/p>",
+  "options": [
+    {
+      "label": "Both have one valence electron, so they should react alike.",
+      "correct": true,
+      "feedback": "Sodium is 2, 8, 1 and potassium is 2, 8, 8, 1. Each has 1 valence electron, so each tends to lose it."
+    },
+    {
+      "label": "They have different totals of electrons, so they should react differently.",
+      "correct": false,
+      "feedback": "The total number of electrons does not set the chemistry. Look at the outer shell: both have 1 electron there."
+    },
+    {
+      "label": "Both have a full inner shell of 8, so they should be inert.",
+      "correct": false,
+      "feedback": "A full inner shell does not make an atom inert. Only a full outer shell does, and both of these have just 1 electron in the outer shell."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Same outer count, same tendency.<\/p>"
+}
+</script>
+</div>
+    </div>
+  </section>
+
+  <!-- 03 THE WRINKLE -->
+  <section id="s-wrinkle" data-toc="Shell 4 opens early">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03</span><span class="label">The wrinkle after argon</span></div>
+      <h2>After argon, shell 4 opens before shell 3 is full.</h2>
+      <p>The first three shells fill the way you would expect: <span class="chem">2</span>, then <span class="chem">8</span>, then <span class="chem">8</span>. That takes you from hydrogen to argon.</p>
+      <p>Shell 3 can hold 18, so you might expect the next electron to go there. It does not. At that point shell 4 sits at slightly lower energy than the rest of shell 3. The next electrons go there first. Potassium and calcium open shell 4: <span class="chem">2, 8, 8, 1</span> and <span class="chem">2, 8, 8, 2</span>.</p>
+      <p>After calcium, ten more electrons finish shell 3. Shell 4 then picks up again at gallium. The builder above shows every one of these configurations.</p>
+
+      <h4>Practice predicting configurations</h4>
+      <div data-widget="faded-example">
+        <script type="application/json" class="w-config">
+{
+  "model": {
+    "title": "Watch it once: potassium, Z = 19",
+    "steps": [
+      {
+        "label": "1. Fill shell 1",
+        "work": "2 electrons. 2 placed.",
+        "why": "Innermost first, always."
+      },
+      {
+        "label": "2. Fill shell 2",
+        "work": "8 electrons. 10 placed.",
+        "why": "Shell 2 caps at 8."
+      },
+      {
+        "label": "3. Fill shell 3 to 8",
+        "work": "8 electrons. 18 placed.",
+        "why": "Shell 3 pauses at 8. The next electron goes to shell 4."
+      },
+      {
+        "label": "4. Place electron 19",
+        "work": "Shell 4. Configuration: 2, 8, 8, 1.",
+        "why": "Most people write 2, 8, 9 here. Shell 3 can hold 18, but shell 4 opens first, so electron 19 skips ahead."
+      },
+      {
+        "label": "5. Read the valence count",
+        "work": "1.",
+        "why": "One outer electron, so potassium behaves like sodium: same count, same chemistry, easier to lose."
+      }
+    ]
+  },
+  "yours": {
+    "title": "Now you: calcium, Z = 20",
+    "checkMode": "step",
+    "steps": [
+      {
+        "label": "1. Fill shell 1",
+        "given": "2 electrons. 2 placed. (Innermost first)"
+      },
+      {
+        "label": "2. Fill shell 2",
+        "given": "8 electrons. 10 placed. (Second shell caps at 8)"
+      },
+      {
+        "label": "3. Fill shell 3 to 8",
+        "given": "8 electrons. 18 placed. (Shell 3 pauses at 8)"
+      },
+      {
+        "label": "4. Place electrons 19 and 20",
+        "blank": {
+          "type": "choice",
+          "prompt": "Which shell gets electrons 19 and 20?",
+          "answer": "shell 4",
+          "options": [
+            "shell 3",
+            "shell 4"
+          ],
+          "feedback_wrong": "Shell 3 can hold 18, so it is a tempting choice. For calcium, shell 4 opens first, so both electrons go there.",
+          "feedback_right": "Shell 4 opens first. It is the lowest open spot until it holds two electrons."
+        }
+      },
+      {
+        "label": "5. Write the full configuration",
+        "blank": {
+          "type": "text",
+          "answer": [
+            "2,8,8,2",
+            "2, 8, 8, 2"
+          ],
+          "prompt": "e.g., 2,8,8,2",
+          "feedback_wrong": "Walk the placements: 2, then 8, then 8, then the last two in shell 4."
+        }
+      },
+      {
+        "label": "6. Read the valence count",
+        "blank": {
+          "type": "numeric",
+          "answer": 2,
+          "prompt": "# valence electrons",
+          "feedback_wrong": "Valence electrons are the outer shell only. Shell 4 holds 2. The 8 underneath are locked away."
+        }
+      },
+      {
+        "label": "7. Predict chemical behavior",
+        "blank": {
+          "type": "choice",
+          "answer": "lose 2 electrons → Ca²⁺",
+          "options": [
+            "lose 2 electrons → Ca²⁺",
+            "gain 6 electrons → Ca⁶⁻"
+          ],
+          "feedback_wrong": "Gaining 6 also completes a shell, but pulling in six electrons costs far more than shedding two. Atoms take the cheaper route.",
+          "feedback_right": "Dropping the 2 is the shortest path. It exposes the full shell of 8 underneath."
+        }
+      }
+    ]
+  }
+}
+</script>
+      </div>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Writing 2, 8, 9 for potassium. Shell 3 can hold 18, but shell 4 opens first. Potassium is 2, 8, 8, 1.</p></div>
+
+      <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Why shell 4 opens first, and what comes after calcium</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+        <p>Calcium to zinc is past the main-group boundary of this course. It explains the wrinkle, but you will not be tested on it.</p>
+        <p>&ldquo;Slightly lower energy&rdquo; needs one more sentence, because it sounds like hand-waving and is not. Inside shell 3 there is a region called the 3d subshell. It holds electrons 9 through 18 of that shell. After shell 3 reaches 8, the 3d subshell sits <em>above</em> the first subshell of shell 4 (4s).</p>
+        <p>Electrons do not care about your shell numbering. They fill the lowest-energy vacancy. So electron 19 takes 4s. Once 4s holds two electrons, electron repulsion shifts the subshell energies. The 3d subshell dips lower. The next ten electrons, scandium through zinc, then finish shell 3. Shell 4 resumes at gallium.</p>
+      <div class="figure figure--full" data-motion="step" data-step-count="6" data-step-labels="Argon (Ar)|Potassium (K)|Calcium (Ca)|Scandium (Sc)|Zinc (Zn)|Gallium (Ga)">
+        <!-- Argon -->
+        <div class="diagram" data-step="1">
+          <svg viewBox="0 0 540 220" preserveAspectRatio="xMidYMid meet">
+            <!-- Backdrop energy axis -->
+            <line x1="120" y1="205" x2="120" y2="18" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <polygon points="116,22 120,12 124,22" fill="var(--ink-mute)"/>
+            <text x="112" y="17" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="600" fill="var(--ink-mute)" text-anchor="end">higher E</text>
+
+            <!-- Rung labels and lines -->
+            <!-- 4p -->
+            <line x1="95" y1="32" x2="165" y2="32" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="36" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">4p</text>
+
+            <!-- 3d (5 segments) -->
+            <line x1="95" y1="57" x2="107" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="109" y1="57" x2="121" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="123" y1="57" x2="135" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="137" y1="57" x2="149" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="151" y1="57" x2="163" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="61" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3d</text>
+
+            <!-- 4s -->
+            <line x1="95" y1="82" x2="165" y2="82" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="86" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">4s</text>
+
+            <!-- 3p (3 segments) -->
+            <line x1="95" y1="107" x2="115" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <line x1="120" y1="107" x2="140" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <line x1="145" y1="107" x2="165" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="82" y="111" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink)" text-anchor="end">3p</text>
+
+            <!-- 3s -->
+            <line x1="95" y1="132" x2="165" y2="132" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="82" y="136" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink)" text-anchor="end">3s</text>
+
+            <!-- 2p (3 segments) -->
+            <line x1="95" y1="157" x2="115" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="157" x2="140" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="157" x2="165" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="161" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2p</text>
+
+            <!-- 2s -->
+            <line x1="95" y1="182" x2="165" y2="182" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="186" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2s</text>
+
+            <!-- 1s -->
+            <line x1="95" y1="205" x2="165" y2="205" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="209" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">1s</text>
+
+            <!-- Crossover bracket -->
+            <path d="M 172 53 L 182 53 L 182 86 L 172 86" fill="none" stroke="var(--accent)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="190" y="73" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--accent)">crossover</text>
+
+            <!-- Core electrons through 3p -->
+            <!-- 1s -->
+            <circle cx="120" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <!-- 2s -->
+            <circle cx="120" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <!-- 2p -->
+            <circle cx="101" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <!-- 3s -->
+            <circle cx="120" cy="132" fill="var(--ink)" r="3.5"/>
+            <circle cx="140" cy="132" fill="var(--ink)" r="3.5"/>
+            <!-- 3p -->
+            <circle cx="101" cy="107" fill="var(--ink)" r="3.5"/>
+            <circle cx="109" cy="107" fill="var(--ink)" r="3.5"/>
+            <circle cx="126" cy="107" fill="var(--ink)" r="3.5"/>
+            <circle cx="134" cy="107" fill="var(--ink)" r="3.5"/>
+            <circle cx="151" cy="107" fill="var(--ink)" r="3.5"/>
+            <circle cx="159" cy="107" fill="var(--ink)" r="3.5"/>
+
+            <!-- Right card: Argon -->
+            <rect x="270" y="24" width="245" height="172" rx="10" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+            <text x="392" y="60" font-family="var(--display)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--ink)" text-anchor="middle">Argon (Ar)</text>
+            <text x="392" y="82" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="middle">Z = 18 &middot; Noble gas</text>
+            <rect x="295" y="98" width="194" height="34" rx="6" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1"/>
+            <text x="392" y="121" font-family="var(--mono)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--accent)" text-anchor="middle">2, 8, 8</text>
+            <text x="392" y="156" font-family="var(--display)" style="font-size:var(--dia-label-size, 12px);" font-weight="600" fill="var(--ink)" text-anchor="middle">Shell 3 pauses at 8</text>
+            <text x="392" y="176" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)" text-anchor="middle">Stable octet reached before 4s opens</text>
+          </svg>
+          <div class="diagram-cap">Argon (Ar)<br><span>Shell 3 pauses at 8 before 4s opens</span></div>
+        </div>
+
+        <!-- Potassium -->
+        <div class="diagram" data-step="2">
+          <svg viewBox="0 0 540 220" preserveAspectRatio="xMidYMid meet">
+            <!-- Backdrop energy axis -->
+            <line x1="120" y1="205" x2="120" y2="18" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <polygon points="116,22 120,12 124,22" fill="var(--ink-mute)"/>
+            <text x="112" y="17" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="600" fill="var(--ink-mute)" text-anchor="end">higher E</text>
+
+            <!-- Rung labels and lines -->
+            <!-- 4p -->
+            <line x1="95" y1="32" x2="165" y2="32" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="36" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">4p</text>
+
+            <!-- 3d (5 segments) -->
+            <line x1="95" y1="57" x2="107" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="109" y1="57" x2="121" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="123" y1="57" x2="135" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="137" y1="57" x2="149" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="151" y1="57" x2="163" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="61" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3d</text>
+
+            <!-- 4s (active) -->
+            <line x1="95" y1="82" x2="165" y2="82" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="82" y="86" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink)" font-weight="700" text-anchor="end">4s</text>
+
+            <!-- 3p (3 segments) -->
+            <line x1="95" y1="107" x2="115" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="107" x2="140" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="107" x2="165" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="111" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3p</text>
+
+            <!-- 3s -->
+            <line x1="95" y1="132" x2="165" y2="132" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="136" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3s</text>
+
+            <!-- 2p (3 segments) -->
+            <line x1="95" y1="157" x2="115" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="157" x2="140" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="157" x2="165" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="161" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2p</text>
+
+            <!-- 2s -->
+            <line x1="95" y1="182" x2="165" y2="182" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="186" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2s</text>
+
+            <!-- 1s -->
+            <line x1="95" y1="205" x2="165" y2="205" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="209" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">1s</text>
+
+            <!-- Crossover bracket -->
+            <path d="M 172 53 L 182 53 L 182 86 L 172 86" fill="none" stroke="var(--accent)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="190" y="73" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--accent)">crossover</text>
+
+            <!-- Core electrons -->
+            <circle cx="120" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="107" fill="var(--ink-mute)" r="3.5"/>
+
+            <!-- Potassium 19th electron on 4s -->
+            <circle cx="130" cy="82" fill="var(--accent)" r="3.5"/>
+
+            <!-- Right card: Potassium -->
+            <rect x="270" y="24" width="245" height="172" rx="10" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+            <text x="392" y="60" font-family="var(--display)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--ink)" text-anchor="middle">Potassium (K)</text>
+            <text x="392" y="82" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="middle">Z = 19 &middot; Alkali metal</text>
+            <rect x="295" y="98" width="194" height="34" rx="6" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1"/>
+            <text x="392" y="121" font-family="var(--mono)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--accent)" text-anchor="middle">2, 8, 8, 1</text>
+            <text x="392" y="156" font-family="var(--display)" style="font-size:var(--dia-label-size, 12px);" font-weight="600" fill="var(--ink)" text-anchor="middle">Electron 19 takes 4s first</text>
+            <text x="392" y="176" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)" text-anchor="middle">4s vacancy sits lower in energy than 3d</text>
+          </svg>
+          <div class="diagram-cap">Potassium (K)<br><span>Electron 19 takes 4s because 4s sits below 3d</span></div>
+        </div>
+
+        <!-- Calcium -->
+        <div class="diagram" data-step="3">
+          <svg viewBox="0 0 540 220" preserveAspectRatio="xMidYMid meet">
+            <!-- Backdrop energy axis -->
+            <line x1="120" y1="205" x2="120" y2="18" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <polygon points="116,22 120,12 124,22" fill="var(--ink-mute)"/>
+            <text x="112" y="17" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="600" fill="var(--ink-mute)" text-anchor="end">higher E</text>
+
+            <!-- Rung labels and lines -->
+            <!-- 4p -->
+            <line x1="95" y1="32" x2="165" y2="32" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="36" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">4p</text>
+
+            <!-- 3d (5 segments) -->
+            <line x1="95" y1="57" x2="107" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="109" y1="57" x2="121" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="123" y1="57" x2="135" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="137" y1="57" x2="149" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="151" y1="57" x2="163" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="61" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3d</text>
+
+            <!-- 4s (active) -->
+            <line x1="95" y1="82" x2="165" y2="82" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="82" y="86" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink)" font-weight="700" text-anchor="end">4s</text>
+
+            <!-- 3p (3 segments) -->
+            <line x1="95" y1="107" x2="115" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="107" x2="140" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="107" x2="165" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="111" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3p</text>
+
+            <!-- 3s -->
+            <line x1="95" y1="132" x2="165" y2="132" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="136" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3s</text>
+
+            <!-- 2p (3 segments) -->
+            <line x1="95" y1="157" x2="115" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="157" x2="140" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="157" x2="165" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="161" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2p</text>
+
+            <!-- 2s -->
+            <line x1="95" y1="182" x2="165" y2="182" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="186" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2s</text>
+
+            <!-- 1s -->
+            <line x1="95" y1="205" x2="165" y2="205" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="209" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">1s</text>
+
+            <!-- Crossover bracket -->
+            <path d="M 172 53 L 182 53 L 182 86 L 172 86" fill="none" stroke="var(--accent)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="190" y="73" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--accent)">crossover</text>
+
+            <!-- Core electrons -->
+            <circle cx="120" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="107" fill="var(--ink-mute)" r="3.5"/>
+
+            <!-- Calcium 19th and 20th electrons on 4s -->
+            <circle cx="120" cy="82" fill="var(--accent)" r="3.5"/>
+            <circle cx="140" cy="82" fill="var(--accent)" r="3.5"/>
+
+            <!-- Right card: Calcium -->
+            <rect x="270" y="24" width="245" height="172" rx="10" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+            <text x="392" y="60" font-family="var(--display)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--ink)" text-anchor="middle">Calcium (Ca)</text>
+            <text x="392" y="82" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="middle">Z = 20 &middot; Alkaline earth</text>
+            <rect x="295" y="98" width="194" height="34" rx="6" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1"/>
+            <text x="392" y="121" font-family="var(--mono)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--accent)" text-anchor="middle">2, 8, 8, 2</text>
+            <text x="392" y="156" font-family="var(--display)" style="font-size:var(--dia-label-size, 12px);" font-weight="600" fill="var(--ink)" text-anchor="middle">4s fills completely with two electrons</text>
+            <text x="392" y="176" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)" text-anchor="middle">Both valence electrons reside in shell 4</text>
+          </svg>
+          <div class="diagram-cap">Calcium (Ca)<br><span>4s fills completely with two electrons</span></div>
+        </div>
+
+        <!-- Scandium -->
+        <div class="diagram" data-step="4">
+          <svg viewBox="0 0 540 220" preserveAspectRatio="xMidYMid meet">
+            <!-- Backdrop energy axis -->
+            <line x1="120" y1="205" x2="120" y2="18" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <polygon points="116,22 120,12 124,22" fill="var(--ink-mute)"/>
+            <text x="112" y="17" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="600" fill="var(--ink-mute)" text-anchor="end">higher E</text>
+
+            <!-- Rung labels and lines -->
+            <!-- 4p -->
+            <line x1="95" y1="32" x2="165" y2="32" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="36" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">4p</text>
+
+            <!-- 3d (active rung) -->
+            <line x1="95" y1="57" x2="107" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <line x1="109" y1="57" x2="121" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="123" y1="57" x2="135" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="137" y1="57" x2="149" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="151" y1="57" x2="163" y2="57" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="61" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink)" font-weight="700" text-anchor="end">3d</text>
+
+            <!-- 4s (now core) -->
+            <line x1="95" y1="82" x2="165" y2="82" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="86" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">4s</text>
+
+            <!-- 3p (3 segments) -->
+            <line x1="95" y1="107" x2="115" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="107" x2="140" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="107" x2="165" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="111" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3p</text>
+
+            <!-- 3s -->
+            <line x1="95" y1="132" x2="165" y2="132" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="136" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3s</text>
+
+            <!-- 2p (3 segments) -->
+            <line x1="95" y1="157" x2="115" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="157" x2="140" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="157" x2="165" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="161" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2p</text>
+
+            <!-- 2s -->
+            <line x1="95" y1="182" x2="165" y2="182" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="186" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2s</text>
+
+            <!-- 1s -->
+            <line x1="95" y1="205" x2="165" y2="205" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="209" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">1s</text>
+
+            <!-- Crossover bracket -->
+            <path d="M 172 53 L 182 53 L 182 86 L 172 86" fill="none" stroke="var(--accent)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="190" y="73" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--accent)">crossover</text>
+
+            <!-- Core electrons -->
+            <circle cx="120" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <!-- 2 on 4s -->
+            <circle cx="120" cy="82" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="82" fill="var(--ink-mute)" r="3.5"/>
+
+            <!-- Scandium 21st electron goes to 3d Segment 1 -->
+            <circle cx="101" cy="57" fill="var(--accent)" r="3.5"/>
+
+            <!-- Right card: Scandium -->
+            <rect x="270" y="24" width="245" height="172" rx="10" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+            <text x="392" y="60" font-family="var(--display)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--ink)" text-anchor="middle">Scandium (Sc)</text>
+            <text x="392" y="82" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="middle">Z = 21 &middot; Transition metal</text>
+            <rect x="295" y="98" width="194" height="34" rx="6" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1"/>
+            <text x="392" y="121" font-family="var(--mono)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--accent)" text-anchor="middle">2, 8, 9, 2</text>
+            <text x="392" y="156" font-family="var(--display)" style="font-size:var(--dia-label-size, 12px);" font-weight="600" fill="var(--ink)" text-anchor="middle">3d begins filling: transition block begins</text>
+            <text x="392" y="176" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)" text-anchor="middle">Repulsion in 4s dips 3d below 4s again</text>
+          </svg>
+          <div class="diagram-cap">Scandium (Sc)<br><span>3d opens: transition metals begin filling shell 3</span></div>
+        </div>
+
+        <!-- Zinc -->
+        <div class="diagram" data-step="5">
+          <svg viewBox="0 0 540 220" preserveAspectRatio="xMidYMid meet">
+            <!-- Backdrop energy axis -->
+            <line x1="120" y1="205" x2="120" y2="18" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <polygon points="116,22 120,12 124,22" fill="var(--ink-mute)"/>
+            <text x="112" y="17" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="600" fill="var(--ink-mute)" text-anchor="end">higher E</text>
+
+            <!-- Rung labels and lines -->
+            <!-- 4p -->
+            <line x1="95" y1="32" x2="165" y2="32" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="36" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">4p</text>
+
+            <!-- 3d (all 5 segments active and full) -->
+            <line x1="95" y1="57" x2="107" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <line x1="109" y1="57" x2="121" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <line x1="123" y1="57" x2="135" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <line x1="137" y1="57" x2="149" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <line x1="151" y1="57" x2="163" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="82" y="61" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink)" font-weight="700" text-anchor="end">3d</text>
+
+            <!-- 4s -->
+            <line x1="95" y1="82" x2="165" y2="82" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="86" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">4s</text>
+
+            <!-- 3p (3 segments) -->
+            <line x1="95" y1="107" x2="115" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="107" x2="140" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="107" x2="165" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="111" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3p</text>
+
+            <!-- 3s -->
+            <line x1="95" y1="132" x2="165" y2="132" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="136" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3s</text>
+
+            <!-- 2p (3 segments) -->
+            <line x1="95" y1="157" x2="115" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="157" x2="140" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="157" x2="165" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="161" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2p</text>
+
+            <!-- 2s -->
+            <line x1="95" y1="182" x2="165" y2="182" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="186" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2s</text>
+
+            <!-- 1s -->
+            <line x1="95" y1="205" x2="165" y2="205" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="209" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">1s</text>
+
+            <!-- Crossover bracket -->
+            <path d="M 172 53 L 182 53 L 182 86 L 172 86" fill="none" stroke="var(--accent)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="190" y="73" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--accent)">crossover</text>
+
+            <!-- Core electrons -->
+            <circle cx="120" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <!-- 2 on 4s -->
+            <circle cx="120" cy="82" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="82" fill="var(--ink-mute)" r="3.5"/>
+
+            <!-- Zinc: 10 on 3d (all 5 segments filled) -->
+            <circle cx="98" cy="57" fill="var(--accent)" r="3.5"/>
+            <circle cx="104" cy="57" fill="var(--accent)" r="3.5"/>
+            <circle cx="112" cy="57" fill="var(--accent)" r="3.5"/>
+            <circle cx="118" cy="57" fill="var(--accent)" r="3.5"/>
+            <circle cx="126" cy="57" fill="var(--accent)" r="3.5"/>
+            <circle cx="132" cy="57" fill="var(--accent)" r="3.5"/>
+            <circle cx="140" cy="57" fill="var(--accent)" r="3.5"/>
+            <circle cx="146" cy="57" fill="var(--accent)" r="3.5"/>
+            <circle cx="154" cy="57" fill="var(--accent)" r="3.5"/>
+            <circle cx="160" cy="57" fill="var(--accent)" r="3.5"/>
+
+            <!-- Right card: Zinc -->
+            <rect x="270" y="24" width="245" height="172" rx="10" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+            <text x="392" y="60" font-family="var(--display)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--ink)" text-anchor="middle">Zinc (Zn)</text>
+            <text x="392" y="82" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="middle">Z = 30 &middot; Transition metal</text>
+            <rect x="295" y="98" width="194" height="34" rx="6" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1"/>
+            <text x="392" y="121" font-family="var(--mono)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--accent)" text-anchor="middle">2, 8, 18, 2</text>
+            <text x="392" y="156" font-family="var(--display)" style="font-size:var(--dia-label-size, 12px);" font-weight="600" fill="var(--ink)" text-anchor="middle">3d finishes at 10 electrons</text>
+            <text x="392" y="176" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)" text-anchor="middle">Shell 3 achieves full capacity of 18</text>
+          </svg>
+          <div class="diagram-cap">Zinc (Zn)<br><span>3d finishes at 10: shell 3 reaches full capacity of 18</span></div>
+        </div>
+
+        <!-- Gallium -->
+        <div class="diagram" data-step="6">
+          <svg viewBox="0 0 540 220" preserveAspectRatio="xMidYMid meet">
+            <!-- Backdrop energy axis -->
+            <line x1="120" y1="205" x2="120" y2="18" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <polygon points="116,22 120,12 124,22" fill="var(--ink-mute)"/>
+            <text x="112" y="17" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="600" fill="var(--ink-mute)" text-anchor="end">higher E</text>
+
+            <!-- Rung labels and lines -->
+            <!-- 4p (active) -->
+            <line x1="95" y1="32" x2="165" y2="32" stroke="var(--ink)" style="stroke-width: var(--dia-stroke-bond)"/>
+            <text x="82" y="36" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink)" font-weight="700" text-anchor="end">4p</text>
+
+            <!-- 3d (core) -->
+            <line x1="95" y1="57" x2="107" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="109" y1="57" x2="121" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="123" y1="57" x2="135" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="137" y1="57" x2="149" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="151" y1="57" x2="163" y2="57" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="61" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3d</text>
+
+            <!-- 4s (valence) -->
+            <line x1="95" y1="82" x2="165" y2="82" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="86" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">4s</text>
+
+            <!-- 3p (3 segments) -->
+            <line x1="95" y1="107" x2="115" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="107" x2="140" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="107" x2="165" y2="107" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="111" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3p</text>
+
+            <!-- 3s -->
+            <line x1="95" y1="132" x2="165" y2="132" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="136" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="end">3s</text>
+
+            <!-- 2p (3 segments) -->
+            <line x1="95" y1="157" x2="115" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="120" y1="157" x2="140" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <line x1="145" y1="157" x2="165" y2="157" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="161" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2p</text>
+
+            <!-- 2s -->
+            <line x1="95" y1="182" x2="165" y2="182" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="186" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">2s</text>
+
+            <!-- 1s -->
+            <line x1="95" y1="205" x2="165" y2="205" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="82" y="209" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-soft)" text-anchor="end">1s</text>
+
+            <!-- Crossover bracket -->
+            <path d="M 172 53 L 182 53 L 182 86 L 172 86" fill="none" stroke="var(--accent)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="190" y="73" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--accent)">crossover</text>
+
+            <!-- Core electrons -->
+            <circle cx="120" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="205" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="182" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="157" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="120" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="132" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="101" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="109" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="134" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="151" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="159" cy="107" fill="var(--ink-mute)" r="3.5"/>
+            <!-- 2 on 4s (valence) -->
+            <circle cx="120" cy="82" fill="var(--accent)" r="3.5"/>
+            <circle cx="140" cy="82" fill="var(--accent)" r="3.5"/>
+            <!-- 10 on 3d (now core) -->
+            <circle cx="98" cy="57" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="104" cy="57" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="112" cy="57" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="118" cy="57" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="126" cy="57" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="132" cy="57" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="140" cy="57" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="146" cy="57" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="154" cy="57" fill="var(--ink-mute)" r="3.5"/>
+            <circle cx="160" cy="57" fill="var(--ink-mute)" r="3.5"/>
+
+            <!-- Gallium 31st electron on 4p -->
+            <circle cx="130" cy="32" fill="var(--accent)" r="3.5"/>
+
+            <!-- Right card: Gallium -->
+            <rect x="270" y="24" width="245" height="172" rx="10" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+            <text x="392" y="60" font-family="var(--display)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--ink)" text-anchor="middle">Gallium (Ga)</text>
+            <text x="392" y="82" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--ink-mute)" text-anchor="middle">Z = 31 &middot; Post-transition metal</text>
+            <rect x="295" y="98" width="194" height="34" rx="6" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1"/>
+            <text x="392" y="121" font-family="var(--mono)" style="font-size:var(--dia-header-size, 14px);" font-weight="700" fill="var(--accent)" text-anchor="middle">2, 8, 18, 3</text>
+            <text x="392" y="156" font-family="var(--display)" style="font-size:var(--dia-label-size, 12px);" font-weight="600" fill="var(--ink)" text-anchor="middle">Shell 4 resumes in 4p</text>
+            <text x="392" y="176" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)" text-anchor="middle">Resumes main group with 3 valence e⁻</text>
+          </svg>
+          <div class="diagram-cap">Gallium (Ga)<br><span>Shell 4 resumes: 4p opens and valence increases to 3</span></div>
+        </div>
+      </div>
+
+      <div class="more-wrap">
+        <button class="more-toggle" data-more="the two exceptions">Show the two exceptions →</button>
+        <div class="more-body">
+          <p>Two transition metals break even <em>this</em> pattern. <strong>Chromium</strong> (<span class="chem">2, 8, 13, 1</span>) and <strong>copper</strong> (<span class="chem">2, 8, 18, 1</span>) pull an electron from the fourth shell into the third. A half-full or completely full third shell is slightly more stable. You do not need to predict these exceptions. Simply notice the lone outer electron in the builder.</p>
+        </div>
+      </div>
+
+        <div class="callout"><div class="label">Why this matters for you</div><p>For the main-group elements, valence is still a clean count of the outer shell. The transition metals are the exception. Their outer-shell count does not track their chemistry in the simple way.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 04 PREDICT VALENCE -->
+  <section id="s-predict-val" data-toc="Predict: gain or lose?">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04</span><span class="label">Predict first</span></div>
+      
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Sulfur's configuration is <strong>2, 8, 6<\/strong>. To reach a full outer shell, what is sulfur most likely to do?",
+  "options": [
+    {
+      "label": "Lose its 6 outer electrons to empty the shell",
+      "correct": false,
+      "feedback": "Losing 6 lands on a full shell too: the 8 underneath. But moving six electrons costs far more than moving two. Atoms take the shortest path."
+    },
+    {
+      "label": "Gain 12 electrons to fill the third shell to 18",
+      "correct": false,
+      "feedback": "Shell 3 can hold 18, which makes this tempting. But for sulfur a full outer shell means 8, and twelve electrons is far too many to pull in."
+    },
+    {
+      "label": "Gain 2 electrons to fill the shell to 8",
+      "correct": true,
+      "feedback": "Sulfur has 6 outer electrons, so it needs only 2 more. Shortest path wins. Sulfur pulls in two and becomes S²⁻, configuration 2, 8, 8."
+    }
+  ],
+  "reveal": "<p><strong>Sulfur gains 2.<\/strong> A full outer shell here is 8 electrons. Sulfur has 6, so gaining 2 is a far shorter path than losing all 6. Moving two electrons is cheaper than moving six. Sulfur pulls in two and becomes the sulfide ion (S²⁻), configuration 2, 8, 8. An atom takes the <em>shortest<\/em> path to a full outer shell.<\/p><figure class='figure figure--full'><div class='diagram'><svg viewBox='0 0 300 135' preserveAspectRatio='xMidYMid meet' role='img' aria-label='Sulfur (2, 8, 6) gains 2 electrons and becomes the sulfide ion (2, 8, 8) with a charge of 2 minus.'><g transform='translate(65, 60)'><circle r='18' fill='none' stroke='var(--hair-soft)' style='stroke-width: var(--dia-stroke)'/><circle r='28' fill='none' stroke='var(--hair-soft)' style='stroke-width: var(--dia-stroke)'/><circle r='38' fill='none' stroke='var(--hair-soft)' style='stroke-width: var(--dia-stroke)'/><circle fill='var(--card)' stroke='var(--ink)' style='r: 11px; stroke-width: var(--dia-stroke-bond)'/><text y='0' dominant-baseline='central' font-family='var(--mono)' style='font-size: var(--dia-caption-size);' font-weight='700' text-anchor='middle' fill='var(--ink)'>16+<\/text><circle cx='0' cy='-18' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='18' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='-28' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='28' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='-28' cy='0' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='28' cy='0' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='-20' cy='20' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='20' cy='-20' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='-20' cy='-20' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='20' cy='20' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='-38' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='38' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='-38' cy='0' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='38' cy='0' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='-27' cy='27' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='27' cy='-27' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='-27' cy='-27' fill='none' stroke='var(--accent)' stroke-dasharray='1.2 1.2' style='r: var(--dia-r-particle); stroke-width: var(--dia-stroke)'/><circle cx='27' cy='27' fill='none' stroke='var(--accent)' stroke-dasharray='1.2 1.2' style='r: var(--dia-r-particle); stroke-width: var(--dia-stroke)'/><text x='0' y='52' font-family='var(--display)' style='font-size: var(--dia-caption-size);' font-weight='700' text-anchor='middle' fill='var(--ink)'>Sulfur (2, 8, 6)<\/text><\/g><g transform='translate(150, 60)'><line x1='-25' y1='0' x2='20' y2='0' stroke='var(--ink-mute)' stroke-dasharray='3 3' style='stroke-width: var(--dia-stroke)'/><polygon points='12,-4 22,0 12,4' fill='var(--ink-mute)'/><text y='-8' font-family='var(--mono)' style='font-size: var(--dia-caption-size);' text-anchor='middle' font-weight='700' fill='var(--accent)'>+ 2 e⁻<\/text><\/g><g transform='translate(235, 60)'><circle r='18' fill='none' stroke='var(--hair-soft)' style='stroke-width: var(--dia-stroke)'/><circle r='28' fill='none' stroke='var(--hair-soft)' style='stroke-width: var(--dia-stroke)'/><circle r='38' fill='none' stroke='var(--hair-soft)' style='stroke-width: var(--dia-stroke)'/><circle fill='var(--card)' stroke='var(--ink)' style='r: 11px; stroke-width: var(--dia-stroke-bond)'/><text y='0' dominant-baseline='central' font-family='var(--mono)' style='font-size: var(--dia-caption-size);' font-weight='700' text-anchor='middle' fill='var(--ink)'>16+<\/text><circle cx='0' cy='-18' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='18' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='-28' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='28' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='-28' cy='0' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='28' cy='0' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='-20' cy='20' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='20' cy='-20' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='-20' cy='-20' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='20' cy='20' fill='var(--ink-mute)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='-38' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='0' cy='38' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='-38' cy='0' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='38' cy='0' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='-27' cy='27' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='27' cy='-27' fill='var(--accent)' style='r: var(--dia-r-particle)'/><circle cx='-27' cy='-27' fill='var(--paper)' stroke='var(--accent)' style='r: var(--dia-r-particle); stroke-width: var(--dia-stroke)'/><circle cx='27' cy='27' fill='var(--paper)' stroke='var(--accent)' style='r: var(--dia-r-particle); stroke-width: var(--dia-stroke)'/><rect x='25' y='-35' width='14' height='11' rx='2' fill='var(--paper-2)' stroke='var(--hair)' style='stroke-width: var(--dia-stroke)'/><text x='32' y='-27' font-family='var(--mono)' style='font-size: var(--dia-caption-size);' font-weight='700' fill='var(--accent)' text-anchor='middle'>2⁻<\/text><text x='0' y='52' font-family='var(--display)' style='font-size: var(--dia-caption-size);' font-weight='700' text-anchor='middle' fill='var(--ink)'>Sulfide Ion (2, 8, 8)<\/text><\/g><\/svg><\/div><figcaption>core electrons stay put &middot; valence electrons fill to 8 &middot; the short path is gain 2, not lose 6<\/figcaption><\/figure>"
+}
+</script>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 VALENCE → REACTIVITY -->
+  <section id="s-valence" data-toc="What the count predicts">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">05</span><span class="label">From a count to a
+          behavior</span></div>
+      <h2>The number of valence electrons tells you what the atom <em>wants to do</em>.</h2>
+      <p>Atoms are most stable with a full outer shell. That means <strong>8</strong> valence electrons for most main-group elements, and just <strong>2</strong> for hydrogen and helium. An atom "wants" the shortest route to that full shell. The valence count tells you the route.</p>
+      <figure class="figure figure--full">
+<div class="diagram"><svg viewBox="0 0 440 215" preserveAspectRatio="xMidYMid meet" role="img"
+          aria-label="Three atoms: sodium loses its single valence electron, chlorine gains one to fill its shell, and neon already has a full shell.">
+          <!-- Element Names (Headers) -->
+          <text class="d-label" x="75" y="32" text-anchor="middle" style="font-size:var(--dia-label-size);">Sodium (Na)</text>
+          <text class="d-label" x="220" y="32" text-anchor="middle" style="font-size:var(--dia-label-size);">Chlorine (Cl)</text>
+          <text class="d-label" x="360" y="32" text-anchor="middle" style="font-size:var(--dia-label-size);">Neon (Ne)</text>
+
+          <!-- SODIUM: 2,8,1 loses one -->
+          <!-- Shells: 3 shells (R=25, 40, 55) -->
+          <circle class="d-shell" cx="75" cy="100" r="25" />
+          <circle class="d-shell" cx="75" cy="100" r="40" />
+          <circle class="d-shell" cx="75" cy="100" r="55" />
+          <circle class="d-nuc" cx="75" cy="100" r="11" /><text class="d-nuc-t" x="75" y="100"
+            text-anchor="middle" dominant-baseline="central" font-size="var(--text-3xs)">11+</text>
+          <!-- Shell 1 (2 inner) -->
+          <circle class="d-particle" cx="75" cy="75" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="75" cy="125" style="r: var(--dia-r-particle)" />
+          <!-- Shell 2 (8 inner) -->
+          <circle class="d-particle" cx="75" cy="60" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="103" cy="72" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="115" cy="100" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="103" cy="128" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="75" cy="140" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="47" cy="128" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="35" cy="100" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="47" cy="72" style="r: var(--dia-r-particle)" />
+          <!-- Shell 3 (1 valence) -->
+          <circle class="atom-e-val" cx="130" cy="100" style="r: var(--dia-r-particle)" />
+          <text class="d-label" x="75" y="174" text-anchor="middle" style="font-size:var(--dia-label-size);">loses 1 e⁻ &rarr; Na⁺</text>
+          <text class="d-sub" x="75" y="190" text-anchor="middle" style="font-size:var(--dia-caption-size);">1 valence &middot; metal</text>
+
+          <!-- CHLORINE: 2,8,7 gains one -->
+          <!-- Shells: 3 shells (R=25, 40, 55) -->
+          <circle class="d-shell" cx="220" cy="100" r="25" />
+          <circle class="d-shell" cx="220" cy="100" r="40" />
+          <circle class="d-shell" cx="220" cy="100" r="55" />
+          <circle class="d-nuc" cx="220" cy="100" r="11" /><text class="d-nuc-t" x="220" y="100"
+            text-anchor="middle" dominant-baseline="central" font-size="var(--text-3xs)">17+</text>
+          <!-- Shell 1 (2 inner) -->
+          <circle class="d-particle" cx="220" cy="75" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="220" cy="125" style="r: var(--dia-r-particle)" />
+          <!-- Shell 2 (8 inner) -->
+          <circle class="d-particle" cx="220" cy="60" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="248" cy="72" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="260" cy="100" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="248" cy="128" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="220" cy="140" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="192" cy="128" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="180" cy="100" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="192" cy="72" style="r: var(--dia-r-particle)" />
+          <!-- Shell 3 (7 valence + 1 empty spot) -->
+          <circle class="atom-e-val" cx="275" cy="100" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="259" cy="139" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="220" cy="155" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="181" cy="139" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="181" cy="61" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="220" cy="45" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="259" cy="61" style="r: var(--dia-r-particle)" />
+          <!-- Empty spot (ready to receive the valence e⁻ from Na) -->
+          <circle cx="165" cy="100" style="r: var(--dia-r-particle); stroke-width: var(--dia-stroke)" fill="none" stroke="var(--accent)" 
+ stroke-dasharray="3 2"/>
+          <text class="d-label" x="220" y="174" text-anchor="middle" style="font-size:var(--dia-label-size);">gains 1 e⁻ &rarr; Cl⁻</text>
+          <text class="d-sub" x="220" y="190" text-anchor="middle" style="font-size:var(--dia-caption-size);">7 valence &middot; nonmetal</text>
+
+          <!-- NEON: 2,8 full -->
+          <!-- Shells: 2 shells (R=25, 40) -->
+          <circle class="d-shell" cx="360" cy="100" r="25" />
+          <circle class="d-shell" cx="360" cy="100" r="40" />
+          <circle class="d-nuc" cx="360" cy="100" r="11" /><text class="d-nuc-t" x="360" y="100"
+            text-anchor="middle" dominant-baseline="central" font-size="var(--text-3xs)">10+</text>
+          <!-- Shell 1 (2 inner) -->
+          <circle class="d-particle" cx="360" cy="75" style="r: var(--dia-r-particle)" />
+          <circle class="d-particle" cx="360" cy="125" style="r: var(--dia-r-particle)" />
+          <!-- Shell 2 (8 valence) -->
+          <circle class="atom-e-val" cx="360" cy="60" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="388" cy="72" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="400" cy="100" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="388" cy="128" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="360" cy="140" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="332" cy="128" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="320" cy="100" style="r: var(--dia-r-particle)" />
+          <circle class="atom-e-val" cx="332" cy="72" style="r: var(--dia-r-particle)" />
+          <text class="d-label" x="360" y="174" text-anchor="middle" style="font-size:var(--dia-label-size);">stable &rarr; inert</text>
+          <text class="d-sub" x="360" y="190" text-anchor="middle" style="font-size:var(--dia-caption-size);">8 valence &middot; noble</text>
+
+          <!-- Direct Transfer Arrow from Sodium's valence e- (130,100) to Chlorine's empty spot (165,100) -->
+          <line x1="136" y1="100" x2="159" y2="100" fill="none" stroke="var(--accent)" 
+ stroke-dasharray="4 3" marker-end="url(#oct-arr)" style="stroke-width: var(--dia-stroke-bond)"/>
+
+          <defs>
+            <marker id="oct-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+              <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" />
+            </marker>
+          </defs>
+        </svg>
+</div>
+<figcaption><span class="cap-core">&bull;</span> inner &middot; <span class="cap-valence">&bull;</span> valence &middot; <span class="cap-valence">&omicron;</span> electron gained &middot; the goal is always a full outer shell</figcaption>
+</figure>
+      <div class="step bullet">
+        <p><strong>1–3 valence electrons → the atom loses them.</strong> Shedding a few is the short path to the full shell underneath. These are the <strong>metals</strong>. The fewer electrons an atom has to lose, the more reactive it is. Group 1 atoms are the eager ones.</p>
+      </div>
+      <div class="step bullet">
+        <p><strong>5–7 valence electrons → the atom gains the rest.</strong> Pulling in one or two completes the octet. These are the reactive <strong>nonmetals</strong>. Atoms that need just one electron (Group 17) grab hardest.</p>
+      </div>
+      <div class="step bullet">
+        <p><strong>8 valence electrons → the atom does nothing.</strong> The shell is already full, so there is no reason to lose or gain. These are the <strong>noble gases</strong>, and that is exactly why they are inert.</p>
+      </div>
+      <div class="callout"><div class="label">Common mistake</div><p>Assuming an atom takes the first route it finds. Sulfur could lose 6 electrons, but gaining 2 is shorter, so sulfur gains.</p></div>
+      <div class="callout">
+        <div class="label">This is the <span class="chem">why</span> under the next page</div>
+        <p>Whether an atom loses or gains electrons, and how easily, drives every reactivity trend in 1-1b. Radius, ionization energy, and electronegativity are this same idea, measured and mapped across the table.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 SELF-TEST -->
+  <section id="s-selftest" data-toc="Write it yourself">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">06</span><span class="label">Now you write
+          it</span></div>
+      <h2>Given the element, produce the configuration from memory.</h2>
+      <p>No diagram this time: write the shell
+        configuration and the valence count yourself, then check. Separate the shells however you like (<span
+          class="chem">2, 8, 7</span> or <span class="chem">2 8 7</span> both work). Reading a diagram is recognition;
+        producing the configuration is the skill that actually gets tested.</p>
+      <div class="interactive">
+        <div class="interactive-head">
+          <span class="label">Configuration self-test · main-group</span>
+          <button class="btn ghost" id="stNext">New element →</button>
+        </div>
+        <div class="selftest">
+          <div class="st-prompt">
+            <div class="label">Write the configuration for</div>
+            <h3 id="stName">Sulfur</h3>
+            <span class="st-meta" id="stMeta">S · Z = 16</span>
+          </div>
+          <div class="st-fields">
+            <label><span>Shell configuration</span> <input id="stConfig" type="text" autocomplete="off" spellcheck="false"
+                placeholder="e.g. 2, 8, 7"></label>
+            <label><span>Valence electrons</span> <input id="stValence" type="text" autocomplete="off" inputmode="numeric"
+                placeholder="?"></label>
+          </div>
+          <div class="actions">
+            <button class="btn" id="stCheck">Check</button>
+            <button class="btn ghost" id="stReveal">Reveal</button>
+            <span class="feedback" id="stFeedback"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 RECALL -->
+  <section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">07</span><span class="label">Say it back</span>
+      </div>
+      <h2>Fill the blanks from memory.</h2>
+      <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+      <p class="recall-sentence">
+        The number of protons in the nucleus is the
+        <input class="blank" data-answer="atomic number|z" placeholder="?">, and it sets the element's identity.
+        Electrons fill shells from the inside out: the first shell holds
+        <input class="blank" data-answer="2|two" placeholder="?"> and the second holds
+        <input class="blank" data-answer="8|eight" placeholder="?">.
+        The electrons in the outermost shell are called the
+        <input class="blank" data-answer="valence|valence electrons" placeholder="?"> electrons, and they are the ones
+        that react.
+        An atom with 1–3 valence electrons tends to <input class="blank" data-answer="lose|lose electrons" placeholder="?"> them.
+        An atom with 5–7 tends to
+        <input class="blank" data-answer="gain|gain electrons" placeholder="?"> electrons.
+        Both routes aim for a full outer shell of
+        <input class="blank" data-answer="8|eight" placeholder="?">.
+      </p>
+      <div class="actions">
+        <button class="btn" data-recall-check>Check</button>
+        <button class="btn ghost" data-recall-reveal>Show answers</button>
+        <button class="btn ghost" data-recall-reset>Reset</button>
+        <span class="feedback" data-recall-feedback></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 SELF EXPLAIN -->
+  <section id="s-selfx" data-toc="Self-explain">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">08</span><span class="label">Explain it to yourself</span></div>
+      
+      <!-- V-11a-04: same-valence row -->
+      <figure class="figure figure--full">
+<div class="diagram">
+        <svg viewBox="0 0 320 120" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Lithium (2, 1), sodium (2, 8, 1) and potassium (2, 8, 8, 1). Each has one valence electron in its outer shell.">
+          <!-- Lithium (2, 1) -->
+          <g transform="translate(55, 55)">
+            <circle r="12" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="22" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke)" fill="var(--card)" stroke="var(--ink)"/>
+            <text y="2" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" text-anchor="middle">3+</text>
+            <circle cx="0" cy="-12" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="12" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="-22" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <text x="0" y="36" font-family="var(--display)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle">Li (2, 1)</text>
+          </g>
+
+          <!-- Sodium (2, 8, 1) -->
+          <g transform="translate(160, 55)">
+            <circle r="12" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="20" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="28" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke)" fill="var(--card)" stroke="var(--ink)"/>
+            <text y="2" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" text-anchor="middle">11+</text>
+            <circle cx="0" cy="-12" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="12" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="-20" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="20" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-20" cy="0" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="20" cy="0" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-14" cy="14" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="14" cy="-14" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-14" cy="-14" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="14" cy="14" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="-28" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <text x="0" y="36" font-family="var(--display)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle">Na (2, 8, 1)</text>
+          </g>
+
+          <!-- Potassium (2, 8, 8, 1) -->
+          <g transform="translate(265, 55)">
+            <circle r="10" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="17" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="24" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="31" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke)" fill="var(--card)" stroke="var(--ink)"/>
+            <text y="2" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" text-anchor="middle">19+</text>
+            <!-- 1s -->
+            <circle cx="0" cy="-10" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="10" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <!-- 2s, 2p -->
+            <circle cx="0" cy="-17" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="17" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-17" cy="0" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="17" cy="0" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-12" cy="12" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="12" cy="-12" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-12" cy="-12" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="12" cy="12" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <!-- 3s, 3p -->
+            <circle cx="0" cy="-24" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="24" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-24" cy="0" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="24" cy="0" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-17" cy="17" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="17" cy="-17" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-17" cy="-17" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="17" cy="17" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <!-- 4s (1 valence) -->
+            <circle cx="0" cy="-31" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <text x="0" y="36" font-family="var(--display)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle">K (2, 8, 8, 1)</text>
+          </g>
+
+          <!-- Horizontal Bracket spanning the three outer valence electrons -->
+          <path d="M 55 12 L 55 5 L 265 5 L 265 12" fill="none" stroke="var(--accent)" style="stroke-width: var(--dia-stroke)"/>
+          <text x="160" y="-1" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">1 valence electron each</text>
+        </svg>
+        </div>
+<figcaption>&bull; core electrons &middot; <span class="cap-valence">&bull; valence electron</span>  &middot;  same outer count &rarr; same chemistry &middot; the inner shells change, the pattern doesn't</figcaption>
+</figure>
+
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "Lithium, sodium, and potassium sit in one column (group) of the table. All three are soft, reactive metals. In your own words, why does a <em>column<\/em> share chemistry?",
+  "minChars": 30,
+  "reveal": "An element's chemistry depends on its number of <strong>valence electrons<\/strong>, not its total. Every element in a group has the <em>same<\/em> number of valence electrons. That is what defines the column. Lithium (2, 1), sodium (2, 8, 1), and potassium (2, 8, 8, 1) each have one outer electron. All three “want” the same thing: to lose that electron and reach a full shell. Same valence count, same tendency, same chemistry. The shells underneath change down the column. That shifts <em>how easily<\/em> it happens, but not <em>what<\/em> happens."
+}
+</script>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- 09 EXAM -->
+  <section id="s-exam" data-toc="Exam practice">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">09</span><span class="label">Now the way it's marked</span></div>
+      <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+      
+      <!-- V-11a-05: Element X Bohr Model -->
+      <figure class="figure figure--full">
+<div class="diagram">
+        <svg viewBox="0 0 200 130" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Element X with the configuration 2, 8, 7. The outer shell has 7 electrons and one unfilled gap.">
+          <g transform="translate(100, 60)">
+            <!-- Shells -->
+            <circle r="18" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="28" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <circle r="38" fill="none" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+            <!-- Nucleus -->
+            <circle r="11" style="stroke-width: var(--dia-stroke-bond)" fill="var(--card)" stroke="var(--ink)"/>
+            <text y="2.5" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle">X</text>
+            <!-- Core: 2 -->
+            <circle cx="0" cy="-18" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="18" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <!-- Core: 8 -->
+            <circle cx="0" cy="-28" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="0" cy="28" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-28" cy="0" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="28" cy="0" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-20" cy="20" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="20" cy="-20" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="-20" cy="-20" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <circle cx="20" cy="20" style="r: var(--dia-r-particle)" fill="var(--ink-mute)"/>
+            <!-- Valence: 7 + 1 gap -->
+            <circle cx="0" cy="-38" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="0" cy="38" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="-38" cy="0" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="38" cy="0" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="-27" cy="27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="27" cy="-27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <circle cx="-27" cy="-27" style="r: var(--dia-r-particle)" fill="var(--accent)"/>
+            <!-- Prominent gap at 27, 27 -->
+            <circle cx="27" cy="27" style="r: var(--dia-r-particle); stroke-width: var(--dia-stroke)" fill="none" stroke="var(--accent)" stroke-dasharray="1.5 1.5"/>
+            
+            <text x="0" y="52" font-family="var(--display)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle">Element X (2, 8, 7)</text>
+          </g>
+        </svg>
+</div>
+<figcaption>&bull; core electrons &middot; <span class="cap-valence">&bull; valence electrons</span> &middot; <span class="cap-gap"></span> unfilled gap <br>
+          7 valence electrons (one short of a full shell of 8)</figcaption>
+</figure>
+
+      <div class="exam-frame">
+        <div class="exam-meta"><span class="exam-src">Gen Chem · HS-PS1-1 · constructed response</span><span class="exam-marks">[4 marks]</span></div>
+        
+        <div data-widget="commit-reveal">
+          <script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "An atom of element <strong>X<\/strong> has the electron shell configuration <strong>2, 8, 7<\/strong>.<br><br>State its number of valence electrons. Predict whether it will lose or gain electrons, and the charge of the ion it forms. Explain why, using the valence count. Then name one other element X will behave like, and say why.",
+  "minChars": 40,
+  "reveal": "<h4>Scoring guide (4 marks)<\/h4><ul class=\"pts\"><li><b>Valence count (1 mark):<\/b> You state 7 valence electrons, because the outer shell holds 7.<\/li><li><b>Prediction (1 mark):<\/b> You say X gains 1 electron and forms a 1&minus; ion.<\/li><li><b>Reason (1 mark):<\/b> You say 7 is one short of a full shell of 8, so gaining one is the shortest path.<\/li><li><b>Same-group element (1 mark):<\/b> You name a halogen, such as F or Br, and say it also has 7 valence electrons.<\/li><\/ul>"
+}
+</script>
+        </div>
+            <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why This Matters</div>
+        <p>Neon signs and fireworks rely on electron configuration. When atoms absorb energy, their electrons jump to higher shells. When electrons drop back down to ground state, they release that energy difference as colored photons. This transition paints the sky with characteristic atomic colors.</p>
+      </div>
+</div>
+    </div>
+  </section>
+
+  <!-- ADAPTIVE PE PRACTICE -->
+  <section class="narrow">
+    <div class="practice-card">
+      <div class="practice-card-head">
+        <span class="label">HS-PS1-1 Practice Suite</span>
+        <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+      </div>
+      <h3>Adaptive Competency Practice: HS-PS1-1</h3>
+      <p>
+        Test your mastery of valence electrons, atomic structure, and periodic trends one question at a time. The adaptive engine identifies individual skill gaps, provides tutoring hints on missed questions, and awards an official authenticated completion receipt.
+      </p>
+      <div>
+        <a href="../pe/index.html?pe=HS-PS1-1" class="btn">
+          Launch Adaptive Practice &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <div class="footer">
+    <div class="label">Gen Chem · Semester 1 · 1-1a</div>
+    <p>Count the valence electrons, and you know what an atom wants. Next, in 1-1b: how position on the table sets
+      <em>how easily</em> it gets it.
+    </p>
+  </div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="../assets/elements.js"></script>
+<script src="../assets/bohr.js"></script>
+<script src="1-1a.js"></script>
+</body>
+
+</html>

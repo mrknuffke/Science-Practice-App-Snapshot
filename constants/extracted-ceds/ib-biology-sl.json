@@ -1,0 +1,62 @@
+{
+  "courseName": "IB Biology Standard Level",
+  "courseSlug": "ib-biology-sl",
+  "practicesLabel": "Inquiry and Command Terms",
+  "practices": "Assessments evaluate core understanding across 4 Themes (A to D). Focus on standard level topics. Strict adherence to command terms: State, Outline, Describe, and Explain are the dominant cognitive targets. Paper 1 assesses data analysis; Paper 2 requires short-answer and extended responses addressing core science systems.",
+  "units": [
+    {
+      "unitNumber": "A",
+      "unitTitle": "Unity and Diversity",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Water structure, cohesive/adhesive properties, hydrogen bonding",
+        "Nucleic acid structures, RNA and DNA nucleotides",
+        "Cell theory, cell structure, eukaryotic and prokaryotic cells",
+        "Diversity of organisms, classification systems, cladistics"
+      ]
+    },
+    {
+      "unitNumber": "B",
+      "unitTitle": "Form and Function",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Structure and function of carbohydrates and lipids",
+        "Structure and function of proteins, peptide bonds",
+        "Organelles and cell compartmentalization",
+        "Cell specialization, stem cells",
+        "Gas exchange systems, lungs",
+        "Transport systems, blood circulation"
+      ]
+    },
+    {
+      "unitNumber": "C",
+      "unitTitle": "Interaction and Interdependence",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Enzymes and metabolism, active site, factors affecting rates",
+        "Cell respiration pathways, ATP yields",
+        "Photosynthesis pathways, light-dependent stage",
+        "Neural signaling, synapses, action potentials",
+        "Populations, ecosystems, food webs, communities"
+      ]
+    },
+    {
+      "unitNumber": "D",
+      "unitTitle": "Continuity and Change",
+      "examWeight": "25%",
+      "keyTopics": [
+        "DNA replication, semiconservative replication",
+        "Protein synthesis, transcription, translation",
+        "Cell division, mitosis, chromosome replication",
+        "Gene transmission, inheritance, monohybrid crosses",
+        "Natural selection, speciation, evolution",
+        "Climate change, ecosystem conservation"
+      ]
+    }
+  ],
+  "examFormat": {
+    "multipleChoice": "Paper 1: 30 MCQs + data response (45%), 1.5 hours",
+    "freeResponse": "Paper 2: Short-answer and extended-response (55%), 1.5 hours"
+  },
+  "antiPatterns": "Avoid HL extension topics under all circumstances. Never ask questions about: origins of cells (A2.1), lateral gene transfer (A3.2), active membrane pumps or detailed vesicle pathways (B2.1), sliding filament muscle theory (B3.3), detailed oxidative phosphorylation biochem (C1.2), light-independent reactions/Calvin cycle details (C1.3), complex chemical signaling receptors (C2.1), transcription regulation/operons (D1.3), linkage/dihybrid crosses/polygenic inheritance (D2.2). Keep questions conceptual, simple, and strictly aligned with standard level core."
+}

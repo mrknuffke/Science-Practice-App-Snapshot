@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" data-book="physics" data-lesson="1-1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Lesson 1-1: Constant Velocity & 1D Motion | SAS General Physics</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+  <main>
+    <section class="hero" id="s-hero" data-toc="Opening">
+      <div>
+        <div class="label">Lesson 1-1 &middot; Constant Velocity &amp; 1D Motion</div>
+        <h1>Before a rover moves one metre, someone has to decide where zero is.</h1>
+        <p class="lede">Before you send a rover across Mars, you need the language of motion. Your first test is surface navigation. Move an unmanned rover across a set of coordinates to reach a core sample.</p>
+        <div class="meta-strip">
+          <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS2-1</b>Analyze data to support the claim that Newton's second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration.</div></div>
+          <div class="meta-block"><div class="k">Objective</div><div class="v">You can find the final position, distance and displacement of a vehicle at constant velocity.</div></div>
+          <div class="meta-block"><div class="k">Scope</div><div class="v">Reference frames, scalars and vectors, distance and displacement, and average velocity on a straight line.</div></div>
+        </div>
+        <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+      </div>
+    </section>
+
+    <section id="sec-01" data-toc="Mission Briefing">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">01</span><span class="label">Hook</span></div>
+        <div class="brief"><div class="label">Mission</div><p><b>Operation Projectile Precision.</b> ISA Academy, Singapore. Every physical measurement starts with a question: <em>where are you, and where are you going?</em></p></div>
+        <p>
+          When NASA navigated Perseverance onto Mars, Earth controllers were 225 million kilometers away. Radio signals took 11 minutes to cross space. If engineers could not predict rover position from velocity, the mission would crash.
+        </p>
+        <p>
+          To describe motion scientifically, physicists define an agreed coordinate system. We quantify position precisely and model straight-line motion using our baseline: <strong class="term" data-term="constant-velocity">constant velocity</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="sec-02" data-toc="Position & Vectors">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">02</span>
+          <span class="label">Reference frames</span>
+        </div>
+
+        <h2>Reference Frames, Position, and Vectors</h2>
+
+        <p>
+          Motion is relative. If you sit quietly on an MRT train moving at 80 km/h, are you moving? Relative to the passenger beside you, your position does not change at all. Relative to someone standing on the platform at Woodlands station, you are hurtling forward at highway speed.
+        </p>
+        <p>
+          Every physics problem begins by defining a <strong class="term" data-term="reference-frame">reference frame</strong>. This agreed coordinate system establishes an origin point (position zero) and positive and negative directions.
+        </p>
+
+        <h3>Scalars versus Vectors</h3>
+        <p>
+          In physics, quantities divide into two distinct species:
+        </p>
+        <ul>
+          <li>
+            <strong class="term" data-term="scalar">Scalars</strong>: Quantities that have magnitude (size and units) but <em>no spatial direction</em>. Examples include time (12 s), mass (45 kg), temperature (295 K), and <strong class="term" data-term="distance">distance</strong> (100 m).
+          </li>
+          <li>
+            <strong class="term" data-term="vector">Vectors</strong>: Quantities that require both a magnitude <em>and a specific direction</em>. In one dimension, direction is communicated simply by a positive (+) or negative (&minus;) sign. Examples include <strong class="term" data-term="position">position</strong> (+15 m), <strong class="term" data-term="displacement">displacement</strong> (&minus;30 m), and <strong class="term" data-term="average-velocity">velocity</strong> (+4.5 m/s).
+          </li>
+        </ul>
+
+        <h3>Distance versus Displacement</h3>
+        <p>
+          Distance and displacement measure different quantities:
+        </p>
+
+        <figure class="figure figure--md"><div class="diagram"><svg viewBox="0 0 600 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+            
+            <line x1="50" y1="120" x2="550" y2="120" stroke="var(--ink)" stroke-width="2" />
+            
+            <line x1="100" y1="112" x2="100" y2="128" stroke="var(--ink)" stroke-width="2" />
+            <line x1="200" y1="115" x2="200" y2="125" stroke="var(--hair)" stroke-width="1.5" />
+            <line x1="300" y1="112" x2="300" y2="128" stroke="var(--ink)" stroke-width="2" />
+            <line x1="400" y1="115" x2="400" y2="125" stroke="var(--hair)" stroke-width="1.5" />
+            <line x1="500" y1="112" x2="500" y2="128" stroke="var(--ink)" stroke-width="2" />
+
+            <text x="100" y="148" font-family="var(--mono)" font-size="13" text-anchor="middle" fill="var(--ink)">0 m</text>
+            <text x="300" y="148" font-family="var(--mono)" font-size="13" text-anchor="middle" fill="var(--ink)">+20 m</text>
+            <text x="500" y="148" font-family="var(--mono)" font-size="13" text-anchor="middle" fill="var(--ink)">+40 m</text>
+            <text x="550" y="148" font-family="var(--mono)" font-size="12" text-anchor="end" fill="var(--ink-mute)">+x direction &rarr;</text>
+
+            
+            <path d="M 100 90 L 500 90" stroke="var(--accent)" stroke-width="2.5" fill="none" marker-end="url(#arrowBlue)" />
+            <text x="300" y="78" font-family="var(--display)" font-size="12" font-weight="600" text-anchor="middle" fill="var(--accent)">Leg 1: Walk forward +40 m</text>
+
+            
+            <path d="M 500 50 L 300 50" stroke="var(--vector-alt)" stroke-width="2.5" fill="none" marker-end="url(#arrowAmber)" />
+            <text x="400" y="38" font-family="var(--display)" font-size="12" font-weight="600" text-anchor="middle" fill="var(--vector-alt)">Leg 2: Walk back &minus;20 m</text>
+
+            
+            <line x1="100" y1="105" x2="295" y2="105" stroke="var(--good)" stroke-width="3" />
+            <polygon points="295,100 305,105 295,110" fill="var(--good)" />
+            <text x="200" y="100" font-family="var(--display)" font-size="11" font-weight="700" text-anchor="middle" fill="var(--good)">Net Displacement: &Delta;x = +20 m</text>
+
+            <defs>
+              <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--accent)"/>
+              </marker>
+              <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--vector-alt)"/>
+              </marker>
+            </defs>
+          </svg></div><figcaption>Walk from 0 m to +40 m, then reverse to +20 m. Total distance is 60 m (scalar, the ground covered). Net displacement is +20 m (vector, the arrow from start to finish).</figcaption></figure>
+
+        <div class="callout"><div class="label">Common mistake</div><p>Many students treat distance and displacement as the same thing. Distance counts every meter the object travels. Displacement compares only the start and the end.</p></div>
+
+        <p>
+          Displacement (&Delta;x) is the straight-line vector difference between your final position (x<sub>f</sub>) and your initial position (x<sub>i</sub>):
+        </p>
+
+        <div class="eq-display">
+          &Delta;x = x<sub>f</sub> &minus; x<sub>i</sub>
+        </div>
+
+        
+        <div class="sim-box" id="vectorMiniBox" data-tool="vector">
+          <div class="label">Interactive tool</div>
+          <h4>Where does an object end up when its displacement is negative?</h4>
+          <p>Test how coordinates change when an object reverses direction. Adjust the start position and move displacement vectors:</p>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: an object starts at +10 m and moves &minus;30 m. Where does it end up?<\/p>",
+  "options": [
+    {
+      "label": "+20 m",
+      "correct": false,
+      "feedback": "That adds 30 m to the start. A negative displacement moves the object toward the negative end of the axis."
+    },
+    {
+      "label": "&minus;20 m",
+      "correct": true,
+      "feedback": "The final position is the start plus the displacement: +10 m + (&minus;30 m) = &minus;20 m."
+    },
+    {
+      "label": "&minus;30 m",
+      "correct": false,
+      "feedback": "That is only the displacement. The object starts at +10 m, so the final position is not the displacement."
+    },
+    {
+      "label": "+40 m",
+      "correct": false,
+      "feedback": "That subtracts the wrong way. Add the displacement to the start, and keep its sign."
+    }
+  ],
+  "reveal": "<p>Now set the sliders to check it. Put the start at +10 m and the displacement at &minus;30 m.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-controls">
+            <label class="slider-row" for="vmbStartPos"><span>Initial Position (x<sub>i</sub>):</span> <output id="vmbStartReadout">0 m</output>
+              <input type="range" id="vmbStartPos" min="-30" max="30" step="5" value="0">
+            </label>
+            <label class="slider-row" for="vmbDisp"><span>Vector Displacement (&Delta;x):</span> <output id="vmbDispReadout">+20 m</output>
+              <input type="range" id="vmbDisp" min="-50" max="50" step="5" value="20">
+            </label>
+          </div>
+          <div class="sim-readouts" aria-live="polite">
+            <div class="readout"><span class="readout-label">Final Position</span><span class="readout-value" id="vmbFinalReadout">&ndash;</span></div>
+          </div>
+          <p class="hint" id="vmbExplanation" aria-live="polite">The working appears after you predict.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sec-03" data-toc="Uniform Velocity">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">03</span>
+          <span class="label">Constant velocity</span>
+        </div>
+
+        <h2>Uniform Motion & Average Velocity</h2>
+
+        <p>
+          When an object travels with <strong class="term" data-term="uniform-motion">uniform motion</strong>, it covers equal displacements in equal time intervals. In this state, its speed and direction do not change. Its acceleration is zero.
+        </p>
+        <p>
+          We define <strong class="term" data-term="average-velocity">average velocity</strong> (<span class="vbar">v</span> or v) as the total displacement divided by the elapsed time interval:
+        </p>
+
+        <div class="eq-display">
+          <span class="vbar">v</span> = 
+          <span class="frac"><span>&Delta;x</span><span>&Delta;t</span></span>
+          =
+          <span class="frac"><span>x<sub>f</sub> &minus; x<sub>i</sub></span><span>t<sub>f</sub> &minus; t<sub>i</sub></span></span>
+        </div>
+
+        <p>
+          Notice the critical consequence of direction:
+        </p>
+        <ul>
+          <li>If an object moves in the positive direction (&Delta;x &gt; 0), its velocity is <b>positive</b> (+v).</li>
+          <li>If an object moves in the negative direction (&Delta;x &lt; 0), its velocity is <b>negative</b> (&minus;v).</li>
+          <li>If an object makes a round trip and returns to its starting point, its net displacement is zero (&Delta;x = 0). Its average velocity is <b>0 m/s</b>, no matter how far it went.</li>
+        </ul>
+
+        <div class="callout"><div class="label">Common mistake</div><p>A negative velocity does not mean the object is slowing down. It means the object moves in the negative direction.</p></div>
+
+        <h3>Speed versus Velocity</h3>
+        <p>
+          Average <strong class="term" data-term="speed">speed</strong> is distance divided by time. It has no sign and is always positive. Average velocity is displacement divided by time and carries directional meaning:
+        </p>
+
+        <div class="callout"><div class="label">The Round-Trip Comparison</div><p>
+            Eliud Kipchoge runs a complete 400-meter oval track in 50 seconds. His average speed is (400 m) / (50 s) = <b>8.0 m/s</b>. But because his start and finish lines coincide, his displacement is 0 meters. His average velocity for the lap is <b>0.0 m/s</b>.
+          </p></div>
+
+        
+        <div class="sim-box" id="unitConvertBox" data-tool="convert">
+          <div class="label">Interactive tool</div>
+          <h4>How do you turn a speed in km/h into m/s?</h4>
+          <p>Physics requires SI base units (meters per second, m/s). Use this tool to convert speeds from everyday automotive units (km/h):</p>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a car drives at 72 km/h. What is its speed in m/s?<\/p>",
+  "options": [
+    {
+      "label": "259 m/s",
+      "correct": false,
+      "feedback": "That multiplies by 3.6. To go from km/h to m/s, divide by 3.6."
+    },
+    {
+      "label": "72 m/s",
+      "correct": false,
+      "feedback": "The number cannot stay the same when the unit changes. A m/s is a much bigger unit than a km/h."
+    },
+    {
+      "label": "1.2 m/s",
+      "correct": false,
+      "feedback": "That divides by 60, which only converts hours to minutes. Convert km to m and h to s too."
+    },
+    {
+      "label": "20 m/s",
+      "correct": true,
+      "feedback": "1 km/h = 1000 m / 3600 s, so divide by 3.6: 72 &divide; 3.6 = 20 m/s."
+    }
+  ],
+  "reveal": "<p>Now type 72 in the box to check it.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-controls">
+            <label class="slider-row" for="speedInput"><span>Enter Velocity in km/h:</span>
+              <input type="number" id="speedInput" class="num-input" value="90">
+            </label>
+          </div>
+          <div class="sim-readouts" aria-live="polite">
+            <div class="readout"><span class="readout-label">SI Velocity (m/s):</span><span class="readout-value" id="speedOutput">&ndash;</span></div>
+          </div>
+          <p class="hint" id="unitWork" aria-live="polite">The working appears after you predict.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sec-04" data-toc="Mars Rover Navigator">
+      <div class="narrow">
+          <div class="section-tag">
+            <span class="num">04</span>
+            <span class="label">Simulation</span>
+          </div>
+        <h2>Mars Rover 1D Navigator</h2>
+        <p>Set the rover's drive velocity. Watch the rover move along the track while its position-time graph builds. The clock stops at 10 s so you can record.</p>
+        
+        <div class="sim-box" data-sim="rover">
+          <div class="label">Simulation</div>
+          <h4>What does the slope of a position-time graph tell you about how the rover moves?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: the rover drives at &minus;4 m/s. Which graph does its position-time line draw?<\/p>",
+  "options": [
+    {
+      "label": "A straight line that slopes up",
+      "correct": false,
+      "feedback": "A line slopes up when the position grows. At &minus;4 m/s the position falls, so the line cannot slope up."
+    },
+    {
+      "label": "A straight line that slopes down",
+      "correct": true,
+      "feedback": "The velocity is constant, so the line is straight. The velocity is negative, so the position falls and the line slopes down."
+    },
+    {
+      "label": "A flat line at the starting position",
+      "correct": false,
+      "feedback": "A flat line means the rover is at rest. A velocity of &minus;4 m/s means the position changes every second."
+    }
+  ],
+  "reveal": "<p>Now run the model. Load the Return Mission setup to see the line.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="stack"><canvas aria-label="The rover on a coordinate track with two sample flags, above a graph of its position against time."></canvas></div>
+          <div class="sim-controls">
+            <label class="slider-row" for="roverVel"><span>Drive velocity</span> <output>5.0 m/s</output>
+              <input type="range" id="roverVel" min="-10" max="10" step="0.5" value="5" data-unit="m/s" data-digits="1">
+            </label>
+            <button type="button" class="btn ghost" data-restart>Start over</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="time"><span class="readout-label">Time</span><span class="readout-value">0.0 s</span></div>
+            <div class="readout" data-readout="pos"><span class="readout-label">Position (x)</span><span class="readout-value">0.0 m</span></div>
+            <div class="readout" data-readout="vel"><span class="readout-label">Velocity (v)</span><span class="readout-value">5.0 m/s</span></div>
+            <div class="readout" data-readout="slope"><span class="readout-label">Slope of the line</span><span class="readout-value">&ndash;</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Ready</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="dot" data-token="accent"></span>Rover and its position line</li>
+            <li><span class="key" data-shape="dash" data-token="warn"></span>Sample A, at +30 m</li>
+            <li><span class="key" data-shape="dash" data-token="good"></span>Sample B, at +75 m</li>
+            <li><span class="key" data-shape="line" data-token="ink"></span>Origin, x = 0 m</li>
+          </ul>
+          <ol class="try-this">
+            <li>Press <button type="button" class="chip" data-preset="a">Load this setup</button> for Target A (+5.0 m/s). <b>Look for:</b> a straight line, and a slope readout equal to the velocity. The clock stops at 10 s. Press Record, then Play.</li>
+            <li>Load Target B (+7.5 m/s) <button type="button" class="chip" data-preset="b">Load this setup</button>. <b>Look for:</b> a steeper line. Press Record at the 10 s stop.</li>
+            <li>Load the Return Mission (&minus;4.0 m/s, start at +80 m) <button type="button" class="chip" data-preset="return">Load this setup</button>. <b>Look for:</b> a line that slopes down, and a negative slope readout. Press Record at the 10 s stop.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use only the rows in your record table. Compare the Slope column with the Velocity column. What do you see?<\/p>",
+  "options": [
+    {
+      "label": "The slope is the same number as the velocity.",
+      "correct": true,
+      "feedback": "In every row the slope matches the velocity, with the same sign. The slope of a position-time line is the velocity."
+    },
+    {
+      "label": "The slope is half of the velocity.",
+      "correct": false,
+      "feedback": "Check the rows. The slope and the velocity are equal, not related by a factor of two."
+    },
+    {
+      "label": "The slope is ten times the velocity.",
+      "correct": false,
+      "feedback": "Ten is the time in seconds. The slope is the change in position divided by the time, so the ten cancels."
+    },
+    {
+      "label": "The slope changes sign but the velocity does not.",
+      "correct": false,
+      "feedback": "Look at the Return Mission row. Its velocity and its slope are both negative."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. The slope column and the velocity column match in every row.<\/p>"
+}
+</script>
+</div>
+      </div>
+    </section>
+
+    <section id="sec-05" data-toc="Predict & Check">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">05</span>
+          <span class="label">Checkpoints</span>
+        </div>
+
+        <h2>Checkpoint Predictions</h2>
+        <p>
+          Before revealing the physical analysis, commit your reasoning. In physics, committing an answer first forces your brain to test its internal model against evidence:
+        </p>
+
+        
+        <h3>Scenario A: Two-Leg Rover Scouting</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A rover starts at x = 0 m. It travels forward to x = +45 m in 15 seconds and stops for 5 seconds. Then it reverses to x = +25 m in 10 seconds. What is the rover's total distance and its average velocity over the entire 30-second trip?<\/p>",
+  "options": [
+    {
+      "label": "Distance = 65 m; Average Velocity = +2.17 m/s.",
+      "correct": false,
+      "feedback": "Dividing 65 m by 30 s gives average speed, not velocity. Velocity uses displacement, which is +25 m."
+    },
+    {
+      "label": "Distance = 25 m; Average Velocity = +0.83 m/s.",
+      "correct": false,
+      "feedback": "The velocity is right, but 25 m is the displacement. Distance adds every leg: 45 m forward and 20 m back make 65 m."
+    },
+    {
+      "label": "Distance = 65 m; Average Velocity = +0.83 m/s.",
+      "correct": true,
+      "feedback": "Distance counts every meter driven: 45 + 0 + 20 = 65 m. Displacement is +25 m, so average velocity is +25 m / 30 s = +0.83 m/s."
+    },
+    {
+      "label": "Distance = 25 m; Average Velocity = +2.17 m/s.",
+      "correct": false,
+      "feedback": "This mixes the two quantities. Distance is 65 m, and velocity divides the 25 m displacement by 30 s."
+    }
+  ],
+  "reveal": "<p><b>Distance = 65 m, Average Velocity = +0.83 m/s.<\/b><br>Distance is the total path: 45 m forward + 0 m stopped + 20 m back = <b>65 m<\/b>.<br>Displacement depends only on the start and the end: &Delta;x = x<sub>final<\/sub> &minus; x<sub>initial<\/sub> = 25 m &minus; 0 m = <b>+25 m<\/b>.<br>Average velocity is displacement divided by total time: v = +25 m / 30 s = <b>+0.83 m/s<\/b>. Dividing distance by time (65 / 30 = 2.17 m/s) gives average <em>speed<\/em>, not velocity.<\/p>"
+}
+</script>
+</div>
+
+        
+        <h3>Scenario B: Negative Velocity vs. Slowing Down</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "<p>A rover's readings show a velocity of &minus;4.0 m/s. A student claims the rover must be braking because the velocity is negative.<\/p><p>Explain why this claim is wrong. What does the negative sign tell you about the rover's motion?<\/p>",
+  "minChars": 15,
+  "reveal": "<p><b>The student confuses the sign of the velocity with a change in speed.<\/b> In a 1D reference frame, the negative sign shows the <em>direction<\/em>, toward the negative end of the axis. It does not mean the vehicle is slowing down. An object at &minus;4.0 m/s moves at a steady speed of 4.0 m/s in the negative direction. Slowing down needs an acceleration that points opposite the velocity.<\/p>"
+}
+</script>
+</div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-06" data-toc="Retrieval & Practice">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">06</span>
+          <span class="label">Practice</span>
+        </div>
+
+        <h2>Rapid Retrieval & ECR Challenge</h2>
+
+        <p>
+          Complete the active recall statements below to lock in the key concepts of 1D kinematics:
+        </p>
+
+        
+        <div class="recall">
+<div class="label">Recall</div>
+<ol class="recall-list">
+<li>A physical quantity that has magnitude but lacks direction is a <input type="text" class="blank" data-answer="scalar" placeholder="term" aria-label="Blank 1">, while a quantity with both magnitude and direction is a <input type="text" class="blank" data-answer="vector" placeholder="term" aria-label="Blank 2">.</li>
+<li>The straight-line vector difference between an object's final position and initial position is called its <input type="text" class="blank" data-answer="displacement" placeholder="term" aria-label="Blank 3">.</li>
+<li>On a position versus time (x-t) graph, the slope of the line represents the object's <input type="text" class="blank" data-answer="velocity|average velocity" placeholder="variable" aria-label="Blank 4">.</li>
+<li>When an object travels in a straight line at constant velocity, its acceleration is exactly <input type="text" class="blank" data-answer="0|zero|0 m/s2|0 m/s²" placeholder="value" aria-label="Blank 5">.</li>
+</ol>
+<div class="recall-actions">
+<button class="btn" type="button" data-recall-check>Check</button>
+<button class="btn ghost" type="button" data-recall-reveal>Show answers</button>
+<button class="btn ghost" type="button" data-recall-reset>Reset</button>
+<span class="feedback" data-recall-feedback role="status"></span>
+</div>
+</div>
+
+        
+        <h3>Problem 1.3: Highway Transit along the Bukit Timah Expressway (BKE)</h3>
+<div class="exam-frame">
+<div class="exam-meta"><span class="exam-src">Written response</span><span class="exam-marks">3 marks</span></div>
+<p class="exam-q">You drive from the Singapore American School campus in Woodlands to the base of Bukit Timah Hill. The highway displacement along the expressway is <b>10,000 meters</b> south (+10,000 m). The drive takes <b>1,200 seconds</b> (20 minutes).</p><p class="exam-q">A passenger states: <em>"We traveled 10,000 m in 1,200 s, which equals 8.33 m/s. Therefore, our speedometer stayed at 8.33 m/s the entire way."</em></p><p class="exam-q">Evaluate this statement using the <b>Evidence &rarr; Claim &rarr; Reasoning (ECR)</b> framework.</p>
+<ul class="ecr-list"><li><b>Evidence:</b> State the quantitative data: total displacement (&Delta;x = 10,000 m) and total time (&Delta;t = 1,200 s). Note road observations such as stoplights, merging traffic, and ramps.</li><li><b>Claim:</b> Refute the passenger: 8.33 m/s represents the <em>average velocity</em> across the 20-minute trip. It does not mean instantaneous speed stayed constant at every point.</li><li><b>Reasoning:</b> Connect the evidence to definitions: average velocity is an aggregate ratio (<span class="vbar">v</span> = &Delta;x / &Delta;t). In real travel, the vehicle accelerates, cruises, and slows for ramps. Instantaneous velocity fluctuates while maintaining an average of 8.33 m/s.</li></ul>
+<textarea class="textbox" aria-label="Your answer"></textarea>
+<div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+<div class="scheme"><div class="scheme-card"><div class="label">Scoring guide</div><ul class="pts"><li><b>Average velocity (1 mark):</b> You calculate <span class="vbar">v</span> = 10,000 m / 1,200 s = 8.33 m/s (or 30 km/h).</li><li><b>Average and instantaneous (1 mark):</b> You say average velocity is total displacement over total time.</li><li>You say a speedometer shows the velocity at one moment.</li><li><b>Evidence (1 mark):</b> You give a real reason the speed changes: starts, cruising, traffic.</li><li>You say the average stays 8.33 m/s while the instant speed varies.</li></ul></div></div>
+</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/book.js"></script>
+  <script src="../../textbook/core.js"></script>
+  <script src="../../textbook/widgets.js"></script>
+  <script src="../../textbook/sim.js"></script>
+  <script src="../assets/glossary.js"></script>
+  <script src="../assets/draw.js"></script>
+  <script src="../assets/reference-center.js"></script>
+  <script src="1-1.js"></script>
+</body>
+</html>

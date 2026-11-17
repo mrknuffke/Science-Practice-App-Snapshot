@@ -1,0 +1,64 @@
+{
+  "courseName": "IB Physics Standard Level",
+  "courseSlug": "ib-physics-sl",
+  "practicesLabel": "Inquiry and Physics Core Practices",
+  "practices": "Assessments evaluate core understanding across 5 Themes (A to E). Strict adherence to command terms: State, Outline, Describe, and Explain are the dominant cognitive targets. Follow standard IB equations in data booklet format. No calculus is permitted.",
+  "units": [
+    {
+      "unitNumber": "A",
+      "unitTitle": "Space, time and motion",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Kinematics: distance, displacement, speed, velocity, acceleration",
+        "Forces and momentum: Newton's Laws, collisions, impulse",
+        "Work, energy and power: conservation of energy, mechanical power",
+        "Rigid body mechanics: torque, rotational equilibrium"
+      ]
+    },
+    {
+      "unitNumber": "B",
+      "unitTitle": "The particulate nature of matter",
+      "examWeight": "15%",
+      "keyTopics": [
+        "Thermal energy transfers, specific heat capacity",
+        "Greenhouse effect, solar radiation, albedo",
+        "Gas laws, pressure, volume, temperature relationships"
+      ]
+    },
+    {
+      "unitNumber": "C",
+      "unitTitle": "Wave behaviour",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Simple harmonic motion, oscillations",
+        "Wave model, transverse and longitudinal waves",
+        "Wave phenomena: reflection, refraction, polarization",
+        "Standing waves and resonance"
+      ]
+    },
+    {
+      "unitNumber": "D",
+      "unitTitle": "Fields",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Gravitational fields, gravitational field strength",
+        "Electric fields, Coulomb's law, electric potential",
+        "Magnetic fields, force on moving charges"
+      ]
+    },
+    {
+      "unitNumber": "E",
+      "unitTitle": "Electromagnetic induction",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Electromagnetic induction, induced EMF",
+        "Power generation and transmission, transformers"
+      ]
+    }
+  ],
+  "examFormat": {
+    "multipleChoice": "Paper 1: 30 MCQs + data response (45%), 1.5 hours",
+    "freeResponse": "Paper 2: Short-answer and extended-response (55%), 1.5 hours"
+  },
+  "antiPatterns": "Avoid HL extension topics under all circumstances. Never ask questions about: Galilean or special relativity (A.5), advanced thermodynamics and engine thermal cycles (B.4), Doppler effect quantitative details (C.3), diffraction resolution limits (C.5), electric/gravitational potentials and escape speed energy derivations (D.2), electromagnetic induction AC generator circuit impedance or capacitors (E.2), and quantum/nuclear photoelectric wave-particle duality details (E.3). Keep calculations strictly algebra-based."
+}

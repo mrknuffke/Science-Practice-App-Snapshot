@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Accelerated Chemistry Practice Suites · XL Chem</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../../favicon.ico">
+
+  <!-- XL Practice Design System -->
+  <link rel="stylesheet" href="xl-practice.css">
+
+  <style>
+    .hub-container {
+      max-width: 68rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 6rem;
+    }
+    .hub-hero {
+      background: var(--xl-surface);
+      border: 1px solid var(--xl-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .hub-hero-title {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--xl-ink);
+      letter-spacing: -0.02em;
+    }
+    .hub-hero-desc {
+      font-size: var(--text-base);
+      color: var(--xl-ink-soft);
+      margin-top: 0.6rem;
+      line-height: 1.6;
+      max-width: 48rem;
+    }
+    .hub-features-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--xl-border-soft);
+    }
+    .hub-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: var(--text-xs);
+      font-family: var(--font-mono);
+      color: var(--xl-ink-mute);
+    }
+    .hub-feature-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--xl-primary);
+    }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+      gap: 1.5rem;
+    }
+    .hub-card {
+      background: var(--xl-surface);
+      border: 1px solid var(--xl-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .hub-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--xl-primary);
+    }
+    .hub-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.75rem;
+    }
+    .hub-card-badge {
+      font-size: var(--text-2xs);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+    .badge-active {
+      background: var(--xl-good-soft);
+      color: var(--xl-good);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+    .badge-tools {
+      background: var(--xl-indigo-soft);
+      color: var(--xl-indigo);
+      border: 1px solid rgba(129, 140, 248, 0.3);
+    }
+    .badge-queue {
+      background: var(--xl-card);
+      color: var(--xl-ink-mute);
+      border: 1px solid var(--xl-border);
+    }
+    .hub-card-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--xl-ink);
+      line-height: 1.25;
+    }
+    .hub-card-desc {
+      font-size: var(--text-sm);
+      color: var(--xl-ink-soft);
+      margin: 0.65rem 0 1.25rem 0;
+      line-height: 1.5;
+    }
+    .hub-skill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .hub-skill-item {
+      font-size: var(--text-xs);
+      color: var(--xl-ink-mute);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .hub-skill-item::before {
+      content: "•";
+      color: var(--xl-primary);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="theme-auto">
+
+  <!-- TOPBAR -->
+  <header class="station-header">
+    <div class="station-branding">
+      <span class="station-badge">XL Chem</span>
+      <div>
+        <div class="station-title">Accelerated Chemistry Practice Studio</div>
+        <div class="station-subtitle">Curricular Mastery &middot; Formative Problem Suites</div>
+      </div>
+    </div>
+    <div class="station-right">
+      <button class="btn btn-secondary btn-sm" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+        <span id="themeIcon">☀️</span>
+      </button>
+      <a href="/chem/" class="btn btn-secondary btn-sm" id="btnHubBack">
+        Textbook Home
+      </a>
+      <a href="verify.html" class="btn btn-secondary btn-sm" id="btnHubVerify">
+        Instructor Verifier
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN HUB CONTENT -->
+  <main class="hub-container">
+    
+    <section class="hub-hero">
+      <span class="station-badge">Accelerated Chemistry Curriculum</span>
+      <h1 class="hub-hero-title" style="margin-top:0.5rem;">Interactive Practice Suites</h1>
+      <p class="hub-hero-desc">
+        Deterministic, quantitative problem sets designed specifically for Accelerated Chemistry students. Every problem deck features seeded randomization, smart scientific notation parsing, multi-attempt grading, complete worked solutions, and a one-page printable receipt with a check code.
+      </p>
+
+      <div class="hub-features-row">
+        <div class="hub-feature-item">
+          <span class="hub-feature-dot"></span>
+          <span>Individualized PRNG Seeds</span>
+        </div>
+        <div class="hub-feature-item">
+          <span class="hub-feature-dot"></span>
+          <span>5 Attempts on Math Calculations</span>
+        </div>
+        <div class="hub-feature-item">
+          <span class="hub-feature-dot"></span>
+          <span>8-Skill Mastery Scorecard</span>
+        </div>
+        <div class="hub-feature-item">
+          <span class="hub-feature-dot"></span>
+          <span>Scannable QR Verification</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRACTICE SUITES GRID -->
+    <div class="hub-grid">
+
+      <!-- Unit 1 -->
+      <article class="hub-card">
+        <div>
+          <div class="hub-card-header">
+            <span class="hub-card-badge badge-active">Available Now</span>
+            <span style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--xl-ink-mute);">16 Items</span>
+          </div>
+          <h2 class="hub-card-title">Unit 1: Atomic Structure &amp; Trends</h2>
+          <p class="hub-card-desc">
+            Particle models of matter, historical atomic theory, isotopes and mass spectrometry, light and photon energy, electron configurations, and periodic trends.
+          </p>
+          <ul class="hub-skill-list">
+            <li class="hub-skill-item">Matter Classification &amp; Particle Models</li>
+            <li class="hub-skill-item">Subatomic Particles &amp; Isotopic Notation</li>
+            <li class="hub-skill-item">Average Atomic Mass Calculations (5 tries)</li>
+            <li class="hub-skill-item">Wave Equations &amp; Photon Energy ($E = hc/\lambda$)</li>
+            <li class="hub-skill-item">Periodic Trends &amp; Coulombic Forces</li>
+          </ul>
+        </div>
+        <a href="unit1.html" class="btn btn-primary unit-launch-link" style="text-align:center; text-decoration:none; justify-content:center;">
+          Launch Unit 1 Practice
+        </a>
+      </article>
+
+      <!-- Unit 2 -->
+      <article class="hub-card">
+        <div>
+          <div class="hub-card-header">
+            <span class="hub-card-badge badge-active">Available Now</span>
+            <span style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--xl-ink-mute);">16 Items</span>
+          </div>
+          <h2 class="hub-card-title">Unit 2: Measurement &amp; Matter</h2>
+          <p class="hub-card-desc">
+            Scientific notation arithmetic, significant figures in mixed operations, ionic and covalent chemical nomenclature, percent composition, empirical formulas, and dimensional analysis.
+          </p>
+          <ul class="hub-skill-list">
+            <li class="hub-skill-item">Scientific Notation &amp; Mixed Operations</li>
+            <li class="hub-skill-item">Significant Figures in Chemical Calculations</li>
+            <li class="hub-skill-item">Ionic &amp; Covalent Chemical Nomenclature</li>
+            <li class="hub-skill-item">Percent Composition &amp; Empirical Formulas</li>
+            <li class="hub-skill-item">The Mole, STP Gas Volumes, &amp; Dimensional Analysis</li>
+          </ul>
+        </div>
+        <a href="unit2.html" class="btn btn-primary unit-launch-link" style="text-align:center; text-decoration:none; justify-content:center;">
+          Launch Unit 2 Practice
+        </a>
+      </article>
+
+      <!-- Unit 3 -->
+      <article class="hub-card">
+        <div>
+          <div class="hub-card-header">
+            <span class="hub-card-badge badge-active">Available Now</span>
+            <span style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--xl-ink-mute);">16 Items</span>
+          </div>
+          <h2 class="hub-card-title">Unit 3: Chemical Bonding &amp; IMFs</h2>
+          <p class="hub-card-desc">
+            Bond classification, Pauling electronegativity differences, Lewis structures, VSEPR molecular geometry and bond angle compression, molecular polarity, intermolecular forces, and medicinal chemistry applications.
+          </p>
+          <ul class="hub-skill-list">
+            <li class="hub-skill-item">Bond Classification &amp; Physical Properties</li>
+            <li class="hub-skill-item">Electronegativity Difference &amp; Bond Character</li>
+            <li class="hub-skill-item">Lewis Structures &amp; Electron Counting</li>
+            <li class="hub-skill-item">VSEPR Theory &amp; Bond Angle Compression</li>
+            <li class="hub-skill-item">Bond Dipoles, Polarity Ranking &amp; IMFs</li>
+          </ul>
+        </div>
+        <a href="unit3.html" class="btn btn-primary unit-launch-link" style="text-align:center; text-decoration:none; justify-content:center;">
+          Launch Unit 3 Practice
+        </a>
+      </article>
+
+      <!-- Unit 4 -->
+      <article class="hub-card">
+        <div>
+          <div class="hub-card-header">
+            <span class="hub-card-badge badge-active">Available Now</span>
+            <span style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--xl-ink-mute);">16 Items</span>
+          </div>
+          <h2 class="hub-card-title">Unit 4: Reactions &amp; Stoichiometry</h2>
+          <p class="hub-card-desc">
+            Balancing chemical equations, conservation of matter, reaction classification patterns, macroscopic evidence, mole ratios, limiting reactants, and percent yield in cooking and industrial synthesis.
+          </p>
+          <ul class="hub-skill-list">
+            <li class="hub-skill-item">Balancing Equations &amp; Conservation of Matter</li>
+            <li class="hub-skill-item">Reaction Classification &amp; Macroscopic Evidence</li>
+            <li class="hub-skill-item">Mole Ratios &amp; Particle Stoichiometry</li>
+            <li class="hub-skill-item">Mass-to-Mass Theoretical Yield Calculations</li>
+            <li class="hub-skill-item">Limiting Reactants &amp; Percent Yield (5 tries)</li>
+          </ul>
+        </div>
+        <a href="unit4.html" class="btn btn-primary unit-launch-link" style="text-align:center; text-decoration:none; justify-content:center;">
+          Launch Unit 4 Practice
+        </a>
+      </article>
+
+      <!-- Unit 5 -->
+      <article class="hub-card">
+        <div>
+          <div class="hub-card-header">
+            <span class="hub-card-badge badge-active">Available Now</span>
+            <span style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--xl-ink-mute);">16 Items</span>
+          </div>
+          <h2 class="hub-card-title">Unit 5: Kinetics &amp; Thermochemistry</h2>
+          <p class="hub-card-desc">
+            Specific heat capacity, calorimetry, heating curve thermodynamics, Hess's law reaction cycles, bond enthalpies, and collision theory reaction kinetics.
+          </p>
+          <ul class="hub-skill-list">
+            <li class="hub-skill-item">Specific Heat &amp; Calorimetry ($q = mc\Delta T$)</li>
+            <li class="hub-skill-item">Thermochemical Equations &amp; Enthalpy Stoichiometry</li>
+            <li class="hub-skill-item">Phase Changes &amp; Heating Curve Energy</li>
+            <li class="hub-skill-item">Hess's Law Multi-Step Reaction Cycles</li>
+            <li class="hub-skill-item">Bond Energies &amp; Reaction Rate Factors</li>
+          </ul>
+        </div>
+        <a href="unit5.html" class="btn btn-primary unit-launch-link" style="text-align:center; text-decoration:none; justify-content:center;">
+          Launch Unit 5 Practice
+        </a>
+      </article>
+
+      <!-- Unit 6 -->
+      <article class="hub-card">
+        <div>
+          <div class="hub-card-header">
+            <span class="hub-card-badge badge-active">Available Now</span>
+            <span style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--xl-ink-mute);">16 Items</span>
+          </div>
+          <h2 class="hub-card-title">Unit 6: Solutions &amp; Equilibrium</h2>
+          <p class="hub-card-desc">
+            Solution concentration, volumetric dilutions, solubility curves, dynamic equilibrium, equilibrium constants ($K_{eq}$), and Le Chatelier's stress shifts.
+          </p>
+          <ul class="hub-skill-list">
+            <li class="hub-skill-item">Molarity &amp; Solution Stoichiometry</li>
+            <li class="hub-skill-item">Volumetric Dilution Law ($M_1V_1 = M_2V_2$)</li>
+            <li class="hub-skill-item">Solubility Curves &amp; Crystallization</li>
+            <li class="hub-skill-item">Equilibrium Expressions &amp; $K_{eq}$ Constants</li>
+            <li class="hub-skill-item">Le Chatelier's Principle &amp; Stress Analysis</li>
+          </ul>
+        </div>
+        <a href="unit6.html" class="btn btn-primary unit-launch-link" style="text-align:center; text-decoration:none; justify-content:center;">
+          Launch Unit 6 Practice
+        </a>
+      </article>
+
+      <!-- Unit 7 -->
+      <article class="hub-card">
+        <div>
+          <div class="hub-card-header">
+            <span class="hub-card-badge badge-active">Available Now</span>
+            <span style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--xl-ink-mute);">16 Items</span>
+          </div>
+          <h2 class="hub-card-title">Unit 7: Acids &amp; Bases</h2>
+          <p class="hub-card-desc">
+            Bronsted-Lowry conjugates, autoionization of water, pH and pOH logarithmic scales, weak acid dissociation ($K_a$), neutralization titrations, and buffer capacity.
+          </p>
+          <ul class="hub-skill-list">
+            <li class="hub-skill-item">Bronsted-Lowry Conjugates &amp; Amphoteric Species</li>
+            <li class="hub-skill-item">Strong Acid &amp; Base pH / pOH Calculations</li>
+            <li class="hub-skill-item">Weak Acid Dissociation ($K_a$) &amp; Percent Ionization</li>
+            <li class="hub-skill-item">Volumetric Neutralization Titrations ($M_aV_a = M_bV_b$)</li>
+            <li class="hub-skill-item">Buffer Systems &amp; Ocean Acidification</li>
+          </ul>
+        </div>
+        <a href="unit7.html" class="btn btn-primary unit-launch-link" style="text-align:center; text-decoration:none; justify-content:center;">
+          Launch Unit 7 Practice
+        </a>
+      </article>
+
+      <!-- Unit 8 -->
+      <article class="hub-card">
+        <div>
+          <div class="hub-card-header">
+            <span class="hub-card-badge badge-active">Available Now</span>
+            <span style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--xl-ink-mute);">16 Items</span>
+          </div>
+          <h2 class="hub-card-title">Unit 8: Gases &amp; Pressure</h2>
+          <p class="hub-card-desc">
+            Kinetic Molecular Theory, atmospheric pressure units, empirical gas laws, the Ideal Gas Law ($PV = nRT$), Dumas vapor molar masses, Dalton's partial pressures, and Graham's effusion law.
+          </p>
+          <ul class="hub-skill-list">
+            <li class="hub-skill-item">Pressure Unit Conversions (atm, mmHg, kPa, psi)</li>
+            <li class="hub-skill-item">Kinetic Molecular Theory &amp; Molecular Velocity</li>
+            <li class="hub-skill-item">Empirical Gas Laws (Boyle, Charles, Gay-Lussac)</li>
+            <li class="hub-skill-item">Ideal Gas Law ($PV = nRT$) &amp; Volatile Molar Mass</li>
+            <li class="hub-skill-item">Dalton's Partial Pressures &amp; Graham's Effusion</li>
+          </ul>
+        </div>
+        <a href="unit8.html" class="btn btn-primary unit-launch-link" style="text-align:center; text-decoration:none; justify-content:center;">
+          Launch Unit 8 Practice
+        </a>
+      </article>
+
+      <!-- Instructor Tool -->
+      <article class="hub-card">
+        <div>
+          <div class="hub-card-header">
+            <span class="hub-card-badge badge-tools">Instructor Tool</span>
+            <span style="font-size:var(--text-xs); font-family:var(--font-mono); color:var(--xl-ink-mute);">All 8 Units</span>
+          </div>
+          <h2 class="hub-card-title">Receipt Check &amp; Retake Tool</h2>
+          <p class="hub-card-desc">
+            Check that a printed receipt matches its code, open a student's exact problem set, or make a fresh retake link for any of the 8 units.
+          </p>
+          <ul class="hub-skill-list">
+            <li class="hub-skill-item">Instant QR Code Smartphone Scanning</li>
+            <li class="hub-skill-item">Check codes that catch hand-edited scores</li>
+            <li class="hub-skill-item">Multi-Attempt Retake Link Generator (Run 2, 3...)</li>
+            <li class="hub-skill-item">Deck Parameter Reconstruction</li>
+          </ul>
+        </div>
+        <a href="verify.html" class="btn btn-secondary unit-launch-link" style="text-align:center; text-decoration:none; justify-content:center;">
+          Open Verification Tool
+        </a>
+      </article>
+
+    </div>
+
+  </main>
+
+  <script>
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    function applyTheme(theme) {
+      document.documentElement.classList.remove('theme-light', 'theme-dark', 'theme-auto');
+      document.body.classList.remove('theme-light', 'theme-dark', 'theme-auto');
+      if (theme === 'light') {
+        document.documentElement.classList.add('theme-light');
+        document.body.classList.add('theme-light');
+        if (themeIcon) themeIcon.textContent = '🌙';
+      } else if (theme === 'dark') {
+        document.documentElement.classList.add('theme-dark');
+        document.body.classList.add('theme-dark');
+        if (themeIcon) themeIcon.textContent = '☀️';
+      } else {
+        document.documentElement.classList.add('theme-auto');
+        document.body.classList.add('theme-auto');
+        if (themeIcon) themeIcon.textContent = '☀️';
+      }
+      localStorage.setItem('xl_chem_theme', theme);
+    }
+    const savedTheme = localStorage.getItem('xl_chem_theme') || 'auto';
+    applyTheme(savedTheme);
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const current = localStorage.getItem('xl_chem_theme') || 'auto';
+        const next = current === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
+    }
+
+    // Dynamic origin routing for hub back button
+    const urlParams = new URLSearchParams(window.location.search);
+    const fromParam = urlParams.get('from');
+    const backBtn = document.getElementById('btnHubBack');
+    const verifyBtn = document.getElementById('btnHubVerify');
+
+    if (fromParam === 'resources') {
+      if (backBtn) {
+        backBtn.href = '/?page=resources';
+        backBtn.textContent = '← Resources Hub';
+      }
+      if (verifyBtn) {
+        verifyBtn.href = 'verify.html?from=resources';
+      }
+    } else if (fromParam === 'teachers') {
+      if (backBtn) {
+        backBtn.href = '/?page=teachers';
+        backBtn.textContent = '← Teacher Workspace';
+      }
+      if (verifyBtn) {
+        verifyBtn.href = 'verify.html?from=teachers';
+      }
+    }
+
+    // Preserve fromParam on unit launch links if present
+    if (fromParam) {
+      document.querySelectorAll('.unit-launch-link').forEach((link) => {
+        const currentHref = link.getAttribute('href');
+        if (currentHref && !currentHref.includes('from=')) {
+          const sep = currentHref.includes('?') ? '&' : '?';
+          link.setAttribute('href', `${currentHref}${sep}from=${encodeURIComponent(fromParam)}`);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

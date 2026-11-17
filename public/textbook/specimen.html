@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" data-book="bio" data-tokens="bio">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:,">
+  <title>Shared Runtime Specimen</title>
+  <script src="theme-boot.js"></script>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="lesson.css">
+  <!-- Bio and physics have moved to the standard's token form, so specimen.js loads the real file of the book you pick. Chem uses the preview in specimen.css until its session. -->
+  <link rel="stylesheet" href="specimen.css">
+  <script src="specimen.js"></script>
+</head>
+<body>
+
+<div class="specimen-bar" role="group" aria-label="Specimen controls">
+  <div class="group" role="group" aria-label="Book tokens">
+    <span class="label">Book tokens</span>
+    <button type="button" class="chip" data-book-chip="chem" aria-pressed="false">Chem</button>
+    <button type="button" class="chip" data-book-chip="physics" aria-pressed="false">Physics</button>
+    <button type="button" class="chip" data-book-chip="bio" aria-pressed="true">Bio</button>
+  </div>
+  <div class="group" role="group" aria-label="Theme">
+    <span class="label">Theme</span>
+    <button type="button" class="chip" data-theme-chip="light" aria-pressed="false">Light</button>
+    <button type="button" class="chip" data-theme-chip="dark" aria-pressed="false">Dark</button>
+  </div>
+</div>
+
+<main>
+
+  <!-- 5.1 Lesson header (hero) -->
+  <section id="s-hero" class="hero" data-toc="Opening">
+    <div>
+      <div class="label">Specimen &middot; shared runtime</div>
+      <h1>One page shows every part. Each book wears <span class="flip">its own colours.</span></h1>
+      <p class="lede">This page holds every component of the textbook standard, every widget type, one Enrichment block and one working simulation. Switch the book tokens and the theme above. Nothing on the page is styled by hand.</p>
+      <div class="meta-strip">
+        <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>Not a lesson</b>This is the runtime's own test page. No book links to it.</div></div>
+        <div class="meta-block"><div class="k">Objective</div><div class="v">You can check that every component reads well in three colour sets and two themes.</div></div>
+        <div class="meta-block"><div class="k">Scope</div><div class="v">Components from section 5 of the standard, the Sim Standard, and Enrichment. The words are samples.</div></div>
+      </div>
+
+      <div class="synopsis-wrapper">
+        <button class="btn ghost" type="button" data-more="synopsis">Show synopsis</button>
+        <div class="more-body synopsis-body">
+          <div class="synopsis-grid">
+            <div class="synopsis-claims">
+              <h4>Core claims</h4>
+              <ul>
+                <li>A body variable has a set point.</li>
+                <li>A sensor notices a drift from it.</li>
+                <li>A response pushes the variable back.</li>
+              </ul>
+            </div>
+            <div class="synopsis-figure">
+              <h4>One figure</h4>
+              <svg viewBox="0 0 200 90" role="img" aria-label="A drift away from the set point and a response that returns to it.">
+                <line x1="10" y1="45" x2="190" y2="45" stroke="var(--ink-mute)" stroke-dasharray="5 4"/>
+                <path d="M10 45 C50 45 60 15 95 20 C130 25 140 45 190 45" fill="none" stroke="var(--accent)" stroke-width="3"/>
+                <text x="10" y="80" fill="var(--ink-soft)" font-family="var(--mono)" style="font-size: var(--dia-label-size)">drift, then return</text>
+              </svg>
+            </div>
+            <div class="synopsis-checklist">
+              <h4>Can you</h4>
+              <ul>
+                <li><input type="checkbox" id="syn-1"><label for="syn-1">Name the set point?</label></li>
+                <li><input type="checkbox" id="syn-2"><label for="syn-2">Name the sensor?</label></li>
+                <li><input type="checkbox" id="syn-3"><label for="syn-3">Name the response?</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+    </div>
+  </section>
+
+  <!-- 5.2 Text components -->
+  <section id="s-text" data-toc="Text and callouts">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">01</span><span class="label">Text</span></div>
+      <h2>Text is styled by element</h2>
+      <p>This paragraph has no class. It is 20px Spectral at a 1.65 line height, and it never sets its own size. A <strong class="term" data-term="set-point">set point</strong> is a term with a glossary entry. Hover it, tap it, or tab to it.</p>
+      <p>A second paragraph sits one text gap below the first. Words like <em>this one</em> are plain italic in the text colour. A formula such as CO<sub>2</sub> or H<sub>2</sub>O uses sub and sup tags in the text.</p>
+      <h3>A subhead has 2.25rem above it</h3>
+      <p>Lists take the prose style by element.</p>
+      <ul>
+        <li>Items in a bulleted list.</li>
+        <li>A second item in the same list.</li>
+      </ul>
+      <ol>
+        <li>Items in a numbered list.</li>
+        <li>A second numbered item.</li>
+      </ol>
+      <h4>A card or sim title</h4>
+      <p class="hint">A hint is 14px, in the display face, in the soft text colour.</p>
+      <div class="eq-display">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6 O<sub>2</sub> &rarr; 6 CO<sub>2</sub> + 6 H<sub>2</sub>O</div>
+
+      <div class="callout">
+        <div class="label">The one idea to hold onto</div>
+        <p>A control system keeps a variable near its set point by pushing against every drift.</p>
+      </div>
+      <div class="callout">
+        <div class="label">Common mistake</div>
+        <p>Students say the response stops the drift at once. It slows the drift, and then the variable returns.</p>
+      </div>
+      <div class="brief">
+        <div class="label">Phenomenon</div>
+        <p>A runner finishes a race in hot air. Her core temperature rises by less than one degree.</p>
+      </div>
+
+      <h3>Colour tokens in this set</h3>
+      <div class="specimen-swatches" aria-label="Colour tokens of the selected book">
+        <div data-token="paper">paper</div>
+        <div data-token="paper-2">paper-2</div>
+        <div data-token="card">card</div>
+        <div data-token="ink">ink</div>
+        <div data-token="accent">accent</div>
+        <div data-token="good">good</div>
+        <div data-token="bad">bad</div>
+        <div data-token="warn">warn</div>
+        <div data-token="cool">cool</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Figures and tables -->
+  <section id="s-figures" data-toc="Figures and tables">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">02</span><span class="label">Figures and tables</span></div>
+      <h2>A figure takes a width tier</h2>
+      <figure class="figure figure--md">
+        <div class="diagram">
+          <svg viewBox="0 0 560 280" role="img" aria-label="A line that rises, levels off, and then falls back to a dashed set point line.">
+            <line x1="46.7" y1="163.3" x2="536.7" y2="163.3" stroke="var(--ink-mute)" stroke-width="3.5" stroke-dasharray="6 4"/>
+            <path d="M46.7 163.3 C140 163.3 163.3 70 256.7 70 C350 70 373.3 163.3 536.7 163.3" fill="none" stroke="var(--accent)" stroke-width="4"/>
+            <circle cx="256.7" cy="70" r="11.7" fill="var(--ink)"/>
+            <text x="46.7" y="242.7" fill="var(--ink-soft)" font-family="var(--mono)" style="font-size: var(--dia-label-size)">time</text>
+            <text x="284.7" y="60.7" fill="var(--ink-soft)" font-family="var(--mono)" style="font-size: var(--dia-label-size)">peak</text>
+          </svg>
+        </div>
+        <figcaption><b>Figure 2.1</b> the variable drifts, peaks, then returns to the set point</figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <caption>Table 2.1. Core temperature at three air temperatures</caption>
+          <thead><tr><th scope="col">Air</th><th scope="col" class="num">Air (&deg;C)</th><th scope="col" class="num">Core (&deg;C)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Cold day</th><td class="num">5</td><td class="num">36.9</td></tr>
+            <tr><th scope="row">Mild day</th><td class="num">20</td><td class="num">37.0</td></tr>
+            <tr><th scope="row">Hot day</th><td class="num">38</td><td class="num">37.2</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5.3 Checks -->
+  <section id="s-checks" data-toc="Checkpoints">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03</span><span class="label">Checkpoints</span></div>
+      <h2>A checkpoint opens only after a choice</h2>
+
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "choice",
+          "prompt": "A sensor reads a core temperature of 38.5 degrees Celsius. The set point is 37. What does the control center do?",
+          "options": [
+            {"label": "It starts the responses that lose heat.", "correct": true, "feedback": "The variable is above its set point, so the response must lower it. Sweating and wider skin vessels both move heat out."},
+            {"label": "It starts the responses that make heat.", "correct": false, "feedback": "That answer fits a drop below the set point. Here the drift is upward, so the response must work the other way."},
+            {"label": "It waits until the drift stops by itself.", "correct": false, "feedback": "A drift does not stop by itself. Without a response the variable keeps moving away from the set point."}
+          ],
+          "reveal": "<p>Negative feedback means the response opposes the change. A rise brings a response that lowers. A drop brings a response that raises.</p>"
+        }
+        </script>
+      </div>
+
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "free",
+          "prompt": "In your own words, say why the response to a drift has to point the opposite way.",
+          "minChars": 30,
+          "reveal": "A response that pushed the same way would make the drift bigger. The body would move further from the set point each time. A response that pushes the opposite way brings the variable back."
+        }
+        </script>
+      </div>
+
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "drill",
+          "items": [
+            {
+              "prompt": "A runner's core temperature rises. Which response helps?",
+              "options": [
+                {"label": "Sweating", "correct": true, "feedback": "Evaporating sweat takes heat from the skin, so it lowers the core temperature."},
+                {"label": "Shivering", "correct": false, "feedback": "Shivering makes heat. That answer fits a drop in temperature, not a rise."}
+              ]
+            },
+            {
+              "prompt": "A swimmer's core temperature falls. Which response helps?",
+              "options": [
+                {"label": "Narrower skin vessels", "correct": true, "feedback": "Less blood reaches the skin, so less heat leaves the body."},
+                {"label": "Wider skin vessels", "correct": false, "feedback": "Wider vessels send more blood to the skin and lose more heat. That fits a rise in temperature."}
+              ]
+            }
+          ],
+          "reveal": "<p>Each pair shows the same rule. The response always opposes the drift.</p>"
+        }
+        </script>
+      </div>
+
+      <h3>Recall blanks</h3>
+      <div class="recall">
+        <div class="label">Recall</div>
+        <p class="recall-sentence">The value a system pulls a variable back to is the <input class="blank" data-answer="set-point|set point" aria-label="Blank 1"> and the part that notices a drift is the <input class="blank" data-answer="sensor|receptor" aria-label="Blank 2">.</p>
+        <div class="recall-actions">
+          <button class="btn" type="button" data-recall-check>Check</button>
+          <button class="btn ghost" type="button" data-recall-reveal>Show answers</button>
+          <button class="btn ghost" type="button" data-recall-reset>Reset</button>
+          <span class="feedback" data-recall-feedback role="status"></span>
+        </div>
+      </div>
+
+      <h3>Written response</h3>
+      <div class="exam-frame">
+        <div class="exam-meta"><span class="exam-src">Written response</span><span class="exam-marks">3 marks</span></div>
+        <p class="exam-q">Explain how sweating helps return core temperature to its set point after a hard run.</p>
+        <textarea class="textbox" aria-label="Your answer"></textarea>
+        <div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+        <div class="scheme">
+          <div class="scheme-card">
+            <div class="label">Scoring guide</div>
+            <ul class="pts">
+              <li>You say the sensor notices a rise in core temperature.</li>
+              <li>You say the control center signals the sweat glands.</li>
+              <li>You say evaporating sweat takes heat from the skin.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3>Model answer</h3>
+      <div class="card" id="specimen-peek">
+        <p>In your own words, say why the response to a drift has to point the opposite way.</p>
+        <textarea class="textbox" aria-label="Your self-explanation"></textarea>
+        <div><button class="btn ghost" type="button" data-peek disabled>Compare with a model answer</button></div>
+        <div class="peek-box">
+          <div class="callout">
+            <div class="label">One way to say it</div>
+            <p>A response that pushed the same way would make the drift bigger. A response that pushes the opposite way brings the variable back.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other widgets -->
+  <section id="s-widgets" data-toc="Other widgets">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04</span><span class="label">Other widgets</span></div>
+      <h2>Seven more widget types</h2>
+
+      <h3>Faded worked example</h3>
+      <div data-widget="faded-example">
+        <script type="application/json" class="w-config">
+        {
+          "model": {
+            "title": "Worked example: warming from 20 to 35 degrees",
+            "steps": [
+              {"label": "1. Read the start and end", "work": "Start 20 &deg;C, end 35 &deg;C", "why": "The change is always end minus start."},
+              {"label": "2. Subtract", "work": "35 &minus; 20 = 15 &deg;C", "why": "A positive change means a rise."}
+            ]
+          },
+          "yours": {
+            "title": "Your turn: warming from 12 to 30 degrees",
+            "checkMode": "step",
+            "steps": [
+              {"label": "1. Read the start and end", "given": "Start 12 &deg;C, end 30 &deg;C"},
+              {"label": "2. Subtract", "blank": {"type": "numeric", "answer": 18, "tol": 0, "prompt": "End minus start (&deg;C)", "feedback_wrong": "Subtract the start from the end: 30 minus 12.", "feedback_right": "30 minus 12 is 18, a rise of 18 degrees."}}
+            ]
+          }
+        }
+        </script>
+      </div>
+
+      <h3>Scaffold: statement bank</h3>
+      <div data-widget="scaffold">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "bank",
+          "chain": true,
+          "slots": [
+            {"id": "a", "label": "1. Sensor"},
+            {"id": "b", "label": "2. Control center"},
+            {"id": "c", "label": "3. Response"}
+          ],
+          "bank": [
+            {"text": "Skin nerves notice a rise in temperature.", "slot": "a", "feedback": "The sensor notices the change first."},
+            {"text": "The hypothalamus compares it with the set point.", "slot": "b", "feedback": "The control center makes the comparison."},
+            {"text": "Sweat glands release sweat.", "slot": "c", "feedback": "The response is the action that lowers the temperature."},
+            {"text": "The skin stops sensing anything.", "slot": null, "feedback": "Sensing continues the whole time. The loop depends on it."}
+          ]
+        }
+        </script>
+      </div>
+
+      <h3>Scaffold: free slots</h3>
+      <div data-widget="scaffold">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "free",
+          "slots": [
+            {"id": "s1", "label": "1. What drifted", "model": "Core temperature rose above 37 degrees Celsius."},
+            {"id": "s2", "label": "2. What responded", "model": "The sweat glands released sweat, and the skin vessels widened."}
+          ]
+        }
+        </script>
+      </div>
+
+      <h3>Scaffold: table</h3>
+      <div data-widget="scaffold">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "table",
+          "table": {
+            "headers": ["Cup", "Start (&deg;C)", "Change (&deg;C)", "End (&deg;C)"],
+            "rows": [
+              [{"given": "A"}, {"given": "90"}, {"blank": {"type": "numeric", "answer": -40, "tol": 0, "feedback_wrong": "The cup cooled, so the change is negative."}}, {"given": "50"}],
+              [{"given": "B"}, {"given": "60"}, {"given": "-10"}, {"blank": {"type": "numeric", "answer": 50, "tol": 0, "feedback_wrong": "Add the change to the start: 60 plus negative 10."}}]
+            ]
+          }
+        }
+        </script>
+      </div>
+
+      <h3>Step-through builder</h3>
+      <div class="figure figure--sm">
+        <div class="diagram" id="spec-step-diagram">
+          <svg viewBox="0 0 560 336" role="img" aria-label="A loop in three stages: a rise, a sensor, and a response.">
+            <g id="spec-state-1" class="svg-step-layer"><circle cx="280" cy="168" r="78.4" fill="none" stroke="var(--accent)" stroke-width="4"/><text x="280" y="291.2" text-anchor="middle" fill="var(--ink-soft)" font-family="var(--mono)" style="font-size: var(--dia-label-size)">drift</text></g>
+            <g id="spec-state-2" class="svg-step-layer"><circle cx="280" cy="168" r="78.4" fill="none" stroke="var(--accent)" stroke-width="4"/><circle cx="280" cy="168" r="123.2" fill="none" stroke="var(--ink-mute)" stroke-width="4" stroke-dasharray="4 3"/><text x="280" y="324.8" text-anchor="middle" fill="var(--ink-soft)" font-family="var(--mono)" style="font-size: var(--dia-label-size)">sensor</text></g>
+          </svg>
+        </div>
+      </div>
+      <div data-widget="step-builder">
+        <script type="application/json" class="w-config">
+        {
+          "diagramId": "spec-step-diagram",
+          "steps": [
+            {
+              "state": "spec-state-1",
+              "question": "Core temperature drifts above the set point. What comes first in the loop?",
+              "options": [
+                {"label": "A sensor notices the change.", "correct": true, "feedback": "Nothing can respond until something notices the drift."},
+                {"label": "The response starts.", "correct": false, "feedback": "The response needs a signal. The sensor sends it, so the sensor comes first."}
+              ]
+            },
+            {
+              "state": "spec-state-2",
+              "question": "The sensor has sent its signal. What does the control center do next?",
+              "options": [
+                {"label": "It compares the reading with the set point.", "correct": true, "feedback": "The comparison tells it which way the variable drifted and by how much."},
+                {"label": "It ends the loop.", "correct": false, "feedback": "The loop only ends when the variable is back at the set point."}
+              ]
+            }
+          ],
+          "finale": "<p>You walked the loop in order: drift, sensor, control center, response.</p>"
+        }
+        </script>
+      </div>
+
+      <h3>Sort and classify</h3>
+      <div data-widget="sort-classify">
+        <script type="application/json" class="w-config">
+        {
+          "categories": [
+            {"id": "lose", "label": "Loses heat"},
+            {"id": "make", "label": "Makes heat"}
+          ],
+          "items": [
+            {"text": "<strong>Sweating</strong>", "category": "lose", "feedback_right": "Evaporating sweat takes heat from the skin.", "feedback_wrong": "Sweating moves heat out of the body. It does not make heat."},
+            {"text": "<strong>Shivering</strong>", "category": "make", "feedback_right": "Shivering muscles release heat as they contract.", "feedback_wrong": "Shivering muscles release heat. It does not take heat away."}
+          ],
+          "reveal": "<p>Responses that lose heat answer a rise. Responses that make heat answer a drop.</p>"
+        }
+        </script>
+      </div>
+
+      <h3>Predict and run</h3>
+      <div data-widget="predict-run">
+        <script type="application/json" class="w-config">
+        {
+          "predictionType": "choice",
+          "prompt": "Predict what happens to a cup of hot water left in a cool room.",
+          "options": [
+            {"label": "It cools quickly at first, then more slowly.", "correct": true, "feedback": "The larger the gap, the faster the heat leaves. As the gap closes, the cooling slows."},
+            {"label": "It cools at the same rate the whole time.", "correct": false, "feedback": "A steady rate would send the cup far below room temperature. The rate falls as the gap shrinks."}
+          ],
+          "reveal": "<p>The cooling rate depends on the gap between the cup and the room.</p>"
+        }
+        </script>
+        <div class="figure figure--md" data-motion="step" data-step-count="3" data-step-labels="Hot|Warm|Room temperature">
+          <div class="diagram" data-step="1"><svg viewBox="0 0 560 233" role="img" aria-label="A cup at 90 degrees Celsius."><rect x="46.7" y="46.7" width="466.7" height="140" rx="28" fill="none" stroke="var(--accent)" stroke-width="4"/><text x="280" y="140" text-anchor="middle" fill="var(--ink)" font-family="var(--mono)" style="font-size: var(--dia-label-size)">90 &deg;C</text></svg></div>
+          <div class="diagram" data-step="2"><svg viewBox="0 0 560 233" role="img" aria-label="A cup at 50 degrees Celsius."><rect x="46.7" y="46.7" width="466.7" height="140" rx="28" fill="none" stroke="var(--warn)" stroke-width="4"/><text x="280" y="140" text-anchor="middle" fill="var(--ink)" font-family="var(--mono)" style="font-size: var(--dia-label-size)">50 &deg;C</text></svg></div>
+          <div class="diagram" data-step="3"><svg viewBox="0 0 560 233" role="img" aria-label="A cup at 22 degrees Celsius."><rect x="46.7" y="46.7" width="466.7" height="140" rx="28" fill="none" stroke="var(--cool)" stroke-width="4"/><text x="280" y="140" text-anchor="middle" fill="var(--ink)" font-family="var(--mono)" style="font-size: var(--dia-label-size)">22 &deg;C</text></svg></div>
+        </div>
+      </div>
+
+      <h3>Diagnose the error</h3>
+      <div data-widget="diagnose-error">
+        <script type="application/json" class="w-config">
+        {
+          "spots": [
+            {"id": "coeff", "correct": true, "feedback": "The coefficient on water is 3, but balancing needs 2 water for 2 hydrogen and 1 oxygen."},
+            {"id": "formula", "correct": false, "feedback": "H<sub>2</sub> is the right formula for hydrogen gas. The mistake is elsewhere."},
+            {"id": "op", "correct": false, "feedback": "The plus sign correctly joins the two reactants."}
+          ],
+          "reveal": "<p>The balanced equation is 2 H<sub>2</sub> + O<sub>2</sub> &rarr; 2 H<sub>2</sub>O. Both sides then hold 4 hydrogen atoms and 2 oxygen atoms.</p>"
+        }
+        </script>
+        <div class="w-prompt">Click the part of the equation that is wrong.</div>
+        <div class="w-workspace"><div class="eq-display"><span>2 </span><span class="w-spot" data-spot-id="formula">H<sub>2</sub></span><span> </span><span class="w-spot" data-spot-id="op">+</span><span> O<sub>2</sub> &rarr; </span><span class="w-spot" data-spot-id="coeff">3</span><span> H<sub>2</sub>O</span></div></div>
+      </div>
+
+      <h3>Construct with live validation</h3>
+      <div data-widget="construct-validate">
+        <script type="application/json" class="w-config">
+        {
+          "items": [
+            {"id": "Na", "label": "Na<sup>+</sup>", "charge": 1},
+            {"id": "O", "label": "O<sup>2&minus;</sup>", "charge": -2}
+          ],
+          "targetRatio": {"Na": 2, "O": 1},
+          "feedback_right": "Two Na<sup>+</sup> ions (+2) balance one O<sup>2&minus;</sup> ion (&minus;2), so the compound is neutral.",
+          "feedback_wrong": "The charges do not cancel yet. Change the counts until the total charge is zero.",
+          "reveal": "<p>Sodium oxide has two sodium ions for every oxide ion.</p>"
+        }
+        </script>
+        <div class="w-prompt">Build a neutral compound from Na<sup>+</sup> and O<sup>2&minus;</sup> ions.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Motion primitives -->
+  <section id="s-motion" data-toc="Motion primitives">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">05</span><span class="label">Motion primitives</span></div>
+      <h2>Step, scrub and zoom move only on request</h2>
+
+      <h3>Step controller</h3>
+      <div class="figure figure--md" data-motion="step" data-step-count="3" data-step-labels="Before|During|After">
+        <div class="diagram" data-step="1"><svg viewBox="0 0 560 233" role="img" aria-label="Before: two separate circles."><circle cx="186.7" cy="116.7" r="65.3" fill="none" stroke="var(--ink)" stroke-width="4"/><circle cx="373.3" cy="116.7" r="65.3" fill="none" stroke="var(--accent)" stroke-width="4"/></svg></div>
+        <div class="diagram" data-step="2"><svg viewBox="0 0 560 233" role="img" aria-label="During: the circles touch."><circle cx="214.7" cy="116.7" r="65.3" fill="none" stroke="var(--ink)" stroke-width="4"/><circle cx="345.3" cy="116.7" r="65.3" fill="none" stroke="var(--accent)" stroke-width="4"/></svg></div>
+        <div class="diagram" data-step="3"><svg viewBox="0 0 560 233" role="img" aria-label="After: the circles overlap."><circle cx="242.7" cy="116.7" r="65.3" fill="none" stroke="var(--ink)" stroke-width="4"/><circle cx="317.3" cy="116.7" r="65.3" fill="none" stroke="var(--accent)" stroke-width="4"/></svg></div>
+      </div>
+
+      <h3>Scrub controller</h3>
+      <div class="figure figure--sm">
+        <div data-motion="scrub" data-scrub-fn="dummy-scale" data-scrub-min="0.5" data-scrub-max="2" data-scrub-step="0.1" data-scrub-value="1" data-scrub-label="Size of the circle" data-scrub-marks="0.5:Small|1:Same|2:Large">
+          <div class="diagram"><svg viewBox="0 0 100 100" role="img" aria-label="A circle that grows and shrinks as the slider moves."><circle class="scrub-shape" cx="50" cy="50" r="20" fill="none" stroke="var(--accent)" stroke-width="2"/></svg></div>
+        </div>
+      </div>
+
+      <h3>Zoom stage</h3>
+      <div class="figure figure--md">
+        <div data-motion="zoom" data-zoom-levels="2" data-zoom-labels="1x|4x" data-zoom-anchor="50,50,14">
+          <div data-zoom-level="macro"><svg viewBox="0 0 100 100" role="img" aria-label="A beaker of water seen from outside."><rect x="25" y="30" width="50" height="50" rx="4" fill="none" stroke="var(--ink)" stroke-width="2"/><path d="M30 50 C40 46 60 54 70 50" fill="none" stroke="var(--cool)" stroke-width="2"/></svg></div>
+          <div data-zoom-level="particulate"><svg viewBox="0 0 100 100" role="img" aria-label="Water particles moving past each other."><circle cx="25" cy="30" r="7" fill="var(--cool)"/><circle cx="50" cy="55" r="7" fill="var(--cool)"/><circle cx="72" cy="30" r="7" fill="var(--cool)"/><circle cx="30" cy="75" r="7" fill="var(--cool)"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5.4 Simulation shell -->
+  <section id="s-sim" data-toc="Simulation">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">06</span><span class="label">Simulation</span></div>
+      <h2>A simulation answers one question</h2>
+
+      <div class="sim-box" data-sim="cooling">
+        <div class="label">Simulation</div>
+        <h4>Does a cup of hot water ever reach room temperature?</h4>
+
+        <div data-widget="commit-reveal" data-sim-gate>
+          <script type="application/json" class="w-config">
+          {
+            "mode": "choice",
+            "prompt": "Predict where the cup is after one hour in a 20 degree room.",
+            "options": [
+              {"label": "Colder than the room", "correct": false, "feedback": "Heat only leaves while the cup is warmer than the room. Once they match, nothing pushes the cup lower."},
+              {"label": "Just above room temperature", "correct": true, "feedback": "The gap shrinks every minute, and the cooling slows with it. After an hour the cup is close to the room, but still a little warmer."},
+              {"label": "Exactly at room temperature", "correct": false, "feedback": "The cooling slows as the gap closes, so the last degrees take a very long time. The cup gets close and stays a little above."}
+            ],
+            "reveal": "<p>Now run the model and check your prediction against the line.</p>"
+          }
+          </script>
+        </div>
+
+        <div class="sim-stage" data-ratio="wide">
+          <canvas aria-label="Line graph of the cup's temperature in degrees Celsius against time in minutes, with a dashed line for room temperature."></canvas>
+        </div>
+
+        <div class="sim-controls">
+          <label class="slider-row">Room temperature <output>20 &deg;C</output>
+            <input type="range" min="5" max="30" step="1" value="20" data-unit="&deg;C" data-sim-room>
+          </label>
+          <button type="button" class="chip" aria-pressed="false" data-sim-lid>Lid on</button>
+          <button type="button" class="chip" data-sim-restart>Restart</button>
+        </div>
+
+        <div class="sim-readouts">
+          <div class="readout" data-readout="time"><span class="readout-label">Time</span><span class="readout-value">0 min</span></div>
+          <div class="readout" data-readout="cup"><span class="readout-label">Cup</span><span class="readout-value">90.0 &deg;C</span></div>
+          <div class="readout" data-readout="room"><span class="readout-label">Room</span><span class="readout-value">20 &deg;C</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Cooling</span>
+
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="line" data-token="accent"></span>Cup temperature</li>
+          <li><span class="key" data-shape="dash" data-token="cool"></span>Room temperature</li>
+          <li><span class="key" data-shape="dot" data-token="ink"></span>Now</li>
+        </ul>
+
+        <ol class="try-this">
+          <li>Press Restart and watch the line for 30 seconds. <strong>Look for:</strong> the line drops fast at first and then flattens. Press Record.</li>
+          <li>Move Room temperature to 30 degrees. <strong>Look for:</strong> the dashed line rises and the cup settles higher. Press Record when the run ends.</li>
+          <li>Turn Lid on and press Restart, or load the setup <button type="button" class="chip" data-preset="warm-lid">Load this setup</button> <strong>Look for:</strong> the line falls more slowly. Press Record.</li>
+        </ol>
+      </div>
+
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "choice",
+          "prompt": "Use the rows in your record table. The lid slowed the cooling. Which row shows the cup staying warmest, and why?",
+          "options": [
+            {"label": "The lid-on row, because less heat escapes the cup.", "correct": true, "feedback": "With the lid on, heat leaves more slowly, so the cup stays warmer at the same time."},
+            {"label": "The lid-off row, because the cup holds more heat.", "correct": false, "feedback": "The cup starts with the same heat in both rows. The lid changes only how fast it leaves."},
+            {"label": "The row with the warmest room, because the room adds heat.", "correct": false, "feedback": "A warmer room slows the loss, but it does not push heat into a cup that is already hotter."}
+          ],
+          "reveal": "<p>Only the recorded rows answer this. Compare the cup temperature at the same time in two rows.</p>"
+        }
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Enrichment -->
+  <section id="s-enrichment" data-toc="Enrichment">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">07</span><span class="label">Enrichment</span></div>
+      <h2>Enrichment is dashed, grey and optional</h2>
+      <p>A student who opens none of these blocks can finish the lesson. The block below goes past the assessment boundary.</p>
+      <details class="enrichment">
+        <summary><span class="tag-enrichment">Enrichment</span><h4>Why the cooling slows as the gap closes</h4></summary>
+        <p class="hint">Extra depth. The rest of the lesson works without it.</p>
+        <p>The rate of heat loss is proportional to the gap between the cup and the room. Halve the gap and the rate halves. A curve like this is called an exponential approach.</p>
+        <div data-widget="commit-reveal">
+          <script type="application/json" class="w-config">
+          {
+            "mode": "choice",
+            "prompt": "The gap is 40 degrees and the cup loses 4 degrees a minute. How fast does it lose heat when the gap is 20?",
+            "options": [
+              {"label": "2 degrees a minute", "correct": true, "feedback": "The rate is proportional to the gap, so half the gap gives half the rate."},
+              {"label": "4 degrees a minute", "correct": false, "feedback": "That treats the rate as constant. The rate falls with the gap."}
+            ],
+            "reveal": "<p>This is the same pattern the simulation drew.</p>"
+          }
+          </script>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="s-enrichment-section" data-toc="A whole Enrichment section" data-enrichment>
+    <div class="narrow">
+      <div class="section-tag"><span class="num">08</span><span class="label">Beyond the boundary</span><span class="tag-enrichment">Enrichment</span></div>
+      <h2>A whole section can be Enrichment</h2>
+      <details class="enrichment">
+        <summary><span class="tag-enrichment">Enrichment</span><h4>Set points can move</h4></summary>
+        <p>During a fever the set point itself rises. The body then works to hold the higher value, which is why a fever can bring chills.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Review check section -->
+  <section id="s-review" data-toc="Review check">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">09</span><span class="label">Review check</span></div>
+      <h2>A review opens with auto-checked items</h2>
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "drill",
+          "items": [
+            {
+              "prompt": "Which part notices a drift from the set point?",
+              "options": [
+                {"label": "The sensor", "correct": true, "feedback": "The sensor detects the change and sends the signal."},
+                {"label": "The response", "correct": false, "feedback": "The response acts after the signal. Noticing the drift is the sensor's job."}
+              ]
+            },
+            {
+              "prompt": "Which part compares the reading with the set point?",
+              "options": [
+                {"label": "The control center", "correct": true, "feedback": "The control center holds the set point and decides what to do."},
+                {"label": "The sensor", "correct": false, "feedback": "The sensor only reports the reading. The comparison happens in the control center."}
+              ]
+            }
+          ],
+          "reveal": "<p>Sensor, control center, response. Every loop in this unit has all three.</p>"
+        }
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next lesson (rendered by core.js in a real lesson; shown here by hand) -->
+  <nav class="lesson-nav" aria-label="Lessons">
+    <a class="next-lesson" href="specimen.html"><span class="nav-meta">Next lesson</span><span class="nav-title">1-2 &middot; The next lesson's name</span></a>
+  </nav>
+
+</main>
+
+<script src="core.js"></script>
+<script src="widgets.js"></script>
+<script src="sim.js"></script>
+</body>
+</html>

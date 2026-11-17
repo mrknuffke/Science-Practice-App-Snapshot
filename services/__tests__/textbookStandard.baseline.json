@@ -1,0 +1,508 @@
+{
+	"migrated": [
+		"bio",
+		"physics",
+		"chem"
+	],
+	"finished": [
+		"bio",
+		"physics",
+		"chem"
+	],
+	"lessons": {
+		"chem/1-1a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/1-1a_atomic-structure-electron-config.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/1-1b.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/1-1b_periodic-trends-reactivity.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/1-2a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/1-2a_bonding-electronegativity.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/1-2b.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/1-2b_molecular-polarity.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/1-2c.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/1-2c_chemical-nomenclature.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/1-2e.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/1-2e_reaction-types-balancing.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/1-3a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/1-3a_lewis-structures.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/1-3b.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/1-3b_imfs-properties.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/2-2a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/2-2a_physical-chemical-change.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/2-6a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/2-6a_structure-property-argument.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/2-7a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/2-7a_the-mole-molar-mass.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/2-7b.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/2-7b_mole-conversions.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/2-7c.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/2-7c_stoichiometry.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/3-14a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/3-14a_bond-energy-reaction-profiles.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/3-1a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/3-1a_temperature-heat-specific-heat.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/3-1b.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/3-1b_phase-changes-heating-curves.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/3-1c.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/3-1c_calorimetry-energy-systems.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/3-4a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/3-4a_thermal-equilibrium-heat-transfer.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/4-1a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/4-1a_reaction-rates-collision-theory.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/4-1b.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/4-1b_catalysis-and-enzymes.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/4-6a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/4-6a_dynamic-equilibrium-le-chatelier.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/4-6b.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/4-6b_human-equilibrium-blood-buffers.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/5-1a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/5-1a_stellar-fusion-solar-energy.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/5-2a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/5-2a_big-bang-cosmic-evidence.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/5-3a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/5-3a_stellar-nucleosynthesis-element-origins.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/5-4a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/5-4a_electromagnetic-radiation-matter.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"chem/5-8a.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"chem/5-8a_nuclear-reactions-radioactive-decay.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/1-1.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"physics/1-1_constant-velocity.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/1-2.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"physics/1-2_motion-graphs.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/1-3.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"physics/1-3_kinematics-equations.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/1-review_packet.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/2-1.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"physics/2-1_newtons-first-law.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/2-2.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"physics/2-2_newtons-second-law.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/2-3.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"physics/2-3_newtons-third-law.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/2-4.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"physics/2-4_friction-and-inclines.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/2-5.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"physics/2-5_coupled-systems-atwood.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"physics/2-review_packet.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"bio/1-1.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"bio/1-1_cellular-respiration.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"bio/1-2.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"bio/1-2_homeostasis-thermoregulation.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"bio/1-3.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"bio/1-3_osmoregulation-water-balance.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"bio/1-4.js": {
+			"hex": 0,
+			"styleWrites": 0
+		},
+		"bio/1-4_blood-glucose-regulation.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		},
+		"bio/1-review_packet.html": {
+			"styleAttrs": 0,
+			"fontSize": 0,
+			"fontFamily": 0,
+			"hex": 0,
+			"styleBlockLines": 0,
+			"inlineScripts": 0
+		}
+	},
+	"unregisteredLoops": [],
+	"unresolvedTerms": []
+}

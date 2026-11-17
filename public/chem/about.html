@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" data-book="chem" data-page="about">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>How This Book Was Built · SAS General Chemistry</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script src="../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../textbook/base.css">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/components.css">
+</head>
+<body class="colophon">
+
+
+<!-- HERO -->
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="label label-accent">Colophon</div>
+    <h1>How this book was <span class="flip">built</span>.</h1>
+    <p class="lede">A textbook usually arrives with no account of where it came from. This one has one, because how it was made shapes what you should trust it for. Below: who wrote what, the rules it was built under, what it can still get wrong, and a dated record of everything that has changed since the first lesson shipped.</p>
+
+    <div class="meta-strip">
+      <div class="meta-block">
+        <div class="k">Scope</div>
+        <div class="v"><b>27 lessons · 5 units</b>Full General Chemistry curriculum, covering all 15 High School Chemistry NGSS Performance Expectations across Semester 1 and Semester 2 storyline units.</div>
+      </div>
+      <div class="meta-block">
+        <div class="k">Built for</div>
+        <div class="v"><b>Singapore American School</b>Aligned to the NGSS-based General Chemistry course and its storyline units. Open to anyone (no account, no sign-in, no cost).</div>
+      </div>
+      <div class="meta-block">
+        <div class="k">Licence</div>
+        <div class="v"><b>CC BY-NC-SA 4.0</b>Take it, adapt it, teach with it. Credit the source, don't sell it, and share your version on the same terms.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 · WHAT THIS IS -->
+<section>
+  <div class="wrap narrow">
+    <div class="section-tag"><span class="num">01</span><h2>What this is, and what it isn't</h2></div>
+    <div class="stack">
+      <p>These pages are not first teaching. They assume you already sat through the lesson once and half-remember it. The job here is <strong>retrieval practice</strong>: pulling the idea out of your own head before the page will show you anything, wrapped around a second explanation framed differently from the one you got in class.</p>
+      <p>That is why almost nothing reveals itself until you commit to an answer. It isn't there to be difficult. Reading an explanation and recognising it as familiar feels like learning and mostly isn't; retrieving it cold is what actually moves it into memory. A page that let you skim to the answer would be more pleasant and less useful.</p>
+      <p>It is also not a quiz bank, not a grade, and not watching you. Nothing you type here is sent anywhere. Your progress lives in your own browser and stays there.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · WHO WROTE WHAT -->
+<section>
+  <div class="wrap narrow">
+    <div class="section-tag"><span class="num">02</span><h2>Who wrote what</h2></div>
+    <div class="stack">
+      <p>This book was built by one teacher working with AI coding agents (principally Anthropic's Claude models, with Google's Gemini models doing some of the generation work). The specific tools have already changed several times and will change again, so naming them is pointless. The division of labour is the part that matters, and it hasn't moved.</p>
+    </div>
+
+    <div class="split">
+      <div class="split-col">
+        <h3>The teacher</h3>
+        <ul>
+          <li>Decides what a lesson is for and what a student should be able to do at the end of it.</li>
+          <li>Writes and verifies the chemistry (every value, every ΔEN cutoff, every balanced equation, every molar mass) against the course review sheets.</li>
+          <li>Names the misconceptions. The line in a lesson that predicts your wrong move before you make it comes from watching hundreds of students make exactly that move.</li>
+          <li>Reads every page in a browser, in both light and dark mode, before it ships. Most defects here are visual, and only a human looking at the screen catches those.</li>
+          <li>Signs off. Nothing goes live unreviewed.</li>
+        </ul>
+      </div>
+      <div class="split-col">
+        <h3>The AI</h3>
+        <ul>
+          <li>Writes the code: page structure, styling, the interactive widgets, the particle and Bohr diagram renderers, the progress and review logic.</li>
+          <li>Drafts prose against a written voice contract, then gets edited.</li>
+          <li>Does the tedious, error-prone sweeps: retrofitting a design token across a thousand lines, auditing every glossary link, and finding the diagram that silently stopped rendering.</li>
+          <li>Follows a standing set of constraints written to catch the specific ways these models go wrong: inventing chemistry that looks plausible, over-engineering a simple thing, quietly "improving" code nobody asked it to touch.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stack">
+      <p>The honest summary: the AI made this possible at all: a single teacher does not otherwise hand-build a 27-lesson interactive curriculum with a working widget framework across two semesters. It also introduced a good share of the bugs listed further down this page. Both things are true, and the version history below is deliberately unflattering about it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · THE RULES -->
+<section>
+  <div class="wrap narrow">
+    <div class="section-tag"><span class="num">03</span><h2>The rules it was built under</h2></div>
+    <p>Every lesson is held to the same written constraints. They exist because each one was violated at least once and the result was worse than the rule.</p>
+
+    <ul class="rules">
+      <li><b>Verify all chemistry. Never trust memory.</b> Any number that reaches a student page gets checked against the course review sheets, not recalled. This is the rule that matters most, because a confident, wrong, well-formatted chemistry claim is the worst thing this project could produce.</li>
+      <li><b>Commit before reveal.</b> No widget shows its answer to a student who hasn't answered. Three widgets shipped in August 2026 that broke this and displayed their answer with no interaction at all. They were rebuilt.</li>
+      <li><b>Wrong-answer feedback teaches or it doesn't ship.</b> "Incorrect, review the section above" is banned outright. Feedback has to name why that particular wrong answer was tempting: "losing 6 gets sulfur to a full shell too, but moving six electrons costs far more than moving two."</li>
+      <li><b>Honest beats pretty.</b> If a diagram can't be made chemically correct at the level shown, the claim gets simplified rather than fudged. The diagram generator refuses to draw a covalent structure for NaCl and refuses to guess at O<sub>3</sub>, because a diagram that only <em>looks</em> right is worse than no diagram.</li>
+      <li><b>One accent colour.</b> Vermilion is the only accent. Green means "correct" and nothing else: never a category, never decoration. Once green means two things it means nothing.</li>
+      <li><b>Explain the concept before naming it.</b> Terms get defined in plain English first, then labelled. Defined terms carry a dotted underline and a hover definition drawn from a shared glossary of over 140 entries.</li>
+      <li><b>Render before declaring it done.</b> Open it in a browser, in both themes, at both widths, and look at it. A surprising number of bugs in the history below were found by nobody doing this, and fixed by somebody finally doing it.</li>
+      <li><b>No LaTeX, no build step.</b> Formulas are plain HTML: H<sub>2</sub>O, not markup for a maths engine. The whole site is static HTML, CSS, and JavaScript with no framework and no bundler, so it will still open in a browser in ten years.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 04 · UNDER THE HOOD -->
+<section>
+  <div class="wrap narrow">
+    <div class="section-tag"><span class="num">04</span><h2>What's underneath</h2></div>
+    <div class="stack">
+      <p>Everything shared between lessons lives in one place, so a fix lands everywhere at once instead of in one page and not the other twelve.</p>
+    </div>
+
+    <div class="figure figure--full">
+      <svg viewBox="0 0 640 232" role="img" aria-label="Diagram: the shared assets that every lesson page loads.">
+        <!-- lessons row -->
+        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-mute)" text-anchor="middle">
+          <text x="320" y="16" letter-spacing="1.6">13 LESSON PAGES + DASHBOARD</text>
+        </g>
+        <g stroke="var(--ink-mute)" stroke-width="1" fill="var(--card)">
+          <rect x="40" y="28" width="80" height="26" />
+          <rect x="130" y="28" width="80" height="26" />
+          <rect x="220" y="28" width="80" height="26" />
+          <rect x="340" y="28" width="80" height="26" />
+          <rect x="430" y="28" width="80" height="26" />
+          <rect x="520" y="28" width="80" height="26" />
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-soft)" text-anchor="middle">
+          <text x="80" y="45">1-1a</text>
+          <text x="170" y="45">1-1b</text>
+          <text x="260" y="45">1-2a</text>
+          <text x="380" y="45">2-7c</text>
+          <text x="470" y="45">1-2e</text>
+          <text x="560" y="45">2-6a</text>
+        </g>
+        <text x="320" y="46" font-family="IBM Plex Mono, monospace" font-size="13" fill="var(--ink-mute)" text-anchor="middle">· · ·</text>
+
+        <!-- connectors -->
+        <g stroke="var(--hair)" stroke-width="1" fill="none">
+          <path d="M80 54 L80 74 L560 74 L560 54" />
+          <path d="M170 54 L170 74" />
+          <path d="M260 54 L260 74" />
+          <path d="M380 54 L380 74" />
+          <path d="M470 54 L470 74" />
+          <path d="M320 74 L320 92" stroke="var(--accent)" stroke-width="1.4" />
+        </g>
+
+        <!-- shared assets -->
+        <rect x="40" y="92" width="560" height="120" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="4 3" />
+        <text x="52" y="108" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="1.4" fill="var(--accent)">SHARED ASSETS: ONE COPY, LOADED BY EVERY PAGE</text>
+
+        <g stroke="var(--ink-mute)" stroke-width="1" fill="var(--card)">
+          <rect x="56" y="120" width="126" height="36" />
+          <rect x="194" y="120" width="126" height="36" />
+          <rect x="332" y="120" width="126" height="36" />
+          <rect x="470" y="120" width="114" height="36" />
+          <rect x="56" y="164" width="126" height="36" />
+          <rect x="194" y="164" width="126" height="36" />
+          <rect x="332" y="164" width="126" height="36" />
+          <rect x="470" y="164" width="114" height="36" />
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="8.5" fill="var(--ink)" text-anchor="middle">
+          <text x="119" y="136">tokens.css</text>
+          <text x="257" y="136">components.css</text>
+          <text x="395" y="136">book.js</text>
+          <text x="527" y="136">glossary.js</text>
+          <text x="119" y="180">elements.js</text>
+          <text x="257" y="180">reference-center.js</text>
+          <text x="395" y="180">molecule-renderer.js</text>
+          <text x="527" y="180">particle-renderer.js</text>
+        </g>
+        <g font-family="IBM Plex Mono, monospace" font-size="7" fill="var(--ink-mute)" text-anchor="middle">
+          <text x="119" y="148">colour · type · scale</text>
+          <text x="257" y="148">widget + diagram styles</text>
+          <text x="395" y="148">progress · resume · review</text>
+          <text x="527" y="148">≈80 term tooltips</text>
+          <text x="119" y="192">periodic data, Z 1–36</text>
+          <text x="257" y="192">the slide-out drawer</text>
+          <text x="395" y="192">Lewis structures</text>
+          <text x="527" y="192">particle scenes</text>
+        </g>
+      </svg>
+      <div class="diagram-cap">one fix in a shared file lands on every lesson at once · that is the whole reason it is built this way</div>
+    </div>
+
+    <div class="stack">
+      <p><strong>The widget framework.</strong> Interactive elements are described as data, not hand-coded per lesson. A page declares that it wants a predict-then-reveal, a sort-and-classify, a fill-in-the-blank recall, a step builder, a faded worked example, or a free-text self-explanation, and the shared engine renders it, marks it, saves it, and prints it. That is why a widget behaves identically in lesson 1-1a and lesson 2-7c, and why a bug in one is a bug in all of them.</p>
+      <p><strong>Dual-organization dashboard &amp; concept mapping.</strong> The home dashboard organizes lessons either by classroom Unit Storylines (Units 1–5) or by official NGSS Performance Expectations (all 15 chemistry PEs) with sticky persistence in browser storage. The interactive concept map visualizes mastery flows and prerequisite pathways across all 27 lessons.</p>
+      <p><strong>The Reference Center.</strong> The drawer that slides out from the side (periodic table for the first 36 elements, thermochemical tables, bond energies, specific heats, formulas, mole-mass converter, calculator) is one implementation shared by every lesson and the dashboard. Until September 2026 it only existed inside lessons, and the home page couldn't open it.</p>
+      <p><strong>Progress and review.</strong> Completed checkpoints are stored per lesson and scheduled for review on a Leitner spaced-repetition cycle: get something right and it comes back later; get it wrong and it comes back sooner. Lessons also remember the furthest section you reached and offer to resume there. All of it is in your browser's local storage: clear your browser data and it is gone, and there is no copy anywhere else.</p>
+      <p><strong>Print.</strong> Every lesson has a print path that unrolls the interactive elements into answerable paper, with a glossary appendix. One accepted gap: a few bespoke interactives print their on-screen controls as-is rather than converting into paper questions.</p>
+      <p><strong>The diagram generator.</strong> A separate teacher-facing tool at <a href="diagram-generator/index.html">/chem/diagram-generator/</a> that builds Bohr models, Lewis structures, molecular models, and reaction diagrams as SVG for slides and handouts. It shares the book's conventions and its refusal to draw chemistry it can't draw honestly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · WHAT IT GETS WRONG -->
+<section>
+  <div class="wrap narrow">
+    <div class="section-tag"><span class="num">05</span><h2>What it still gets wrong</h2></div>
+    <div class="stack">
+      <p>Errors here are found by people reading carefully, and most of the ones in the history below were found late. Assume the same is true of the ones still in it.</p>
+      <p>If a number looks wrong, if a widget marks a correct answer wrong, if a diagram contradicts what you were told in class, say so. Your teacher's explanation wins over this page, and a report gets it fixed for everyone in the class after you. The <strong>Submit Feedback</strong> button in the top bar goes straight to the author.</p>
+      <p>Two known limitations worth stating outright. The chemistry scope is deliberately focused: this covers the assessed targets of the five course storyline units and focuses directly on the 15 NGSS Performance Expectations, skipping miscellaneous material that a broader survey textbook would include. And the pages assume the class sequence: read cold, without the lesson that preceded them, some of the framing will not land.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · VERSION HISTORY -->
+<section>
+  <div class="wrap narrow">
+    <div class="section-tag"><span class="num">06</span><h2>Version history</h2></div>
+    <p>Newest first. Dates are when the change went live.</p>
+
+    <div class="history">
+      <div class="rel">
+        <div class="rel-date">17 November 2026</div>
+        <div class="rel-title">The Code Is Free to Borrow</div>
+        <p>The code behind this book, the main app and its simulations is now posted on GitHub for other teachers. The link is in Credit and licence, below. Nothing in the lessons changed.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">8 November 2026</div>
+        <div class="rel-title">Teacher Materials No Longer Posted</div>
+        <p>The course's reference files, including the support pack answer keys and Consensus Notes, are no longer posted on this site. They stay with the teachers who wrote them. The lessons and practice modules are unchanged.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">2 November 2026</div>
+        <div class="rel-title">New Elements on Every Retake</div>
+        <p>Twenty questions in the HS-PS1-1 and HS-PS1-2 practice now pick their elements or compounds each time you start. Trend rankings, ion charges, isotope sorting, reactivity, hazards, compound names and formulas each draw from a short list of checked sets. Every set has its own options and explanation, so a retake asks you to reason again instead of remembering an order.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">2 November 2026</div>
+        <div class="rel-title">New Numbers on Every Retake</div>
+        <p>Calculation questions in adaptive practice now change their numbers each time you start a standard. Molar mass, mole conversions, limiting reactants, half-life, heat and calorimetry questions all draw a new set of values, so a retake is real practice instead of a memory test. The steps and the common mistakes stay the same.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">2 November 2026</div>
+        <div class="rel-title">Plainer Practice Receipts</div>
+        <p>Practice receipts now carry a check code instead of a "seal." Your teacher can use it to see that nobody changed the results by hand. The receipt pages say plainly that the code does not prove who did the work. Buttons, hints and headings in adaptive practice now use the same plain words as the textbook, and the HS-PS1-7 questions on moles and stoichiometry read more clearly.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">2 November 2026</div>
+        <div class="rel-title">Adaptive Practice Scores Show What You Can Do Alone</div>
+        <p>Each skill in adaptive practice now ends at one of four levels: 4 Mastered, 3 Proficient, 2 Developing or 1 Needs Practice. Only an answer you get right on the first try raises your level, because the hint after a miss often narrows the choices. If you need the hint on Level 2, one more check question follows. You no longer see the same Level 2 question again after Level 1. Your results show a level for the whole standard and the path behind each skill. Study tips now point to the skills you scored lowest on, not to every skill. Each skill now has two Level 2 questions. A retake can start with either one, and the other is saved for the check question or for your second try after Level 1. Answer choices are reshuffled each time you retake a standard.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">28 October 2026</div>
+        <div class="rel-title">All 15 Adaptive Practice Modules Now Match the Course</div>
+        <p>The remaining eight adaptive practice modules (HS-PS1-1, HS-PS1-5, HS-PS1-8, HS-PS3-1, HS-PS3-4, HS-ESS1-1, HS-ESS1-2 and HS-ESS1-3) and the Adaptive Practice hub are rewritten in the same plain language as the textbook. Every question stays within the core sections of its linked lessons, so none asks for Enrichment topics such as rate-law equations, microstates, the steps of the proton-proton chain, Hubble's law formulas, or s- and r-process neutron capture. Ranking questions no longer print the numbers or stage labels that gave away the order, the HS-PS1-4.6 skill now focuses on the transition state and activation barrier from Lesson 3-14a, and the practice hub computes skill counts directly from the question banks (91 skills across 15 standards). In lesson 3-1c and HS-PS3-1, the link to the calorimetry simulation now uses its current name, Thermal &amp; Thermochemistry Studio.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">27 October 2026</div>
+        <div class="rel-title">Adaptive Practice Matches the Course</div>
+        <p>The adaptive practice for seven standards (HS-PS1-2, HS-PS1-3, HS-PS1-4, HS-PS1-6, HS-PS1-7, HS-PS2-6 and HS-PS4-4) is rewritten in plain language at the level of this course. Each question uses only the ideas and words its lessons teach, so none asks you to predict shapes from electron domains or to work with equilibrium constants. The cutoff for a nonpolar bond now matches the lesson (a difference in electronegativity under 0.5). Questions about structure now show it: Lewis structures for every polarity question, the energy profile, each reaction drawn bond by bond for the bond-energy sums, and the shapes of fatty-acid chains. When you get one part of a two-part question wrong, the hint now says which part and keeps its advice.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">26 October 2026</div>
+        <div class="rel-title">Numbers Checked and Corrected</div>
+        <p>Several numbers and statements were checked against the chemistry and fixed. The coal comparison for mass turned into energy, the energy of one fission, the energy of a bond in DNA, the energy of an average collision, the best temperature for human enzymes, the ammonia yields at each pressure, the acid added to water, two molar masses, a baking ratio and one combustion example are corrected. A note now says that two reaction barriers are simplified. The Practice and Explore panel now appears on every lesson.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">26 October 2026</div>
+        <div class="rel-title">Unit 5 Is Rewritten, and Its Simulations Are Rebuilt</div>
+        <p>The five Unit 5 lessons (the Sun, the Big Bang, the origin of the elements, nuclear decay, and radiation and matter) now open with the exact standard they serve and a plain statement of what you can do after the page. Every question explains why each wrong answer is tempting, the written-response guides are short checklists, and each idea has a "Common mistake" note. Each lesson keeps its core at the level of the standard. The proton-proton chain and the mass defect, Hubble's law, shell-by-shell burning and neutron capture, the half-life equation and chain reactions, and the calculations with photon energy are Enrichment. Every Unit 5 simulation asks you to predict first, has a legend and a record table, and ends with a question about your own results. The Sun simulation shows gravity against pressure, the radiation simulation separates the energy of one photon from the brightness of the source, and the nuclear lab is now three simulations: decay, one fission, and a chain reaction. With this release, every simulation in the textbook runs on the same shell.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">25 October 2026</div>
+        <div class="rel-title">Unit 4 Is Rewritten</div>
+        <p>The four Unit 4 lessons (reaction rates, catalysis, dynamic equilibrium, and equilibrium in your blood) now open with the exact standard they serve and a plain statement of what you can do after the page. Every question explains why each wrong answer is tempting, the written-response guides are short checklists, and each idea has a "Common mistake" note. The catalysis lesson now keeps to what a catalyst does and names enzymes as the catalysts of living things. How enzymes work and the enzyme simulator are Enrichment. The blood lesson keeps to carbon dioxide as one equilibrium and what faster or slower breathing does to it. Buffers, pH values and the blood-buffer simulator are Enrichment. The Haber questions now change one condition at a time. Each simulator now asks you to predict first, gives you steps to try, and keeps a table of your results. The reaction-rate sandbox runs a fixed 10 seconds so every screen gives the same count. The equilibrium chamber starts at balance, and you change one condition at a time.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">24 October 2026</div>
+        <div class="rel-title">Unit 3 Is Rewritten, and Its Simulations Are Rebuilt</div>
+        <p>All five Unit 3 lessons (temperature and specific heat, heating curves, calorimetry, thermal equilibrium, and bond energy and reaction profiles) now open with the exact standard they serve and a plain statement of what you can do after the page. Every question explains why each wrong answer is tempting, the written-response guides are short checklists, and each idea has a "Common mistake" note. Worked solutions in 3-1a now open only after you write your own answer. The extra depth on microstates (3-4a) and on adding up bond energies (1-4a) is now marked Enrichment. Every simulation asks for a prediction first, and each one now has a recording table and a legend: two vessels of water, the heating curve, the calorimeter, the collision chamber, a closed-system investigation, and a reaction profile with a picture for each reaction. The heating curve is drawn to scale, and the collision chamber now starts each side at its own temperature.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">24 October 2026</div>
+        <div class="rel-title">Unit 2 Is Rewritten</div>
+        <p>All six Unit 2 lessons (physical and chemical change, reaction types and balancing, the mole and molar mass, mole conversions, stoichiometry, and structure and properties) now open with the exact standard they serve and a plain statement of what you can do after the page. Every question explains why each wrong answer is tempting, the written-response guides are short checklists, and each idea has a "Common mistake" note. The recall blanks now show how many you got right, and the exam section on every page ends where it should. The change lab, the equation balancer, the molar mass builder, the conversion tool, the stoichiometry chamber and the fat and alkane simulator are rebuilt. The ones that show an outcome ask for your prediction first, then let you try short steps, record a few rows, and answer a question that only your own rows can settle.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">23 October 2026</div>
+        <div class="rel-title">Unit 1 Is Rewritten, and Its Simulations Are Rebuilt</div>
+        <p>All seven Unit 1 lessons now open with the exact standard they serve and a plain statement of what you can do after the page. Every question explains why each wrong answer is tempting, and the written-response guides are short checklists. The atom, bond and intermolecular-force simulations ask for your prediction first, then let you try four short steps, record a few rows, and answer a question that only your own rows can settle. The ideas that go past the standard, such as why shell 4 opens before shell 3 is full and Roman numerals for transition metals, now sit in clearly marked Enrichment blocks that you can skip.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">23 October 2026</div>
+        <div class="rel-title">Chemistry Now Shares One Page Engine with Physics and Biology</div>
+        <p>All 27 chemistry lessons, the dashboard, and this page now run on the same page engine as the Physics and Biology books. The look is the same in all three: one reading size, one set of boxes for callouts, figures and questions, and the same top bar with Home, Contents, Print and the light and dark switch. Your lesson progress, the review schedule, the section you reached, and your light or dark choice all carry over. A few things change. The "Continue" buttons between sections are gone, and each lesson ends with links to the previous and next lesson. Page Up and Page Down now jump one section at a time, and the arrow keys and Space scroll the page as usual. A model answer stays locked until you have written your own answer first. Multiple-choice predictions now work like every other question in the book. No lesson sentence was reworded, and the simulations run as they did before.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">8 October 2026</div>
+        <div class="rel-title">Shared Quality Checks Now Cover All Three Textbooks</div>
+        <p>The automated check that catches undefined design tokens now runs on the Chemistry, Physics, and Biology textbooks. No chemistry lesson content changed.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">7 October 2026</div>
+        <div class="rel-title">Universal Dark Mode &amp; Course Ecosystem Synchronization</div>
+        <p>Unified theme persistence keys across the Science Practice partner textbook suite (Chemistry, Physics, and Biology), ensuring immediate theme synchronization when navigating between course books and practice modules.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">5 October 2026</div>
+        <div class="rel-title">Global Language, Voice &amp; Readability Audit &middot; Simplified Technical English Standards</div>
+        <p>A curriculum-wide language and readability pass landed across all 27 chemistry textbook lessons and all 15 Adaptive Performance Expectation practice modules. Guided by Simplified Technical English (ASD-STE100) principles, student-facing copy was streamlined to reduce extraneous cognitive load: prompts, hints, and questions conform to a strict 20-word limit, while explanations, ledes, and rubrics conform to a 25-word limit. Ambiguous causal connectors were replaced with direct &ldquo;because&rdquo; statements, passive constructions were converted to active voice, and complex noun stacks were untangled. The entire textbook library adheres to repo-wide invariants: strictly zero em-dashes, pure Unicode formulas and symbols, semantic HTML markup, and zero unrendered code delimiters.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">4 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Curriculum Complete 15/15 (HS-ESS1-3 Stellar Nucleosynthesis)</div>
+        <p>Completed the full 15-module Chemistry Performance Expectation Practice Suite with <code>HS-ESS1-3</code> (Stellar Nucleosynthesis of Elements). Students can practice 6 core competencies: Stellar Mass Thresholds &amp; Core Evolution (Coulomb barrier scaling with nuclear charge Z, core temperatures, and low-mass 0.2 M_&#9737; vs solar 1.0 M_&#9737; vs massive &gt;8 M_&#9737; evolutionary fates), Concentric Onion Fusion Shells in Supergiants (the sequential H &rarr; He &rarr; C &rarr; O &rarr; Ne/Mg &rarr; Si &rarr; Fe burning stages and accelerating timescales), The Iron Peak &amp; Endothermic Fusion Barrier (iron-56 peak binding energy per nucleon at 8.79 MeV, transition from exothermic fusion to endothermic energy sink, and thermal pressure catastrophe), Core-Collapse Supernovae &amp; Explosive Nucleosynthesis (electron capture, neutron degeneracy core bounce shockwave, and explosive forging of intermediate-mass isotopes), Neutron Capture Nucleosynthesis (slow s-process in AGB stars along the valley of stability vs. rapid r-process in core-collapse supernovae and kilonova neutron star mergers, bypassing Coulomb repulsion), and Cosmic Chemical Recycling &amp; The Stardust Legacy (interstellar medium enrichment, metallicity increase across stellar generations, and forming rocky planets and life from ancient stellar debris). All 15 High School Chemistry Performance Expectations are now fully implemented with adaptive placement, verified PDF receipts, and complete textbook integration.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">4 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Unit 5 Launch (HS-ESS1-2 The Big Bang &amp; Cosmic Evidence)</div>
+        <p>Extended the Chemistry Performance Expectation Practice Suite with <code>HS-ESS1-2</code> (The Big Bang &amp; Astronomical Evidence). Students can practice 6 core competencies: Cosmological Redshift &amp; Galactic Spectra (analyzing absorption line shifts z = &Delta;&lambda; / &lambda; across universal spectra while preserving chemical fingerprint spacing), Hubble's Law &amp; The Expansion of Spacetime (applying linear recession v = H&#8320; &middot; d and modeling space expansion without a central point), Big Bang Nucleosynthesis &amp; Primordial Matter (explaining the cosmological 3:1 hydrogen-to-helium mass ratio forged in the first 20 minutes and contrasting it with stellar fusion scales), The Recombination Epoch &amp; The Cosmic Microwave Background (tracing the origin of 2.725 K relic radiation from 380,000-year neutral atom formation and blackbody thermal equilibrium), Lookback Time &amp; Galactic Evolution (using finite speed of light to observe early irregular metal-poor galaxies, refuting static universe models), and Cosmic Expansion History &amp; The Beginning of Spacetime (extrapolating Hubble expansion to 13.8 billion years and corroborating with globular cluster ages). Fully integrated into the PE Hub, Teacher Verification Tool, Chemistry Textbook dashboard, and Lesson 5-2a.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">4 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Unit 5 Launch (HS-ESS1-1 Solar Fusion &amp; Solar Lifespan)</div>
+        <p>Extended the Chemistry Performance Expectation Practice Suite with <code>HS-ESS1-1</code> (Solar Fusion &amp; Lifespan of the Sun). Students can practice 6 core competencies: Hydrostatic Equilibrium &amp; Gravitational Thermostat (modeling the negative feedback balance between inward gravitational weight and outward thermonuclear radiation pressure), The Proton-Proton Chain Reaction (tracing the 3-step sequence converting 4 protons into helium-4, positrons, electron neutrinos, and gamma photons), Mass Defect &amp; Einstein's Mass-Energy Yield (calculating nuclear mass loss and energy yield via E = &Delta;m &middot; c&sup2;, contrasting nuclear energy scales with chemical combustion), Solar Interior Anatomy &amp; Energy Transport to Earth (the 100,000-year photon random walk through the dense radiative zone vs. instantaneous neutrino escape, convection cells, and photosphere emission), Main-Sequence Lifespan &amp; Stellar Mass-Luminosity Scaling (evaluating stellar lifetime using &tau; &prop; M / L and mass-luminosity scaling L &prop; M<sup>3.5</sup>), and Post-Main-Sequence Evolution &amp; Solar Fate (predicting red giant expansion, helium core flash, planetary nebula ejection, and the final carbon-oxygen white dwarf endpoint). Fully integrated into the PE Hub, Teacher Verification Tool, Chemistry Textbook dashboard, and Lesson 5-1a.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">4 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Unit 5 Launch (HS-PS4-4 Electromagnetic Radiation &amp; Matter)</div>
+        <p>Extended the Chemistry Performance Expectation Practice Suite with <code>HS-PS4-4</code> (Electromagnetic Radiation &amp; Matter). Students can practice 6 core competencies: The Planck-Einstein Quantum Relation (relating individual photon energy to frequency and wavelength across the electromagnetic continuum via E = h&nu; = hc/&lambda;), Submicroscopic Matter Absorption Mechanisms (mapping specific bands to molecular rotation, bond stretching and bending vibration, outer valence electron transitions, and ionization), The Ionization Threshold &amp; Cellular DNA Damage (defining the ~10 eV ionization divide, radiolytic free radical formation, thymine dimers, and covalent phosphodiester strand cleavage), Evaluating Claims: Frequency vs. Intensity Fallacy (refuting public misconceptions that beam wattage can compensate for sub-threshold photon frequency in breaking chemical bonds), Protective Shielding &amp; Semiconductor Absorption (wide-bandgap zinc oxide and titanium dioxide nanoparticle absorption physics, stratospheric ozone UV-C absorption, and dense lead apron photoelectric attenuation), and Source Reliability &amp; Epidemiological Risk Assessment (evaluating scientific validity, peer review standards, commercial bias, and analyzing large-scale cohort risk data). Fully integrated into the PE Hub, Teacher Verification Tool, Chemistry Textbook dashboard, and Lesson 5-4a.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">4 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Unit 3 Complete (HS-PS3-4 Thermal Equilibrium &amp; Second Law)</div>
+        <p>Completed the Unit 3 Thermochemistry &amp; Thermodynamics Performance Expectation sequence with <code>HS-PS3-4</code> (Thermal Equilibrium in Closed Systems &amp; Second Law of Thermodynamics). Students can practice 6 core competencies: The Second Law of Thermodynamics &amp; Directionality (distinguishing energy conservation from spontaneous thermal dispersal and entropy increase), Submicroscopic Collision Mechanics &amp; Impulse (modeling Newton's Third Law force pairs, impulse, and kinetic energy transfer across contact boundaries), Thermal Equilibrium &amp; Dynamic Microscopic Balance (equalization of average kinetic energy per particle with ongoing bidirectional energy exchange and zero net heat flow), Statistical Probability &amp; Macroscopic Irreversibility (Maxwell-Boltzmann velocity distribution convergence, microstate multiplicity, and statistical impossibility of spontaneous cold-to-hot heat flow), Closed-System Thermal Investigations &amp; Asymptote Analysis (calorimeter design, controlled variable isolation, identifying equilibrium asymptotes, and diagnosing heat leaks in open systems), and Mathematical Thermal Equilibrium Modeling (applying q_lost = -q_gained, mass-weighted equilibrium temperature equations, and heat capacity contrasts). Fully integrated into the PE Hub, Teacher Verification Tool, Chemistry Textbook dashboard, and Lesson 3-4a.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">4 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Unit 3 Launch (HS-PS3-1 Computational Thermal Energy &amp; Calorimetry)</div>
+        <p>Extended the Chemistry Performance Expectation Practice Suite into Unit 3 with <code>HS-PS3-1</code> (Computational Thermal Energy &amp; Calorimetry). Students can practice 6 core competencies: Temperature, Heat &amp; Thermal Energy Conservation (distinguishing intensive temperature from extensive thermal energy and energy transfer across boundaries), Specific Heat Capacity Modeling (algebraic heat modeling with q = mc&Delta;T and thermal buffering comparisons), Phase Transitions &amp; Latent Heat (temperature plateaus, intermolecular force disruption, and latent heats of fusion and vaporization), Multi-Stage Heating Curves (multi-step energy summations and slope variations from specific heat differences), Coffee-Cup Calorimetry Balances (closed-system conservation q_sys + q_surr = 0, metal specific heat determination, and molar enthalpy of solution), and Computational Energy Accounting (LOL bar chart modeling, idealization assumptions, and experimental error propagation). Fully integrated into the PE Hub, Teacher Verification Tool, Chemistry Textbook dashboard, and Lessons 3-1a, 3-1b, and 3-1c.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">4 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Unit 5 Launch (HS-PS1-8 Nuclear Processes, Decay &amp; Transmutation)</div>
+        <p>Extended the Chemistry Performance Expectation Practice Suite into Unit 5 with <code>HS-PS1-8</code> (Nuclear Processes, Decay &amp; Transmutation). Students can practice 6 core competencies: Nuclear Composition &amp; Isotope Stability (strong nuclear force, proton-neutron ratio, and band of stability), Alpha &amp; Beta Radioactive Decay Mechanisms (alpha expulsion, beta-minus neutron transmutation, conservation of mass number and nuclear charge), Gamma Radiation &amp; Penetration Shielding (zero-mass photons and dense material attenuation), Radiometric Half-Life &amp; Decay Kinetics (exponential decay curves and geological/radiocarbon age dating), Nuclear Fission &amp; Chain Reactions (neutron-induced splitting, subcritical/supercritical neutron multiplication, and moderator/control rod engineering), and Nuclear Fusion &amp; Mass Defect (stellar core fusion, mass deficit conversion via <em>E</em> = &Delta;<em>m</em> &middot; <em>c</em><sup>2</sup>, and million-fold energy scales over chemical bonds). Fully integrated into the PE Hub, Teacher Verification Tool, Chemistry Textbook dashboard, and Lessons 5-1a and 5-8a.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">4 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Unit 4 Launch (HS-PS1-6 Dynamic Equilibrium &amp; Le Chatelier)</div>
+        <p>Extended the Chemistry Performance Expectation Practice Suite with <code>HS-PS1-6</code> (Dynamic Equilibrium &amp; Le Chatelier's Principle). Students can practice 6 core competencies: Dynamic Equilibrium &amp; Opposing Rates (forward rate equals reverse rate with macroscopic constancy), Concentration Levers (stress response and collision rebalancing), Temperature Stress (endothermic vs. exothermic directionality and equilibrium constant temperature dependence), Gas Volume and Pressure (stoichiometric gas mole differences and inert gas invariance), Industrial Process Engineering (Haber-Bosch compromise conditions, catalyst role, and continuous product condensation), and Coupled Physiological Equilibria (blood carbonic acid-bicarbonate buffer homeostasis, lactic acid neutralization, and respiratory acidosis/alkalosis). Fully integrated into the PE Hub, Teacher Verification Tool, Chemistry Textbook dashboard, and Lessons 4-6a and 4-6b.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">3 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Unit 4 Launch (HS-PS1-5 Reaction Rates &amp; Catalysis)</div>
+        <p>Extended the Chemistry Performance Expectation Practice Suite into Unit 4 with <code>HS-PS1-5</code> (Reaction Rates, Collision Theory &amp; Catalysis). Students can practice 6 core competencies: Collision Theory Foundations (frequency, collision geometry, and activation energy threshold), Temperature &amp; Kinetic Energy Distributions (Maxwell-Boltzmann curve shift and high-energy tail), Concentration &amp; Pressure (crowding and collision frequency), Surface Area (heterogeneous solid-fluid interfaces and particle sizing), Catalysts &amp; Alternative Pathways (lowered activation energy with invariant enthalpy), and Experimental Rate Data Analysis (controlled initial rate experiments and disappearing cross monitoring). Fully integrated into the PE Hub, Teacher Verification Tool, Chemistry Textbook dashboard, and Lessons 4-1a and 4-1b.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">3 October 2026</div>
+        <div class="rel-title">Adaptive Practice Suite &middot; Unit 3 Launch (HS-PS1-4 Bond Energy &amp; Reaction Energetics)</div>
+        <p>Extended the Chemistry Performance Expectation Practice Suite into Semester 2 with <code>HS-PS1-4</code> (Bond Energy &amp; Reaction Energetics). Students can practice 6 core competencies: the Bond Energy Principle (breaking is endothermic vs making is exothermic), Reaction Coordinate Diagrams (activation energy, reaction enthalpy, and catalyst effects), Enthalpy Calculations from Average Bond Energies (&Delta;H = &Sigma;D_broken &minus; &Sigma;D_formed), System vs. Surroundings and Thermal Energy Flow, Bond Strength and Order (single, double, triple), and Molecular Collision Geometry and Transition States. Fully integrated into the PE Hub, Teacher Verification Tool, Chemistry Textbook dashboard, and Lesson 3-14a.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">3 October 2026</div>
+        <div class="rel-title">Chemistry Textbook Authentic Figures Sprint &middot; Publication-Grade Visual Diagrams</div>
+        <p>A focused visual overhaul replacing remaining diagram placeholders across the textbook with publication-grade authentic figures conforming to modern rendering invariants. In Lesson 1-1b, the Periodic Trend Compass was rebuilt with a stepped table silhouette, corner landmarks (Fr/Cs and He/F), atomic size levers (Li vs F and Li vs K), and a Johnstone Triangle macro-micro acid effervescence comparison (Mg effervescence vs Cu inert). In Lesson 1-1a, Hero Figure 1-1a.0 (F vs Ne) and the Shell Architecture synopsis ($2n^2$: 2, 8, 18, 32) were updated alongside tokenized typography across all 6 energy crossover steps. In Lesson 1-2a, bonding triangle typography and potential energy curve stages were calibrated to design tokens. In Lesson 1-2c, the chemical nomenclature decision flowchart was upgraded into a publication-quality pathway separating ionic and covalent routes with formula unit interactive tokenization. In Lesson 2-7b, the synopsis was replaced with the Dimensional Analysis Bridge diagram featuring diagonal unit cancellation, and all 4 particulate diagrams in Section 01-04 were regularized to semantic caption tokens. In Lesson 2-2a, the synopsis gained an authentic 2-panel particulate comparison (physical spacing vs chemical bond breaking/forming). All figures adhere strictly to token typography, container lightboxing, zero em-dashes, and single-accent vermilion styling.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">29 September 2026</div>
+        <div class="rel-title">Adaptive Difficulty Ladder, Receipt History Archive &amp; Textbook Typography</div>
+        <p>Rebuilt the core engine of the Chemistry Performance Expectation Practice Suite to transition from a single-item diagnostic ceiling to a 3-tier adaptive placement ladder. Students start at Level 2 (Intermediate); first-try passes elevate to Level 3 (Mastery Challenge) to validate full mastery, while misses step down to Level 1 (Foundational) followed by targeted Level 2 remediation. Added progressive two-tier item disclosure, locking Part 2 reasoning until Part 1 is chosen to prevent answer leakage, and abstracted reasoning options across all five semester 1 modules. Upgraded typography to the chemistry textbook standard, integrating Spectral serif for hints, solutions, and study tips while restricting monospace strictly to formulas and math. Added browser exit protection to prevent loss of unprinted completion receipts, and introduced an automated local storage receipt archive with a hub browser.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">29 September 2026</div>
+        <div class="rel-title">Adaptive Practice Typography, Terminology Regularization &amp; Click-to-Define Glossary</div>
+        <p>Polished the Chemistry Performance Expectation Practice Suite for introductory high school chemistry students across all semester 1 modules (<code>HS-PS1-1</code>, <code>HS-PS1-2</code>, <code>HS-PS1-3</code>, <code>HS-PS1-7</code>, <code>HS-PS2-6</code>). Integrated the textbook's shared chemistry glossary to provide interactive click-to-define popover cards on key scientific terms throughout question stems and explanations. Converted all chemical formulas, ion charges, units, and powers of ten to clean Unicode subscripts and superscripts across all 31 assessed skills, replacing raw ASCII text and code formatting. Regularized prompts, distractors, and worked solutions to accessible, student-friendly language. Formatted the full verification URL directly on the printed cryptographic receipt while maintaining single-page A4 print formatting.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">29 September 2026</div>
+        <div class="rel-title">Adaptive Practice Theme Parity &middot; Light and Dark Mode Synchronization</div>
+        <p>The Performance Expectation Adaptive Practice Suite now supports full theme parity with the rest of the chemistry textbook. An accessible theme toggle with sun and moon icons is now present in navigation headers across all practice views, including the hub, student workstation, diagnostic interstitial, certificate completion screen, and teacher verification tool. Color tokens were calibrated with high-contrast text and border values across both modes, and theme selections synchronize continuously across the textbook, main app, and practice sessions via unified storage persistence.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">29 September 2026</div>
+        <div class="rel-title">Interactive Practice Suite Semester 1 Complete &middot; Units 1 &amp; 2 Performance Expectations</div>
+        <p>Expanded the Chemistry Performance Expectation Practice Suite to cover all five first-semester Performance Expectations: <code>HS-PS1-1</code> (Periodic Trends &amp; Atomic Structure), <code>HS-PS1-2</code> (Chemical Reactions, Bonding &amp; Conservation of Matter), <code>HS-PS1-3</code> (Electrical Forces &amp; IMFs), <code>HS-PS1-7</code> (The Mole, Stoichiometry &amp; Mass Conservation), and <code>HS-PS2-6</code> (Structure-Property Relationships &amp; Scientific Argumentation). Students now have access to 31 distinct skill diagnostics with multi-modal item formats (two-tier claim-and-reasoning, property rankings, categorization tables, numeric calculations, and multi-select criteria checks), two-tier adaptive tutoring hints with full worked solutions, and tamper-evident SHA-256 digital certificates with QR code verification. Added direct launch modules across the course dashboard and updated the Teacher Verification Tool for all semester 1 standards.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">28 September 2026</div>
+        <div class="rel-title">Adaptive Practice Suite for Performance Expectations &middot; Unit 1 Launch &amp; Certified Single-Page Receipts</div>
+        <p>Launched the Next Generation Science Standards (NGSS) Adaptive Practice Suite for Chemistry, starting with Unit 1 Performance Expectations HS-PS1-1 (Atomic Structure &amp; Periodic Trends) and HS-PS1-3 (Bulk Properties &amp; Intermolecular Forces). The workstation features sequential diagnostic checks, automated skill gap identification, targeted adaptive remediation with two-tier hint scaffolding, and tamper-resistant cryptographic receipts with offline QR verification. The printed summary sheet is mathematically formatted to fit cleanly on a single A4 page, including item attempt audit histories and personalized study recommendations linking directly back to relevant textbook chapters. Questions feature diverse science practice modalities (two-tier claim/justification, ranking trends, categorization tables, multi-select, and quantitative calculations) with seeded option shuffling, candidate name authentication, and in-place certificate editing.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">27 September 2026</div>
+        <div class="rel-title">Dynamic manifest architecture · Course dashboard automated synchronization</div>
+        <p>The course dashboard was refactored to dynamically load and render the curriculum manifest (<code>lessons.json</code>) at runtime, eliminating duplicated code and ensuring all 27 lessons, glossary terms, storyline resources, and Performance Expectations stay in exact step automatically. The concept map, Spaced Repetition (SRS) cram mode, and deep-search index initialize seamlessly from the live manifest, with progress tracking automatically mapped across both unit storyline and NGSS expectation views.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">20 September 2026</div>
+        <div class="rel-title">SVG drawing repair · Automated test coverage &amp; invariant consolidation</div>
+        <p>Fixed SVG parser breakout errors in Lesson 3-1c (calorimetry variables) and Lesson 5-1a (solar core fusion neutrino labels), restoring proper diagram rendering in both lessons. Added automated verification ensuring all diagrams across the textbook remain intact and compliant with curriculum rendering invariants.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">19 September 2026</div>
+        <div class="rel-title">Units 2–5 Comprehensive Remediation · Thermochemistry, Kinetics, Astrophysics &amp; Nuclear Physics Overhaul</div>
+        <p>A curriculum-wide usability, pedagogical, and visual overhaul across Units 2, 3, 4, and 5. Core architectural standards were unified across the textbook: chemical formulas render in robust block layouts eliminating equation tearing; illegal HTML tags were purged from SVG text elements to protect DOM tree integrity; button entity casing was conformed to Unicode; Canvas 2D contexts resolve dynamic CSS tokens cleanly with high-DPI Retina backing buffers; and structured inquiry challenge presets were integrated across all simulation sandboxes. In Unit 2, Lesson 2-6a gained a dual-path branching architecture (&ldquo;Choose Your Own Adventure&rdquo;: Lipids vs. Alkanes) sharing a unified 5-step argument builder. In Unit 3 (Thermochemistry), reaction profiles were rebuilt with accurate energy geometry (3-14a); thermal energy and temperature were cleanly separated using the particulate Sparkler Paradox (3-1a); heating curves gained multi-stage equations and hydrogen bonding energetics (3-1b); coffee-cup calorimetry was refactored with discrete stacked LOL energy block diagrams (4 + 1 = 5 &rarr; 2 + 3 = 5) and live heat transfer vectors (3-1c); and thermal equilibrium was grounded in a master 3-stage collision sequence (3-4a). In Unit 4 (Kinetics &amp; Equilibrium), Maxwell-Boltzmann curves were formally tagged as enrichment to focus core assessment on collision frequency (4-1a); catalysis was re-centered on industrial surface mechanisms (4-1b); the Le Chatelier reaction simulator numerical integrator was stabilized to eliminate sawtooth spikes (4-6a); and arterial blood buffer diagrams were repaired and dynamically linked to live Le Chatelier shift ratios (4-6b). In Unit 5 (Astrophysics &amp; Nuclear Physics), solar fusion was upgraded with authentic cross-section cutaways and a hydrostatic cosmic thermostat (5-1a); cosmic evidence was grounded in a Three Visual Pillars synopsis and unclipped redshift spectra (5-2a); stellar nucleosynthesis received an exact binding energy curve and supergiant onion shell timescale bar (5-3a); electromagnetic radiation was rebuilt around container-width Master Figure 5-4a.1 with dual coordinate axes, a 10 eV ionization divide, and an interactive power vs. frequency simulator (5-4a); and nuclear decay was overhauled with particulate shielding barrier diagrams, exact exponential half-life curves, and a repaired 100-atom stochastic lattice engine (5-8a).</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">18 September 2026</div>
+        <div class="rel-title">Unit 2 Comprehensive Polish · Side-by-Side Fat Simulation · Non-Overlapping Stoichiometry Bays</div>
+        <p>A major visual, interactive, and mathematical remediation pass across all Unit 2 chemistry lessons (plus 1-2e carryovers). On the dashboard, a missing closing tag was fixed to restore proper grid separation between Unit 1 and Unit 2, and the storyline terminology was aligned from "tawa" to "grill" across the entire textbook. In Lesson 1-2e, electron transfer badges received centered glyph typography, and the methane combustion blueprint separated reactant oxygen pairs while adding the missing product water molecule to conserve mass. In Lesson 2-2a, the synopsis chemical change diagram was aligned to heteronuclear bonded atoms to conserve atomic identities, and the melting simulation was refactored so particles pool cleanly across the bottom of the beaker rather than colliding mid-air. In Lesson 2-6a, the fat explorer was rebuilt into a full-width, side-by-side simulation comparing Saturated Fat (Stearic acid, MP 69°C) vs. Unsaturated Fat (Oleic acid, MP 13°C) under a unified 0 to 100°C slider with quick preset buttons, with the five-part Argument Builder relocated directly below. In Lesson 2-7a, the hero zoom was rescaled, the mole scale bridge was rebuilt with a digital bench balance (12.00 g, 1 mole), particle representations were converted to space-filling CPK spheres, and the glucose preset was updated to an authentic glucopyranose 6-membered ring. In Lesson 2-7b, mole maps were scaled to container width, water particles were conformed to bent geometry, conversion factor cards were rebalanced into a clean 2-column grid, and Section 04b (Empirical Formulas) was delineated as a Non-Assessable Extension. In Lesson 2-7c, the synopsis yield map was rebuilt, chemical equation typography was regularized to preserve natural baseline subscripts, BCA table column alignment was locked, the S'mores factory gained a visual particle equation with a dynamic results tray, and the reaction chamber was partitioned into 8 dedicated coordinate bays, mathematically guaranteeing zero particle overlap across all reactant quantities.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">16 September 2026</div>
+        <div class="rel-title">Lesson 1-2b 2D Lewis structure redesign · signature interactive auto-load · diagram typography scale regularization</div>
+        <p>All molecular diagrams in Lesson 1-2b (Molecular Polarity) were completely reconstructed as authentic 2D Lewis structures adhering to the Diagram Generator standards: atom symbols render as bold monospace letters in CPK coloring (Oxygen in <code>--accent</code> vermilion, Carbon and Hydrogen in <code>--ink</code>, Chlorine in <code>--good</code> muted green, and Nitrogen in <code>--cool</code> slate blue), accompanied by paired valence electron dots, clean center-to-center bond lines, and clear dipole summation vectors across the Hero 3-step sequence, Synopsis figure, Section 02 worked example, and Section 03 interactive. The Section 03 &ldquo;Cancel or reinforce?&rdquo; interactive now auto-loads the O<sub>2</sub> molecule on startup, eliminating the blank initial window. In <code>tokens.css</code>, SVG typography tokens were regularized with a 4-tier scale (<code>--dia-atom-size: 22px</code>, <code>--dia-header-size: 14px</code>, <code>--dia-label-size: 12px</code>, <code>--dia-caption-size: 10px</code>) to eliminate microscopic text across diagrams site-wide. Zero em-dashes and <code>&amp;mdash;</code> entities were enforced throughout.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">16 September 2026</div>
+        <div class="rel-title">Global graphic contrast · universal synopsis diagram sizing &amp; lightbox zoom · Lesson 1-2a synopsis redesign</div>
+        <p>A global SVG typography and contrast engine was integrated into the core stylesheet, guaranteeing that all untagged text, presentation attributes with <code>var(--ink)</code> (resolving WebKit/Safari attribute parsing limitations), and hardcoded dark/black fills or strokes render in crisp, high-contrast tokenized <code>--ink</code> in dark mode. The arbitrary 120px <code>max-height</code> clamp on synopsis figures was removed across all 27 lessons, allowing them to expand to the full width of their synopsis card column. The core lightbox engine was expanded to bind all synopsis figures with <code>cursor: zoom-in</code>, hover elevation, automatic caption fallback to <code>&lt;h4&gt;</code> headings, and responsive scaling up to 860px width in the modal overlay. Lesson 1-2a (Bonding &amp; Electronegativity) had its synopsis diagram completely redesigned into a balanced 3-panel 360x170 layout covering Covalent sharing (&Delta;EN &lt; 1.7), Ionic transfer (&Delta;EN &ge; 1.7), and Metallic delocalized electron sea, complete with diagram framing and caption. Finally, all legacy em-dashes and <code>&amp;mdash;</code> entities were audited and eradicated across the codebase.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">16 September 2026</div>
+        <div class="rel-title">PE-aligned lesson numbering · Lesson 1-2a sequence &amp; covalent overlap · AI Study Partner hardening</div>
+        <p>Lesson badge codes across the dashboard, concept map, and lesson manifests were standardized to match their NGSS Performance Expectations directly (e.g. 1-7a/b/c for mole concepts under HS-PS1-7, 1-4a for bond energy under HS-PS1-4, 1-5a/b for reaction kinetics under HS-PS1-5, 1-6a/b for equilibrium under HS-PS1-6, and 1-8a for nuclear reactions under HS-PS1-8), with transparent migration preserving all existing saved student progress. Lesson 1-2a (Bonding &amp; Electronegativity) received an interactive overhaul: Section 01 was redesigned from the ground up into an uncluttered 3-stage sequence animation with high-contrast badge headers, non-overlapping force vectors, and physically accurate overlapping valence shells in Stage 3 where the shared electron pair sits squarely inside the covalent lens; Section 02's electronegativity difference slider marks were cleaned up to eliminate text collisions; and the Section 03 Signature Interactive Bond Explorer had its animation lifecycle and lightbox interception issues resolved. The in-lesson AI tutor was rebranded to &ldquo;Chemistry Study Partner&rdquo; / &ldquo;Tutor&rdquo; with clear pre-click sign-in warning indicators, and its backend connection was hardened with explicit model payloads. Dark mode diagram text contrast was also audited and fixed in Lesson 1-1a.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">14 September 2026</div>
+        <div class="rel-title">Usability &amp; readability overhaul · interactive physics simulations · K-Chem video resources</div>
+        <p>A comprehensive usability and design audit landed across all 27 lessons in the textbook. All static illustrations, charts, and particle diagrams are now held inside structured figure frames with captions and universal click-to-zoom lightboxing. Chemical equations, thermodynamics expressions, and nuclear transmutations now render with standardized large typography (<code>.chem-display.formula-lg</code>) and high-contrast color tokens. Visual noise was cleaned up by replacing emoji in step levers and navigation arrows with clean typographic arrows. Four major interactive physics simulators were deployed for Unit 5: a 4-stage Solar Proton-Proton Chain Fusion simulator, a 4-phase Stellar Core Collapse &amp; Supernova engine, a 100-atom stochastic Radioactive Decay Transmutation workbench with real-time half-life curves, and a Nuclear Fission &amp; Reactor Criticality simulator with variable control rods and SCRAM shutdown. All continuous simulation loops now run through an automatic visibility observer, halting when off-screen to preserve battery and CPU life. Every remaining lesson had its Section 05 practice upgraded to canonical fill-in-the-blank retrieval cards, ensuring complete integration with the dashboard Spaced Repetition (SRS) review engine. Finally, authentic Dr. David Knuffke K-Chem video lessons and unit playlists were linked into resource panels across all five units.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">14 September 2026</div>
+        <div class="rel-title">Full curriculum complete (Units 1–5, 27 lessons) · PE dual-organization · In-lesson bridges</div>
+        <p>The textbook expanded from its 13-lesson baseline to the complete 27-lesson curriculum across all 15 NGSS High School Chemistry Performance Expectations and 5 school storylines (Chemical Hygiene, Prata Problems, Energy &amp; Thermochemistry, Human Equilibrium, and Origin of the Elements &amp; Nuclear Chemistry). The home dashboard gained a dual-organization mode with sticky preference persistence: defaulting to Unit Storylines with a one-click reorganization by Performance Expectation. The interactive Concept Map was expanded to an integrated 27-lesson knowledge graph across 5 unit lanes with cross-unit prerequisite pathways and live progress color-coding. Horizontal unit tabs gained a space-saving Resources dropdown menu. The Reference Center drawer and glossary were expanded with thermochemistry tables (specific heats, bond energies, latent heats) and nuclear notation. Units 3, 4, and 5 shipped with 14 new interactive lessons featuring bespoke simulations, 2D particle dynamics sandboxes, retrieval cards, and constructed-response exam tasks with four-mark rubrics: covering heating curves, calorimetry, thermal equilibrium, bond energies, collision kinetics, enzyme dynamics, Le Chatelier shifts, blood buffer homeostasis, solar fusion, cosmic expansion, stellar nucleosynthesis, nuclear decay modes, and electromagnetic radiation absorption.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">13 September 2026</div>
+        <div class="rel-title">Connected to Science Practice Partner · in-lesson simulations &amp; practice bridges</div>
+        <p>The textbook and the main Science Practice Partner app now share theme and accessibility preferences: switching to dark mode or turning on the high-legibility accessibility font carries seamlessly between the textbook and practice sessions. Every lesson page now ends with a direct Practice &amp; Explore bridge connecting you to pre-configured multiple-choice quizzes, flashcard decks, and interactive simulations (Build an Atom, Periodic Table, Covalent &amp; Ionic Bonding Builders, Phase Changes, and Reaction Kinetics) matching the topics covered in each chapter.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">2 September 2026</div>
+        <div class="rel-title">Progress tracking repaired · resume · nomenclature rebuilt</div>
+        <p>Progress had been reporting zero for every lesson since spaced repetition shipped. The checkpoints you completed were being saved correctly, but the dashboard was reading them the wrong way, so every bar sat at 0% and every lesson said “Not Started.” Cards now show a real count, like 6/10 checkpoints. Lesson 1-2c was missing from one of the three places the lesson list is written down, which made its card, its concept-map node, its search entry, and its review queue silently dead. Clear Progress was calling a function that wiped the entire site's stored data (sign-in session, badges, theme) rather than just chemistry progress; it now clears only what it promises. Added resume: a lesson remembers the furthest section you reached, even if you were only reading, and offers a dismissible bar when you return. The Reference Center drawer moved into its own file so the dashboard can open it too. Lesson 1-2c (Chemical Nomenclature) was rebuilt on the shared widget framework: from one checkpoint to ten, with feedback written for all sixteen options, plus a charge-balance ledger, a work-backwards ion builder, and a name-to-formula walkthrough.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">1 September 2026</div>
+        <div class="rel-title">Its own icon</div>
+        <p>A dedicated high-contrast flask favicon and touch icon, so the textbook is distinguishable from the main site in a row of browser tabs.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">31 August 2026</div>
+        <div class="rel-title">Moved to sciencepractice.app/chem</div>
+        <p>The book moved off GitHub Pages and onto the main site, at <code>/chem/</code>. Added high-resolution intermolecular-force diagrams and transparent-background Lewis structures sized to a single physical scale, so structures pasted into a slide deck are consistent with each other. Added a repeatable diagram workflow and a command-line renderer for producing figures in bulk.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">10–12 August 2026</div>
+        <div class="rel-title">Curriculum alignment, and the bugs it surfaced</div>
+        <p>New lesson 1-2c (Chemical Nomenclature) filled the prerequisite gap ahead of Lewis structures. Lesson 1-1b gained a five-step reactivity causal chain and an acid-reactivity case study contrasting magnesium with copper. Lesson 2-7b gained empirical and molecular formula determination with an interactive stepper. Lesson 2-7c gained a s'mores limiting-reactant simulator built to demonstrate that the smallest quantity is not automatically the limiting one. Lesson 2-6a (formerly C-SPA) gained a GHS hazard argument constructor. The follow-up QA pass then fixed what shipped with them: undefined styles leaving text invisible and cards unstyled, literal markup rendering as visible text, an empirical-formula calculator returning a wrong answer for vitamin C, a hazard builder whose correct option was always listed first and literally named “correct” in the page source, three widgets that revealed their answers with no student interaction, and green being used as a category colour in violation of the correct-only rule.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">24–25 July 2026</div>
+        <div class="rel-title">Curriculum resources, mobile fixes, feedback route</div>
+        <p>Retitled to SAS General Chemistry and connected to the school's storyline units. Unit 1 and Unit 2 resource panels were rebuilt with the 2026–27 curriculum materials (block maps, consensus notes, lesson plans, review sheets, skills packets, and a blank periodic table), and every video link was cleaned up. Added links to the Science Practice Partner interactives (Build an Atom, Periodic Table, Ionic and Covalent Bonding). Fixed top-bar buttons clipping their own text, fixed dashboard tabs cutting off labels at narrow widths, added automatic white backing behind transparent images in dark mode, and rebuilt the diagram generator's layout for phones. Added a feedback button.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">9–10 July 2026</div>
+        <div class="rel-title">Spaced repetition, Quick Check, and 666 invisible circles</div>
+        <p>Shipped spaced repetition with a dashboard review panel, cumulative mixed drills, and “why this matters” curriculum callouts. Added a global Quick Check toggle that collapses a lesson down to its retrieval elements, and a collapsible one-screen synopsis on every lesson. Added the sort-and-classify widget. Built biological monomer maps, polymer brackets, container vessels, and electrolyte dissociation with hydration shells. Fixed 666 diagram circles that were invisible across ten lessons: SVG radius attributes silently reject the design-token syntax they were written with, with no error of any kind. Unified the dashboard glossary with the lesson tooltips so the same term stopped having two definitions. Rebuilt the diagram generator: honest ion-pair rendering for salts instead of a fabricated covalent structure, an electron-count check that warns when an auto-generated structure doesn't conserve electrons, a refusal to guess at same-element polyatomics, standalone SVG and PNG export, and a reaction parser that validates every token rather than reporting a typo as balanced.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">8 July 2026</div>
+        <div class="rel-title">Progress saving, concept map, shared renderers</div>
+        <p>Lesson progress became persistent: widget and checkpoint state now restore when you reopen a page, and the dashboard gained a Clear Progress control. Added the interactive concept map on the dashboard, with nodes and connections that colour in as you complete lessons. Built the shared molecule and particle-scene renderers, so phase diagrams and reaction chambers are generated from data (with an automatic particle-conservation check) rather than drawn by hand per lesson.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">6–7 July 2026</div>
+        <div class="rel-title">Motion, the Reference Center, and one figure system</div>
+        <p>Static diagrams across the book became click-through sequences: shell filling from potassium to gallium, bond polarity resolving into molecular polarity, before/during/after combustion showing atoms conserved mid-reaction, a three-level zoom on fat lamination, and a scrubber that drags an electron cloud from evenly shared to fully transferred as the electronegativity difference rises. Built the slide-out Reference Center. Replaced six different ad-hoc sizing hacks with one figure system of four named widths. Retrofitted every diagram in the book onto a shared token layer, which turned up three independent cases of hand-picked colours breaking the palette rules, including chlorine drawn green.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">5–6 July 2026</div>
+        <div class="rel-title">Print export, and a consistency sweep</div>
+        <p>PDF and print export built and verified for every lesson, including a glossary appendix. Lesson 1-2b (Molecular Polarity) shipped, completing the manifest. A repo-wide consistency pass fixed a stacking bug in sequenced diagrams, formulas breaking across lines mid-subscript, a character counter on free-text answers that made writing feel like a word-count exercise, diagrams that couldn't be zoomed, and a balance widget tilting the wrong way.</p>
+      </div>
+
+      <div class="rel">
+        <div class="rel-date">3–5 July 2026</div>
+        <div class="rel-title">First lessons, voice contract, glossary</div>
+        <p>The earliest published lessons, the glossary tooltip system, and the written voice contract that governs every student-facing sentence in the book: second person, name the misconception before the student makes it, concrete before abstract, and never mark an answer wrong without explaining why it was tempting.</p>
+      </div>
+
+    </div>
+
+    <p class="xabout-01">The full engineering changelog, with commit-level detail, lives in the project repository alongside the design contracts, the voice contract, and the interaction specification.</p>
+  </div>
+</section>
+
+<!-- 07 · CREDIT -->
+<section>
+  <div class="wrap narrow">
+    <div class="section-tag"><span class="num">07</span><h2>Credit and licence</h2></div>
+    <div class="stack">
+      <p>Written and maintained by <a href="https://www.davidknuffke.com" target="_blank" rel="noopener noreferrer">David Knuffke</a>. The chemistry follows the Singapore American School General Chemistry review sheets and particle-diagram conventions, which are the work of the science department, not of this site.</p>
+      <p>The pedagogical structure (predict then reveal, retrieval woven through rather than bolted on the end, self-explanation before the model answer) is modelled on the approach at <a href="https://www.biologybybradford.com" target="_blank" rel="noopener noreferrer">Biology by Bradford</a>.</p>
+      <p>Set in Hanken Grotesk, Spectral, and IBM Plex Mono, all open source.</p>
+      <p>Licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Teachers are welcome to take this apart and rebuild it for their own course. Credit the source, keep it non-commercial, and share what you make on the same terms.</p>
+      <p>The code behind this book, the main app and its simulations is free on GitHub: <a href="https://github.com/mrknuffke/Science-Practice-App-Snapshot-" target="_blank" rel="noopener noreferrer">Science Practice App snapshot</a>. The code is MIT licensed, so you can reuse it anywhere. The teaching content keeps the licence above.</p>
+      <p><a class="backlink" href="index.html">← Back to the textbook</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<script src="assets/book.js"></script>
+<script src="../textbook/core.js"></script>
+</body>
+</html>

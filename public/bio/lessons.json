@@ -1,0 +1,192 @@
+{
+  "subject": "General Biology",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "1-1",
+      "slug": "1-1_cellular-respiration",
+      "title": "Cellular Respiration & Energy Transfer",
+      "unit": "1",
+      "level": "1",
+      "pes": [
+        "HS-LS1-7"
+      ],
+      "description": "Model aerobic cellular respiration as chemical bond breaking and molecular rearrangement, tracking matter flow and net energy transfer to ATP."
+    },
+    {
+      "id": "1-2",
+      "slug": "1-2_homeostasis-thermoregulation",
+      "title": "Homeostasis & Thermoregulation",
+      "unit": "1",
+      "level": "1",
+      "pes": [
+        "HS-LS1-2",
+        "HS-LS1-3"
+      ],
+      "description": "Investigate negative feedback mechanisms and model human thermoregulation via hypothalamus control, sweating, and vasoconstriction."
+    },
+    {
+      "id": "1-3",
+      "slug": "1-3_osmoregulation-water-balance",
+      "title": "Osmoregulation & Water Balance",
+      "unit": "1",
+      "level": "1",
+      "pes": [
+        "HS-LS1-2",
+        "HS-LS1-3"
+      ],
+      "description": "Analyze kidney response and antidiuretic hormone (ADH) signaling in maintaining blood solute concentration and cellular water balance."
+    },
+    {
+      "id": "1-4",
+      "slug": "1-4_blood-glucose-regulation",
+      "title": "Blood Glucose & Hormone Signaling",
+      "unit": "1",
+      "level": "1",
+      "pes": [
+        "HS-LS1-2",
+        "HS-LS1-3"
+      ],
+      "description": "Model the insulin-glucagon antagonistic seesaw controlling glycogen storage in the liver and muscles, and explore diabetic system disruption."
+    },
+    {
+      "id": "1-review",
+      "slug": "1-review_packet",
+      "title": "Unit 1 Homeostasis Review",
+      "unit": "1",
+      "level": "1",
+      "pes": [
+        "HS-LS1-2",
+        "HS-LS1-3",
+        "HS-LS1-7"
+      ],
+      "description": "Comprehensive Unit 1 review synthesizing cellular energy transfer, feedback loops, and physiological data analysis with worked practice problems."
+    },
+    {
+      "id": "2a-1",
+      "slug": "2a-1_photosynthesis-kelp",
+      "title": "Photosynthesis",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS1-5"
+      ],
+      "description": "Find out where a giant kelp's mass and energy come from, test the idea with van Helmont's willow, and follow one carbon atom into sugar."
+    },
+    {
+      "id": "2a-2",
+      "slug": "2a-2_carbon-four-spheres",
+      "title": "The Carbon Cycle",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS2-5"
+      ],
+      "description": "Track the carbon people add to the air through four spheres, find where the missing half goes, and model what a cut in emissions does."
+    },
+    {
+      "id": "2a-review",
+      "slug": "2a-review_packet",
+      "title": "Unit 2a Carbon Review",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS1-5",
+        "HS-LS2-5"
+      ],
+      "description": "Quick checks, a main-ideas digest and two new practice problems for Unit 2a, using a year of carbon dioxide readings from Mauna Loa, Alaska and the South Pole."
+    },
+    {
+      "id": "2b-1",
+      "slug": "2b-1_biodiversity-loss-singapore",
+      "title": "Biodiversity Loss in Singapore",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS2-7",
+        "HS-LS2-2"
+      ],
+      "description": "Read 200 years of Singapore extinction data, link each wave of losses to forest clearing, and start a design that protects one threatened species."
+    },
+    {
+      "id": "2b-2",
+      "slug": "2b-2_richness-evenness-islands",
+      "title": "Richness, Evenness & Islands",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS2-2"
+      ],
+      "description": "Measure biodiversity with species richness and evenness, test reef resilience against a disease, and revise an explanation with new pond data."
+    },
+    {
+      "id": "2b-3",
+      "slug": "2b-3_gut-biodiversity-scales",
+      "title": "Gut Biodiversity at Three Scales",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS2-2"
+      ],
+      "description": "Compare the gut bacteria of Hadza hunter-gatherers and city adults, follow one course of antibiotics, and see how losses build up over four generations of mice."
+    },
+    {
+      "id": "2b-4",
+      "slug": "2b-4_energy-trophic-levels",
+      "title": "Energy and Trophic Levels",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS2-4"
+      ],
+      "description": "Calculate how much energy passes up a food chain, follow 1,000 units of energy in a simulation, and compare upright and upside-down pyramids."
+    },
+    {
+      "id": "2b-5",
+      "slug": "2b-5_biosphere-2",
+      "title": "Biosphere 2",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS2-4"
+      ],
+      "description": "Track the oxygen and carbon in a sealed ecosystem, find where the missing carbon went, and explain why its crew went hungry."
+    },
+    {
+      "id": "2b-6",
+      "slug": "2b-6_polar-bear-carrying-capacity",
+      "title": "Polar Bears and Carrying Capacity",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS2-1"
+      ],
+      "description": "Measure how long Hudson Bay's polar bears fast on land, compare the ice and population records, and model how the ice sets their carrying capacity."
+    },
+    {
+      "id": "2b-7",
+      "slug": "2b-7_orangutans-and-scale",
+      "title": "Orangutans and Scale",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS2-1"
+      ],
+      "description": "Turn density into a head count, find out why most of Borneo's lost orangutans died in standing forest, and compare carrying capacity at three scales."
+    },
+    {
+      "id": "2b-review",
+      "slug": "2b-review_packet",
+      "title": "Unit 2b Ecology Review",
+      "unit": "2",
+      "level": "1",
+      "pes": [
+        "HS-LS2-7",
+        "HS-LS2-2",
+        "HS-LS2-4",
+        "HS-LS2-1"
+      ],
+      "description": "Quick checks, a main-ideas digest and two new practice problems for Unit 2b, then a step-by-step guide to refining your conservation design into Version 2.0."
+    }
+  ]
+}

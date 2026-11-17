@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Adaptive PE Practice &middot; Chemistry</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  
+  <!-- Typography & Styling -->
+  <link rel="stylesheet" href="pe-practice.css">
+
+  <!-- KaTeX for math / chemical formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.js"></script>
+
+  <!-- Pre-paint Theme Initialization -->
+  <script>
+    (function () {
+      var saved = null;
+      try {
+        saved = localStorage.getItem('gc-theme') || (localStorage.getItem('sp_dark_mode') === 'true' ? 'dark' : (localStorage.getItem('sp_dark_mode') === 'false' ? 'light' : null));
+      } catch (e) {}
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDark = saved === 'dark' || (!saved && prefersDark);
+      if (isDark) {
+        document.documentElement.classList.add('dark', 'theme-dark');
+        document.documentElement.classList.remove('light', 'theme-light');
+      } else {
+        document.documentElement.classList.add('light', 'theme-light');
+        document.documentElement.classList.remove('dark', 'theme-dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="workstationApp">
+    <!-- Workstation rendered dynamically by pe-engine.js -->
+  </div>
+
+  <!-- Shared Chemistry Glossary -->
+  <script src="../assets/glossary.js"></script>
+
+  <!-- QR Code Generator -->
+  <script src="qrcode.js"></script>
+
+  <!-- Performance Expectation Data Modules -->
+  <script src="pe-figures.js"></script>
+  <script src="pe-num.js"></script>
+  <script src="data/hs-ps1-1.js"></script>
+  <script src="data/hs-ps1-2.js"></script>
+  <script src="data/hs-ps1-3.js"></script>
+  <script src="data/hs-ps1-4.js"></script>
+  <script src="data/hs-ps1-5.js"></script>
+  <script src="data/hs-ps1-6.js"></script>
+  <script src="data/hs-ps1-7.js"></script>
+  <script src="data/hs-ps1-8.js"></script>
+  <script src="data/hs-ps2-6.js"></script>
+  <script src="data/hs-ps3-1.js"></script>
+  <script src="data/hs-ps3-4.js"></script>
+  <script src="data/hs-ps4-4.js"></script>
+  <script src="data/hs-ess1-1.js"></script>
+  <script src="data/hs-ess1-2.js"></script>
+  <script src="data/hs-ess1-3.js"></script>
+
+  <!-- Adaptive Engine Orchestrator -->
+  <script src="pe-scoring.js"></script>
+  <script src="pe-engine.js"></script>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="3-4a" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Thermal Equilibrium &amp; Heat Transfer · Gen Chem 3-4a</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 3-4a &middot; Thermal Equilibrium &amp; Heat Transfer</div>
+    <h1>Your coffee always cools down. It will <span class="flip">never</span> spontaneously boil itself.</h1>
+    <p class="lede">Leave a hot mug of coffee on your desk and it cools to room temperature. Now picture a lukewarm mug that pulls heat from the air and starts to boil while the room chills. Energy conservation allows that. It still never happens. Heat flows from warmer matter to cooler matter until the energy is spread evenly. The Second Law of Thermodynamics sets that direction.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS3-4</b> Plan and conduct an investigation to provide evidence that the transfer of thermal energy when two components of different temperature are combined within a closed system results in a more uniform energy distribution among the components in the system (second law of thermodynamics).</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can plan an investigation that combines two components at different temperatures in a closed system. You can use the data to show the energy ends up more evenly shared. You can explain the direction of heat flow with particle collisions.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Heat flow in closed systems, collisions at a boundary, thermal equilibrium, and investigation planning. The statistics behind the Second Law are Enrichment.</div></div>
+    </div>
+
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>The Second Law of Thermodynamics.</strong> In an isolated system, energy spreads out and does not gather again. Thermal energy flows from higher temperature to lower temperature. Entropy measures how spread out the energy is.</li>
+              <li><strong>Thermal equilibrium.</strong> Two objects in contact reach the same temperature. Net heat transfer drops to zero because energy flows both ways at equal rates.</li>
+              <li><strong>Collisions.</strong> When fast particles hit slow particles, the fast ones lose kinetic energy on average. The slow ones gain energy. The temperature difference shrinks.</li>
+              <li><strong>Closed-system investigations.</strong> Mixing hot and cold components in an insulated container gives one temperature between the two starting values. That shows energy spreading out.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Energy spreads out</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 300 130" font-family="var(--display)" role="img" aria-label="Energy concentrated in one place spreads to a uniform distribution at equilibrium">
+              <!-- Separated: fast particles on one side, slow on the other -->
+              <rect x="10" y="20" width="120" height="90" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+              <text x="70" y="40" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Separated</text>
+              <circle cx="30" cy="62" r="3.5" fill="var(--accent)"/><circle cx="46" cy="68" r="3.5" fill="var(--accent)"/><circle cx="34" cy="82" r="3.5" fill="var(--accent)"/>
+              <circle cx="92" cy="70" r="3.5" fill="var(--ink-soft)"/><circle cx="106" cy="82" r="3.5" fill="var(--ink-soft)"/><circle cx="86" cy="88" r="3.5" fill="var(--ink-soft)"/>
+              <text x="70" y="104" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Concentrated</text>
+
+              <path d="M136 65 L164 65" fill="none" stroke="var(--ink)" stroke-width="1.8" marker-end="url(#eq-arr)"/>
+
+              <!-- Equilibrium: one average speed -->
+              <rect x="170" y="20" width="120" height="90" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+              <text x="230" y="40" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--good)" text-anchor="middle">Equilibrium</text>
+              <circle cx="192" cy="62" r="3.5" fill="var(--warn)"/><circle cx="230" cy="64" r="3.5" fill="var(--warn)"/><circle cx="268" cy="66" r="3.5" fill="var(--warn)"/>
+              <circle cx="186" cy="82" r="3.5" fill="var(--warn)"/><circle cx="224" cy="84" r="3.5" fill="var(--warn)"/><circle cx="262" cy="88" r="3.5" fill="var(--warn)"/>
+              <text x="230" y="104" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Uniform</text>
+
+              <defs>
+                <marker id="eq-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+                  <path d="M0 0 L6 3 L0 6 z" fill="var(--ink)"/>
+                </marker>
+              </defs>
+            </svg>
+</div>
+<figcaption>energy that starts concentrated ends up spread evenly</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> State the Second Law in terms of heat flow.</li>
+              <li><input type="checkbox" disabled> Explain thermal equilibrium with particle collisions.</li>
+              <li><input type="checkbox" disabled> Contrast the First Law (how much energy) with the Second Law (which way).</li>
+              <li><input type="checkbox" disabled> Read a temperature-versus-time graph for two samples reaching equilibrium.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 THE ONE-WAY ARROW OF TIME -->
+<section id="s-one-way" data-toc="The one-way arrow">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Directionality in nature</span></div>
+    <h2>The First Law allows it. The Second Law forbids it.</h2>
+    <p>A glass of water at 20&nbsp;&deg;C sits on a table. Suddenly 500&nbsp;J of thermal energy leaves the bottom half and gathers in the top half. The bottom half freezes at 0&nbsp;&deg;C. The top half heats to 40&nbsp;&deg;C.</p>
+    <p>Does this break the <strong class="term">First Law of Thermodynamics</strong>? <strong>It does not.</strong> The total energy of the water stays constant (&Delta;<em>E</em> = 0).</p>
+    <p>Yet this will <em>never happen</em>. The <strong class="term">Second Law of Thermodynamics</strong> sets the direction:</p>
+
+    <div class="callout">
+      <div class="label">The Second Law of Thermodynamics</div>
+      <p>In any spontaneous process in an isolated system, the total entropy increases. Thermal energy flows from higher temperature to lower temperature until the temperature is the same everywhere. <b>Entropy</b> measures how spread out the energy is.</p>
+    </div>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>The First Law: how much</h4>
+        <p>It answers <em>&ldquo;How much energy moved?&rdquo;</em> Energy cannot be created or destroyed. Energy lost by one component is gained by another (<em>q</em><sub>system</sub> = &minus;<em>q</em><sub>surroundings</sub>). It keeps the books. It does not say which way energy flows.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>The Second Law: which way</h4>
+        <p>It answers <em>&ldquo;Which way will energy flow?&rdquo;</em> Energy spreads out from hot regions until all connected matter has the same temperature.</p>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking energy conservation decides what happens. The First Law only checks the energy count. Many events keep the count and still never happen. The Second Law gives the direction.</p></div>
+
+  </div>
+</section>
+
+<!-- 02 COLLISION MECHANICS -->
+<section id="s-collision-mechanics" data-toc="Collision mechanics">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Submicroscopic origins</span></div>
+    <h2>Why heat flows downhill: random collisions.</h2>
+    <p>The direction of heat flow comes from collisions between particles. What happens when a hot block of iron touches a cool beaker of water?</p>
+
+    <!-- COLLISION DIAGRAM -->
+    <figure class="figure figure--wide">
+<div class="diagram">
+      <svg viewBox="0 0 720 340" font-family="var(--display)" role="img" aria-label="Top: a hot iron block at 95 degrees C touches a cool water bath at 20 degrees C. Bottom: three steps of a collision between a fast particle and a slow particle, ending with the fast one slower and the slow one faster">
+        <defs>
+          <marker id="col-vec-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+            <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+          </marker>
+          <marker id="col-vec-ink" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+            <path d="M0 0 L6 3 L0 6 z" fill="var(--ink-soft)"/>
+          </marker>
+          <marker id="col-vec-force" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+            <path d="M0 0 L6 3 L0 6 z" fill="var(--good)"/>
+          </marker>
+        </defs>
+        <rect x="0" y="0" width="720" height="340" fill="var(--card)" rx="8" stroke="var(--hair)" stroke-width="1"/>
+
+        <!-- PART A: the contact boundary -->
+        <g transform="translate(15, 15)">
+          <rect x="0" y="0" width="690" height="85" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+          <text x="15" y="20" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)">The contact boundary</text>
+
+          <!-- Hot iron block -->
+          <rect x="25" y="32" width="295" height="42" rx="4" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-width="1.5"/>
+          <text x="172" y="50" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Hot iron block (95 &deg;C)</text>
+          <text x="172" y="66" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">high average thermal energy</text>
+
+          <!-- Interface -->
+          <line x1="320" y1="28" x2="320" y2="78" stroke="var(--ink)" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M 290 53 L 350 53" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#col-vec-red)"/>
+          <text x="338" y="45" style="font-size:var(--dia-label-size);" font-style="italic" font-weight="700" fill="var(--accent)" text-anchor="middle">q</text>
+
+          <!-- Cool water bath -->
+          <rect x="320" y="32" width="345" height="42" rx="4" fill="var(--cool)" fill-opacity="0.12" stroke="var(--ink-soft)" stroke-width="1.5"/>
+          <text x="500" y="50" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Cool water bath (20 &deg;C)</text>
+          <text x="500" y="66" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">low average thermal energy</text>
+        </g>
+
+        <text x="360" y="124" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">One collision at the interface</text>
+
+        <!-- Stage 1: approach -->
+        <g transform="translate(15, 135)">
+          <rect x="0" y="0" width="220" height="155" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+          <text x="110" y="20" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">1. Approach</text>
+          <line x1="110" y1="30" x2="110" y2="115" stroke="var(--hair)" stroke-width="1" stroke-dasharray="2 2"/>
+
+          <circle cx="55" cy="75" r="10" fill="var(--accent)"/>
+          <line x1="55" y1="75" x2="98" y2="75" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#col-vec-red)"/>
+          <text x="55" y="56" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--accent)" text-anchor="middle">fast</text>
+
+          <circle cx="150" cy="75" r="10" fill="var(--ink-soft)"/>
+          <line x1="150" y1="75" x2="168" y2="75" stroke="var(--ink-soft)" stroke-width="1.5" marker-end="url(#col-vec-ink)"/>
+          <text x="150" y="56" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink-soft)" text-anchor="middle">slow</text>
+
+          <text x="110" y="140" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">high KE meets low KE</text>
+        </g>
+
+        <!-- Stage 2: contact -->
+        <g transform="translate(250, 135)">
+          <rect x="0" y="0" width="220" height="155" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+          <text x="110" y="20" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">2. Contact</text>
+          <line x1="110" y1="30" x2="110" y2="115" stroke="var(--hair)" stroke-width="1" stroke-dasharray="2 2"/>
+
+          <circle cx="100" cy="68" r="10" fill="var(--accent)"/>
+          <circle cx="120" cy="68" r="10" fill="var(--ink-soft)"/>
+          <line x1="110" y1="52" x2="110" y2="84" stroke="var(--good)" stroke-width="2"/>
+
+          <line x1="100" y1="94" x2="70" y2="94" stroke="var(--good)" stroke-width="2" marker-end="url(#col-vec-force)"/>
+          <text x="85" y="112" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--good)" text-anchor="middle">F</text>
+
+          <line x1="120" y1="94" x2="150" y2="94" stroke="var(--good)" stroke-width="2" marker-end="url(#col-vec-force)"/>
+          <text x="135" y="112" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--good)" text-anchor="middle">F</text>
+
+          <text x="110" y="140" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">equal and opposite forces</text>
+        </g>
+
+        <!-- Stage 3: redistribution -->
+        <g transform="translate(485, 135)">
+          <rect x="0" y="0" width="220" height="155" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+          <text x="110" y="20" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">3. After the collision</text>
+          <line x1="110" y1="30" x2="110" y2="115" stroke="var(--hair)" stroke-width="1" stroke-dasharray="2 2"/>
+
+          <circle cx="75" cy="75" r="10" fill="var(--accent)"/>
+          <line x1="75" y1="75" x2="48" y2="75" stroke="var(--accent)" stroke-width="1.8" marker-end="url(#col-vec-red)"/>
+          <text x="62" y="56" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--accent)" text-anchor="middle">slower</text>
+
+          <circle cx="145" cy="75" r="10" fill="var(--ink-soft)"/>
+          <line x1="145" y1="75" x2="185" y2="75" stroke="var(--ink-soft)" stroke-width="2.5" marker-end="url(#col-vec-ink)"/>
+          <text x="165" y="56" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink-soft)" text-anchor="middle">faster</text>
+
+          <text x="110" y="140" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--good)" text-anchor="middle">KE passes to the slow particle</text>
+        </g>
+
+        <!-- Summary banner -->
+        <rect x="15" y="300" width="690" height="28" rx="4" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+        <text x="360" y="319" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="middle">Trillions of collisions → net heat flow until T_hot = T_cold</text>
+      </svg>
+</div>
+<figcaption><b>Figure 3.6.</b> equal and opposite forces in each collision pass kinetic energy from the faster particle to the slower one until the average energies match</figcaption>
+</figure>
+
+    <p>A fast atom at the interface strikes a slow atom. Kinetic energy crosses the boundary. Billions of these collisions happen every microsecond:</p>
+    <ul>
+      <li>Hot particles slow down on average, so <em>T</em><sub>hot</sub> drops.</li>
+      <li>Cold particles speed up on average, so <em>T</em><sub>cold</sub> rises.</li>
+      <li>Net heat transfer continues until the <strong>average kinetic energy per particle is the same</strong> on both sides. That is <strong class="term">thermal equilibrium</strong>. Collisions still happen, but energy passes both ways at equal rates.</li>
+    </ul>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking particles stop colliding at equilibrium. They keep colliding. Energy passes both ways at equal rates, so the average speed stays the same on both sides.</p></div>
+
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Why the reverse never happens: counting the ways</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+      <p>One collision could, by chance, move energy from a slow particle to a fast one. A real sample holds trillions of particles. For all of them to move energy the wrong way together is so unlikely that it never happens.</p>
+      <p>The reason is counting. There are far more ways for the particles to share the energy evenly than to keep it in one place. Each way is called a <b>microstate</b>. The even spread has the most microstates, so it is the state a system reaches. Entropy counts those ways.</p>
+    </details>
+
+  </div>
+</section>
+
+<!-- 03 INTERACTIVE COLLISION & EQUILIBRIUM SANDBOX -->
+<section id="s-interactive-sandbox" data-toc="Collision sandbox">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Two chambers, one partition</span></div>
+    <h2>Remove the partition and watch the particles mix.</h2>
+    <p>Chamber A (left, red) starts with hot, fast particles. Chamber B (right, grey) starts with cold, slow particles. Press <b>Remove partition and mix</b>. Watch the fast particles slow down and the slow particles speed up until one temperature results.</p>
+
+    <div class="sim-box" data-sim="chamber">
+      <div class="label">Simulation</div>
+      <h4>What happens to fast and slow particles when two samples mix?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: each side of the chamber holds 30 identical particles. The left side is at 95&nbsp;&deg;C and the right side is at 15&nbsp;&deg;C. You remove the partition and wait. What temperature do the particles reach?</p>",
+  "options": [
+    {
+      "label": "Each side keeps its own temperature, because particles keep their energy",
+      "correct": false,
+      "feedback": "Particles keep their energy only until they collide. At the boundary, fast particles hit slow ones and pass energy on. With the partition gone, the two sides cannot stay different."
+    },
+    {
+      "label": "One temperature near 95&nbsp;&deg;C, because fast particles win the collisions",
+      "correct": false,
+      "feedback": "Fast particles look like winners, which makes this tempting. But each collision shares energy: the fast particle slows and the slow one speeds up. Equal numbers of each end at the average, not at the hot value."
+    },
+    {
+      "label": "One temperature near 55&nbsp;&deg;C, halfway between the two",
+      "correct": true,
+      "feedback": "Equal numbers of identical particles share their energy until the average speed is the same everywhere. The average of 95&nbsp;&deg;C and 15&nbsp;&deg;C is 55&nbsp;&deg;C."
+    }
+  ],
+  "reveal": "<p>Now check it. Remove the partition and watch both temperature readouts.</p>"
+}
+</script>
+</div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="A chamber of particles split by a partition. Set the temperature of each side, then remove the partition."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Set the temperature of each side and remove the partition">
+        <label class="slider-row">Left side temperature <output>95 °C</output>
+          <input type="range" id="sliderTempA" min="10" max="120" step="5" value="95" data-unit="°C">
+        </label>
+        <label class="slider-row">Right side temperature <output>15 °C</output>
+          <input type="range" id="sliderTempB" min="10" max="120" step="5" value="15" data-unit="°C">
+        </label>
+        <button type="button" class="btn" id="btnTogglePartition">Remove partition and mix</button>
+        <button type="button" class="btn ghost" id="btnResetSandbox">Start over</button>
+        <button type="button" class="chip" aria-pressed="false" data-histogram>Speed histogram <span class="tag-enrichment">Enrichment</span></button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="a"><span class="readout-label">Left group</span><span class="readout-value">95 °C</span></div>
+        <div class="readout" data-readout="b"><span class="readout-label">Right group</span><span class="readout-value">15 °C</span></div>
+        <div class="readout" data-readout="part"><span class="readout-label">Partition</span><span class="readout-value">In place</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="accent"></span>Particle that started on the left</li>
+        <li><span class="key" data-shape="dot" data-token="ink-soft"></span>Particle that started on the right</li>
+        <li><span class="key" data-shape="line" data-token="ink-soft"></span>The tail behind a particle: longer means faster</li>
+        <li><span class="key" data-shape="line" data-token="ink"></span>The partition</li>
+      </ul>
+      <ol class="try-this">
+        <li>Load 95 and 15 °C, remove the partition, wait for One temperature, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="95:15">Load 95 and 15 °C</button> <b>Look for:</b> the red particles slow down, the grey ones speed up, and both groups end near 55 °C.</li>
+        <li>Load 120 and 10 °C, remove the partition, wait, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="120:10">Load 120 and 10 °C</button> <b>Look for:</b> a larger gap, and a mixed temperature of 65 °C.</li>
+        <li>Load 50 and 50 °C, remove the partition, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="50:50">Load 50 and 50 °C</button> <b>Look for:</b> nothing changes. The particles still collide, but no energy flows one way.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows. Which statement fits all of them?</p>",
+  "options": [
+    {
+      "label": "The mixed temperature equaled the hotter starting temperature each time",
+      "correct": false,
+      "feedback": "In your rows the mixed temperature is lower than the hotter start whenever the two sides began different. The hot group gave energy to the cold group."
+    },
+    {
+      "label": "Each mixed temperature sat halfway between the two starting temperatures",
+      "correct": true,
+      "feedback": "95 and 15 gave 55, and 120 and 10 gave 65. When both sides began at 50, nothing changed. Equal numbers of identical particles end at the average."
+    },
+    {
+      "label": "The mixed temperature was the same in every row, whatever the starting temperatures",
+      "correct": false,
+      "feedback": "Your rows show different mixed temperatures: 55, 65 and 50. The result depends on where each side started."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. A closed system shares its energy until the temperature is the same everywhere.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 04 CLOSED-SYSTEM INVESTIGATION PLANNER -->
+<section id="s-investigation-planner" data-toc="Investigation planner">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Planning an investigation</span></div>
+    <h2>Plan an investigation: does the energy spread out?</h2>
+    <p>Combine two components at different temperatures in a closed system, then watch both temperatures. Use the planner to choose the materials and the insulation. Then compare the trials.</p>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Expecting two samples to meet halfway. 80&nbsp;g of water at 75&nbsp;&deg;C mixed with 120&nbsp;g at 15&nbsp;&deg;C ends at 39&nbsp;&deg;C, not 45&nbsp;&deg;C. The larger mass pulls the result toward its own temperature.</p></div>
+
+    <div class="sim-box" data-sim="investigation">
+      <div class="label">Simulation</div>
+      <h4>Do the hot and cold parts of a closed system end at one temperature?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: you pour 80&nbsp;g of water at 80&nbsp;&deg;C into 120&nbsp;g of water at 20&nbsp;&deg;C in a nested foam cup that loses no heat. What is the final temperature?</p>",
+  "options": [
+    {
+      "label": "44 &deg;C, because the larger cold mass pulls the result below the midpoint",
+      "correct": true,
+      "feedback": "The hot water loses 80 &times; (80 &minus; <em>T</em>) and the cold water gains 120 &times; (<em>T</em> &minus; 20). Setting them equal gives 44&nbsp;&deg;C. The larger mass sits closer to its own start."
+    },
+    {
+      "label": "50 &deg;C, the midpoint of 80 &deg;C and 20 &deg;C",
+      "correct": false,
+      "feedback": "The midpoint is tempting, but it ignores the masses. The cold sample is bigger, so it needs more energy for each degree of rise. The result sits nearer 20&nbsp;&deg;C."
+    },
+    {
+      "label": "56 &deg;C, because the hotter water has more influence",
+      "correct": false,
+      "feedback": "That answer weights each temperature by the wrong mass. The hot water has the smaller mass, so it has less influence. The result sits nearer the cold start, not the hot one."
+    }
+  ],
+  "reveal": "<p>Now check it. Start the trial and read the final temperature.</p>"
+}
+</script>
+</div>
+      <div class="sim-stage" data-ratio="wide"><svg aria-label="A graph of temperature against time for two parts of a system. Set the design and press Start trial."></svg></div>
+      <div class="sim-controls" role="group" aria-label="Plan the investigation">
+        <label class="tool-field" for="invType"><span class="label">Investigation design</span>
+          <select id="invType" class="form-select">
+            <option value="water-water" selected>80 g hot water and 120 g cold water</option>
+            <option value="metal-water">100 g aluminum block and 100 g water</option>
+          </select>
+        </label>
+        <label class="tool-field" for="invInsulation"><span class="label">Insulation</span>
+          <select id="invInsulation" class="form-select">
+            <option value="ideal" data-short="Foam cups (no loss)" selected>Nested foam cups: a closed system, no loss</option>
+            <option value="moderate" data-short="One cup (4% loss)">One foam cup: a little heat leaks, 4%</option>
+            <option value="uninsulated" data-short="Open beaker (15% loss)">Open beaker: a lot of heat leaks, 15%</option>
+          </select>
+        </label>
+        <label class="slider-row"><span id="invLabelThot">80 g hot water starts at</span> <output>80 °C</output>
+          <input type="range" id="invThot" min="50" max="100" step="1" value="80" data-unit="°C">
+        </label>
+        <label class="slider-row"><span id="invLabelTcold">120 g cold water starts at</span> <output>20 °C</output>
+          <input type="range" id="invTcold" min="5" max="30" step="1" value="20" data-unit="°C">
+        </label>
+        <button type="button" class="btn" id="btnRunInvestigation">Start trial</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="eq"><span class="readout-label">Equilibrium with no loss</span><span class="readout-value">44.0 °C</span></div>
+        <div class="readout" data-readout="end"><span class="readout-label">Final temperature</span><span class="readout-value">44.0 °C</span></div>
+        <div class="readout" data-readout="dh"><span class="readout-label">Hot part change</span><span class="readout-value">&minus;36.0 °C</span></div>
+        <div class="readout" data-readout="dc"><span class="readout-label">Cold part change</span><span class="readout-value">+24.0 °C</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="line" data-token="accent"></span>The hot part of the system</li>
+        <li><span class="key" data-shape="line" data-token="ink-soft"></span>The cold part of the system</li>
+        <li><span class="key" data-shape="dash" data-token="good"></span>The final temperature</li>
+      </ul>
+      <ol class="try-this">
+        <li>Load the unequal water masses, start the trial, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="unequal">Load 80 g and 120 g of water</button> <b>Look for:</b> both curves meet at 44.0 °C, not at the 50 °C midpoint.</li>
+        <li>Load the aluminum block and water, start the trial, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="metal">Load aluminum and water</button> <b>Look for:</b> the curves meet near 32.4 °C, close to the water&rsquo;s start, because water has the higher specific heat.</li>
+        <li>Load the open beaker, start the trial, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="leak">Load the open beaker</button> <b>Look for:</b> the curves meet at 44.0 °C, then both cool toward the room and end at 40.5 °C.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows. Which statement fits them?</p>",
+  "options": [
+    {
+      "label": "The aluminum and water ended at 55 &deg;C, the midpoint of their starting temperatures",
+      "correct": false,
+      "feedback": "Look at your aluminum row. It ended near 32 &deg;C, not 55. Water holds more energy for each degree than aluminum does, so the result sits near the water&rsquo;s start."
+    },
+    {
+      "label": "The open beaker ended at the same temperature as the foam cup, because the masses were the same",
+      "correct": false,
+      "feedback": "The masses match, but your rows show different endings. The open beaker finished lower than the foam cup, so the masses cannot explain the gap."
+    },
+    {
+      "label": "The open beaker ended below the foam cup, because heat also left the system for the room",
+      "correct": true,
+      "feedback": "Both trials met at 44&nbsp;&deg;C. The open beaker then kept cooling toward the room, so it ended at 40.5&nbsp;&deg;C. The foam cup held 44&nbsp;&deg;C. A closed system does not lose heat."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. A closed system keeps its energy. An open one does not.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 05 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. Thermal energy flows from a region of higher temperature to a region of <input class="blank" data-answer="lower temperature|lower|colder" placeholder="?">.<br>
+      2. When two bodies in contact reach the same temperature and net heat transfer stops, they are in thermal <input class="blank" data-answer="equilibrium" placeholder="?">.<br>
+      3. The <input class="blank" data-answer="Second Law|Second Law of Thermodynamics|2nd Law" placeholder="?"> says isolated systems move toward more even energy distribution.<br>
+      4. At the particle level, fast particles collide with slow particles and transfer <input class="blank" data-answer="kinetic energy|momentum|energy" placeholder="?">.<br>
+      5. The Second Law says thermal energy <input class="blank" data-answer="disperses|spreads|flows" placeholder="?"> from concentrated to uniform distributions.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 SELF-EXPLANATION -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark">
+      <p>A student watches an ice cube melt in a warm room and argues:</p>
+      <p><em>&ldquo;The First Law says energy is conserved. Suppose a puddle took heat from itself, refroze, and warmed the room. The First Law would still hold. Why does this never happen?&rdquo;</em></p>
+      <p>Write 3 to 4 sentences that answer the student. Use particle collisions and the Second Law of Thermodynamics.</p>
+    </div>
+    <p class="hint">Separate conservation (First Law) from direction (Second Law). Write your answer first, then compare it with the model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="The First Law holds, but the Second Law forbids this because... At the particle level..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>The student is right that a refreezing puddle would satisfy the First Law. The <strong>Second Law of Thermodynamics</strong> forbids it, because energy spontaneously spreads out and does not gather again.</p>
+        <p>At the particle level, heat moves through collisions. Faster air particles hit slower water molecules and, on average, pass them kinetic energy. The water warms. For the puddle to freeze, the slow water molecules would have to pass energy to the faster air particles in nearly every collision. That does not happen in a real sample.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS3-4 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks]</span>
+      </div>
+      <div class="exam-q">
+        <p>A student investigates thermal energy transfer in a closed system. The student pours 80.0&nbsp;g of water at 75.0&nbsp;&deg;C into an insulated container that holds 120.0&nbsp;g of water at 15.0&nbsp;&deg;C. The student seals the container and logs the temperature until the reading stops changing.</p>
+        <p><b>Data:</b> The specific heat of liquid water is 4.184&nbsp;J/(g&middot;&deg;C). Assume no heat leaves through the container walls.</p>
+        <p class="sub"><b>(a)</b> Calculate the final equilibrium temperature (<em>T</em><sub>f</sub>) of the mixture. Show your work. [2 marks]</p>
+        <p class="sub"><b>(b)</b> Say how the results give evidence for the Second Law of Thermodynamics. Explain how collisions between particles make the energy more uniform. [2 marks]</p>
+      </div>
+      <textarea class="textbox" id="examAns" rows="5" placeholder="Part (a): write your calculation. Part (b): explain the evidence and the collisions..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Setup (1 mark):</b> You set <em>q</em><sub>lost</sub> = &minus;<em>q</em><sub>gained</sub>. Both samples are water, so <em>c</em> cancels.</li>
+          <li><b>Final temperature (1 mark):</b> You solve for <em>T</em><sub>f</sub> and get 39.0&nbsp;&deg;C.</li>
+          <li><b>Evidence (1 mark):</b> You say the two temperatures moved to one value, 39.0&nbsp;&deg;C, with no outside help.</li>
+          <li><b>Collisions (1 mark):</b> You say fast particles lose kinetic energy and slow particles gain it until the averages match.</li>
+        </ul></div></div>
+
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>Heat engines get work from a temperature difference between a hot place and a cold place. Steam turbines, gas turbines, and car engines all work this way. The Second Law says no engine can turn all the heat into work. Some heat must flow to the cold side as waste. Engineers design power plants to use the largest temperature difference they can.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS3-4 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS3-4</h3>
+    <p>
+      Test your mastery of thermal equilibrium in closed systems and the Second Law of Thermodynamics. The adaptive engine models spontaneous energy dispersal, particulate collision mechanics (Newton force pairs), dynamic equilibrium, Maxwell-Boltzmann velocity distributions, and mathematical equilibrium modeling.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS3-4" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 3 &middot; 3-4a</div>
+  <p>Next, 3-14a: <strong>Bond Energy &amp; Reaction Profiles</strong> covers how chemical reactions store and release energy.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="3-4a.js"></script>
+</body>
+</html>

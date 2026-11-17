@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-5a" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Reaction Rates &amp; Collision Theory · Gen Chem 4-1a</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 4-1a &middot; Reaction Rates &amp; Collision Theory</div>
+    <h1>Milk sours in hours on a warm porch. In a fridge it lasts <span class="flip">two weeks</span>.</h1>
+    <p class="lede">Milk left on a warm porch sours in hours. Sealed in a 4&nbsp;&deg;C refrigerator, it stays drinkable for two weeks. Your body does the reverse when it fights an infection. It heats itself to 39&nbsp;&deg;C, and its enzymes work faster. Temperature, concentration and surface area all change how fast a reaction runs. This page shows what makes a collision lead to a reaction.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-5</b> Apply scientific principles and evidence to provide an explanation about the effects of changing the temperature or concentration of the reacting particles on the rate at which a reaction occurs.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can explain how temperature, concentration and surface area change the rate of a reaction. You use the number of collisions and the energy of each collision.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Collisions that react and collisions that bounce apart. The effect of temperature, concentration and surface area on the rate. The spread of particle energies is Enrichment.</div></div>
+    </div>
+
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Collision theory.</strong> A reaction needs a collision with enough kinetic energy (<em>KE</em> &ge; <em>E</em><sub>a</sub>) and the correct orientation.</li>
+              <li><strong>Temperature.</strong> Hotter particles move faster. They collide slightly more often, and a much larger share of the collisions have enough energy.</li>
+              <li><strong>Concentration and pressure.</strong> More particles in the same volume means more collisions each second. Doubling one reactant doubles the rate.</li>
+              <li><strong>Surface area.</strong> A powder exposes more reactant atoms to collisions than a lump of the same mass.</li>
+              <li><strong>The rate.</strong> It depends on how often particles collide, how many of those collisions have enough energy, and how many have the correct orientation.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Collision requirements</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 270 130" font-family="var(--display)" role="img" aria-label="Two collisions. The top one has enough energy and the correct angle, so it reacts. The bottom one has low energy or a bad angle, so the particles rebound unchanged">
+              <rect x="10" y="15" width="250" height="100" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+
+              <!-- Effective collision top -->
+              <circle cx="35" cy="45" r="7" fill="var(--accent)"/><circle cx="65" cy="45" r="7" fill="var(--ink-soft)"/>
+              <line x1="35" y1="45" x2="50" y2="45" stroke="var(--accent)" stroke-width="2"/>
+              <line x1="65" y1="45" x2="50" y2="45" stroke="var(--ink-soft)" stroke-width="2"/>
+              <text x="82" y="42" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--good)">&check; enough energy</text>
+              <text x="82" y="56" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">correct angle: it reacts</text>
+
+              <!-- Ineffective collision bottom -->
+              <circle cx="35" cy="85" r="7" fill="var(--accent)"/><circle cx="65" cy="85" r="7" fill="var(--ink-soft)"/>
+              <path d="M 35 85 Q 45 95 30 100" fill="none" stroke="var(--ink-mute)" stroke-width="1.5"/>
+              <path d="M 65 85 Q 55 95 70 100" fill="none" stroke="var(--ink-mute)" stroke-width="1.5"/>
+              <text x="82" y="82" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">&cross; low energy or bad angle</text>
+              <text x="82" y="96" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">it rebounds unchanged</text>
+            </svg>
+</div>
+<figcaption>a collision reacts only with enough energy and the correct orientation</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> <span>State the two conditions a collision needs to react.</span></li>
+              <li><input type="checkbox" disabled> <span>Explain why raising the temperature can speed up a reaction more than raising the concentration.</span></li>
+              <li><input type="checkbox" disabled> <span>Say how a rise in temperature changes the share of collisions with enough energy.</span></li>
+              <li><input type="checkbox" disabled> <span>Predict how surface area changes the rate of a reaction with a solid.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 COLLISION THEORY PREREQUISITES -->
+<section id="s-prerequisites" data-toc="Two tests for a collision">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Two tests a collision must pass</span></div>
+    <h2>Why 99.999% of collisions produce nothing at all.</h2>
+    <p>At room temperature and atmospheric pressure, one molecule in the air collides roughly <strong>10 billion times every second</strong>. If every collision between methane and oxygen set off a reaction, your room would explode. Almost all collisions are gentle, glancing blows. The molecules bounce apart unchanged.</p>
+    <p><strong class="term">Collision theory</strong> says a collision must pass two tests before it makes a reaction.</p>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>1. Enough kinetic energy (<em>KE</em> &ge; <em>E</em><sub>a</sub>)</h4>
+        <p>Molecules are surrounded by clouds of negative electrons that repel each other. To push through that repulsion and break bonds, the particles must hit with at least the <strong class="term">activation energy</strong> (<em>E</em><sub>a</sub>). A collision with less energy bounces apart with every bond intact.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>2. Correct molecular orientation</h4>
+        <p>Atoms are not smooth spheres. Each molecule reacts at a particular place. In NO + O<sub>3</sub> &rarr; NO<sub>2</sub> + O<sub>2</sub>, the nitrogen atom of NO must hit an oxygen atom of the ozone. If the oxygen end of NO hits the ozone, the molecules bounce apart. A faster collision does not fix that.</p>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking every collision makes a reaction. Most collisions fail one test. The particles are too gentle, or they meet at the wrong angle.</p></div>
+
+    <!-- PREDICT CHECK -->
+    <div data-widget="commit-reveal">
+      <script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A mixture of hydrogen and oxygen gas sits at 25&nbsp;&deg;C. The molecules collide billions of times a second, yet no water forms in years. Why?</p>",
+  "options": [
+    {
+      "label": "The molecules are so far apart that they almost never collide.",
+      "correct": false,
+      "feedback": "A gas is mostly empty space, which makes this tempting. But the molecules still collide billions of times a second. Collisions are not the limit here. Energy is."
+    },
+    {
+      "label": "Almost no collisions carry enough energy to break the H&ndash;H and O=O bonds.",
+      "correct": true,
+      "feedback": "At 25&nbsp;&deg;C the average collision carries only about 3.7&nbsp;kJ/mol. Breaking H&ndash;H takes 436&nbsp;kJ/mol and breaking O=O takes 498&nbsp;kJ/mol. A spark heats a small region above 1,000&nbsp;&deg;C. Then enough collisions cross the barrier and the reaction keeps itself going."
+    },
+    {
+      "label": "Forming water takes in energy, so the mixture cannot react without heat.",
+      "correct": false,
+      "feedback": "Forming water releases energy, so it is not an uphill reaction. The mixture still needs a push to start, because the old bonds must break first. That push is the activation energy, and it is separate from the energy change."
+    }
+  ],
+  "reveal": "<p>At room temperature the average collision carries far less than the activation energy (<em>E</em><sub>a</sub> is over 400&nbsp;kJ/mol). A spark supplies high-energy collisions, and then the reaction runs on its own.</p>"
+}
+      </script>
+    </div>
+
+  </div>
+</section>
+
+<!-- 02 TEMPERATURE -->
+<section id="s-temperature" data-toc="Temperature and energy">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Why heat speeds things up</span></div>
+    <h2>Why a 10&nbsp;&deg;C warm-up can double the reaction rate.</h2>
+    <p>For many reactions, raising the temperature by just 10&nbsp;&deg;C doubles or triples the rate. Yet a rise from 20&nbsp;&deg;C (293&nbsp;K) to 30&nbsp;&deg;C (303&nbsp;K) increases the average kinetic energy by only about 3%. How does a 3% rise in energy produce a 100% to 200% rise in rate?</p>
+    <p>Temperature changes the rate in two ways.</p>
+    <ol>
+      <li><strong>More collisions, a little.</strong> Faster particles cross the vessel sooner and collide slightly more often. The rise is about 2%.</li>
+      <li><strong>Harder collisions, a lot.</strong> At a higher temperature a much larger share of the collisions carry at least <em>E</em><sub>a</sub>. That share is what makes the rate jump.</li>
+    </ol>
+    <p>Cold slows spoilage almost to a stop. A fever speeds up the proteins that fight infection.</p>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a hotter mixture reacts faster only because particles collide more often. Collisions rise by about 2%. The share of collisions with enough energy rises far more.</p></div>
+
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>The spread of particle energies</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+    <p>At one temperature the particles do not all have the same energy. The curve in Figure 4.1 shows how many particles have each energy. Chemists call it the Maxwell-Boltzmann distribution. Raising the temperature flattens the curve and moves it to the right. The area to the right of the <em>E</em><sub>a</sub> line is the share of particles with enough energy. It grows far faster than the average energy does.</p>
+
+    <figure class="figure figure--full">
+<div class="diagram">
+      <svg viewBox="0 0 620 280" font-family="var(--display)" role="img" aria-label="Two curves of particle energy, one for 20 degrees C and one for 35 degrees C. A dashed line marks the activation energy. The hot curve is flatter and sits further right, so far more of its area lies beyond the line">
+        <rect x="0" y="0" width="620" height="280" fill="var(--card)" rx="8" stroke="var(--hair)" stroke-width="1"/>
+
+        <!-- Axes -->
+        <line x1="50" y1="230" x2="580" y2="230" stroke="var(--ink)" stroke-width="1.8"/>
+        <line x1="50" y1="230" x2="50" y2="30" stroke="var(--ink)" stroke-width="1.8"/>
+        <text x="315" y="256" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Particle kinetic energy &rarr;</text>
+        <text x="20" y="130" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle" transform="rotate(-90 20 130)">Share of particles</text>
+
+        <!-- Activation energy line -->
+        <line x1="420" y1="230" x2="420" y2="40" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 4"/>
+        <text x="420" y="28" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Ea</text>
+
+        <!-- Shaded tails -->
+        <path d="M 420 230 L 420 185 Q 460 215 540 228 L 540 230 Z" fill="var(--cool)" opacity="0.35"/>
+        <path d="M 420 230 L 420 120 Q 480 170 560 225 L 560 230 Z" fill="var(--accent)" opacity="0.25"/>
+
+        <!-- Cold curve -->
+        <path d="M 50 230 Q 110 50 160 50 Q 240 50 340 130 Q 420 185 540 228" fill="none" stroke="var(--cool)" stroke-width="3"/>
+        <text x="130" y="40" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--cool)" text-anchor="middle">Cold, 20 &deg;C</text>
+
+        <!-- Hot curve -->
+        <path d="M 50 230 Q 140 105 220 95 Q 310 95 380 135 Q 430 165 560 225" fill="none" stroke="var(--accent)" stroke-width="3"/>
+        <text x="112" y="172" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">Hot, 35 &deg;C</text>
+
+        <!-- Notes on the tails -->
+        <rect x="440" y="44" width="150" height="62" rx="5" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+        <text x="450" y="64" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">High-energy tail</text>
+        <text x="450" y="82" style="font-size:var(--dia-caption-size);" fill="var(--cool)">Cold: a small share</text>
+        <text x="450" y="98" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">Hot: 3&times; more</text>
+      </svg>
+</div>
+<figcaption><b>Figure 4.1.</b> the hot curve is flatter and sits further right · the share beyond <em>E</em><sub>a</sub> grows far more than the average energy</figcaption>
+</figure>
+    </details>
+
+  </div>
+</section>
+
+<!-- 03 THE COLLISION SANDBOX -->
+<section id="s-interactive-kinetics" data-toc="Collision sandbox">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Try it</span></div>
+    <h2>Count the reactions: temperature, amount of A, and form of A.</h2>
+    <p>Set up a run, press Start run, and count the reactions in 10 seconds. A hard, well-aimed collision between A and B makes the product AB. Each time that happens, a fresh A and B enter the vessel. The amounts stay steady, so the slope of the graph shows the rate.</p>
+
+    <div class="sim-box" data-sim="collisions">
+      <div class="label">Simulation</div>
+      <h4>What makes a collision lead to a reaction?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a vessel holds 25 particles of A and 30 of B at 15&nbsp;&deg;C. You make one change and run for 10 seconds. Which change gives the most reactions?</p>",
+  "options": [
+    {
+      "label": "Heat the mixture from 15&nbsp;&deg;C to 80&nbsp;&deg;C",
+      "correct": true,
+      "feedback": "Heating helps twice. The particles collide slightly more often, and a much larger share of the collisions have enough energy. Doubling A would only double the collisions."
+    },
+    {
+      "label": "Double the particles of A from 25 to 50",
+      "correct": false,
+      "feedback": "Twice as much A means twice as many collisions, so the reactions double. That is a real effect. But heating also raises the share of collisions with enough energy, and that gives a bigger jump."
+    },
+    {
+      "label": "Press the particles of A into one solid lump",
+      "correct": false,
+      "feedback": "A lump looks like more reactant in one place, which makes it tempting. But only the atoms on its surface meet B. The same A as a powder exposes more atoms, so a lump gives fewer reactions."
+    }
+  ],
+  "reveal": "<p>Now check it. Run each change and compare the reactions in 10 seconds.</p>"
+}
+</script>
+</div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="A vessel of particles of A and B beside a graph of reactions against time. Set the temperature, the amount of A and its form, then press Start run."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Set up a run">
+        <label class="slider-row">Temperature <output>15 °C</output>
+          <input type="range" id="kTemp" min="15" max="95" step="5" value="15" data-unit="°C">
+        </label>
+        <label class="slider-row">Particles of A <output>25 particles</output>
+          <input type="range" id="kConc" min="10" max="50" step="5" value="25" data-unit="particles">
+        </label>
+        <label class="tool-field" for="kForm"><span class="label">Form of A</span>
+          <select id="kForm" class="form-select">
+            <option value="powder" selected>Powder: A is spread through the vessel</option>
+            <option value="lump">Lump: A is packed into one solid</option>
+          </select>
+        </label>
+        <button type="button" class="btn" id="btnStartKinetics">Start run</button>
+        <button type="button" class="btn ghost" id="btnResetKinetics">Start over</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="time"><span class="readout-label">Time</span><span class="readout-value">0.0 s</span></div>
+        <div class="readout" data-readout="coll"><span class="readout-label">Collisions of A with B</span><span class="readout-value">0</span></div>
+        <div class="readout" data-readout="react"><span class="readout-label">Reactions in 10 s</span><span class="readout-value">0 so far</span></div>
+        <div class="readout" data-readout="share"><span class="readout-label">Share that react</span><span class="readout-value">–</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="accent"></span>Reactant A (it vibrates in place in a lump)</li>
+        <li><span class="key" data-shape="dot" data-token="cool"></span>Reactant B</li>
+        <li><span class="key" data-shape="dot" data-token="good"></span>Product AB, shown where a reaction happens</li>
+        <li><span class="key" data-shape="line" data-token="good"></span>Reactions so far</li>
+      </ul>
+      <ol class="try-this">
+        <li>Compare 15 &deg;C with 80 &deg;C. Load 15 &deg;C, press Start run, then press Record. Load 80 &deg;C, press Start run, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="cold">Load 15 &deg;C</button> <button type="button" class="chip" aria-pressed="false" data-preset="hot">Load 80 &deg;C</button> <b>Look for:</b> about 480 collisions in both runs, but 23 reactions at 15 &deg;C against 102 at 80 &deg;C.</li>
+        <li>Double the particles of A. Load 50 particles at 15 &deg;C, press Start run, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="double">Load 50 particles of A</button> <b>Look for:</b> 971 collisions and 44 reactions, about twice as many of each as your 15 &deg;C row.</li>
+        <li>Pack A into a lump. Load the lump at 15 &deg;C, press Start run, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="lump">Load a lump of A</button> <b>Look for:</b> only 49 collisions and 2 reactions, because only the surface of the lump meets B.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your 15&nbsp;&deg;C row with your 80&nbsp;&deg;C row. The collisions barely changed, but the reactions rose a lot. What explains the rise?</p>",
+  "options": [
+    {
+      "label": "Hotter particles collide many more times, so more of them react",
+      "correct": false,
+      "feedback": "Your rows say otherwise. The collision count hardly moved between 15 and 80 degrees C. Faster particles collide only slightly more often."
+    },
+    {
+      "label": "Hotter particles are more likely to hit with the right orientation",
+      "correct": false,
+      "feedback": "Orientation is tempting because it also decides a reaction. But the sim gives every collision the same chance of the right orientation at any temperature. Temperature changes something else."
+    },
+    {
+      "label": "A larger share of the collisions have enough energy to react",
+      "correct": true,
+      "feedback": "The collisions stayed about the same, so the rise comes from the share that react. Hotter particles meet with more energy, and more collisions clear the barrier."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Temperature changes how hard the collisions are much more than how many there are.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 04 CONCENTRATION, PRESSURE & SURFACE AREA -->
+<section id="s-factors" data-toc="Concentration and surface area">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">More collisions each second</span></div>
+    <h2>Crowding particles together: concentration, pressure, and surface area.</h2>
+    <p>Temperature changes the share of collisions with enough energy. <strong class="term">Concentration</strong>, pressure and surface area change something else. They change how often particles collide.</p>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Concentration &amp; pressure</h4>
+        <p>In a dilute solution or a low-pressure gas, molecules travel far before they meet. Double the concentration of a reactant and you double the particles in each cubic centimeter. Collisions happen twice as often, so the rate doubles.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Surface area of a solid</h4>
+        <p>Drop a solid iron nail into hydrochloric acid. Only the iron atoms on the outside can collide with H<sup>+</sup> ions. The atoms inside the metal are shielded. Grind the same nail into fine iron powder and the surface area grows thousands of times. The rate rises with it.</p>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a big lump of solid reacts faster because it holds more reactant. Only the surface meets the other reactant. The same mass as a powder exposes far more surface.</p></div>
+
+    <!-- CALLOUT: DUST EXPLOSIONS -->
+    <div class="callout">
+      <div class="label">Why grain silos explode</div>
+      <p>A pile of flour on a kitchen counter is hard to ignite. A match only singes it. Blow the same flour into the air of a grain silo and oxygen surrounds every starch particle. One spark can set off an explosion that wrecks reinforced concrete.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 05 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. Under collision theory, particles must collide with enough <input class="blank" data-answer="kinetic energy|energy" placeholder="?"> and with the correct orientation.<br>
+      2. A rise in temperature speeds up a reaction mainly because a larger share of collisions has at least the <input class="blank" data-answer="activation energy|Ea" placeholder="?">.<br>
+      3. Hotter particles move <input class="blank" data-answer="faster|quicker" placeholder="?">, so they collide slightly more often.<br>
+      4. Doubling the concentration of a reactant raises the rate mainly by raising the collision <input class="blank" data-answer="frequency|rate of collisions" placeholder="?">.<br>
+      5. Grinding a solid into a fine powder increases its <input class="blank" data-answer="surface area" placeholder="?">, so more atoms meet the other reactant.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 SELF-EXPLANATION -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark">
+      <p>A student runs two experiments.</p>
+      <p><em>&ldquo;Experiment 1: Doubling the concentration of hydrochloric acid doubled the reaction rate. Experiment 2: Raising the temperature of the acid by only 25&nbsp;&deg;C raised the rate by more than 500%.&rdquo;</em></p>
+      <p>Explain, in 3 to 4 sentences, why the modest temperature rise had a much larger effect than doubling the concentration. Use collision theory.</p>
+    </div>
+    <p class="hint">Compare how often the particles collide with the share of collisions that have enough energy. Write your answer first, then compare it with the model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="Doubling the concentration only changes how often particles collide, but raising the temperature..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>Doubling the concentration puts twice as many particles in the same volume. Collisions happen twice as often. The share of collisions with enough energy stays the same, so the rate doubles.</p>
+        <p>Raising the temperature does more. The particles collide only slightly more often. But a much larger share of the collisions have at least <em>E</em><sub>a</sub>. A 25&nbsp;&deg;C rise multiplies the number of reacting collisions several times, so the rate jumps by more than 500%.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS1-5 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks]</span>
+      </div>
+      <div class="exam-q">
+        <p>A student studies the reaction between solid zinc and aqueous hydrochloric acid: Zn(s) + 2 HCl(aq) &rarr; ZnCl<sub>2</sub>(aq) + H<sub>2</sub>(g)</p>
+        <p>The student runs three trials and measures the volume of hydrogen gas made each second.<br>
+        &bull; <b>Trial 1 (baseline):</b> 2.0&nbsp;g zinc strip, 50&nbsp;mL of 1.0&nbsp;M HCl at 20&nbsp;&deg;C &rarr; 2.4&nbsp;mL H<sub>2</sub> per second.<br>
+        &bull; <b>Trial 2:</b> 2.0&nbsp;g zinc strip, 50&nbsp;mL of 2.0&nbsp;M HCl at 20&nbsp;&deg;C &rarr; 4.8&nbsp;mL H<sub>2</sub> per second.<br>
+        &bull; <b>Trial 3:</b> 2.0&nbsp;g zinc strip, 50&nbsp;mL of 1.0&nbsp;M HCl at 40&nbsp;&deg;C &rarr; 9.6&nbsp;mL H<sub>2</sub> per second.</p>
+        <p class="sub"><b>(a)</b> Use collision theory to explain why doubling the HCl concentration doubled the rate in Trial 2. [1 mark]</p>
+        <p class="sub"><b>(b)</b> Explain why 40&nbsp;&deg;C gave a four-fold rate in Trial 3. Say which factor is mainly responsible: how often particles collide, or the share of collisions with enough energy. [2 marks]</p>
+        <p class="sub"><b>(c)</b> Propose one other change that would raise the rate. Do not change temperature or concentration. Give the particle reason. [1 mark]</p>
+      </div>
+      <textarea class="textbox" id="examAns" placeholder="Write your answers for (a), (b) and (c)..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Concentration (1 mark):</b> You say twice the H<sup>+</sup> ions per volume means twice as many collisions per second.</li>
+          <li><b>Temperature (1 mark):</b> You say a higher temperature means faster particles, so more collisions carry at least <em>E</em><sub>a</sub>.</li>
+          <li><b>Main factor (1 mark):</b> You say the share with enough energy matters most. Collision frequency rises only slightly.</li>
+          <li><b>Modification (1 mark):</b> You propose zinc powder or a catalyst. You say why more collisions react.</li>
+        </ul></div></div>
+
+      <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>Many mRNA vaccines are fragile molecules. They break down in slow reactions with water. These reactions slow down a lot when the temperature drops, so makers ship vaccines in ultracold chains at &minus;80&nbsp;&deg;C. At that temperature few collisions have enough energy to damage the lipid particles. The vaccine stays good for months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-5 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-5</h3>
+    <p>
+      Test your understanding of collision theory and reaction rates one question at a time. The adaptive engine covers collision frequency, orientation, the spread of particle energies, concentration and surface area.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-5" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 4 &middot; 4-1a</div>
+  <p>Next, 4-1b: <strong>Catalysis &amp; Enzymes</strong> shows how a catalyst lowers the energy barrier.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="4-1a.js"></script>
+</body>
+</html>

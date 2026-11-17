@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="4-4a" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Electromagnetic Radiation &amp; Matter · Gen Chem 5-4a</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 5-4a &middot; Electromagnetic Radiation &amp; Matter</div>
+    <h1>A 1,000-watt microwave oven heats soup. A 0.001-watt dental X-ray needs a lead <span class="flip">apron</span>.</h1>
+    <p class="lede">We live in a bath of invisible waves. Radio carries signals to your phone, microwaves warm food, and ultraviolet light from the Sun can burn your skin. The word &ldquo;radiation&rdquo; often sounds like danger. But power is not what makes some radiation harmful. The energy of each single photon decides. This page shows how to judge a claim about radiation.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS4-4</b> Evaluate the validity and reliability of claims in published materials of the effects that different frequencies of electromagnetic radiation have when absorbed by matter.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can say how photon energy changes with frequency. You can say which radiation can damage living cells. You can judge a claim about radiation in a published source.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">The electromagnetic spectrum. Energy per photon. What each band does to matter. Ionizing and non-ionizing radiation. Judging claims. Calculations with <em>E</em> = <em>hf</em>, energies in eV, a device comparison and the chemistry of DNA damage are Enrichment.</div></div>
+    </div>
+
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Photon energy.</strong> Light comes in packets called <strong class="term">photons</strong>. Higher frequency means more energy per photon.</li>
+              <li><strong>What each band does.</strong> Microwaves make molecules rotate. Infrared makes bonds vibrate. Visible light moves electrons. Ultraviolet, X-rays and gamma rays can break bonds.</li>
+              <li><strong>Ionizing radiation.</strong> Each photon of <strong class="term">ionizing radiation</strong> can knock electrons off atoms. Non-ionizing radiation cannot.</li>
+              <li><strong>Brightness is not energy.</strong> A brighter source sends more photons, not stronger ones. Many weak photons cannot add up to break a bond.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Energy per photon rises with frequency</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 300 130" font-family="var(--display)" role="img" aria-label="A bar from radio waves to gamma rays. Photon energy rises from left to right. The first four bands, radio, microwave, infrared and visible, cannot ionize atoms. The last three, ultraviolet, X-ray and gamma, can">
+              <text x="150" y="16" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Photon energy rises &rarr;</text>
+              <rect x="10" y="26" width="42" height="26" fill="var(--cool)" fill-opacity="0.35"/>
+              <rect x="52" y="26" width="42" height="26" fill="var(--cool)" fill-opacity="0.5"/>
+              <rect x="94" y="26" width="42" height="26" fill="var(--cool)" fill-opacity="0.7"/>
+              <rect x="136" y="26" width="42" height="26" fill="var(--cool)" fill-opacity="0.9"/>
+              <rect x="178" y="26" width="38" height="26" fill="var(--accent)" fill-opacity="0.6"/>
+              <rect x="216" y="26" width="38" height="26" fill="var(--accent)" fill-opacity="0.8"/>
+              <rect x="254" y="26" width="36" height="26" fill="var(--accent)"/>
+              <line x1="178" y1="22" x2="178" y2="100" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 3"/>
+              <text x="94" y="74" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--cool)" text-anchor="middle">Non-ionizing</text>
+              <text x="234" y="74" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Ionizing</text>
+              <text x="94" y="94" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">bonds stay whole</text>
+              <text x="234" y="94" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">bonds can break</text>
+              <text x="10" y="120" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">radio</text>
+              <text x="290" y="120" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="end">gamma</text>
+            </svg>
+</div>
+<figcaption>the energy of each photon decides the damage · radio is lowest, gamma is highest</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> <span>Say how photon energy changes as frequency rises.</span></li>
+              <li><input type="checkbox" disabled> <span>Match each band of the spectrum to what it does to matter.</span></li>
+              <li><input type="checkbox" disabled> <span>Say which radiation can damage living cells, and why.</span></li>
+              <li><input type="checkbox" disabled> <span>Judge a claim by asking about photon energy, not power.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 PHOTONS -->
+<section id="s-quantum" data-toc="Photons">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Energy in packets</span></div>
+    <h2>Light travels as photons, and higher frequency means more energy per photon.</h2>
+    <p>All electromagnetic radiation moves through space at the speed of light. It acts as a wave and as a stream of tiny packets of energy. Each packet is a <strong class="term">photon</strong>.</p>
+    <p>A photon&rsquo;s energy depends on its frequency. A high-frequency photon has more energy than a low-frequency photon. Frequency and wavelength trade off, so a short wavelength means a high frequency.</p>
+
+    <div class="callout"><div class="label">The one idea to hold onto</div><p>The energy of one photon depends only on its frequency. A brighter source sends more photons. It does not make any single photon stronger.</p></div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a brighter or more powerful source has stronger photons. Power counts all the photons together. Each photon still carries the energy of its own frequency.</p></div>
+
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A red laser pointer and a violet laser pointer have the same power. Which one has photons with more energy?</p>",
+  "options": [
+    {
+      "label": "Neither, because both pointers have the same power",
+      "correct": false,
+      "feedback": "Power counts every photon each second, which makes this tempting. But each photon&rsquo;s energy depends on its own frequency. The two pointers can send different numbers of photons."
+    },
+    {
+      "label": "The violet pointer, because violet light has the higher frequency",
+      "correct": true,
+      "feedback": "Violet light has a higher frequency than red light, so each violet photon carries more energy. At the same power, the red pointer sends more photons."
+    },
+    {
+      "label": "The red pointer, because red light feels warmer",
+      "correct": false,
+      "feedback": "Red light does look warm, but the feeling comes from many photons heating your skin. Each red photon carries less energy than each violet photon."
+    }
+  ],
+  "reveal": "<p>Energy per photon rises with frequency. Power only tells you how many photons arrive.</p>"
+}
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- 02 WHAT EACH BAND DOES -->
+<section id="s-mechanisms" data-toc="What each band does">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Radiation meets matter</span></div>
+    <h2>What a photon does to matter depends on its energy.</h2>
+    <p>When radiation strikes matter, the matter absorbs the photons. What happens next depends on the energy of each photon.</p>
+
+    <figure class="figure figure--wide">
+<div class="diagram">
+      <svg viewBox="0 0 760 200" font-family="var(--display)" role="img" aria-label="The electromagnetic spectrum in seven bands from radio waves to gamma rays. Photon energy rises from left to right. Radio waves carry signals, microwaves heat water, infrared warms things, and visible light is used for vision. Ultraviolet light burns skin, X-rays need a lead apron, and gamma rays need thick lead. A dashed line separates the non-ionizing bands from the ionizing bands">
+        <rect x="2" y="2" width="756" height="196" rx="8" fill="var(--card)" stroke="var(--hair)" stroke-width="1"/>
+        <text x="380" y="26" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Photon energy rises &rarr;</text>
+
+        <rect x="20" y="38" width="104" height="34" fill="var(--cool)" fill-opacity="0.3"/>
+        <rect x="124" y="38" width="104" height="34" fill="var(--cool)" fill-opacity="0.45"/>
+        <rect x="228" y="38" width="104" height="34" fill="var(--cool)" fill-opacity="0.6"/>
+        <rect x="332" y="38" width="104" height="34" fill="var(--cool)" fill-opacity="0.8"/>
+        <rect x="436" y="38" width="104" height="34" fill="var(--accent)" fill-opacity="0.55"/>
+        <rect x="540" y="38" width="104" height="34" fill="var(--accent)" fill-opacity="0.75"/>
+        <rect x="644" y="38" width="96" height="34" fill="var(--accent)"/>
+
+        <text x="72" y="60" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Radio</text>
+        <text x="176" y="60" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Microwave</text>
+        <text x="280" y="60" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Infrared</text>
+        <text x="384" y="60" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Visible</text>
+        <text x="488" y="60" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Ultraviolet</text>
+        <text x="592" y="60" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">X-ray</text>
+        <text x="692" y="60" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--card)" text-anchor="middle">Gamma</text>
+
+        <line x1="436" y1="32" x2="436" y2="188" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="228" y="100" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--cool)" text-anchor="middle">Non-ionizing: bonds stay whole</text>
+        <text x="590" y="100" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Ionizing: bonds can break</text>
+
+        <text x="72" y="132" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Signals</text>
+        <text x="176" y="132" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Heats water</text>
+        <text x="280" y="132" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Warms things</text>
+        <text x="384" y="132" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Vision</text>
+        <text x="488" y="132" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Burns skin</text>
+        <text x="592" y="132" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Lead apron</text>
+        <text x="692" y="132" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Thick lead</text>
+
+        <text x="72" y="160" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Antennas</text>
+        <text x="176" y="160" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Molecules spin</text>
+        <text x="280" y="160" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Bonds vibrate</text>
+        <text x="384" y="160" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Electrons move</text>
+        <text x="488" y="160" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Bonds can break</text>
+        <text x="592" y="160" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Electrons leave</text>
+        <text x="692" y="160" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Electrons leave</text>
+      </svg>
+</div>
+<figcaption>only ultraviolet, X-rays and gamma rays carry enough energy per photon to break bonds</figcaption>
+</figure>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>1. Microwaves make molecules rotate</h4>
+        <p>Microwave photons have little energy. They twist polar molecules such as water back and forth. The twisting turns into heat as molecules rub, and that warms your food. These photons cannot break a bond.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>2. Infrared makes bonds vibrate</h4>
+        <p>Infrared photons make bonds stretch and bend. This is how greenhouse gases such as CO<sub>2</sub>, CH<sub>4</sub> and H<sub>2</sub>O absorb heat that Earth radiates.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>3. Visible light moves electrons</h4>
+        <p>Visible photons lift outer electrons to higher energy levels. In plants, this drives photosynthesis. In your retina, it starts the signal for vision.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>4. Ultraviolet, X-rays and gamma rays can ionize</h4>
+        <p>These photons carry enough energy to knock electrons off atoms and to break bonds. This is <strong class="term">ionizing radiation</strong>. In living cells it can break DNA, which can cause mutations, cell death and cancer.</p>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking all radiation damages cells. Radio waves, microwaves, infrared and visible light cannot break bonds. A strong source can still heat and burn tissue, but it does not ionize it.</p></div>
+  </div>
+</section>
+
+<!-- 03 THE RADIATION SIMULATOR -->
+<section id="s-sandbox" data-toc="Radiation simulator">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Try it</span></div>
+    <h2>Change the band and the brightness, and watch the target.</h2>
+    <p>Pick a band, a brightness and a target. Each photon works alone, so look at what one photon can do before you look at how many arrive.</p>
+
+    <div class="sim-box" data-sim="radiation">
+      <div class="label">Simulation</div>
+      <h4>Why can X-rays damage cells when radio waves cannot?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: which bands can break a bond?</p>",
+  "options": [
+    {
+      "label": "Only X-rays and gamma rays can break a bond",
+      "correct": false,
+      "feedback": "X-rays and gamma rays do break bonds, which makes this tempting. But ultraviolet photons also carry enough energy, which is why sunlight can burn skin."
+    },
+    {
+      "label": "Any band can break a bond if the source is bright enough",
+      "correct": false,
+      "feedback": "Brightness sounds like it should help, because it adds photons. But each photon must break the bond alone, and a radio photon has far too little energy."
+    },
+    {
+      "label": "Ultraviolet, X-rays and gamma rays can break a bond",
+      "correct": true,
+      "feedback": "Energy per photon rises with frequency. Ultraviolet and higher bands carry enough to break a bond, and the lower bands do not."
+    }
+  ],
+  "reveal": "<p>Now check it. Try each band, and change the brightness.</p>"
+}
+</script>
+      </div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="Photons travel from a source to a target, beside a bar of photon energy from low to high. Set the band, the brightness and the target."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Set up the source">
+        <label class="slider-row">Band, from low energy to high energy <output>4 of 7</output>
+          <input type="range" id="radBand" min="1" max="7" step="1" value="4" data-unit="of 7">
+        </label>
+        <label class="slider-row">Brightness <output>3 of 5</output>
+          <input type="range" id="radBright" min="1" max="5" step="1" value="3" data-unit="of 5">
+        </label>
+        <button type="button" class="chip" aria-pressed="false" data-target="0">Water</button>
+        <button type="button" class="chip" aria-pressed="false" data-target="1">Carbon dioxide</button>
+        <button type="button" class="chip" aria-pressed="false" data-target="2">A hydrogen atom</button>
+        <button type="button" class="chip" aria-pressed="true" data-target="3">DNA</button>
+        <button type="button" class="chip" id="btnEV" aria-pressed="false"><span class="tag-enrichment">Enrichment</span> Show energies in eV</button>
+        <button type="button" class="btn ghost" id="btnRadReset">Start over</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="band"><span class="readout-label">Band</span><span class="readout-value">Visible light</span></div>
+        <div class="readout" data-readout="energy"><span class="readout-label">Photon energy</span><span class="readout-value">4 of 7</span></div>
+        <div class="readout" data-readout="photons"><span class="readout-label">Photons each second</span><span class="readout-value">4</span></div>
+        <div class="readout" data-readout="effect"><span class="readout-label">Effect on the target</span><span class="readout-value">Passes through</span></div>
+        <div class="readout" data-readout="broken"><span class="readout-label">Bonds broken each second</span><span class="readout-value">0</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="line" data-token="cool"></span>A photon of radio, microwave, infrared or visible light</li>
+        <li><span class="key" data-shape="line" data-token="accent"></span>A photon of ultraviolet, X-ray or gamma radiation</li>
+        <li><span class="key" data-shape="square" data-token="ink"></span>The source (left) and the target (right)</li>
+        <li><span class="key" data-shape="dash" data-token="ink"></span>The bond-breaking level on the energy bar</li>
+      </ul>
+      <ol class="try-this">
+        <li>Brighten a weak band. Load radio waves at brightness 5 and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="radio">Load radio at brightness 5</button> <b>Look for:</b> 16 photons each second, and 0 bonds broken. A brighter source sends more photons, not stronger ones.</li>
+        <li>Dim a strong band. Load X-rays at brightness 1 and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="xray">Load X-rays at brightness 1</button> <b>Look for:</b> 1 photon each second, and 1 bond broken each second. One X-ray photon is enough.</li>
+        <li>Cross the bond-breaking level. Load visible light and press Record, then load ultraviolet and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="visible">Load visible light</button> <button type="button" class="chip" aria-pressed="false" data-preset="uv">Load ultraviolet</button> <b>Look for:</b> visible light breaks 0 bonds each second. Ultraviolet breaks 4, because its bar rises above the dashed line.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your radio row with your X-ray row. The radio source was far brighter, yet it broke no bonds. What explains this?</p>",
+  "options": [
+    {
+      "label": "A bright source sends weaker photons, so its bonds stay whole",
+      "correct": false,
+      "feedback": "Your rows say otherwise. Brightness changed the number of photons, and the photon energy column did not change with it."
+    },
+    {
+      "label": "Each radio photon has too little energy to break a bond, however many arrive",
+      "correct": true,
+      "feedback": "The radio row sent 16 photons each second and broke nothing. Each photon works alone, so many weak photons cannot add up to one strong one."
+    },
+    {
+      "label": "Radio waves cannot reach the target, so they cannot damage it",
+      "correct": false,
+      "feedback": "Reaching the target is tempting, because radio is invisible. But the photons arrived at the target in the sim. They did not have enough energy to break a bond."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. The energy of one photon sets the damage, and brightness sets how many photons arrive.</p>"
+}
+</script>
+    </div>
+
+  </div>
+</section>
+
+<!-- 04 EVALUATING PUBLIC CLAIMS -->
+<section id="s-claims" data-toc="Judging claims">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Scientific literacy</span></div>
+    <h2>To judge a claim about radiation, ask about the photons.</h2>
+    <p>Claims that Wi-Fi, 5G towers or cell phones cause cancer spread widely online. How does a scientist judge a claim like this in a published source?</p>
+    <p>Ask three questions. Which band does the source use? Does one photon carry enough energy to break a bond? Does the claim confuse power with photon energy?</p>
+
+    <div class="callout"><div class="label">The one idea to hold onto</div><p>A bond cannot save up energy from many weak photons. One photon breaks one bond, or none. A radio tower sends huge numbers of photons, but every one of them is too weak to break a DNA bond.</p></div>
+
+    <p>A strong enough transmitter can warm tissue and even burn it. That is a heating effect, and it is different from damage to DNA.</p>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a stronger transmitter must be more dangerous to DNA. Power sets how much heat a source makes. Photon energy sets whether a bond can break.</p></div>
+
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A website says: &ldquo;A 500-watt cell tower is more dangerous to DNA than a 100-watt tanning lamp, because the tower has more power.&rdquo; What is wrong with this claim?</p>",
+  "options": [
+    {
+      "label": "It judges by power, but the energy of each photon decides whether a bond breaks",
+      "correct": true,
+      "feedback": "The tower sends radio photons with little energy each. The lamp sends ultraviolet photons that can break bonds. More power only means more photons of the same weak kind."
+    },
+    {
+      "label": "It judges by distance, because only a close source can damage DNA",
+      "correct": false,
+      "feedback": "Distance matters for how much heat arrives, which makes this tempting. But the main error is the test used. A radio photon cannot break a bond at any distance."
+    },
+    {
+      "label": "Nothing is wrong, because more power always means more damage",
+      "correct": false,
+      "feedback": "More power does mean more heating. But damage to DNA depends on the energy of each photon, and the tower&rsquo;s photons are far too weak."
+    }
+  ],
+  "reveal": "<p>Check the photons, not the watts.</p>"
+}
+</script>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PHOTON ENERGY AS A NUMBER (ENRICHMENT) -->
+<section id="s-numbers" data-toc="Photon energy as a number" data-enrichment>
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Photon energy as a number</span><span class="tag-enrichment">Enrichment</span></div>
+    <h2>E = hf, energies in eV, and a comparison of three devices.</h2>
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Calculating photon energy, and what happens to DNA</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+
+    <h3>Photon energy</h3>
+    <p>Light of frequency <em>f</em> and wavelength &lambda; travels at the speed of light <em>c</em>. A photon&rsquo;s energy <em>E</em> follows from Planck&rsquo;s constant <em>h</em> = 6.626 &times; 10<sup>&minus;34</sup>&nbsp;J&middot;s.</p>
+    <div class="eq-display"><em>c</em> = &lambda; <em>f</em> &emsp; <em>E</em> = <em>h</em> <em>f</em> = <em>h</em> <em>c</em> / &lambda;</div>
+    <p>Scientists often give photon energy in electron-volts (eV). One eV is a tiny unit of energy. A typical covalent bond in DNA needs about 3 to 4&nbsp;eV to break. Photons above about 10&nbsp;eV can ionize atoms.</p>
+
+    <div class="table-wrap"><table class="data-table">
+      <caption>Photon energy by band (one example in each band)</caption>
+      <thead><tr><th scope="col">Band</th><th scope="col">Example</th><th scope="col" class="num">Photon energy</th></tr></thead>
+      <tbody>
+        <tr><td>Radio</td><td>1 MHz</td><td class="num">4.1 &times; 10<sup>&minus;9</sup> eV</td></tr>
+        <tr><td>Microwave</td><td>2.45 GHz</td><td class="num">1.0 &times; 10<sup>&minus;5</sup> eV</td></tr>
+        <tr><td>Infrared</td><td>30 THz</td><td class="num">0.124 eV</td></tr>
+        <tr><td>Visible</td><td>550 nm</td><td class="num">2.25 eV</td></tr>
+        <tr><td>Ultraviolet</td><td>300 nm</td><td class="num">4.13 eV</td></tr>
+        <tr><td>X-ray</td><td>0.1 nm</td><td class="num">12,400 eV</td></tr>
+        <tr><td>Gamma ray</td><td>0.001 nm</td><td class="num">1,240,000 eV</td></tr>
+      </tbody>
+    </table></div>
+    <p>A 5G photon at 28&nbsp;GHz carries 0.00012&nbsp;eV. That is about 30,000 times too weak to break a DNA bond.</p>
+
+    <h3>What ionizing radiation does to DNA</h3>
+    <p>An ionizing photon can break the covalent bonds of the DNA backbone. This can cut both strands. It also makes hydroxyl free radicals, which attack nearby molecules. Cells that repair this damage wrongly can mutate.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS4-4 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks] <span class="tag-enrichment">Enrichment</span></span>
+      </div>
+      <div class="exam-q">
+        <p>A committee reviews three devices. Device 1: a 5G base station, 28&nbsp;GHz, photon energy 0.00012&nbsp;eV, 500&nbsp;W. Device 2: a tanning bed, &lambda; = 300&nbsp;nm, photon energy 4.13&nbsp;eV, 100&nbsp;W. Device 3: a dental X-ray, &lambda; = 0.1&nbsp;nm, photon energy 12,400&nbsp;eV, 0.001&nbsp;W in short pulses.</p>
+        <p class="sub"><b>(a)</b> Compare the photon energy of Device 1 with Device 2. Say what each photon does to matter. [1 mark]</p>
+        <p class="sub"><b>(b)</b> A forum says the 500&nbsp;W tower is more dangerous than the 100&nbsp;W tanning bed. Use the numbers to judge the claim. [2 marks]</p>
+        <p class="sub"><b>(c)</b> Mineral sunscreens use zinc oxide or titanium dioxide particles. Say how they protect DNA. [1 mark]</p>
+      </div>
+      <textarea class="textbox" id="examAnsEnr" placeholder="Write your answers for (a), (b) and (c)..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Comparison (1 mark):</b> You say 5G photons only warm matter, and 4.13 eV photons can break bonds.</li>
+          <li><b>Power or photons (1 mark):</b> You say the claim confuses total power with the energy of one photon.</li>
+          <li><b>No pooling (1 mark):</b> You say weak photons cannot add up to break a bond, however many arrive.</li>
+          <li><b>Sunscreen (1 mark):</b> You say the particles absorb ultraviolet photons and turn the energy into heat.</li>
+        </ul></div></div>
+    </div>
+    </details>
+  </div>
+</section>
+
+<!-- 06 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. The energy of one photon rises as its <input class="blank" data-answer="frequency" placeholder="?"> rises.<br>
+      2. Microwave photons make polar molecules such as water <input class="blank" data-answer="rotate|spin|twist|rotation|turn" placeholder="?">, which warms food.<br>
+      3. Infrared photons make chemical bonds stretch, bend and <input class="blank" data-answer="vibrate|vibration|vibrations" placeholder="?">.<br>
+      4. Ultraviolet, X-ray and gamma photons are <input class="blank" data-answer="ionizing|ionizing radiation" placeholder="?"> radiation because they can knock electrons off atoms.<br>
+      5. A brighter source sends more photons, but each photon has the same <input class="blank" data-answer="energy" placeholder="?">.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 07 SELF-EXPLANATION -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark">
+      <p>An advertisement says: <em>&ldquo;5G towers give off dangerous radiation that breaks the DNA in your brain cells. Buy our sticker to block it.&rdquo;</em></p>
+      <p>Judge this claim. Use photon energy and the difference between ionizing and non-ionizing radiation.</p>
+    </div>
+    <p class="hint">Name the band that 5G uses. Say what one photon of that band can and cannot do. Write your answer first, then compare it with the model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="5G uses radio waves, and each radio photon..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>5G uses radio waves. Radio photons carry far too little energy to break a bond in DNA. Radio is non-ionizing radiation.</p>
+        <p>The advertisement may be thinking about power. But a bond cannot save up energy from many weak photons, so a stronger signal does not change the result. At most, a strong source warms tissue. The claim is not supported.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">08</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS4-4 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks]</span>
+      </div>
+      <div class="exam-q">
+        <p>A health committee reviews three devices. Device 1 is a cell tower that sends radio waves at 500&nbsp;W. Device 2 is a tanning bed that sends ultraviolet light at 100&nbsp;W. Device 3 is a dental X-ray machine that sends X-rays at 0.001&nbsp;W in short pulses.</p>
+        <p class="sub"><b>(a)</b> Rank the three devices by the energy of one photon, from lowest to highest. [1 mark]</p>
+        <p class="sub"><b>(b)</b> A forum says the 500&nbsp;W tower is more dangerous than the 100&nbsp;W tanning bed because it has more power. Judge the claim. [2 marks]</p>
+        <p class="sub"><b>(c)</b> Say why the dental X-ray needs a lead apron even though it has the lowest power. [1 mark]</p>
+      </div>
+      <textarea class="textbox" id="examAns" placeholder="Write your answers for (a), (b) and (c)..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Ranking (1 mark):</b> You rank the tower (radio), then the tanning bed (ultraviolet), then the X-ray machine.</li>
+          <li><b>Power or photons (1 mark):</b> You say the claim confuses total power with the energy of one photon.</li>
+          <li><b>No pooling (1 mark):</b> You say radio photons are too weak to break bonds, however many arrive.</li>
+          <li><b>X-ray (1 mark):</b> You say X-ray photons are ionizing, so even a few can damage cells.</li>
+        </ul></div></div>
+
+      <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>Mineral sunscreens contain tiny particles of zinc oxide or titanium dioxide. The particles absorb ultraviolet photons before they reach your skin. They turn the photon energy into harmless heat, so the DNA below stays whole.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS4-4 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS4-4</h3>
+    <p>
+      Test your understanding of radiation and matter one question at a time. The adaptive engine covers photon energy, what each band does to matter, ionizing radiation, and judging claims.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS4-4" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 5 &middot; 5-4a</div>
+  <p>You have finished the last lesson of General Chemistry. Use the textbook home page to review any lesson.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="5-4a.js"></script>
+</body>
+</html>

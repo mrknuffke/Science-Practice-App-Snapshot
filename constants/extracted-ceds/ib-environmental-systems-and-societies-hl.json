@@ -1,0 +1,69 @@
+{
+  "courseName": "IB Environmental Systems and Societies HL",
+  "courseSlug": "ib-environmental-systems-and-societies-hl",
+  "practicesLabel": "Inquiry, Systems Thinking and HL Extensions",
+  "practices": "Assessments evaluate core environmental concepts plus all HL Extensions. High emphasis on advanced systems modeling, environmental economics, and international policy analysis. Strict adherence to command terms.",
+  "units": [
+    {
+      "unitNumber": "1",
+      "unitTitle": "Foundations of environmental systems and societies (SL + HL)",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Environmental value systems (EVS): ecocentric, anthropocentric, technocentric",
+        "Systems and models: open, closed, isolated systems",
+        "Energy and equilibria: laws of thermodynamics, stability",
+        "Sustainability, ecological footprint",
+        "Environmental economics and ethics (HL Extension)"
+      ]
+    },
+    {
+      "unitNumber": "2",
+      "unitTitle": "Ecology (SL + HL)",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Species and populations, carrying capacity, population dynamics and modeling (HL Extension)",
+        "Communities and ecosystems, interactions (competition, predation)",
+        "Flows of energy and matter, food chains, pyramids",
+        "Biomes, zonation and ecological succession"
+      ]
+    },
+    {
+      "unitNumber": "3",
+      "unitTitle": "Biodiversity and conservation",
+      "examWeight": "20%",
+      "keyTopics": [
+        "An introduction to biodiversity: genetic, species, habitat",
+        "Origins of biodiversity, natural selection, plate tectonics",
+        "Threats to biodiversity, species extinction, red list",
+        "Conservation of biodiversity, reserves, treaties"
+      ]
+    },
+    {
+      "unitNumber": "4",
+      "unitTitle": "Water and aquatic food production systems",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Water systems and resources, hydrological cycle",
+        "Access to fresh water, water conservation",
+        "Aquatic food production systems, fisheries",
+        "Water pollution, eutrophication"
+      ]
+    },
+    {
+      "unitNumber": "5",
+      "unitTitle": "Soil systems and terrestrial food production (SL + HL)",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Introduction to soil systems, soil profile, horizons",
+        "Terrestrial food production systems and food choices",
+        "Soil degradation and conservation strategies",
+        "Global environmental policies and geopolitics (HL Extension)"
+      ]
+    }
+  ],
+  "examFormat": {
+    "multipleChoice": "Paper 1: Case Study response (30%), 1 hour",
+    "freeResponse": "Paper 2: Short-answer and structured essays (70%), 2 hours"
+  },
+  "antiPatterns": "Ensure students show advanced policy evaluation and systems modeling. Out of scope are: memorization of local/regional legislation details beyond standard international treaties (CITES, Montreal Protocol, Kyoto Protocol); and speculative ecological theories not supported by standard environmental models."
+}

@@ -1,0 +1,84 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="512" height="512" rx="112" fill="#0F172A"/>
+    
+    <!-- Subtle background science orbits/grids -->
+    <circle cx="256" cy="256" r="230" stroke="rgba(56, 189, 248, 0.05)" stroke-width="6" fill="none" stroke-dasharray="10 15"/>
+    <circle cx="256" cy="256" r="180" stroke="rgba(56, 189, 248, 0.03)" stroke-width="4" fill="none"/>
+    
+    <defs>
+        <!-- Gradients -->
+        <linearGradient id="metalGrad" x1="112" y1="145" x2="400" y2="355" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#F1F5F9" />
+            <stop offset="35%" stop-color="#CBD5E1" />
+            <stop offset="100%" stop-color="#94A3B8" />
+        </linearGradient>
+        
+        <linearGradient id="darkMetal" x1="232" y1="350" x2="280" y2="380" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#475569" />
+            <stop offset="100%" stop-color="#1E293B" />
+        </linearGradient>
+
+        <linearGradient id="screenGrad" x1="130" y1="163" x2="382" y2="337" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#090D16" />
+            <stop offset="100%" stop-color="#1E1B4B" />
+        </linearGradient>
+
+        <!-- Neon glow effect -->
+        <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+        
+        <linearGradient id="bgGlow" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.15"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Background subtle gradient glow -->
+    <rect width="512" height="512" rx="112" fill="url(#bgGlow)" style="mix-blend-mode: screen;"/>
+
+    <!-- Floating colorful science particles (Bubbly science aesthetic!) -->
+    <!-- Pink energy core -->
+    <circle cx="85" cy="140" r="16" fill="#FB7185" filter="url(#neonGlow)" opacity="0.6"/>
+    <!-- Mint chemistry bubble -->
+    <circle cx="430" cy="220" r="22" fill="#4ADE80" filter="url(#neonGlow)" opacity="0.5"/>
+    <!-- Lavender physics particle -->
+    <circle cx="100" cy="380" r="14" fill="#A78BFA" filter="url(#neonGlow)" opacity="0.7"/>
+    <!-- Sky blue electronics light -->
+    <circle cx="410" cy="360" r="12" fill="#38BDF8" filter="url(#neonGlow)" opacity="0.8"/>
+
+    <!-- ── ROBOT HEAD ── -->
+    <!-- Neck -->
+    <rect x="232" y="340" width="48" height="40" rx="8" fill="url(#darkMetal)" stroke="#0F172A" stroke-width="3"/>
+    
+    <!-- Antenna stem -->
+    <rect x="247" y="100" width="18" height="60" fill="url(#metalGrad)" stroke="#64748B" stroke-width="2"/>
+    <!-- Pulsing glowing head light (Antenna top) -->
+    <circle cx="256" cy="85" r="24" fill="#38BDF8" filter="url(#neonGlow)"/>
+    <circle cx="256" cy="85" r="8" fill="#FFFFFF"/>
+
+    <!-- Outer metallic head structure -->
+    <rect x="112" y="145" width="288" height="210" rx="72" fill="url(#metalGrad)" stroke="#64748B" stroke-width="4" />
+    
+    <!-- Glossy Head Screen visor -->
+    <rect x="130" y="163" width="252" height="174" rx="54" fill="url(#screenGrad)" stroke="#1E293B" stroke-width="3" />
+
+    <!-- Glowing blue LED eyes & mouth -->
+    <g filter="url(#neonGlow)">
+        <!-- Curved happy arc eyes -->
+        <path d="M172 235 Q196 211 220 235" stroke="#38BDF8" stroke-width="12" stroke-linecap="round" fill="none" />
+        <path d="M292 235 Q316 211 340 235" stroke="#38BDF8" stroke-width="12" stroke-linecap="round" fill="none" />
+        
+        <!-- Glowing cute mouth -->
+        <path d="M235 270 Q256 288 277 270" stroke="#38BDF8" stroke-width="8" stroke-linecap="round" fill="none" />
+    </g>
+
+    <!-- Visor shine overlay for high-end look -->
+    <path d="M148 175 L364 175 C350 168 162 168 148 175 Z" fill="rgba(255, 255, 255, 0.2)" />
+    
+    <!-- Cheerful rosy blush circles (subtle pink glow on cheek screens) -->
+    <circle cx="158" cy="275" r="14" fill="#FB7185" opacity="0.3" filter="url(#neonGlow)"/>
+    <circle cx="354" cy="275" r="14" fill="#FB7185" opacity="0.3" filter="url(#neonGlow)"/>
+</svg>

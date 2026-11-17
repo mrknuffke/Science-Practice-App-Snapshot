@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-book="physics" data-page="index">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>SAS General Physics</title>
+  <script>
+    if (location.pathname === '/physics') {
+      location.replace('/physics/' + location.search + location.hash);
+    }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script src="../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../textbook/base.css">
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/components.css">
+</head>
+<body class="dashboard">
+
+  <!-- Main Content -->
+  <main class="dash-main">
+
+    <!-- Hero Card -->
+    <section class="dash-hero">
+      <div class="hero-badge">NGSS High School Physics Curriculum</div>
+      <h1>SAS General Physics</h1>
+      <p class="hero-desc">
+        Explore mechanics, energy, fields, and wave phenomena through responsive dynamic models, vector decomposition instruments, and structured retrieval practice.
+      </p>
+      <div class="dash-actions">
+        <a href="lessons/1-1_constant-velocity.html" class="btn">
+          Start Level 1: Lesson 1-1
+        </a>
+        <a href="lessons/1-review_packet.html" class="btn ghost">
+          Level 1 Review
+        </a>
+        <a href="/?course=General%20Physics" class="btn ghost">
+          Practice Partner
+        </a>
+      </div>
+    </section>
+
+    <!-- Intake Status Banner -->
+    <section class="staging-banner">
+      <div class="staging-banner-head">
+        <div class="staging-banner-title">
+          <span>Curriculum Intake Active</span>
+        </div>
+        <span class="staging-banner-badge">Staging Mode</span>
+      </div>
+      <p class="staging-banner-text">
+        Course consensus notes, unit syllabi, and reference materials are being prepared. Interactive lessons and retrieval checkpoints will populate automatically as each unit syllabus is ingested.
+      </p>
+    </section>
+
+    <!-- Units Grid -->
+    <section>
+      <div class="dash-head">
+        <h2>Course Units</h2>
+        <span class="dash-caption">NGSS Physical Science Core Ideas</span>
+      </div>
+
+      <div class="units-grid">
+        <!-- Unit 1 -->
+        <article class="unit-card" data-unit="1">
+          <div class="unit-card-top">
+            <div class="unit-header">
+              <span class="unit-num">Level 1 &middot; Earth</span>
+              <span class="unit-status-pill">Active Lessons Live</span>
+            </div>
+            <h3 class="unit-title">Kinematics &amp; 1D Motion</h3>
+            <p class="unit-desc">
+              Position, displacement, uniform velocity, and acceleration. Master 1D motion modeling to predict Mars rover trajectories and 2D projectile landing zones.
+            </p>
+
+            <!-- Lesson Links List (Populated dynamically from lessons.json) -->
+            <div class="unit-lessons-list" data-unit-lessons="1"></div>
+          </div>
+          <ul class="unit-topics-list">
+            <li class="topic-chip">HS-PS2-1</li>
+            <li class="topic-chip">Mars Rover 1D</li>
+            <li class="topic-chip">Vectors &amp; Scalars</li>
+            <li class="topic-chip">Kinematic Equations</li>
+            <li class="topic-chip">Solo Trial Review</li>
+          </ul>
+        </article>
+
+        <!-- Unit 2 -->
+        <article class="unit-card" data-unit="2">
+          <div class="unit-card-top">
+            <div class="unit-header">
+              <span class="unit-num">Level 2 &middot; Force Frontier</span>
+              <span class="unit-status-pill">Active Lessons Live</span>
+            </div>
+            <h3 class="unit-title">Dynamics &amp; Forces</h3>
+            <p class="unit-desc">
+              Newton's laws of motion, free body diagrams, net force component decomposition, friction models, inclined planes, and coupled Atwood machine systems.
+            </p>
+            <div class="unit-lessons-list" data-unit-lessons="2"></div>
+          </div>
+          <ul class="unit-topics-list">
+            <li class="topic-chip">HS-PS2-1</li>
+            <li class="topic-chip">Newton's Laws</li>
+            <li class="topic-chip">Friction &amp; Inclines</li>
+            <li class="topic-chip">Coupled Systems</li>
+            <li class="topic-chip">Solo Trial Review</li>
+          </ul>
+        </article>
+
+        <!-- Unit 3 -->
+        <article class="unit-card" data-unit="3">
+          <div class="unit-card-top">
+            <div class="unit-header">
+              <span class="unit-num">Level 3</span>
+              <span class="unit-status-pill">Awaiting PLC Feedback</span>
+            </div>
+            <h3 class="unit-title">Energy, Work &amp; Conservation</h3>
+            <p class="unit-desc">
+              Mechanical work, kinetic energy, gravitational and elastic potential energy, thermal dissipation, and universal conservation of energy systems.
+            </p>
+            <div class="unit-lessons-list" data-unit-lessons="3"></div>
+          </div>
+          <ul class="unit-topics-list">
+            <li class="topic-chip">HS-PS3-1</li>
+            <li class="topic-chip">HS-PS3-2</li>
+            <li class="topic-chip">Work-Energy Theorem</li>
+            <li class="topic-chip">Conservation of Energy</li>
+          </ul>
+        </article>
+
+        <!-- Unit 4 -->
+        <article class="unit-card" data-unit="4">
+          <div class="unit-card-top">
+            <div class="unit-header">
+              <span class="unit-num">Level 4</span>
+              <span class="unit-status-pill">Awaiting PLC Feedback</span>
+            </div>
+            <h3 class="unit-title">Waves &amp; Electromagnetic Radiation</h3>
+            <p class="unit-desc">
+              Wave mechanics, frequency, wavelength, wave speed, superposition, standing waves, resonance, and the electromagnetic spectrum.
+            </p>
+            <div class="unit-lessons-list" data-unit-lessons="4"></div>
+          </div>
+          <ul class="unit-topics-list">
+            <li class="topic-chip">HS-PS4-1</li>
+            <li class="topic-chip">HS-PS4-3</li>
+            <li class="topic-chip">Wave Equation</li>
+            <li class="topic-chip">EM Spectrum</li>
+          </ul>
+        </article>
+
+        <!-- Unit 5 -->
+        <article class="unit-card" data-unit="5">
+          <div class="unit-card-top">
+            <div class="unit-header">
+              <span class="unit-num">Level 5</span>
+              <span class="unit-status-pill">Awaiting PLC Feedback</span>
+            </div>
+            <h3 class="unit-title">Fields &amp; Electromagnetism</h3>
+            <p class="unit-desc">
+              Gravitational and electrostatic fields, Coulomb's law, electric circuits, magnetic field interactions, and electromagnetic induction.
+            </p>
+            <div class="unit-lessons-list" data-unit-lessons="5"></div>
+          </div>
+          <ul class="unit-topics-list">
+            <li class="topic-chip">HS-PS2-4</li>
+            <li class="topic-chip">HS-PS2-5</li>
+            <li class="topic-chip">Coulomb's Law</li>
+            <li class="topic-chip">Circuits &amp; Induction</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Reference Center Shell -->
+    <section>
+      <div class="dash-head">
+        <h2>Course Reference Resources</h2>
+        <span class="dash-caption">Core Tools &amp; Constants</span>
+      </div>
+
+      <div class="resources-grid">
+        <div class="resource-box">
+          <div class="resource-icon">📐</div>
+          <h3>Formula Sheet</h3>
+          <p>
+            Organized equations for 1D kinematics, Newton's laws, work and energy, impulse and momentum, and wave properties.
+          </p>
+        </div>
+        <div class="resource-box">
+          <div class="resource-icon">⚙️</div>
+          <h3>Physical Constants</h3>
+          <p>
+            Standard values for acceleration due to gravity, universal gravitation constant, speed of light, and elementary charge.
+          </p>
+        </div>
+        <div class="resource-box">
+          <div class="resource-icon">🔢</div>
+          <h3>Vector &amp; Trig Guide</h3>
+          <p>
+            Right triangle trigonometry, vector resolution into orthogonal components, and graphical vector addition rules.
+          </p>
+        </div>
+        <div class="resource-box">
+          <div class="resource-icon">⚡</div>
+          <h3>Interactive Simulators</h3>
+          <p>
+            Direct access to Free Body Diagram builder, 2D motion tracker, and phase change models in the Simulations Hub.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="dashboard-footer">
+    <p>
+      SAS General Physics Interactive Textbook &middot; Built for Singapore American School &middot;
+      <a href="about.html">How this book was built</a> &middot;
+      <a href="/">Science Practice App</a>
+    </p>
+  </footer>
+
+  <script src="assets/book.js"></script>
+  <script src="../textbook/core.js"></script>
+  <script src="assets/reference-center.js"></script>
+</body>
+</html>

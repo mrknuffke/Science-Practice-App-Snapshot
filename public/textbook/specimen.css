@@ -1,0 +1,24 @@
+/* ============================================================
+   SPECIMEN: page-only styles and a token preview
+   Used by public/textbook/specimen.html only. Not linked from any book.
+
+   There is no token preview any more: bio (4a), physics (4b) and chem (4c) have all moved to the
+   standard's token form, so specimen.js loads the real tokens.css of the book you pick.
+
+   ============================================================ */
+
+/* ---- the strip that switches book tokens and theme ---- */
+.specimen-bar { position: sticky; top: var(--topbar-h); z-index: 55; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; padding: 0.5rem var(--gutter); background: color-mix(in srgb, var(--paper) 94%, transparent); border-bottom: 1px solid var(--hair-soft); }
+.specimen-bar .group { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; }
+.specimen-note { margin-top: 1rem; }
+.specimen-swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); gap: 0.5rem; }
+.specimen-swatches div { display: flex; flex-direction: column; justify-content: flex-end; min-height: 4.5rem; padding: 0.4rem 0.5rem; border: 1px solid var(--hair); border-radius: var(--r-ctl); font-family: var(--mono); font-size: var(--text-xs); }
+.specimen-swatches [data-token="paper"] { background: var(--paper); }
+.specimen-swatches [data-token="paper-2"] { background: var(--paper-2); }
+.specimen-swatches [data-token="card"] { background: var(--card); }
+.specimen-swatches [data-token="accent"] { background: var(--accent); color: var(--paper); }
+.specimen-swatches [data-token="good"] { background: var(--good); color: var(--paper); }
+.specimen-swatches [data-token="bad"] { background: var(--bad); color: var(--paper); }
+.specimen-swatches [data-token="warn"] { background: var(--warn); color: var(--paper); }
+.specimen-swatches [data-token="cool"] { background: var(--cool); color: var(--paper); }
+.specimen-swatches [data-token="ink"] { background: var(--ink); color: var(--paper); }

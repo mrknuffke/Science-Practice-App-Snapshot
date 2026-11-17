@@ -1,0 +1,57 @@
+{
+  "courseName": "IB Chemistry Standard Level",
+  "courseSlug": "ib-chemistry-sl",
+  "practicesLabel": "Inquiry and Chemistry Core Practices",
+  "practices": "Assessments evaluate core understanding in Structure and Reactivity. Strict adherence to command terms: State, Outline, Describe, and Explain are the dominant cognitive targets. Calculations must show intermediate dimensional analysis steps.",
+  "units": [
+    {
+      "unitNumber": "S1",
+      "unitTitle": "Particulate nature of matter",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Particulate nature of matter and physical changes",
+        "The nuclear atom, isotopes, nuclear symbols",
+        "Electron configurations, subshells (s, p, d)",
+        "Counting particles by mass: The mole, molar mass",
+        "Ideal gases, PV=nRT calculations"
+      ]
+    },
+    {
+      "unitNumber": "S2",
+      "unitTitle": "Models of bonding and structure",
+      "examWeight": "25%",
+      "keyTopics": [
+        "The ionic model, crystal lattices, formula units",
+        "The covalent model, Lewis structures, coordinate bonds",
+        "Macromolecules (silicon dioxide, diamond) and metallic bonding",
+        "From models to real substances, electronegativity differences"
+      ]
+    },
+    {
+      "unitNumber": "R1",
+      "unitTitle": "What drives chemical reactions?",
+      "examWeight": "20%",
+      "keyTopics": [
+        "Measuring energy changes in chemical reactions, calorimetry",
+        "Enthalpy changes, combustion, neutralization, Hess's Law"
+      ]
+    },
+    {
+      "unitNumber": "R2",
+      "unitTitle": "How much, how fast and how far?",
+      "examWeight": "30%",
+      "keyTopics": [
+        "Vapour pressure and dynamic equilibria",
+        "Equilibrium law, Kc expression and basic calculations",
+        "Proton transfer reactions, strong acids and bases, pH scale",
+        "Electron transfer reactions, redox cells, oxidation states",
+        "Organic Chemistry: Functional groups, nomenclature"
+      ]
+    }
+  ],
+  "examFormat": {
+    "multipleChoice": "Paper 1: 30 MCQs + data analysis (45%), 1.5 hours",
+    "freeResponse": "Paper 2: Short-answer and extended-response (55%), 1.5 hours"
+  },
+  "antiPatterns": "Avoid HL extension topics under all circumstances. Never ask questions about: transition metal ligand coordinate bonding shapes or color theories (S1.3), orbital hybridisation/sigma-pi bonding mechanisms (S2.2), entropy calculations/Gibbs free energy spontaneity (R1.2), energy cycles/Born-Haber cycles (R1.3), rate laws/mechanisms/differential rates (R2.2), weak acid buffer solutions/calculations (R3.1), electrolysis/Nernst equations (R3.2), and organic mechanisms (Sn1, Sn2, nucleophilic substitution) (R3.4). Keep questions qualitative and conceptual."
+}

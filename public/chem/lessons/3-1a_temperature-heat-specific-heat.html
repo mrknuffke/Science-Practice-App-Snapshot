@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="3-1a" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Temperature, Heat &amp; Specific Heat · Gen Chem 3-1a</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 3-1a &middot; Temperature, Heat &amp; Specific Heat</div>
+    <h1>A sparkler at 1,000&nbsp;&deg;C won&rsquo;t burn you. A warm bath <span class="flip">will</span>.</h1>
+    <p class="lede">A sparkler spark glows at over 1,000&nbsp;&deg;C and barely stings your skin. A bath at 60&nbsp;&deg;C scalds you in seconds. Temperature alone does not decide how much energy reaches you. This page separates temperature, thermal energy, and heat, then uses <em>q</em> = <em>m</em><em>c</em>&Delta;<em>T</em> to calculate a transfer.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS3-1</b> Create a computational model to calculate the change in the energy of one component in a system when the change in energy of the other component(s) and energy flows in and out of the system are known.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can tell temperature, thermal energy, and heat apart. You can use <em>q</em> = <em>m</em><em>c</em>&Delta;<em>T</em> to calculate the energy a sample gains or loses.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Thermal energy, specific heat, and warming or cooling in a single phase. Phase changes come in 3-1b.</div></div>
+    </div>
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Temperature:</strong> The <em>average</em> kinetic energy of the particles in a sample. It does not depend on how much material you have.</li>
+              <li><strong>Thermal energy (<em>E</em><sub>th</sub>):</strong> The <em>total</em> kinetic energy of all the particles. It grows with the mass of the sample.</li>
+              <li><strong>Heat (<em>q</em>):</strong> Thermal energy moving across a boundary because of a temperature difference. Matter stores thermal energy, never heat.</li>
+              <li><strong>Specific heat (<em>c</em>):</strong> The energy that raises 1&nbsp;g of a substance by 1&nbsp;&deg;C. Water has a high <em>c</em>. Metals have a low <em>c</em>.</li>
+              <li><strong>The model:</strong> <em>q</em> = <em>m</em> &times; <em>c</em> &times; &Delta;<em>T</em> gives the energy transferred while a substance warms or cools in one phase.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Heat flows from hot to cold</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 300 130" role="img" aria-label="Heat q flows from a high-temperature body with fast particles to a low-temperature body with slow particles">
+              <rect x="10" y="20" width="120" height="90" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+              <text x="70" y="48" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">High temperature</text>
+              <text x="70" y="68" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">High average KE</text>
+              <text x="70" y="86" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Fast particles</text>
+
+              <path d="M136 65 L164 65" fill="none" stroke="var(--ink)" stroke-width="2" marker-end="url(#syn-q-arr)"/>
+              <text x="150" y="56" style="font-size:var(--dia-label-size);" font-style="italic" font-weight="700" fill="var(--ink)" text-anchor="middle">q</text>
+
+              <rect x="170" y="20" width="120" height="90" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+              <text x="230" y="48" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Low temperature</text>
+              <text x="230" y="68" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Low average KE</text>
+              <text x="230" y="86" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Slow particles</text>
+              <defs>
+                <marker id="syn-q-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+                  <path d="M0 0 L6 3 L0 6 z" fill="var(--ink)"/>
+                </marker>
+              </defs>
+            </svg>
+</div>
+<figcaption>heat flows from the high-temperature body to the low-temperature body</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> <span>Contrast temperature (average KE) with thermal energy (total KE).</span></li>
+              <li><input type="checkbox" disabled> <span>Explain why an object never &ldquo;contains&rdquo; heat.</span></li>
+              <li><input type="checkbox" disabled> <span>Predict which way heat flows across a boundary.</span></li>
+              <li><input type="checkbox" disabled> <span>Use <em>q</em> = <em>m</em><em>c</em>&Delta;<em>T</em> to calculate the energy transferred.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 TEMP VS ENERGY -->
+<section id="s-temp-energy" data-toc="Temperature vs. energy">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Particle motion and total energy</span></div>
+    <h2>Temperature is an average. Thermal energy is a total.</h2>
+    <p>All matter is made of particles in constant, random motion. Heat a sample and its particles move faster and collide harder. Everyday speech blurs two ideas here. Keep them apart.</p>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&deg;C</div>
+        <h4><strong class="term">Temperature</strong></h4>
+        <p>Temperature measures the <strong>average kinetic energy</strong> (KE<sub>avg</sub>) of the particles in a sample. It is an <strong>intensive property</strong>: it does not depend on how much material you have. A droplet of boiling water and a cauldron of boiling water are both at 100&nbsp;&deg;C. Their particles move at the same average speed.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow"><em>E</em><sub>th</sub></div>
+        <h4><strong class="term">Thermal energy</strong></h4>
+        <p>Thermal energy is the <strong>total kinetic energy</strong> of all the particles together. It is an <strong>extensive property</strong>: it grows with mass. The cauldron holds thousands of times more particles than the droplet. It holds thousands of times more thermal energy.</p>
+      </div>
+    </div>
+
+    <p>Now the sparkler makes sense. A spark is at about 1,200&nbsp;&deg;C, so its few iron and aluminum atoms vibrate at high speed. But its mass is under 0.0001&nbsp;g. Its <em>total</em> thermal energy is tiny, measured in millijoules. The spark cools on your skin before it passes on enough energy to burn.</p>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking the hotter sample always holds more thermal energy. Temperature tells you how fast the particles move. It does not tell you how many particles there are. A bathtub at 50&nbsp;&deg;C holds far more thermal energy than a spark at 1,200&nbsp;&deg;C.</p></div>
+
+    <figure class="figure figure--wide">
+<div class="diagram"><svg viewBox="0 0 540 190" font-family="var(--display)" role="img" aria-label="Comparison of a tiny hot sparkler spark with a large warm bathtub">
+      <!-- Container A: tiny sparkler spark -->
+      <g transform="translate(30, 20)">
+        <rect x="0" y="0" width="210" height="150" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="105" y="24" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Spark (0.0001 g)</text>
+        <!-- A few fast particles with long velocity vectors -->
+        <circle cx="85" cy="65" r="5" fill="var(--accent)"/>
+        <line x1="85" y1="65" x2="135" y2="50" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 2" marker-end="url(#vec-arr-red)"/>
+        <circle cx="120" cy="90" r="5" fill="var(--accent)"/>
+        <line x1="120" y1="90" x2="70" y2="105" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 2" marker-end="url(#vec-arr-red)"/>
+        <circle cx="105" cy="78" r="5" fill="var(--accent)"/>
+        <line x1="105" y1="78" x2="115" y2="40" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 2" marker-end="url(#vec-arr-red)"/>
+
+        <text x="105" y="125" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">1,200 &deg;C · fast particles</text>
+        <text x="105" y="142" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">About 0.08 J in total</text>
+      </g>
+
+      <!-- Container B: large warm bath -->
+      <g transform="translate(300, 20)">
+        <rect x="0" y="0" width="210" height="150" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="105" y="24" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Bathtub (150,000 g)</text>
+        <!-- Many particles at moderate speed -->
+        <g fill="var(--ink-soft)">
+          <circle cx="25" cy="45" r="4"/><circle cx="55" cy="45" r="4"/><circle cx="85" cy="45" r="4"/><circle cx="115" cy="45" r="4"/><circle cx="145" cy="45" r="4"/><circle cx="175" cy="45" r="4"/>
+          <circle cx="40" cy="62" r="4"/><circle cx="70" cy="62" r="4"/><circle cx="100" cy="62" r="4"/><circle cx="130" cy="62" r="4"/><circle cx="160" cy="62" r="4"/><circle cx="190" cy="62" r="4"/>
+          <circle cx="25" cy="80" r="4"/><circle cx="55" cy="80" r="4"/><circle cx="85" cy="80" r="4"/><circle cx="115" cy="80" r="4"/><circle cx="145" cy="80" r="4"/><circle cx="175" cy="80" r="4"/>
+          <circle cx="40" cy="98" r="4"/><circle cx="70" cy="98" r="4"/><circle cx="100" cy="98" r="4"/><circle cx="130" cy="98" r="4"/><circle cx="160" cy="98" r="4"/><circle cx="190" cy="98" r="4"/>
+        </g>
+        <text x="105" y="125" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">50 &deg;C · slower particles</text>
+        <text x="105" y="142" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">About 31,000,000 J in total</text>
+      </g>
+      <defs>
+        <marker id="vec-arr-red" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+          <path d="M0 0 L5 2.5 L0 5 z" fill="var(--accent)"/>
+        </marker>
+      </defs>
+    </svg>
+</div>
+<figcaption><b>Figure 1.</b> the spark has the higher temperature · the bathtub holds far more thermal energy because it holds far more particles</figcaption>
+</figure>
+
+  </div>
+</section>
+
+<!-- 02 INTERACTIVE PARTICLE SANDBOX -->
+<section id="s-sandbox" data-toc="Particle sandbox">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Two vessels of water</span></div>
+    <h2>Compare temperature and total energy side by side.</h2>
+    <p>Set the temperature and the mass of two vessels of water. Faster particles mean a higher temperature. More particles mean more mass. Then compare the total thermal energy of the vessels.</p>
+
+    <div class="sim-box" data-sim="vessels">
+      <div class="label">Simulation</div>
+      <h4>Can a cooler vessel hold more thermal energy than a hotter one?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: Vessel A holds 50&nbsp;g of water at 80&nbsp;&deg;C. Vessel B holds 250&nbsp;g of water at 30&nbsp;&deg;C. Which vessel holds more thermal energy?</p>",
+  "options": [
+    {
+      "label": "Vessel A, because its particles move faster on average",
+      "correct": false,
+      "feedback": "Fast particles make A hotter, which makes it tempting. But thermal energy adds up over every particle, and A has only a few. Temperature alone cannot rank the totals."
+    },
+    {
+      "label": "They hold equal energy, because both vessels hold water",
+      "correct": false,
+      "feedback": "Both hold water, so each gram has the same specific heat. That does not make the totals equal. The totals depend on how many grams there are and how hot they are."
+    },
+    {
+      "label": "Vessel B, because it has many more particles",
+      "correct": true,
+      "feedback": "B is cooler, but it holds five times the mass of A. Its extra particles outweigh the speed of A&rsquo;s particles, so B holds more thermal energy."
+    }
+  ],
+  "reveal": "<p>Now check it. Read both energies, then change the sliders.</p>"
+}
+</script>
+</div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="Two vessels of water with moving particles. Set the temperature and mass of each vessel."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Set the temperature and mass of each vessel">
+        <label class="slider-row">Vessel A temperature <output>80 °C</output>
+          <input type="range" id="vesTempA" min="10" max="100" step="5" value="80" data-unit="°C">
+        </label>
+        <label class="slider-row">Vessel A mass <output>50 g</output>
+          <input type="range" id="vesMassA" min="20" max="300" step="10" value="50" data-unit="g">
+        </label>
+        <label class="slider-row">Vessel B temperature <output>30 °C</output>
+          <input type="range" id="vesTempB" min="10" max="100" step="5" value="30" data-unit="°C">
+        </label>
+        <label class="slider-row">Vessel B mass <output>250 g</output>
+          <input type="range" id="vesMassB" min="20" max="300" step="10" value="250" data-unit="g">
+        </label>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="eA"><span class="readout-label">Vessel A thermal energy</span><span class="readout-value">16.7 kJ</span></div>
+        <div class="readout" data-readout="eB"><span class="readout-label">Vessel B thermal energy</span><span class="readout-value">31.4 kJ</span></div>
+        <div class="readout" data-readout="more"><span class="readout-label">Holds more</span><span class="readout-value">Vessel B</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="accent"></span>Vessel A water particle (one dot is about 4 g)</li>
+        <li><span class="key" data-shape="dot" data-token="ink-soft"></span>Vessel B water particle</li>
+        <li><span class="key" data-shape="line" data-token="ink-soft"></span>Bar: how fast the particles move, slower to faster</li>
+      </ul>
+      <ol class="try-this">
+        <li>Load the starting setup, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="start">Load starting setup</button> <b>Look for:</b> A&rsquo;s particles move faster, but B has more particles and a larger energy.</li>
+        <li>Load equal temperatures, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="same">Load 40 °C in both</button> <b>Look for:</b> the two speed bars match, but B holds four times the energy of A.</li>
+        <li>Load a small hot vessel and a large cool one, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="extreme">Load hot small, cool large</button> <b>Look for:</b> the 100 °C vessel holds less energy than the 20 °C vessel.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows. Which statement fits all of them?</p>",
+  "options": [
+    {
+      "label": "Vessel B held more thermal energy in every row, though it was cooler in two",
+      "correct": true,
+      "feedback": "In the 80 &deg;C row and the 100 &deg;C row, A was hotter. B still held more, because it had more mass. In the 40 &deg;C row the temperatures matched and B held four times as much."
+    },
+    {
+      "label": "The hotter vessel held more thermal energy in every row",
+      "correct": false,
+      "feedback": "Temperature feels like the whole story, which makes this tempting. Your rows say otherwise. A was hotter in two rows, yet B held more thermal energy in both."
+    },
+    {
+      "label": "The vessels held equal thermal energy whenever their temperatures matched",
+      "correct": false,
+      "feedback": "Matching temperatures only means matching particle speeds. In your 40 &deg;C row, B had four times the mass of A, so it held four times the energy."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Thermal energy depends on both the temperature and the mass.</p>"
+}
+</script>
+</div>
+
+        <!-- Predict-Reveal Question -->
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Beaker 1 holds 100&nbsp;g of water at 80&nbsp;&deg;C. Beaker 2 holds 500&nbsp;g of water at 80&nbsp;&deg;C. Which statement is true?",
+  "options": [
+    {
+      "label": "Beaker 1 has the higher temperature, because less water concentrates the heat.",
+      "correct": false,
+      "feedback": "Less water does not concentrate heat. Temperature is an average particle speed, and both beakers sit at 80&nbsp;&deg;C. Mass changes the total, not the average."
+    },
+    {
+      "label": "The beakers have equal temperatures, and Beaker 2 holds five times more thermal energy.",
+      "correct": true,
+      "feedback": "Both beakers are at 80&nbsp;&deg;C, so their particles move at the same average speed. Beaker 2 has five times as many particles, so it holds five times the total."
+    },
+    {
+      "label": "The beakers hold equal thermal energy, because their temperatures are equal.",
+      "correct": false,
+      "feedback": "Equal temperature means equal average speed, not equal totals. Count the particles: Beaker 2 has five times as many, so it holds five times the energy."
+    }
+  ],
+  "reveal": "<h4>Why</h4>\n<p>Temperature is an <em>intensive</em> property. Both beakers sit at 80&nbsp;&deg;C, so their particles share the same average kinetic energy. Thermal energy is an <em>extensive</em> property. It adds up over every particle. Five times the mass means five times as many particles, so five times the thermal energy.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 03 WHAT HEAT IS -->
+<section id="s-heat" data-toc="What heat is">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Energy in transit</span></div>
+    <h2>You cannot &ldquo;possess&rdquo; heat.</h2>
+    <p>People say an object &ldquo;holds heat&rdquo; or &ldquo;loses its heat.&rdquo; In physical science that is wrong. Matter holds <strong class="term">thermal energy</strong>. It does not hold heat.</p>
+
+    <p>Think of thermal energy as money in your bank account. <strong class="term">Heat</strong> (symbol <em>q</em>) is a wire transfer. You never carry a wire transfer in your wallet. A wire transfer is the act of moving money between accounts. In the same way, heat is energy in the act of moving across a boundary because of a temperature difference.</p>
+
+    <div class="callout">
+      <div class="label">Why heat flows from hot to cold</div>
+      <p>A hot object touches a cold object. Fast particles at the boundary hit slower particles. In each collision, the fast particle slows a little and the slow particle speeds up. Energy moves from the hot object to the cold one. It keeps moving until both have the same average particle speed. That state is <strong class="term">thermal equilibrium</strong>.</p>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Saying a cold object &ldquo;gives off cold.&rdquo; Cold is not something that moves. Thermal energy moves from the hotter object to the cooler one. A cool object only has less energy to give.</p></div>
+
+    <figure class="figure figure--wide">
+<div class="diagram"><svg viewBox="0 0 520 175" font-family="var(--display)" role="img" aria-label="Collisions at a boundary pass energy from fast particles in a hot body to slow particles in a cold body">
+      <!-- Hot region -->
+      <rect x="20" y="20" width="220" height="120" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+      <text x="130" y="42" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Hot body (high average KE)</text>
+      <circle cx="60" cy="75" r="7" fill="var(--accent)"/><line x1="60" y1="75" x2="85" y2="82" stroke="var(--accent)" stroke-width="2"/>
+      <circle cx="110" cy="65" r="7" fill="var(--accent)"/><line x1="110" y1="65" x2="135" y2="60" stroke="var(--accent)" stroke-width="2"/>
+      <circle cx="155" cy="95" r="7" fill="var(--accent)"/><line x1="155" y1="95" x2="190" y2="85" stroke="var(--accent)" stroke-width="2"/>
+      <circle cx="95" cy="115" r="7" fill="var(--accent)"/><line x1="95" y1="115" x2="120" y2="125" stroke="var(--accent)" stroke-width="2"/>
+      <!-- Fast particle about to cross the boundary -->
+      <circle cx="215" cy="80" r="7" fill="var(--accent)"/><line x1="215" y1="80" x2="248" y2="80" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#heat-flow-arr)"/>
+
+      <!-- Boundary wall -->
+      <line x1="260" y1="15" x2="260" y2="145" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 4"/>
+      <text x="260" y="165" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Boundary</text>
+
+      <!-- Cold region -->
+      <rect x="280" y="20" width="220" height="120" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+      <text x="390" y="42" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink-soft)" text-anchor="middle">Cold body (low average KE)</text>
+      <circle cx="320" cy="75" r="7" fill="var(--ink-soft)"/><line x1="320" y1="75" x2="330" y2="78" stroke="var(--ink-soft)" stroke-width="1.2"/>
+      <circle cx="370" cy="65" r="7" fill="var(--ink-soft)"/><line x1="370" y1="65" x2="378" y2="62" stroke="var(--ink-soft)" stroke-width="1.2"/>
+      <circle cx="430" cy="95" r="7" fill="var(--ink-soft)"/><line x1="430" y1="95" x2="438" y2="92" stroke="var(--ink-soft)" stroke-width="1.2"/>
+      <circle cx="355" cy="115" r="7" fill="var(--ink-soft)"/><line x1="355" y1="115" x2="363" y2="118" stroke="var(--ink-soft)" stroke-width="1.2"/>
+      <!-- Slow particle at the boundary -->
+      <circle cx="285" cy="80" r="7" fill="var(--ink-soft)"/><line x1="285" y1="80" x2="300" y2="80" stroke="var(--ink-soft)" stroke-width="1.5"/>
+
+      <!-- Heat symbol -->
+      <text x="231" y="68" style="font-size:var(--dia-label-size);" font-style="italic" font-weight="700" fill="var(--ink)" text-anchor="middle">q</text>
+      <defs>
+        <marker id="heat-flow-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+          <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+        </marker>
+      </defs>
+    </svg>
+</div>
+<figcaption><b>Figure 2.</b> collisions at the boundary pass kinetic energy from fast particles to slow ones · heat is the net energy transferred</figcaption>
+</figure>
+
+  </div>
+</section>
+
+<!-- 04 SPECIFIC HEAT CAPACITY -->
+<section id="s-specific-heat" data-toc="Specific heat">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">How much energy a substance needs</span></div>
+    <h2>Why does the pool stay cool while the pavement scorches?</h2>
+    <p>Walk barefoot on a sunny afternoon in Singapore. The concrete path burns your soles. The pool beside it feels cool. Both took in the same sunlight for the same four hours. Why did the concrete get so hot while the water barely warmed by a degree?</p>
+
+    <p>The answer is <strong class="term">specific heat capacity</strong> (symbol <em>c</em>), or <strong>specific heat</strong> for short. Specific heat measures how strongly a substance resists a change in temperature.</p>
+
+    <div class="callout">
+      <div class="label">Definition: specific heat capacity (<em>c</em>)</div>
+      <p>The heat needed to raise the temperature of <strong>1 gram</strong> of a substance by <strong>1&nbsp;&deg;C</strong> (or 1&nbsp;K). The unit is <strong>J/(g&middot;&deg;C)</strong>.</p>
+    </div>
+
+    <p>A substance with a <strong>low specific heat</strong> needs little energy to speed up its particles. It warms fast and cools fast. A substance with a <strong>high specific heat</strong> acts like a thermal sponge. It absorbs a lot of energy while its temperature rises only a little.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>Specific heat of common substances</caption>
+        <thead>
+          <tr>
+            <th scope="col">Substance</th>
+            <th scope="col" class="num">Specific heat <em>c</em> (J/(g&middot;&deg;C))</th>
+            <th scope="col">What it means</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Liquid water (H<sub>2</sub>O)</strong></td>
+            <td class="num">4.18</td>
+            <td>Highest in the table. It moderates coastal climates and blood temperature.</td>
+          </tr>
+          <tr>
+            <td><strong>Ethanol</strong></td>
+            <td class="num">2.44</td>
+            <td>Warms nearly twice as fast as water for the same heat input.</td>
+          </tr>
+          <tr>
+            <td><strong>Concrete or granite</strong></td>
+            <td class="num">0.79 &ndash; 0.88</td>
+            <td>Scorches in direct sunlight because it needs less than a quarter of the heat that water needs.</td>
+          </tr>
+          <tr>
+            <td><strong>Aluminum (Al)</strong></td>
+            <td class="num">0.897</td>
+            <td>Heats fast. Cookware and heat sinks use it.</td>
+          </tr>
+          <tr>
+            <td><strong>Iron (Fe)</strong></td>
+            <td class="num">0.449</td>
+            <td>Cast iron pans heat quickly and hold thermal energy.</td>
+          </tr>
+          <tr>
+            <td><strong>Copper (Cu)</strong></td>
+            <td class="num">0.385</td>
+            <td>Lowest in the table. It warms with little heat input.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a high specific heat means a substance gets hot. It means the opposite. Water has the highest <em>c</em> in the table, so it takes the most energy to warm. That is why the pool stays cool.</p></div>
+
+  </div>
+</section>
+
+<!-- 05 COMPUTATIONAL ENGINE -->
+<section id="s-calc-engine" data-toc="Calculating heat">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">The model in one line</span></div>
+    <h2>Calculate the energy: <em>q</em> = <em>m</em><em>c</em>&Delta;<em>T</em></h2>
+    <p>Three things set how much heat enters or leaves a sample: its mass, its specific heat, and its temperature change. Multiply them.</p>
+
+    <div class="eq-display"><em>q</em> = <em>m</em> &times; <em>c</em> &times; &Delta;<em>T</em></div>
+    <ul>
+      <li><b><em>q</em></b> is the heat (J or kJ).</li>
+      <li><b><em>m</em></b> is the mass (g).</li>
+      <li><b><em>c</em></b> is the specific heat (J/(g&middot;&deg;C)).</li>
+      <li><b>&Delta;<em>T</em></b> is <em>T</em><sub>final</sub> &minus; <em>T</em><sub>initial</sub> (&deg;C).</li>
+    </ul>
+
+    <p>Watch the signs. Energy entering the system is positive. Energy leaving the system is negative.</p>
+    <ul>
+      <li><strong>The substance warms up.</strong> <em>T</em><sub>final</sub> &gt; <em>T</em><sub>initial</sub>, so &Delta;<em>T</em> is positive and <em>q</em> is positive (+<em>q</em>). The substance absorbs energy.</li>
+      <li><strong>The substance cools down.</strong> <em>T</em><sub>final</sub> &lt; <em>T</em><sub>initial</sub>, so &Delta;<em>T</em> is negative and <em>q</em> is negative (&minus;<em>q</em>). The substance releases energy to its surroundings.</li>
+    </ul>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Dropping the sign. A cooling sample has a negative &Delta;<em>T</em>, so <em>q</em> is negative. A positive <em>q</em> for a cooling sample means you subtracted in the wrong order.</p></div>
+
+    <div class="sim-box" data-tool="heat">
+      <div class="label">Interactive tool</div>
+      <h4>How much energy does a sample gain or lose?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a cup holds 150&nbsp;g of water at 20&nbsp;&deg;C. The water warms to 80&nbsp;&deg;C. What is <em>q</em> for the water?</p>",
+  "options": [
+    {
+      "label": "+37.6 kJ, because the water absorbs energy",
+      "correct": true,
+      "feedback": "150 g &times; 4.18 J/(g&middot;&deg;C) &times; 60 &deg;C = 37,620 J. The water gains energy, so <em>q</em> is positive."
+    },
+    {
+      "label": "&minus;37.6 kJ, because the water is the one being heated",
+      "correct": false,
+      "feedback": "The size is right, but the sign is not. The sign follows the energy. The water gains energy, so <em>q</em> is positive. A negative <em>q</em> means the sample lost energy."
+    },
+    {
+      "label": "+9.0 kJ, because you multiply the mass by the temperature change",
+      "correct": false,
+      "feedback": "150 &times; 60 = 9,000 J leaves out the specific heat. Water needs 4.18 J for each gram and each degree, so the real answer is about four times larger."
+    }
+  ],
+  "reveal": "<p>Now check it. Change the sample and read the three steps.</p>"
+}
+</script>
+</div>
+      <div class="sim-controls" role="group" aria-label="Load a practice case">
+        <button type="button" class="chip" aria-pressed="false" data-preset="coffee">Warm coffee: 150 g water, 20 to 80 °C</button>
+        <button type="button" class="chip" aria-pressed="false" data-preset="aluminum">Aluminum pan: 450 g, 25 to 200 °C</button>
+        <button type="button" class="chip" aria-pressed="false" data-preset="iron">Cooling iron: 1,200 g, 450 to 25 °C</button>
+      </div>
+      <div class="sim-controls" role="group" aria-label="Set the sample">
+        <label class="tool-field" for="calcSubstance"><span class="label">Substance</span>
+          <select id="calcSubstance" class="form-select">
+            <option value="water" selected>Water (liquid): 4.18 J/(g·°C)</option>
+            <option value="ethanol">Ethanol: 2.44 J/(g·°C)</option>
+            <option value="aluminum">Aluminum: 0.897 J/(g·°C)</option>
+            <option value="granite">Granite: 0.79 J/(g·°C)</option>
+            <option value="iron">Iron: 0.449 J/(g·°C)</option>
+            <option value="copper">Copper: 0.385 J/(g·°C)</option>
+          </select>
+        </label>
+        <label class="tool-field" for="calcMass"><span class="label">Mass (g)</span>
+          <input type="number" id="calcMass" class="formula-input" value="150" min="1" max="10000" step="5">
+        </label>
+        <label class="tool-field" for="calcTi"><span class="label">Starting temperature (°C)</span>
+          <input type="number" id="calcTi" class="formula-input" value="20" step="0.5">
+        </label>
+        <label class="tool-field" for="calcTf"><span class="label">Final temperature (°C)</span>
+          <input type="number" id="calcTf" class="formula-input" value="80" step="0.5">
+        </label>
+      </div>
+      <div data-results hidden>
+        <div class="calc-steps" data-steps aria-live="polite"></div>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="q"><span class="readout-label">Heat transferred</span><span class="readout-value">+37.62 kJ</span></div>
+        <div class="readout" data-readout="dT"><span class="readout-label">Temperature change</span><span class="readout-value">+60.0 °C</span></div>
+        <div class="readout" data-readout="dir"><span class="readout-label">Energy moves</span><span class="readout-value">Into the sample</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="square" data-token="good"></span>Green check: <em>q</em> is positive, so the sample absorbed energy</li>
+        <li><span class="key" data-shape="square" data-token="ink"></span>Plain pill: <em>q</em> is negative, so the sample released energy</li>
+      </ul>
+      <ol class="try-this">
+        <li>Load the warm coffee case. <b>Look for:</b> a positive <em>q</em>, because the water warms.</li>
+        <li>Load the cooling iron case. <b>Look for:</b> a negative <em>q</em>, because the iron cools.</li>
+        <li>Load the aluminum pan, then change the substance to copper. <b>Look for:</b> copper takes less than half the energy that aluminum takes for the same mass and temperatures.</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- 06 WORKED PRACTICE -->
+<section id="s-practice" data-toc="Worked practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Calculation problems</span></div>
+    <h2>Try each problem, then check the working.</h2>
+    <p>Work each problem on scrap paper first. Then write your setup and your answer. The worked solution opens after you write.</p>
+
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "<b>Practice 1. Cooling coffee.</b> A mug holds 150.0&nbsp;g of hot coffee. Treat it as water with <em>c</em> = 4.18&nbsp;J/(g&middot;&deg;C). Over an hour it cools from 77.0&nbsp;&deg;C to 22.0&nbsp;&deg;C. How much thermal energy did the coffee release into the room? Write your setup and your answer.",
+  "minChars": 15,
+  "reveal": "<p><b>1. List the givens.</b> <em>m</em> = 150.0&nbsp;g, <em>c</em> = 4.18&nbsp;J/(g&middot;&deg;C), and &Delta;<em>T</em> = 22.0 &minus; 77.0 = &minus;55.0&nbsp;&deg;C.</p><p><b>2. Substitute.</b> <em>q</em> = (150.0&nbsp;g)(4.18&nbsp;J/(g&middot;&deg;C))(&minus;55.0&nbsp;&deg;C) = &minus;34,485&nbsp;J = <b>&minus;34.5&nbsp;kJ</b>.</p><p>The negative sign means 34.5&nbsp;kJ left the coffee and warmed the room.</p>"
+}
+</script>
+</div>
+
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "<b>Practice 2. Heating water for cooking.</b> You heat 500.0&nbsp;g of water in a pot from 20.0&nbsp;&deg;C to its boiling point at 100.0&nbsp;&deg;C. How many joules does the water absorb? Write your setup and your answer.",
+  "minChars": 15,
+  "reveal": "<p><b>1. List the givens.</b> <em>m</em> = 500.0&nbsp;g, <em>c</em> = 4.18&nbsp;J/(g&middot;&deg;C), and &Delta;<em>T</em> = 100.0 &minus; 20.0 = +80.0&nbsp;&deg;C.</p><p><b>2. Substitute.</b> <em>q</em> = (500.0&nbsp;g)(4.18&nbsp;J/(g&middot;&deg;C))(80.0&nbsp;&deg;C) = <b>167,200&nbsp;J</b> = 167.2&nbsp;kJ.</p><p>The positive sign means the water absorbed 167.2&nbsp;kJ.</p>"
+}
+</script>
+</div>
+
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "<b>Practice 3. An unknown metal.</b> An unknown metal cylinder has a mass of 50.0&nbsp;g. Adding 577.5&nbsp;J raises its temperature from 20.0&nbsp;&deg;C to 50.0&nbsp;&deg;C. Calculate its specific heat. Then use the table in section 04 to name the metal. Write your setup and your answer.",
+  "minChars": 15,
+  "reveal": "<p><b>1. Rearrange for <em>c</em>.</b> <em>q</em> = <em>m</em><em>c</em>&Delta;<em>T</em> becomes <em>c</em> = <em>q</em> / (<em>m</em> &times; &Delta;<em>T</em>).</p><p><b>2. Substitute.</b> &Delta;<em>T</em> = 50.0 &minus; 20.0 = 30.0&nbsp;&deg;C. <em>c</em> = 577.5&nbsp;J / (50.0&nbsp;g &times; 30.0&nbsp;&deg;C) = 577.5 / 1,500 = <b>0.385&nbsp;J/(g&middot;&deg;C)</b>.</p><p>The table lists 0.385 for <b>copper (Cu)</b>.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 07 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. Temperature measures the <input class="blank" data-answer="average kinetic energy|kinetic energy" placeholder="?"> of the particles in a sample.<br>
+      2. Thermal energy is an <input class="blank" data-answer="extensive|extensive property" placeholder="?"> property, so it grows with the mass of the sample.<br>
+      3. Heat is the <input class="blank" data-answer="transfer|transfer of energy|flow of energy" placeholder="?"> of thermal energy across a boundary because of a temperature difference.<br>
+      4. In <em>q</em> = <em>m</em><em>c</em>&Delta;<em>T</em>, a negative sign on <em>q</em> means thermal energy was <input class="blank" data-answer="released|lost" placeholder="?">.<br>
+      5. Water has a high specific heat of <input class="blank" data-answer="4.18|4.18 J/g·°C|4.18 J/(g·°C)" placeholder="?">, so its temperature changes slowly.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 08 SELF-EXPLANATION -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">08</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark">
+      <p>A classmate says: <em>&ldquo;A cup of boiling water contains much more heat than an iceberg, because 100&nbsp;&deg;C is much hotter than 0&nbsp;&deg;C.&rdquo;</em></p>
+      <p>Critique the statement in 2 to 3 sentences. Say what is wrong with the word &ldquo;heat.&rdquo; Then compare the energy stored in the two bodies.</p>
+    </div>
+    <p class="hint">Writing your own reasoning prepares you for the exam question. Write your answer first, then compare it with the model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="First, objects do not 'contain heat' because heat is... Second, the cup has a higher temperature, but the iceberg has..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>The classmate is wrong in two ways. First, matter stores thermal energy, never heat. Heat is energy in transit across a boundary. Second, the boiling water has the higher temperature, so its particles move faster on average. But the iceberg has far more mass, so it has far more particles. Thermal energy adds up over all the particles. The iceberg holds far more thermal energy than a 250&nbsp;g cup of boiling water.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 EXAM -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">09</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS3-1 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks]</span>
+      </div>
+      <p class="exam-q">
+        Two solid metal cylinders start at 20.0&nbsp;&deg;C. Each has a mass of 45.0&nbsp;g. Cylinder A is aluminum (<em>c</em> = 0.897&nbsp;J/(g&middot;&deg;C)). Cylinder B is copper (<em>c</em> = 0.385&nbsp;J/(g&middot;&deg;C)). An identical electric heater gives each cylinder 1,200&nbsp;J of thermal energy.
+        <span class="sub"><b>(a)</b> Calculate the final temperature of the aluminum cylinder. Show your work with units. [2 marks]</span>
+        <span class="sub"><b>(b)</b> Predict whether the copper cylinder ends higher, lower, or at the same temperature. Explain with specific heat and particle motion. [2 marks]</span>
+      </p>
+      <textarea class="textbox" id="examAns" placeholder="Write your calculation for (a) and your reasoning for (b)..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Rearrange (1 mark):</b> You rearrange to &Delta;<em>T</em> = <em>q</em> / (<em>m</em><em>c</em>) and get 29.7&nbsp;&deg;C.</li>
+          <li><b>Final temperature (1 mark):</b> You add &Delta;<em>T</em> to 20.0&nbsp;&deg;C and get 49.7&nbsp;&deg;C (accept 49.6 to 49.8).</li>
+          <li><b>Prediction (1 mark):</b> You say copper ends hotter, at about 89&nbsp;&deg;C.</li>
+          <li><b>Particle reason (1 mark):</b> You say copper&rsquo;s lower specific heat lets the same energy speed its particles up more.</li>
+        </ul></div></div>
+
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>Oceans cover over 70% of Earth and hold about 1.4 &times; 10<sup>21</sup>&nbsp;kg of water. Water has a high specific heat (4.18&nbsp;J/(g&middot;&deg;C)), so oceans absorb sunlight with little temperature rise. They carry that energy toward the poles and moderate the global climate. Without that buffer, day and night and summer and winter would swing as widely as they do on Mars.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS3-1 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS3-1</h3>
+    <p>
+      Test your mastery of thermal energy and heat capacity calculations. The adaptive engine models temperature vs. thermal energy distinctions, specific heat capacity (q = mc&Delta;T), and thermal energy conservation across interacting components.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS3-1" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 3 &middot; 3-1a</div>
+  <p>Next, 3-1b: <strong>Heating Curves &amp; Phase Changes</strong> covers what happens to energy when the temperature stops rising.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="3-1a.js"></script>
+</body>
+</html>

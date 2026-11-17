@@ -1,0 +1,117 @@
+{
+  "subject": "General Physics",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "1-1",
+      "slug": "1-1_constant-velocity",
+      "title": "Constant Velocity & 1D Motion",
+      "unit": "1",
+      "level": "1",
+      "pes": [
+        "HS-PS2-1"
+      ],
+      "description": "Establish coordinate reference frames, distinguish scalar distance from vector displacement, and model uniform straight-line motion at constant speed."
+    },
+    {
+      "id": "1-2",
+      "slug": "1-2_motion-graphs",
+      "title": "Motion Graphs & Uniform Acceleration",
+      "unit": "1",
+      "level": "1",
+      "pes": [
+        "HS-PS2-1"
+      ],
+      "description": "Interpret position-time, velocity-time, and acceleration-time graphs using slope and area under the curve to model accelerating bodies and free fall."
+    },
+    {
+      "id": "1-3",
+      "slug": "1-3_kinematics-equations",
+      "title": "Kinematics Equations & 2D Projectiles",
+      "unit": "1",
+      "level": "1",
+      "pes": [
+        "HS-PS2-1"
+      ],
+      "description": "Master the Big Three kinematics equations and apply the independence of perpendicular motions to predict 2D horizontal projectile landing zones in Operation Projectile Precision."
+    },
+    {
+      "id": "1-review",
+      "slug": "1-review_packet",
+      "title": "Level 1 Solo Trial Review",
+      "unit": "1",
+      "level": "1",
+      "pes": [
+        "HS-PS2-1"
+      ],
+      "description": "Comprehensive main ideas digest and targeted practice problems for cadets preparing to retake the Level 1 Solo Trial assessment, with full printable worksheet export."
+    },
+    {
+      "id": "2-1",
+      "slug": "2-1_newtons-first-law",
+      "title": "Newton's First Law & Inertia",
+      "unit": "2",
+      "level": "2",
+      "pes": [
+        "HS-PS2-1"
+      ],
+      "description": "Examine reference frames, contact versus field forces, and translational equilibrium to predict motion with zero net force."
+    },
+    {
+      "id": "2-2",
+      "slug": "2-2_newtons-second-law",
+      "title": "Newton's Second Law & Acceleration",
+      "unit": "2",
+      "level": "2",
+      "pes": [
+        "HS-PS2-1"
+      ],
+      "description": "Quantify acceleration from net force and mass, resolve multi-axis force systems, and calculate apparent weight in accelerating elevators."
+    },
+    {
+      "id": "2-3",
+      "slug": "2-3_newtons-third-law",
+      "title": "Newton's Third Law & Action-Reaction",
+      "unit": "2",
+      "level": "2",
+      "pes": [
+        "HS-PS2-1",
+        "HS-PS2-2"
+      ],
+      "description": "Identify mutual interaction pairs, resolve the horse-and-cart paradox, and analyze collision impulse dynamics with force load sensors."
+    },
+    {
+      "id": "2-4",
+      "slug": "2-4_friction-and-inclines",
+      "title": "Friction Models & Inclined Planes",
+      "unit": "2",
+      "level": "2",
+      "pes": [
+        "HS-PS2-1"
+      ],
+      "description": "Distinguish static and kinetic friction, decompose gravity along tilted axes, and determine critical slip angles on ramps."
+    },
+    {
+      "id": "2-5",
+      "slug": "2-5_coupled-systems-atwood",
+      "title": "Coupled Systems & Atwood Machines",
+      "unit": "2",
+      "level": "2",
+      "pes": [
+        "HS-PS2-1"
+      ],
+      "description": "Apply the whole-system method to connected bodies, resolve internal cord tension, and model classical Atwood machines."
+    },
+    {
+      "id": "2-review",
+      "slug": "2-review_packet",
+      "title": "Level 2 Solo Trial Review",
+      "unit": "2",
+      "level": "2",
+      "pes": [
+        "HS-PS2-1"
+      ],
+      "description": "Comprehensive Level 2 Dynamics formula digest and targeted remediation practice problems with toggleable worked solutions and printable worksheet export."
+    }
+  ]
+}

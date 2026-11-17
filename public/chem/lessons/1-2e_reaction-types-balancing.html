@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-2e" data-book="chem">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Reaction Types &amp; Balancing · Gen Chem 1-2e</title>
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+  <!-- HERO -->
+<main>
+
+  <section id="s-hero" class="hero" data-toc="Opening">
+    <div>
+      <div class="label">Lesson 1-2e &middot; Reaction Types &amp; Balancing</div>
+      <h1>Keep the atoms, <span class="flip">balance the reaction</span>.</h1>
+      <p class="lede">A chemical reaction does not create atoms. It remodels them. Bonds break and new bonds form, but the building blocks never vanish. The <strong class="term" data-term="conservation-of-mass">Law of Conservation of Mass</strong> says every atom present before a reaction is still there afterward. You show this by balancing the equation with coefficients. By the end, you can sort reactions into five patterns and balance an equation.</p>
+
+      <!-- SVG steppable V-crxn-01 -->
+      <div class="figure figure--full" data-motion="step" data-step-count="3" data-step-start="1" data-step-labels="Before: Reactants|Rearrangement: Electron Transfer|After: Ionic Crystal Lattice">
+        <!-- Step 1: Before -->
+        <div class="diagram" data-step="1">
+          <svg viewBox="0 0 520 160">
+            <!-- Reactants Zone -->
+            <g transform="translate(110, 52)">
+              <!-- 2 Na atoms -->
+              <circle cx="-55" cy="0" r="16" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="-55" y="1" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Na</text>
+
+              <circle cx="-15" cy="0" r="16" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="-15" y="1" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Na</text>
+
+              <!-- Plus -->
+              <text x="15" y="0" font-family="var(--display)" style="font-size:var(--dia-header-size);" font-weight="700" fill="var(--ink-mute)" dominant-baseline="central" text-anchor="middle">+</text>
+
+              <!-- 1 Cl2 molecule -->
+              <line x1="42" y1="0" x2="74" y2="0" stroke="var(--ink)" stroke-width="2"/>
+              <circle cx="42" cy="0" r="17" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="42" y="1" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Cl</text>
+
+              <circle cx="74" cy="0" r="17" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="74" y="1" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Cl</text>
+
+              <text x="10" y="34" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">2 Na(s) + Cl₂(g)</text>
+            </g>
+
+            <!-- Arrow -->
+            <g transform="translate(260, 52)">
+              <line x1="-20" y1="0" x2="20" y2="0" stroke="var(--ink-mute)" stroke-width="1.8"/>
+              <polygon points="12,-5 22,0 12,5" fill="var(--ink-mute)"/>
+            </g>
+
+            <!-- Products Zone: unreacted -->
+            <g transform="translate(390, 52)">
+              <rect x="-80" y="-30" width="160" height="60" fill="none" stroke="var(--hair-soft)" stroke-dasharray="4 3" rx="4" stroke-width="1.2"/>
+              <text x="0" y="-4" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="600" fill="var(--ink-mute)" text-anchor="middle">Products Form Here</text>
+              <text x="0" y="14" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">(Pending Reaction)</text>
+            </g>
+
+            <!-- Bottom Ledger -->
+            <rect x="20" y="112" width="480" height="32" rx="4" fill="var(--paper)" stroke="var(--hair-soft)"/>
+            <text x="260" y="132" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle" font-weight="600">
+              LEDGER &bull; Sodium: 2 in reactants | Chlorine: 2 in reactants &bull; 0 products
+            </text>
+          </svg>
+          <div class="diagram-cap">Before: Two solid sodium atoms and one diatomic chlorine gas molecule ready to collide.</div>
+        </div>
+
+        <!-- Step 2: Rearrangement -->
+        <div class="diagram" data-step="2">
+          <svg viewBox="0 0 520 160">
+            <!-- Electron Transfer Action -->
+            <g transform="translate(130, 50)">
+              <!-- Two Na atoms ionizing -->
+              <circle cx="-60" cy="-14" r="15" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <text x="-60" y="-13" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Na⁺</text>
+
+              <circle cx="-60" cy="18" r="15" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <text x="-60" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Na⁺</text>
+
+              <!-- Electron transfer curved paths -->
+              <path d="M -44 -14 C -15 -28, 20 -24, 48 -14" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <circle cx="2" cy="-21" r="7" fill="var(--accent)"/>
+              <text x="2" y="-21" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">e⁻</text>
+
+              <path d="M -44 18 C -15 30, 20 26, 48 18" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <circle cx="2" cy="24" r="7" fill="var(--accent)"/>
+              <text x="2" y="24" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">e⁻</text>
+
+              <!-- Cl2 bond breaking -->
+              <line x1="65" y1="-14" x2="65" y2="18" stroke="var(--ink-mute)" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <circle cx="65" cy="-14" r="17" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.5" opacity="0.9"/>
+              <text x="65" y="-13" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Cl⁻</text>
+
+              <circle cx="65" cy="18" r="17" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.5" opacity="0.9"/>
+              <text x="65" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Cl⁻</text>
+
+              <text x="5" y="42" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Valence Electron Transfer</text>
+            </g>
+
+            <!-- Arrow -->
+            <g transform="translate(290, 50)">
+              <line x1="-15" y1="0" x2="15" y2="0" stroke="var(--ink-mute)" stroke-width="1.8"/>
+              <polygon points="8,-5 18,0 8,5" fill="var(--ink-mute)"/>
+            </g>
+
+            <!-- Lattice nucleating -->
+            <g transform="translate(400, 50)">
+              <text x="0" y="0" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="600" fill="var(--ink-mute)" text-anchor="middle">Ions Assembling...</text>
+            </g>
+
+            <!-- Bottom Ledger -->
+            <rect x="20" y="112" width="480" height="32" rx="4" fill="var(--paper)" stroke="var(--hair-soft)"/>
+            <text x="260" y="132" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle" font-weight="600">
+              IN TRANSIT &bull; 2 Sodium atoms, 2 Chlorine atoms &bull; Mass is fully conserved
+            </text>
+          </svg>
+          <div class="diagram-cap">Rearrangement: Each sodium transfers one electron to a chlorine atom, forming Na⁺ and Cl⁻ ions.</div>
+        </div>
+
+        <!-- Step 3: After -->
+        <div class="diagram" data-step="3">
+          <svg viewBox="0 0 520 160">
+            <!-- Reactants consumed -->
+            <g transform="translate(110, 50)">
+              <rect x="-70" y="-30" width="140" height="60" fill="none" stroke="var(--hair-soft)" stroke-dasharray="4 3" rx="4" stroke-width="1.2"/>
+              <text x="0" y="-4" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="600" fill="var(--ink-mute)" text-anchor="middle">Reactants Consumed</text>
+              <text x="0" y="14" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">0 unreacted Na or Cl₂</text>
+            </g>
+
+            <!-- Arrow -->
+            <g transform="translate(230, 50)">
+              <line x1="-20" y1="0" x2="20" y2="0" stroke="var(--ink-mute)" stroke-width="1.8"/>
+              <polygon points="12,-5 22,0 12,5" fill="var(--ink-mute)"/>
+            </g>
+
+            <!-- Products: NaCl ionic lattice -->
+            <g transform="translate(370, 50)">
+              <!-- 2x2 alternating lattice -->
+              <circle cx="-16" cy="-16" r="13" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="-16" y="-15" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Na⁺</text>
+
+              <circle cx="16" cy="-16" r="16" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="16" y="-15" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Cl⁻</text>
+
+              <circle cx="-16" cy="16" r="16" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="-16" y="17" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Cl⁻</text>
+
+              <circle cx="16" cy="16" r="13" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="16" y="17" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Na⁺</text>
+
+              <text x="0" y="42" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">2 NaCl(s) lattice</text>
+            </g>
+
+            <!-- Bottom Ledger: Balanced -->
+            <rect x="20" y="112" width="480" height="32" rx="4" fill="var(--paper)" stroke="var(--good)" stroke-width="1.5"/>
+            <text x="260" y="132" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink)" text-anchor="middle" font-weight="700">
+              LEDGER MATCH &bull; Sodium: 2 left = 2 right &bull; Chlorine: 2 left = 2 right [balanced]
+            </text>
+          </svg>
+          <div class="diagram-cap">After: Opposite ions lock into a stable 2 NaCl crystal lattice with 100% atom conservation.</div>
+        </div>
+      </div>
+      <p class="hint">atoms are rearranged, never created or destroyed · the ledger counts stay identical</p>
+
+      <div class="meta-strip">
+        <div class="meta-block">
+          <div class="k">Alignment</div>
+          <div class="v"><b>HS-PS1-2</b> Construct and revise an explanation for the outcome of a simple chemical reaction based on the outermost electron states of atoms, trends in the periodic table, and knowledge of the patterns of chemical properties.<br><b>HS-PS1-7</b> Use mathematical representations to support the claim that atoms, and therefore mass, are conserved during a chemical reaction.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Objective</div>
+          <div class="v">You can sort reactions into five patterns. You can balance an equation with coefficients and check it with an atom count.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Scope</div>
+          <div class="v">Synthesis, decomposition, single replacement, double replacement and combustion. Acid-base reactions are recognized as double replacement. Balancing changes coefficients, never subscripts.</div>
+        </div>
+      </div>
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Reaction types:</strong> Reactions fall into five patterns: synthesis, decomposition, single replacement, double replacement and combustion. An acid-base reaction is a double replacement.</li>
+              <li><strong>Law of conservation:</strong> Atoms are never created or destroyed. Every atom in the reactants appears in the products.</li>
+              <li><strong>Balancing rules:</strong> Change coefficients to level the atom count. Never change a subscript, because it defines the substance.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>The five reaction blueprints</h4>
+            <svg viewBox="0 0 280 175">
+              <!-- Row 1: Synthesis -->
+              <g transform="translate(10, 16)">
+                <text x="0" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">SYN</text>
+                <rect x="35" y="3" width="14" height="14" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="42" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <text x="56" y="12" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="72" cy="10" r="7" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="72" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <path d="M85 10 L105 10" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <rect x="115" y="3" width="14" height="14" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="122" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <circle cx="134" cy="10" r="7" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="134" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <text x="155" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">A + B &rarr; AB</text>
+              </g>
+
+              <!-- Row 2: Decomposition -->
+              <g transform="translate(10, 48)">
+                <text x="0" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">DEC</text>
+                <rect x="35" y="3" width="14" height="14" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="42" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <circle cx="54" cy="10" r="7" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="54" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <path d="M68 10 L88 10" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <rect x="98" y="3" width="14" height="14" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="105" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <text x="119" y="12" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="134" cy="10" r="7" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="134" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <text x="155" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">AB &rarr; A + B</text>
+              </g>
+
+              <!-- Row 3: Single Replacement -->
+              <g transform="translate(10, 80)">
+                <text x="0" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">S-R</text>
+                <circle cx="42" cy="10" r="7" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="42" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">A</text>
+                <text x="53" y="12" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <rect x="63" y="3" width="13" height="14" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="69" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <circle cx="81" cy="10" r="7" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="81" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">C</text>
+                <path d="M94 10 L110 10" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <circle cx="120" cy="10" r="7" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="120" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">A</text>
+                <circle cx="132" cy="10" r="7" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="132" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">C</text>
+                <text x="143" y="12" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <rect x="153" y="3" width="13" height="14" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="159" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <text x="175" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">A+BC&rarr;AC+B</text>
+              </g>
+
+              <!-- Row 4: Double Replacement -->
+              <g transform="translate(10, 112)">
+                <text x="0" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">D-R</text>
+                <rect x="35" y="3" width="12" height="14" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="41" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <circle cx="52" cy="10" r="6" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="52" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <text x="61" y="12" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <polygon points="76,3 83,10 76,17 69,10" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="76" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">C</text>
+                <circle cx="89" cy="10" r="6" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="89" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">D</text>
+                <path d="M100 10 L114 10" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <rect x="120" y="3" width="12" height="14" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="126" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <circle cx="137" cy="10" r="6" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="137" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">D</text>
+                <text x="146" y="12" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <polygon points="160,3 167,10 160,17 153,10" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="160" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">C</text>
+                <circle cx="173" cy="10" r="6" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="173" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <text x="187" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">AB+CD&rarr;AD+CB</text>
+              </g>
+
+              <!-- Row 5: Combustion -->
+              <g transform="translate(10, 144)">
+                <text x="0" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">COMB</text>
+                <text x="35" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">fuel</text>
+                <text x="60" y="12" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="72" cy="10" r="6" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="82" cy="10" r="6" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="77" y="11" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">O₂</text>
+                <path d="M96 10 L112 10" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <text x="118" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">CO₂</text>
+                <text x="138" y="12" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <text x="148" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--cool)">H₂O</text>
+                <text x="175" y="12" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">fuel+O₂&rarr;CO₂+H₂O</text>
+              </g>
+
+              <defs>
+                <marker id="syn-arr" markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto" viewBox="0 0 4 4">
+                  <path d="M0 0 L4 2 L0 4 z" fill="var(--ink)"/>
+                </marker>
+              </defs>
+            </svg>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> Sort a reaction into one of the five patterns.</li>
+              <li><input type="checkbox" disabled> Balance an equation by changing coefficients.</li>
+              <li><input type="checkbox" disabled> Check that the atoms match on both sides of the arrow.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+    </div>
+  </section>
+
+  <section id="s-types" data-toc="Reaction types">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">01</span><span class="label">Patterns of change</span></div>
+      <h2>Five blueprints of rearrangement.</h2>
+      <p>Chemists do not memorize millions of reactions. They sort reactions into a few blueprints. Look at how the reactants combine and you can predict what kind of products form.</p>
+      
+      <!-- Five Reaction Blueprints, walked one at a time -->
+      <div class="interactive" id="rxn-types-card">
+        <div class="interactive-head">
+          <span class="label">Five reaction blueprints</span>
+        </div>
+
+        <div class="figure figure--full" data-motion="step" data-step-count="6" data-step-labels="Synthesis|Decomposition|Single replacement|Double replacement|Combustion|Neutralization (bonus)">
+          <!-- Step 1: Synthesis -->
+          <div data-step="1">
+            <h4>Synthesis</h4>
+            <p class="eq-display">A + B &rarr; AB</p>
+            
+            <div class="diagram"><svg viewBox="0 0 460 74">
+              <!-- Generic Model (Left) -->
+              <g transform="translate(15, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">GENERIC MODEL</text>
+                <rect x="0" y="10" width="16" height="16" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="8" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <text x="24" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="43" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="43" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <path d="M57 18 L73 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <rect x="81" y="10" width="16" height="16" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="89" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <circle cx="103" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="103" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+              </g>
+
+              <!-- Divider -->
+              <line x1="170" y1="8" x2="170" y2="66" stroke="var(--hair-soft)" stroke-width="1"/>
+
+              <!-- Concrete Reaction (Right) -->
+              <g transform="translate(185, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">EXAMPLE: 2 Mg + O₂ &rarr; 2 MgO</text>
+                <!-- 2 Mg -->
+                <circle cx="12" cy="18" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="12" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Mg</text>
+                <circle cx="34" cy="18" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="34" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Mg</text>
+                <text x="50" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <!-- O2 -->
+                <circle cx="68" cy="18" r="8" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <circle cx="82" cy="18" r="8" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <path d="M96 18 L114 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <!-- 2 MgO -->
+                <circle cx="132" cy="18" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="132" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Mg</text>
+                <circle cx="148" cy="18" r="8" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="148" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">O</text>
+
+                <circle cx="176" cy="18" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="176" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Mg</text>
+                <circle cx="192" cy="18" r="8" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="192" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">O</text>
+              </g>
+            </svg></div>
+
+            <p><strong>Example:</strong> 2 Mg + O₂ &rarr; 2 MgO</p>
+            <p><strong>Signature:</strong> Two things go in and one thing comes out. Elements or simple compounds combine into a single compound.</p>
+          </div>
+
+          <!-- Step 2: Decomposition -->
+          <div data-step="2">
+            <h4>Decomposition</h4>
+            <p class="eq-display">AB &rarr; A + B</p>
+            
+            <div class="diagram"><svg viewBox="0 0 460 74">
+              <!-- Generic Model -->
+              <g transform="translate(15, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">GENERIC MODEL</text>
+                <rect x="0" y="10" width="16" height="16" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="8" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <circle cx="22" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="22" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <path d="M36 18 L54 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <rect x="62" y="10" width="16" height="16" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="70" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">A</text>
+                <text x="86" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="106" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="106" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+              </g>
+
+              <!-- Divider -->
+              <line x1="170" y1="8" x2="170" y2="66" stroke="var(--hair-soft)" stroke-width="1"/>
+
+              <!-- Concrete Reaction -->
+              <g transform="translate(185, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">EXAMPLE: 2 H₂O₂ &rarr; 2 H₂O + O₂</text>
+                <!-- H2O2 -->
+                <circle cx="8" cy="18" r="5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="19" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="32" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="43" cy="18" r="5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <path d="M56 18 L74 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <!-- 2 H2O -->
+                <circle cx="92" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="85" cy="24" r="4.5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="99" cy="24" r="4.5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="114" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <!-- O2 -->
+                <circle cx="134" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="146" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+              </g>
+            </svg></div>
+
+            <p><strong>Example:</strong> 2 H₂O₂ &rarr; 2 H₂O + O₂</p>
+            <p><strong>Signature:</strong> One reactant, several products. It usually needs heat, electricity or a spark to break it apart.</p>
+          </div>
+
+          <!-- Step 3: Single Replacement -->
+          <div data-step="3">
+            <h4>Single Replacement</h4>
+            <p class="eq-display">A + BC &rarr; AC + B</p>
+            
+            <div class="diagram"><svg viewBox="0 0 460 74">
+              <!-- Generic Model -->
+              <g transform="translate(15, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">GENERIC MODEL</text>
+                <circle cx="10" cy="18" r="8" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="10" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">A</text>
+                <text x="24" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <rect x="36" y="10" width="14" height="16" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="43" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">B</text>
+                <circle cx="57" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="57" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">C</text>
+                <path d="M70 18 L86 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <circle cx="98" cy="18" r="8" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2"/>
+                <circle cx="110" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="122" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <rect x="134" y="10" width="14" height="16" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+              </g>
+
+              <!-- Divider -->
+              <line x1="170" y1="8" x2="170" y2="66" stroke="var(--hair-soft)" stroke-width="1"/>
+
+              <!-- Concrete Reaction -->
+              <g transform="translate(185, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">EXAMPLE: Zn + CuSO₄ &rarr; ZnSO₄ + Cu</text>
+                <circle cx="12" cy="18" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="12" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Zn</text>
+                <text x="26" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="42" cy="18" r="9" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="42" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Cu</text>
+                <rect x="53" y="10" width="20" height="16" rx="2" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="63" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">SO₄</text>
+                <path d="M80 18 L98 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <circle cx="110" cy="18" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="110" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Zn</text>
+                <rect x="121" y="10" width="20" height="16" rx="2" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="131" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">SO₄</text>
+                <text x="146" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="162" cy="18" r="9" fill="var(--accent-soft)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="162" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Cu</text>
+              </g>
+            </svg></div>
+
+            <p><strong>Example:</strong> Zn + CuSO₄ &rarr; ZnSO₄ + Cu</p>
+            <p><strong>Signature:</strong> A lone element sits on each side of the arrow. One element pushes another out of its compound and takes its place.</p>
+          </div>
+
+          <!-- Step 4: Double Replacement -->
+          <div data-step="4">
+            <h4>Double Replacement</h4>
+            <p class="eq-display">AB + CD &rarr; AD + CB</p>
+            
+            <div class="diagram"><svg viewBox="0 0 460 74">
+              <!-- Generic Model -->
+              <g transform="translate(10, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">GENERIC MODEL</text>
+                <rect x="0" y="10" width="13" height="16" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <circle cx="19" cy="18" r="7" fill="var(--cool)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="30" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <polygon points="46,10 54,18 46,26 38,18" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2"/>
+                <circle cx="61" cy="18" r="7" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="1.2"/>
+                <path d="M72 18 L86 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <rect x="92" y="10" width="13" height="16" rx="2" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <circle cx="111" cy="18" r="7" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="1.2"/>
+                <text x="122" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <polygon points="138,10 146,18 138,26 130,18" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2"/>
+                <circle cx="153" cy="18" r="7" fill="var(--cool)" stroke="var(--ink)" stroke-width="1.2"/>
+              </g>
+
+              <!-- Divider -->
+              <line x1="175" y1="8" x2="175" y2="66" stroke="var(--hair-soft)" stroke-width="1"/>
+
+              <!-- Concrete Reaction -->
+              <g transform="translate(185, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">EXAMPLE: AgNO₃ + NaCl &rarr; AgCl + NaNO₃</text>
+                <circle cx="10" cy="18" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="10" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Ag</text>
+                <rect x="20" y="10" width="18" height="16" rx="2" fill="var(--card)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="29" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">NO₃</text>
+                <text x="44" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="58" cy="18" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="58" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Na</text>
+                <circle cx="73" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="73" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">Cl</text>
+                <path d="M85 18 L100 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <circle cx="112" cy="18" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="112" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Ag</text>
+                <circle cx="127" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="127" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--paper)" dominant-baseline="central" text-anchor="middle">Cl</text>
+                <text x="140" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="154" cy="18" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="154" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">Na</text>
+                <rect x="164" y="10" width="18" height="16" rx="2" fill="var(--card)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="173" y="19" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" dominant-baseline="central" text-anchor="middle">NO₃</text>
+              </g>
+            </svg></div>
+
+            <p><strong>Example:</strong> AgNO₃ + NaCl &rarr; AgCl + NaNO₃</p>
+            <p><strong>Signature:</strong> Two compounds swap partners. Each positive ion pairs with the other negative ion. A solid <strong class="term">precipitate</strong> often drops out of solution.</p>
+          </div>
+
+          <!-- Step 5: Combustion -->
+          <div data-step="5">
+            <h4>Combustion</h4>
+            <p class="eq-display">fuel + O₂ &rarr; CO₂ + H₂O</p>
+            
+            <div class="diagram"><svg viewBox="0 0 460 74">
+              <!-- Generic Model -->
+              <g transform="translate(15, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">GENERIC MODEL</text>
+                <text x="0" y="20" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">fuel</text>
+                <text x="32" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="52" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <circle cx="64" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1.2"/>
+                <path d="M78 18 L94 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <text x="104" y="20" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">CO₂</text>
+                <text x="127" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <text x="139" y="20" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">H₂O</text>
+              </g>
+
+              <!-- Divider -->
+              <line x1="170" y1="8" x2="170" y2="66" stroke="var(--hair-soft)" stroke-width="1"/>
+
+              <!-- Concrete Reaction -->
+              <g transform="translate(185, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">EXAMPLE: CH₄ + 2 O₂ &rarr; CO₂ + 2 H₂O</text>
+                <!-- CH4 -->
+                <circle cx="16" cy="18" r="8" fill="var(--ink)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="16" cy="7" r="4" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="7" cy="23" r="4" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="25" cy="23" r="4" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="36" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <!-- 2 O2 -->
+                <circle cx="52" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="64" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="86" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="98" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <path d="M112 18 L128 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <!-- CO2 -->
+                <circle cx="143" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="155" cy="18" r="8" fill="var(--ink)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="167" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="179" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <!-- 2 H2O -->
+                <circle cx="198" cy="16" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="192" cy="22" r="4.5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="204" cy="22" r="4.5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="224" cy="16" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="218" cy="22" r="4.5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="230" cy="22" r="4.5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+              </g>
+            </svg></div>
+
+            <p><strong>Example:</strong> CH₄ + 2 O₂ &rarr; CO₂ + 2 H₂O</p>
+            <p><strong>Signature:</strong> O₂ is on the left. CO₂ and H₂O are on the right. If those three appear and heat is released, the reaction is combustion.</p>
+          </div>
+
+          <!-- Step 6: Acid-Base Neutralization -->
+          <div data-step="6">
+            <h4>Acid-Base Neutralization</h4>
+            <p class="eq-display">acid + base &rarr; salt + water</p>
+            
+            <div class="diagram"><svg viewBox="0 0 460 74">
+              <!-- Generic Model -->
+              <g transform="translate(15, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-mute)">GENERIC MODEL</text>
+                <text x="0" y="20" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">HX</text>
+                <text x="20" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <text x="32" y="20" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">MOH</text>
+                <path d="M58 18 L74 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <text x="82" y="20" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">MX</text>
+                <text x="102" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <text x="114" y="20" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">H₂O</text>
+              </g>
+
+              <!-- Divider -->
+              <line x1="170" y1="8" x2="170" y2="66" stroke="var(--hair-soft)" stroke-width="1"/>
+
+              <!-- Concrete Reaction -->
+              <g transform="translate(185, 20)">
+                <text x="0" y="0" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">EXAMPLE: HCl + NaOH &rarr; NaCl + H₂O</text>
+                <circle cx="10" cy="18" r="5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="21" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="36" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="50" cy="18" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="64" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="74" cy="18" r="5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <path d="M86 18 L104 18" fill="none" stroke="var(--ink)" stroke-width="1.2" marker-end="url(#syn-arr)"/>
+                <circle cx="118" cy="18" r="8" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="132" cy="18" r="8" fill="var(--cool)" stroke="var(--ink)" stroke-width="1"/>
+                <text x="146" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">+</text>
+                <circle cx="168" cy="18" r="7" fill="var(--accent)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="161" cy="24" r="4.5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+                <circle cx="175" cy="24" r="4.5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1"/>
+              </g>
+            </svg></div>
+
+            <p><strong>Example:</strong> HCl + NaOH &rarr; NaCl + H₂O</p>
+            <p><strong>Signature:</strong> An acid (written with H first) meets a base (written with -OH). Water and an ionic salt form.</p>
+            <p class="hint">The name "neutralization" is beyond this course's assessment boundary. You will not be asked to classify a reaction as neutralization. Recognize it as a double replacement.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Classification drill -->
+      <div class="callout"><div class="label">Common mistake</div><p>Hunting for a lone element in every reaction. If both reactants are compounds, the reaction cannot be single replacement. The two compounds swap partners, so it is double replacement.</p></div>
+
+      <h3>Practice classifying reactions</h3>
+      <div data-widget="sort-classify">
+        <script type="application/json" class="w-config">
+        {
+          "categories": [
+            {"id": "synthesis", "label": "Synthesis"},
+            {"id": "decomposition", "label": "Decomposition"},
+            {"id": "single", "label": "Single Replacement"},
+            {"id": "double", "label": "Double Replacement"},
+            {"id": "combustion", "label": "Combustion"}
+          ],
+          "items": [
+            {
+              "text": "<strong class='chem'>2 K + Br₂ &rarr; 2 KBr</strong>",
+              "category": "synthesis",
+              "feedback_right": "Two reactants combine to form one compound: A + B &rarr; AB.",
+              "feedback_wrong": "Both reactants are elements and only one compound forms. Reactants that combine into one compound are synthesis, not a breakdown or a swap."
+            },
+            {
+              "text": "<strong class='chem'>CaCO₃ &rarr; CaO + CO₂</strong>",
+              "category": "decomposition",
+              "feedback_right": "One reactant breaks down into more than one product: AB &rarr; A + B.",
+              "feedback_wrong": "CO₂ is a product, which can make this look like combustion. But oxygen gas is not a reactant. One compound splitting into two is decomposition."
+            },
+            {
+              "text": "<strong class='chem'>Fe + CuCl₂ &rarr; FeCl₂ + Cu</strong>",
+              "category": "single",
+              "feedback_right": "Fe is a lone element that pushes Cu out of its compound: A + BC &rarr; AC + B.",
+              "feedback_wrong": "Two compounds are not trading partners here. A lone element (Fe) takes the place of another element inside a compound, which makes this single replacement."
+            },
+            {
+              "text": "<strong class='chem'>BaCl₂ + Na₂SO₄ &rarr; BaSO₄ + 2 NaCl</strong>",
+              "category": "double",
+              "feedback_right": "Ba and Na swap their partner ions (Cl and SO₄): AB + CD &rarr; AD + CB.",
+              "feedback_wrong": "A solid forms, which can make this look like synthesis. But both reactants are compounds, and they trade partners. That is double replacement."
+            },
+            {
+              "text": "<strong class='chem'>CH₄ + 2 O₂ &rarr; CO₂ + 2 H₂O</strong>",
+              "category": "combustion",
+              "feedback_right": "Oxygen (O₂) reacts with a fuel to make CO₂ and H₂O. That is combustion.",
+              "feedback_wrong": "Oxygen gas is a reactant, and the products are CO₂ and H₂O. That signature means combustion, even though atoms also combine."
+            },
+            {
+              "text": "<strong class='chem'>H₂SO₄ + 2 KOH &rarr; K₂SO₄ + 2 H₂O</strong>",
+              "category": "double",
+              "feedback_right": "H and K swap partners between the acid and the base: AB + CD &rarr; AD + CB. Chemists call this case neutralization, but the pattern is double replacement.",
+              "feedback_wrong": "Acid and base reactions have their own name, which makes this tempting. But the pattern is a partner swap, so it is double replacement."
+            }
+          ],
+          "reveal": "<h4>The five signatures</h4><ul><li><strong>Synthesis:</strong> A + B &rarr; AB (one product)</li><li><strong>Decomposition:</strong> AB &rarr; A + B (one reactant)</li><li><strong>Single Replacement:</strong> A + BC &rarr; AC + B (lone element on each side)</li><li><strong>Double Replacement:</strong> AB + CD &rarr; AD + CB (two compounds swap)</li><li><strong>Combustion:</strong> fuel + O₂ &rarr; CO₂ + H₂O (reacts with oxygen)</li></ul><p>Acid + base &rarr; salt + water (like H₂SO₄ + 2 KOH above) is a double replacement in disguise. Chemists call it \"neutralization,\" but this course only asks you to recognize the double replacement pattern.</p>"
+        }
+        </script>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02 THE LAW OF BALANCING -->
+  <section id="s-law" data-toc="Locking subscripts">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">02</span><span class="label">The rule</span></div>
+      <h2>Adjust coefficients, lock the subscripts.</h2>
+      <p>To keep the atoms equal, you might want to change a subscript inside a formula. <strong>Never do this.</strong> <strong class="term" data-term="subscript">Subscripts</strong> define the chemical identity of a substance. Change H<sub>2</sub>O to H<sub>2</sub>O<sub>2</sub> and you model hydrogen peroxide, a bleach, instead of water. You cannot change the ingredients to balance the scale.</p>
+      
+      <p>Instead, change the <strong class="term">coefficients</strong>, the numbers in front of formulas. A coefficient multiplies the whole molecule. A 2 in front of H<sub>2</sub>O (2 H<sub>2</sub>O) means two separate water molecules. That doubles the hydrogen and oxygen atoms and keeps the identity.</p>
+
+      <!-- Step Builder Walkthrough V-crxn-03 -->
+      <h3>Walkthrough: balancing methane combustion</h3>
+      <div data-widget="step-builder">
+        <figure class="figure figure--full" id="balWalkSvgContainer">
+<div class="diagram">
+          <svg viewBox="0 0 260 150">
+            <!-- State 1: Unbalanced -->
+            <g id="state-1" class="svg-step-layer">
+              <!-- Equation -->
+              <text x="130" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">
+                CH₄ + O₂ &rarr; CO₂ + H₂O
+              </text>
+              <!-- Ledger -->
+              <rect x="15" y="38" width="230" height="100" rx="3" fill="var(--paper)" stroke="var(--hair-soft)"/>
+              <g font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">
+                <!-- Table headers -->
+                <text x="28" y="56" font-weight="700">Element</text>
+                <text x="165" y="56" text-anchor="middle" font-weight="700">Left</text>
+                <text x="225" y="56" text-anchor="middle" font-weight="700">Right</text>
+                <line x1="20" y1="64" x2="240" y2="64" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+                
+                <!-- C row -->
+                <text x="28" y="82" fill="var(--ink)">Carbon (C)</text>
+                <text x="165" y="82" text-anchor="middle" fill="var(--ink)">1</text>
+                <text x="225" y="82" text-anchor="middle" fill="var(--ink)">1</text>
+                
+                <!-- H row -->
+                <text x="28" y="100" fill="var(--accent)">Hydrogen (H)</text>
+                <text x="165" y="100" text-anchor="middle" fill="var(--accent)" font-weight="700">4</text>
+                <text x="225" y="100" text-anchor="middle" fill="var(--accent)" font-weight="700">2</text>
+                
+                <!-- O row -->
+                <text x="28" y="118" fill="var(--accent)">Oxygen (O)</text>
+                <text x="165" y="118" text-anchor="middle" fill="var(--accent)" font-weight="700">2</text>
+                <text x="225" y="118" text-anchor="middle" fill="var(--accent)" font-weight="700">3</text>
+              </g>
+            </g>
+
+            <!-- State 2: H balanced -->
+            <g id="state-2" class="svg-step-layer" opacity="0" display="none">
+              <!-- Equation -->
+              <text x="130" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">
+                CH₄ + O₂ &rarr; CO₂ + <tspan fill="var(--accent)" font-weight="800">2</tspan> H₂O
+              </text>
+              <!-- Ledger -->
+              <rect x="15" y="38" width="230" height="100" rx="3" fill="var(--paper)" stroke="var(--hair-soft)"/>
+              <g font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">
+                <text x="28" y="56" font-weight="700">Element</text>
+                <text x="165" y="56" text-anchor="middle" font-weight="700">Left</text>
+                <text x="225" y="56" text-anchor="middle" font-weight="700">Right</text>
+                <line x1="20" y1="64" x2="240" y2="64" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+                
+                <!-- C row -->
+                <text x="28" y="82" fill="var(--ink)">Carbon (C)</text>
+                <text x="165" y="82" text-anchor="middle" fill="var(--ink)">1</text>
+                <text x="225" y="82" text-anchor="middle" fill="var(--ink)">1</text>
+                
+                <!-- H row (now balanced) -->
+                <text x="28" y="100" fill="var(--ink)">Hydrogen (H)</text>
+                <text x="165" y="100" text-anchor="middle" fill="var(--ink)">4</text>
+                <text x="225" y="100" text-anchor="middle" fill="var(--ink)">4</text>
+                <circle cx="195" cy="96" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="none" stroke="var(--ink)"/>
+                
+                <!-- O row (still imbalanced) -->
+                <text x="28" y="118" fill="var(--accent)">Oxygen (O)</text>
+                <text x="165" y="118" text-anchor="middle" fill="var(--accent)" font-weight="700">2</text>
+                <text x="225" y="118" text-anchor="middle" fill="var(--accent)" font-weight="700">4</text>
+              </g>
+            </g>
+
+            <!-- State 3: O balanced -->
+            <g id="state-3" class="svg-step-layer" opacity="0" display="none">
+              <!-- Equation -->
+              <text x="130" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">
+                CH₄ + <tspan fill="var(--accent)" font-weight="800">2</tspan> O₂ &rarr; CO₂ + 2 H₂O
+              </text>
+              <!-- Ledger -->
+              <rect x="15" y="38" width="230" height="100" rx="3" fill="var(--paper)" stroke="var(--hair-soft)"/>
+              <g font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">
+                <text x="28" y="56" font-weight="700">Element</text>
+                <text x="165" y="56" text-anchor="middle" font-weight="700">Left</text>
+                <text x="225" y="56" text-anchor="middle" font-weight="700">Right</text>
+                <line x1="20" y1="64" x2="240" y2="64" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+                
+                <!-- C row -->
+                <text x="28" y="82" fill="var(--ink)">Carbon (C)</text>
+                <text x="165" y="82" text-anchor="middle" fill="var(--ink)">1</text>
+                <text x="225" y="82" text-anchor="middle" fill="var(--ink)">1</text>
+                
+                <!-- H row -->
+                <text x="28" y="100" fill="var(--ink)">Hydrogen (H)</text>
+                <text x="165" y="100" text-anchor="middle" fill="var(--ink)">4</text>
+                <text x="225" y="100" text-anchor="middle" fill="var(--ink)">4</text>
+                
+                <!-- O row (now balanced) -->
+                <text x="28" y="118" fill="var(--ink)">Oxygen (O)</text>
+                <text x="165" y="118" text-anchor="middle" fill="var(--ink)">4</text>
+                <text x="225" y="118" text-anchor="middle" fill="var(--ink)">4</text>
+                <circle cx="195" cy="114" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="none" stroke="var(--ink)"/>
+              </g>
+            </g>
+
+            <!-- State 4: Balanced final audit -->
+            <g id="state-4" class="svg-step-layer" opacity="0" display="none">
+              <!-- Equation -->
+              <text x="130" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">
+                <tspan fill="var(--ink-mute)">1</tspan> CH₄ + <tspan fill="var(--ink)">2</tspan> O₂ &rarr; <tspan fill="var(--ink-mute)">1</tspan> CO₂ + <tspan fill="var(--ink)">2</tspan> H₂O
+              </text>
+              <!-- Ledger (all green highlight) -->
+              <rect x="15" y="38" width="230" height="100" rx="3" fill="var(--paper)" stroke="var(--accent)" style="stroke-width: var(--dia-stroke-bond)"/>
+              <g font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)">
+                <text x="28" y="56" font-weight="700">Element</text>
+                <text x="165" y="56" text-anchor="middle" font-weight="700">Left</text>
+                <text x="225" y="56" text-anchor="middle" font-weight="700">Right</text>
+                <line x1="20" y1="64" x2="240" y2="64" stroke="var(--accent)" style="stroke-width: var(--dia-stroke)"/>
+                
+                <!-- C row -->
+                <text x="28" y="82">Carbon (C)</text>
+                <text x="165" y="82" text-anchor="middle">1</text>
+                <text x="225" y="82" text-anchor="middle">1</text>
+                
+                <!-- H row -->
+                <text x="28" y="100">Hydrogen (H)</text>
+                <text x="165" y="100" text-anchor="middle">4</text>
+                <text x="225" y="100" text-anchor="middle">4</text>
+                
+                <!-- O row -->
+                <text x="28" y="118">Oxygen (O)</text>
+                <text x="165" y="118" text-anchor="middle">4</text>
+                <text x="225" y="118" text-anchor="middle">4</text>
+              </g>
+            </g>
+          </svg>
+</div>
+</figure>
+        <script type="application/json" class="w-config">
+        {
+          "diagramId": "balWalkSvgContainer",
+          "steps": [
+            {
+              "state": "state-1",
+              "question": "<strong>Step 1:</strong> Carbon is balanced (1 = 1), but hydrogen (4 &ne; 2) and oxygen (2 &ne; 3) are not. Which element should you balance first?",
+              "options": [
+                {"label": "Oxygen (O), because it is the most out of balance", "correct": false, "feedback": "Oxygen looks worst, which makes it tempting. But oxygen sits in both products, so fixing hydrogen later would break it again. Save oxygen for last."},
+                {"label": "Hydrogen (H), because it appears in only one product", "correct": true, "feedback": "Hydrogen has one home on each side, so fixing it changes no other element. Oxygen lives in both CO₂ and H₂O, so it waits."}
+              ]
+            },
+            {
+              "state": "state-2",
+              "question": "<strong>Step 2:</strong> There are 4 hydrogens on the left and 2 on the right. What is the legal move to balance them?",
+              "options": [
+                {"label": "Change H₂O to H₄O", "correct": false, "feedback": "H₄O makes the hydrogen counts match, which is tempting. But a subscript change makes a different substance. H₄O is not water, so subscripts stay locked."},
+                {"label": "Put a coefficient 2 in front of CH₄", "correct": false, "feedback": "A 2 in front of CH₄ gives 8 hydrogens on the left. That moves the two sides farther apart."},
+                {"label": "Put a coefficient 2 in front of H₂O", "correct": true, "feedback": "A coefficient multiplies the whole molecule. Two H₂O molecules hold 2 &times; 2 = 4 hydrogens, which matches the left."}
+              ]
+            },
+            {
+              "state": "state-3",
+              "question": "<strong>Step 3:</strong> Hydrogen is balanced, but oxygen is not. There are 2 oxygens on the left and 4 on the right (2 in CO₂ and 2 in the two H₂O). What is the next move?",
+              "options": [
+                {"label": "Put a coefficient 2 in front of O₂", "correct": true, "feedback": "Two O₂ molecules hold 2 &times; 2 = 4 oxygens, which matches the right. O₂ stands alone, so this changes no other element."},
+                {"label": "Put a coefficient 2 in front of CO₂", "correct": false, "feedback": "A 2 in front of CO₂ adds oxygen, which is tempting. But it also doubles the carbon and breaks the carbon balance you already locked in."}
+              ]
+            },
+            {
+              "state": "state-4",
+              "question": "<strong>Step 4:</strong> Check the ledger: C 1 = 1, H 4 = 4, O 4 = 4. Every row matches. What is the final balanced equation?",
+              "options": [
+                {"label": "It is not balanced yet, because CH₄ has no number", "correct": false, "feedback": "A missing number looks like a missing coefficient. But a blank coefficient means exactly 1 molecule, and the ledger already matches."},
+                {"label": "1 CH₄ + 2 O₂ &rarr; 1 CO₂ + 2 H₂O", "correct": true, "feedback": "Every row of the ledger matches. A blank coefficient means 1, so CH₄ and 1 CH₄ say the same thing."}
+              ]
+            }
+          ]
+        }
+        </script>
+      </div>
+
+      <div class="callout">
+        <div class="label">The one idea to hold onto</div>
+        <p>Think of each compound as a sealed plastic box. You can add more boxes (coefficients). You cannot open a box and change the atoms inside (subscripts).</p>
+      </div>
+      <div class="callout"><div class="label">Common mistake</div><p>Changing a subscript to balance an equation. H<sub>2</sub>O to H<sub>4</sub>O matches the hydrogens, but it names a substance that is not water.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 03 SIGNATURE INTERACTIVE: VISUAL BALANCER -->
+  <section id="s-balancer" data-toc="Visual balancer">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03</span><span class="label">Visual balancer</span></div>
+      <h2>Balance the beam. Conserve the atoms.</h2>
+      <p>Pick a reaction. Move the coefficient sliders and watch the molecules fill the pans. When the atom counts match on both sides, the beam levels.</p>
+
+      <div class="sim-box" data-sim="balancer">
+        <div class="label">Interactive tool</div>
+        <h4>Which coefficients make the atoms match on both sides?</h4>
+        <div class="sim-stage"><canvas aria-label="A balance beam with the reactant molecules in the left pan and the product molecules in the right pan."></canvas></div>
+        <div class="sim-controls" role="group" aria-label="Choose a reaction">
+          <button type="button" class="chip" aria-pressed="true" data-rxn="water">Water synthesis</button>
+          <button type="button" class="chip" aria-pressed="false" data-rxn="ammonia">Ammonia synthesis</button>
+          <button type="button" class="chip" aria-pressed="false" data-rxn="peroxide">Peroxide decomposition</button>
+          <button type="button" class="chip" aria-pressed="false" data-rxn="methane">Methane combustion</button>
+        </div>
+        <div class="sim-controls" data-coef-rows role="group" aria-label="Coefficients">
+          <label class="slider-row" data-species="H2"><span>H₂ <span class="side">reactant</span></span> <output>1</output>
+            <input type="range" min="1" max="4" step="1" value="1">
+          </label>
+          <label class="slider-row" data-species="O2"><span>O₂ <span class="side">reactant</span></span> <output>1</output>
+            <input type="range" min="1" max="4" step="1" value="1">
+          </label>
+          <label class="slider-row" data-species="N2"><span>N₂ <span class="side">reactant</span></span> <output>1</output>
+            <input type="range" min="1" max="4" step="1" value="1">
+          </label>
+          <label class="slider-row" data-species="H2O2"><span>H₂O₂ <span class="side">reactant</span></span> <output>1</output>
+            <input type="range" min="1" max="4" step="1" value="1">
+          </label>
+          <label class="slider-row" data-species="CH4"><span>CH₄ <span class="side">reactant</span></span> <output>1</output>
+            <input type="range" min="1" max="4" step="1" value="1">
+          </label>
+          <label class="slider-row" data-species="NH3"><span>NH₃ <span class="side">reactant</span></span> <output>1</output>
+            <input type="range" min="1" max="4" step="1" value="1">
+          </label>
+          <label class="slider-row" data-species="CO2"><span>CO₂ <span class="side">reactant</span></span> <output>1</output>
+            <input type="range" min="1" max="4" step="1" value="1">
+          </label>
+          <label class="slider-row" data-species="H2O"><span>H₂O <span class="side">reactant</span></span> <output>1</output>
+            <input type="range" min="1" max="4" step="1" value="1">
+          </label>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="eq"><span class="readout-label">Equation</span><span class="readout-value">1 H₂ + 1 O₂ → 1 H₂O</span></div>
+          <div class="readout" data-readout="e1" data-el-tile><span class="readout-label">Hydrogen atoms</span><span class="readout-value">2 = 2</span></div>
+          <div class="readout" data-readout="e2" data-el-tile><span class="readout-label">Oxygen atoms</span><span class="readout-value">2 ≠ 1</span></div>
+          <div class="readout" data-readout="e3" data-el-tile hidden><span class="readout-label"></span><span class="readout-value">–</span></div>
+        </div>
+        <span class="status-pill" data-state="warn">Not balanced yet</span>
+        <p data-sim-note aria-live="polite">Oxygen: 2 on the left and 1 on the right. Change a coefficient, never a subscript.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="paper-3"></span>Hydrogen atom</li>
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Oxygen atom</li>
+          <li><span class="key" data-shape="dot" data-token="ink-mute"></span>Nitrogen atom</li>
+          <li><span class="key" data-shape="dot" data-token="ink"></span>Carbon atom</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 PREDICT FIRST -->
+  <section id="s-predict" data-toc="Check yourself">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04</span><span class="label">Check yourself</span></div>
+      <h2>Predict the coefficients.</h2>
+
+      <!-- Q1 -->
+      <div>
+        <div data-widget="commit-reveal">
+          <script type="application/json" class="w-config">
+          {
+            "mode": "choice",
+            "prompt": "<strong>1. Balancing combustion:</strong> Methane burns: CH₄ + O₂ &rarr; CO₂ + H₂O. The reactant side has 4 hydrogens and the product side has 2. What coefficient in front of H₂O balances the hydrogen?",
+            "options": [
+              {"label": "1", "correct": false, "feedback": "One H₂O holds only 2 hydrogens. That leaves the right side short of the 4 hydrogens in CH₄."},
+              {"label": "2", "correct": true, "feedback": "Two H₂O molecules hold 2 &times; 2 = 4 hydrogens. That matches the 4 hydrogens in one CH₄ molecule."},
+              {"label": "4", "correct": false, "feedback": "Four matches the 4 hydrogens on the left, which makes it tempting. But the coefficient multiplies each H₂O, and each one holds 2 hydrogens. Four H₂O would hold 8."}
+            ]
+          }
+          </script>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div>
+        <div data-widget="commit-reveal">
+          <script type="application/json" class="w-config">
+          {
+            "mode": "choice",
+            "prompt": "<strong>2. Sorting a reaction:</strong> Aqueous sodium chloride (NaCl) is mixed with aqueous silver nitrate (AgNO₃). A white cloud of solid silver chloride (AgCl) forms and settles to the bottom. What type of reaction is this?",
+            "options": [
+              {"label": "Decomposition", "correct": false, "feedback": "A solid drops out, which can look like something breaking apart. But two compounds start this reaction. Decomposition starts with a single compound."},
+              {"label": "Single Replacement", "correct": false, "feedback": "Single replacement needs a lone element swapping into a compound. Here both reactants are compounds."},
+              {"label": "Double Replacement", "correct": true, "feedback": "Na⁺ and Ag⁺ swap partners (Cl&minus; and NO₃&minus;). That makes solid AgCl and aqueous NaNO₃, which is a double replacement."}
+            ]
+          }
+          </script>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 RECALL -->
+  <section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">05</span><span class="label">Say it back</span></div>
+      <h2>Fill the blanks from memory.</h2>
+      <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+      <p class="recall-sentence">
+        A reaction where a fuel reacts with oxygen to make CO<sub>2</sub> and H<sub>2</sub>O is <input class="blank" data-answer="combustion" placeholder="?">.
+        A reaction where one reactant breaks into several products is <input class="blank" data-answer="decomposition" placeholder="?">.
+        Equations must be balanced because of the Law of <input class="blank" data-answer="conservation of mass|conservation of matter" placeholder="?">.
+        The numbers in front of formulas that balance an equation are <input class="blank" data-answer="coefficients" placeholder="?">.
+        The subscripts inside a formula fix the substance's <input class="blank" data-answer="chemical identity|identity" placeholder="?">.
+      </p>
+      <div class="recall-actions">
+        <button class="btn" data-recall-check>Check</button>
+        <button class="btn ghost" data-recall-reveal>Show answers</button>
+        <button class="btn ghost" data-recall-reset>Reset</button>
+        <span class="feedback" data-recall-feedback></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 SELF-EXPLAIN -->
+  <section id="s-explain" data-toc="Self-explain">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">06</span><span class="label">Explain it to yourself</span></div>
+      <h2>Why lock the subscripts?</h2>
+      
+      <div data-widget="commit-reveal">
+        <script type="application/json" class="w-config">
+        {
+          "mode": "free",
+          "prompt": "Explain why you may change coefficients to balance an equation but never subscripts. Use the ideas of chemical identity and atoms.",
+          "minChars": 30,
+          "reveal": "Subscripts fix how many atoms are bonded together in one molecule. That ratio gives the substance its identity and its properties. Changing a subscript changes the substance. For example, O₂ becomes O₃, which is ozone, a different substance. Coefficients only count how many molecules take part. Changing a coefficient scales the amount of a substance without changing its bonds. So the equation balances and the substances stay the same."
+        }
+        </script>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- 07 EXAM PRACTICE -->
+  <section id="s-exam" data-toc="Exam practice">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">07</span><span class="label">Now the way it's marked</span></div>
+      <h2>Balance a thermal decomposition.</h2>
+      <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+      <div class="exam-frame">
+        <div class="exam-meta">
+          <span class="exam-src">Gen Chem · HS-PS1-7 · constructed response</span>
+          <span class="exam-marks">[3 marks]</span>
+        </div>
+        
+        <div data-widget="commit-reveal">
+          <script type="application/json" class="w-config">
+          {
+            "mode": "free",
+            "prompt": "Baking soda (NaHCO₃) breaks down when it is heated in an oven. It forms solid sodium carbonate (Na₂CO₃), water vapor (H₂O) and carbon dioxide gas (CO₂).<br><br>Write the unbalanced equation. Balance it with coefficients. Show that the atom counts match on both sides.",
+            "minChars": 40,
+            "reveal": "<h4>Scoring guide: 3 marks</h4><ul class=\"pts\"><li><b>Equation (1 mark):</b> You write NaHCO₃ &rarr; Na₂CO₃ + H₂O + CO₂.</li><li><b>Balance (1 mark):</b> You put a 2 in front of NaHCO₃ and change no subscript.</li><li><b>Ledger (1 mark):</b> You show 2 Na, 2 H, 2 C and 6 O on each side.</li></ul>"
+          }
+          </script>
+        </div>
+            <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why This Matters</div>
+        <p>An airbag depends on a balanced equation. In a crash, a sensor triggers the decomposition of solid sodium azide (NaN₃). Balancing the equation shows how a small pellet makes a large volume of nitrogen gas (N₂) in milliseconds.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-2 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-2</h3>
+    <p>
+      Master reaction classification, balancing coefficients, and conservation of matter one question at a time. The adaptive engine detects individual misconceptions and provides immediate step-by-step coaching.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-2" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+  <div class="footer">
+    <div class="label">Gen Chem · Sem 1 · 1-2e</div>
+    <p>Reaction Types &amp; Balancing. Next: connecting molecular shapes and intermolecular forces to physical macroscopic properties.</p>
+  </div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="1-2e.js"></script>
+</body>
+</html>

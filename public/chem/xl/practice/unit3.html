@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>XL Chemistry Practice · Unit 3: Chemical Bonding &amp; IMFs</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../../favicon.ico">
+
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/contrib/auto-render.min.js"></script>
+
+  <!-- XL Practice Design System -->
+  <link rel="stylesheet" href="xl-practice.css">
+</head>
+<body class="theme-auto">
+
+  <!-- STICKY WORKSTATION HEADER -->
+  <header class="station-header" id="stationHeader">
+    <div class="station-branding">
+      <a href="index.html" class="station-badge" id="btnStationBack" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.25rem;">&larr; XL Chem</a>
+      <div>
+        <div class="station-title">Unit 3: Chemical Bonding &amp; IMFs</div>
+        <div class="station-subtitle">Quantitative Practice &middot; Formative Set</div>
+      </div>
+    </div>
+
+    <div class="station-center">
+      <div class="progress-track" title="Overall Progress">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="station-metrics" id="metricsLabel">0 of 16 Solved (0%)</div>
+    </div>
+
+    <div class="station-right">
+      <button class="btn btn-secondary btn-sm" id="refBtn" title="Open Reference Tables">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Reference
+      </button>
+
+      <button class="btn btn-secondary btn-sm" id="calcBtn" title="Open Scientific Calculator">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        Calculator
+      </button>
+
+      <button class="btn btn-secondary btn-sm" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+        <span id="themeIcon">☀️</span>
+      </button>
+
+      <div class="student-pill" id="studentPill" title="Click to edit student profile">
+        <div class="student-pill-avatar" id="studentAvatar">S</div>
+        <span id="studentNameDisplay">Set Student Name</span>
+      </div>
+
+      <button class="btn btn-primary btn-sm" id="exportBtn" disabled>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Export Receipt
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN STATION WORKSPACE -->
+  <main class="station-body">
+    
+    <!-- Unit Overview Banner -->
+    <section class="unit-banner">
+      <div class="unit-banner-info">
+        <h1>Accelerated Chemistry Practice Studio</h1>
+        <p>Unit 3: Chemical Bonding, VSEPR Geometry, Molecular Polarity, &amp; Intermolecular Forces.</p>
+        <div id="bannerAttemptStats" style="margin-top:0.4rem;"></div>
+      </div>
+      <div>
+        <span class="seed-chip" id="seedChip">Seed: #loading</span>
+      </div>
+    </section>
+
+    <!-- Dynamic Problem Deck -->
+    <div id="problemDeck">
+      <!-- Populated dynamically by unit3.js -->
+    </div>
+
+  </main>
+
+  <!-- IN-SITE REFERENCE DRAWER -->
+  <aside class="drawer-panel" id="refDrawer" aria-label="Reference Tables">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Chemistry Reference Center
+      </div>
+      <button class="btn btn-secondary btn-sm" id="closeRefDrawerBtn">✕</button>
+    </div>
+
+    <!-- Reference Tabs -->
+    <div class="drawer-tab-bar">
+      <button type="button" class="drawer-tab-btn active" id="tabBtnPtable" data-target="drawerPtable">Periodic Table &amp; EN</button>
+      <button type="button" class="drawer-tab-btn" id="tabBtnFormulas" data-target="drawerFormulas">VSEPR &amp; IMFs Reference</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Tab 1: Interactive Periodic Table with EN focus -->
+      <div class="drawer-tab-content" id="drawerPtable">
+        <div class="ptable-toolbar">
+          <div class="ptable-modes" id="ptableModes">
+            <button type="button" class="ptable-mode-btn" data-mode="default">Classification</button>
+            <button type="button" class="ptable-mode-btn" data-mode="radius">Radius</button>
+            <button type="button" class="ptable-mode-btn" data-mode="ie">1st IE</button>
+            <button type="button" class="ptable-mode-btn active" data-mode="en">Electronegativity</button>
+          </div>
+          <label class="ptable-check-label">
+            <input type="checkbox" id="ptableTransitionToggle" checked>
+            <span>Transition (3d)</span>
+          </label>
+        </div>
+
+        <div class="ptable-grid-wrapper">
+          <div class="ptable-grid" id="refPtableGrid">
+            <!-- Dynamically populated with elements Z=1..36 -->
+          </div>
+        </div>
+
+        <div class="ptable-legend-bar" id="refPtableLegend">
+          <!-- Dynamically populated legend -->
+        </div>
+
+        <!-- Selected Element Inspector -->
+        <div class="element-inspector-card" id="elementInspectorCard">
+          <div class="inspector-empty" id="inspectorEmpty">
+            Select any element cell above to inspect its Pauling electronegativity, valence electrons, and bonding properties.
+          </div>
+          <div class="inspector-details" id="inspectorDetails" style="display:none;">
+            <!-- Dynamically populated element details -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: VSEPR Geometries, Polarity & IMFs Reference -->
+      <div class="drawer-tab-content" id="drawerFormulas" style="display:none;">
+        <div class="ref-table-block">
+          <div class="ref-table-title">Electronegativity Difference (ΔEN) &amp; Bond Character</div>
+          <div class="ref-row"><span>0.0 to 0.4</span><span>Nonpolar Covalent (equal electron sharing)</span></div>
+          <div class="ref-row"><span>0.5 to 1.7</span><span>Polar Covalent (unequal sharing, bond dipole)</span></div>
+          <div class="ref-row"><span>Greater than 1.7</span><span>Ionic (complete electron transfer, full charges)</span></div>
+          <div class="ref-row"><span>Low EN metal + metal</span><span>Metallic bonding (delocalized electron sea)</span></div>
+        </div>
+
+        <div class="ref-table-block">
+          <div class="ref-table-title">VSEPR Molecular Geometries &amp; Ideal Bond Angles</div>
+          <div class="ref-row"><span>2 domains (2 bonds, 0 lone pairs)</span><span>Linear (180°) e.g. CO₂, CS₂, BeCl₂</span></div>
+          <div class="ref-row"><span>3 domains (3 bonds, 0 lone pairs)</span><span>Trigonal planar (120°) e.g. BF₃, SO₃</span></div>
+          <div class="ref-row"><span>3 domains (2 bonds, 1 lone pair)</span><span>Bent (~118°) e.g. SO₂, O₃</span></div>
+          <div class="ref-row"><span>4 domains (4 bonds, 0 lone pairs)</span><span>Tetrahedral (109.5°) e.g. CH₄, CCl₄</span></div>
+          <div class="ref-row"><span>4 domains (3 bonds, 1 lone pair)</span><span>Trigonal pyramidal (~107°) e.g. NH₃, PCl₃</span></div>
+          <div class="ref-row"><span>4 domains (2 bonds, 2 lone pairs)</span><span>Bent (~104.5°) e.g. H₂O, SCl₂, H₂S</span></div>
+        </div>
+
+        <div class="ref-table-block">
+          <div class="ref-table-title">Molecular Polarity Rules</div>
+          <div class="ref-row"><span>Nonpolar Molecules</span><span>Symmetric geometry with identical outer atoms (dipoles cancel). Examples: CO₂, CCl₄, BF₃, CH₄.</span></div>
+          <div class="ref-row"><span>Polar Molecules</span><span>Asymmetric geometry (lone pair on central atom) or different outer atoms (dipoles do not cancel). Examples: H₂O, NH₃, CH₃Cl.</span></div>
+        </div>
+
+        <div class="ref-table-block">
+          <div class="ref-table-title">Intermolecular Forces (IMFs) Hierarchy</div>
+          <div class="ref-row"><span>London Dispersion Forces (LDFs)</span><span>Present in all molecules. Strength increases with electron count (polarizability).</span></div>
+          <div class="ref-row"><span>Dipole-Dipole Attractions</span><span>Occur between permanent polar dipoles. Stronger than LDFs for similar-sized molecules.</span></div>
+          <div class="ref-row"><span>Hydrogen Bonding</span><span>Exceptionally strong dipole attraction when H is directly bonded to N, O, or F.</span></div>
+          <div class="ref-row"><span>Bulk Property Effects</span><span>Stronger IMFs = Higher boiling/melting points, higher surface tension, lower vapor pressure.</span></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- IN-SITE CALCULATOR WIDGET -->
+  <div class="calc-widget" id="calcWidget">
+    <div class="calc-header" id="calcDragHandle">
+      <div class="calc-drag-title">
+        <span class="calc-drag-grip" title="Click and drag up or down">⠿</span>
+        <span>Scientific Mini-Calc</span>
+      </div>
+      <button class="btn btn-secondary btn-sm" id="closeCalcBtn" style="padding:0.1rem 0.4rem;">✕</button>
+    </div>
+    <div class="calc-screen">
+      <div class="calc-expression" id="calcExpr"></div>
+      <div class="calc-value" id="calcVal">0</div>
+    </div>
+    <div class="calc-grid" id="calcGrid">
+      <button class="calc-btn calc-btn-op" data-key="clear">AC</button>
+      <button class="calc-btn calc-btn-op" data-key="del">⌫</button>
+      <button class="calc-btn calc-btn-op" data-key="(">(</button>
+      <button class="calc-btn calc-btn-op" data-key=")">)</button>
+
+      <button class="calc-btn calc-btn-op" data-key="^">xʸ</button>
+      <button class="calc-btn calc-btn-op" data-key="ee">EE</button>
+      <button class="calc-btn calc-btn-op" data-key="sqrt">√</button>
+      <button class="calc-btn calc-btn-op" data-key="/">÷</button>
+
+      <button class="calc-btn" data-key="7">7</button>
+      <button class="calc-btn" data-key="8">8</button>
+      <button class="calc-btn" data-key="9">9</button>
+      <button class="calc-btn calc-btn-op" data-key="*">×</button>
+
+      <button class="calc-btn" data-key="4">4</button>
+      <button class="calc-btn" data-key="5">5</button>
+      <button class="calc-btn" data-key="6">6</button>
+      <button class="calc-btn calc-btn-op" data-key="-">-</button>
+
+      <button class="calc-btn" data-key="1">1</button>
+      <button class="calc-btn" data-key="2">2</button>
+      <button class="calc-btn" data-key="3">3</button>
+      <button class="calc-btn calc-btn-op" data-key="+">+</button>
+
+      <button class="calc-btn" data-key="0">0</button>
+      <button class="calc-btn" data-key=".">.</button>
+      <button class="calc-btn calc-btn-op" data-key="pm">±</button>
+      <button class="calc-btn calc-btn-eq" data-key="=">=</button>
+    </div>
+  </div>
+
+  <!-- PROFILE / NAME SETUP MODAL -->
+  <div class="modal-overlay" id="profileModal" style="display:none;">
+    <div class="modal-content">
+      <div class="modal-title">Welcome to XL Chem Practice</div>
+      <div class="modal-subtitle">
+        Enter your first and last name below. This generates your unique, stable problem parameters for Unit 3 and goes on your printed receipt with its check code.
+      </div>
+      <input type="text" class="modal-input" id="profileInput" placeholder="First and Last Name (e.g. Maya Lin)" autofocus>
+      <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:0.5rem;">
+        <button type="button" class="btn btn-primary" id="profileStartBtn">Start Practice Set</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRINTABLE STUDY GUIDE & RECEIPT (Used by @media print) -->
+  <div id="studyReportSheet"></div>
+
+  <!-- SCRIPTS -->
+  <script src="smart-parser.js"></script>
+  <script src="qrcode.js"></script>
+  <script src="unit3.js"></script>
+  <script>
+    (function() {
+      const fromParam = new URLSearchParams(window.location.search).get('from');
+      const b = document.getElementById('btnStationBack');
+      if (b && fromParam) {
+        b.href = 'index.html?from=' + encodeURIComponent(fromParam);
+      }
+    })();
+  </script>
+</body>
+</html>

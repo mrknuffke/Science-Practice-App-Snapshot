@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-book="bio" data-page="about">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>How This Book Was Built · SAS General Biology</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script src="../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../textbook/base.css">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/components.css">
+</head>
+<body class="colophon">
+
+<!-- Hero block -->
+  <section class="hero-block">
+    <div class="wrap narrow">
+      <h1>How this book was <span class="flip">built</span></h1>
+      <p class="lede">A textbook usually arrives with no account of where it came from. This one has an account, because how it was made shapes what you should trust it for. Below: what exists so far, who wrote what, the rules it is held to, what it still cannot do, and a dated record of everything that has shipped.</p>
+
+      <div class="meta-strip">
+        <div class="meta-block">
+          <div class="k">Scope</div>
+          <div class="v"><b>Unit 1 · Homeostasis (4 lessons + Unit 1 review)</b>Cellular respiration, negative feedback loops, thermoregulation, osmoregulation, and blood glucose signaling. Aligned to NGSS HS-LS1-2, HS-LS1-3, and HS-LS1-7.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Built for</div>
+          <div class="v"><b>Singapore American School</b>Written for the General Biology course. Open to anyone: no account, no sign-in, no cost.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Licence</div>
+          <div class="v"><b>CC BY-NC-SA 4.0</b>Take it, adapt it, teach with it. Credit the source, do not sell it, and share your version on the same terms.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">01</span><h2>What this is, and what it isn't</h2></div>
+      <div class="stack">
+        <p>These pages are for retrieval practice and re-narration <em>after</em> class, not instead of it. They assume you have already met the biological ideas once with a teacher, and they are built to make you commit to an answer before showing you one.</p>
+        <p>It is not a passive reference text. It does not replace hands-on laboratory investigation. It organizes authentic phenomena (such as an endurance athlete under extreme physical exertion) and guides you through particulate bond rearrangement, feedback architecture, and data analysis.</p>
+        <p>It is also not adaptive, and it does not track who you are. Nothing you do here leaves your browser and there is no account to create.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">02</span><h2>Who wrote what</h2></div>
+      <div class="stack">
+        <p>Built by one teacher working with AI coding agents, on the same division of labour as the <a href="/chem/about.html">General Chemistry</a> and <a href="/physics/about.html">General Physics</a> books.</p>
+      </div>
+
+      <div class="split">
+        <div class="split-col">
+          <h3>The teacher</h3>
+          <ul>
+            <li>Decides what a lesson is for and what a student should be able to do at the end of it.</li>
+            <li>Writes and checks the biological models: every chemical reaction, molecular reactant, feedback pathway, and hormone mechanism.</li>
+            <li>Names authentic misconceptions (such as confusing respiration with ventilation, or assuming negative feedback means bad feedback).</li>
+            <li>Reads every page in a browser, in both themes, before it ships. Most defects are visual, and only a person looking at the screen catches those.</li>
+            <li>Signs off. Nothing goes live unreviewed.</li>
+          </ul>
+        </div>
+        <div class="split-col">
+          <h3>The AI</h3>
+          <ul>
+            <li>Writes the code: page structure, styling, interactive simulations, and commit-reveal logic.</li>
+            <li>Drafts prose against a written voice contract, then gets edited.</li>
+            <li>Runs automated sweeps: checking design tokens, auditing glossary keys, and verifying layout invariants across mobile viewports.</li>
+            <li>Works under strict constraints to avoid over-complicating architectures.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stack">
+        <p>The honest summary is the same across our textbooks: the AI is why this exists at all, and it also introduced its share of defects during drafting. The record at the bottom of this page tracks the historical evolution plainly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">03</span><h2>The rules it is held to</h2></div>
+      <p>Shared with the chemistry and physics texts, because they were learned through hard experience:</p>
+
+      <ul class="rules">
+        <li><b>Verify all biological facts. Never trust memory.</b> Chemical equations for respiration, hormone sources, target effectors, and set-point data are checked against authoritative curriculum sources.</li>
+        <li><b>Commit before reveal.</b> No question card shows its answer to a student who has not answered. Free-text inputs require substantive reasoning before unlocking scoring rubrics.</li>
+        <li><b>Wrong-answer feedback teaches or it does not ship.</b> "Incorrect, try again" is banned. Feedback has to explain why that particular distractor was tempting.</li>
+        <li><b>Honest beats pretty.</b> If a diagram cannot be made biologically honest at the level shown, the claim gets simplified rather than faked.</li>
+        <li><b>Explain the concept before naming it.</b> Terms are introduced through physical scenarios and plain language before introducing technical jargon. Defined terms carry a dotted underline and a tooltip definition.</li>
+        <li><b>Render before declaring it done.</b> Open it in a browser, in both themes, at both desktop and phone widths.</li>
+        <li><b>No build step.</b> Zero-build static HTML, CSS, and classic JavaScript that will open in any browser a decade from now without compilation.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">04</span><h2>What's underneath</h2></div>
+      <div class="stack">
+        <p>A lean, zero-build stack adapted from SAS General Physics. Plain HTML, CSS, and vanilla JavaScript loaded directly by the browser without bundlers or heavy libraries.</p>
+        <p>Every lesson loads one shared set of files that all of our textbooks use: <code>base.css</code> and <code>lesson.css</code> for type, layout, and components, and <code>core.js</code>, <code>widgets.js</code>, and <code>sim.js</code> for the top bar, the question widgets, and the simulations. This book adds <code>tokens.css</code> for its emerald palette and biological colors, <code>components.css</code> for layouts only this book uses, <code>book.js</code> for its settings and the dashboard, and <code>glossary.js</code> for hover and tap definitions of core biological vocabulary.</p>
+        <p>Every page is verified by automated preflight checks before any deploy to ensure zero broken links, no script crashes, and no horizontal overflow on mobile viewports.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">05</span><h2>What it still gets wrong</h2></div>
+      <div class="stack">
+        <p>Listed openly because an uncritical colophon is not trustworthy.</p>
+      </div>
+      <ul class="gap-list">
+        <li><b>It covers Unit 1 and the start of Unit 2.</b> The rest of Unit 2 (Ecology and the Carbon Cycle) is being written now. Genetics and Microevolution come later.</li>
+        <li><b>No automated spaced repetition.</b> While Chemistry includes an SRS scheduling engine, Biology currently relies on within-lesson active recall and summative reviews.</li>
+        <li><b>Early in classroom testing.</b> The lessons mirror authentic student practice sets from Singapore American School, but live classroom pacing feedback will refine explanations over time.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">06</span><h2>Version history</h2></div>
+      <div class="stack">
+        <p>Every student-visible change, dated, newest first.</p>
+      </div>
+
+      <div class="ver">
+        <span class="date">9 November 2026</span>
+        <h3>A clearer home page, and a photo in every lesson</h3>
+        <ul>
+          <li><b>Units with lessons now span the page.</b> Each one shows a photo and its description beside its lesson list, so a short unit no longer leaves a gap above its lessons.</li>
+          <li><b>New photos.</b> Unit 1: runners at the 2015 Berlin Marathon, by Denis Barthel (CC BY-SA 4.0). Unit 2: rainforest in Singapore's Central Catchment Nature Reserve, by Jacklee (CC BY-SA 3.0). Both via Wikimedia Commons.</li>
+          <li><b>A photo opens every lesson.</b> Each one shows the lesson's opening scene, all via Wikimedia Commons: 1-1 triathlon swim start (Steven Fruitsmaak, CC BY-SA 3.0); 1-2 hikers on a snowy ridge (Michal Klajban, CC BY-SA 4.0); 1-3 indoor cycling class (Spc. Joseph Knoch, U.S. Army, public domain); 1-4 Hainanese chicken rice (Pauloleong2002, CC BY-SA 4.0); 2a-1 giant kelp forest (BravoGonzalo, CC BY-SA 4.0); 2a-2 the Blue Marble (NASA, Apollo 17, public domain); 2b-1 MacRitchie canopy (Mokkie, CC BY-SA 3.0); 2b-2 Surtsey from the air (Bruce McAdam, CC BY-SA 2.0); 2b-3 E. coli under an electron microscope (Eric Erbe and Christopher Pooley, USDA, public domain); 2b-5 Biosphere 2 (Frost Museum, CC BY 2.0); 2b-6 polar bear near Churchill (TravelingOtter, CC BY 2.0); 2b-7 Bornean orangutans in Tanjung Puting (Thomas Fuhrmann, CC BY-SA 4.0).</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">8 November 2026</span>
+        <h3>Unit 2: biodiversity, energy, Biosphere 2, carrying capacity, photosynthesis, and the carbon cycle</h3>
+        <ul>
+          <li><b>Lesson 2b-3, Gut Biodiversity at Three Scales.</b> Compare the gut bacteria of Hadza hunter-gatherers and city adults, follow one course of antibiotics, and watch losses build over four generations of mice.</li>
+          <li><b>Lesson 2b-4, Energy and Trophic Levels.</b> Calculate how much energy passes up a food chain, follow 1,000 units of energy in a new simulation, and compare upright and upside-down pyramids. Opening photo of a dhole in Khao Yai National Park by รัชพงศ์ ดีมาก (CC BY-SA 4.0).</li>
+          <li><b>Lesson 2b-5, Biosphere 2.</b> Track the oxygen and carbon in a sealed ecosystem, find where the missing carbon went, and explain why its crew went hungry.</li>
+          <li><b>Lesson 2b-6, Polar Bears and Carrying Capacity.</b> Measure how long Hudson Bay's polar bears fast on land, compare the ice and population records, and model how the ice sets their carrying capacity in a new simulation.</li>
+          <li><b>Lesson 2b-7, Orangutans and Scale.</b> Turn density into a head count, find out why most of Borneo's lost orangutans died in standing forest, and compare carrying capacity at three scales.</li>
+          <li><b>Lesson 2a-1, Photosynthesis.</b> Find out where a giant kelp's mass and energy come from, test the idea with van Helmont's willow, and follow one carbon atom into sugar in the Tracking a Carbon Atom simulation.</li>
+          <li><b>Lesson 2a-2, The Carbon Cycle.</b> Track the carbon people add to the air through four spheres, find where the missing half goes, and test what a cut in emissions does in a new simulation.</li>
+          <li><b>Unit 2a Carbon Review.</b> Quick checks, a main-ideas digest, and two new practice problems that use a year of carbon dioxide readings from Hawaii, Alaska and the South Pole.</li>
+          <li><b>Unit 2b Ecology Review.</b> Quick checks, a main-ideas digest, two new practice problems (reindeer on St. Matthew Island, wolves and moose on Isle Royale) and a step-by-step guide to refining your design into Version 2.0.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">7 November 2026</span>
+        <h3>Unit 2 begins: biodiversity</h3>
+        <ul>
+          <li><b>Lesson 2b-1, Biodiversity Loss in Singapore.</b> Read 200 years of extinction data, see which species were lost and when, and start a design that protects one threatened species.</li>
+          <li><b>Lesson 2b-2, Richness, Evenness and Islands.</b> Measure biodiversity two ways, send a disease through two reefs in a new simulation, and revise an explanation with new pond data. Section 05 links to a new Island Biogeography simulation in the Simulations Hub.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">28 October 2026</span>
+        <h3>Credit line updated</h3>
+        <ul>
+          <li><b>Physics book name.</b> The note on how this book was built now calls the physics book by its current name, SAS General Physics.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">22 October 2026</span>
+        <h3>Fixes after a full review</h3>
+        <ul>
+          <li><b>Nothing to read before you predict.</b> Until you commit your prediction, every reading in a simulation shows a dash, and Record does nothing.</li>
+          <li><b>Play to go on.</b> When a simulation stops on a data point, it tells you, and the Pause button reads Play. Start over always runs the model again.</li>
+          <li><b>Clearer science.</b> The respiration check now says that forming new bonds releases more energy than breaking the old ones takes. In lesson 1-3 the blood returns to normal once the athlete drinks. Type 2 diabetes in lesson 1-4 has its own curve, still above 200 mg/dL after two hours.</li>
+          <li><b>Feedback starts with the reason.</b> No answer opens with "Right." The review's quick checks now say why each wrong answer was tempting.</li>
+          <li><b>Tap a bold word on a phone</b> to see its meaning. Printing from dark mode now gives light pictures of each simulation, and lesson 1-1 prints with its atoms in view.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">14 October 2026</span>
+        <h3>Four rebuilt simulations</h3>
+        <ul>
+          <li><b>Four new simulations.</b> Each lesson has a rebuilt simulation that starts with a question and a prediction. The model stays locked until you commit your prediction. You change one or two controls, press Record to keep a row in a table, and answer a question that uses only your rows.</li>
+          <li><b>Respiration follows the atoms.</b> In lesson 1-1 you watch one glucose and six oxygen molecules break apart. The same atoms leave as carbon dioxide and water. Two bars show where the energy goes.</li>
+          <li><b>Thermoregulation, osmoregulation, and blood glucose run as loops.</b> Each model reacts over time, and the numbers in each model match the data table in its lesson.</li>
+          <li><b>Pause and step.</b> Every simulation has a Pause button, and stops when it is off screen. With reduced motion turned on, it starts paused and gives you a Step button.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">13 October 2026</span>
+        <h3>One shared design for all of our textbooks</h3>
+        <ul>
+          <li><b>Same look as chemistry and physics.</b> Lesson text, headings, cards, buttons, and tables now come from one shared set of files. Each lesson opens with a title, three short rows (alignment, objective, scope), and a Start button.</li>
+          <li><b>Checkpoints mark your answer.</b> Every checkpoint shows "Your answer" on the option you chose and a check mark on the right answer, and the feedback for your choice comes first.</li>
+          <li><b>Answers wait for an attempt.</b> The scoring guide stays locked until you write an answer, and "Show answers" on recall blanks stays locked until you press Check.</li>
+          <li><b>One theme switch.</b> The light and dark choice is saved once and shared with the other textbooks and the main app.</li>
+          <li><b>Lesson navigation.</b> Every lesson ends with links to the previous and next lessons, and the contents menu lists each section.</li>
+          <li><b>Plainer words.</b> Every lesson, checkpoint, and scoring guide is rewritten in shorter sentences. Terms that go past the standards (for example the parts of a kidney tube, or how a transporter works inside a cell) are cut, or moved into optional Enrichment blocks with a dashed outline.</li>
+          <li><b>Every answer explains itself.</b> Each answer option has its own feedback that says why it was tempting, and no feedback starts with "Correct!".</li>
+          <li><b>A common mistake in every concept section.</b> A short callout names the wrong idea students most often hold.</li>
+          <li><b>Quick checks in the review.</b> The Unit 1 review now opens with seven marked questions and a sorting task built from the lesson checkpoints.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">8 October 2026</span>
+        <h3>Readability and theme fixes</h3>
+        <ul>
+          <li><b>Light and dark mode.</b> The page colour now follows the book's own theme switch, not your computer's appearance setting.</li>
+          <li><b>Larger reading text.</b> Lesson text is now 20px, and text boxes and cards stay inside their columns.</li>
+          <li><b>Visible buttons.</b> Selected buttons and readouts in the thermoregulation, osmoregulation and blood glucose lessons are now readable.</li>
+          <li><b>Cleaner terms and layout.</b> Defined terms show as normal words, the respiration word equation wraps on phones, and Figure 1.1 is smaller.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">7 October 2026</span>
+        <h3>Unit 1 (Homeostasis) Completed &middot; Full Lesson Suite &amp; Review Deployed</h3>
+        <ul>
+          <li><b>Unit 1 Complete.</b> Deployed all four core interactive lessons (1-1 Cellular Respiration, 1-2 Thermoregulation, 1-3 Osmoregulation, 1-4 Blood Glucose Regulation) and the comprehensive Unit 1 Homeostasis Review with printable worksheet layout.</li>
+          <li><b>Interactive Simulations.</b> Shipped signature simulation engines across all lessons: dual-scale mitochondrial swimmer model, environmental chamber &amp; vasomotor dermal model, nephron collecting duct aquaporin transporter engine, and pancreatic islet insulin/glucagon endocrine simulator.</li>
+          <li><b>Empirical Data Integration.</b> Incorporated real Singapore American School consensus laboratory and clinical datasets: spinach leaf disc photo-respiration, 90-minute athlete dehydration biomarkers, and 2-hour Oral Glucose Tolerance Test (OGTT) clinical curves.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">7 October 2026</span>
+        <h3>SAS General Biology launch · Unit 1 Homeostasis foundations</h3>
+        <ul>
+          <li><b>Site Foundations Deployed.</b> Emerald botanical design token architecture, organic parchment light and dark themes, lean core runtime with animation lifecycle observer, dynamic manifest-driven dashboard, and terminology tooltip glossary.</li>
+          <li><b>Curriculum Manifest.</b> Established <code>lessons.json</code> for Unit 1 (Homeostasis), outlining Cellular Respiration, Thermoregulation, Osmoregulation, Blood Glucose Regulation, and the summative Unit 1 Review.</li>
+          <li><b>Lesson 1-1 Launched.</b> Deployed <em>Cellular Respiration & Energy Transfer</em> featuring Maya's channel swim anchor, aerobic chemical bond rearrangement model, interactive gas exchange simulation, matter mapping, and leaf disc data analysis.</li>
+        </ul>
+      </div>
+
+      <div class="footnote">
+        <p>Engineering details for every change are kept in the project repository history.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">07</span><h2>Credit and licence</h2></div>
+      <div class="stack">
+        <p>Written by David Knuffke for Singapore American School, and released under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> licence. Take it, adapt it, teach with it. Credit the source, do not sell it, and share what you make on the same terms.</p>
+        <p>Unit 2 draws on lessons, case studies and client briefs by the SAS General Biology team. The Singapore extinction figures come from Chisholm and others, "Two centuries of biodiversity discovery and loss in Singapore," <i>Proceedings of the National Academy of Sciences</i> 120 (2023): e2309034120.</p>
+        <p>The code behind this book, the main app and its simulations is free on GitHub: <a href="https://github.com/mrknuffke/Science-Practice-App-Snapshot-" target="_blank" rel="noopener noreferrer">Science Practice App snapshot</a>. The code is MIT licensed, so you can reuse it anywhere. The teaching content keeps the licence above.</p>
+        <p>Part of <a href="/">Science Practice Partner</a>, alongside the <a href="/chem/">General Chemistry</a> and <a href="/physics/">General Physics</a> interactive texts.</p>
+      </div>
+    </div>
+  </section>
+  <script src="assets/book.js"></script>
+  <script src="../textbook/core.js"></script>
+</body>
+</html>

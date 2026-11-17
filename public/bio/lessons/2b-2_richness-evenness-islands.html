@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-book="bio" data-lesson="2b-2">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Lesson 2b-2: Richness, Evenness and Islands | SAS General Biology</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+  <main>
+    <section class="hero" id="s-hero" data-toc="Opening">
+      <div>
+        <div class="label">Lesson 2b-2 · Richness, Evenness and Islands</div>
+        <h1>Same five species. One disease. One reef nearly <span class="flip">empties</span>.</h1>
+        <p class="lede">Two reefs each hold 30 fish of the same five species. A disease kills every fish of one species. One reef keeps most of its fish, and the other loses almost all of them. This page lets you measure biodiversity in two ways and use data to explain why some places hold more species than others.</p>
+        <div class="meta-strip">
+          <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-LS2-2</b>Use mathematical representations to support and revise explanations based on evidence about factors affecting biodiversity and populations in ecosystems of different scales.</div></div>
+          <div class="meta-block"><div class="k">Objective</div><div class="v">You can measure biodiversity with species richness and species evenness. You can use data to explain, and then revise, why one place holds more species than another.</div></div>
+          <div class="meta-block"><div class="k">Scope</div><div class="v">Richness and evenness, a reef disease simulation, the factors that set biodiversity in two ponds, and why island size and distance matter.</div></div>
+        </div>
+        <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+      </div>
+    </section>
+
+    <section id="sec-01" data-toc="Two bare rocks">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">01</span><span class="label">Orientation · Hook</span></div>
+        <figure class="figure figure--full">
+          <div class="diagram"><img src="../assets/photos/surtsey_aerial.jpg" width="1600" height="1272" alt="A small dark volcanic island seen from the air, ringed by white surf in a deep blue sea." loading="lazy" decoding="async"></div>
+          <figcaption>Surtsey from the air in 2008, 45 years after it rose from the sea. Every species on it arrived from elsewhere. (Photo: Bruce McAdam, CC BY-SA 2.0, via Wikimedia Commons.)</figcaption>
+        </figure>
+        <div class="brief"><div class="label">Phenomenon</div><p><b>Two bare rocks.</b> In 1883 the volcano on Krakatoa, in Indonesia, exploded and wiped out all life on the island. In 1963 a new island, Surtsey, rose out of the sea near Iceland with no life on it. Scientists then counted the species that arrived on each island over the next 50 years.</p></div>
+        <div class="table-wrap"><table class="data-table"><caption><b>Table 1.</b> Two volcanic islands, 50 years after they started with no life</caption><thead><tr><th scope="col">Feature</th><th class="num" scope="col">Krakatoa</th><th class="num" scope="col">Surtsey</th></tr></thead><tbody><tr><td>Land area (km²)</td><td class="num">about 28</td><td class="num">about 2.5, eroding to 1.3</td></tr><tr><td>Distance to the nearest large landmass (km)</td><td class="num">about 40</td><td class="num">about 32</td></tr><tr><td>Nearest large landmass</td><td>Java and Sumatra (tropical)</td><td>Iceland (cold)</td></tr><tr><td>Bird species after 50 years</td><td class="num">34</td><td class="num">15</td></tr><tr><td>Plant species after 50 years</td><td class="num">over 300</td><td class="num">under 70</td></tr></tbody></table></div>
+        <p class="hint">Source: SAS General Biology Lesson 2 case study.</p>
+        <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Krakatoa is farther from land than Surtsey, yet it gained more species. What does that tell you about the data in Table 1?<\/p>",
+  "options": [
+    {
+      "label": "Distance has no effect on how many species reach an island.",
+      "correct": false,
+      "feedback": "One pair of islands cannot rule distance out. Krakatoa differs from Surtsey in other ways that could hide the effect of distance."
+    },
+    {
+      "label": "Size, climate and the nearby mainland all differ, so no single factor is proven.",
+      "correct": true,
+      "feedback": "Krakatoa is about ten times larger, and its tropical neighbours hold far more species than Iceland. Several factors change at once, so the data cannot single one out."
+    },
+    {
+      "label": "Being farther away helps species arrive, because the trip spreads them out.",
+      "correct": false,
+      "feedback": "A longer trip makes arrival harder, not easier. Krakatoa gained more species for other reasons, such as its size and its species-rich neighbours."
+    }
+  ]
+}
+</script>
+</div>
+        <p>To compare places fairly, you need a way to measure biodiversity. That comes next. In section 05 you return to islands with one factor changed at a time.</p>
+      </div>
+    </section>
+
+    <section id="sec-02" data-toc="Richness and evenness">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">02</span><span class="label">Concept · Measuring biodiversity</span></div>
+        <h2>Two numbers, not one</h2>
+        <p>The number of different species in a place is its <strong class="term" data-term="species-richness">species richness</strong>. Krakatoa's 34 bird species give it a higher bird richness than Surtsey's 15.</p>
+        <p>Richness misses something. Two places can hold the same species in different numbers. How evenly the individuals are shared among the species is the <strong class="term" data-term="species-evenness">species evenness</strong>.</p>
+        <div class="table-wrap"><table class="data-table"><caption><b>Table 2.</b> Fish counted in two reefs of equal size</caption><thead><tr><th scope="col">Species</th><th class="num" scope="col">Reef Alpha</th><th class="num" scope="col">Reef Beta</th></tr></thead><tbody><tr><td>Clownfish</td><td class="num">6</td><td class="num">26</td></tr><tr><td>Blue tang</td><td class="num">6</td><td class="num">1</td></tr><tr><td>Yellow tang</td><td class="num">6</td><td class="num">1</td></tr><tr><td>Parrotfish</td><td class="num">6</td><td class="num">1</td></tr><tr><td>Coral beauty</td><td class="num">6</td><td class="num">1</td></tr><tr><td><b>Total fish</b></td><td class="num"><b>30</b></td><td class="num"><b>30</b></td></tr><tr><td><b>Number of species</b></td><td class="num"><b>5</b></td><td class="num"><b>5</b></td></tr></tbody></table></div>
+        <p class="hint">Source: SAS General Biology Candy Coral Reef lab.</p>
+        <p>Both reefs have a richness of 5 and 30 fish. Only Reef Alpha has high evenness. A diver in Reef Beta sees clownfish almost everywhere and might never spot the other four species.</p>
+        <div class="callout"><div class="label">Common mistake</div><p>Many students think more individuals means more biodiversity. A reef with 1,000 clownfish and nothing else has a richness of 1. Biodiversity counts kinds, and how evenly they are shared.</p></div>
+        <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Which reef in Table 2 has the higher biodiversity?<\/p>",
+  "options": [
+    {
+      "label": "Reef Beta, because it holds the most fish of a single species.",
+      "correct": false,
+      "feedback": "A large population of one species does not raise biodiversity. It lowers evenness, because the other species become rare."
+    },
+    {
+      "label": "Neither, because both reefs have five species and thirty fish.",
+      "correct": false,
+      "feedback": "Equal richness and equal totals are a fair starting point. But the reefs differ in evenness, and evenness is part of biodiversity."
+    },
+    {
+      "label": "Reef Alpha, because it has the same richness and higher evenness.",
+      "correct": true,
+      "feedback": "Both reefs have a richness of 5. Reef Alpha shares its 30 fish equally, so its evenness is higher. Same richness plus higher evenness means higher biodiversity."
+    }
+  ]
+}
+</script>
+</div>
+      </div>
+    </section>
+
+    <section id="sec-03" data-toc="Simulation">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">03</span><span class="label">Investigation · Simulation</span></div>
+        <h2>Send a disease through both reefs</h2>
+        <p>The two reefs below hold the fish in Table 2. Draw a random sample of fish, then release a disease that kills one species. The disease runs for 4 seconds, and the clock stops when it is over.</p>
+        <div class="sim-box" data-sim="reef">
+          <div class="label">Simulation</div>
+          <h4>Which reef keeps more of its fish when a disease kills one species?</h4>
+          <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a disease kills every clownfish in both reefs. Which reef keeps more of its fish?<\/p>",
+  "options": [
+    {
+      "label": "Reef Beta, because it started with the most clownfish",
+      "correct": false,
+      "feedback": "Having many clownfish means Reef Beta has the most to lose. When the clownfish die, most of its fish die with them."
+    },
+    {
+      "label": "Both keep the same, because each started with 30 fish",
+      "correct": false,
+      "feedback": "Equal starting totals do not mean equal losses. Each reef loses its clownfish, and Reef Beta holds more than four times as many."
+    },
+    {
+      "label": "Reef Alpha, because each species holds only a fifth of its fish",
+      "correct": true,
+      "feedback": "In Reef Alpha the clownfish are 6 of 30 fish. Losing them still leaves 24 fish. In Reef Beta the clownfish are 26 of 30."
+    },
+    {
+      "label": "Both keep the same, because each still has four species left",
+      "correct": false,
+      "feedback": "Both reefs do keep four species. But the question asks about fish, and four species can mean 24 fish or only 4."
+    }
+  ],
+  "reveal": "<p>Now run the model and check your prediction.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="wide"><canvas aria-label="Two reef tanks side by side, Reef Alpha and Reef Beta, each holding 30 fish of five colours. When a disease runs, the fish of the chosen species fade away one by one."></canvas></div>
+          <div class="sim-controls"><span class="label">Disease kills</span><button type="button" class="chip" data-target="0" aria-pressed="true">Clownfish</button><button type="button" class="chip" data-target="1" aria-pressed="false">Blue tang</button><button type="button" class="chip" data-target="2" aria-pressed="false">Yellow tang</button><button type="button" class="chip" data-target="3" aria-pressed="false">Parrotfish</button><button type="button" class="chip" data-target="4" aria-pressed="false">Coral beauty</button><button type="button" class="btn ghost" data-sample>Draw 5 fish</button><button type="button" class="btn ghost" data-disease>Release disease</button><button type="button" class="btn ghost" data-restart>Start over</button></div>
+          <div class="sim-readouts"><div class="readout" data-readout="alpha-n"><span class="readout-label">Reef Alpha fish</span><span class="readout-value">30</span></div><div class="readout" data-readout="alpha-s"><span class="readout-label">Reef Alpha species</span><span class="readout-value">5</span></div><div class="readout" data-readout="beta-n"><span class="readout-label">Reef Beta fish</span><span class="readout-value">30</span></div><div class="readout" data-readout="beta-s"><span class="readout-label">Reef Beta species</span><span class="readout-value">5</span></div></div>
+          <span class="status-pill" data-state="ok">Both reefs are healthy</span>
+          <ul class="sim-legend"><li><span class="key" data-fill="rose"></span>Clownfish</li><li><span class="key" data-fill="oxygen"></span>Blue tang</li><li><span class="key" data-fill="atp"></span>Yellow tang</li><li><span class="key" data-fill="glucose"></span>Parrotfish</li><li><span class="key" data-fill="thermal"></span>Coral beauty</li><li><span class="key" data-token="ink"></span>Ring: a fish in your sample of 5</li></ul>
+          <ol class="try-this"><li>Press Draw 5 fish. <b>Look for:</b> the rings in Reef Alpha land on several colours. In Reef Beta they land mostly on red clownfish.</li><li>Press Clownfish, then press Release disease. <b>Look for:</b> red fish fade from both reefs. When the clock stops, press Record.</li><li>Press Start over, press Coral beauty, then press Release disease. <b>Look for:</b> how many fish each reef loses this time. Press Record when the clock stops.</li><li>Press Start over and try blue tang, yellow tang or parrotfish. <b>Look for:</b> whether Reef Beta loses more or fewer fish than with coral beauty.</li></ol>
+        </div>
+        <h3>Use your evidence</h3>
+        <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your clownfish row with your coral beauty row. Which statement matches both rows?<\/p>",
+  "options": [
+    {
+      "label": "Reef Alpha kept 24 fish both times. Reef Beta's loss depended on the species hit.",
+      "correct": true,
+      "feedback": "Your rows show Reef Alpha at 24 fish after each disease. Reef Beta kept 4 fish after the clownfish disease but 29 after the coral beauty disease."
+    },
+    {
+      "label": "Reef Beta kept more fish both times, because it had more clownfish.",
+      "correct": false,
+      "feedback": "Check the clownfish row. Reef Beta dropped to 4 fish while Reef Alpha kept 24. A large clownfish population was Beta's weak point."
+    },
+    {
+      "label": "Both reefs lost the same number of fish, because each lost one species.",
+      "correct": false,
+      "feedback": "Each reef did lose one species, so richness fell from 5 to 4 in both. But Reef Alpha lost 6 fish and Reef Beta lost 26."
+    },
+    {
+      "label": "Reef Alpha lost more fish both times, because its species were all common.",
+      "correct": false,
+      "feedback": "Check your rows again. Reef Alpha lost 6 fish both times. Reef Beta lost 26 fish in the clownfish row."
+    }
+  ]
+}
+</script>
+</div>
+        <p>An ecosystem that can take a disturbance and keep working has <strong class="term" data-term="resilience">resilience</strong>. Reef Alpha always keeps four healthy populations of six fish. Reef Beta can lose almost everything, or almost nothing, by luck. After the clownfish disease it has four species, but only one fish of each, and one more death erases a species.</p>
+        <div class="callout"><div class="label">The one idea to hold onto</div><p>High richness and high evenness together make an ecosystem resilient. No single loss can wipe out most of it.</p></div>
+      </div>
+    </section>
+
+    <section id="sec-04" data-toc="Two ponds">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">04</span><span class="label">Data · Factors that affect biodiversity</span></div>
+        <h2>Why one pond holds more species</h2>
+        <p>Ecologists surveyed two freshwater ponds in Singapore. The ponds share the same climate, but their surroundings differ. They used the same sampling method in both ponds.</p>
+        <div class="table-wrap"><table class="data-table"><caption><b>Table 3.</b> Data set 1: species found in two ponds</caption><thead><tr><th scope="col">Measure</th><th class="num" scope="col">Pond A</th><th class="num" scope="col">Pond B</th></tr></thead><tbody><tr><td>Pond area (km²)</td><td class="num">5</td><td class="num">0.5</td></tr><tr><td>Aquatic plant species</td><td class="num">18</td><td class="num">6</td></tr><tr><td>Insect species</td><td class="num">24</td><td class="num">9</td></tr><tr><td>Fish species</td><td class="num">12</td><td class="num">4</td></tr><tr><td>Amphibian species</td><td class="num">5</td><td class="num">1</td></tr><tr><td>Total animal species</td><td class="num">41</td><td class="num">14</td></tr></tbody></table></div>
+        <p class="hint">Source: SAS General Biology Lesson 2 case study.</p>
+        <h3>Your first explanation</h3>
+        <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "<p>Use Table 3. Write a first explanation for why Pond A holds more species than Pond B. Give two possible reasons.<\/p>",
+  "minChars": 40,
+  "reveal": "<p>A good first explanation uses the numbers and suggests causes. Pond A is ten times larger, and it holds 41 animal species to Pond B's 14. A larger pond can hold more kinds of habitat, so more species find a place to live. It also has three times as many plant species (18 to 6), which means more food and shelter. Keep your explanation. Data set 2 tests it.<\/p>"
+}
+</script>
+</div>
+        <h3>New evidence</h3>
+        <p>The ecologists went back to find out what was happening in Pond B. They measured conditions that affect whether organisms survive and breed. Some are <strong class="term" data-term="abiotic-factor">abiotic factors</strong>, the non-living parts of a habitat. Others are <strong class="term" data-term="biotic-factor">biotic factors</strong>, the living parts.</p>
+        <ul><li>Aquatic plants give food, oxygen, hiding places and places to breed.</li><li>Plants around a pond shade it and keep the water cooler.</li><li>Aquatic animals need dissolved oxygen for cellular respiration.</li><li>Predators eat smaller animals and lower their numbers.</li></ul>
+        <div class="table-wrap"><table class="data-table"><caption><b>Table 4.</b> Data set 2: conditions in the two ponds</caption><thead><tr><th scope="col">Condition</th><th class="num" scope="col">Pond A</th><th class="num" scope="col">Pond B</th></tr></thead><tbody><tr><td>Dissolved oxygen (mg/L)</td><td class="num">8.2</td><td class="num">3.1</td></tr><tr><td>Highest water temperature (°C)</td><td class="num">27</td><td class="num">34</td></tr><tr><td>Pond surface covered by plants (%)</td><td class="num">75</td><td class="num">20</td></tr><tr><td>Predator sightings per day</td><td class="num">4</td><td class="num">13</td></tr><tr><td>Food sources found</td><td class="num">12</td><td class="num">4</td></tr></tbody></table></div>
+        <p class="hint">Source: SAS General Biology Lesson 2 case study.</p>
+        <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Pond B has 20% plant cover and 13 predator sightings a day. Which explanation links these two numbers?<\/p>",
+  "options": [
+    {
+      "label": "Predators eat the plants, so plant cover falls as predators rise.",
+      "correct": false,
+      "feedback": "The predators in a pond are mostly larger fish and birds that eat animals. The link runs from the plants to the prey, not from predators to plants."
+    },
+    {
+      "label": "Fewer plants leave fewer hiding places, so predators catch more small animals.",
+      "correct": true,
+      "feedback": "Plants give small fish and insects places to hide and breed. With only 20% cover, prey are easier to catch, so fewer of them survive to breed."
+    },
+    {
+      "label": "The numbers are unrelated, because plants are abiotic and predators are biotic.",
+      "correct": false,
+      "feedback": "Plants are living, so they are biotic too. And factors of both kinds affect each other all the time."
+    }
+  ]
+}
+</script>
+</div>
+        <div class="callout"><div class="label">Common mistake</div><p>Saying "Pond B has fewer plants and fewer fish" only shows that two numbers fall together. A strong explanation names the mechanism: fewer plants, fewer hiding places, more fish eaten.</p></div>
+        <h3>Scaling up: two wetlands</h3>
+        <p>A disease wipes out one insect species from two wetlands. That insect was a main food for many fish and amphibians.</p>
+        <div class="table-wrap"><table class="data-table"><caption><b>Table 5.</b> Data set 3: two wetlands of different sizes</caption><thead><tr><th scope="col">Measure</th><th class="num" scope="col">Small wetland</th><th class="num" scope="col">Large wetland</th></tr></thead><tbody><tr><td>Habitat area (km²)</td><td class="num">0.5</td><td class="num">8</td></tr><tr><td>Resident species</td><td class="num">22</td><td class="num">105</td></tr><tr><td>Other foods available to predators</td><td class="num">2</td><td class="num">7</td></tr><tr><td>Aquatic plant species</td><td class="num">8</td><td class="num">32</td></tr></tbody></table></div>
+        <p class="hint">Source: SAS General Biology Lesson 2 case study.</p>
+        <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Which wetland is likely to lose more of its biodiversity after the insect disappears?<\/p>",
+  "options": [
+    {
+      "label": "The large wetland, because it has more species that could be harmed.",
+      "correct": false,
+      "feedback": "More species does mean more that could be affected. But each predator there has 7 other foods, so most can switch and survive."
+    },
+    {
+      "label": "Both lose the same, because the same insect species disappears from both.",
+      "correct": false,
+      "feedback": "The loss is the same insect, but its effect depends on what else the predators can eat. That differs between the wetlands."
+    },
+    {
+      "label": "The small wetland, because its predators have only 2 other foods.",
+      "correct": true,
+      "feedback": "In the small wetland, predators have 2 other foods to switch to. In the large wetland they have 7. Fewer choices mean more predators go hungry and decline."
+    }
+  ]
+}
+</script>
+</div>
+      </div>
+    </section>
+
+    <section id="sec-05" data-toc="Island size and distance">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">05</span><span class="label">Concept · Islands at different scales</span></div>
+        <h2>Island size and distance</h2>
+        <p>The number of species on an island changes in two ways. New species arrive from the mainland by swimming, flying or floating. Species already there can die out. Over time, arrivals and losses balance, and the number of species levels off.</p>
+        <ul><li><b>Distance:</b> a nearby island receives more arrivals, because the trip is shorter.</li><li><b>Size:</b> a large island loses fewer species. It holds more habitats and larger populations, and a large population is harder to wipe out.</li></ul>
+        <p>Singapore is an island too. Rising seas cut it off from the mainland about 10,000 years ago. By 1819 it already lacked elephants, tapirs and rhinoceroses that lived across the region. Small islands cannot hold the large populations these animals need.</p>
+        <div class="callout"><div class="label">Common mistake</div><p>Students often think a far island ends up with no species. Species still arrive, only less often. The island levels off at a lower number.</p></div>
+        <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A new volcanic island forms next to Java, 2 km from shore, with an area of 150 km². Predict its bird species after 50 years, compared with Krakatoa's 34.<\/p>",
+  "options": [
+    {
+      "label": "More than 34, because it is closer and larger than Krakatoa.",
+      "correct": true,
+      "feedback": "Being closer brings more arrivals, and being larger means fewer losses. Both push its number of species above Krakatoa's 34."
+    },
+    {
+      "label": "Fewer than 34, because a large island takes longer to fill with species.",
+      "correct": false,
+      "feedback": "A large island has more room and more habitats. It loses fewer species to extinction, so it ends up holding more, not fewer."
+    },
+    {
+      "label": "About 34, because it has the same tropical mainland as Krakatoa.",
+      "correct": false,
+      "feedback": "The same mainland is a fair control. But this island is closer and larger, and both of those raise the number of species."
+    }
+  ]
+}
+</script>
+</div>
+        <div class="callout"><div class="label">Try it yourself</div><p>Build your own island in the <a href="/?page=island_biogeography" target="_blank" rel="noopener">Island Biogeography simulation</a> (opens in a new tab). Start from Krakatoa, change one setting at a time, and watch where the count levels off.</p></div>
+      </div>
+    </section>
+
+    <section id="sec-06" data-toc="Written response">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">06</span><span class="label">Synthesis · Revise your explanation</span></div>
+        <h2>Revise your explanation</h2>
+        <p>Go back to the first explanation you wrote in section 04. Now use Data set 2 to improve it.</p>
+        <h3>Explain the gap between the ponds</h3>
+        <div class="exam-frame">
+          <div class="exam-meta"><span class="exam-src">Written response</span><span class="exam-marks">4 marks</span></div>
+          <p class="exam-q">Pond A holds 41 animal species and Pond B holds 14. Pond B has 20% plant cover, 3.1 mg/L of dissolved oxygen, and 13 predator sightings a day.</p><p class="exam-q"><b>Prompt:</b> Revise your explanation for why Pond B holds fewer species. Use at least two numbers from Data set 2. Explain how each condition affects the survival or breeding of organisms.</p>
+          <textarea class="textbox" aria-label="Your answer"></textarea>
+          <div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+          <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide</div><ul><li><b>Pattern (1 mark):</b> You compare the ponds with numbers, such as 41 species against 14.</li><li><b>Evidence (1 mark):</b> You quote two conditions from Data set 2 with both ponds' values.</li><li><b>Mechanism (1 mark):</b> You explain how one condition affects survival or breeding.</li><li>For example, low oxygen leaves less for cellular respiration, so some animals cannot survive.</li><li><b>Second mechanism (1 mark):</b> You explain a second condition the same way.</li><li>For example, less plant cover means fewer hiding places, so predators eat more prey.</li></ul></div></div>
+        </div>
+        <div class="callout"><div class="label">Revisit your design</div><p>Look at your Version 1.0 from Lesson 2b-1. Does your design keep habitat large, connected and full of different plants? Write one change in your project journal.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/book.js"></script>
+  <script src="../../textbook/core.js"></script>
+  <script src="../../textbook/widgets.js"></script>
+  <script src="../../textbook/sim.js"></script>
+  <script src="../assets/glossary.js"></script>
+  <script src="2b-2.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "courseName": "IB Biology Higher Level",
+  "courseSlug": "ib-biology-hl",
+  "practicesLabel": "Inquiry, Command Terms and HL Extensions",
+  "practices": "Assessments evaluate core understanding across 4 Themes (A to D) plus all HL Extensions. High emphasis on analytical data questions, experimental evaluation, and higher cognitive command terms like Evaluate, Discuss, and To what extent. Paper 1 requires strong database evaluation; Paper 2 requires detailed long-form structured arguments.",
+  "units": [
+    {
+      "unitNumber": "A",
+      "unitTitle": "Unity and Diversity (SL + HL)",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Water structure, cohesive/adhesive properties, hydrogen bonding",
+        "Nucleic acid structures, RNA and DNA nucleotides",
+        "Cell theory, cell structure, eukaryotic and prokaryotic cells",
+        "Origins of cells, endosymbiotic theory (HL Extension)",
+        "Diversity of organisms, classification systems, cladistics",
+        "Evolutionary lateral gene transfer (HL Extension)"
+      ]
+    },
+    {
+      "unitNumber": "B",
+      "unitTitle": "Form and Function (SL + HL)",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Structure and function of carbohydrates and lipids",
+        "Structure and function of proteins, peptide bonds",
+        "Membranes and active membrane transport, sodium-potassium pumps (HL Extension)",
+        "Organelles and cell compartmentalization",
+        "Cell specialization, stem cells",
+        "Gas exchange systems, lungs",
+        "Transport systems, blood circulation",
+        "Muscle and motility, sliding filament theory (HL Extension)"
+      ]
+    },
+    {
+      "unitNumber": "C",
+      "unitTitle": "Interaction and Interdependence (SL + HL)",
+      "examWeight": "25%",
+      "keyTopics": [
+        "Enzymes and metabolism, active site, factors affecting rates",
+        "Cell respiration pathways, ATP yields, oxidative phosphorylation & electron transport chain (HL Extension)",
+        "Photosynthesis pathways, light-dependent stage, light-independent reactions/Calvin cycle (HL Extension)",
+        "Chemical signaling, receptors, secondary messengers (HL Extension)",
+        "Neural signaling, synapses, action potentials",
+        "Populations, ecosystems, food webs, communities"
+      ]
+    },
+    {
+      "unitNumber": "D",
+      "unitTitle": "Continuity and Change (SL + HL)",
+      "examWeight": "25%",
+      "keyTopics": [
+        "DNA replication, semiconservative replication",
+        "Protein synthesis, transcription, translation",
+        "Gene regulation, transcription factors (HL Extension)",
+        "Cell division, mitosis, chromosome replication",
+        "Gene transmission, inheritance, monohybrid crosses, gene linkage, polygenic inheritance (HL Extension)",
+        "Natural selection, speciation, evolution",
+        "Climate change, ecosystem conservation"
+      ]
+    }
+  ],
+  "examFormat": {
+    "multipleChoice": "Paper 1: 40 MCQs + database analysis (45%), 2 hours",
+    "freeResponse": "Paper 2: Short-answer and extended-response (55%), 2.5 hours"
+  },
+  "antiPatterns": "Grade strictly according to HL mark schemes. Ensure student shows advanced biochemical understanding. Out of scope are: memorization of historical fossil discovery dates; human-only skeletal joints detailed listing (keep to general muscle mechanics); and structural biochemical molecular detail beyond standard amino acid structures. Evaluative essay style answers must show balanced argumentation."
+}

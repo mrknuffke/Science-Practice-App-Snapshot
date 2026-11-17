@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-4a" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Bond Energy &amp; Reaction Profiles · Gen Chem 3-14a</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 1-4a &middot; Bond Energy &amp; Reaction Profiles</div>
+    <h1>A match head holds immense energy. It will <span class="flip">never</span> ignite without friction.</h1>
+    <p class="lede">Strike a match on the box and it bursts into flame. The reaction releases heat and light. Yet the same match can sit in a drawer for fifty years and never ignite. Even a reaction that releases energy must first spend energy to break the bonds of its reactants. This page compares the energy that breaking bonds absorbs with the energy that forming bonds releases. Energy profiles show the result.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-4</b> Develop a model to illustrate that the release or absorption of energy from a chemical reaction system depends upon the changes in total bond energy.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can explain why a reaction releases or absorbs energy by comparing the bonds that break with the bonds that form. You can read a reaction profile. You can say what a catalyst changes and what it leaves alone.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Breaking and forming bonds, reaction profiles, activation energy, and catalysts. Calculating &Delta;<em>H</em> from bond energies is Enrichment.</div></div>
+    </div>
+
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>BENDO MEXO.</strong> Breaking bonds <em>always</em> absorbs energy (endothermic, +). Forming bonds <em>always</em> releases energy (exothermic, &minus;). Breaking bonds never releases energy by itself.</li>
+              <li><strong>Releases or absorbs.</strong> If the new bonds release more energy than the old bonds cost, the reaction releases energy (&Delta;<em>H</em> &lt; 0, exothermic). If the old bonds cost more, it absorbs energy (&Delta;<em>H</em> &gt; 0, endothermic).</li>
+              <li><strong>Activation energy (<em>E</em><sub>a</sub>).</strong> The minimum energy colliding molecules need to reach the transition state and start rearranging their bonds.</li>
+              <li><strong>Catalysts.</strong> A catalyst speeds up a reaction by giving it a path with a lower <em>E</em><sub>a</sub>. It does not change the reactant energy, the product energy, or &Delta;<em>H</em>.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Energy profile</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 300 170" font-family="var(--display)" role="img" aria-label="Reaction profile of an exothermic reaction: the curve climbs from the reactants to a peak, then drops to products that sit lower than the reactants">
+              <!-- Axes -->
+              <line x1="30" y1="140" x2="290" y2="140" stroke="var(--ink)" stroke-width="1.2"/>
+              <line x1="30" y1="140" x2="30" y2="15" stroke="var(--ink)" stroke-width="1.2"/>
+              <text x="160" y="162" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Reaction coordinate</text>
+              <text x="12" y="78" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle" transform="rotate(-90 12 78)">PE</text>
+
+              <!-- Reactant level -->
+              <line x1="80" y1="80" x2="240" y2="80" stroke="var(--ink-mute)" stroke-width="0.8" stroke-dasharray="2 2"/>
+
+              <!-- Exothermic curve -->
+              <path d="M 30 80 L 80 80 C 110 14 190 14 220 110 L 285 110" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+
+              <!-- Labels -->
+              <text x="34" y="100" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Reactants</text>
+              <text x="236" y="130" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Products</text>
+              <text x="150" y="20" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Transition state</text>
+
+              <!-- Ea -->
+              <line x1="150" y1="80" x2="150" y2="34" stroke="var(--ink)" stroke-width="1" stroke-dasharray="2 2"/>
+              <text x="156" y="62" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)">Ea</text>
+
+              <!-- Delta H -->
+              <line x1="250" y1="80" x2="250" y2="110" stroke="var(--accent)" stroke-width="1.5"/>
+              <text x="254" y="100" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--accent)">&Delta;H</text>
+            </svg>
+</div>
+<figcaption>an exothermic profile · the products sit lower than the reactants</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> <span>State whether breaking bonds absorbs or releases energy.</span></li>
+              <li><input type="checkbox" disabled> <span>Say why a reaction releases or absorbs energy, using the bonds that break and form.</span></li>
+              <li><input type="checkbox" disabled> <span>Identify the reactants, products, <em>E</em><sub>a</sub>, and &Delta;<em>H</em> on a reaction profile.</span></li>
+              <li><input type="checkbox" disabled> <span>Explain what a catalyst does to <em>E</em><sub>a</sub> and to &Delta;<em>H</em>.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 BENDO MEXO -->
+<section id="s-bendo-mexo" data-toc="Bonds: break vs. form">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">The golden rule of energy in reactions</span></div>
+    <h2>Breaking bonds takes energy. Forming bonds releases energy.</h2>
+    <p>A common misconception says bonds release energy when they snap. In chemistry the opposite is true.</p>
+    <p>A chemical bond forms because two atoms lower their potential energy by sharing electrons. The negative electrons attract both positive nuclei. The bonded molecule rests in a stable well of potential energy.</p>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Breaking bonds: always endothermic (+&Delta;<em>H</em>)</h4>
+        <p>To pull two bonded atoms apart, you pull opposite charges away from each other against their attraction. That <strong>always takes energy</strong>. You must do work to lift atoms out of the well. Breaking bonds never releases energy.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Forming bonds: always exothermic (&minus;&Delta;<em>H</em>)</h4>
+        <p>When separate atoms approach, opposite charges attract. As the atoms settle into the well, potential energy becomes thermal energy and light. Forming bonds always releases energy to the surroundings.</p>
+      </div>
+    </div>
+
+    <!-- MNEMONIC CALLOUT -->
+    <div class="callout">
+      <div class="label">BENDO MEXO</div>
+      <p><strong>BENDO:</strong> <strong>B</strong>reaking is <strong>ENDO</strong>thermic (energy goes in, +&Delta;<em>H</em>).<br>
+      <strong>MEXO:</strong> <strong>M</strong>aking is <strong>EXO</strong>thermic (energy comes out, &minus;&Delta;<em>H</em>).<br>
+      The net energy change of a reaction (&Delta;<em>H</em><sub>rxn</sub>) comes from both processes together.</p>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking energy comes out when a bond breaks. Breaking a bond always costs energy. A reaction releases energy only when the new bonds release more than the old bonds cost.</p></div>
+
+    <!-- PREDICT CHECK -->
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "In cellular respiration, glucose reacts with oxygen: C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6 O<sub>2</sub> &rarr; 6 CO<sub>2</sub> + 6 H<sub>2</sub>O + energy. Where does the released energy come from?",
+  "options": [
+    {
+      "label": "From breaking the high-energy C&ndash;C and C&ndash;H bonds in glucose.",
+      "correct": false,
+      "feedback": "Breaking bonds never releases energy. It always absorbs energy, so the glucose bonds cost energy to break. The energy comes out when the product bonds form."
+    },
+    {
+      "label": "From forming strong C=O and O&ndash;H bonds, which release more energy than breaking absorbed.",
+      "correct": true,
+      "feedback": "Breaking the glucose and oxygen bonds absorbs energy (+). Forming the stronger bonds in CO&#8322; and H&#8322;O releases more (&minus;). The difference powers the cell."
+    },
+    {
+      "label": "From the oxygen gas, which carries its own energy into the cell.",
+      "correct": false,
+      "feedback": "Oxygen does not bring extra energy with it. It takes part by forming new bonds, and those new bonds release the energy."
+    }
+  ],
+  "reveal": "<p>Breaking the glucose and oxygen bonds absorbs energy (+). Forming the stable bonds in CO<sub>2</sub> and H<sub>2</sub>O releases more energy (&minus;). The difference is the net energy that powers cellular work.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 02 REACTION PROFILES -->
+<section id="s-reaction-profiles" data-toc="Reaction profiles">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">The shape of a reaction</span></div>
+    <h2>Reaction profiles: climbing the energy hill.</h2>
+    <p>Chemists plot potential energy along the <strong>reaction coordinate</strong> to track energy changes. This idealized path follows the atoms from the reactants to the products.</p>
+
+    <!-- SIDE BY SIDE REACTION PROFILES DIAGRAM -->
+    <figure class="figure figure--full">
+<div class="diagram">
+      <svg viewBox="0 0 640 280" font-family="var(--display)" role="img" aria-label="Two reaction profiles. Left: an exothermic reaction whose products sit lower than the reactants. Right: an endothermic reaction whose products sit higher. Each has an activation energy and a transition state">
+        <rect x="0" y="0" width="640" height="280" fill="var(--card)" rx="8" stroke="var(--hair)" stroke-width="1"/>
+
+        <g transform="translate(15, 20)">
+          <rect x="0" y="0" width="295" height="240" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+          <text x="147" y="24" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Exothermic reaction (&Delta;H &lt; 0)</text>
+
+          <line x1="35" y1="210" x2="275" y2="210" stroke="var(--ink)" stroke-width="1.5"/>
+          <line x1="35" y1="210" x2="35" y2="35" stroke="var(--ink)" stroke-width="1.5"/>
+          <text x="155" y="230" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Reaction progress &rarr;</text>
+          <text x="16" y="125" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle" transform="rotate(-90 16 125)">Potential energy</text>
+
+          <line x1="35" y1="120" x2="75" y2="120" stroke="var(--ink)" stroke-width="2.5"/>
+          <line x1="75" y1="120" x2="240" y2="120" stroke="var(--ink-mute)" stroke-width="1" stroke-dasharray="2 2"/>
+          <text x="40" y="138" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Reactants</text>
+
+          <path d="M 75 120 C 105 34 165 34 195 170" fill="none" stroke="var(--accent)" stroke-width="3"/>
+          <circle cx="135" cy="62" r="4.5" fill="var(--accent)"/>
+          <text x="135" y="50" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Transition state (&Dagger;)</text>
+
+          <line x1="195" y1="170" x2="265" y2="170" stroke="var(--ink)" stroke-width="2.5"/>
+          <text x="210" y="190" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Products</text>
+
+          <line x1="135" y1="120" x2="135" y2="62" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <text x="142" y="95" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)">Ea</text>
+
+          <line x1="240" y1="120" x2="240" y2="170" stroke="var(--accent)" stroke-width="2" marker-end="url(#arr-down-red)"/>
+          <text x="245" y="148" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--accent)">&Delta;H &lt; 0</text>
+        </g>
+
+        <g transform="translate(330, 20)">
+          <rect x="0" y="0" width="295" height="240" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+          <text x="147" y="24" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--good)" text-anchor="middle">Endothermic reaction (&Delta;H &gt; 0)</text>
+
+          <line x1="35" y1="210" x2="275" y2="210" stroke="var(--ink)" stroke-width="1.5"/>
+          <line x1="35" y1="210" x2="35" y2="35" stroke="var(--ink)" stroke-width="1.5"/>
+          <text x="155" y="230" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Reaction progress &rarr;</text>
+
+          <line x1="35" y1="175" x2="75" y2="175" stroke="var(--ink)" stroke-width="2.5"/>
+          <line x1="75" y1="175" x2="240" y2="175" stroke="var(--ink-mute)" stroke-width="1" stroke-dasharray="2 2"/>
+          <text x="40" y="193" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Reactants</text>
+
+          <path d="M 75 175 C 105 36 165 36 195 105" fill="none" stroke="var(--good)" stroke-width="3"/>
+          <circle cx="135" cy="62" r="4.5" fill="var(--good)"/>
+          <text x="135" y="50" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Transition state (&Dagger;)</text>
+
+          <line x1="195" y1="105" x2="265" y2="105" stroke="var(--ink)" stroke-width="2.5"/>
+          <text x="210" y="95" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Products</text>
+
+          <line x1="135" y1="175" x2="135" y2="62" stroke="var(--ink)" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <text x="142" y="125" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)">Ea</text>
+
+          <line x1="240" y1="175" x2="240" y2="105" stroke="var(--good)" stroke-width="2" marker-end="url(#arr-up-green)"/>
+          <text x="245" y="142" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--good)">&Delta;H &gt; 0</text>
+        </g>
+
+        <defs>
+          <marker id="arr-down-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+            <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+          </marker>
+          <marker id="arr-up-green" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+            <path d="M0 0 L6 3 L0 6 z" fill="var(--good)"/>
+          </marker>
+        </defs>
+      </svg>
+</div>
+<figcaption><b>Figure 3.7.</b> left: the products sit lower than the reactants, so the reaction releases energy (&Delta;<em>H</em> &lt; 0) · right: the products sit higher, so it absorbs energy (&Delta;<em>H</em> &gt; 0)</figcaption>
+</figure>
+
+    <p>Every reaction profile has three features.</p>
+    <ul>
+      <li><strong>Activation energy (<em>E</em><sub>a</sub>).</strong> The energy difference between the reactants and the peak. Colliding molecules need at least this much kinetic energy to stretch their bonds. With less, they bounce apart unchanged.</li>
+      <li><strong>Transition state (activated complex, &Dagger;).</strong> The peak of the curve. Old bonds are partly broken and new bonds are partly formed. It has the highest potential energy and the lowest stability on the path.</li>
+      <li><strong>Reaction enthalpy (&Delta;<em>H</em>).</strong> The difference in potential energy between the products and the reactants: &Delta;<em>H</em> = <em>E</em><sub>products</sub> &minus; <em>E</em><sub>reactants</sub>. In an exothermic reaction the products sit lower (&Delta;<em>H</em> &lt; 0). In an endothermic reaction they sit higher (&Delta;<em>H</em> &gt; 0).</li>
+    </ul>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Reading the activation energy as the energy released. <em>E</em><sub>a</sub> is the climb from the reactants to the peak. &Delta;<em>H</em> is the gap between the reactants and the products. A reaction can release a lot of energy and still have a large <em>E</em><sub>a</sub>, like a match.</p></div>
+
+  </div>
+</section>
+
+<!-- 03 INTERACTIVE REACTION PROFILE SANDBOX -->
+<section id="s-interactive-profile" data-toc="Profile sandbox">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Walk through a reaction</span></div>
+    <h2>Reaction profile and transition state.</h2>
+    <p>Pick a reaction and drag the slider through it. Switch the catalyst on to see how the barrier changes.</p>
+    <p>The barriers without a catalyst are simplified. Each equals the energy of the first bond to break: H&ndash;H at 436&nbsp;kJ/mol, or N&equiv;N at 945&nbsp;kJ/mol. Measured barriers can be lower.</p>
+
+    <div class="sim-box" data-sim="profile">
+      <div class="label">Simulation</div>
+      <h4>Why does a reaction that releases energy still need a push to start?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a reaction releases energy. You add a catalyst. What changes on its energy profile?</p>",
+  "options": [
+    {
+      "label": "The peak gets lower and the products stay at the same level",
+      "correct": true,
+      "feedback": "A catalyst gives the reaction an easier path over a lower hill. The reactants and the products are the same substances, so they stay at the same energy levels."
+    },
+    {
+      "label": "The peak gets lower and the products drop, so more energy is released",
+      "correct": false,
+      "feedback": "A lower peak looks like a better reaction, which makes this tempting. But the products are the same molecules with the same bond energy. A catalyst helps molecules get started. It does not change where they end."
+    },
+    {
+      "label": "Nothing on the profile changes, because a catalyst is not a reactant",
+      "correct": false,
+      "feedback": "A catalyst is not used up, so the equation leaves it out. It still changes the path. It lowers the peak, so more collisions have enough energy to get over it."
+    }
+  ],
+  "reveal": "<p>Now check it. Press a preset, then switch the catalyst on and off.</p>"
+}
+</script>
+</div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="An energy profile for a reaction and a picture of its molecules. Choose a reaction, switch the catalyst on or off, and move the progress slider."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Choose the reaction and move through it">
+        <label class="tool-field" for="rxnChoice"><span class="label">Reaction</span>
+          <select id="rxnChoice" class="form-select">
+            <option value="combust" selected>2 H₂ + O₂ → 2 H₂O (releases)</option>
+            <option value="split">2 H₂O → 2 H₂ + O₂ (absorbs)</option>
+            <option value="ammonia">N₂ + 3 H₂ → 2 NH₃ (releases)</option>
+          </select>
+        </label>
+        <button type="button" class="chip" id="chkCatalyst" aria-pressed="false">Catalyst</button>
+        <label class="slider-row">Reaction progress <output>0 %</output>
+          <input type="range" id="sliderProgress" min="0" max="100" step="1" value="0" data-unit="%">
+        </label>
+        <button type="button" class="btn ghost" id="btnPlayRxn">Play the reaction</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="ea"><span class="readout-label">Barrier height</span><span class="readout-value">+436 kJ/mol</span></div>
+        <div class="readout" data-readout="dh"><span class="readout-label">Energy change</span><span class="readout-value">−484 kJ/mol</span></div>
+        <div class="readout" data-readout="cat"><span class="readout-label">Catalyst</span><span class="readout-value">Off</span></div>
+        <div class="readout" data-readout="stage"><span class="readout-label">Stage</span><span class="readout-value">Reactants</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="line" data-token="accent"></span>Energy profile without a catalyst</li>
+        <li><span class="key" data-shape="dash" data-token="good"></span>Energy profile with a catalyst</li>
+        <li><span class="key" data-shape="dot" data-token="ink-soft"></span>Hydrogen atom</li>
+        <li><span class="key" data-shape="dot" data-token="accent"></span>Oxygen atom</li>
+        <li><span class="key" data-shape="dot" data-token="cool"></span>Nitrogen atom</li>
+      </ul>
+      <ol class="try-this">
+        <li>Load hydrogen burning with the catalyst off, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="combust:off">Load hydrogen, catalyst off</button> <b>Look for:</b> a barrier of +436 kJ/mol and an energy change of &minus;484 kJ/mol, with the marker at the peak.</li>
+        <li>Load the same reaction with the catalyst on, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="combust:on">Load hydrogen, catalyst on</button> <b>Look for:</b> the dashed green peak is lower, at +125 kJ/mol, and the energy change is still &minus;484.</li>
+        <li>Load ammonia with the catalyst off and press Record, then load it with the catalyst on and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="ammonia:off">Load ammonia, catalyst off</button> <button type="button" class="chip" aria-pressed="false" data-preset="ammonia:on">Load ammonia, catalyst on</button> <b>Look for:</b> the barrier falls from +945 to +180 kJ/mol while the energy change stays &minus;92.</li>
+        <li>Load water splitting, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="split:off">Load water splitting</button> <b>Look for:</b> the products sit higher than the reactants, so the energy change is +484 and the barrier is +920 kJ/mol.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows. Which statement fits all of them?</p>",
+  "options": [
+    {
+      "label": "The catalyst changed the energy change as well as the barrier",
+      "correct": false,
+      "feedback": "Your rows say otherwise. With the catalyst off or on, hydrogen burning stayed at &minus;484 kJ/mol and ammonia stayed at &minus;92. Only the barrier moved."
+    },
+    {
+      "label": "The catalyst lowered the barrier by the same amount in every reaction",
+      "correct": false,
+      "feedback": "Hydrogen burning fell from 436 to 125, a drop of 311. Ammonia fell from 945 to 180, a drop of 765. The drop depends on the reaction."
+    },
+    {
+      "label": "In each pair of rows, the catalyst lowered the barrier and left the energy change the same",
+      "correct": true,
+      "feedback": "Both pairs show it: 436 to 125 for hydrogen and 945 to 180 for ammonia, with the energy change fixed at &minus;484 and &minus;92. A catalyst lowers the hill and leaves the levels alone."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. A catalyst changes how hard the reaction is to start. It does not change how much energy the reaction releases.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 04 COMPUTATIONAL ENGINE: BOND ENERGY CALCULATOR -->
+<section id="s-bond-calculator" data-toc="Calculating &Delta;H from bond energies" data-enrichment>
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Adding up the bonds</span><span class="tag-enrichment">Enrichment</span></div>
+    <h2>Calculating &Delta;<em>H</em> from bond energies.</h2>
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Add up the bonds: &Delta;<em>H</em> = &sum;(broken) &minus; &sum;(formed)</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+    <p>This calculation goes past what this course assesses. It turns the bond picture into a number. Breaking bonds absorbs energy (+) and forming bonds releases energy (&minus;). To find the reaction <strong class="term">enthalpy</strong> (&Delta;<em>H</em>), count every bond broken and every bond formed in the balanced equation.</p>
+
+    <div class="eq-display">&Delta;<em>H</em><sub>rxn</sub> = &sum; <em>D</em>(bonds broken) &minus; &sum; <em>D</em>(bonds formed)</div>
+    <ul>
+      <li><b>&sum; <em>D</em><sub>broken</sub></b> is the energy absorbed to break the reactant bonds (+).</li>
+      <li><b>&sum; <em>D</em><sub>formed</sub></b> is the energy released when the product bonds form (&minus;).</li>
+    </ul>
+
+    <div class="sim-box" data-tool="bonds">
+      <div class="label">Interactive tool</div>
+      <h4>How do the broken and formed bonds add up?</h4>
+      <div class="sim-controls" role="group" aria-label="Choose a reaction">
+        <label class="tool-field" for="calcRxnPreset"><span class="label">Reaction</span>
+          <select id="calcRxnPreset" class="form-select">
+            <option value="methane" selected>Methane burning: CH₄ + 2 O₂ → CO₂ + 2 H₂O</option>
+            <option value="hydrogen">Hydrogen burning: 2 H₂ + O₂ → 2 H₂O</option>
+            <option value="haber">Making ammonia: N₂ + 3 H₂ → 2 NH₃</option>
+            <option value="hcl">Making hydrogen chloride: H₂ + Cl₂ → 2 HCl</option>
+          </select>
+        </label>
+      </div>
+      <div class="bond-cols">
+        <div class="bond-col" data-side="broken"><div class="label">Bonds broken (energy in)</div><ul data-bonds="broken"></ul></div>
+        <div class="bond-col" data-side="formed"><div class="label">Bonds formed (energy out)</div><ul data-bonds="formed"></ul></div>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="broken"><span class="readout-label">Total absorbed</span><span class="readout-value">+2,648 kJ</span></div>
+        <div class="readout" data-readout="formed"><span class="readout-label">Total released</span><span class="readout-value">−3,450 kJ</span></div>
+        <div class="readout" data-readout="net"><span class="readout-label">Energy change</span><span class="readout-value">−802 kJ/mol</span></div>
+      </div>
+      <span class="status-pill" data-state="ok">Releases energy</span>
+      <p data-sim-note aria-live="polite"></p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="square" data-token="accent"></span>Bonds broken: they absorb energy</li>
+        <li><span class="key" data-shape="square" data-token="good"></span>Bonds formed: they release energy</li>
+      </ul>
+    </div>
+
+    <h3>Bond energies (kJ/mol)</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>Average single and multiple covalent bond energies</caption>
+        <thead>
+          <tr>
+            <th scope="col">Bond</th>
+            <th scope="col" class="num">Energy (kJ/mol)</th>
+            <th scope="col">Bond</th>
+            <th scope="col" class="num">Energy (kJ/mol)</th>
+            <th scope="col">Multiple bond</th>
+            <th scope="col" class="num">Energy (kJ/mol)</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr><td>H &minus; H</td><td class="num">436</td><td>C &minus; H</td><td class="num">413</td><td>C = C</td><td class="num">614</td></tr>
+            <tr><td>C &minus; C</td><td class="num">348</td><td>C &minus; O</td><td class="num">358</td><td>C &equiv; C</td><td class="num">839</td></tr>
+            <tr><td>O &minus; H</td><td class="num">463</td><td>N &minus; H</td><td class="num">391</td><td>O = O</td><td class="num">498</td></tr>
+            <tr><td>Cl &minus; Cl</td><td class="num">242</td><td>H &minus; Cl</td><td class="num">431</td><td>N &equiv; N</td><td class="num">945</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS1-4 &middot; constructed response</span>
+        <span class="exam-marks">[2 marks] <span class="tag-enrichment">Enrichment</span></span>
+      </div>
+      <div class="exam-q">
+        <p>Propane burns completely: C<sub>3</sub>H<sub>8</sub>(g) + 5 O<sub>2</sub>(g) &rarr; 3 CO<sub>2</sub>(g) + 4 H<sub>2</sub>O(g)</p>
+        <p><b>Average bond energies (kJ/mol):</b><br>
+        &bull; C&minus;C = 348<br>
+        &bull; C&minus;H = 413<br>
+        &bull; O=O = 498<br>
+        &bull; C=O (in CO<sub>2</sub>) = 799<br>
+        &bull; O&minus;H = 463</p>
+        <p class="sub">Calculate &Delta;<em>H</em><sub>rxn</sub> in kJ/mol. Show the bonds broken in the reactants and the bonds formed in the products. [2 marks]</p>
+      </div>
+      <textarea class="textbox" id="examAnsEnr" placeholder="Write your bond count and your calculation..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 2 marks</div>
+        <ul class="pts">
+          <li><b>Bonds broken (1 mark):</b> You total the broken bonds as +6,490&nbsp;kJ/mol.</li>
+          <li><b>Bonds formed and net (1 mark):</b> You total 8,498&nbsp;kJ/mol formed, so &Delta;<em>H</em> = &minus;2,008&nbsp;kJ/mol.</li>
+        </ul></div></div>
+    </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- 05 NITROGEN TRIPLE BOND & HABER-BOSCH -->
+<section id="s-haber-bosch" data-toc="The N≡N triple bond">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">A catalyst that feeds the world</span></div>
+    <h2>Why the nitrogen triple bond feeds the world.</h2>
+    <p>Earth&rsquo;s atmosphere is 78% nitrogen gas (N<sub>2</sub>). Plants need nitrogen to build amino acids and nucleic acids. Yet crops cannot take N<sub>2</sub> from the air. The two nitrogen atoms share a <strong class="term">triple bond</strong> with a bond energy of <strong>945&nbsp;kJ/mol</strong>. It is one of the strongest covalent bonds in chemistry.</p>
+
+    <!-- HABER BOSCH SVG -->
+    <figure class="figure figure--wide">
+<div class="diagram">
+      <svg viewBox="0 0 640 220" font-family="var(--display)" role="img" aria-label="Reaction profile for making ammonia from nitrogen and hydrogen: the uncatalyzed path has a high peak, the iron-catalyzed path has a lower peak, and both end at the same product level">
+        <rect x="0" y="0" width="640" height="220" fill="var(--card)" rx="8" stroke="var(--hair)" stroke-width="1"/>
+
+        <!-- Axes in the center -->
+        <line x1="160" y1="180" x2="440" y2="180" stroke="var(--ink)" stroke-width="1.2"/>
+        <line x1="160" y1="180" x2="160" y2="25" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="300" y="203" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Reaction coordinate &rarr;</text>
+        <text x="144" y="102" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle" transform="rotate(-90 144 102)">PE</text>
+
+        <!-- Reactants: N2 + 3 H2 -->
+        <circle cx="50" cy="65" r="15" fill="var(--accent)"/>
+        <circle cx="85" cy="65" r="15" fill="var(--accent)"/>
+        <line x1="62" y1="60" x2="73" y2="60" stroke="var(--paper)" stroke-width="2"/>
+        <line x1="62" y1="65" x2="73" y2="65" stroke="var(--paper)" stroke-width="2"/>
+        <line x1="62" y1="70" x2="73" y2="70" stroke="var(--paper)" stroke-width="2"/>
+
+        <circle cx="35" cy="115" r="7" fill="var(--ink-soft)"/><circle cx="49" cy="115" r="7" fill="var(--ink-soft)"/><line x1="39" y1="115" x2="45" y2="115" stroke="var(--paper)" stroke-width="1.5"/>
+        <circle cx="68" cy="115" r="7" fill="var(--ink-soft)"/><circle cx="82" cy="115" r="7" fill="var(--ink-soft)"/><line x1="72" y1="115" x2="78" y2="115" stroke="var(--paper)" stroke-width="1.5"/>
+        <circle cx="101" cy="115" r="7" fill="var(--ink-soft)"/><circle cx="115" cy="115" r="7" fill="var(--ink-soft)"/><line x1="105" y1="115" x2="111" y2="115" stroke="var(--paper)" stroke-width="1.5"/>
+
+        <text x="78" y="145" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">N₂ + 3 H₂</text>
+        <text x="78" y="162" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--accent)" text-anchor="middle">N≡N = 945 kJ/mol</text>
+
+        <!-- Reaction profile curves -->
+        <line x1="160" y1="125" x2="185" y2="125" stroke="var(--ink)" stroke-width="2"/>
+
+        <path d="M 185 125 Q 295 18 405 140" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+        <text x="295" y="34" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Uncatalyzed Ea (+945 kJ/mol)</text>
+
+        <path d="M 185 125 Q 295 72 405 140" fill="none" stroke="var(--good)" stroke-width="2.2" stroke-dasharray="4 3"/>
+        <text x="295" y="62" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--good)" text-anchor="middle">Iron catalyst (+180 kJ/mol)</text>
+
+        <line x1="405" y1="140" x2="435" y2="140" stroke="var(--ink)" stroke-width="2"/>
+
+        <!-- Two NH3 molecules -->
+        <circle cx="495" cy="70" r="14" fill="var(--accent)"/>
+        <circle cx="480" cy="88" r="7" fill="var(--ink-soft)"/>
+        <circle cx="510" cy="88" r="7" fill="var(--ink-soft)"/>
+        <circle cx="495" cy="50" r="7" fill="var(--ink-soft)"/>
+        <line x1="489" y1="78" x2="483" y2="84" stroke="var(--paper)" stroke-width="1.2"/>
+        <line x1="501" y1="78" x2="507" y2="84" stroke="var(--paper)" stroke-width="1.2"/>
+        <line x1="495" y1="60" x2="495" y2="54" stroke="var(--paper)" stroke-width="1.2"/>
+
+        <circle cx="575" cy="100" r="14" fill="var(--accent)"/>
+        <circle cx="560" cy="118" r="7" fill="var(--ink-soft)"/>
+        <circle cx="590" cy="118" r="7" fill="var(--ink-soft)"/>
+        <circle cx="575" cy="80" r="7" fill="var(--ink-soft)"/>
+        <line x1="569" y1="108" x2="563" y2="114" stroke="var(--paper)" stroke-width="1.2"/>
+        <line x1="581" y1="108" x2="587" y2="114" stroke="var(--paper)" stroke-width="1.2"/>
+        <line x1="575" y1="90" x2="575" y2="84" stroke="var(--paper)" stroke-width="1.2"/>
+
+        <text x="540" y="150" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">2 NH₃ (ammonia)</text>
+        <text x="540" y="168" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--good)" text-anchor="middle">ΔH = −92 kJ/mol</text>
+        <text x="540" y="186" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">exothermic</text>
+      </svg>
+</div>
+<figcaption><b>Figure 3.8.</b> an iron catalyst lowers the barrier for N₂ + 3 H₂ → 2 NH₃ · both paths end at the same product level, so the energy released is unchanged</figcaption>
+</figure>
+
+    <p>In the early 20th century, Fritz Haber and Carl Bosch developed an iron catalyst for making ammonia. The metal surface binds N<sub>2</sub> and weakens the triple bond in stages. The catalyst lowers the activation energy (<em>E</em><sub>a</sub>), so industry can make ammonia at scale. Today, synthetic ammonia supplies the nitrogen for over half the protein in human diets.</p>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a catalyst changes how much energy the reaction releases. It only lowers the barrier. Making ammonia releases the same 92&nbsp;kJ per mole of reaction with or without the iron.</p></div>
+
+  </div>
+</section>
+
+<!-- 06 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. Breaking chemical bonds always <input class="blank" data-answer="absorbs|requires|absorbs energy|takes" placeholder="?"> energy.<br>
+      2. In an exothermic reaction, the potential energy of the products is <input class="blank" data-answer="lower|less" placeholder="?"> than that of the reactants.<br>
+      3. The minimum energy colliding particles need to reach the transition state is the <input class="blank" data-answer="activation energy|Ea" placeholder="?">.<br>
+      4. A catalyst speeds up a reaction by <input class="blank" data-answer="lowering|reducing" placeholder="?"> the activation energy.<br>
+      5. A catalyst leaves the reaction enthalpy (&Delta;<em>H</em>) <input class="blank" data-answer="unchanged|the same|constant|unaffected" placeholder="?">.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 07 SELF-EXPLANATION -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark">
+      <p>A biology textbook states: <em>&ldquo;When ATP is hydrolyzed, energy is released when the terminal high-energy phosphate bond is broken.&rdquo;</em></p>
+      <p>Critique this statement as a chemist. Explain why breaking a bond cannot release energy by itself. Then say where the energy released in ATP hydrolysis comes from.</p>
+    </div>
+    <p class="hint">Use BENDO MEXO. Count both the bond that breaks and the bonds that form. Write your answer first, then compare it with the model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="The textbook's phrasing is chemically wrong because breaking bonds always... The energy released actually comes from..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>The statement is chemically wrong. Breaking the phosphate bond in ATP <strong>always absorbs energy</strong>. BENDO: breaking is endothermic. Pulling atoms out of an electrostatic well takes work.</p>
+        <p>The net release comes when new bonds form with surrounding water molecules. MEXO: making bonds is exothermic. The new bonds release more energy than the broken bond cost. The difference gives a net negative reaction enthalpy (&Delta;<em>H</em> &lt; 0).</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">08</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS1-4 &middot; constructed response</span>
+        <span class="exam-marks">[3 marks]</span>
+      </div>
+      <div class="exam-q">
+        <p>Propane burns completely and releases energy: C<sub>3</sub>H<sub>8</sub>(g) + 5 O<sub>2</sub>(g) &rarr; 3 CO<sub>2</sub>(g) + 4 H<sub>2</sub>O(g)</p>
+        <p class="sub"><b>(a)</b> Say whether this reaction is exothermic or endothermic. Describe its energy profile: where the reactants and products sit, and where the activation energy (<em>E</em><sub>a</sub>) is. [2 marks]</p>
+        <p class="sub"><b>(b)</b> A platinum catalyst is added. Explain how it changes the profile and what it leaves unchanged. [1 mark]</p>
+      </div>
+      <textarea class="textbox" id="examAns" placeholder="Write your answers for (a) and (b)..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 3 marks</div>
+        <ul class="pts">
+          <li><b>Direction (1 mark):</b> You say the reaction is exothermic, because the products sit lower in energy than the reactants.</li>
+          <li><b>Profile (1 mark):</b> You say the curve climbs to a peak, then drops to the lower products.</li>
+          <li><b>Catalyst (1 mark):</b> You say a catalyst lowers the peak and leaves the products and &Delta;<em>H</em> unchanged.</li>
+        </ul></div></div>
+
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>The Saturn V upper stages and the Space Launch System burn liquid hydrogen with oxygen: 2 H<sub>2</sub> + O<sub>2</sub> &rarr; 2 H<sub>2</sub>O. Hydrogen is light, with a molar mass of only 2&nbsp;g/mol. The reaction releases 484&nbsp;kJ for every two moles of water formed. That much energy for so little mass pushes the exhaust out at over 4,500 meters per second.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-4 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-4</h3>
+    <p>
+      Test your mastery of chemical reaction energetics one question at a time. The adaptive engine models bond breaking, bond forming, reaction coordinate profiles, and enthalpy calculations. Practice until you achieve verified competency.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-4" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 3 &middot; 3-14a</div>
+  <p>Unit 3 ends here. Next, 4-1a: <strong>Reaction Rates &amp; Collision Theory</strong> asks what makes a collision lead to a reaction.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="3-14a.js"></script>
+</body>
+</html>

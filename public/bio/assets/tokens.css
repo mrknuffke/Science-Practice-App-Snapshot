@@ -1,0 +1,48 @@
+/* ============================================================
+   GENERAL BIOLOGY: BOOK TOKENS
+   The per-book tokens of docs/textbook/STYLE_STANDARD.md section 2.2, in both
+   themes, and nothing else. Reset, page foundation, type scale and fonts come
+   from the shared runtime (public/textbook/base.css).
+
+   The accent and --good are the same green in this book, so a selected option
+   is shown with an ink border and never with the accent (standard, 2.3).
+   Zero em-dashes.
+   ============================================================ */
+
+:root {
+  /* paper and ink: organic leaf and parchment */
+  --paper: #EFF4F0; --paper-2: #E4ECE6; --card: #F7FAF8;
+  --ink: #0D1A12; --ink-soft: #283D30; --ink-mute: #586E60;
+
+  /* the accent (emerald) and the semantic colours */
+  --accent: #059669; --accent-soft: #34D399;
+  --good: #059669;
+  --bad: #DC2626;
+  --warn: #D97706;
+  --cool: #2563EB;
+
+  /* structure */
+  --hair: rgba(13, 26, 18, 0.16); --hair-soft: rgba(13, 26, 18, 0.09); --grid: rgba(13, 26, 18, 0.02);
+
+  /* biology families: diagrams and sims only */
+  --glucose: #059669; --oxygen: #2563EB; --co2: #64748B; --water: #0EA5E9;
+  --atp: #D97706; --thermal: #EA580C; --hormone: #7C3AED;
+  --rose: #BE123C;  /* 2b-2 reef: the candy lab's red clownfish, kept off --bad */
+}
+
+:root.dark {
+  --paper: #0B120E; --paper-2: #111D16; --card: #14231B;
+  --ink: #F0F7F2; --ink-soft: #C8DED0; --ink-mute: #8BA896;
+
+  --accent: #10B981; --accent-soft: #6EE7B7;
+  --good: #10B981;
+  --bad: #F87171;
+  --warn: #FBBF24;
+  --cool: #60A5FA;
+
+  --hair: rgba(240, 247, 242, 0.14); --hair-soft: rgba(240, 247, 242, 0.08); --grid: rgba(240, 247, 242, 0.03);
+
+  --glucose: #34D399; --oxygen: #60A5FA; --co2: #94A3B8; --water: #38BDF8;
+  --atp: #FBBF24; --thermal: #FB923C; --hormone: #A78BFA;
+  --rose: #FB7185;
+}

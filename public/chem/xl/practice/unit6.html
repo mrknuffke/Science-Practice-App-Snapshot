@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>XL Chemistry Practice · Unit 6: Solutions &amp; Equilibrium</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../../favicon.ico">
+
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.27/dist/contrib/auto-render.min.js"></script>
+
+  <!-- XL Practice Design System -->
+  <link rel="stylesheet" href="xl-practice.css">
+</head>
+<body class="theme-auto">
+
+  <!-- STICKY WORKSTATION HEADER -->
+  <header class="station-header" id="stationHeader">
+    <div class="station-branding">
+      <a href="index.html" class="station-badge" id="btnStationBack" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.25rem;">&larr; XL Chem</a>
+      <div>
+        <div class="station-title">Unit 6: Solutions &amp; Equilibrium</div>
+        <div class="station-subtitle">Quantitative Practice &middot; Formative Set</div>
+      </div>
+    </div>
+
+    <div class="station-center">
+      <div class="progress-track" title="Overall Progress">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="station-metrics" id="metricsLabel">0 of 16 Solved (0%)</div>
+    </div>
+
+    <div class="station-right">
+      <button class="btn btn-secondary btn-sm" id="refBtn" title="Open Reference Tables">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Reference
+      </button>
+
+      <button class="btn btn-secondary btn-sm" id="calcBtn" title="Open Scientific Calculator">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        Calculator
+      </button>
+
+      <button class="btn btn-secondary btn-sm" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+        <span id="themeIcon">☀️</span>
+      </button>
+
+      <div class="student-pill" id="studentPill" title="Click to edit student profile">
+        <div class="student-pill-avatar" id="studentAvatar">S</div>
+        <span id="studentNameDisplay">Set Student Name</span>
+      </div>
+
+      <button class="btn btn-primary btn-sm" id="exportBtn" disabled>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Export Receipt
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN STATION WORKSPACE -->
+  <main class="station-body">
+    
+    <!-- Unit Overview Banner -->
+    <section class="unit-banner">
+      <div class="unit-banner-info">
+        <h1>Accelerated Chemistry Practice Studio</h1>
+        <p>Unit 6: Molarity, Solution Stoichiometry, Dynamic Equilibrium, ICE Tables, &amp; Le Chatelier Shifts.</p>
+        <div id="bannerAttemptStats" style="margin-top:0.4rem;"></div>
+      </div>
+      <div>
+        <span class="seed-chip" id="seedChip">Seed: #loading</span>
+      </div>
+    </section>
+
+    <!-- Dynamic Problem Deck -->
+    <div id="problemDeck">
+      <!-- Populated dynamically by unit6.js -->
+    </div>
+
+  </main>
+
+  <!-- IN-SITE REFERENCE DRAWER -->
+  <aside class="drawer-panel" id="refDrawer" aria-label="Reference Tables">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Chemistry Reference Center
+      </div>
+      <button class="btn btn-secondary btn-sm" id="closeRefDrawerBtn">✕</button>
+    </div>
+
+    <!-- Reference Tabs -->
+    <div class="drawer-tab-bar">
+      <button type="button" class="drawer-tab-btn active" id="tabBtnPtable" data-target="drawerPtable">Periodic Table &amp; Molar Masses</button>
+      <button type="button" class="drawer-tab-btn" id="tabBtnFormulas" data-target="drawerFormulas">Solutions &amp; Equilibrium Formulas</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Tab 1: Interactive Periodic Table with Molar Masses -->
+      <div class="drawer-tab-content" id="drawerPtable">
+        <div class="ptable-toolbar">
+          <div class="ptable-modes" id="ptableModes">
+            <button type="button" class="ptable-mode-btn active" data-mode="default">Classification</button>
+            <button type="button" class="ptable-mode-btn" data-mode="radius">Radius</button>
+            <button type="button" class="ptable-mode-btn" data-mode="ie">1st IE</button>
+            <button type="button" class="ptable-mode-btn" data-mode="en">Electronegativity</button>
+          </div>
+          <label class="ptable-check-label">
+            <input type="checkbox" id="ptableTransitionToggle" checked>
+            <span>Transition (3d)</span>
+          </label>
+        </div>
+
+        <div class="ptable-grid-wrapper">
+          <div class="ptable-grid" id="refPtableGrid">
+            <!-- Dynamically populated with elements Z=1..36 -->
+          </div>
+        </div>
+
+        <div class="ptable-legend-bar" id="refPtableLegend">
+          <!-- Dynamically populated legend -->
+        </div>
+
+        <!-- Selected Element Inspector -->
+        <div class="element-inspector-card" id="elementInspectorCard">
+          <div class="inspector-empty" id="inspectorEmpty">
+            Select any element cell above to inspect its atomic mass, valence electron count, and molar mass for stoichiometry.
+          </div>
+          <div class="inspector-details" id="inspectorDetails" style="display:none;">
+            <!-- Dynamically populated element details -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Solutions & Equilibrium Constants Reference -->
+      <div class="drawer-tab-content" id="drawerFormulas" style="display:none;">
+        <div class="ref-table-block">
+          <div class="ref-table-title">Solution Concentrations &amp; Dilutions</div>
+          <div class="ref-row"><span>Molarity (M)</span><span>M = moles of solute / liters of solution (mol/L)</span></div>
+          <div class="ref-row"><span>Dilution Formula</span><span>M₁ &times; V₁ = M₂ &times; V₂ (moles of solute remain constant)</span></div>
+          <div class="ref-row"><span>Electrolytes</span><span>Soluble ionic compounds dissociate into mobile solvated ions that conduct electricity.</span></div>
+        </div>
+
+        <div class="ref-table-block">
+          <div class="ref-table-title">Chemical Equilibrium Law</div>
+          <div class="ref-row"><span>General Reaction</span><span>aA + bB &rightleftharpoons; cC + dD</span></div>
+          <div class="ref-row"><span>Equilibrium Expression</span><span>K_eq = [C]^c &times; [D]^d / ([A]^a &times; [B]^b)</span></div>
+          <div class="ref-row"><span>Excluded Species</span><span>Pure solids (s) and pure liquids (l) have constant activity and are omitted from K_eq.</span></div>
+          <div class="ref-row"><span>Magnitude of K</span><span>K &gt; 1: Products favored at equilibrium; K &lt; 1: Reactants favored at equilibrium.</span></div>
+        </div>
+
+        <div class="ref-table-block">
+          <div class="ref-table-title">Reaction Quotient &amp; Le Chatelier's Principle</div>
+          <div class="ref-row"><span>Q &lt; K</span><span>Reaction proceeds forward (right) to produce more products.</span></div>
+          <div class="ref-row"><span>Q &gt; K</span><span>Reaction proceeds in reverse (left) to produce more reactants.</span></div>
+          <div class="ref-row"><span>Concentration Stress</span><span>Adding species shifts away from it; removing species shifts toward it.</span></div>
+          <div class="ref-row"><span>Pressure / Volume Stress</span><span>Decreasing volume (increasing pressure) shifts toward side with fewer gas moles.</span></div>
+          <div class="ref-row"><span>Temperature Stress</span><span>Exothermic (&Delta;H &lt; 0): Heat is a product; heating shifts left, lowering K. Endothermic: Heating shifts right, increasing K.</span></div>
+        </div>
+
+        <div class="ref-table-block">
+          <div class="ref-table-title">Storyline Anchor: Marine Carbonate &amp; Shellfish Die-Off</div>
+          <div class="ref-row"><span>Ocean Acidification</span><span>CO₂(g) + H₂O(l) &rightleftharpoons; H₂CO₃(aq) &rightleftharpoons; H⁺(aq) + HCO₃⁻(aq)</span></div>
+          <div class="ref-row"><span>Carbonate Depletion</span><span>H⁺(aq) + CO₃²⁻(aq) &rightleftharpoons; HCO₃⁻(aq), removing CO₃²⁻ required for shell calcification: Ca²⁺(aq) + CO₃²⁻(aq) &rightleftharpoons; CaCO₃(s)</span></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- IN-SITE CALCULATOR WIDGET -->
+  <div class="calc-widget" id="calcWidget">
+    <div class="calc-header" id="calcDragHandle">
+      <div class="calc-drag-title">
+        <span class="calc-drag-grip" title="Click and drag up or down">⠿</span>
+        <span>Scientific Calculator</span>
+      </div>
+      <button class="btn btn-secondary btn-sm" id="closeCalcBtn">✕</button>
+    </div>
+    <div class="calc-screen">
+      <div class="calc-expression" id="calcExpr"></div>
+      <div class="calc-value" id="calcVal">0</div>
+    </div>
+    <div class="calc-grid" id="calcGrid">
+      <button class="calc-btn calc-btn-op" data-key="clear">AC</button>
+      <button class="calc-btn calc-btn-op" data-key="del">⌫</button>
+      <button class="calc-btn calc-btn-op" data-key="(">(</button>
+      <button class="calc-btn calc-btn-op" data-key=")">)</button>
+
+      <button class="calc-btn calc-btn-op" data-key="^">xʸ</button>
+      <button class="calc-btn calc-btn-op" data-key="ee">EE</button>
+      <button class="calc-btn calc-btn-op" data-key="sqrt">√</button>
+      <button class="calc-btn calc-btn-op" data-key="/">÷</button>
+
+      <button class="calc-btn" data-key="7">7</button>
+      <button class="calc-btn" data-key="8">8</button>
+      <button class="calc-btn" data-key="9">9</button>
+      <button class="calc-btn calc-btn-op" data-key="*">×</button>
+
+      <button class="calc-btn" data-key="4">4</button>
+      <button class="calc-btn" data-key="5">5</button>
+      <button class="calc-btn" data-key="6">6</button>
+      <button class="calc-btn calc-btn-op" data-key="-">-</button>
+
+      <button class="calc-btn" data-key="1">1</button>
+      <button class="calc-btn" data-key="2">2</button>
+      <button class="calc-btn" data-key="3">3</button>
+      <button class="calc-btn calc-btn-op" data-key="+">+</button>
+
+      <button class="calc-btn" data-key="0">0</button>
+      <button class="calc-btn" data-key=".">.</button>
+      <button class="calc-btn calc-btn-op" data-key="pm">±</button>
+      <button class="calc-btn calc-btn-eq" data-key="=">=</button>
+    </div>
+  </div>
+
+  <!-- PROFILE / NAME SETUP MODAL -->
+  <div class="modal-overlay" id="profileModal" style="display:none;">
+    <div class="modal-content">
+      <div class="modal-title">Welcome to XL Chem Practice</div>
+      <div class="modal-subtitle">
+        Enter your first and last name below. This generates your unique, stable problem parameters for Unit 6 and goes on your printed receipt with its check code.
+      </div>
+      <input type="text" class="modal-input" id="profileInput" placeholder="First and Last Name (e.g. Maya Lin)" autofocus>
+      <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:0.5rem;">
+        <button type="button" class="btn btn-primary" id="profileStartBtn">Start Practice Set</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRINTABLE STUDY GUIDE & RECEIPT (Used by @media print) -->
+  <div id="studyReportSheet"></div>
+
+  <!-- SCRIPTS -->
+  <script src="smart-parser.js"></script>
+  <script src="qrcode.js"></script>
+  <script src="unit6.js"></script>
+  <script>
+    (function() {
+      const fromParam = new URLSearchParams(window.location.search).get('from');
+      const b = document.getElementById('btnStationBack');
+      if (b && fromParam) {
+        b.href = 'index.html?from=' + encodeURIComponent(fromParam);
+      }
+    })();
+  </script>
+</body>
+</html>

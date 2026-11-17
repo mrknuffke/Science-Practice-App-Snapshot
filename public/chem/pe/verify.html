@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Receipt Check &middot; Chemistry PE Practice</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="stylesheet" href="pe-practice.css">
+
+  <!-- Pre-paint Theme Initialization -->
+  <script>
+    (function () {
+      var saved = null;
+      try {
+        saved = localStorage.getItem('gc-theme') || (localStorage.getItem('sp_dark_mode') === 'true' ? 'dark' : (localStorage.getItem('sp_dark_mode') === 'false' ? 'light' : null));
+      } catch (e) {}
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDark = saved === 'dark' || (!saved && prefersDark);
+      if (isDark) {
+        document.documentElement.classList.add('dark', 'theme-dark');
+        document.documentElement.classList.remove('light', 'theme-light');
+      } else {
+        document.documentElement.classList.add('light', 'theme-light');
+        document.documentElement.classList.remove('dark', 'theme-dark');
+      }
+    })();
+  </script>
+  <style>
+    .verify-container {
+      max-width: 42rem;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .verify-card {
+      background-color: var(--pe-surface);
+      border: 1px solid var(--pe-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .field-group label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--pe-ink-mute);
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+    }
+    .modal-input {
+      background-color: var(--pe-card);
+      border: 1px solid var(--pe-border);
+      border-radius: var(--radius-md);
+      padding: 0.6rem 0.85rem;
+      color: var(--pe-ink);
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+    }
+    .modal-input:focus {
+      outline: none;
+      border-color: var(--pe-primary);
+      box-shadow: 0 0 0 1px var(--pe-primary);
+    }
+    .status-badge {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .status-badge.feedback-success {
+      background-color: var(--pe-good-soft);
+      border: 1px solid var(--pe-good);
+      color: var(--pe-ink);
+    }
+    .status-badge.feedback-error {
+      background-color: var(--pe-error-soft);
+      border: 1px solid var(--pe-error);
+      color: var(--pe-ink);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="station-header">
+    <div class="station-title-group">
+      <a href="index.html" id="btnBackToOrigin" class="station-badge" style="text-decoration:none;">&larr; PE Hub</a>
+      <span class="station-badge">Teacher Tool</span>
+      <div class="station-title">Receipt Check</div>
+    </div>
+    <div class="station-actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="verify-container">
+    <div class="verify-card">
+      <div>
+        <span class="station-badge">Teacher Tool</span>
+        <h1 style="font-size:var(--text-xl); font-weight:800; margin-top:0.5rem;">Receipt Check</h1>
+        <p style="font-size:var(--text-sm); color:var(--pe-ink-mute); margin-top:0.25rem;">
+          Check that a printed PE practice receipt matches its code. A match means nobody changed the results by hand. It does not prove who did the work.
+        </p>
+      </div>
+
+      <div class="field-group">
+        <label for="vName">Student Name</label>
+        <input type="text" id="vName" class="modal-input" placeholder="e.g. Maya Lin">
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem;">
+        <div class="field-group">
+          <label for="vPE">Performance Expectation</label>
+          <select id="vPE" class="modal-input">
+            <option value="HS-PS1-1">HS-PS1-1: Periodic Trends &amp; Atomic Structure</option>
+            <option value="HS-PS1-2">HS-PS1-2: Chemical Reactions &amp; Bonding</option>
+            <option value="HS-PS1-3">HS-PS1-3: Electrical Forces &amp; IMFs</option>
+            <option value="HS-PS1-4">HS-PS1-4: Bond Energy &amp; Reaction Energetics</option>
+            <option value="HS-PS1-5">HS-PS1-5: Reaction Rates &amp; Catalysis</option>
+            <option value="HS-PS1-6">HS-PS1-6: Dynamic Equilibrium &amp; Le Chatelier</option>
+            <option value="HS-PS1-7">HS-PS1-7: The Mole &amp; Stoichiometry</option>
+            <option value="HS-PS1-8">HS-PS1-8: Nuclear Processes &amp; Decay</option>
+            <option value="HS-PS2-6">HS-PS2-6: Structure-Property Arguments</option>
+            <option value="HS-PS3-1">HS-PS3-1: Computational Thermal Energy &amp; Calorimetry</option>
+            <option value="HS-PS3-4">HS-PS3-4: Thermal Equilibrium in Closed Systems</option>
+            <option value="HS-PS4-4">HS-PS4-4: Electromagnetic Radiation &amp; Matter</option>
+            <option value="HS-ESS1-1">HS-ESS1-1: Solar Fusion &amp; Lifespan of the Sun</option>
+            <option value="HS-ESS1-2">HS-ESS1-2: The Big Bang &amp; Astronomical Evidence</option>
+            <option value="HS-ESS1-3">HS-ESS1-3: Stellar Nucleosynthesis of Elements</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="vScore">Skills at Proficient or Above / Total</label>
+          <div style="display:flex; align-items:center; gap:0.5rem;">
+            <input type="number" id="vScore" class="modal-input" value="6" min="0" max="20" style="flex:1;">
+            <span style="font-family:var(--font-mono); color:var(--pe-ink-mute);">/</span>
+            <input type="number" id="vTotal" class="modal-input" value="6" min="1" max="20" style="flex:1;">
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="vLevels">Skill levels from the receipt, such as 4332 (leave blank for receipts from before November 2026)</label>
+        <input type="text" id="vLevels" class="modal-input" placeholder="e.g. 433221" inputmode="numeric">
+      </div>
+
+      <div class="field-group">
+        <label for="vSeal">Check code (from the receipt)</label>
+        <input type="text" id="vSeal" class="modal-input" placeholder="e.g. 9F2A-8C17" style="text-transform:uppercase; font-family:var(--font-mono); letter-spacing:0.06em;">
+      </div>
+
+      <div style="display:flex; gap:0.75rem; margin-top:0.5rem;">
+        <button type="button" class="btn btn-primary" id="btnVerify" style="flex:1;">Check receipt</button>
+      </div>
+
+      <div id="vResult" style="display:none; margin-top:0.5rem;"></div>
+
+      <div style="margin-top:1rem; padding-top:1rem; border-top:1px solid var(--pe-border-soft); display:flex; justify-content:space-between; align-items:center;">
+        <a href="index.html" class="btn btn-ghost" style="font-size:var(--text-xs);">&larr; Return to PE Hub</a>
+        <span style="font-family:var(--font-mono); font-size:var(--text-2xs); color:var(--pe-ink-mute);">The check runs in this browser</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const SEAL_SALT = 'PE-CHEM-2026-NIST-VERIFY';
+
+    // Everything shown in the result comes from the URL or the form, so it is escaped first.
+    function escapeHtml(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    // Must match pe-engine.js: v2 seals add the per-skill levels, v1 seals have none.
+    async function computeDigitalSeal(studentName, seed, score, total, dateStr, levels) {
+      const base = `${studentName.trim().toLowerCase()}:${seed}:${score}:${total}:${dateStr}`;
+      const message = levels ? `${base}:${levels}:${SEAL_SALT}` : `${base}:${SEAL_SALT}`;
+      const msgBuffer = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      return `${hex.slice(0, 4).toUpperCase()}-${hex.slice(4, 8).toUpperCase()}`;
+    }
+
+    document.getElementById('btnVerify').addEventListener('click', async () => {
+      const name = document.getElementById('vName').value.trim();
+      const peId = document.getElementById('vPE').value.trim();
+      const score = document.getElementById('vScore').value.trim();
+      const total = document.getElementById('vTotal').value.trim();
+      const levels = document.getElementById('vLevels').value.replace(/[^1-4]/g, '');
+      const sealInput = document.getElementById('vSeal').value.trim().toUpperCase();
+      const resultBox = document.getElementById('vResult');
+
+      if (!name || !sealInput) {
+        alert('Type the student name and the check code.');
+        return;
+      }
+
+      const cleanName = name.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const seed = `${cleanName || 'student'}-${peId.toLowerCase()}`;
+
+      // Check dates over past 21 days
+      let matched = false;
+      let matchedDate = '';
+
+      for (let i = 0; i <= 21; i++) {
+        const d = new Date();
+        d.setDate(d.getDate() - i);
+        const dateStr = d.toISOString().split('T')[0];
+        const computed = await computeDigitalSeal(name, seed, score, total, dateStr, levels);
+        if (computed === sealInput) {
+          matched = true;
+          matchedDate = dateStr;
+          break;
+        }
+      }
+
+      resultBox.style.display = 'block';
+
+      const sName = escapeHtml(name), sPe = escapeHtml(peId), sCode = escapeHtml(sealInput);
+      const sResult = `<b>${escapeHtml(score)}/${escapeHtml(total)}</b> skills at Proficient or above${levels ? ` and skill levels <b>${escapeHtml(levels)}</b>` : ''}`;
+      if (matched) {
+        resultBox.className = 'status-badge feedback-success';
+        resultBox.innerHTML = `
+          <div>
+            <div style="font-weight:700; font-size:1.1rem; color:var(--pe-good);">&#10003; Matches</div>
+            <div style="font-size:0.875rem; margin-top:0.35rem; line-height:1.45;">
+              Code <b>${sCode}</b> matches <b>${sName}</b> on <b>${sPe}</b> with ${sResult} (completed on ${escapeHtml(matchedDate)}).
+            </div>
+            <div style="font-size:0.75rem; color:var(--pe-ink-mute); margin-top:0.4rem;">
+              A match shows nobody edited these results by hand. It does not prove who completed the practice.
+            </div>
+          </div>
+        `;
+      } else {
+        resultBox.className = 'status-badge feedback-error';
+        resultBox.innerHTML = `
+          <div>
+            <div style="font-weight:700; font-size:1.1rem; color:var(--pe-error);">&#10007; Does not match</div>
+            <div style="font-size:0.875rem; margin-top:0.35rem; line-height:1.45;">
+              Code <b>${sCode}</b> does not match <b>${sName}</b> on <b>${sPe}</b> with ${sResult} on any day in the last 21 days.
+            </div>
+            <div style="font-size:0.75rem; color:var(--pe-ink-mute); margin-top:0.4rem;">
+              Check each field against the receipt. One typo in the name or the levels is enough to break the match.
+            </div>
+          </div>
+        `;
+      }
+    });
+
+    // Theme Toggle Handler
+    const themeBtn = document.getElementById('themeToggle');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const root = document.documentElement;
+        const isDark = !root.classList.contains('dark');
+        if (isDark) {
+          root.classList.add('dark', 'theme-dark');
+          root.classList.remove('light', 'theme-light');
+        } else {
+          root.classList.add('light', 'theme-light');
+          root.classList.remove('dark', 'theme-dark');
+        }
+        try {
+          localStorage.setItem('gc-theme', isDark ? 'dark' : 'light');
+          localStorage.setItem('sp_dark_mode', String(isDark));
+        } catch (e) {}
+      });
+    }
+
+    // Auto-verify on QR scan & dynamic back routing
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const originFrom = params.get('from');
+      const backBtn = document.getElementById('btnBackToOrigin');
+      if (backBtn) {
+        if (originFrom === 'resources') {
+          backBtn.href = '/?page=resources';
+          backBtn.innerHTML = '&larr; Back to Open Resources';
+        } else if (originFrom === 'teachers') {
+          backBtn.href = '/?page=teachers';
+          backBtn.innerHTML = '&larr; Back to Teacher Workspace';
+        } else if (document.referrer && (document.referrer.includes('page=resources') || document.referrer.includes('page=teachers'))) {
+          backBtn.href = document.referrer;
+          backBtn.innerHTML = document.referrer.includes('page=teachers') ? '&larr; Back to Teacher Workspace' : '&larr; Back to Open Resources';
+        }
+      }
+
+      if (params.has('name') && params.has('seal')) {
+        document.getElementById('vName').value = params.get('name') || '';
+        if (params.has('pe')) document.getElementById('vPE').value = params.get('pe');
+        document.getElementById('vScore').value = params.get('score') || '6';
+        document.getElementById('vTotal').value = params.get('total') || '6';
+        document.getElementById('vLevels').value = params.get('levels') || '';
+        document.getElementById('vSeal').value = params.get('seal') || '';
+        document.getElementById('btnVerify').click();
+      }
+    });
+  </script>
+</body>
+</html>

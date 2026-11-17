@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-2d" data-book="chem">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Physical vs. Chemical Change &amp; Particle Diagrams · Gen Chem 1-2d</title>
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+  <!-- HERO -->
+<main>
+
+  <section id="s-hero" class="hero" data-toc="Opening">
+    <div>
+      <div class="label">Lesson 1-2d &middot; Physical vs. Chemical Change</div>
+      <h1>When you heat it on the pan, does it <span class="flip">melt</span> or does it <span class="flip">burn</span>?</h1>
+      <p class="lede">Drop a lump of ghee on a hot grill. It melts and slides across the metal, but it is still the same fat. Drop raw flatbread dough on the same grill. It puffs, browns and smells completely different. The first change leaves every molecule alone. The second breaks bonds and builds new substances. By the end, you can tell the two apart at the particle scale and show that atoms are conserved.</p>
+      <div class="meta-strip">
+        <div class="meta-block">
+          <div class="k">Alignment</div>
+          <div class="v"><b>HS-PS1-2</b> Construct and revise an explanation for the outcome of a simple chemical reaction based on the outermost electron states of atoms, trends in the periodic table, and knowledge of the patterns of chemical properties.<br><b>HS-PS1-7</b> Use mathematical representations to support the claim that atoms, and therefore mass, are conserved during a chemical reaction.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Objective</div>
+          <div class="v">You can tell a physical change from a chemical change by tracing the bonds inside each particle. You can draw particle diagrams that keep every atom. You can explain why an open pan loses mass.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Scope</div>
+          <div class="v">Phase changes and dissolving (physical) next to reactions (chemical). Atoms are conserved in both. Open systems and closed systems.</div>
+        </div>
+      </div>
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Physical change:</strong> The particles change state or spacing. Bonds inside each particle stay intact, so the substance keeps its identity (melting, dissolving).</li>
+              <li><strong>Chemical change:</strong> Bonds break and new bonds form. Atoms regroup into new substances (reactants become products).</li>
+              <li><strong>Conservation of mass:</strong> Every atom is kept in any change. The count of each atom type stays the same.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Physical vs. chemical (particle view)</h4>
+            <figure class="figure figure--full">
+<div class="diagram">
+              <svg viewBox="0 0 520 200" role="img" aria-label="Particulate comparison: on the left, physical phase change preserves intramolecular bonds while changing spacing; on the right, chemical reaction breaks and forms bonds to make new substances.">
+                <!-- Left Card: Physical Change -->
+                <rect x="10" y="10" width="245" height="178" rx="8" fill="var(--card)" stroke="var(--ink-soft)" style="stroke-width:var(--dia-stroke);"/>
+                <rect x="10" y="10" width="245" height="26" rx="8" fill="var(--paper-2)"/>
+                <text x="132" y="27" text-anchor="middle" font-family="var(--display)" font-size="var(--dia-caption-size, 10px)" font-weight="800" letter-spacing="1" fill="var(--ink)">PHYSICAL CHANGE</text>
+
+                <!-- Sub-compartments: Before (Solid) & After (Gas) -->
+                <rect x="20" y="46" width="92" height="78" rx="4" fill="var(--paper-2)" stroke="var(--hair-soft)" style="stroke-width:var(--dia-stroke);"/>
+                <text x="66" y="41" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 9px)" fill="var(--ink-mute)">Solid</text>
+                <!-- 4 Diatomic pairs, tightly organized -->
+                <circle cx="45" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="56" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="76" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="87" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="45" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="56" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="76" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="87" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+
+                <!-- Arrow -->
+                <path d="M 116,85 L 138,85" stroke="var(--ink-soft)" style="stroke-width:var(--dia-stroke-bond);" fill="none"/>
+                <polygon points="138,82 144,85 138,88" fill="var(--ink-soft)"/>
+                <text x="127" y="78" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 8px)" fill="var(--ink-mute)">heat</text>
+
+                <rect x="148" y="46" width="92" height="78" rx="4" fill="var(--paper-2)" stroke="var(--hair-soft)" style="stroke-width:var(--dia-stroke);"/>
+                <text x="194" y="41" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 9px)" fill="var(--ink-mute)">Gas</text>
+                <!-- 4 Diatomic pairs, widely dispersed but intact -->
+                <circle cx="166" cy="62" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="176" cy="60" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="216" cy="70" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="223" cy="79" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="168" cy="106" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="160" cy="113" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="212" cy="105" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="222" cy="102" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+
+                <text x="132" y="146" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" font-weight="600" fill="var(--ink)">Covalent bonds intact</text>
+                <text x="132" y="166" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 9px)" fill="var(--ink-soft)">Only spacing changes</text>
+
+                <!-- Right Card: Chemical Change -->
+                <rect x="265" y="10" width="245" height="178" rx="8" fill="color-mix(in srgb, var(--accent) 5%, var(--card))" stroke="var(--accent)" style="stroke-width:var(--dia-stroke);"/>
+                <rect x="265" y="10" width="245" height="26" rx="8" fill="color-mix(in srgb, var(--accent) 14%, var(--card))"/>
+                <text x="387" y="27" text-anchor="middle" font-family="var(--display)" font-size="var(--dia-caption-size, 10px)" font-weight="800" letter-spacing="1" fill="var(--accent)">CHEMICAL CHANGE</text>
+
+                <!-- Sub-compartments: Reactants & Products -->
+                <rect x="275" y="46" width="92" height="78" rx="4" fill="var(--paper-2)" stroke="var(--hair-soft)" style="stroke-width:var(--dia-stroke);"/>
+                <text x="321" y="41" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 9px)" fill="var(--ink-mute)">Reactants</text>
+                <!-- Two A2 (white) and two B2 (accent) -->
+                <circle cx="295" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="306" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="295" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="306" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="337" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--accent)" stroke="var(--ink)"/>
+                <circle cx="348" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--accent)" stroke="var(--ink)"/>
+                <circle cx="337" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--accent)" stroke="var(--ink)"/>
+                <circle cx="348" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--accent)" stroke="var(--ink)"/>
+
+                <!-- Arrow -->
+                <path d="M 371,85 L 393,85" stroke="var(--accent)" style="stroke-width:var(--dia-stroke-bond);" fill="none"/>
+                <polygon points="393,82 399,85 393,88" fill="var(--accent)"/>
+                <text x="382" y="78" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 8px)" fill="var(--accent)">react</text>
+
+                <rect x="403" y="46" width="92" height="78" rx="4" fill="var(--paper-2)" stroke="var(--hair-soft)" style="stroke-width:var(--dia-stroke);"/>
+                <text x="449" y="41" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 9px)" fill="var(--accent)">Products</text>
+                <!-- Four AB heteronuclear pairs -->
+                <circle cx="423" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="434" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--accent)" stroke="var(--ink)"/>
+                <circle cx="463" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="474" cy="65" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--accent)" stroke="var(--ink)"/>
+                <circle cx="423" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="434" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--accent)" stroke="var(--ink)"/>
+                <circle cx="463" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--paper-3)" stroke="var(--ink)"/>
+                <circle cx="474" cy="98" style="r:var(--dia-r-atom-sm, 6);stroke-width:var(--dia-stroke);" fill="var(--accent)" stroke="var(--ink)"/>
+
+                <text x="387" y="146" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 10px)" font-weight="600" fill="var(--accent)">Bonds break and form</text>
+                <text x="387" y="166" text-anchor="middle" font-family="var(--mono)" font-size="var(--dia-caption-size, 9px)" fill="var(--ink-soft)">New chemical identities made</text>
+              </svg>
+</div>
+<figcaption>physical changes keep every molecule intact · chemical changes break bonds and build new molecules</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> Tell a physical change (spacing) from a chemical change (bonds broken).</li>
+              <li><input type="checkbox" disabled> Spot the mistake in a particle diagram that loses atoms.</li>
+              <li><input type="checkbox" disabled> Draw solids, liquids and gases with the particle conventions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+    </div>
+  </section>
+
+  <!-- 01 PHYSICAL VS CHEMICAL -->
+  <section id="s-concept" data-toc="Physical vs. chemical">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">01</span><span class="label">The distinction</span></div>
+      <h2>The distinction lies entirely in the bonds.</h2>
+      <p>Every sample of matter is a collection of particles. A change can move those particles around, or it can rebuild them from the inside.</p>
+      <p>Before you label a change, trace the bonds inside each molecule. If those bonds stay untouched, the change is a <strong class="term">physical change</strong>. The particles may speed up, spread out, slide past neighbors or mix during dissolving. Each one is still the same substance.</p>
+      <p>If bonds break and new ones form, the atoms end up in new combinations. That is a <strong class="term">chemical change</strong>. The starting substances (<strong class="term">reactants</strong>) disappear. New substances (<strong class="term">products</strong>) appear with different properties.</p>
+      
+      <div class="callout">
+        <div class="label">The one idea to hold onto</div>
+        <p>A physical change moves particles apart or together and leaves each particle intact. A chemical change breaks the bonds inside particles and builds new ones.</p>
+      </div>
+      <div class="callout"><div class="label">Common mistake</div><p>Calling a change chemical because it looks dramatic or cannot be undone. Boiling makes bubbles, and torn foil stays torn, yet the particles are unchanged. Ask one question: is it the same substance afterward?</p></div>
+    </div>
+  </section>
+
+  <!-- 02 PARTICLE CONTRASTS -->
+  <section id="s-contrasts" data-toc="Particle diagrams">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">02</span><span class="label">Particle panels</span></div>
+      <h2>How the two changes read in particle panels.</h2>
+      <p>Compare a phase change with a combustion reaction. In the physical change, every molecule stays intact. In the chemical change, the atoms regroup, but the count of each atom stays the same.</p>
+
+      <!-- Particle Motion Conventions Callout -->
+      <div class="callout">
+        <div class="label">Particle motion conventions</div>
+        <p>Particle diagrams show state and motion with three conventions.</p>
+        <ul>
+          <li><strong>Solid:</strong> Brackets beside the particles show vibration. The particles stay in fixed positions.</li>
+          <li><strong>Liquid:</strong> Particles stay in contact with their neighbors. They slide past each other along the bottom of the container.</li>
+          <li><strong>Gas:</strong> Particles are far apart. They move fast in straight lines until they collide.</li>
+        </ul>
+      </div>
+
+      <!-- Physical Change Panel: Water Melting -->
+      <h3>Physical change: ice melting (H₂O)</h3>
+      <div class="figure figure--full" data-motion="step" data-step-count="3" data-step-labels="Before|During|After">
+
+        <!-- Step 1: BEFORE, Solid Ice -->
+        <div class="diagram" data-step="1">
+          <svg viewBox="0 0 460 200" role="img" aria-label="Nine water molecules in a solid hexagonal lattice, held in place by vibration brackets.">
+            <rect class="d-frame" x="20" y="25" width="420" height="150" rx="6" />
+            <text class="d-label" x="230" y="18" text-anchor="middle" style="font-size:var(--dia-label-size);">BEFORE (Solid Ice)</text>
+            <!-- 9 Water molecules centered in 3x3 lattice -->
+            <g transform="translate(75, 0)">
+              <!-- Row 1 -->
+              <circle cx="115" cy="65" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="109" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="121" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="155" cy="65" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="149" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="161" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="195" cy="65" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="189" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="201" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <!-- Row 2 -->
+              <circle cx="95" cy="95" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="89" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="101" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="135" cy="95" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="129" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="141" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="175" cy="95" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="169" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="181" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <!-- Row 3 -->
+              <circle cx="115" cy="125" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="109" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="121" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="155" cy="125" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="149" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="161" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="195" cy="125" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="189" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="201" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <!-- Vibration Brackets -->
+              <path d="M 75,50 L 70,50 L 70,140 L 75,140" fill="none" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke-bond)"/>
+              <path d="M 215,50 L 220,50 L 220,140 L 215,140" fill="none" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke-bond)"/>
+            </g>
+          </svg>
+          <div class="diagram-cap">&#9675; Hydrogen · <span class="cap-valence">&#9679;</span> Oxygen · all 9 molecules locked in a rigid lattice</div>
+        </div>
+
+        <!-- Step 2: DURING, Melting from surface -->
+        <div class="diagram" data-step="2">
+          <svg viewBox="0 0 460 200" role="img" aria-label="The top six water molecules remain in the rigid lattice while the bottom three have broken free into a loose cluster, showing the lattice melting from the surface inward.">
+            <rect class="d-frame" x="20" y="25" width="420" height="150" rx="6" />
+            <text class="d-label" x="230" y="18" text-anchor="middle" style="font-size:var(--dia-label-size);">DURING (Melting from surface)</text>
+            <g transform="translate(75, 0)">
+              <!-- Top 6: still lattice-bound -->
+              <circle cx="115" cy="65" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="109" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="121" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="155" cy="65" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="149" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="161" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="195" cy="65" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="189" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="201" cy="57" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="95" cy="95" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="89" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="101" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="135" cy="95" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="129" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="141" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="175" cy="95" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="169" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="181" cy="87" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <!-- Bottom 3: freed into fluid contact -->
+              <circle cx="98" cy="145" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="92" cy="137" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="104" cy="137" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="145" cy="150" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="139" cy="142" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="151" cy="142" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="195" cy="145" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+              <circle cx="189" cy="137" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <circle cx="201" cy="137" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+              <!-- Brackets only on still-solid top rows -->
+              <path d="M 75,50 L 70,50 L 70,110 L 75,110" fill="none" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke-bond)"/>
+              <path d="M 215,50 L 220,50 L 220,110 L 215,110" fill="none" stroke="var(--ink-mute)" style="stroke-width: var(--dia-stroke-bond)"/>
+              <!-- Fluid puddle line -->
+              <path d="M 80,160 Q 140,154 210,160" fill="none" stroke="var(--ink-mute)" stroke-dasharray="2 2" style="stroke-width: var(--dia-stroke)"/>
+            </g>
+          </svg>
+          <div class="diagram-cap">the bottom row breaks free first, the lattice loosens from the surface inward</div>
+        </div>
+
+        <!-- Step 3: AFTER, Liquid Water -->
+        <div class="diagram" data-step="3">
+          <svg viewBox="0 0 460 200" role="img" aria-label="The same nine water molecules now sliding freely in a loose liquid puddle.">
+            <rect class="d-frame" x="20" y="25" width="420" height="150" rx="6" />
+            <text class="d-label" x="230" y="18" text-anchor="middle" style="font-size:var(--dia-label-size);">AFTER (Liquid Water)</text>
+            <!-- 9 Water molecules in fluid contact across container bottom -->
+            <circle cx="85" cy="148" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="79" cy="140" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="91" cy="140" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="125" cy="155" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="118" cy="147" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="130" cy="147" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="165" cy="150" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="159" cy="142" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="171" cy="142" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="205" cy="156" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="199" cy="148" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="211" cy="148" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="245" cy="149" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="238" cy="141" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="251" cy="141" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="285" cy="155" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="279" cy="147" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="291" cy="147" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="325" cy="150" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="319" cy="142" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="331" cy="142" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="365" cy="155" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="359" cy="147" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="371" cy="147" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <!-- Second layer molecule -->
+            <circle cx="225" cy="125" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="219" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="231" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <!-- Fluid puddle boundary -->
+            <path d="M 50,165 Q 150,160 250,165 T 410,165" fill="none" stroke="var(--ink-mute)" stroke-dasharray="2 2" style="stroke-width: var(--dia-stroke)"/>
+          </svg>
+          <div class="diagram-cap">&#9675; Hydrogen · <span class="cap-valence">&#9679;</span> Oxygen · physical rearrangement (molecules stay intact)</div>
+        </div>
+      </div>
+
+      <!-- Chemical Change Panel: Hydrogen Combustion -->
+      <h3>Chemical change: hydrogen combustion (2H₂ + O₂ &rarr; 2H₂O)</h3>
+      <div class="figure figure--full" data-motion="step" data-step-count="3" data-step-labels="Before|During|After">
+
+        <!-- Step 1: BEFORE, Reactants -->
+        <div class="diagram" data-step="1">
+          <svg viewBox="0 0 460 200" role="img" aria-label="Six H2 pairs and three O2 pairs, unreacted.">
+            <rect class="d-frame" x="20" y="25" width="420" height="150" rx="6" />
+            <text class="d-label" x="230" y="18" text-anchor="middle" style="font-size:var(--dia-label-size);">BEFORE (6 H₂ + 3 O₂ Reactants)</text>
+            <!-- 6 H2 pairs -->
+            <circle cx="60" cy="65" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="67" cy="65" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="120" cy="55" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="127" cy="55" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="70" cy="120" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="77" cy="120" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="210" cy="135" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="217" cy="135" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="340" cy="60" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="347" cy="60" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="380" cy="115" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="387" cy="115" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <!-- 3 O2 pairs -->
+            <circle cx="150" cy="100" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="163" cy="100" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="260" cy="75" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="273" cy="75" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="300" cy="130" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="313" cy="130" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+          </svg>
+          <div class="diagram-cap">&#9675; Hydrogen · <span class="cap-valence">&#9679;</span> Oxygen · 12 H atoms and 6 O atoms unreacted</div>
+        </div>
+
+        <!-- Step 2: DURING, Active collision & rearrangement -->
+        <div class="diagram" data-step="2">
+          <svg viewBox="0 0 460 200" role="img" aria-label="Two H2 pairs and one O2 pair still unreacted on the left, active collision in the center, and two completed water molecules on the right.">
+            <rect class="d-frame" x="20" y="25" width="420" height="150" rx="6" />
+            <text class="d-label" x="230" y="18" text-anchor="middle" style="font-size:var(--dia-label-size);">DURING (Collision &amp; Rearrangement)</text>
+
+            <!-- Zone Dividers -->
+            <line x1="150" y1="35" x2="150" y2="165" stroke="var(--hair-soft)" stroke-dasharray="3 3"/>
+            <line x1="310" y1="35" x2="310" y2="165" stroke="var(--hair-soft)" stroke-dasharray="3 3"/>
+
+            <!-- Zone 1: Unreacted (2 H2 + 1 O2) -->
+            <text class="d-sub" x="85" y="44" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-mute)">NOT YET COLLIDED</text>
+            <circle cx="55" cy="75" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="62" cy="75" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="55" cy="120" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="62" cy="120" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="105" cy="95" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="118" cy="95" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <text x="85" y="155" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)">2 H₂ + 1 O₂</text>
+
+            <!-- Zone 2: Mid-collision zone (2 H2 + 1 O2 breaking, dashed bonds forming) -->
+            <text class="d-sub" x="230" y="44" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--accent)" font-weight="700">COLLISION &amp; BONDING</text>
+            <circle cx="210" cy="75" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="250" cy="75" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="195" cy="115" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="222" cy="115" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="238" cy="115" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="265" cy="115" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <!-- Forming bonds (dashed) -->
+            <line x1="197" y1="110" x2="207" y2="80" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="2 2" />
+            <line x1="220" y1="110" x2="212" y2="80" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="2 2" />
+            <line x1="240" y1="110" x2="248" y2="80" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="2 2" />
+            <line x1="263" y1="110" x2="253" y2="80" stroke="var(--accent)" stroke-width="1.4" stroke-dasharray="2 2" />
+            <text x="230" y="155" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--accent)">old bonds break · new bonds form</text>
+
+            <!-- Zone 3: Already formed (2 H2O) -->
+            <text class="d-sub" x="375" y="44" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink)" font-weight="700">NEW PRODUCTS</text>
+            <circle cx="355" cy="85" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="349" cy="77" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="361" cy="77" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="395" cy="115" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="389" cy="107" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="401" cy="107" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <text x="375" y="155" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)">2 H₂O formed</text>
+          </svg>
+          <div class="diagram-cap">all 12 H and 6 O atoms accounted for · bonds break and new bonds form with mass conserved</div>
+        </div>
+
+        <!-- Step 3: AFTER, Products -->
+        <div class="diagram" data-step="3">
+          <svg viewBox="0 0 460 200" role="img" aria-label="Six water molecules, fully rearranged from the original hydrogen and oxygen atoms.">
+            <rect class="d-frame" x="20" y="25" width="420" height="150" rx="6" />
+            <text class="d-label" x="230" y="18" text-anchor="middle" style="font-size:var(--dia-label-size);">AFTER (6 H₂O Products)</text>
+            <!-- 6 Water molecules distributed throughout container -->
+            <circle cx="85" cy="75" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="79" cy="67" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="91" cy="67" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="145" cy="125" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="139" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="151" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="215" cy="70" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="209" cy="62" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="221" cy="62" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="275" cy="130" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="269" cy="122" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="281" cy="122" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="345" cy="75" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="339" cy="67" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="351" cy="67" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="395" cy="125" style="r: var(--dia-r-atom); stroke-width: var(--dia-stroke-bond)" fill="var(--accent)" stroke="var(--ink)"/>
+            <circle cx="389" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+            <circle cx="401" cy="117" style="r: var(--dia-r-atom-sm); stroke-width: var(--dia-stroke)" fill="var(--paper-3)" stroke="var(--ink)"/>
+          </svg>
+          <div class="diagram-cap">&#9675; Hydrogen · <span class="cap-valence">&#9679;</span> Oxygen · chemical change complete (12 H and 6 O atoms strictly conserved)</div>
+        </div>
+      </div>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Thinking a dissolved solid has disappeared. Sugar in water is still sucrose. The molecules are spread out between the water molecules, and stirring did not break any bond inside them.</p></div>
+    </div>
+  </section>
+
+  <!-- 03 INTERACTIVE CHANGE LAB -->
+  <section id="s-builder" data-toc="The change lab">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03</span><span class="label">Change lab</span></div>
+      <h2>Watch the particles rearrange.</h2>
+      <p>Pick a change, then drag the slider from start to finish. The dashboard counts every atom that is drawn.</p>
+
+      <div class="sim-box" data-sim="change-lab">
+        <div class="label">Simulation</div>
+        <h4>What happens to the atoms when a change runs from start to finish?</h4>
+        <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a change runs from 0% to 100% in the lab. What happens to the number of each kind of atom on the dashboard?<\/p>",
+  "options": [
+    {
+      "label": "The counts fall when a substance is used up and rise when a new one forms",
+      "correct": false,
+      "feedback": "Burning feels like matter disappearing, and a new substance feels like new matter. But atoms are only regrouped. Every count you see at the start is still there at the end."
+    },
+    {
+      "label": "The counts stay the same in a physical change but change in a reaction",
+      "correct": false,
+      "feedback": "A phase change keeps its counts, which makes this tempting. A reaction keeps them too. It breaks bonds and builds new ones, but it uses the same atoms."
+    },
+    {
+      "label": "The counts stay the same in every change, because atoms only move or regroup",
+      "correct": true,
+      "feedback": "Atoms are never created or destroyed. A physical change moves whole molecules. A reaction regroups the atoms. The counts match either way."
+    }
+  ],
+  "reveal": "<p>Now check it. Run each change on the dashboard and read the counts.<\/p>"
+}
+</script>
+</div>
+        <div class="sim-stage"><canvas aria-label="A beaker with particles. Choose a change and drag the slider to run it."></canvas></div>
+        <div class="sim-controls" role="group" aria-label="Choose a change and set its progress">
+          <button type="button" class="chip" aria-pressed="true" data-scene="water">Water phase change</button>
+          <button type="button" class="chip" aria-pressed="false" data-scene="salt">Dissolving salt</button>
+          <button type="button" class="chip" aria-pressed="false" data-scene="combust">Methane combustion</button>
+          <label class="slider-row">Progress <output>0 %</output>
+            <input type="range" id="changeSlider" min="0" max="100" step="1" value="0" data-unit="%">
+          </label>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="stage"><span class="readout-label">Stage</span><span class="readout-value">Solid ice</span></div>
+          <div class="readout" data-readout="a1" data-atoms><span class="readout-label">Hydrogen atoms, start → now</span><span class="readout-value">18 → 18</span></div>
+          <div class="readout" data-readout="a2" data-atoms><span class="readout-label">Oxygen atoms, start → now</span><span class="readout-value">9 → 9</span></div>
+          <div class="readout" data-readout="a3" data-atoms hidden><span class="readout-label"></span><span class="readout-value">–</span></div>
+          <div class="readout" data-readout="a4" data-atoms hidden><span class="readout-label"></span><span class="readout-value">–</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Predict to start</span>
+        <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="paper-3"></span>Hydrogen atom</li>
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Oxygen atom, or chloride ion (Cl⁻)</li>
+          <li><span class="key" data-shape="dot" data-token="ink-mute"></span>Carbon atom, or sodium ion (Na⁺)</li>
+          <li><span class="key" data-shape="line" data-token="ink-mute"></span>Vibration bracket</li>
+          <li><span class="key" data-shape="dash" data-token="ink-mute"></span>Motion trail, or the surface of the liquid</li>
+          <li><span class="key" data-shape="dash" data-token="accent"></span>Collision</li>
+        </ul>
+        <ol class="try-this">
+          <li>Load water at 0%, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="water:0">Load water, 0%</button> <b>Look for:</b> nine water molecules in a lattice with brackets, and 18 hydrogen and 9 oxygen on the dashboard.</li>
+          <li>Load water at 100%, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="water:100">Load water, 100%</button> <b>Look for:</b> the same nine molecules, far apart. Each one is still H₂O, and the counts have not moved.</li>
+          <li>Load salt at 100%, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="salt:100">Load salt, 100%</button> <b>Look for:</b> water molecules around each ion. The ions are separate, and no new substance formed.</li>
+          <li>Load methane at 100%, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="combust:100">Load methane, 100%</button> <b>Look for:</b> the CH₄ and O₂ are gone, and CO₂ and H₂O have taken their place. The counts still match.</li>
+        </ol>
+      </div>
+
+      <h3>Use your evidence</h3>
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows for water at 100% and methane at 100%. Which statement fits both rows?<\/p>",
+  "options": [
+    {
+      "label": "The atom counts match in both rows, but only methane made new substances",
+      "correct": true,
+      "feedback": "Both rows show the same atom count at the start and now. Water is still H₂O at 100%. Methane became CO₂ and H₂O, so it made new substances."
+    },
+    {
+      "label": "Both rows made new substances, because the particles ended up in new places",
+      "correct": false,
+      "feedback": "Moving to new places feels like becoming something new. But your water row still lists H₂O. Only the methane row lists different molecules."
+    },
+    {
+      "label": "The atom count fell in the methane row, because the fuel burned away",
+      "correct": false,
+      "feedback": "Burning looks like loss, which is why this is tempting. Check the last two columns of your methane row. The count at the end equals the count at the start."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. A physical change keeps every molecule. A chemical change makes new molecules. Either way, no atom is lost.</p>"
+}
+</script>
+</div>
+    </div>
+  </section>
+
+  <!-- 04 MASS & OPEN SYSTEMS -->
+  <section id="s-mass" data-toc="Conservation and systems">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04</span><span class="label">Where the mass goes</span></div>
+      <h2>Where does the mass go in an open system?</h2>
+      <p>The <strong class="term" data-term="conservation-of-mass">Law of Conservation of Mass</strong> says atoms are never created or destroyed. In a closed container, the mass before a change equals the mass after it.</p>
+      <p>But a cooking pan, an oven and an open beaker are <strong class="term" data-term="open-system">open systems</strong>. Bread dough loses weight as it bakes. That does not break the law. Heat boils off water and releases carbon dioxide from the leavening agent. In an open system, those gas molecules drift into the room. The atoms still exist, but they are no longer on your scale.</p>
+      
+      <div class="more-wrap">
+        <button class="more-toggle" data-more="the closed system check">How do we prove it? &rarr;</button>
+        <div class="more-body">
+          <p>To test conservation, run the change in a sealed flask (a closed system). Mix vinegar and baking soda in the flask and the gas stays trapped. The scale shows no change in mass, even though bubbles form and a new solution appears. Every atom stays inside.</p>
+        </div>
+      </div>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Saying the bread lost atoms. The pan lost mass because gas escaped into the room. In a sealed flask, the same change keeps its mass.</p></div>
+    </div>
+  </section>
+
+  <!-- 05 PREDICT FIRST -->
+  <section id="s-predict" data-toc="Check yourself">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">05</span><span class="label">Check yourself</span></div>
+      <h2>Commit to a prediction first.</h2>
+      
+      <!-- Q1 -->
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<strong>1. Dissolving sugar in water:</strong> You stir solid sucrose crystals into water until they disappear. What kind of change is this at the particle level?",
+  "options": [
+    {"label": "Physical change", "correct": true, "feedback": "The sucrose molecules spread out between the water molecules, and the bonds inside each one stay intact. Evaporate the water and the sugar crystals come back."},
+    {"label": "Chemical change", "correct": false, "feedback": "The crystals vanish, which feels like a new substance forming. But no new substance appeared. The sucrose molecules are still there, mixed in with the water."}
+  ],
+  "reveal": "<h4>The answer: physical</h4>\n<p>Sugar molecules separate and mix with water molecules. The covalent bonds inside each sucrose molecule stay intact. If you evaporate the water, the sugar crystals return unchanged.</p>"
+}
+</script>
+</div>
+
+      <!-- Q2 -->
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<strong>2. Mixing vinegar and baking soda:</strong> Mixing vinegar (acetic acid) and baking soda yields rapid carbon dioxide bubbling and a temperature drop. What kind of change is this?",
+  "options": [
+    {"label": "Physical change", "correct": false, "feedback": "Boiling water also makes bubbles, which makes this tempting. But boiling gives water vapor, the same substance. Here the gas is carbon dioxide, which was not in either starting material."},
+    {"label": "Chemical change", "correct": true, "feedback": "The gas is carbon dioxide, a substance that was not in the vinegar or the baking soda. Bonds broke and new bonds formed, so the change is chemical."}
+  ],
+  "reveal": "<h4>The answer: chemical</h4>\n<p>The bubbling is gas production. A new substance, CO<sub>2</sub>, forms when bonds break and atoms regroup. That makes this a chemical change.</p>"
+}
+</script>
+</div>
+      
+      <!-- Sort & Classify drill -->
+      <h3>Practice sorting everyday changes</h3>
+      <p>Same skill, faster reps. Commit each of the six scenes to a bin before you see why.</p>
+      <div data-widget="sort-classify">
+        <script type="application/json" class="w-config">
+        {
+          "categories": [
+            {"id": "phys", "label": "Physical Change"},
+            {"id": "chem", "label": "Chemical Change"}
+          ],
+          "items": [
+            {
+              "text": "Water boils in a pot. Bubbles rise and pop at the surface.",
+              "category": "phys",
+              "feedback_right": "The bubbles are water vapor, the same H₂O molecules, now moving too fast to stay in the liquid. No bonds inside the molecules broke. Condense the steam and you have your water back.",
+              "feedback_wrong": "Bubbles look like the vinegar-and-baking-soda gas from question 2, but check what's inside them. It's water vapor: the same H₂O molecules. A brand-new gas means chemical; the same substance escaping as a gas means physical."
+            },
+            {
+              "text": "An iron nail left outside turns orange and flaky over a few months.",
+              "category": "chem",
+              "feedback_right": "Slow and quiet, but the identity changed: gray, magnetic iron became orange, crumbly iron oxide. Iron atoms bonded to oxygen atoms they were never bonded to before. New substance, no flame required.",
+              "feedback_wrong": "A rusting nail has no flames and no bubbles, so it feels physical. But drama is not the test. Identity is. Rust is a new substance, iron oxide, with new properties: orange instead of gray, crumbly instead of strong."
+            },
+            {
+              "text": "You tear a sheet of aluminum foil into small pieces.",
+              "category": "phys",
+              "feedback_right": "Every scrap is still aluminum, the same substance in smaller portions. Changing size and shape never touches the bonding.",
+              "feedback_wrong": "You can't un-tear it, so it feels permanent, and permanent feels chemical. But reversibility is a hint, not the rule. The real test is identity, and every scrap is still aluminum. Nothing new formed."
+            },
+            {
+              "text": "An egg fries in a pan: the clear liquid turns white and solid.",
+              "category": "chem",
+              "feedback_right": "Heat permanently rearranged the egg proteins into new substances. Cooling the pan never gets the clear liquid back, the change built something new.",
+              "feedback_wrong": "It's just heating, like melting butter, that's the trap. Melted butter re-solidifies as butter. A fried egg never returns to clear liquid, because the heat rebuilt its proteins into new substances."
+            },
+            {
+              "text": "Water droplets appear on the outside of a cold soda can.",
+              "category": "phys",
+              "feedback_right": "That water was already in the room as invisible vapor. The cold can slowed those molecules down enough to condense. Same H₂O, new phase.",
+              "feedback_wrong": "Water appearing out of nowhere looks like a new substance forming. But it was in the air all along as invisible vapor, and the cold surface condensed it. That is a phase change, not a reaction."
+            },
+            {
+              "text": "You snap a glow stick and it starts glowing.",
+              "category": "chem",
+              "feedback_right": "The snap breaks an inner vial and mixes two solutions that react. The glow is the giveaway: the reaction builds new molecules and releases energy as light. Light production signals chemical change.",
+              "feedback_wrong": "The liquid looks the same afterward, only glowing, so nothing seems to have formed. But the light has to come from somewhere. A reaction inside builds new molecules and releases energy. Light production is a sign of chemical change."
+            }
+          ],
+          "reveal": "<h4>The one test that decides them all</h4><p>Every scene comes down to one question: <strong>is it the same substance afterward?</strong> Boiling bubbles and droplets on a cold can look dramatic, yet both stay physical because the molecules are unchanged. A rusting nail and a glow stick look quiet, yet both are chemical because new substances form. Do not grade the drama. Check the identity.</p>"
+        }
+        </script>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 06 RECALL -->
+  <section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">06</span><span class="label">Say it back</span></div>
+      <h2>Fill the blanks from memory.</h2>
+      <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+      <p class="recall-sentence">
+        A change that moves or spreads particles but keeps every bond is a <input class="blank" data-answer="physical change" placeholder="?">.
+        A change where bonds break and atoms regroup into new substances is a <input class="blank" data-answer="chemical change" placeholder="?">.
+        The starting substances in a chemical reaction are the <input class="blank" data-answer="reactants" placeholder="?">.
+        The new substances that form are the <input class="blank" data-answer="products" placeholder="?">.
+        A system where gas can escape into the room is an <input class="blank" data-answer="open system" placeholder="?">.
+      </p>
+      <div class="recall-actions">
+        <button class="btn" data-recall-check>Check</button>
+        <button class="btn ghost" data-recall-reveal>Show answers</button>
+        <button class="btn ghost" data-recall-reset>Reset</button>
+        <span class="feedback" data-recall-feedback></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 SELF-EXPLAIN -->
+  <section id="s-selfx" data-toc="Self-explain">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">07</span><span class="label">Explain it to yourself</span></div>
+      <div class="selfx-mark"><p>Explain why a flatbread loses mass as it bakes on an open pan. Use the Law of Conservation of Mass.</p></div>
+      <p class="hint">Writing it out forces your brain to organize the idea. Write your answer first, then peek and compare.</p>
+      <textarea class="textbox" id="selfx" placeholder="The mass drops because..."></textarea>
+      <div>
+        <button class="btn ghost" data-peek>Compare with a model answer</button>
+        <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+          <p>Baking is a chemical change. The dough releases carbon dioxide and steam. The pan is an open system, so the gas molecules escape into the air. The mass on the scale drops. That does not break the Law of Conservation of Mass. The escaping gas carries atoms and mass into the room, and the total number of atoms stays the same.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 EXAM PRACTICE -->
+  <section id="s-exam" data-toc="Exam practice">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">08</span><span class="label">Now the way it's marked</span></div>
+      <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+      <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+      <div class="exam-frame">
+        <div class="exam-meta"><span class="exam-src">Gen Chem · HS-PS1-2 · constructed response</span><span class="exam-marks">[4 marks]</span></div>
+        <p class="exam-q">Sample A (solid paraffin wax, C<sub>25</sub>H<sub>52</sub>) is gently warmed until it liquefies. Sample B (solid sucrose, C<sub>12</sub>H<sub>22</sub>O<sub>11</sub>) is heated strongly in an open crucible. It chars, releases water vapor and leaves a black carbon residue.
+          <span class="sub">Classify each change. Describe the covalent bonds and intermolecular forces at the particle level. Apply the Law of Conservation of Mass.</span></p>
+        <textarea class="textbox" id="examAns" placeholder="Write your constructed response here..."></textarea>
+        <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+        <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+          <ul class="pts">
+            <li><b>Classification (1 mark):</b> You call the melting wax physical and the charring sugar chemical.</li>
+            <li><b>Particle level (1 mark):</b> You say melting overcomes weak intermolecular forces, while charring breaks and forms covalent bonds.</li>
+            <li><b>Conservation (1 mark):</b> You say atoms are conserved in both, so the total mass of atoms stays constant.</li>
+            <li><b>Open system (1 mark):</b> You say water vapor escapes the open crucible, so the mass on the scale drops.</li>
+          </ul></div></div>
+        <div class="callout">
+          <div class="label">Why This Matters</div>
+          <p>Rust on a bridge is a chemical change. Iron atoms bond with oxygen and form iron oxide, a new solid with new properties. Rust is brittle and crumbly, so it slowly weakens the steel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-2 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-2</h3>
+    <p>
+      Distinguish physical phase changes from chemical bond rearrangements with diagnostic questions. The system analyzes your evidence-based claims and issues an authenticated mastery certificate.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-2" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+  <div class="footer">
+    <div class="label">Gen Chem · Semester 1 · 1-2d</div>
+    <p>Physical vs. Chemical Change. Next: scaling up from particles to the laboratory scale with the mole and molar mass.</p>
+  </div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="2-2a.js"></script>
+</body>
+</html>

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" data-book="physics" data-lesson="1-3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Lesson 1-3: Kinematics Equations & 2D Projectiles | SAS General Physics</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+  <main>
+    <section class="hero" id="s-hero" data-toc="Opening">
+      <div>
+        <div class="label">Lesson 1-3 &middot; Kinematics Equations &amp; 2D Projectiles</div>
+        <h1>Drop a capsule from 45 metres. Three equations tell you when it lands.</h1>
+        <p class="lede">A capsule falls 45 meters to a canyon floor. How long does the fall take, and how fast is the capsule moving when it lands? Three equations answer both questions for any motion with constant acceleration.</p>
+        <div class="meta-strip">
+          <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS2-1</b>Analyze data to support the claim that Newton's second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration.</div></div>
+          <div class="meta-block"><div class="k">Objective</div><div class="v">You can choose one of three kinematics equations and use it to find an unknown in one-dimensional motion.</div></div>
+          <div class="meta-block"><div class="k">Scope</div><div class="v">The three kinematics equations, choosing the right one, free fall in one dimension, and solving for one unknown. One Enrichment section covers launches in two dimensions.</div></div>
+        </div>
+        <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+      </div>
+    </section>
+
+    <section id="sec-01" data-toc="Hook">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">01</span><span class="label">Hook</span></div>
+        <div class="brief"><div class="label">Mission</div><p><b>Operation Projectile Precision.</b> ISA Flight Academy, Elysium Planitia. A drone hovers 45 meters above a canyon floor and lets a supply capsule drop straight down. You need to know how long the fall takes and how fast the capsule is moving when it lands.</p></div>
+        <p>To make this delivery, you cannot rely on trial and error. A wasted canister is irreplaceable. You calculate the fall time and the landing speed beforehand.</p>
+        <p>The capsule speeds up by the same amount every second. Three equations describe any motion like this.</p>
+        <h3>Make Your Scientific Commitment</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Two identical steel balls are released from rest at the same moment. Ball A falls 20 m. Ball B falls 80 m.<\/p><p>How does Ball B's fall time compare with Ball A's?<\/p>",
+  "options": [
+    {
+      "label": "The same time",
+      "correct": false,
+      "feedback": "Both balls have the same acceleration, but Ball B falls farther. It needs more time to cover the extra distance."
+    },
+    {
+      "label": "Half as long",
+      "correct": false,
+      "feedback": "A longer fall cannot take less time. Ball B must cover four times the distance at the same acceleration."
+    },
+    {
+      "label": "Four times as long",
+      "correct": false,
+      "feedback": "Four times the distance would need four times the time only at a constant speed. A falling ball speeds up, so the extra distance is covered faster."
+    },
+    {
+      "label": "Twice as long",
+      "correct": true,
+      "feedback": "A falling ball speeds up, so the extra 60 m is covered at a higher speed. Four times the distance takes only twice the time: 2.02 s for 20 m and 4.04 s for 80 m."
+    }
+  ],
+  "reveal": "<p><b>Four times the distance takes twice the time.<\/b> The fall time grows with the square root of the height. Equation 2 shows why: &Delta;<em>y<\/em> = &frac12;<em>g<\/em><em>t<\/em>&sup2;.<\/p>"
+}
+</script>
+</div>
+      </div>
+    </section>
+
+<section id="sec-02" data-toc="Kinematics Equations">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">02</span><span class="label">The three equations</span></div>
+        <h2>The Big Three Kinematics Equations</h2>
+
+        <p>In Lesson 1-2, you learned that constant acceleration yields a linear velocity-time graph. Its slope gives acceleration (<em>a</em>) and its area gives displacement (&Delta;<em>x</em>). Combining these two geometric relationships produces the <strong class="term" data-term="kinematics">Big Three Kinematics Equations</strong>.</p>
+
+        <p>These equations describe any motion with <em>constant acceleration</em> using five core variables:</p>
+
+        <div class="var-grid">
+          <div class="card"><h4><em>v</em><sub>i</sub></h4><p class="hint">Initial Velocity (m/s)</p></div>
+          <div class="card"><h4><em>v</em><sub>f</sub></h4><p class="hint">Final Velocity (m/s)</p></div>
+          <div class="card"><h4><em>a</em></h4><p class="hint">Acceleration (m/s&sup2;)</p></div>
+          <div class="card"><h4>&Delta;<em>x</em></h4><p class="hint">Displacement (m)</p></div>
+          <div class="card"><h4><em>t</em></h4><p class="hint">Time Interval (s)</p></div>
+        </div>
+
+        <h3>The Equation Matrix</h3>
+
+        <div class="card">
+          <h4>Equation 1: Velocity as a Function of Time</h4>
+          <p class="hint">Missing: &Delta;<em>x</em></p>
+          <div class="eq-display"><em>v</em><sub>f</sub> = <em>v</em><sub>i</sub> + <em>a</em><em>t</em></div>
+          <p>Use when displacement is neither known nor requested. Direct rearrangement of the definition of acceleration: <em>a</em> = (<em>v</em><sub>f</sub> &minus; <em>v</em><sub>i</sub>) / <em>t</em>.</p>
+        </div>
+        <div class="card">
+          <h4>Equation 2: Position as a Function of Time</h4>
+          <p class="hint">Missing: <em>v</em><sub>f</sub></p>
+          <div class="eq-display">&Delta;<em>x</em> = <em>v</em><sub>i</sub><em>t</em> + ½<em>a</em><em>t</em>&sup2;</div>
+          <p>The cornerstone of projectile and drop calculations. The first term represents displacement if speed were constant; the second term accounts for the velocity boost from acceleration.</p>
+        </div>
+        <div class="card">
+          <h4>Equation 3: The Timeless Equation</h4>
+          <p class="hint">Missing: <em>t</em></p>
+          <div class="eq-display"><em>v</em><sub>f</sub>&sup2; = <em>v</em><sub>i</sub>&sup2; + 2<em>a</em>&Delta;<em>x</em></div>
+          <p>Derived by solving Equation 1 for time (<em>t</em> = (<em>v</em><sub>f</sub> &minus; <em>v</em><sub>i</sub>) / <em>a</em>) and substituting into Equation 2. Essential whenever elapsed time is unknown.</p>
+        </div>
+
+        <h3>Interactive Kinematics Variable Selector</h3>
+        <p>Every kinematics problem provides <b>three known variables</b> and asks you to solve for a <b>fourth</b>. Enter any three known values below to see how the solver selects the correct equation and computes the remaining unknowns:</p>
+
+        <div class="sim-box" data-sim="solver">
+          <div class="label">Simulation</div>
+          <h4>Which kinematics equation fits what you know?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a skater glides at 8.0 m/s and slows at 2.0 m/s&sup2; until she stops. You want her stopping distance. Which equation finds it in one step?<\/p>",
+  "options": [
+    {
+      "label": "Equation 1: <em>v<\/em><sub>f<\/sub> = <em>v<\/em><sub>i<\/sub> + <em>a<\/em><em>t<\/em>",
+      "correct": false,
+      "feedback": "Equation 1 has no distance in it, so it cannot give the stopping distance. It would give the time."
+    },
+    {
+      "label": "Equation 2: &Delta;<em>x<\/em> = <em>v<\/em><sub>i<\/sub><em>t<\/em> + &frac12;<em>a<\/em><em>t<\/em>&sup2;",
+      "correct": false,
+      "feedback": "Equation 2 needs the time, and the time is not known. You would have to find it first."
+    },
+    {
+      "label": "Equation 3: <em>v<\/em><sub>f<\/sub>&sup2; = <em>v<\/em><sub>i<\/sub>&sup2; + 2<em>a<\/em>&Delta;<em>x<\/em>",
+      "correct": true,
+      "feedback": "The knowns are <em>v<\/em><sub>i<\/sub>, <em>v<\/em><sub>f<\/sub> (zero, because she stops) and <em>a<\/em>. Equation 3 uses exactly those three and has no <em>t<\/em>."
+    }
+  ],
+  "reveal": "<p>Now check it. Enter the three knowns in the boxes below and press Solve.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="wide"><canvas aria-label="A velocity-time graph of the solved motion. A straight line runs from the starting velocity to the final velocity. The shaded area under the line is the displacement."></canvas></div>
+          <div class="sim-controls">
+            <div class="solver-grid">
+              <div class="solver-field">
+                <label for="solve-vi"><em>v</em><sub>i</sub> (m/s)</label>
+                <input type="number" id="solve-vi" step="any" placeholder="e.g. 0">
+              </div>
+              <div class="solver-field">
+                <label for="solve-vf"><em>v</em><sub>f</sub> (m/s)</label>
+                <input type="number" id="solve-vf" step="any" placeholder="e.g. 20">
+              </div>
+              <div class="solver-field">
+                <label for="solve-a"><em>a</em> (m/s&sup2;)</label>
+                <input type="number" id="solve-a" step="any" placeholder="e.g. 9.8">
+              </div>
+              <div class="solver-field">
+                <label for="solve-dx">&Delta;<em>x</em> (m)</label>
+                <input type="number" id="solve-dx" step="any" placeholder="e.g. 45">
+              </div>
+              <div class="solver-field">
+                <label for="solve-t"><em>t</em> (s)</label>
+                <input type="number" id="solve-t" step="any" placeholder="e.g. 3">
+              </div>
+            </div>
+            <button type="button" class="btn" data-solve>Solve</button>
+            <button type="button" class="btn ghost" data-clear>Clear</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="knowns"><span class="readout-label">Knowns</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="eq"><span class="readout-label">Equations used</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="answer"><span class="readout-label">Answers</span><span class="readout-value">&ndash;</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Enter exactly three knowns</span>
+          <div class="solver-output" data-work aria-live="polite"></div>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="line" data-token="accent"></span>Velocity of the object</li>
+            <li><span class="key" data-shape="square" data-token="good"></span>Area under the line (&Delta;<em>x</em>)</li>
+          </ul>
+          <ol class="try-this">
+            <li>Enter <em>v</em><sub>i</sub> = 8, <em>v</em><sub>f</sub> = 0 and <em>a</em> = &minus;2, then press Solve. <b>Look for:</b> Equation 3 first, then Equation 1. The stopping distance is 16 m. Press Record.</li>
+            <li>Press Clear. Enter <em>v</em><sub>i</sub> = 0, <em>a</em> = 9.8 and <em>t</em> = 3, then press Solve. <b>Look for:</b> Equation 1 gives <em>v</em><sub>f</sub> and Equation 2 gives &Delta;<em>x</em>. Press Record.</li>
+            <li>Press Clear. Choose three knowns of your own, such as <em>v</em><sub>f</sub>, <em>a</em> and &Delta;<em>x</em>. <b>Look for:</b> the solver names the equation that leaves out the one variable you do not know. Press Record.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use two rows of your record table. How did you choose the first equation each time?<\/p>",
+  "options": [
+    {
+      "label": "I used the equation that has all three knowns and leaves out the other unknown.",
+      "correct": true,
+      "feedback": "Each of your rows shows this. The equation to use holds the three knowns and one unknown, and it leaves one variable out."
+    },
+    {
+      "label": "I always used Equation 1, because it comes first in the list.",
+      "correct": false,
+      "feedback": "Your rows show different first equations. The list order does not decide which equation fits."
+    },
+    {
+      "label": "I used the equation that has the most unknowns in it.",
+      "correct": false,
+      "feedback": "An equation with two unknowns cannot be solved by itself. Your rows used the equation with one unknown."
+    },
+    {
+      "label": "I used the equation that has the unknown I want, with any other variables.",
+      "correct": false,
+      "feedback": "That equation may hold a second unknown, such as the time, and then you are stuck. Check the Knowns column of your rows."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. In each row, the first equation leaves out one variable that is neither known nor wanted.<\/p>"
+}
+</script>
+</div>
+
+        <div class="callout"><div class="label">Common mistake</div><p>A braking object does not keep its starting speed. If you multiply the starting speed by the stopping time, you get a distance that is too large.</p></div>
+      </div>
+    </section>
+    <section id="sec-03" data-toc="Checkpoints">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">03</span><span class="label">Checkpoints</span></div>
+        <h2>Checkpoint Predictions</h2>
+        <p>Test what you can predict before you see the explanation.</p>
+        <h3>Checkpoint 1: Stopping a Train</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A train moving at 30 m/s brakes at a constant &minus;5.0 m/s&sup2; until it stops. How far does it travel while it brakes?<\/p>",
+  "options": [
+    {
+      "label": "90 m. Use the equation that has no time.",
+      "correct": true,
+      "feedback": "The train starts at 30 m/s and ends at 0, with a = &minus;5.0 m/s&sup2;. The question does not ask for time, so use Equation 3: 0 = 900 &minus; 10&Delta;<em>x<\/em>, so &Delta;<em>x<\/em> = 90 m."
+    },
+    {
+      "label": "180 m. The train moves at 30 m/s for 6 s.",
+      "correct": false,
+      "feedback": "This counts the full 30 m/s for the whole stop. The train slows down, so its average speed is only 15 m/s and the distance is 90 m."
+    },
+    {
+      "label": "6 m. The train stops after 6 s.",
+      "correct": false,
+      "feedback": "Six seconds is the stopping time (30 &divide; 5.0). The question asks for a distance, which needs an equation with &Delta;<em>x<\/em>."
+    },
+    {
+      "label": "150 m. The train covers 30 m/s &times; 5.0 s.",
+      "correct": false,
+      "feedback": "The 5.0 is an acceleration in m/s&sup2;, not a time in seconds. Multiplying a speed by it does not give a distance."
+    }
+  ],
+  "reveal": "<p><b>90 m.<\/b> Known: <em>v<\/em><sub>i<\/sub> = 30 m/s, <em>v<\/em><sub>f<\/sub> = 0, <em>a<\/em> = &minus;5.0 m/s&sup2;. Unknown: &Delta;<em>x<\/em>. Time is neither known nor asked for, so Equation 3 is the one to use.<\/p>"
+}
+</script>
+</div>
+        <h3>Checkpoint 2: A Ball Thrown Straight Up</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A ball is thrown straight up at 14.7 m/s. Use <em>g<\/em> = 9.8 m/s&sup2;. How long does the ball take to reach the top of its path?<\/p>",
+  "options": [
+    {
+      "label": "3.0 s. This is the time for the whole trip up and down.",
+      "correct": false,
+      "feedback": "Three seconds is the time to go up and come back to the start. The question asks only for the trip to the top, which is half of that."
+    },
+    {
+      "label": "1.5 s. The velocity falls from 14.7 m/s to 0.",
+      "correct": true,
+      "feedback": "At the top, the velocity is 0. With Equation 1 and <em>a<\/em> = &minus;9.8 m/s&sup2;: 0 = 14.7 &minus; 9.8<em>t<\/em>, so <em>t<\/em> = 1.5 s."
+    },
+    {
+      "label": "14.7 s. The time equals the starting speed.",
+      "correct": false,
+      "feedback": "A speed in m/s is not a time in seconds. Divide the change in velocity by the acceleration to get a time."
+    },
+    {
+      "label": "0.67 s. The time is g divided by the speed.",
+      "correct": false,
+      "feedback": "This divides in the wrong order. The time is the change in velocity divided by the acceleration, 14.7 &divide; 9.8."
+    }
+  ],
+  "reveal": "<p><b>1.5 s.<\/b> Take up as positive. The ball starts at +14.7 m/s and the acceleration is &minus;9.8 m/s&sup2;. At the top the velocity is 0, so <em>v<\/em><sub>f<\/sub> = <em>v<\/em><sub>i<\/sub> + <em>a<\/em><em>t<\/em> gives <em>t<\/em> = 14.7 &divide; 9.8 = 1.5 s.<\/p>"
+}
+</script>
+</div>
+      </div>
+    </section>
+
+    <section id="sec-04" data-toc="Retrieval &amp; Practice">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">04</span><span class="label">Practice</span></div>
+        <h2>Retrieval &amp; Practice</h2>
+
+        <p>Type your answers in the blanks below and press enter or click Check Blanks to test your immediate recall:</p>
+
+        <div class="recall">
+<div class="label">Rapid Concept Recall</div>
+<ol class="recall-list">
+<li>A velocity-time graph with constant acceleration is a straight line, and its slope is the <input type="text" class="blank" data-answer="acceleration" aria-label="Blank 1">.</li>
+<li>The mathematical equation linking velocities, acceleration, and displacement without time is <em>v</em><sub>f</sub>&sup2; = <input type="text" class="blank" data-answer="vi^2|vi2|vi&sup2;|vi&#178;|v_i^2" aria-label="Blank 2"> + 2<em>a</em>&Delta;<em>x</em>.</li>
+<li>For an object dropped from rest from height h, the fall time is given by the formula t = &radic;(<input type="text" class="blank" data-answer="2h/g|2h / g" aria-label="Blank 3">).</li>
+<li>Near Earth's surface, a falling object gains about <input type="text" class="blank" data-answer="9.8|10|9.8 m/s" aria-label="Blank 4"> m/s of speed every second.</li>
+</ol>
+<div class="recall-actions">
+<button class="btn" type="button" data-recall-check>Check</button>
+<button class="btn ghost" type="button" data-recall-reveal>Show answers</button>
+<button class="btn ghost" type="button" data-recall-reset>Reset</button>
+<span class="feedback" data-recall-feedback role="status"></span>
+</div>
+</div>
+
+        <h3>Structured Practice: ECR Problem</h3>
+        <p>Construct a full Evidence-Claim-Reasoning argument for this Solo Trial retake problem:</p>
+
+        <div class="exam-frame">
+          <div class="exam-meta"><span class="exam-src">Written response &middot; Rover braking test</span><span class="exam-marks">4 marks</span></div>
+          <p class="exam-q">A rover drives at 12 m/s on level ground. It brakes with a constant acceleration of &minus;3.0 m/s&sup2; until it stops.</p>
+          <ol class="alpha-list">
+            <li>Calculate the time the rover takes to stop.</li>
+            <li>Calculate the stopping distance.</li>
+            <li>Calculate how far the rover travels in the first 2.0 s of braking.</li>
+          </ol>
+          <textarea class="textbox" aria-label="Your answer"></textarea>
+          <div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+          <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide</div><ul class="pts">
+            <li><b>Part (a) (1 mark):</b> You use <em>v</em><sub>f</sub> = <em>v</em><sub>i</sub> + <em>a</em><em>t</em>: 0 = 12 &minus; 3.0<em>t</em>, so <em>t</em> = 4.0 s.</li>
+            <li><b>Part (b) (1 mark):</b> You use <em>v</em><sub>f</sub>&sup2; = <em>v</em><sub>i</sub>&sup2; + 2<em>a</em>&Delta;<em>x</em>: 0 = 144 &minus; 6.0&Delta;<em>x</em>, so &Delta;<em>x</em> = 24 m.</li>
+            <li><b>Part (c) (2 marks):</b> You use &Delta;<em>x</em> = <em>v</em><sub>i</sub><em>t</em> + &frac12;<em>a</em><em>t</em>&sup2; and keep <em>a</em> negative.</li>
+            <li>You calculate 12(2.0) + &frac12;(&minus;3.0)(2.0)&sup2; = 24 &minus; 6.0 = 18 m.</li>
+          </ul></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sec-05" data-toc="Launches in two directions" data-enrichment>
+      <div class="narrow">
+        <div class="section-tag"><span class="num">05</span><span class="label">Two-dimensional motion</span><span class="tag-enrichment">Enrichment</span></div>
+        <h2>Launches in Two Directions</h2>
+
+      <details class="enrichment">
+        <summary><span class="tag-enrichment">Enrichment</span><h4>Perpendicular Independence &amp; Horizontal Launches</h4></summary>
+        <p class="hint">Extra depth. The rest of the lesson works without it.</p>
+        <div class="callout"><div class="label">Mission</div><p><b>ISA Flight Academy Priority Order.</b> Your flight crew has arrived at the remote rift valley of Elysium Planitia. An expedition team on the canyon floor below is stranded without fresh battery modules. You are stationed on the sheer cliff rim at altitude <em>h</em>. Your transport drone cannot land in the canyon. It must launch a supply capsule horizontally at speed <em>v</em><sub>x0</sub> to land cleanly inside the drop circle.</p></div>
+        <h3>The Central Puzzle: Dropped vs. Fired</h3>
+        <p>Imagine two identical steel spheres at the same height above a level floor. At the same instant, Sphere A drops from rest, while Sphere B is fired horizontally at 30 m/s.</p>
+        <p>Which sphere strikes the ground first?</p>
+        <h3>Make Your Scientific Commitment</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Before you run the strobe experiment below, select your prediction:<\/p>",
+  "options": [
+    {
+      "label": "Sphere A (dropped) hits first because it takes the shortest straight-line path.",
+      "correct": false,
+      "feedback": "Sphere A falls straight down, but a shorter path does not mean a shorter time. The time depends only on the vertical motion, which is the same for both spheres."
+    },
+    {
+      "label": "Sphere B (fired) hits first because the launcher gives it high initial kinetic energy.",
+      "correct": false,
+      "feedback": "The launcher adds speed sideways, not downward. Both spheres start with zero downward speed, so the extra energy does not shorten the fall."
+    },
+    {
+      "label": "Both spheres hit the ground at the exact same instant.",
+      "correct": true,
+      "feedback": "The horizontal launch speed has no effect on the fall. Both spheres have the same downward acceleration and the same drop height, so the fall times are equal."
+    }
+  ],
+  "reveal": "<p><b>The Scientific Verdict: Simultaneous Impact<\/b><\/p><p>Both spheres hit the ground at the exact same instant. The horizontal launch speed has zero influence on the downward acceleration. Gravity gives both spheres the same constant downward acceleration:<\/p><div class=\"eq-display\"><em>a<\/em><sub>y<\/sub> = &minus;<em>g<\/em> = &minus;9.8 m/s&sup2;<\/div><p>Both spheres start with zero initial vertical velocity (<em>v<\/em><sub>y0<\/sub> = 0). Both fall through a displacement &Delta;<em>y<\/em> = &minus;<em>h<\/em>. So their fall times are identical.<\/p>"
+}
+</script>
+</div>
+        <h3>Perpendicular Independence &amp; Horizontal Launches</h3>
+<p>The master key to analyzing two-dimensional motion was discovered by Galileo Galilei: <b>perpendicular motions are completely independent of one another</b>. An object moving simultaneously in the horizontal (<em>x</em>) and vertical (<em>y</em>) directions does not experience any cross-talk between coordinates.</p>
+
+        <figure class="figure figure--full">
+          <div class="diagram">
+            <img src="../assets/photos/projectile_independence_strobe.jpg" alt="Stroboscopic multi-flash photograph of bouncing ball projectile trajectories demonstrating perpendicular independence" loading="lazy" decoding="async">
+          </div>
+          <figcaption><b>Laboratory Evidence: Stroboscopic Demonstration</b>: Flashed at 25 Hz, the bouncing ball shows uniform horizontal spacing while accelerating downward under gravity. (Photo: Michael Maggs, CC-BY-SA 3.0).</figcaption>
+        </figure>
+
+        <div class="pair-grid">
+          <div class="card">
+            <h4>Horizontal Dimension (X-Axis)</h4>
+            <p>In projectile flight (ignoring air resistance), gravity acts exclusively downward. No force acts horizontally.</p>
+            <ul>
+              <li>Horizontal Acceleration: <em>a</em><sub>x</sub> = 0</li>
+              <li>Horizontal Velocity: <em>v</em><sub>x</sub> = <em>v</em><sub>x0</sub> = constant</li>
+              <li>Horizontal Displacement: &Delta;<em>x</em> = <em>v</em><sub>x0</sub> &middot; <em>t</em></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Vertical Dimension (Y-Axis)</h4>
+            <p>Gravity exerts a continuous downward force causing uniform downward acceleration.</p>
+            <ul>
+              <li>Vertical Acceleration: <em>a</em><sub>y</sub> = &minus;<em>g</em> = &minus;9.8 m/s&sup2;</li>
+              <li>Initial Vertical Speed (Horizontal Launch): <em>v</em><sub>y0</sub> = 0</li>
+              <li>Vertical Fall: &Delta;<em>y</em> = &minus;½<em>g</em><em>t</em>&sup2;</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Deriving Flight Time &amp; Horizontal Range</h3>
+        <p>Because time (<em>t</em>) is a scalar quantity, it is the sole bridge linking the horizontal and vertical worlds. We solve for flight time from the vertical drop height, then substitute into the horizontal equation:</p>
+
+        <div class="card">
+          <h4>Step 1: Vertical Hang-Time (<em>t</em><sub>flight</sub>)</h4>
+          <div class="eq-display">&Delta;<em>y</em> = &minus;½<em>g</em><em>t</em>&sup2; &ensp;&rArr;&ensp; &minus;<em>h</em> = &minus;½<em>g</em><em>t</em>&sup2; &ensp;&rArr;&ensp; <em>t</em><sub>flight</sub> = &radic;(2<em>h</em> / <em>g</em>)</div>
+          <p class="hint">Notice that launch speed <em>v</em><sub>x0</sub> does not appear anywhere in this formula. Flight time is determined strictly by cliff height and gravity.</p>
+          <h4>Step 2: Horizontal <strong class="term" data-term="range">Range</strong> (&Delta;<em>x</em>)</h4>
+          <div class="eq-display">&Delta;<em>x</em> = <em>v</em><sub>x0</sub> &middot; <em>t</em><sub>flight</sub> = <em>v</em><sub>x0</sub> &radic;(2<em>h</em> / <em>g</em>)</div>
+          <p class="hint">This combined relationship allows our ISA flight crew to hit any target coordinate with mathematical certainty.</p>
+        </div>
+
+        <h3>Strobe Experiment: Dropped vs. Fired Simulation</h3>
+        <p>Sphere A is dropped from rest. Sphere B is fired sideways, and you choose its speed. A flash every 0.25 s marks where both spheres are.</p>
+
+        <div class="sim-box" data-sim="dropfire">
+          <div class="label">Simulation</div>
+          <h4>Does sideways speed change how long a ball takes to fall?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: the strobe flashes every 0.25 s. You fire Ball B first at 10 m/s, then at 30 m/s. How do the flash marks of B compare with the marks of A?<\/p>",
+  "options": [
+    {
+      "label": "B&rsquo;s marks sit above A&rsquo;s at each flash.",
+      "correct": false,
+      "feedback": "Both balls start with no downward speed. Gravity pulls both down the same way, so B does not stay higher."
+    },
+    {
+      "label": "B&rsquo;s marks sit below A&rsquo;s at each flash.",
+      "correct": false,
+      "feedback": "The launch speed is sideways. It does not add any downward speed, so B does not fall faster."
+    },
+    {
+      "label": "B&rsquo;s marks sit level with A&rsquo;s, and spaced the same.",
+      "correct": false,
+      "feedback": "The levels match, which is right. But a faster launch carries B farther sideways in every 0.25 s, so the spacing grows."
+    },
+    {
+      "label": "B&rsquo;s marks sit level with A&rsquo;s, but spaced wider.",
+      "correct": true,
+      "feedback": "The fall is the same for both, so the marks stay level. B covers more sideways distance in each 0.25 s at 30 m/s."
+    }
+  ],
+  "reveal": "<p>Now check it. Run each speed and watch the flash marks.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="wide"><canvas aria-label="A graph of height against distance. Ball A drops straight down. Ball B is fired sideways and curves down. Flash marks every 0.25 seconds join the two balls at the same height."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="false" data-speed="10">Fire B at 10 m/s</button>
+            <button type="button" class="chip" aria-pressed="false" data-speed="20">Fire B at 20 m/s</button>
+            <button type="button" class="chip" aria-pressed="true" data-speed="30">Fire B at 30 m/s</button>
+            <button type="button" class="btn" data-restart>Start over</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="time"><span class="readout-label">Time</span><span class="readout-value">0.00 s</span></div>
+            <div class="readout" data-readout="height"><span class="readout-label">Height of both</span><span class="readout-value">45.0 m</span></div>
+            <div class="readout" data-readout="dist"><span class="readout-label">B sideways</span><span class="readout-value">0.0 m</span></div>
+            <div class="readout" data-readout="land"><span class="readout-label">Landing times</span><span class="readout-value">&ndash;</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Both balls are released together</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="dot" data-token="accent"></span>Ball A, dropped</li>
+            <li><span class="key" data-shape="dot" data-token="warn"></span>Ball B, fired sideways</li>
+            <li><span class="key" data-shape="dash" data-token="ink"></span>Flash every 0.25 s</li>
+          </ul>
+          <ol class="try-this">
+            <li>Fire B at 10 m/s and wait for both balls to land. <b>Look for:</b> the flash lines join the two balls at the same height every time. Press Record.</li>
+            <li>Choose 30 m/s and wait for the landing. <b>Look for:</b> B&rsquo;s marks spread wider, but each flash line stays level. Press Record.</li>
+            <li>Choose 20 m/s and wait for the landing. <b>Look for:</b> both balls land at the same time again. Press Record.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use two rows of your record table, with different fired speeds. What is the same in both rows?<\/p>",
+  "options": [
+    {
+      "label": "The landing distance of B.",
+      "correct": false,
+      "feedback": "Your rows show different landing distances. A faster B lands farther away."
+    },
+    {
+      "label": "The fall time, for both balls, in every row.",
+      "correct": true,
+      "feedback": "The fall time stays at the same value for both balls at every speed. Only the sideways distance changes."
+    },
+    {
+      "label": "Only the fall time of A.",
+      "correct": false,
+      "feedback": "B has the same fall time as A in every row, not only A."
+    },
+    {
+      "label": "Nothing, because the speeds differ.",
+      "correct": false,
+      "feedback": "The fired speed differs, but the fall time column does not. Compare the two time columns."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Sideways speed changes how far B goes. It does not change how long B falls.<\/p>"
+}
+</script>
+</div>
+        <h3>Projectile Precision</h3>
+<div class="callout"><div class="label">Mission</div><p>The drone sits on the cliff. Mission Control sets a flag at distance <em>x</em><sub>target</sub>. Work out the launch speed that lands the capsule on the flag. A landing within 2.5 m counts as a hit.</p></div>
+
+        <div class="sim-box" data-sim="precision">
+          <div class="label">Simulation</div>
+          <h4>What launch speed lands the capsule on the flag?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: the drone is on a 45 m cliff on Earth. The flag is 60.6 m from the cliff. Which launch speed lands the capsule on the flag?<\/p>",
+  "options": [
+    {
+      "label": "6.2 m/s",
+      "correct": false,
+      "feedback": "That divides the distance by <em>g<\/em>. Distance is speed times fall time, so find the fall time from the height first."
+    },
+    {
+      "label": "13.2 m/s",
+      "correct": false,
+      "feedback": "That uses <em>h<\/em>/<em>g<\/em> for the fall time. The fall time is &radic;(2<em>h<\/em>/<em>g<\/em>), about 3.0 s."
+    },
+    {
+      "label": "60.6 m/s",
+      "correct": false,
+      "feedback": "That works only if the fall took 1 s. This cliff gives a fall of about 3.0 s."
+    },
+    {
+      "label": "20.0 m/s",
+      "correct": true,
+      "feedback": "The fall time is &radic;(2 &times; 45 / 9.8) = 3.03 s. Then 60.6 m &divide; 3.03 s = 20.0 m/s."
+    }
+  ],
+  "reveal": "<p>Now try it. Set the speed you chose and press Launch. Then use New flag for a new target.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="wide"><canvas aria-label="A cliff on the left and a target flag on the canyon floor. A capsule launched sideways from the cliff curves down toward the flag."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="true" data-planet="9.8">Earth (9.8 m/s&sup2;)</button>
+            <button type="button" class="chip" aria-pressed="false" data-planet="3.7">Mars (3.7 m/s&sup2;)</button>
+            <button type="button" class="chip" aria-pressed="false" data-planet="1.6">Moon (1.6 m/s&sup2;)</button>
+            <label class="slider-row" for="bossHeight"><span>Cliff height</span> <output>45 m</output>
+              <input type="range" id="bossHeight" min="10" max="80" step="1" value="45" data-unit="m" data-digits="0">
+            </label>
+            <label class="slider-row" for="bossVx"><span>Launch speed</span> <output>15.0 m/s</output>
+              <input type="range" id="bossVx" min="5" max="40" step="0.5" value="15" data-unit="m/s" data-digits="1">
+            </label>
+            <button type="button" class="btn" data-launch>Launch</button>
+            <button type="button" class="btn ghost" data-newflag>New flag</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="target"><span class="readout-label">Flag distance</span><span class="readout-value">60.6 m</span></div>
+            <div class="readout" data-readout="time"><span class="readout-label">Flight time</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="land"><span class="readout-label">Landing point</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="miss"><span class="readout-label">Miss</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="need"><span class="readout-label">Speed that hits</span><span class="readout-value">&ndash;</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Set a speed and press Launch</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="dot" data-token="accent"></span>Capsule</li>
+            <li><span class="key" data-shape="line" data-token="accent"></span>Path of the capsule</li>
+            <li><span class="key" data-shape="square" data-token="good"></span>Hit zone around the flag (2.5 m)</li>
+          </ul>
+          <ol class="try-this">
+            <li>Set the launch speed you chose and press Launch. <b>Look for:</b> a landing within 2.5 m of the flag. Press Record.</li>
+            <li>Press New flag. Work out the speed that hits it, set the slider and press Launch. <b>Look for:</b> the Miss readout. Press Record.</li>
+            <li>Choose Mars, press New flag and solve again. <b>Look for:</b> the fall time is longer, so the speed that hits is lower. Press Record.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use two rows of your record table with the same cliff and planet. One row landed long and one landed short. What do the speeds show?<\/p>",
+  "options": [
+    {
+      "label": "The row that landed long used the larger speed. Distance grows with speed at the same fall time.",
+      "correct": true,
+      "feedback": "With the same cliff and planet the fall time is the same. A larger speed then gives a longer distance."
+    },
+    {
+      "label": "The row that landed long used the smaller speed. A slow capsule floats farther.",
+      "correct": false,
+      "feedback": "Speed and distance rise together when the fall time is the same. A slower capsule lands nearer."
+    },
+    {
+      "label": "The speeds do not matter. The fall time alone sets the distance.",
+      "correct": false,
+      "feedback": "The fall time is the same in both rows, so the speed is the only thing that changed the distance."
+    },
+    {
+      "label": "The row that landed short fell for less time, because it was slower.",
+      "correct": false,
+      "feedback": "The fall time depends on the height and gravity, not on the launch speed. It is the same in both rows."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Same fall time, so a larger launch speed lands farther away.<\/p>"
+}
+</script>
+</div>
+        <h3>Checkpoint 1: The Effect of Doubling Launch Speed</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A drone drops a supply capsule horizontally at 15 m/s from height 20 m. The flight time is 2.02 seconds.<\/p><p>The drone now launches the capsule at 30 m/s from the same height. What is the new flight time?<\/p>",
+  "options": [
+    {
+      "label": "1.01 seconds (cut in half because speed is doubled).",
+      "correct": false,
+      "feedback": "Doubling the sideways speed does not change the fall. Only the height and gravity set the fall time."
+    },
+    {
+      "label": "2.02 seconds (unchanged because vertical height determines fall time).",
+      "correct": true,
+      "feedback": "The vertical motion alone sets the flight time: t = &radic;(2h / g). The height and g are the same, so the time stays 2.02 s."
+    },
+    {
+      "label": "4.04 seconds (doubled because energy is increased).",
+      "correct": false,
+      "feedback": "More launch speed means more energy, but not more time in the air. The capsule travels farther sideways in the same time."
+    }
+  ],
+  "reveal": "<p><b>Model Explanation<\/b><\/p><p>2.02 seconds. Vertical acceleration (<em>g<\/em>) and height (<em>h<\/em>) alone set the flight time: <em>t<\/em> = &radic;(2<em>h<\/em> / <em>g<\/em>). Doubling the horizontal speed doubles the horizontal range (&Delta;<em>x<\/em>). It has no effect on how long the capsule falls.<\/p>"
+}
+</script>
+</div>
+        <h3>Checkpoint 2: Quadrupling Cliff Height</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>The cliff height is quadrupled, from <em>h<\/em> to 4<em>h<\/em>. The launch speed stays the same. By what factor does the horizontal distance increase?<\/p>",
+  "options": [
+    {
+      "label": "Factor of 4.",
+      "correct": false,
+      "feedback": "Four times the height does not give four times the distance. The flight time grows with the square root of the height."
+    },
+    {
+      "label": "Factor of 16.",
+      "correct": false,
+      "feedback": "Squaring the height factor goes the wrong way. The time grows as the square root of the height, so the range grows more slowly."
+    },
+    {
+      "label": "Factor of 2.",
+      "correct": true,
+      "feedback": "Flight time grows with &radic;h, and &radic;4 = 2. The launch speed is unchanged, so the range also doubles."
+    }
+  ],
+  "reveal": "<p><b>Model Explanation<\/b><\/p><p>Factor of 2. Flight time scales with the square root of height: <em>t<\/em> &prop; &radic;<em>h<\/em>. When height is multiplied by 4, flight time doubles (&radic;4 = 2). Since &Delta;<em>x<\/em> = <em>v<\/em><sub>x<\/sub> &middot; <em>t<\/em> and <em>v<\/em><sub>x<\/sub> is unchanged, the horizontal landing distance doubles.<\/p>"
+}
+</script>
+</div>
+<h3>Structured Practice: ECR Problem</h3>
+        <p>Construct a full Evidence-Claim-Reasoning argument for this Solo Trial retake problem:</p>
+
+        <div class="exam-frame">
+          <div class="exam-meta"><span class="exam-src">Elysium Canyon Drone Rescue Challenge</span><span class="exam-marks">4 marks</span><span class="tag-enrichment">Enrichment</span></div>
+          <p class="exam-q">A reconnaissance rover drives off a horizontal 20.0-meter cliff ledge on Earth (<em>g</em> = 9.8 m/s&sup2;) at a forward speed of 8.50 m/s.</p>
+          <ol class="alpha-list">
+            <li>Calculate the time required for the rover to hit the canyon floor.</li>
+            <li>Determine the horizontal distance from the base of the cliff to the impact site.</li>
+            <li>Calculate the magnitude of the rover's total velocity vector just before impact.</li>
+          </ol>
+          <textarea class="textbox" aria-label="Your answer"></textarea>
+          <div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+          <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide</div><ul class="pts">
+            <li><b>Part (a) [1 Mark]:</b><div class="eq-display"><em>t</em> = &radic;(2<em>h</em> / <em>g</em>) = &radic;[2(20.0 m) / (9.8 m/s&sup2;)] = &radic;4.082 = 2.02 s</div><span class="hint">(Accept 2.00 s if using g = 10 m/s&sup2;).</span></li>
+            <li><b>Part (b) [1 Mark]:</b><div class="eq-display">&Delta;<em>x</em> = <em>v</em><sub>x0</sub> &middot; <em>t</em> = (8.50 m/s)(2.02 s) = 17.2 m</div><span class="hint">(Accept 17.0 m if using g = 10 m/s&sup2;).</span></li>
+            <li><b>Part (c) [2 Marks]:</b><div class="eq-display"><em>v</em><sub>y</sub> = <em>v</em><sub>y0</sub> &minus; <em>g</em><em>t</em> = 0 &minus; (9.8 m/s&sup2;)(2.02 s) = &minus;19.8 m/s</div><div class="eq-display"><em>v</em><sub>total</sub> = &radic;(<em>v</em><sub>x</sub>&sup2; + <em>v</em><sub>y</sub>&sup2;) = &radic;[(8.50)&sup2; + (&minus;19.8)&sup2;] = &radic;[72.25 + 392.0] = 21.5 m/s</div><span class="hint">1 mark for finding vertical velocity component; 1 mark for vector Pythagorean hypotenuse (accept 21.5 to 21.8 m/s).</span></li>
+          </ul></div>
+        </div>
+        </div>
+      </details>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/book.js"></script>
+  <script src="../../textbook/core.js"></script>
+  <script src="../../textbook/widgets.js"></script>
+  <script src="../../textbook/sim.js"></script>
+  <script src="../assets/glossary.js"></script>
+  <script src="../assets/draw.js"></script>
+  <script src="../assets/reference-center.js"></script>
+  <script src="1-3.js"></script>
+</body>
+</html>

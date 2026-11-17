@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" data-book="physics" data-lesson="2-3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Lesson 2-3: Newton's Third Law &amp; Action-Reaction | SAS General Physics</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+  <main>
+    <section class="hero" id="s-hero" data-toc="Opening">
+      <div>
+        <div class="label">Lesson 2-3 &middot; Newton's Third Law &amp; Action-Reaction</div>
+        <h1>An astronaut is stranded five metres from the airlock. She throws her toolbox away to get home.</h1>
+        <p class="lede">Forces never come alone. Every force is an interaction between two bodies. This lesson shows how the two forces of an interaction behave. It also shows what stays the same when two bodies push on each other.</p>
+        <div class="meta-strip">
+          <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS2-1</b>Analyze data to support the claim that Newton's second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration. <b>HS-PS2-2</b>Use mathematical representations to support the claim that the total momentum of a system of objects is conserved when there is no net force on the system.</div></div>
+          <div class="meta-block"><div class="k">Objective</div><div class="v">You can name a third-law pair and explain why it never cancels. You can use conservation of momentum for two bodies on a line.</div></div>
+          <div class="meta-block"><div class="k">Scope</div><div class="v">Third-law pairs, the horse-and-cart question, the momentum of two bodies in one dimension, and rocket propulsion.</div></div>
+        </div>
+        <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+      </div>
+    </section>
+
+    <section id="sec-01" data-toc="Mission Briefing">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">01</span><span class="label">Hook</span></div>
+        <div class="brief"><div class="label">Mission</div><p><b>Level 2: Force Frontier.</b> Orbital Space Station, Spacewalk Readings.</p></div>
+        <p>
+          Imagine an astronaut floating untethered five meters outside the International Space Station with zero velocity.
+        </p>
+        <p>
+          She holds a heavy 15-kilogram toolbox. There is nothing to hold onto, and no air to push against.
+        </p>
+        <p>
+          To return to the airlock, she hurls the toolbox directly away from the station.
+        </p>
+        <p>
+          As she pushes the toolbox forward, the toolbox pushes her backward toward safety.
+        </p>
+        <p>
+          You cannot touch something without it touching you back. This symmetry is <strong class="term" data-term="newtons-third-law">Newton's Third Law of Motion</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section id="sec-02" data-toc="Interaction Pairs">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">02</span>
+          <span class="label">Interaction pairs</span>
+        </div>
+
+        <h2>Interaction Pairs</h2>
+        <p>
+          Newton saw that a force is not a property of one object. A force is an interaction between two objects:
+        </p>
+
+        <div class="eq-display">
+          <b>F</b><sub>A on B</sub> = &minus;<b>F</b><sub>B</sub><sub> on A</sub>
+        </div>
+
+        <p>
+          Whenever A exerts a force on B, B exerts an equal and opposite force on A.
+        </p>
+
+        
+        <div class="card">
+          <h4>
+            The Four Features of a Third-Law Pair
+          </h4>
+          <ol>
+            <li><b>Two Different Objects:</b> The forces act on two separate bodies (one on A, one on B).</li>
+            <li><b>Same Physical Type:</b> Both forces share the same physical mechanism (both gravitational, both normal, or both magnetic).</li>
+            <li><b>Strictly Equal Magnitudes:</b> |<b>F</b><sub>A on B</sub>| = |<b>F</b><sub>B on A</sub>| at every single instant.</li>
+            <li><b>Strictly Opposite Directions:</b> The two vectors point in exactly opposite directions along the line of interaction.</li>
+          </ol>
+        </div>
+
+        <h3>The Table and Book Fallacy</h3>
+        <p>
+          Consider a textbook resting on a table. Downward gravity acts on the book. Upward normal force acts on the book.
+        </p>
+        <div class="callout"><div class="label">Common mistake</div><p>Normal force and gravity on a resting book are not a third-law pair. Both forces act on the same object, the book. They balance because of Newton's First Law, not Newton's Third Law.</p></div>
+
+        <p>Each of these forces has its real partner on a different object:</p>
+
+        
+        <div class="pair-grid">
+          <div class="card">
+            <b>Gravitational Pair:</b>
+            <p>
+              Earth pulls the book downward with gravitational force <em>F</em><sub>g</sub>.<br>
+              <b>Reaction:</b> The book pulls the entire Earth upward with identical gravitational force <em>F</em><sub>g</sub>.
+            </p>
+          </div>
+
+          <div class="card">
+            <b>Contact Normal Pair:</b>
+            <p>
+              The table pushes upward on the book with normal force <em>F</em><sub>N</sub>.<br>
+              <b>Reaction:</b> The book pushes downward on the table with identical normal force <em>F</em><sub>N</sub>.
+            </p>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-03" data-toc="System Boundaries">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">03</span>
+          <span class="label">The horse-and-cart question</span>
+        </div>
+
+        <h2>Why Action-Reaction Forces Never Cancel</h2>
+        <p>
+          Students often ask: if every force has an equal and opposite reaction force, why does anything accelerate?
+        </p>
+        <p>
+          This classic question is known as the <b>horse-and-cart paradox</b>.
+        </p>
+
+        
+        <div class="callout"><div class="label">Common mistake</div><p><b>The Horse's Argument.</b> &ldquo;If I pull forward on the cart, the cart pulls backward on me with equal force. The two forces sum to zero. Therefore, we cannot move.&rdquo;</p></div>
+
+        <div class="callout"><div class="label">The Physical Resolution:</div><p>
+              Forces only cancel when they act on the <b>same</b> object. Action-reaction forces act on <b>different</b> objects.
+            </p></div>
+
+        <p>
+          To determine whether the horse accelerates, draw a free body diagram of the horse alone.
+        </p>
+        <p>
+          The horse pushes backward against the ground with its hooves. By Newton's Third Law, the ground pushes forward on the horse with static friction.
+        </p>
+        <p>
+          If the ground's forward push exceeds the cart's backward pull, the horse experiences a net forward force and accelerates:
+        </p>
+
+        <div class="eq-display">
+          &Sigma;<em>F</em><sub>horse</sub> = <em>F</em><sub>ground on horse</sub> &minus; <em>F</em><sub>cart on horse</sub> &gt; 0
+        </div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-momentum" data-toc="Conservation of momentum">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">04</span><span class="label">Conservation of momentum</span></div>
+        <h2>Momentum and Conservation of Momentum</h2>
+        <p>A moving object is harder to stop when it has more mass or more speed. <strong class="term" data-term="momentum">Momentum</strong> measures both. It is the mass times the velocity:</p>
+        <div class="eq-display"><em>p</em> = <em>m</em><em>v</em> &emsp; (unit: kg &middot; m/s)</div>
+        <p>Momentum is a vector. In one dimension, its sign shows the direction.</p>
+        <p>Now take two bodies that push on each other, such as two carts that collide. By Newton's Third Law, the two forces are equal and opposite. They also act for the same time. So each cart's momentum changes by the same amount. The two changes point in opposite directions.</p>
+        <p>The total momentum is the sum of the two momenta:</p>
+        <div class="eq-display"><em>p</em><sub>total</sub> = <em>m</em><sub>1</sub><em>v</em><sub>1</sub> + <em>m</em><sub>2</sub><em>v</em><sub>2</sub></div>
+        <p>If no net outside force acts on the two bodies, the total momentum stays the same. Scientists call this <strong class="term" data-term="conservation-of-momentum">conservation of momentum</strong>:</p>
+        <div class="eq-display"><em>p</em><sub>total, before</sub> = <em>p</em><sub>total, after</sub></div>
+        <div class="card">
+          <h4>Worked Example: Two Carts</h4>
+          <p>Cart 1 (2.0 kg) moves at +3.0 m/s. Cart 2 (6.0 kg) moves toward it at &minus;2.0 m/s. Take the right as positive.</p>
+          <div class="eq-lines"><em>p</em><sub>total, before</sub> = 2.0(+3.0) + 6.0(&minus;2.0) = +6.0 &minus; 12.0 = &minus;6.0 kg &middot; m/s.<br>After the collision, <em>p</em><sub>total, after</sub> is also &minus;6.0 kg &middot; m/s.</div>
+          <p class="hint">Each cart's momentum changes. The total does not.</p>
+        </div>
+        <div class="callout"><div class="label">Common mistake</div><p>Momentum is conserved for the two carts together, not for each cart alone. Each cart's momentum changes in a collision. The total stays the same.</p></div>
+        <h3>Check Your Understanding</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Cart 1 (2.0 kg) moves at +3.0 m/s and hits Cart 2 (6.0 kg), which moves at &minus;2.0 m/s. After the collision, Cart 1 moves at &minus;4.5 m/s. No outside force acts on the carts. What is the velocity of Cart 2 after the collision?<\/p>",
+  "options": [
+    {
+      "label": "&minus;0.50 m/s",
+      "correct": false,
+      "feedback": "The sign is wrong. The total momentum is &minus;6.0 kg &middot; m/s, and Cart 1 now has 2.0(&minus;4.5) = &minus;9.0. Cart 2 must hold the other +3.0 kg &middot; m/s, so its velocity is positive."
+    },
+    {
+      "label": "+3.0 m/s",
+      "correct": false,
+      "feedback": "The +3.0 is Cart 2's momentum in kg &middot; m/s, not its velocity. Divide by its mass: 3.0 &divide; 6.0 = 0.50."
+    },
+    {
+      "label": "+0.50 m/s",
+      "correct": true,
+      "feedback": "The total momentum before is 2.0(+3.0) + 6.0(&minus;2.0) = &minus;6.0 kg &middot; m/s. After: 2.0(&minus;4.5) + 6.0<em>v<\/em> = &minus;6.0, so 6.0<em>v<\/em> = +3.0 and <em>v<\/em> = +0.50 m/s."
+    },
+    {
+      "label": "&minus;2.0 m/s",
+      "correct": false,
+      "feedback": "That is Cart 2's velocity before the collision. Cart 2 felt a force from Cart 1, so its velocity changed."
+    }
+  ],
+  "reveal": "<p><b>+0.50 m/s.<\/b> Total momentum is conserved because no outside force acts. Cart 1 ends with &minus;9.0 kg &middot; m/s. The total must still be &minus;6.0 kg &middot; m/s, so Cart 2 ends with +3.0 kg &middot; m/s. Its mass is 6.0 kg, so its velocity is +0.50 m/s.<\/p>"
+}
+</script>
+</div>
+      </div>
+    </section>
+
+    <section id="sec-04" data-toc="Force Collider">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">05</span>
+          <span class="label">Simulation</span>
+        </div>
+
+        <h2>Dual-Sensor Force Collider</h2>
+        <p>
+          Test collisions between carts of different masses. Digital load cells plot contact forces in real time:
+        </p>
+
+        
+        <div class="sim-box" data-sim="collider">
+          <div class="label">Simulation</div>
+          <h4>Do two carts push on each other with the same force, and what happens to their total momentum?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a 2 kg cart rolls right at 3 m/s. A 6 kg cart rolls left at 2 m/s. They hit head-on. Which cart feels the larger force from the other?<\/p>",
+  "options": [
+    {
+      "label": "Cart 1, the lighter cart.",
+      "correct": false,
+      "feedback": "The lighter cart changes speed more, but that comes from its small mass. The force on it is not larger."
+    },
+    {
+      "label": "Both carts feel the same size force.",
+      "correct": true,
+      "feedback": "Each cart pushes on the other with a force of equal size. The two forces are a third-law pair, so they match at every instant."
+    },
+    {
+      "label": "Cart 2, the heavier cart.",
+      "correct": false,
+      "feedback": "A heavier cart does not push harder in a collision. Each cart pushes back exactly as hard as it is pushed."
+    },
+    {
+      "label": "The cart that moves faster.",
+      "correct": false,
+      "feedback": "Speed before the hit does not set the force pair. Whatever force one cart feels, the other cart feels the same size."
+    }
+  ],
+  "reveal": "<p>Now check it. Run the collision and watch the force graph and the momentum readouts.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="stack"><canvas aria-label="Two carts on a track with a force sensor bumper on each. Below the track, a graph of the force on each cart against the time since the bumpers touched."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="true" data-preset="start">Start: 2 kg and 6 kg</button>
+            <button type="button" class="chip" aria-pressed="false" data-preset="equal">Equal masses</button>
+            <button type="button" class="chip" aria-pressed="false" data-preset="truck">Truck and bug</button>
+            <button type="button" class="chip" aria-pressed="false" data-preset="target">Stationary target</button>
+            <label class="slider-row" for="sliderMass1"><span>Cart 1 mass</span> <output>2 kg</output>
+              <input type="range" id="sliderMass1" min="1" max="10" step="1" value="2" data-unit="kg" data-digits="0">
+            </label>
+            <label class="slider-row" for="sliderVel1"><span>Cart 1 velocity (right)</span> <output>3 m/s</output>
+              <input type="range" id="sliderVel1" min="0" max="6" step="1" value="3" data-unit="m/s" data-digits="0">
+            </label>
+            <label class="slider-row" for="sliderMass2"><span>Cart 2 mass</span> <output>6 kg</output>
+              <input type="range" id="sliderMass2" min="1" max="10" step="1" value="6" data-unit="kg" data-digits="0">
+            </label>
+            <label class="slider-row" for="sliderVel2"><span>Cart 2 velocity (left)</span> <output>-2 m/s</output>
+              <input type="range" id="sliderVel2" min="-6" max="0" step="1" value="-2" data-unit="m/s" data-digits="0">
+            </label>
+            <button type="button" class="btn" data-restart>Start over</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="f1"><span class="readout-label">Force on cart 1</span><span class="readout-value">0.0 N</span></div>
+            <div class="readout" data-readout="f2"><span class="readout-label">Force on cart 2</span><span class="readout-value">0.0 N</span></div>
+            <div class="readout" data-readout="peak"><span class="readout-label">Peak force (each cart)</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="p1"><span class="readout-label">Momentum of cart 1</span><span class="readout-value">+6.0 kg&middot;m/s</span></div>
+            <div class="readout" data-readout="p2"><span class="readout-label">Momentum of cart 2</span><span class="readout-value">&minus;12.0 kg&middot;m/s</span></div>
+            <div class="readout" data-readout="before"><span class="readout-label">Total momentum before</span><span class="readout-value">&minus;6.0 kg&middot;m/s</span></div>
+            <div class="readout" data-readout="after"><span class="readout-label">Total momentum after</span><span class="readout-value">&ndash;</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Ready</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="square" data-token="accent"></span>Cart 1</li>
+            <li><span class="key" data-shape="square" data-token="warn"></span>Cart 2</li>
+            <li><span class="key" data-shape="line" data-token="accent"></span>Force on cart 1</li>
+            <li><span class="key" data-shape="dash" data-token="warn"></span>Force on cart 2</li>
+          </ul>
+          <ol class="try-this">
+            <li>Keep the start values and press Play. Wait until the run ends, then press Record. <b>Look for:</b> the two force lines lie on top of each other, and the total momentum after equals the total before.</li>
+            <li>Choose Truck and bug, play, and press Record. <b>Look for:</b> the peak force is the same on both carts, but the 1 kg cart changes its velocity far more.</li>
+            <li>Choose Stationary target, play, and press Record. <b>Look for:</b> the cart that starts at rest feels the same force as the cart that hits it.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use two rows of your record table. Compare the total momentum before with the total momentum after. What do you see?<\/p>",
+  "options": [
+    {
+      "label": "The total after was always zero.",
+      "correct": false,
+      "feedback": "Check the columns. The total after matches the total before, and the total before is not always zero."
+    },
+    {
+      "label": "The total after was always larger than before.",
+      "correct": false,
+      "feedback": "The carts push on each other, but the pushes are equal and opposite. They do not add momentum to the system."
+    },
+    {
+      "label": "The total after matched the total before in every row.",
+      "correct": true,
+      "feedback": "The forces on the two carts are equal and opposite for the same time. One cart gains the momentum the other loses, so the total stays the same."
+    },
+    {
+      "label": "The heavier cart always lost the most momentum.",
+      "correct": false,
+      "feedback": "Each cart changes its momentum by the same amount in opposite directions. The lighter cart changes its velocity more."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Equal and opposite forces move momentum from one cart to the other. The total stays the same.<\/p>"
+}
+</script>
+</div>
+        
+      </div>
+    </section>
+
+    <section id="sec-05" data-toc="Rocket Propulsion">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">06</span>
+          <span class="label">Rocket propulsion</span>
+        </div>
+
+        <h2>Rocket Propulsion in Vacuum</h2>
+        <div class="callout"><div class="label">Common mistake</div><p>Many students think rockets move by pushing against the surrounding air. If that were true, rockets would fail in the vacuum of outer space. In reality, rockets work better in space because air resistance vanishes.</p></div>
+        <p>
+          A rocket accelerates by pushing backward against its own expelled propellant:
+        </p>
+
+        <div class="eq-display">
+          <b>F</b><sub>rocket on gas</sub> = &minus;<b>F</b><sub>gas on rocket</sub>
+        </div>
+
+        <p>
+          High-pressure combustion forces gas molecules out the engine nozzle at supersonic speeds.
+        </p>
+        <p>
+          By Newton's Third Law, the expelled gas exerts an equal forward thrust force on the rocket body.
+        </p>
+
+        
+        <div class="card">
+          <h4>
+            Connecting the Second and Third Laws
+          </h4>
+          <p>
+            While contact forces are strictly equal, resulting accelerations depend on mass:
+          </p>
+          <div class="eq-display">
+            <em>a</em><sub>gas</sub> = <em>F</em> / <em>m</em><sub>gas</sub>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <em>a</em><sub>rocket</sub> = <em>F</em> / <em>m</em><sub>rocket</sub>
+          </div>
+          <p>
+            Because gas mass is small, gas accelerates backward at extreme rates. Because rocket mass is large, vehicle acceleration is smooth and gradual.
+          </p>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-06" data-toc="Predictions">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">07</span>
+          <span class="label">Checkpoints</span>
+        </div>
+
+        <h2>Conceptual Prediction Gates</h2>
+        <p>
+          Before testing equations against memory, commit your physical predictions. Committing forces your mind to evaluate mutual contact forces:
+        </p>
+
+        
+        <h3>Scenario A: Semi-Truck Collides with Compact Car</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A 10,000-kilogram semi-truck travelling at highway speed collides head-on with a 1000-kilogram compact car. How do the impact forces compare?<\/p>",
+  "options": [
+    {
+      "label": "The truck exerts a larger force on the car because of its greater mass.",
+      "correct": false,
+      "feedback": "The two forces are a third-law pair, so they are equal whatever the masses. The truck's greater mass shows up as a smaller acceleration, not a larger force."
+    },
+    {
+      "label": "The car exerts a larger force because it experiences greater structural damage.",
+      "correct": false,
+      "feedback": "Damage shows what the force does to a weaker structure. It does not show a bigger force. Both vehicles feel the same size of force."
+    },
+    {
+      "label": "The truck exerts ten times greater force due to its momentum.",
+      "correct": false,
+      "feedback": "Momentum does not make the force larger. The two forces are an interaction pair, so they are equal at every instant."
+    },
+    {
+      "label": "The impact forces on both vehicles are equal in magnitude.",
+      "correct": true,
+      "feedback": "The two forces are a third-law pair, so they are equal and opposite at every instant. The car has one-tenth the mass, so it has ten times the acceleration."
+    }
+  ],
+  "reveal": "<p><b>The forces are equal in magnitude.<\/b><br>By Newton's Third Law, the force on the car from the truck equals the force on the truck from the car at every microsecond. Why does the car suffer more damage? The car has one-tenth the mass, so it has ten times the acceleration (<em>a<\/em> = <em>F<\/em> / <em>m<\/em>).<\/p>"
+}
+</script>
+</div>
+
+        
+        <h3>Scenario B: Stepping from a Rowboat to a Dock</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A swimmer stands in a lightweight rowboat and steps forward onto a wooden dock. What happens to the boat as she steps forward?<\/p>",
+  "options": [
+    {
+      "label": "The boat pushes backward into the water away from the dock.",
+      "correct": true,
+      "feedback": "To step forward, the swimmer pushes the boat backward with her feet. The boat pushes her forward with an equal force. She moves toward the dock while the boat slides away."
+    },
+    {
+      "label": "The boat remains motionless because water offers resistance.",
+      "correct": false,
+      "feedback": "Water resists the motion, but it cannot cancel the push of her feet on the boat. A net force on the boat makes it move."
+    },
+    {
+      "label": "The boat moves forward with the swimmer.",
+      "correct": false,
+      "feedback": "The swimmer pushes the boat backward, so the boat does not go forward with her. Her push on the boat and the boat's push on her are a pair on different objects."
+    },
+    {
+      "label": "The boat tilts downward without moving horizontally.",
+      "correct": false,
+      "feedback": "Her feet push along the floor of the boat, not down into it. The push is horizontal, so the boat moves horizontally."
+    }
+  ],
+  "reveal": "<p><b>The boat moves backward.<\/b><br>To push herself forward onto the dock, the swimmer must push backward against the floor of the boat with her feet. By Newton's Third Law, the boat receives an equal and opposite backward force and slides away across the water.<\/p>"
+}
+</script>
+</div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-07" data-toc="Retrieval &amp; Practice">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">08</span>
+          <span class="label">Practice</span>
+        </div>
+
+        <h2>Retrieval Practice &amp; ECR Protocol</h2>
+        <p>
+          Solidify the core relationships of Newton's Third Law before advancing to friction models and inclined planes:
+        </p>
+
+        
+        <div class="recall">
+<div class="label">Recall</div>
+<ol class="recall-list">
+<li>Newton's Third Law states that every action force produces an equal and <input type="text" class="blank" data-answer="opposite" aria-label="Blank 1"> reaction force.</li>
+<li>An action-reaction force pair always acts on two <input type="text" class="blank" data-answer="different|separate" aria-label="Blank 2"> objects.</li>
+<li>Normal force and gravity on a resting book are not a pair because both act on the <input type="text" class="blank" data-answer="same|same object|book" aria-label="Blank 3"> object.</li>
+<li>When a heavy truck collides with a car, the contact force on the car is <input type="text" class="blank" data-answer="equal|identical|the same" aria-label="Blank 4"> to the force on the truck.</li>
+<li>Rockets accelerate in space by pushing backward against their expelled <input type="text" class="blank" data-answer="gas|gases|propellant|fuel" aria-label="Blank 5">.</li>
+<li>The momentum of an object is its mass times its <input type="text" class="blank" data-answer="velocity" aria-label="Blank 6">.</li>
+<li>The total momentum of two bodies stays the same when no net <input type="text" class="blank" data-answer="outside|external|outside force|external force" aria-label="Blank 7"> force acts on them.</li>
+</ol>
+<div class="recall-actions">
+<button class="btn" type="button" data-recall-check>Check</button>
+<button class="btn ghost" type="button" data-recall-reveal>Show answers</button>
+<button class="btn ghost" type="button" data-recall-reset>Reset</button>
+<span class="feedback" data-recall-feedback role="status"></span>
+</div>
+</div>
+
+        
+        <h3>Problem 2.3: Satellite Space Tug Docking</h3>
+<div class="exam-frame">
+<div class="exam-meta"><span class="exam-src">Written response</span><span class="exam-marks">3 marks</span></div>
+<p class="exam-q">An automated orbital space tug with mass 2500 kg docks with an inactive 10,000 kg communication satellite. During the capture maneuver, the tug exerts an average contact push of 5000 N on the satellite.</p><p class="exam-q">A flight controller makes a claim: <em>&ldquo;Because the tug pushes the satellite forward, the tug experiences zero backward force.&rdquo;</em></p><p class="exam-q">Evaluate this claim using the <b>Evidence &rarr; Claim &rarr; Reasoning (ECR)</b> framework.</p>
+
+<textarea class="textbox" aria-label="Your answer"></textarea>
+<div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+<div class="scheme"><div class="scheme-card"><div class="label">Scoring guide</div><ul class="pts"><li><b>Evidence (1 mark):</b> You list <em>m</em><sub>tug</sub> = 2500 kg, <em>m</em><sub>sat</sub> = 10,000 kg and <em>F</em><sub>tug on sat</sub> = 5000 N.</li><li><b>Claim (1 mark):</b> You say the claim is false.</li><li>You use Newton's Third Law: the satellite pushes back on the tug with 5000 N.</li><li><b>Reasoning (1 mark):</b> You calculate <em>a</em><sub>tug</sub> = &minus;2.0 m/s&sup2; and <em>a</em><sub>sat</sub> = +0.50 m/s&sup2;.</li><li>You explain the difference with <em>a</em> = <em>F</em> / <em>m</em>.</li></ul></div><div class="scheme-card"><div class="label">Model response (Evidence, Claim, Reasoning)</div><ul class="pts"><li><b>Evidence:</b> Tug mass is 2500 kg. Satellite mass is 10,000 kg. The tug exerts an average forward contact force of 5000 N on the satellite.</li><li><b>Claim:</b> The flight controller's claim is false. The satellite exerts an equal and opposite backward force of 5000 N on the tug.</li><li><b>Reasoning:</b> By Newton's Third Law, <em>F</em><sub>sat on tug</sub> = &minus;<em>F</em><sub>tug on sat</sub> = &minus;5000 N. By Newton's Second Law, the tug decelerates at <em>a</em> = &minus;5000 N / 2500 kg = &minus;2.0 m/s&sup2;. The satellite accelerates at <em>a</em> = +5000 N / 10,000 kg = +0.50 m/s&sup2;. The tug experiences four times greater acceleration because of its smaller mass.</li></ul></div></div>
+</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/book.js"></script>
+  <script src="../../textbook/core.js"></script>
+  <script src="../../textbook/widgets.js"></script>
+  <script src="../../textbook/sim.js"></script>
+  <script src="../assets/glossary.js"></script>
+  <script src="../assets/draw.js"></script>
+  <script src="../assets/reference-center.js"></script>
+  <script src="2-3.js"></script>
+</body>
+</html>

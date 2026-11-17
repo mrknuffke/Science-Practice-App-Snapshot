@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" data-book="physics" data-lesson="2-5">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Lesson 2-5: Coupled Systems &amp; Atwood Machines | SAS General Physics</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+  <main>
+    <section class="hero" id="s-hero" data-toc="Opening">
+      <div>
+        <div class="label">Lesson 2-5 &middot; Coupled Systems &amp; Atwood Machines</div>
+        <h1>An elevator motor never lifts the full weight of the cabin.</h1>
+        <p class="lede">When bodies are joined by cables, they accelerate together as one system. This lesson shows how to find the acceleration of the whole system. Then it shows how to find the tension inside the cord.</p>
+        <div class="meta-strip">
+          <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS2-1</b>Analyze data to support the claim that Newton's second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration.</div></div>
+          <div class="meta-block"><div class="k">Objective</div><div class="v">You can find the acceleration of two connected masses and the tension in the cord that joins them.</div></div>
+          <div class="meta-block"><div class="k">Scope</div><div class="v">The whole-system method, internal cord tension, and Atwood machines. All the motion is along the line of the cord.</div></div>
+        </div>
+        <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+      </div>
+    </section>
+
+    <section id="sec-01" data-toc="Mission Briefing">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">01</span><span class="label">Hook</span></div>
+        <div class="brief"><div class="label">Mission</div><p><b>Level 2: Force Frontier.</b> Skyscraper Hoist Complex, Structural Engineering. When bodies are joined by cables, they accelerate together as one system.</p></div>
+        <p>
+          Inside modern skyscrapers, passenger elevators carry thousands of kilograms smoothly up and down hundreds of meters.
+        </p>
+        <p>
+          The electric motor does not lift the full weight of the elevator cabin directly.
+        </p>
+        <p>
+          Instead, heavy steel cables loop over an overhead motorized pulley to connect the car to a massive counterweight.
+        </p>
+        <p>
+          As the elevator car rises, the counterweight descends. The two opposing weights nearly balance each other.
+        </p>
+        <p>
+          This counterbalance reduces the net driving force. Modest motors can then control immense loads safely.
+        </p>
+      </div>
+    </section>
+
+    <section id="sec-02" data-toc="Whole-System Method">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">02</span>
+          <span class="label">The whole-system method</span>
+        </div>
+
+        <h2>The Whole-System Method</h2>
+        <p>
+          When objects are joined by taut cords, rods, or direct contact, they move with a shared acceleration magnitude:
+        </p>
+
+        <div class="eq-display">
+          <em>a</em><sub>1</sub> = <em>a</em><sub>2</sub> = <em>a</em><sub>sys</sub>
+        </div>
+
+        <p>
+          Coupled problems become straightforward when you use the <strong class="term" data-term="whole-system-method">whole-system method</strong>:
+        </p>
+
+        
+        <div class="card">
+          <h4>
+            Two-Step Analysis Protocol
+          </h4>
+          <ol>
+            <li><b>Step 1: Find System Acceleration.</b> Treat all coupled masses as one single composite body of mass <em>m</em><sub>total</sub> = <em>m</em><sub>1</sub> + <em>m</em><sub>2</sub>. Internal forces like cable <strong class="term" data-term="tension">tension</strong> cancel out:
+              <div class="eq-display">
+                <em>a</em> = &Sigma;<em>F</em><sub>external</sub> / <em>m</em><sub>total</sub>
+              </div>
+            </li>
+            <li><b>Step 2: Find Internal Tension.</b> Isolate one single mass. Draw its individual <strong class="term" data-term="free-body-diagram">free body diagram</strong>. Apply Newton's Second Law (&Sigma;<em>F</em> = <em>ma</em>) to solve for cord tension:
+              <div class="eq-display">
+                <em>T</em> &minus; <em>f</em> = <em>m</em><sub>1</sub><em>a</em>
+                &nbsp;&nbsp;&implies;&nbsp;&nbsp;
+                <em>T</em> = <em>m</em><sub>1</sub><em>a</em> + <em>f</em>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="callout"><div class="label">Common mistake</div><p>Tension does not cancel when you look at one mass alone. It cancels only when you treat the whole system as one body.</p></div>
+
+        <h3>Ideal Cord and Pulley Features</h3>
+        <p>
+          Introductory mechanics assumes ideal mechanical hardware to isolate essential physical principles:
+        </p>
+        <ul>
+          <li><b>Massless, Inelastic Cord:</b> Tension is uniform throughout the entire length, and connected bodies share identical acceleration.</li>
+          <li><b>Frictionless, Massless Pulley:</b> Redirects the force vector without consuming energy or changing tension magnitude.</li>
+        </ul>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-03" data-toc="Atwood Machine">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">03</span>
+          <span class="label">The Atwood machine</span>
+        </div>
+
+        <h2>The Classical Atwood Machine</h2>
+        <p>
+          In 1784, the English mathematician George Atwood designed an apparatus to measure gravitational acceleration:
+        </p>
+
+        <p>
+          Two masses (<em>m</em><sub>1</sub> and <em>m</em><sub>2</sub>) hang vertically over a low-friction pulley. Assume <em>m</em><sub>2</sub> &gt; <em>m</em><sub>1</sub>.
+        </p>
+
+        
+        <div class="pair-grid">
+          <div class="card">
+            <b>1. Driving Force &amp; Acceleration:</b>
+            <p>
+              The heavier mass pulls down while the lighter mass resists:
+            </p>
+            <div class="eq-display">
+              &Sigma;<em>F</em><sub>ext</sub> = (<em>m</em><sub>2</sub> &minus; <em>m</em><sub>1</sub>)<em>g</em>
+            </div>
+            <div class="eq-display">
+              <em>a</em> = <em>g</em> &times; (<em>m</em><sub>2</sub> &minus; <em>m</em><sub>1</sub>) / (<em>m</em><sub>1</sub> + <em>m</em><sub>2</sub>)
+            </div>
+          </div>
+
+          <div class="card">
+            <b>2. Cord Tension Magnitude:</b>
+            <p>
+              Isolating mass 1 moving upward (<em>T</em> &minus; <em>m</em><sub>1</sub><em>g</em> = <em>m</em><sub>1</sub><em>a</em>):
+            </p>
+            <div class="eq-display">
+              <em>T</em> = <em>m</em><sub>1</sub>(<em>g</em> + <em>a</em>)
+            </div>
+            <div class="eq-display">
+              <em>T</em> = 2 <em>m</em><sub>1</sub> <em>m</em><sub>2</sub> <em>g</em> / (<em>m</em><sub>1</sub> + <em>m</em><sub>2</sub>)
+            </div>
+          </div>
+        </div>
+
+        <div class="callout"><div class="label">Common mistake</div><p>Cord tension is not equal to the weight of either mass. It always falls strictly between the two individual weights:</p></div>
+
+        <div class="eq-display">
+          <em>m</em><sub>1</sub><em>g</em> &lt; <em>T</em> &lt; <em>m</em><sub>2</sub><em>g</em>
+        </div>
+
+        <p>
+          If tension equaled <em>m</em><sub>2</sub><em>g</em>, the heavier mass could not accelerate downward. If tension equaled <em>m</em><sub>1</sub><em>g</em>, the lighter mass could not rise.
+        </p>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-04" data-toc="Atwood Simulator">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">04</span>
+          <span class="label">Simulation</span>
+        </div>
+
+        <h2>Digital Atwood Machine Lab</h2>
+        <p>
+          Investigate the acceleration and the cord tension of two connected masses, hanging or on a table:
+        </p>
+
+        
+        <div class="sim-box" data-sim="atwood">
+          <div class="label">Simulation</div>
+          <h4>Why is the cord tension between the two weights?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a 4 kg mass and a 6 kg mass hang from a cord over a pulley. You let go. What is the acceleration of the masses?<\/p>",
+  "options": [
+    {
+      "label": "9.8 m/s&sup2;, the free-fall value of the heavier mass.",
+      "correct": false,
+      "feedback": "The cord pulls up on the 6 kg mass, so it does not fall freely. It speeds up more slowly than 9.8 m/s&sup2;."
+    },
+    {
+      "label": "1.96 m/s&sup2;, the weight difference over the total mass.",
+      "correct": true,
+      "feedback": "The net force is the weight difference, 58.8 N &minus; 39.2 N = 19.6 N. It moves 10 kg, so <em>a<\/em> = 19.6 N &divide; 10 kg = 1.96 m/s&sup2;."
+    },
+    {
+      "label": "19.6 m/s&sup2;, the difference between the two weights.",
+      "correct": false,
+      "feedback": "19.6 is the net force in newtons, not an acceleration. Divide it by the total mass of 10 kg to get the acceleration."
+    },
+    {
+      "label": "0 m/s&sup2;, because the cord holds both masses.",
+      "correct": false,
+      "feedback": "The cord holds the masses together, but the weights are not equal. The 6 kg mass pulls harder, so the system accelerates."
+    }
+  ],
+  "reveal": "<p>Now check it. Release the masses and read the acceleration and the cord tension.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="stack"><canvas aria-label="Two masses joined by a cord over a pulley, with arrows for the weight of each mass and the cord tension. Below it, a velocity-time graph of the run."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="true" data-rig="classic">Two hanging masses</button>
+            <button type="button" class="chip" aria-pressed="false" data-rig="half">Mass on a table</button>
+            <label class="slider-row" for="sliderM1"><span>Mass 1</span> <output>4 kg</output>
+              <input type="range" id="sliderM1" min="1" max="10" step="1" value="4" data-unit="kg" data-digits="0">
+            </label>
+            <label class="slider-row" for="sliderM2"><span>Mass 2 (the hanging mass on the table rig)</span> <output>6 kg</output>
+              <input type="range" id="sliderM2" min="1" max="10" step="1" value="6" data-unit="kg" data-digits="0">
+            </label>
+            <label class="slider-row" for="sliderFriction" data-table-only hidden><span>Table friction force</span> <output>0 N</output>
+              <input type="range" id="sliderFriction" min="0" max="20" step="1" value="0" data-unit="N" data-digits="0">
+            </label>
+            <button type="button" class="btn" data-restart>Start over</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="w1"><span class="readout-label">Weight of mass 1</span><span class="readout-value">39.2 N</span></div>
+            <div class="readout" data-readout="w2"><span class="readout-label">Weight of mass 2</span><span class="readout-value">58.8 N</span></div>
+            <div class="readout" data-readout="acc"><span class="readout-label">Acceleration</span><span class="readout-value">1.96 m/s&sup2;</span></div>
+            <div class="readout" data-readout="tension"><span class="readout-label">Cord tension</span><span class="readout-value">47.0 N</span></div>
+            <div class="readout" data-readout="vel"><span class="readout-label">Velocity</span><span class="readout-value">0.00 m/s</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Ready</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="line" data-token="bad"></span>Weight</li>
+            <li><span class="key" data-shape="line" data-token="good"></span>Cord tension</li>
+            <li><span class="key" data-shape="line" data-token="warn"></span>Friction force</li>
+            <li><span class="key" data-shape="line" data-token="cool"></span>Velocity of the masses</li>
+            <li>The scale bar shows 50 N. The cord and the pulley have no mass, and the pulley has no friction.</li>
+          </ul>
+          <ol class="try-this">
+            <li>Keep 4 kg and 6 kg. Let the masses run, then press Record. <b>Look for:</b> an acceleration of 1.96 m/s&sup2;, and a tension between the two weights.</li>
+            <li>Set Mass 2 to 8 kg and press Start over. Press Record. <b>Look for:</b> a bigger mass difference gives a bigger acceleration.</li>
+            <li>Set both masses to 5 kg and press Start over. Press Record. <b>Look for:</b> zero acceleration, and a tension equal to the weight of one mass.</li>
+            <li>Choose Mass on a table, keep friction at 0 N, and press Start over. Press Record. <b>Look for:</b> only the hanging weight pulls the system, and the tension is smaller than that weight.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use two rows of your record table with two hanging masses that are not equal. Find the weight of each mass (9.8 N for each kilogram). Compare the tension with the weights. What do you find?<\/p>",
+  "options": [
+    {
+      "label": "The tension equaled the weight of the heavier mass.",
+      "correct": false,
+      "feedback": "The heavier mass accelerates down, so its weight must beat the tension. The tension is smaller than that weight."
+    },
+    {
+      "label": "The tension equaled the weight of the lighter mass.",
+      "correct": false,
+      "feedback": "The lighter mass accelerates up, so the tension must beat its weight. The tension is larger than that weight."
+    },
+    {
+      "label": "The tension was larger than both weights.",
+      "correct": false,
+      "feedback": "The heavier mass accelerates down, so its weight is larger than the tension. The tension cannot beat both weights."
+    },
+    {
+      "label": "The tension was between the two weights in each row.",
+      "correct": true,
+      "feedback": "The tension must beat the lighter weight to lift that mass. It must stay under the heavier weight to let the other mass fall."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. The tension always lies between the two weights when the masses are not equal.<\/p>"
+}
+</script>
+</div>
+        
+      </div>
+    </section>
+
+    <section id="sec-05" data-toc="Cable Safety">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">05</span>
+          <span class="label">Cables</span>
+        </div>
+
+        <h2>Cable Safety &amp; Acceleration Spikes</h2>
+        <div class="callout"><div class="label">Common mistake</div><p>The cable does not carry only the weight of the load. When the load speeds up as it rises, the tension is larger than the weight.</p></div>
+        <p>
+          In crane and elevator operations, cable failure occurs most often during abrupt upward accelerations.
+        </p>
+        <p>
+          When a crane lifts a stationary steel beam of mass <em>m</em>, the static cable tension equals:
+        </p>
+
+        <div class="eq-display">
+          <em>T</em><sub>static</sub> = <em>mg</em>
+        </div>
+
+        <p>
+          When the crane accelerates the load upward at rate <em>a</em>, the cable must supply additional force:
+        </p>
+
+        <div class="eq-display">
+          <em>T</em><sub>dynamic</sub> = <em>m</em>(<em>g</em> + <em>a</em>)
+        </div>
+
+        <p>
+          An upward acceleration equal to 0.5 <em>g</em> increases cable tension by 50 percent above static weight.
+        </p>
+        <p>
+          Engineers apply a safety factor (typically 5 to 10) to prevent cable rupture under sudden acceleration surges.
+        </p>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-06" data-toc="Predictions">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">06</span>
+          <span class="label">Checkpoints</span>
+        </div>
+
+        <h2>Conceptual Prediction Gates</h2>
+        <p>
+          Before testing equations against memory, commit your physical predictions. Committing forces your brain to test coupled dynamics:
+        </p>
+
+        
+        <h3>Scenario A: Tension in an Atwood Machine</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>In an ideal Atwood machine, mass 1 is 3 kg (weight 29.4 N) and mass 2 is 5 kg (weight 49 N). What is the cable tension <em>T<\/em> while the masses accelerate?<\/p>",
+  "options": [
+    {
+      "label": "Exactly 29.4 N, matching the lighter weight.",
+      "correct": false,
+      "feedback": "The 3 kg mass accelerates upward, so the tension must be larger than its weight. If <em>T<\/em> were 29.4 N, it could not speed up."
+    },
+    {
+      "label": "Exactly 49 N, matching the heavier weight.",
+      "correct": false,
+      "feedback": "The 5 kg mass accelerates downward, so its weight must be larger than the tension. If <em>T<\/em> were 49 N, it could not speed up."
+    },
+    {
+      "label": "78.4 N, equal to the combined weight of both blocks.",
+      "correct": false,
+      "feedback": "The cord holds one mass on each side. The tension is not the sum of the two weights."
+    },
+    {
+      "label": "Between 29.4 N and 49 N (approximately 37 N).",
+      "correct": true,
+      "feedback": "<em>T<\/em> must be larger than 29.4 N and smaller than 49 N. The formula gives <em>T<\/em> = 2(3)(5)(9.8) / (3 + 5) = 36.8 N."
+    }
+  ],
+  "reveal": "<p><b>Between 29.4 N and 49 N (36.8 N).<\/b><br>The 3 kg mass accelerates upward, so the tension must exceed its weight (<em>T<\/em> &gt; 29.4 N). The 5 kg mass accelerates downward, so its weight must exceed the tension (49.0 N &gt; <em>T<\/em>). So the tension is strictly between the two weights: <em>T<\/em> = 2(3)(5)(9.8) / (3 + 5) = 36.8 N.<\/p>"
+}
+</script>
+</div>
+
+        
+        <h3>Scenario B: Half-Atwood Table Acceleration</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A 5-kilogram cart on a frictionless horizontal table is connected by a cord over a pulley to a hanging 5-kilogram weight. What is the acceleration of the system?<\/p>",
+  "options": [
+    {
+      "label": "4.9 m/s&sup2; (0.5 g), because 5 kg of weight must accelerate 10 kg.",
+      "correct": true,
+      "feedback": "The pull is the weight of the hanging mass, 49 N. That pull must accelerate 10 kg, so <em>a<\/em> = 49 / 10 = 4.9 m/s&sup2;."
+    },
+    {
+      "label": "9.8 m/s&sup2; (1.0 g), because the hanging mass is in free fall.",
+      "correct": false,
+      "feedback": "The hanging mass would fall at 9.8 m/s&sup2; only if nothing held it back. The cord also has to pull the cart, so the total mass is 10 kg."
+    },
+    {
+      "label": "0.0 m/s&sup2;, because the two 5 kg masses balance each other.",
+      "correct": false,
+      "feedback": "Nothing balances the hanging weight along the table. The cart is free to move, so the system accelerates."
+    },
+    {
+      "label": "19.6 m/s&sup2; (2.0 g), because two masses double the acceleration.",
+      "correct": false,
+      "feedback": "A second mass adds inertia, not driving force. The same 49 N now moves twice the mass, so the acceleration is smaller."
+    }
+  ],
+  "reveal": "<p><b>4.9 m/s&sup2; (0.5 g).<\/b><br>The driving force is the gravity on the hanging weight: <em>F<\/em><sub>net<\/sub> = <em>m<\/em><sub>2<\/sub><em>g<\/em> = 5 kg &times; 9.8 m/s&sup2; = 49 N. This force must accelerate both the cart and the hanging weight: <em>m<\/em><sub>total<\/sub> = 5 kg + 5 kg = 10 kg. So <em>a<\/em> = 49 N / 10 kg = 4.9 m/s&sup2;.<\/p>"
+}
+</script>
+</div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-07" data-toc="Retrieval &amp; Practice">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">07</span>
+          <span class="label">Practice</span>
+        </div>
+
+        <h2>Retrieval Practice &amp; ECR Protocol</h2>
+        <p>
+          Solidify the core relationships of coupled systems and Atwood machines before taking on the Level 2 Solo Trial:
+        </p>
+
+        
+        <div class="recall">
+<div class="label">Recall</div>
+<ol class="recall-list">
+<li>When using the whole-system method, internal cord tensions <input type="text" class="blank" data-answer="cancel|cancel out|drop out" aria-label="Blank 1"> in the system equation.</li>
+<li>In an Atwood machine, the total mass accelerating equals <em>m</em><sub>1</sub> <input type="text" class="blank" data-answer="+|plus|add" aria-label="Blank 2"> <em>m</em><sub>2</sub>.</li>
+<li>In a classical Atwood machine, the cord tension is always strictly <input type="text" class="blank" data-answer="between" aria-label="Blank 3"> the weights of the two masses.</li>
+<li>If the two hanging masses in an Atwood machine are identical, the system acceleration is <input type="text" class="blank" data-answer="0|zero|0 m/s2" aria-label="Blank 4"> m/s&sup2;.</li>
+<li>Accelerating a crane load upward causes cable tension to <input type="text" class="blank" data-answer="increase|rise|grow" aria-label="Blank 5"> above static weight.</li>
+</ol>
+<div class="recall-actions">
+<button class="btn" type="button" data-recall-check>Check</button>
+<button class="btn ghost" type="button" data-recall-reveal>Show answers</button>
+<button class="btn ghost" type="button" data-recall-reset>Reset</button>
+<span class="feedback" data-recall-feedback role="status"></span>
+</div>
+</div>
+
+        
+        <h3>Problem 2.5: High-Rise Construction Crane Hoist</h3>
+<div class="exam-frame">
+<div class="exam-meta"><span class="exam-src">Written response</span><span class="exam-marks">3 marks</span></div>
+<p class="exam-q">A construction hoist car of mass 1200 kg is coupled over an overhead crane pulley to a counterweight of 800 kg. An electric winch assists the counterweight by applying an extra downward pull of 1000 N on the counterweight side.</p><p class="exam-q">The steel hoist cable has a certified maximum working tension rating of 12,000 N.</p><p class="exam-q">Evaluate whether the cable operates within safe load limits using the <b>Evidence &rarr; Claim &rarr; Reasoning (ECR)</b> framework.</p>
+
+<textarea class="textbox" aria-label="Your answer"></textarea>
+<div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+<div class="scheme"><div class="scheme-card"><div class="label">Scoring guide</div><ul class="pts"><li><b>Givens (1 mark):</b> You list <em>m</em><sub>car</sub> = 1200 kg, <em>m</em><sub>cw</sub> = 800 kg, <em>F</em><sub>winch</sub> = 1000 N and <em>T</em><sub>max</sub> = 12,000 N.</li><li><b>Whole system (1 mark):</b> You use the whole-system method to find the net force (2920 N).</li><li>You find the acceleration, <em>a</em> = 1.46 m/s&sup2;.</li><li><b>Tension (1 mark):</b> You isolate the hoist car to find <em>T</em> &approx; 10,000 N.</li><li>You say this is within the safe working limit.</li></ul></div><div class="scheme-card"><div class="label">Model response (Evidence, Claim, Reasoning)</div><ul class="pts"><li><b>Evidence:</b> Hoist car mass is 1200 kg. Counterweight mass is 800 kg. Assist winch force is 1000 N. Certified safe cable rating is 12,000 N.</li><li><b>Claim:</b> Yes, the cable operates within safe limits. Dynamic cable tension is 10,000 N, safely below the 12,000 N rating limit.</li><li><b>Reasoning:</b> Total mass: <em>m</em><sub>total</sub> = 1200 + 800 = 2000 kg. Net force on hoist car: downward gravity (11,760 N) opposes counterweight gravity (7840 N) and winch (1000 N). Net force is 2920 N downward. Car accelerates downward at <em>a</em> = 2920 / 2000 = 1.46 m/s&sup2;. Cable tension on car: <em>T</em> = 1200(9.8 &minus; 1.46) = 10,008 N &approx; 10,000 N. Because 10,008 N &lt; 12,000 N, the hoist operates safely.</li></ul></div></div>
+</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/book.js"></script>
+  <script src="../../textbook/core.js"></script>
+  <script src="../../textbook/widgets.js"></script>
+  <script src="../../textbook/sim.js"></script>
+  <script src="../assets/glossary.js"></script>
+  <script src="../assets/draw.js"></script>
+  <script src="../assets/reference-center.js"></script>
+  <script src="2-5.js"></script>
+</body>
+</html>

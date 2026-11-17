@@ -1,0 +1,4542 @@
+/* ============================================================
+   DIAGRAM GENERATOR APP: LOGIC ENGINE
+   Adheres to DIAGRAM_CONTRACT.md, CLAUDE.md, and project conventions.
+   ============================================================ */
+
+(function () {
+  const SVGNS = "http://www.w3.org/2000/svg";
+
+  // Check database availability
+  if (!window.GC_ELEMENTS) {
+    console.error("elements.js not loaded!");
+    return;
+  }
+  const EL = window.GC_ELEMENTS;
+
+  // CPK Elements Color mapping (derived from design tokens)
+  const CPK_COLORS = {
+    'H': { fill: "#ffffff", stroke: "var(--ink)", text: "var(--ink)", isSmall: true },
+    'O': { fill: "var(--accent)", stroke: "var(--ink)", text: "#ffffff" },
+    'C': { fill: "var(--ink-mute)", stroke: "var(--ink)", text: "#ffffff" },
+    'N': { fill: "var(--cool)", stroke: "var(--ink)", text: "#ffffff" },
+    'Cl': { fill: "var(--good)", stroke: "var(--ink)", text: "#ffffff" },
+    'Na': { fill: "var(--ink-soft)", stroke: "var(--ink)", text: "#ffffff" },
+    'F': { fill: "var(--accent-soft)", stroke: "var(--ink)", text: "#ffffff" },
+    'S': { fill: "var(--hot)", stroke: "var(--ink)", text: "#ffffff" },
+    'K': { fill: "var(--cool)", stroke: "var(--ink)", text: "#ffffff" },
+    'Ca': { fill: "var(--ink-soft)", stroke: "var(--ink)", text: "#ffffff" }
+  };
+
+  const DEFAULT_CPK = { fill: "var(--ink-mute)", stroke: "var(--ink)", text: "#ffffff" };
+
+  function getCPK(sym) {
+    return CPK_COLORS[sym] || DEFAULT_CPK;
+  }
+
+  // Single source for common-name <-> formula <-> display-name lookups.
+  // Previously duplicated as a name->formula map here and a separate
+  // formula->display map in index.html, which could drift out of sync.
+  const COMMON_NAMES = [
+    { formula: 'H2O', commonName: 'water', display: 'Water (H₂O)' },
+    { formula: 'NH3', commonName: 'ammonia', display: 'Ammonia (NH₃)' },
+    { formula: 'CH4', commonName: 'methane', display: 'Methane (CH₄)' },
+    { formula: 'CO2', commonName: 'carbon dioxide', display: 'Carbon Dioxide (CO₂)' },
+    { formula: 'CO', commonName: 'carbon monoxide', display: 'Carbon Monoxide (CO)' },
+    { formula: 'H2', commonName: 'hydrogen', display: 'Hydrogen (H₂)' },
+    { formula: 'O2', commonName: 'oxygen', display: 'Oxygen (O₂)' },
+    { formula: 'N2', commonName: 'nitrogen', display: 'Nitrogen (N₂)' },
+    { formula: 'Cl2', commonName: 'chlorine', display: 'Chlorine (Cl₂)' },
+    { formula: 'F2', commonName: 'fluorine', display: 'Fluorine (F₂)' },
+    { formula: 'Br2', commonName: 'bromine', display: 'Bromine (Br₂)' },
+    { formula: 'I2', commonName: 'iodine', display: 'Iodine (I₂)' },
+    { formula: 'HF', commonName: 'hydrogen fluoride', display: 'Hydrogen Fluoride (HF)' },
+    { formula: 'HCl', commonName: 'hydrogen chloride', display: 'Hydrogen Chloride (HCl)' },
+    { formula: 'HBr', commonName: 'hydrogen bromide', display: 'Hydrogen Bromide (HBr)' },
+    { formula: 'HI', commonName: 'hydrogen iodide', display: 'Hydrogen Iodide (HI)' },
+    { formula: 'NaCl', commonName: 'sodium chloride', display: 'Sodium Chloride (NaCl)' },
+    { formula: 'SO2', commonName: 'sulfur dioxide', display: 'Sulfur Dioxide (SO₂)' },
+    { formula: 'SO3', commonName: 'sulfur trioxide', display: 'Sulfur Trioxide (SO₃)' },
+    { formula: 'H2S', commonName: 'hydrogen sulfide', display: 'Hydrogen Sulfide (H₂S)' },
+    { formula: 'CCl4', commonName: 'carbon tetrachloride', display: 'Carbon Tetrachloride (CCl₄)' },
+    { formula: 'CF4', commonName: 'carbon tetrafluoride', display: 'Carbon Tetrafluoride (CF₄)' },
+    { formula: 'SiO2', commonName: 'silicon dioxide', display: 'Silicon Dioxide (SiO₂)' },
+    { formula: 'C2H5NO2', commonName: 'glycine', display: 'Glycine (C₂H₅NO₂)' },
+    { formula: 'C3H7NO2', commonName: 'alanine', display: 'Alanine (C₃H₇NO₂)' },
+    { formula: 'C6H12O6', commonName: 'glucose', display: 'Glucose (C₆H₁₂O₆)' },
+    { formula: 'C5H10O5', commonName: 'ribose', display: 'Ribose (C₅H₁₀O₅)' },
+    { formula: 'ATP', commonName: 'atp', display: 'Adenosine Triphosphate (ATP)' },
+    { formula: 'Polypeptide', commonName: 'polypeptide', display: 'Polypeptide Chain (Gly-Ala-Ser)' },
+    { formula: 'Cellulose', commonName: 'cellulose', display: 'Cellulose (β-1,4-Glucan Polymer)' },
+    { formula: 'Glycogen', commonName: 'glycogen', display: 'Glycogen (α-1,4 & α-1,6 Branched Polymer)' },
+    { formula: 'DNA', commonName: 'dna', display: 'DNA Fragment (A-T-C Trinucleotide)' },
+    { formula: 'RNA', commonName: 'rna', display: 'RNA Fragment (A-U-C Trinucleotide)' },
+    { formula: 'Triglyceride', commonName: 'triglyceride', display: 'Triglyceride (Fat/Lipid)' },
+    { formula: 'Phospholipid', commonName: 'phospholipid', display: 'Phospholipid' },
+    { formula: 'Cholesterol', commonName: 'cholesterol', display: 'Cholesterol' },
+    { formula: 'Estrogen', commonName: 'estrogen', display: 'Estrogen (Estradiol)' },
+    { formula: 'Testosterone', commonName: 'testosterone', display: 'Testosterone' },
+    { formula: 'Epinephrine', commonName: 'epinephrine', display: 'Epinephrine (Adrenaline)' },
+    { formula: 'C3H6O', commonName: 'acetone', display: 'Acetone (C₃H₆O)' },
+    { formula: 'C2H6O', commonName: 'ethanol', display: 'Ethanol (C₂H₆O)' }
+  ];
+  const NAME_TO_FORMULA = {};
+  const FORMULA_TO_DISPLAY = {};
+  COMMON_NAMES.forEach(e => {
+    NAME_TO_FORMULA[e.commonName] = e.formula;
+    FORMULA_TO_DISPLAY[e.formula.toLowerCase()] = e.display;
+  });
+  function getDisplayName(formula) {
+    return FORMULA_TO_DISPLAY[(formula || "").toLowerCase()] || null;
+  }
+
+  // Predefined Coordinate Templates for Molecules
+  const MOLECULE_TEMPLATES = {
+    H2: {
+      atoms: [
+        { id: "H1", el: "H", x: -0.7, y: 0 },
+        { id: "H2", el: "H", x: 0.7, y: 0 }
+      ],
+      bonds: [
+        { a: "H1", b: "H2", order: 1 }
+      ],
+      lonePairs: []
+    },
+    HF: {
+      atoms: [
+        { id: "H1", el: "H", x: -0.8, y: 0 },
+        { id: "F1", el: "F", x: 0.6, y: 0 }
+      ],
+      bonds: [
+        { a: "H1", b: "F1", order: 1 }
+      ],
+      lonePairs: [
+        { on: "F1", count: 3 }
+      ]
+    },
+    HCl: {
+      atoms: [
+        { id: "H1", el: "H", x: -0.9, y: 0 },
+        { id: "Cl1", el: "Cl", x: 0.5, y: 0 }
+      ],
+      bonds: [
+        { a: "H1", b: "Cl1", order: 1 }
+      ],
+      lonePairs: [
+        { on: "Cl1", count: 3 }
+      ]
+    },
+    H2O: {
+      atoms: [
+        { id: "O1", el: "O", x: 0, y: -0.2 },
+        { id: "H1", el: "H", x: -0.9, y: 0.5 },
+        { id: "H2", el: "H", x: 0.9, y: 0.5 }
+      ],
+      bonds: [
+        { a: "O1", b: "H1", order: 1 },
+        { a: "O1", b: "H2", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 }
+      ]
+    },
+    NH3: {
+      atoms: [
+        { id: "N1", el: "N", x: 0, y: -0.2 },
+        { id: "H1", el: "H", x: -1.0, y: 0.4 },
+        { id: "H2", el: "H", x: 1.0, y: 0.4 },
+        { id: "H3", el: "H", x: 0, y: 0.9 }
+      ],
+      bonds: [
+        { a: "N1", b: "H1", order: 1 },
+        { a: "N1", b: "H2", order: 1 },
+        { a: "N1", b: "H3", order: 1 }
+      ],
+      lonePairs: [
+        { on: "N1", count: 1 }
+      ]
+    },
+    CH4: {
+      atoms: [
+        { id: "C1", el: "C", x: 0, y: 0 },
+        { id: "H1", el: "H", x: -1.0, y: 0 },
+        { id: "H2", el: "H", x: 1.0, y: 0 },
+        { id: "H3", el: "H", x: 0, y: -1.0 },
+        { id: "H4", el: "H", x: 0, y: 1.0 }
+      ],
+      bonds: [
+        { a: "C1", b: "H1", order: 1 },
+        { a: "C1", b: "H2", order: 1 },
+        { a: "C1", b: "H3", order: 1 },
+        { a: "C1", b: "H4", order: 1 }
+      ],
+      lonePairs: []
+    },
+    CF4: {
+      atoms: [
+        { id: "C1", el: "C", x: 0, y: 0 },
+        { id: "F1", el: "F", x: -1.1, y: 0 },
+        { id: "F2", el: "F", x: 1.1, y: 0 },
+        { id: "F3", el: "F", x: 0, y: -1.1 },
+        { id: "F4", el: "F", x: 0, y: 1.1 }
+      ],
+      bonds: [
+        { a: "C1", b: "F1", order: 1 },
+        { a: "C1", b: "F2", order: 1 },
+        { a: "C1", b: "F3", order: 1 },
+        { a: "C1", b: "F4", order: 1 }
+      ],
+      lonePairs: [
+        { on: "F1", count: 3 },
+        { on: "F2", count: 3 },
+        { on: "F3", count: 3 },
+        { on: "F4", count: 3 }
+      ]
+    },
+    O2: {
+      atoms: [
+        { id: "O1", el: "O", x: -0.7, y: 0 },
+        { id: "O2", el: "O", x: 0.7, y: 0 }
+      ],
+      bonds: [
+        { a: "O1", b: "O2", order: 2 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 },
+        { on: "O2", count: 2 }
+      ]
+    },
+    N2: {
+      atoms: [
+        { id: "N1", el: "N", x: -0.7, y: 0 },
+        { id: "N2", el: "N", x: 0.7, y: 0 }
+      ],
+      bonds: [
+        { a: "N1", b: "N2", order: 3 }
+      ],
+      lonePairs: [
+        { on: "N1", count: 1 },
+        { on: "N2", count: 1 }
+      ]
+    },
+    CO2: {
+      atoms: [
+        { id: "C1", el: "C", x: 0, y: 0 },
+        { id: "O1", el: "O", x: -1.1, y: 0 },
+        { id: "O2", el: "O", x: 1.1, y: 0 }
+      ],
+      bonds: [
+        { a: "C1", b: "O1", order: 2 },
+        { a: "C1", b: "O2", order: 2 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 },
+        { on: "O2", count: 2 }
+      ]
+    },
+    CO: {
+      atoms: [
+        { id: "C1", el: "C", x: -0.6, y: 0 },
+        { id: "O1", el: "O", x: 0.6, y: 0 }
+      ],
+      bonds: [
+        { a: "C1", b: "O1", order: 3 }
+      ],
+      lonePairs: [
+        { on: "C1", count: 1 },
+        { on: "O1", count: 1 }
+      ]
+    },
+    // Ionic (metal-nonmetal): Lewis mode renders this as a Na+ [Cl]- ion
+    // pair via drawIonPairMolecule and ignores bonds/lonePairs below.
+    // They're kept only for ball-and-stick/space-filling mode, which still
+    // draws a connecting stick between the ion pair.
+    NaCl: {
+      atoms: [
+        { id: "Na1", el: "Na", x: -0.7, y: 0 },
+        { id: "Cl1", el: "Cl", x: 0.7, y: 0 }
+      ],
+      bonds: [
+        { a: "Na1", b: "Cl1", order: 1 }
+      ],
+      lonePairs: [
+        { on: "Cl1", count: 4 }
+      ]
+    },
+    C2H5NO2: {
+      atoms: [
+        { id: "C1", el: "C", x: 0, y: 0 },
+        { id: "N1", el: "N", x: -1.3, y: -0.2 },
+        { id: "C2", el: "C", x: 1.3, y: 0.2 },
+        { id: "O1", el: "O", x: 1.8, y: 1.3 },
+        { id: "O2", el: "O", x: 2.2, y: -0.7 },
+        { id: "H1", el: "H", x: -2.1, y: 0.5 },
+        { id: "H2", el: "H", x: -1.8, y: -1.1 },
+        { id: "H3", el: "H", x: -0.2, y: 1.1 },
+        { id: "H4", el: "H", x: 0.2, y: -1.1 },
+        { id: "H5", el: "H", x: 3.1, y: -0.5 }
+      ],
+      bonds: [
+        { a: "C1", b: "N1", order: 1 },
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "O1", order: 2 },
+        { a: "C2", b: "O2", order: 1 },
+        { a: "N1", b: "H1", order: 1 },
+        { a: "N1", b: "H2", order: 1 },
+        { a: "C1", b: "H3", order: 1 },
+        { a: "C1", b: "H4", order: 1 },
+        { a: "O2", b: "H5", order: 1 }
+      ],
+      lonePairs: [
+        { on: "N1", count: 1 },
+        { on: "O1", count: 2 },
+        { on: "O2", count: 2 }
+      ]
+    },
+    C3H7NO2: {
+      atoms: [
+        { id: "C1", el: "C", x: 0, y: 0 },
+        { id: "N1", el: "N", x: -1.3, y: -0.2 },
+        { id: "C2", el: "C", x: 1.3, y: 0.2 },
+        { id: "O1", el: "O", x: 1.8, y: 1.3 },
+        { id: "O2", el: "O", x: 2.2, y: -0.7 },
+        { id: "C3", el: "C", x: -0.2, y: 1.3 },
+        { id: "H1", el: "H", x: -2.1, y: 0.5 },
+        { id: "H2", el: "H", x: -1.8, y: -1.1 },
+        { id: "H3", el: "H", x: 0.2, y: -1.1 },
+        { id: "H4", el: "H", x: 3.1, y: -0.5 },
+        { id: "H5", el: "H", x: -1.2, y: 1.7 },
+        { id: "H6", el: "H", x: 0.4, y: 2.1 },
+        { id: "H7", el: "H", x: 0.2, y: 0.9 }
+      ],
+      bonds: [
+        { a: "C1", b: "N1", order: 1 },
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "O1", order: 2 },
+        { a: "C2", b: "O2", order: 1 },
+        { a: "C1", b: "C3", order: 1 },
+        { a: "N1", b: "H1", order: 1 },
+        { a: "N1", b: "H2", order: 1 },
+        { a: "C1", b: "H3", order: 1 },
+        { a: "O2", b: "H4", order: 1 },
+        { a: "C3", b: "H5", order: 1 },
+        { a: "C3", b: "H6", order: 1 },
+        { a: "C3", b: "H7", order: 1 }
+      ],
+      lonePairs: [
+        { on: "N1", count: 1 },
+        { on: "O1", count: 2 },
+        { on: "O2", count: 2 }
+      ]
+    },
+    C6H12O6: {
+      atoms: [
+        { id: "O1", el: "O", x: 0.6, y: 0.8 },
+        { id: "C1", el: "C", x: 1.2, y: 0 },
+        { id: "C2", el: "C", x: 0.6, y: -0.8 },
+        { id: "C3", el: "C", x: -0.6, y: -0.8 },
+        { id: "C4", el: "C", x: -1.2, y: 0 },
+        { id: "C5", el: "C", x: -0.6, y: 0.8 },
+        { id: "C6", el: "C", x: -1.2, y: 1.9 },
+        { id: "O6", el: "O", x: -2.1, y: 1.9 },
+        { id: "H6", el: "H", x: -2.6, y: 2.4 },
+        { id: "H7", el: "H", x: -0.8, y: 2.7 },
+        { id: "H8", el: "H", x: -1.6, y: 2.7 },
+        { id: "H5", el: "H", x: -0.2, y: 1.6 },
+        { id: "O4", el: "O", x: -2.2, y: 0 },
+        { id: "H4", el: "H", x: -2.7, y: -0.5 },
+        { id: "H12", el: "H", x: -1.2, y: -0.8 },
+        { id: "O3", el: "O", x: -1.0, y: -1.8 },
+        { id: "H3", el: "H", x: -1.6, y: -2.3 },
+        { id: "H11", el: "H", x: -0.6, y: -0.2 },
+        { id: "O2", el: "O", x: 1.0, y: -1.8 },
+        { id: "H2", el: "H", x: 1.6, y: -2.3 },
+        { id: "H10", el: "H", x: 0.6, y: -0.2 },
+        { id: "O5", el: "O", x: 2.2, y: 0 },
+        { id: "H1", el: "H", x: 2.7, y: 0.5 },
+        { id: "H9", el: "H", x: 1.2, y: 0.8 }
+      ],
+      bonds: [
+        { a: "O1", b: "C1", order: 1 },
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "C3", order: 1 },
+        { a: "C3", b: "C4", order: 1 },
+        { a: "C4", b: "C5", order: 1 },
+        { a: "C5", b: "O1", order: 1 },
+        { a: "C5", b: "C6", order: 1 },
+        { a: "C6", b: "O6", order: 1 },
+        { a: "O6", b: "H6", order: 1 },
+        { a: "C6", b: "H7", order: 1 },
+        { a: "C6", b: "H8", order: 1 },
+        { a: "C5", b: "H5", order: 1 },
+        { a: "C4", b: "O4", order: 1 },
+        { a: "O4", b: "H4", order: 1 },
+        { a: "C4", b: "H12", order: 1 },
+        { a: "C3", b: "O3", order: 1 },
+        { a: "O3", b: "H3", order: 1 },
+        { a: "C3", b: "H11", order: 1 },
+        { a: "C2", b: "O2", order: 1 },
+        { a: "O2", b: "H2", order: 1 },
+        { a: "C2", b: "H10", order: 1 },
+        { a: "C1", b: "O5", order: 1 },
+        { a: "O5", b: "H1", order: 1 },
+        { a: "C1", b: "H9", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 },
+        { on: "O2", count: 2 },
+        { on: "O3", count: 2 },
+        { on: "O4", count: 2 },
+        { on: "O5", count: 2 },
+        { on: "O6", count: 2 }
+      ]
+    },
+    C5H10O5: {
+      atoms: [
+        { id: "O1", el: "O", x: 0, y: 0.7 },
+        { id: "C1", el: "C", x: 1.0, y: 0.2 },
+        { id: "C2", el: "C", x: 0.6, y: -0.8 },
+        { id: "C3", el: "C", x: -0.6, y: -0.8 },
+        { id: "C4", el: "C", x: -1.0, y: 0.2 },
+        { id: "C5", el: "C", x: -1.8, y: 1.2 },
+        { id: "O5", el: "O", x: -2.7, y: 0.8 },
+        { id: "H5", el: "H", x: -3.2, y: 1.3 },
+        { id: "H6", el: "H", x: -1.6, y: 2.1 },
+        { id: "H7", el: "H", x: -2.1, y: 1.4 },
+        { id: "H8", el: "H", x: -0.6, y: 0.9 },
+        { id: "O3", el: "O", x: -1.2, y: -1.8 },
+        { id: "H3", el: "H", x: -1.8, y: -2.2 },
+        { id: "H10", el: "H", x: -0.6, y: -0.2 },
+        { id: "O2", el: "O", x: 1.2, y: -1.8 },
+        { id: "H2", el: "H", x: 1.8, y: -2.2 },
+        { id: "H9", el: "H", x: 0.6, y: -0.2 },
+        { id: "O4", el: "O", x: 2.0, y: 0.8 },
+        { id: "H1", el: "H", x: 2.5, y: 1.3 },
+        { id: "H4", el: "H", x: 1.3, y: -0.5 }
+      ],
+      bonds: [
+        { a: "O1", b: "C1", order: 1 },
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "C3", order: 1 },
+        { a: "C3", b: "C4", order: 1 },
+        { a: "C4", b: "O1", order: 1 },
+        { a: "C4", b: "C5", order: 1 },
+        { a: "C5", b: "O5", order: 1 },
+        { a: "O5", b: "H5", order: 1 },
+        { a: "C5", b: "H6", order: 1 },
+        { a: "C5", b: "H7", order: 1 },
+        { a: "C4", b: "H8", order: 1 },
+        { a: "C3", b: "O3", order: 1 },
+        { a: "O3", b: "H3", order: 1 },
+        { a: "C3", b: "H10", order: 1 },
+        { a: "C2", b: "O2", order: 1 },
+        { a: "O2", b: "H2", order: 1 },
+        { a: "C2", b: "H9", order: 1 },
+        { a: "C1", b: "O4", order: 1 },
+        { a: "O4", b: "H1", order: 1 },
+        { a: "C1", b: "H4", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 },
+        { on: "O2", count: 2 },
+        { on: "O3", count: 2 },
+        { on: "O4", count: 2 },
+        { on: "O5", count: 2 }
+      ]
+    },
+    ATP: {
+      atoms: [
+        { id: "O_rib", el: "O", x: 0, y: 0.6 },
+        { id: "C1_rib", el: "C", x: 0.8, y: 0.1 },
+        { id: "C2_rib", el: "C", x: 0.5, y: -0.8 },
+        { id: "C3_rib", el: "C", x: -0.5, y: -0.8 },
+        { id: "C4_rib", el: "C", x: -0.8, y: 0.1 },
+        { id: "C5_rib", el: "C", x: -1.6, y: 0.9 },
+        { id: "O3_rib", el: "O", x: -0.9, y: -1.8 },
+        { id: "O2_rib", el: "O", x: 0.9, y: -1.8 },
+        { id: "N9", el: "N", x: 1.8, y: 0.5 },
+        { id: "C8", el: "C", x: 2.1, y: 1.7 },
+        { id: "N7", el: "N", x: 3.2, y: 1.8 },
+        { id: "C5", el: "C", x: 3.6, y: 0.6 },
+        { id: "C4", el: "C", x: 2.7, y: -0.2 },
+        { id: "C6", el: "C", x: 4.8, y: 0.1 },
+        { id: "N6", el: "N", x: 5.8, y: 0.8 },
+        { id: "N1", el: "N", x: 5.0, y: -1.2 },
+        { id: "C2", el: "C", x: 4.1, y: -1.9 },
+        { id: "N3", el: "N", x: 3.0, y: -1.5 },
+        { id: "O_alpha", el: "O", x: -2.4, y: 0.5 },
+        { id: "P_alpha", el: "P", x: -3.3, y: 0.9 },
+        { id: "O1_alpha", el: "O", x: -3.0, y: 2.1 },
+        { id: "O2_alpha", el: "O", x: -3.7, y: -0.3 },
+        { id: "O_beta", el: "O", x: -4.5, y: 1.4 },
+        { id: "P_beta", el: "P", x: -5.4, y: 1.8 },
+        { id: "O1_beta", el: "O", x: -5.0, y: 3.0 },
+        { id: "O2_beta", el: "O", x: -5.8, y: 0.6 },
+        { id: "O_gamma", el: "O", x: -6.6, y: 2.3 },
+        { id: "P_gamma", el: "P", x: -7.5, y: 2.7 },
+        { id: "O1_gamma", el: "O", x: -7.1, y: 3.9 },
+        { id: "O2_gamma", el: "O", x: -7.9, y: 1.5 },
+        { id: "O3_gamma", el: "O", x: -8.6, y: 3.2 }
+      ],
+      bonds: [
+        { a: "O_rib", b: "C1_rib", order: 1 },
+        { a: "C1_rib", b: "C2_rib", order: 1 },
+        { a: "C2_rib", b: "C3_rib", order: 1 },
+        { a: "C3_rib", b: "C4_rib", order: 1 },
+        { a: "C4_rib", b: "O_rib", order: 1 },
+        { a: "C4_rib", b: "C5_rib", order: 1 },
+        { a: "C3_rib", b: "O3_rib", order: 1 },
+        { a: "C2_rib", b: "O2_rib", order: 1 },
+        { a: "C1_rib", b: "N9", order: 1 },
+        { a: "N9", b: "C8", order: 1 },
+        { a: "C8", b: "N7", order: 2 },
+        { a: "N7", b: "C5", order: 1 },
+        { a: "C5", b: "C4", order: 2 },
+        { a: "C4", b: "N9", order: 1 },
+        { a: "C5", b: "C6", order: 1 },
+        { a: "C6", b: "N6", order: 1 },
+        { a: "C6", b: "N1", order: 2 },
+        { a: "N1", b: "C2", order: 1 },
+        { a: "C2", b: "N3", order: 2 },
+        { a: "N3", b: "C4", order: 1 },
+        { a: "C5_rib", b: "O_alpha", order: 1 },
+        { a: "O_alpha", b: "P_alpha", order: 1 },
+        { a: "P_alpha", b: "O1_alpha", order: 2 },
+        { a: "P_alpha", b: "O2_alpha", order: 1 },
+        { a: "P_alpha", b: "O_beta", order: 1 },
+        { a: "O_beta", b: "P_beta", order: 1 },
+        { a: "P_beta", b: "O1_beta", order: 2 },
+        { a: "P_beta", b: "O2_beta", order: 1 },
+        { a: "P_beta", b: "O_gamma", order: 1 },
+        { a: "O_gamma", b: "P_gamma", order: 1 },
+        { a: "P_gamma", b: "O1_gamma", order: 2 },
+        { a: "P_gamma", b: "O2_gamma", order: 1 },
+        { a: "P_gamma", b: "O3_gamma", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O_rib", count: 2 },
+        { on: "O2_rib", count: 2 },
+        { on: "O3_rib", count: 2 },
+        { on: "O_alpha", count: 2 },
+        { on: "O1_alpha", count: 2 },
+        { on: "O2_alpha", count: 2 },
+        { on: "O_beta", count: 2 },
+        { on: "O1_beta", count: 2 },
+        { on: "O2_beta", count: 2 },
+        { on: "O_gamma", count: 2 },
+        { on: "O1_gamma", count: 2 },
+        { on: "O2_gamma", count: 2 },
+        { on: "O3_gamma", count: 2 }
+      ]
+    },
+    Polypeptide: {
+      atoms: [
+        { id: "ext1", el: "ext", x: -4.5, y: 0 },
+        { id: "N1", el: "N", x: -3.5, y: 0 },
+        { id: "HN1", el: "H", x: -3.5, y: 1.0 },
+        { id: "C1", el: "C", x: -2.3, y: -0.5 },
+        { id: "C2", el: "C", x: -1.1, y: 0.2 },
+        { id: "O1", el: "O", x: -1.1, y: 1.3 },
+        { id: "N2", el: "N", x: 0, y: -0.4 },
+        { id: "HN2", el: "H", x: 0, y: -1.4 },
+        { id: "C3", el: "C", x: 1.2, y: 0.3 },
+        { id: "C4", el: "C", x: 1.2, y: 1.5 },
+        { id: "C5", el: "C", x: 2.4, y: -0.4 },
+        { id: "O2", el: "O", x: 2.4, y: -1.5 },
+        { id: "N3", el: "N", x: 3.5, y: 0.2 },
+        { id: "HN3", el: "H", x: 3.5, y: 1.2 },
+        { id: "C6", el: "C", x: 4.7, y: -0.5 },
+        { id: "C7", el: "C", x: 4.7, y: -1.7 },
+        { id: "O3", el: "O", x: 5.7, y: -2.3 },
+        { id: "C8", el: "C", x: 5.9, y: 0.2 },
+        { id: "O4", el: "O", x: 5.9, y: 1.3 },
+        { id: "ext2", el: "ext", x: 6.9, y: -0.2 }
+      ],
+      bonds: [
+        { a: "ext1", b: "N1", order: 1, style: "dashed" },
+        { a: "N1", b: "HN1", order: 1 },
+        { a: "N1", b: "C1", order: 1 },
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "O1", order: 2 },
+        { a: "C2", b: "N2", order: 1 },
+        { a: "N2", b: "HN2", order: 1 },
+        { a: "N2", b: "C3", order: 1 },
+        { a: "C3", b: "C4", order: 1 },
+        { a: "C3", b: "C5", order: 1 },
+        { a: "C5", b: "O2", order: 2 },
+        { a: "C5", b: "N3", order: 1 },
+        { a: "N3", b: "HN3", order: 1 },
+        { a: "N3", b: "C6", order: 1 },
+        { a: "C6", b: "C7", order: 1 },
+        { a: "C7", b: "O3", order: 1 },
+        { a: "C6", b: "C8", order: 1 },
+        { a: "C8", b: "O4", order: 2 },
+        { a: "C8", b: "ext2", order: 1, style: "dashed" }
+      ],
+      brackets: [
+        { x: -3.8, yMin: -1.8, yMax: 1.8, type: "left" },
+        { x: 6.4, yMin: -1.8, yMax: 1.8, type: "right" }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 },
+        { on: "O2", count: 2 },
+        { on: "O3", count: 2 },
+        { on: "O4", count: 2 }
+      ]
+    },
+    Cellulose: {
+      atoms: [
+        { id: "ext1", el: "ext", x: -5.2, y: 0.1 },
+        { id: "O4", el: "O", x: -4.2, y: 0.1 },
+        { id: "C4", el: "C", x: -3.2, y: 0.1 },
+        { id: "C3", el: "C", x: -2.6, y: -0.9 },
+        { id: "C2", el: "C", x: -1.4, y: -0.9 },
+        { id: "C1", el: "C", x: -0.8, y: 0.1 },
+        { id: "O1", el: "O", x: -1.4, y: 1.1 },
+        { id: "C5", el: "C", x: -2.6, y: 1.1 },
+        { id: "C6", el: "C", x: -3.2, y: 2.2 },
+        { id: "O6", el: "O", x: -4.3, y: 2.2 },
+        { id: "O_link", el: "O", x: 0, y: 0.1 },
+        { id: "C4_2", el: "C", x: 0.8, y: 0.1 },
+        { id: "C3_2", el: "C", x: 1.4, y: 1.1 },
+        { id: "C2_2", el: "C", x: 2.6, y: 1.1 },
+        { id: "C1_2", el: "C", x: 3.2, y: 0.1 },
+        { id: "O1_2", el: "O", x: 2.6, y: -0.9 },
+        { id: "C5_2", el: "C", x: 1.4, y: -0.9 },
+        { id: "C6_2", el: "C", x: 0.8, y: -2.0 },
+        { id: "O6_2", el: "O", x: -0.3, y: -2.0 },
+        { id: "O4_2", el: "O", x: 4.2, y: 0.1 },
+        { id: "ext2", el: "ext", x: 5.2, y: 0.1 }
+      ],
+      bonds: [
+        { a: "ext1", b: "O4", order: 1, style: "dashed" },
+        { a: "O4", b: "C4", order: 1 },
+        { a: "C4", b: "C3", order: 1 },
+        { a: "C3", b: "C2", order: 1 },
+        { a: "C2", b: "C1", order: 1 },
+        { a: "C1", b: "O1", order: 1 },
+        { a: "O1", b: "C5", order: 1 },
+        { a: "C5", b: "C4", order: 1 },
+        { a: "C5", b: "C6", order: 1 },
+        { a: "C6", b: "O6", order: 1 },
+        { a: "C1", b: "O_link", order: 1 },
+        { a: "O_link", b: "C4_2", order: 1 },
+        { a: "C4_2", b: "C3_2", order: 1 },
+        { a: "C3_2", b: "C2_2", order: 1 },
+        { a: "C2_2", b: "C1_2", order: 1 },
+        { a: "C1_2", b: "O1_2", order: 1 },
+        { a: "O1_2", b: "C5_2", order: 1 },
+        { a: "C5_2", b: "C4_2", order: 1 },
+        { a: "C5_2", b: "C6_2", order: 1 },
+        { a: "C6_2", b: "O6_2", order: 1 },
+        { a: "C1_2", b: "O4_2", order: 1 },
+        { a: "O4_2", b: "ext2", order: 1, style: "dashed" }
+      ],
+      brackets: [
+        { x: -4.5, yMin: -2.3, yMax: 2.3 },
+        { x: 4.5, yMin: -2.3, yMax: 2.3 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 },
+        { on: "O4", count: 2 },
+        { on: "O6", count: 2 },
+        { on: "O_link", count: 2 },
+        { on: "O1_2", count: 2 },
+        { on: "O6_2", count: 2 },
+        { on: "O4_2", count: 2 }
+      ]
+    },
+    Glycogen: {
+      atoms: [
+        { id: "ext_main_L", el: "ext", x: -4.8, y: 0 },
+        { id: "O4_A", el: "O", x: -3.8, y: 0 },
+        { id: "C4_A", el: "C", x: -2.8, y: 0 },
+        { id: "C3_A", el: "C", x: -2.2, y: -0.9 },
+        { id: "C2_A", el: "C", x: -1.0, y: -0.9 },
+        { id: "C1_A", el: "C", x: -0.4, y: 0 },
+        { id: "O1_A", el: "O", x: -1.0, y: 0.9 },
+        { id: "C5_A", el: "C", x: -2.2, y: 0.9 },
+        { id: "C6_A", el: "C", x: -2.8, y: 2.0 },
+        { id: "O_branch", el: "O", x: -2.8, y: 2.9 },
+        { id: "C1_C", el: "C", x: -2.8, y: 3.8 },
+        { id: "C2_C", el: "C", x: -3.8, y: 4.4 },
+        { id: "C3_C", el: "C", x: -3.8, y: 5.6 },
+        { id: "C4_C", el: "C", x: -2.8, y: 6.2 },
+        { id: "O1_C", el: "O", x: -1.8, y: 5.3 },
+        { id: "C5_C", el: "C", x: -1.8, y: 4.4 },
+        { id: "ext_branch", el: "ext", x: -2.8, y: 7.2 },
+        { id: "O_link", el: "O", x: 0.4, y: 0 },
+        { id: "C4_B", el: "C", x: 1.2, y: 0 },
+        { id: "C3_B", el: "C", x: 1.8, y: -0.9 },
+        { id: "C2_B", el: "C", x: 3.0, y: -0.9 },
+        { id: "C1_B", el: "C", x: 3.6, y: 0 },
+        { id: "O1_B", el: "O", x: 3.0, y: 0.9 },
+        { id: "C5_B", el: "C", x: 1.8, y: 0.9 },
+        { id: "C6_B", el: "C", x: 1.2, y: 2.0 },
+        { id: "O6_B", el: "O", x: 0.2, y: 2.0 },
+        { id: "ext_main_R", el: "ext", x: 4.6, y: 0 }
+      ],
+      bonds: [
+        { a: "ext_main_L", b: "O4_A", order: 1, style: "dashed" },
+        { a: "O4_A", b: "C4_A", order: 1 },
+        { a: "C4_A", b: "C3_A", order: 1 },
+        { a: "C3_A", b: "C2_A", order: 1 },
+        { a: "C2_A", b: "C1_A", order: 1 },
+        { a: "C1_A", b: "O1_A", order: 1 },
+        { a: "O1_A", b: "C5_A", order: 1 },
+        { a: "C5_A", b: "C4_A", order: 1 },
+        { a: "C5_A", b: "C6_A", order: 1 },
+        { a: "C6_A", b: "O_branch", order: 1 },
+        { a: "O_branch", b: "C1_C", order: 1 },
+        { a: "C1_C", b: "C2_C", order: 1 },
+        { a: "C2_C", b: "C3_C", order: 1 },
+        { a: "C3_C", b: "C4_C", order: 1 },
+        { a: "C4_C", b: "ext_branch", order: 1, style: "dashed" },
+        { a: "C4_C", b: "C5_C", order: 1 },
+        { a: "C5_C", b: "O1_C", order: 1 },
+        { a: "O1_C", b: "C1_C", order: 1 },
+        { a: "C1_A", b: "O_link", order: 1 },
+        { a: "O_link", b: "C4_B", order: 1 },
+        { a: "C4_B", b: "C3_B", order: 1 },
+        { a: "C3_B", b: "C2_B", order: 1 },
+        { a: "C2_B", b: "C1_B", order: 1 },
+        { a: "C1_B", b: "O1_B", order: 1 },
+        { a: "O1_B", b: "C5_B", order: 1 },
+        { a: "C5_B", b: "C4_B", order: 1 },
+        { a: "C5_B", b: "C6_B", order: 1 },
+        { a: "C6_B", b: "O6_B", order: 1 },
+        { a: "C1_B", b: "ext_main_R", order: 1, style: "dashed" }
+      ],
+      brackets: [
+        { x: -4.2, yMin: -1.3, yMax: 2.3 },
+        { x: 4.1, yMin: -1.3, yMax: 2.3 }
+      ],
+      lonePairs: [
+        { on: "O4_A", count: 2 },
+        { on: "O1_A", count: 2 },
+        { on: "O_branch", count: 2 },
+        { on: "O1_C", count: 2 },
+        { on: "O_link", count: 2 },
+        { on: "O1_B", count: 2 },
+        { on: "O6_B", count: 2 }
+      ]
+    },
+    DNA: {
+      atoms: [
+        { id: "O_S1", el: "O", x: -0.4, y: 3.6 },
+        { id: "C1_S1", el: "C", x: 0.6, y: 3.1 },
+        { id: "C2_S1", el: "C", x: 0.3, y: 2.2 },
+        { id: "C3_S1", el: "C", x: -0.7, y: 2.2 },
+        { id: "C4_S1", el: "C", x: -1.0, y: 3.1 },
+        { id: "C5_S1", el: "C", x: -1.8, y: 3.9 },
+        { id: "O_P1", el: "O", x: -2.4, y: 4.4 },
+        { id: "P1", el: "P", x: -3.3, y: 4.8 },
+        { id: "O1_P1", el: "O", x: -3.0, y: 6.0 },
+        { id: "O2_P1", el: "O", x: -3.7, y: 3.6 },
+        { id: "ext1", el: "ext", x: -4.2, y: 5.2 },
+        { id: "O_S2", el: "O", x: -0.4, y: 0.6 },
+        { id: "C1_S2", el: "C", x: 0.6, y: 0.1 },
+        { id: "C2_S2", el: "C", x: 0.3, y: -0.8 },
+        { id: "C3_S2", el: "C", x: -0.7, y: -0.8 },
+        { id: "C4_S2", el: "C", x: -1.0, y: 0.1 },
+        { id: "C5_S2", el: "C", x: -1.8, y: 0.9 },
+        { id: "O_P2", el: "O", x: -2.4, y: 1.4 },
+        { id: "P2", el: "P", x: -3.3, y: 1.8 },
+        { id: "O1_P2", el: "O", x: -3.0, y: 3.0 },
+        { id: "O2_P2", el: "O", x: -3.7, y: 0.6 },
+        { id: "O_S3", el: "O", x: -0.4, y: -2.4 },
+        { id: "C1_S3", el: "C", x: 0.6, y: -2.9 },
+        { id: "C2_S3", el: "C", x: 0.3, y: -3.8 },
+        { id: "C3_S3", el: "C", x: -0.7, y: -3.8 },
+        { id: "C4_S3", el: "C", x: -1.0, y: -2.9 },
+        { id: "C5_S3", el: "C", x: -1.8, y: -2.1 },
+        { id: "O_P3", el: "O", x: -2.4, y: -1.6 },
+        { id: "P3", el: "P", x: -3.3, y: -1.2 },
+        { id: "O1_P3", el: "O", x: -3.0, y: 0 },
+        { id: "O2_P3", el: "O", x: -3.7, y: -2.4 },
+        { id: "ext2", el: "ext", x: -0.7, y: -4.8 },
+        { id: "Base_A", el: "N", x: 1.6, y: 3.1 },
+        { id: "Base_T", el: "N", x: 1.6, y: 0.1 },
+        { id: "Base_C", el: "N", x: 1.6, y: -2.9 }
+      ],
+      bonds: [
+        { a: "O_S1", b: "C1_S1", order: 1 },
+        { a: "C1_S1", b: "C2_S1", order: 1 },
+        { a: "C2_S1", b: "C3_S1", order: 1 },
+        { a: "C3_S1", b: "C4_S1", order: 1 },
+        { a: "C4_S1", b: "O_S1", order: 1 },
+        { a: "C4_S1", b: "C5_S1", order: 1 },
+        { a: "C1_S1", b: "Base_A", order: 1 },
+        { a: "P1", b: "ext1", order: 1, style: "dashed" },
+        { a: "P1", b: "O1_P1", order: 2 },
+        { a: "P1", b: "O2_P1", order: 1 },
+        { a: "P1", b: "O_P1", order: 1 },
+        { a: "O_P1", b: "C5_S1", order: 1 },
+        { a: "C3_S1", b: "O_P2", order: 1 },
+        { a: "O_S2", b: "C1_S2", order: 1 },
+        { a: "C1_S2", b: "C2_S2", order: 1 },
+        { a: "C2_S2", b: "C3_S2", order: 1 },
+        { a: "C3_S2", b: "C4_S2", order: 1 },
+        { a: "C4_S2", b: "O_S2", order: 1 },
+        { a: "C4_S2", b: "C5_S2", order: 1 },
+        { a: "C1_S2", b: "Base_T", order: 1 },
+        { a: "O_P2", b: "P2", order: 1 },
+        { a: "P2", b: "O1_P2", order: 2 },
+        { a: "P2", b: "O2_P2", order: 1 },
+        { a: "P2", b: "O_P3", order: 1 },
+        { a: "O_P3", b: "C5_S3", order: 1 },
+        { a: "O_S3", b: "C1_S3", order: 1 },
+        { a: "C1_S3", b: "C2_S3", order: 1 },
+        { a: "C2_S3", b: "C3_S3", order: 1 },
+        { a: "C3_S3", b: "C4_S3", order: 1 },
+        { a: "C4_S3", b: "O_S3", order: 1 },
+        { a: "C4_S3", b: "C5_S3", order: 1 },
+        { a: "C1_S3", b: "Base_C", order: 1 },
+        { a: "C3_S3", b: "ext2", order: 1, style: "dashed" }
+      ],
+      brackets: [
+        { x: -3.8, yMin: -4.4, yMax: 5.6 },
+        { x: 2.2, yMin: -4.4, yMax: 5.6 }
+      ],
+      lonePairs: [
+        { on: "O_S1", count: 2 },
+        { on: "O_S2", count: 2 },
+        { on: "O_S3", count: 2 }
+      ]
+    },
+    RNA: {
+      atoms: [
+        { id: "O_S1", el: "O", x: -0.4, y: 3.6 },
+        { id: "C1_S1", el: "C", x: 0.6, y: 3.1 },
+        { id: "C2_S1", el: "C", x: 0.3, y: 2.2 },
+        { id: "OH_S1", el: "O", x: 0.8, y: 1.2 },
+        { id: "C3_S1", el: "C", x: -0.7, y: 2.2 },
+        { id: "C4_S1", el: "C", x: -1.0, y: 3.1 },
+        { id: "C5_S1", el: "C", x: -1.8, y: 3.9 },
+        { id: "O_P1", el: "O", x: -2.4, y: 4.4 },
+        { id: "P1", el: "P", x: -3.3, y: 4.8 },
+        { id: "O1_P1", el: "O", x: -3.0, y: 6.0 },
+        { id: "O2_P1", el: "O", x: -3.7, y: 3.6 },
+        { id: "ext1", el: "ext", x: -4.2, y: 5.2 },
+        { id: "O_S2", el: "O", x: -0.4, y: 0.6 },
+        { id: "C1_S2", el: "C", x: 0.6, y: 0.1 },
+        { id: "C2_S2", el: "C", x: 0.3, y: -0.8 },
+        { id: "OH_S2", el: "O", x: 0.8, y: -1.8 },
+        { id: "C3_S2", el: "C", x: -0.7, y: -0.8 },
+        { id: "C4_S2", el: "C", x: -1.0, y: 0.1 },
+        { id: "C5_S2", el: "C", x: -1.8, y: 0.9 },
+        { id: "O_P2", el: "O", x: -2.4, y: 1.4 },
+        { id: "P2", el: "P", x: -3.3, y: 1.8 },
+        { id: "O1_P2", el: "O", x: -3.0, y: 3.0 },
+        { id: "O2_P2", el: "O", x: -3.7, y: 0.6 },
+        { id: "O_S3", el: "O", x: -0.4, y: -2.4 },
+        { id: "C1_S3", el: "C", x: 0.6, y: -2.9 },
+        { id: "C2_S3", el: "C", x: 0.3, y: -3.8 },
+        { id: "OH_S3", el: "O", x: 0.8, y: -4.8 },
+        { id: "C3_S3", el: "C", x: -0.7, y: -3.8 },
+        { id: "C4_S3", el: "C", x: -1.0, y: -2.9 },
+        { id: "C5_S3", el: "C", x: -1.8, y: -2.1 },
+        { id: "O_P3", el: "O", x: -2.4, y: -1.6 },
+        { id: "P3", el: "P", x: -3.3, y: -1.2 },
+        { id: "O1_P3", el: "O", x: -3.0, y: 0 },
+        { id: "O2_P3", el: "O", x: -3.7, y: -2.4 },
+        { id: "ext2", el: "ext", x: -0.7, y: -4.8 },
+        { id: "Base_A", el: "N", x: 1.6, y: 3.1 },
+        { id: "Base_U", el: "N", x: 1.6, y: 0.1 },
+        { id: "Base_C", el: "N", x: 1.6, y: -2.9 }
+      ],
+      bonds: [
+        { a: "O_S1", b: "C1_S1", order: 1 },
+        { a: "C1_S1", b: "C2_S1", order: 1 },
+        { a: "C2_S1", b: "OH_S1", order: 1 },
+        { a: "C2_S1", b: "C3_S1", order: 1 },
+        { a: "C3_S1", b: "C4_S1", order: 1 },
+        { a: "C4_S1", b: "O_S1", order: 1 },
+        { a: "C4_S1", b: "C5_S1", order: 1 },
+        { a: "C1_S1", b: "Base_A", order: 1 },
+        { a: "P1", b: "ext1", order: 1, style: "dashed" },
+        { a: "P1", b: "O1_P1", order: 2 },
+        { a: "P1", b: "O2_P1", order: 1 },
+        { a: "P1", b: "O_P1", order: 1 },
+        { a: "O_P1", b: "C5_S1", order: 1 },
+        { a: "C3_S1", b: "O_P2", order: 1 },
+        { a: "O_S2", b: "C1_S2", order: 1 },
+        { a: "C1_S2", b: "C2_S2", order: 1 },
+        { a: "C2_S2", b: "OH_S2", order: 1 },
+        { a: "C2_S2", b: "C3_S2", order: 1 },
+        { a: "C3_S2", b: "C4_S2", order: 1 },
+        { a: "C4_S2", b: "O_S2", order: 1 },
+        { a: "C4_S2", b: "C5_S2", order: 1 },
+        { a: "C1_S2", b: "Base_U", order: 1 },
+        { a: "O_P2", b: "P2", order: 1 },
+        { a: "P2", b: "O1_P2", order: 2 },
+        { a: "P2", b: "O2_P2", order: 1 },
+        { a: "P2", b: "O_P3", order: 1 },
+        { a: "O_P3", b: "C5_S3", order: 1 },
+        { a: "O_S3", b: "C1_S3", order: 1 },
+        { a: "C1_S3", b: "C2_S3", order: 1 },
+        { a: "C2_S3", b: "OH_S3", order: 1 },
+        { a: "C2_S3", b: "C3_S3", order: 1 },
+        { a: "C3_S3", b: "C4_S3", order: 1 },
+        { a: "C4_S3", b: "O_S3", order: 1 },
+        { a: "C4_S3", b: "C5_S3", order: 1 },
+        { a: "C1_S3", b: "Base_C", order: 1 },
+        { a: "C3_S3", b: "ext2", order: 1, style: "dashed" }
+      ],
+      brackets: [
+        { x: -3.8, yMin: -4.4, yMax: 5.6 },
+        { x: 2.2, yMin: -4.4, yMax: 5.6 }
+      ],
+      lonePairs: [
+        { on: "O_S1", count: 2 },
+        { on: "OH_S1", count: 2 },
+        { on: "O_S2", count: 2 },
+        { on: "OH_S2", count: 2 },
+        { on: "O_S3", count: 2 },
+        { on: "OH_S3", count: 2 }
+      ]
+    },
+    Triglyceride: {
+      atoms: [
+        { id: "C1", el: "C", x: -2.2, y: 1.2 },
+        { id: "C2", el: "C", x: -2.2, y: 0 },
+        { id: "C3", el: "C", x: -2.2, y: -1.2 },
+        { id: "O1", el: "O", x: -1.2, y: 1.2 },
+        { id: "C_FA1", el: "C", x: -0.2, y: 1.2 },
+        { id: "O_FA1", el: "O", x: -0.2, y: 2.1 },
+        { id: "O2", el: "O", x: -1.2, y: 0 },
+        { id: "C_FA2", el: "C", x: -0.2, y: 0 },
+        { id: "O_FA2", el: "O", x: -0.2, y: -0.9 },
+        { id: "O3", el: "O", x: -1.2, y: -1.2 },
+        { id: "C_FA3", el: "C", x: -0.2, y: -1.2 },
+        { id: "O_FA3", el: "O", x: -0.2, y: -2.1 },
+        { id: "C11", el: "C", x: 0.8, y: 1.5 },
+        { id: "C12", el: "C", x: 1.6, y: 0.9 },
+        { id: "C13", el: "C", x: 2.4, y: 1.5 },
+        { id: "C14", el: "C", x: 3.2, y: 0.9 },
+        { id: "C21", el: "C", x: 0.8, y: 0.3 },
+        { id: "C22", el: "C", x: 1.6, y: -0.3 },
+        { id: "C23", el: "C", x: 2.3, y: -1.0 },
+        { id: "C24", el: "C", x: 2.0, y: -2.0 },
+        { id: "C31", el: "C", x: 0.8, y: -0.9 },
+        { id: "C32", el: "C", x: 1.6, y: -1.5 },
+        { id: "C33", el: "C", x: 2.4, y: -0.9 },
+        { id: "C34", el: "C", x: 3.2, y: -1.5 }
+      ],
+      bonds: [
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "C3", order: 1 },
+        { a: "C1", b: "O1", order: 1 },
+        { a: "C2", b: "O2", order: 1 },
+        { a: "C3", b: "O3", order: 1 },
+        { a: "O1", b: "C_FA1", order: 1 },
+        { a: "C_FA1", b: "O_FA1", order: 2 },
+        { a: "O2", b: "C_FA2", order: 1 },
+        { a: "C_FA2", b: "O_FA2", order: 2 },
+        { a: "O3", b: "C_FA3", order: 1 },
+        { a: "C_FA3", b: "O_FA3", order: 2 },
+        { a: "C_FA1", b: "C11", order: 1 },
+        { a: "C11", b: "C12", order: 1 },
+        { a: "C12", b: "C13", order: 1 },
+        { a: "C13", b: "C14", order: 1 },
+        { a: "C_FA2", b: "C21", order: 1 },
+        { a: "C21", b: "C22", order: 1 },
+        { a: "C22", b: "C23", order: 2 },
+        { a: "C23", b: "C24", order: 1 },
+        { a: "C_FA3", b: "C31", order: 1 },
+        { a: "C31", b: "C32", order: 1 },
+        { a: "C32", b: "C33", order: 1 },
+        { a: "C33", b: "C34", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 },
+        { on: "O2", count: 2 },
+        { on: "O3", count: 2 },
+        { on: "O_FA1", count: 2 },
+        { on: "O_FA2", count: 2 },
+        { on: "O_FA3", count: 2 }
+      ]
+    },
+    Phospholipid: {
+      atoms: [
+        { id: "C1", el: "C", x: -2.2, y: 1.2 },
+        { id: "C2", el: "C", x: -2.2, y: 0 },
+        { id: "C3", el: "C", x: -2.2, y: -1.2 },
+        { id: "O1", el: "O", x: -1.2, y: 1.2 },
+        { id: "C_FA1", el: "C", x: -0.2, y: 1.2 },
+        { id: "O_FA1", el: "O", x: -0.2, y: 2.1 },
+        { id: "O2", el: "O", x: -1.2, y: 0 },
+        { id: "C_FA2", el: "C", x: -0.2, y: 0 },
+        { id: "O_FA2", el: "O", x: -0.2, y: -0.9 },
+        { id: "C11", el: "C", x: 0.8, y: 1.5 },
+        { id: "C12", el: "C", x: 1.6, y: 0.9 },
+        { id: "C13", el: "C", x: 2.4, y: 1.5 },
+        { id: "C14", el: "C", x: 3.2, y: 0.9 },
+        { id: "C21", el: "C", x: 0.8, y: 0.3 },
+        { id: "C22", el: "C", x: 1.6, y: -0.3 },
+        { id: "C23", el: "C", x: 2.3, y: -1.0 },
+        { id: "C24", el: "C", x: 2.0, y: -2.0 },
+        { id: "O3", el: "O", x: -1.2, y: -1.2 },
+        { id: "P", el: "P", x: -1.2, y: -2.3 },
+        { id: "O1_P", el: "O", x: -2.3, y: -2.3 },
+        { id: "O2_P", el: "O", x: -0.1, y: -2.3 },
+        { id: "O_head", el: "O", x: -1.2, y: -3.4 },
+        { id: "C_head", el: "C", x: -2.1, y: -4.1 },
+        { id: "N_head", el: "N", x: -1.7, y: -5.2 }
+      ],
+      bonds: [
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "C3", order: 1 },
+        { a: "C1", b: "O1", order: 1 },
+        { a: "C2", b: "O2", order: 1 },
+        { a: "C3", b: "O3", order: 1 },
+        { a: "O1", b: "C_FA1", order: 1 },
+        { a: "C_FA1", b: "O_FA1", order: 2 },
+        { a: "O2", b: "C_FA2", order: 1 },
+        { a: "C_FA2", b: "O_FA2", order: 2 },
+        { a: "C_FA1", b: "C11", order: 1 },
+        { a: "C11", b: "C12", order: 1 },
+        { a: "C12", b: "C13", order: 1 },
+        { a: "C13", b: "C14", order: 1 },
+        { a: "C_FA2", b: "C21", order: 1 },
+        { a: "C21", b: "C22", order: 1 },
+        { a: "C22", b: "C23", order: 2 },
+        { a: "C23", b: "C24", order: 1 },
+        { a: "O3", b: "P", order: 1 },
+        { a: "P", b: "O1_P", order: 2 },
+        { a: "P", b: "O2_P", order: 1 },
+        { a: "P", b: "O_head", order: 1 },
+        { a: "O_head", b: "C_head", order: 1 },
+        { a: "C_head", b: "N_head", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 },
+        { on: "O2", count: 2 },
+        { on: "O3", count: 2 },
+        { on: "O_FA1", count: 2 },
+        { on: "O_FA2", count: 2 },
+        { on: "O1_P", count: 2 },
+        { on: "O2_P", count: 2 },
+        { on: "O_head", count: 2 }
+      ]
+    },
+    Cholesterol: {
+      atoms: [
+        { id: "C3", el: "C", x: -4.5, y: 0 },
+        { id: "O3", el: "O", x: -5.5, y: -0.5 },
+        { id: "C4", el: "C", x: -3.6, y: -1.0 },
+        { id: "C5", el: "C", x: -2.4, y: -1.0 },
+        { id: "C10", el: "C", x: -2.4, y: 0.2 },
+        { id: "C1", el: "C", x: -3.6, y: 1.2 },
+        { id: "C2", el: "C", x: -4.5, y: 1.0 },
+        { id: "C19", el: "C", x: -2.4, y: 1.3 },
+        { id: "C6", el: "C", x: -1.3, y: -2.0 },
+        { id: "C7", el: "C", x: -0.1, y: -2.0 },
+        { id: "C8", el: "C", x: 0.5, y: -0.8 },
+        { id: "C9", el: "C", x: -1.2, y: 0.2 },
+        { id: "C11", el: "C", x: -0.6, y: 1.4 },
+        { id: "C12", el: "C", x: 0.6, y: 1.4 },
+        { id: "C13", el: "C", x: 1.3, y: 0.2 },
+        { id: "C14", el: "C", x: 0.5, y: -0.8 },
+        { id: "C18", el: "C", x: 1.3, y: 1.3 },
+        { id: "C15", el: "C", x: 1.5, y: -1.8 },
+        { id: "C16", el: "C", x: 2.7, y: -1.2 },
+        { id: "C17", el: "C", x: 2.5, y: 0.2 },
+        { id: "C20", el: "C", x: 3.5, y: 0.8 },
+        { id: "C21", el: "C", x: 3.2, y: 2.0 },
+        { id: "C22", el: "C", x: 4.6, y: 0.5 },
+        { id: "C23", el: "C", x: 5.5, y: 1.1 },
+        { id: "C24", el: "C", x: 6.5, y: 0.4 },
+        { id: "C25", el: "C", x: 7.5, y: 1.0 },
+        { id: "C26", el: "C", x: 7.3, y: 2.2 },
+        { id: "C27", el: "C", x: 8.5, y: 0.4 }
+      ],
+      bonds: [
+        { a: "C3", b: "O3", order: 1 },
+        { a: "C3", b: "C4", order: 1 },
+        { a: "C4", b: "C5", order: 1 },
+        { a: "C5", b: "C10", order: 1 },
+        { a: "C10", b: "C1", order: 1 },
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "C3", order: 1 },
+        { a: "C10", b: "C19", order: 1 },
+        { a: "C5", b: "C6", order: 2 },
+        { a: "C6", b: "C7", order: 1 },
+        { a: "C7", b: "C8", order: 1 },
+        { a: "C8", b: "C9", order: 1 },
+        { a: "C9", b: "C10", order: 1 },
+        { a: "C9", b: "C11", order: 1 },
+        { a: "C11", b: "C12", order: 1 },
+        { a: "C12", b: "C13", order: 1 },
+        { a: "C13", b: "C14", order: 1 },
+        { a: "C14", b: "C8", order: 1 },
+        { a: "C13", b: "C18", order: 1 },
+        { a: "C14", b: "C15", order: 1 },
+        { a: "C15", b: "C16", order: 1 },
+        { a: "C16", b: "C17", order: 1 },
+        { a: "C17", b: "C13", order: 1 },
+        { a: "C17", b: "C20", order: 1 },
+        { a: "C20", b: "C21", order: 1 },
+        { a: "C20", b: "C22", order: 1 },
+        { a: "C22", b: "C23", order: 1 },
+        { a: "C23", b: "C24", order: 1 },
+        { a: "C24", b: "C25", order: 1 },
+        { a: "C25", b: "C26", order: 1 },
+        { a: "C25", b: "C27", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O3", count: 2 }
+      ]
+    },
+    Estrogen: {
+      atoms: [
+        { id: "C3", el: "C", x: -4.5, y: 0 },
+        { id: "O3", el: "O", x: -5.5, y: -0.5 },
+        { id: "C4", el: "C", x: -3.6, y: -1.0 },
+        { id: "C5", el: "C", x: -2.4, y: -1.0 },
+        { id: "C10", el: "C", x: -2.4, y: 0.2 },
+        { id: "C1", el: "C", x: -3.6, y: 1.2 },
+        { id: "C2", el: "C", x: -4.5, y: 1.0 },
+        { id: "C6", el: "C", x: -1.3, y: -2.0 },
+        { id: "C7", el: "C", x: -0.1, y: -2.0 },
+        { id: "C8", el: "C", x: 0.5, y: -0.8 },
+        { id: "C9", el: "C", x: -1.2, y: 0.2 },
+        { id: "C11", el: "C", x: -0.6, y: 1.4 },
+        { id: "C12", el: "C", x: 0.6, y: 1.4 },
+        { id: "C13", el: "C", x: 1.3, y: 0.2 },
+        { id: "C14", el: "C", x: 0.5, y: -0.8 },
+        { id: "C18", el: "C", x: 1.3, y: 1.3 },
+        { id: "C15", el: "C", x: 1.5, y: -1.8 },
+        { id: "C16", el: "C", x: 2.7, y: -1.2 },
+        { id: "C17", el: "C", x: 2.5, y: 0.2 },
+        { id: "O17", el: "O", x: 3.4, y: 0.8 }
+      ],
+      bonds: [
+        { a: "C3", b: "O3", order: 1 },
+        { a: "C3", b: "C4", order: 1 },
+        { a: "C4", b: "C5", order: 2 },
+        { a: "C5", b: "C10", order: 1 },
+        { a: "C10", b: "C1", order: 2 },
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "C3", order: 2 },
+        { a: "C5", b: "C6", order: 1 },
+        { a: "C6", b: "C7", order: 1 },
+        { a: "C7", b: "C8", order: 1 },
+        { a: "C8", b: "C9", order: 1 },
+        { a: "C9", b: "C10", order: 1 },
+        { a: "C9", b: "C11", order: 1 },
+        { a: "C11", b: "C12", order: 1 },
+        { a: "C12", b: "C13", order: 1 },
+        { a: "C13", b: "C14", order: 1 },
+        { a: "C14", b: "C8", order: 1 },
+        { a: "C13", b: "C18", order: 1 },
+        { a: "C14", b: "C15", order: 1 },
+        { a: "C15", b: "C16", order: 1 },
+        { a: "C16", b: "C17", order: 1 },
+        { a: "C17", b: "C13", order: 1 },
+        { a: "C17", b: "O17", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O3", count: 2 },
+        { on: "O17", count: 2 }
+      ]
+    },
+    Testosterone: {
+      atoms: [
+        { id: "C3", el: "C", x: -4.5, y: 0 },
+        { id: "O3", el: "O", x: -5.6, y: 0 },
+        { id: "C4", el: "C", x: -3.6, y: -1.0 },
+        { id: "C5", el: "C", x: -2.4, y: -1.0 },
+        { id: "C10", el: "C", x: -2.4, y: 0.2 },
+        { id: "C1", el: "C", x: -3.6, y: 1.2 },
+        { id: "C2", el: "C", x: -4.5, y: 1.0 },
+        { id: "C19", el: "C", x: -2.4, y: 1.3 },
+        { id: "C6", el: "C", x: -1.3, y: -2.0 },
+        { id: "C7", el: "C", x: -0.1, y: -2.0 },
+        { id: "C8", el: "C", x: 0.5, y: -0.8 },
+        { id: "C9", el: "C", x: -1.2, y: 0.2 },
+        { id: "C11", el: "C", x: -0.6, y: 1.4 },
+        { id: "C12", el: "C", x: 0.6, y: 1.4 },
+        { id: "C13", el: "C", x: 1.3, y: 0.2 },
+        { id: "C14", el: "C", x: 0.5, y: -0.8 },
+        { id: "C18", el: "C", x: 1.3, y: 1.3 },
+        { id: "C15", el: "C", x: 1.5, y: -1.8 },
+        { id: "C16", el: "C", x: 2.7, y: -1.2 },
+        { id: "C17", el: "C", x: 2.5, y: 0.2 },
+        { id: "O17", el: "O", x: 3.4, y: 0.8 }
+      ],
+      bonds: [
+        { a: "C3", b: "O3", order: 2 },
+        { a: "C3", b: "C4", order: 1 },
+        { a: "C4", b: "C5", order: 2 },
+        { a: "C5", b: "C10", order: 1 },
+        { a: "C10", b: "C1", order: 1 },
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "C3", order: 1 },
+        { a: "C10", b: "C19", order: 1 },
+        { a: "C5", b: "C6", order: 1 },
+        { a: "C6", b: "C7", order: 1 },
+        { a: "C7", b: "C8", order: 1 },
+        { a: "C8", b: "C9", order: 1 },
+        { a: "C9", b: "C10", order: 1 },
+        { a: "C9", b: "C11", order: 1 },
+        { a: "C11", b: "C12", order: 1 },
+        { a: "C12", b: "C13", order: 1 },
+        { a: "C13", b: "C14", order: 1 },
+        { a: "C14", b: "C8", order: 1 },
+        { a: "C13", b: "C18", order: 1 },
+        { a: "C14", b: "C15", order: 1 },
+        { a: "C15", b: "C16", order: 1 },
+        { a: "C16", b: "C17", order: 1 },
+        { a: "C17", b: "C13", order: 1 },
+        { a: "C17", b: "O17", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O3", count: 2 },
+        { on: "O17", count: 2 }
+      ]
+    },
+    Epinephrine: {
+      atoms: [
+        { id: "C1", el: "C", x: 0, y: 0 },
+        { id: "C2", el: "C", x: -0.6, y: -1.1 },
+        { id: "C3", el: "C", x: -1.8, y: -1.1 },
+        { id: "O3", el: "O", x: -2.4, y: -2.2 },
+        { id: "C4", el: "C", x: -2.4, y: 0 },
+        { id: "O4", el: "O", x: -3.6, y: 0 },
+        { id: "C5", el: "C", x: -1.8, y: 1.1 },
+        { id: "C6", el: "C", x: -0.6, y: 1.1 },
+        { id: "C_alpha", el: "C", x: 1.3, y: 0 },
+        { id: "O_side", el: "O", x: 1.3, y: -1.1 },
+        { id: "C_beta", el: "C", x: 2.3, y: 0.8 },
+        { id: "N_amine", el: "N", x: 3.5, y: 0.2 },
+        { id: "C_methyl", el: "C", x: 4.5, y: 1.0 }
+      ],
+      bonds: [
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "C3", order: 2 },
+        { a: "C3", b: "O3", order: 1 },
+        { a: "C3", b: "C4", order: 1 },
+        { a: "C4", b: "O4", order: 1 },
+        { a: "C4", b: "C5", order: 2 },
+        { a: "C5", b: "C6", order: 1 },
+        { a: "C6", b: "C1", order: 2 },
+        { a: "C1", b: "C_alpha", order: 1 },
+        { a: "C_alpha", b: "O_side", order: 1 },
+        { a: "C_alpha", b: "C_beta", order: 1 },
+        { a: "C_beta", b: "N_amine", order: 1 },
+        { a: "N_amine", b: "C_methyl", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O3", count: 2 },
+        { on: "O4", count: 2 },
+        { on: "O_side", count: 2 },
+        { on: "N_amine", count: 1 }
+      ]
+    },
+    C3H6O: {
+      atoms: [
+        { id: "C1", el: "C", x: -1.3, y: 0 },
+        { id: "C2", el: "C", x: 0, y: 0 },
+        { id: "C3", el: "C", x: 1.3, y: 0 },
+        { id: "O1", el: "O", x: 0, y: -1.2 },
+        { id: "H1", el: "H", x: -2.1, y: -0.7 },
+        { id: "H2", el: "H", x: -2.1, y: 0.7 },
+        { id: "H3", el: "H", x: -1.3, y: 1.0 },
+        { id: "H4", el: "H", x: 2.1, y: -0.7 },
+        { id: "H5", el: "H", x: 2.1, y: 0.7 },
+        { id: "H6", el: "H", x: 1.3, y: 1.0 }
+      ],
+      bonds: [
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "C3", order: 1 },
+        { a: "C2", b: "O1", order: 2 },
+        { a: "C1", b: "H1", order: 1 },
+        { a: "C1", b: "H2", order: 1 },
+        { a: "C1", b: "H3", order: 1 },
+        { a: "C3", b: "H4", order: 1 },
+        { a: "C3", b: "H5", order: 1 },
+        { a: "C3", b: "H6", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 }
+      ]
+    },
+    C2H6O: {
+      atoms: [
+        { id: "C1", el: "C", x: -0.7, y: 0 },
+        { id: "C2", el: "C", x: 0.7, y: 0 },
+        { id: "O1", el: "O", x: 1.7, y: 0.7 },
+        { id: "H1", el: "H", x: -1.5, y: -0.7 },
+        { id: "H2", el: "H", x: -1.5, y: 0.7 },
+        { id: "H3", el: "H", x: -0.7, y: -1.0 },
+        { id: "H4", el: "H", x: 0.7, y: -1.0 },
+        { id: "H5", el: "H", x: 0.7, y: 1.0 },
+        { id: "H6", el: "H", x: 2.5, y: 0.2 }
+      ],
+      bonds: [
+        { a: "C1", b: "C2", order: 1 },
+        { a: "C2", b: "O1", order: 1 },
+        { a: "O1", b: "H6", order: 1 },
+        { a: "C1", b: "H1", order: 1 },
+        { a: "C1", b: "H2", order: 1 },
+        { a: "C1", b: "H3", order: 1 },
+        { a: "C2", b: "H4", order: 1 },
+        { a: "C2", b: "H5", order: 1 }
+      ],
+      lonePairs: [
+        { on: "O1", count: 2 }
+      ]
+    }
+  };
+
+  // Helper to create SVG elements with styling attributes handled correctly
+  function createSVGElement(tag, attrs = {}) {
+    const el = document.createElementNS(SVGNS, tag);
+    for (const [key, val] of Object.entries(attrs)) {
+      if (key === "font-size") {
+        el.style.fontSize = val;
+      } else {
+        el.setAttribute(key, val);
+      }
+    }
+    return el;
+  }
+
+  function drawContainerFrame(svg, viewBoxX, viewBoxY, boxW, boxH, options) {
+    if (!options || !options.showContainerFrame || options.showContainerFrame === "none") return;
+    
+    const frameType = options.showContainerFrame;
+    const inWater = options.inWater;
+    
+    // Margin from viewBox edge
+    const m = 6;
+    const x1 = viewBoxX + m;
+    const x2 = viewBoxX + boxW - m;
+    const y1 = viewBoxY + m;
+    const y2 = viewBoxY + boxH - m;
+    const cx = (x1 + x2) / 2;
+    const w = x2 - x1;
+    const h = y2 - y1;
+    
+    // 1. Draw water if requested (draw behind glass frame)
+    if (inWater) {
+      const y_water = y1 + h * 0.45; // 55% full
+      let waterPath = "";
+      
+      if (frameType === "beaker") {
+        const r = 8;
+        waterPath = `M ${x1} ${y_water} 
+                     Q ${(x1 + cx)/2} ${y_water - 3}, ${cx} ${y_water} 
+                     T ${x2} ${y_water} 
+                     L ${x2} ${y2 - r} 
+                     Q ${x2} ${y2}, ${x2 - r} ${y2} 
+                     L ${x1 + r} ${y2} 
+                     Q ${x1} ${y2}, ${x1} ${y2 - r} Z`;
+      } else if (frameType === "flask") {
+        const neckW = w * 0.35;
+        const neckH = h * 0.35;
+        const neckBottomY = y1 + neckH;
+        
+        // If water level is in the conical part vs neck
+        const yw = Math.max(neckBottomY, y_water);
+        // Calculate width at water level yw
+        const pct = (y2 - yw) / (y2 - neckBottomY);
+        const halfW = neckW / 2 + (w - neckW) / 2 * pct;
+        
+        waterPath = `M ${cx - halfW} ${yw} 
+                     Q ${(cx - halfW + cx)/2} ${yw - 2}, ${cx} ${yw} 
+                     T ${cx + halfW} ${yw} 
+                     L ${x2} ${y2} 
+                     L ${x1} ${y2} Z`;
+      } else if (frameType === "dish") {
+        const rx = w * 0.6;
+        const ry = h * 0.8;
+        const yw = y_water;
+        waterPath = `M ${x1} ${yw} 
+                     Q ${(x1 + cx)/2} ${yw - 2}, ${cx} ${yw} 
+                     T ${x2} ${yw} 
+                     A ${rx} ${ry} 0 0 1 ${x1} ${yw} Z`;
+      }
+      
+      if (waterPath) {
+        const waterEl = createSVGElement("path", {
+          d: waterPath,
+          fill: "var(--water, #3E6FA5)",
+          "fill-opacity": 0.28,
+          stroke: "var(--water, #3E6FA5)",
+          "stroke-width": 1.0,
+          "stroke-opacity": 0.6
+        });
+        svg.appendChild(waterEl);
+      }
+    }
+    
+    // 2. Draw container glass outline
+    let glassPath = "";
+    if (frameType === "beaker") {
+      const r = 8;
+      glassPath = `M ${x1 - 3} ${y1 - 1} 
+                   L ${x1} ${y1 + 2} 
+                   L ${x1} ${y2 - r} 
+                   Q ${x1} ${y2}, ${x1 + r} ${y2} 
+                   L ${x2 - r} ${y2} 
+                   Q ${x2} ${y2}, ${x2} ${y2 - r} 
+                   L ${x2} ${y1} 
+                   L ${x2 + 3} ${y1}`;
+    } else if (frameType === "flask") {
+      const neckW = w * 0.35;
+      const neckH = h * 0.35;
+      const neckBottomY = y1 + neckH;
+      
+      glassPath = `M ${cx - neckW/2} ${y1} 
+                   L ${cx + neckW/2} ${y1} 
+                   M ${cx - neckW/2} ${y1} 
+                   L ${cx - neckW/2} ${neckBottomY} 
+                   L ${x1} ${y2} 
+                   L ${x2} ${y2} 
+                   L ${cx + neckW/2} ${neckBottomY} 
+                   L ${cx + neckW/2} ${y1}`;
+    } else if (frameType === "dish") {
+      const y1_dish = y1 + h * 0.3;
+      const rx = w * 0.6;
+      const ry = h * 0.8;
+      glassPath = `M ${x1 - 4} ${y1_dish} 
+                   L ${x1} ${y1_dish} 
+                   A ${rx} ${ry} 0 0 0 ${x2} ${y1_dish} 
+                   L ${x2 + 4} ${y1_dish}`;
+    }
+    
+    if (glassPath) {
+      const glassEl = createSVGElement("path", {
+        d: glassPath,
+        fill: "none",
+        stroke: "var(--ink-soft, #3A463F)",
+        "stroke-width": 1.5,
+        "stroke-linecap": "round",
+        "stroke-linejoin": "round"
+      });
+      svg.appendChild(glassEl);
+    }
+  }
+
+  function drawHydrationShells(svg, scaledAtoms, options) {
+    if (!options || !options.inWater || !options.showContainerFrame || options.showContainerFrame === "none") return;
+    
+    scaledAtoms.forEach(atom => {
+      let isCation = false;
+      let isAnion = false;
+      
+      if (atom.el === "Na" || atom.el === "H" || atom.el === "K" || atom.el === "Ca") {
+        isCation = true;
+      } else if (atom.el === "Cl" || atom.el === "Br" || atom.el === "I" || atom.el === "F") {
+        isAnion = true;
+      }
+      
+      if (!isCation && !isAnion) return;
+      
+      // Draw 3 water molecules around this ion
+      const angles = [0.5, 2.594, 4.688]; // staggered angles in radians
+      const r_ion = atom.radius || 7.5;
+      const d_oxy = isCation ? r_ion + 9 : r_ion + 14;
+      const d_hyd = isCation ? r_ion + 15 : r_ion + 8;
+      
+      angles.forEach(alpha => {
+        const ox = atom.x + d_oxy * Math.cos(alpha);
+        const oy = atom.y + d_oxy * Math.sin(alpha);
+        
+        const h1x = atom.x + d_hyd * Math.cos(alpha - 0.45);
+        const h1y = atom.y + d_hyd * Math.sin(alpha - 0.45);
+        const h2x = atom.x + d_hyd * Math.cos(alpha + 0.45);
+        const h2y = atom.y + d_hyd * Math.sin(alpha + 0.45);
+        
+        svg.appendChild(createSVGElement("line", {
+          x1: ox.toFixed(1), y1: oy.toFixed(1),
+          x2: h1x.toFixed(1), y2: h1y.toFixed(1),
+          stroke: "var(--ink-mute, #6B756D)", "stroke-width": 0.8
+        }));
+        svg.appendChild(createSVGElement("line", {
+          x1: ox.toFixed(1), y1: oy.toFixed(1),
+          x2: h2x.toFixed(1), y2: h2y.toFixed(1),
+          stroke: "var(--ink-mute, #6B756D)", "stroke-width": 0.8
+        }));
+        
+        svg.appendChild(createSVGElement("circle", {
+          cx: ox.toFixed(1), cy: oy.toFixed(1), r: 2.5,
+          fill: "var(--accent, #E15554)", stroke: "var(--ink)", "stroke-width": 0.5
+        }));
+        
+        svg.appendChild(createSVGElement("circle", {
+          cx: h1x.toFixed(1), cy: h1y.toFixed(1), r: 1.6,
+          fill: "#ffffff", stroke: "var(--ink)", "stroke-width": 0.4
+        }));
+        svg.appendChild(createSVGElement("circle", {
+          cx: h2x.toFixed(1), cy: h2y.toFixed(1), r: 1.6,
+          fill: "#ffffff", stroke: "var(--ink)", "stroke-width": 0.4
+        }));
+      });
+    });
+  }
+
+  // ============================================================
+  // CSS VARIABLE COMPILER & STANDALONE SVG / PNG EXPORT
+  // ============================================================
+
+  // Temporarily drop dark mode (if active) to read light-theme computed
+  // vars, run fn synchronously with them, then restore: no visible flash
+  // since no paint happens between the class toggle and its restoration.
+  function withComputedStyles(useLightTheme, fn) {
+    const root = document.documentElement;
+    const wasDark = useLightTheme && root.classList.contains("dark");
+    if (wasDark) root.classList.remove("dark");
+    try {
+      return fn(getComputedStyle(root));
+    } finally {
+      if (wasDark) root.classList.add("dark");
+    }
+  }
+
+  // Clone an SVG and make it self-contained: resolve var(--...) references
+  // inside attributes (SVG geometry attrs don't accept var() at all, and a
+  // pasted/standalone document has no access to this page's CSS custom
+  // properties either way) and embed the diagram-class styles it depends on.
+  // Returns a clone that renders identically with zero external CSS.
+  function prepareStandaloneSVG(svgElement, computedStyles, options = {}) {
+    const clonedSvg = svgElement.cloneNode(true);
+
+    const varNames = [
+      '--paper', '--paper-2', '--paper-3', '--card', '--ink', '--ink-soft', '--ink-mute',
+      '--accent', '--accent-soft', '--good', '--good-soft',
+      '--nucleus', '--electron', '--shell', '--cool', '--hot', '--water',
+      '--mono', '--serif', '--display'
+    ];
+
+    // Resolve var(--...) inside attributes of the cloned SVG dynamically
+    const allElements = clonedSvg.querySelectorAll("*");
+    allElements.forEach(el => {
+      for (let i = 0; i < el.attributes.length; i++) {
+        const attr = el.attributes[i];
+        if (attr.value.includes("var(")) {
+          const match = attr.value.match(/var\(([^)]+)\)/);
+          if (match) {
+            const varName = match[1].trim();
+            let computedVal = computedStyles.getPropertyValue(varName).trim();
+            if (computedVal) {
+              if (["r", "cx", "cy", "width", "height", "x", "y", "stroke-width"].includes(attr.name)) {
+                computedVal = computedVal.replace(/px|em|rem/g, "");
+              }
+              attr.value = computedVal;
+            }
+          }
+        }
+      }
+    });
+
+    let cssVarsRule = ':root {\n';
+    varNames.forEach(v => {
+      let val = computedStyles.getPropertyValue(v).trim();
+      if (val) {
+        cssVarsRule += `  ${v}: ${val};\n`;
+      }
+    });
+    cssVarsRule += '}\n';
+
+    // Embed critical SVG styles
+    const styles = `
+      ${cssVarsRule}
+      svg { ${options.transparentBg ? '' : 'background-color: ' + computedStyles.getPropertyValue('--card') + ';'} }
+      .atom-shell { fill: none; stroke: var(--shell); stroke-width: 1px; }
+      .atom-e { fill: var(--electron); stroke: var(--ink); stroke-width: 0.6px; }
+      .atom-e-val { fill: var(--accent); stroke: var(--ink); stroke-width: 0.6px; }
+      .atom-nucleus { fill: var(--nucleus); }
+      .atom-nuc-label { fill: #ffffff; font-family: var(--mono); font-weight: 600; }
+      .d-particle { stroke: var(--ink); stroke-width: 1.2px; }
+      .d-metal { stroke: var(--ink); stroke-width: 1.2px; }
+      .d-shell { fill: none; stroke: var(--shell); stroke-width: 0.8px; }
+      .d-nuc { fill: var(--nucleus); }
+      .d-nuc-t { fill: #fff; font-family: var(--mono); font-weight: 600; }
+      .d-frame { fill: none; stroke: var(--ink-mute); stroke-width: 1.5px; stroke-dasharray: 6 4; }
+      .d-wall { fill: none; stroke: var(--ink); stroke-width: 2.2px; stroke-linecap: round; stroke-linejoin: round; }
+      .d-water { fill: none; stroke: var(--water); stroke-width: 1.8px; }
+      .d-arrow { stroke: var(--ink); stroke-width: 1.6px; }
+      .d-label { font-family: var(--display); font-weight: 600; fill: var(--ink); }
+      .d-sub { font-family: var(--mono); fill: var(--ink-mute); }
+      .lewis-bracket { stroke: var(--ink); stroke-width: 1.5px; fill: none; }
+      .lewis-bracket-charge { font-family: var(--mono); font-weight: 600; fill: var(--ink); }
+    `;
+
+    const styleEl = createSVGElement("style");
+    styleEl.textContent = styles;
+    clonedSvg.insertBefore(styleEl, clonedSvg.firstChild);
+
+    return clonedSvg;
+  }
+
+  function getViewBoxSize(svgElement) {
+    const viewBox = svgElement.getAttribute("viewBox");
+    let width = 400, height = 400;
+    if (viewBox) {
+      const parts = viewBox.split(/\s+/).map(Number);
+      if (parts.length === 4) {
+        width = parts[2];
+        height = parts[3];
+      }
+    }
+    return { width, height };
+  }
+
+  function downloadStandaloneSVG(svgElement, filename = 'diagram.svg', options = {}) {
+    const useLightTheme = options.lightTheme !== false;
+    const svgStr = withComputedStyles(useLightTheme, (computedStyles) => {
+      const clonedSvg = prepareStandaloneSVG(svgElement, computedStyles, options);
+      return new XMLSerializer().serializeToString(clonedSvg);
+    });
+    const blob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.download = filename;
+    a.href = url;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function exportSVGToPNG(svgElement, filename = 'diagram.png', scale = 2, options = {}) {
+    const useLightTheme = options.lightTheme !== false;
+    const onError = options.onError || (() => {});
+
+    withComputedStyles(useLightTheme, (computedStyles) => {
+      const clonedSvg = prepareStandaloneSVG(svgElement, computedStyles, options);
+      const { width, height } = getViewBoxSize(clonedSvg);
+
+      // Base multiplier ensures crisp output even for small SVG viewBoxes,
+      // clamped so the long edge never exceeds common browser canvas limits
+      // (an uncapped multiplier can silently produce a blank download).
+      const baseRes = 8;
+      const maxEdge = 8192;
+      const requestedScale = scale * baseRes;
+      const totalScale = Math.min(requestedScale, maxEdge / Math.max(width, height));
+      const canvasW = Math.round(width * totalScale);
+      const canvasH = Math.round(height * totalScale);
+      clonedSvg.setAttribute("width", canvasW);
+      clonedSvg.setAttribute("height", canvasH);
+
+      const serializer = new XMLSerializer();
+      const svgStr = serializer.serializeToString(clonedSvg);
+      const blob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const cardColor = computedStyles.getPropertyValue('--card') || '#F5F8F4';
+
+      const img = new Image();
+      img.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = canvasW;
+        canvas.height = canvasH;
+        const ctx = canvas.getContext('2d');
+
+        if (!options.transparentBg) {
+          ctx.fillStyle = cardColor;
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        const pngUrl = canvas.toDataURL('image/png');
+        const a = document.createElement('a');
+        a.download = filename;
+        a.href = pngUrl;
+        a.click();
+
+        URL.revokeObjectURL(url);
+      };
+      img.onerror = function () {
+        URL.revokeObjectURL(url);
+        onError(new Error("PNG export failed to rasterize the diagram (image load error)."));
+      };
+      img.src = url;
+    });
+  }
+
+  // ============================================================
+  // BOHR DIAGRAM GENERATOR
+  // ============================================================
+  function calculateIonShells(e, charge) {
+    let totalElectrons = e.z - charge;
+    if (totalElectrons < 0) totalElectrons = 0;
+
+    if (charge === 0) return [...e.shells];
+
+    if (e.mainGroup) {
+      let shells = [...e.shells];
+      if (charge > 0) {
+        let lost = charge;
+        while (lost > 0 && shells.length > 0) {
+          let lastIdx = shells.length - 1;
+          if (shells[lastIdx] <= lost) {
+            lost -= shells[lastIdx];
+            shells.pop();
+          } else {
+            shells[lastIdx] -= lost;
+            lost = 0;
+          }
+        }
+        return shells;
+      } else {
+        let gain = -charge;
+        let lastIdx = shells.length - 1;
+        let capacity = (shells.length === 1 && e.z <= 2) ? 2 : 8;
+        let space = capacity - shells[lastIdx];
+        if (space > 0) {
+          let fill = Math.min(space, gain);
+          shells[lastIdx] += fill;
+          gain -= fill;
+        }
+        if (gain > 0) {
+          shells.push(gain);
+        }
+        return shells;
+      }
+    } else {
+      let shells = [];
+      let remaining = totalElectrons;
+      const caps = [2, 8, 18, 32];
+      for (let cap of caps) {
+        if (remaining <= 0) break;
+        let fill = Math.min(remaining, cap);
+        shells.push(fill);
+        remaining -= fill;
+      }
+      if (remaining > 0) {
+        shells[shells.length - 1] += remaining;
+      }
+      return shells;
+    }
+  }
+
+  function drawBohrModel(element, charge = 0, highlightValence = true) {
+    const svg = createSVGElement("svg", {
+      viewBox: "0 0 340 340",
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    const CX = 170, CY = 170;
+    const NUC_R = 18;
+    const R = [38, 74, 110, 146];
+
+    const shells = calculateIonShells(element, charge);
+    const lastShellIdx = shells.length - 1;
+
+    // Draw bracket frame for ions
+    if (charge !== 0) {
+      // brackets
+      svg.appendChild(createSVGElement("path", {
+        d: "M 25,25 H 12 V 315 H 25 M 315,25 H 328 V 315 H 315",
+        class: "lewis-bracket"
+      }));
+      // charge
+      const chargeText = charge > 0 ? (charge === 1 ? "+" : charge + "+") : (charge === -1 ? "−" : Math.abs(charge) + "−");
+      const textEl = createSVGElement("text", {
+        x: 330,
+        y: 28,
+        class: "lewis-bracket-charge",
+        "font-size": "14px"
+      });
+      textEl.textContent = chargeText;
+      svg.appendChild(textEl);
+    }
+
+    // Draw shell rings
+    shells.forEach((_, i) => {
+      svg.appendChild(createSVGElement("circle", {
+        cx: CX,
+        cy: CY,
+        r: R[i],
+        class: "atom-shell"
+      }));
+    });
+
+    // Draw electron dots
+    shells.forEach((cnt, i) => {
+      const isValence = highlightValence && element.mainGroup && (i === lastShellIdx);
+      for (let k = 0; k < cnt; k++) {
+        const dot = createSVGElement("circle", {
+          r: "var(--dia-r-atom-sm)",
+          class: isValence ? "atom-e-val" : "atom-e"
+        });
+        const angle = (2 * Math.PI / cnt) * k - Math.PI / 2;
+        const cx = CX + R[i] * Math.cos(angle);
+        const cy = CY + R[i] * Math.sin(angle);
+        dot.setAttribute("cx", cx.toFixed(2));
+        dot.setAttribute("cy", cy.toFixed(2));
+        svg.appendChild(dot);
+      }
+    });
+
+    // Draw central nucleus
+    svg.appendChild(createSVGElement("circle", {
+      cx: CX,
+      cy: CY,
+      r: NUC_R,
+      class: "atom-nucleus"
+    }));
+
+    // Proton count label inside nucleus
+    const label = createSVGElement("text", {
+      x: CX,
+      y: CY + 0.5,
+      "text-anchor": "middle",
+      "dominant-baseline": "middle",
+      class: "atom-nuc-label",
+      "font-size": "var(--dia-label-size)"
+    });
+    label.textContent = element.z + "p";
+    svg.appendChild(label);
+
+    return svg;
+  }
+
+  // ============================================================
+  // LEWIS DIAGRAM GENERATOR
+  // ============================================================
+  function drawLewisAtom(element, charge = 0, options = {}) {
+    const svg = createSVGElement("svg", {
+      viewBox: "0 0 150 150",
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    const CX = 75, CY = 75;
+
+    // Draw bracket frame for ions (skipped via options.noBracket for a bare
+    // cation in an ion pair, e.g. Na+, which convention writes unbracketed)
+    if (charge !== 0) {
+      if (!options.noBracket) {
+        svg.appendChild(createSVGElement("path", {
+          d: "M 42,30 H 30 V 120 H 42 M 108,30 H 120 V 120 H 108",
+          class: "lewis-bracket"
+        }));
+      }
+      const chargeText = charge > 0 ? (charge === 1 ? "+" : charge + "+") : (charge === -1 ? "−" : Math.abs(charge) + "−");
+      const textEl = createSVGElement("text", {
+        x: options.noBracket ? CX + 13 : 122,
+        y: options.noBracket ? CY - 12 : 32,
+        class: "lewis-bracket-charge",
+        "font-size": "12px"
+      });
+      textEl.textContent = chargeText;
+      svg.appendChild(textEl);
+    }
+
+    // Draw central element symbol
+    let textFill = "var(--ink)";
+    if (options.useCPKColors) {
+      const cpk = getCPK(element.sym);
+      textFill = (element.sym === "H") ? "var(--ink)" : cpk.fill;
+    }
+    const symText = createSVGElement("text", {
+      x: CX,
+      y: CY + 3.5,
+      "text-anchor": "middle",
+      fill: textFill,
+      "font-family": "var(--mono)",
+      "font-weight": "700",
+      "font-size": "15px"
+    });
+    symText.textContent = element.sym;
+    svg.appendChild(symText);
+
+    // Calculate valence count for this atom/ion (capped between 0 and 8)
+    let v = element.valence;
+    if (v === null) v = 0; // default for transition metals
+    if (charge !== 0 && element.mainGroup) {
+      v = v - charge;
+      if (v < 0) v = 0;
+      if (v > 8) v = 8;
+    }
+
+    // Place dots based on valence count (Hund's rule order: Top, Right, Bottom, Left)
+    const dotSpacing = 3.5;
+    const dotOffset = 12;
+    const dotRadius = "var(--dia-r-particle)";
+
+    // Define coordinates of dot slots for each side
+    const slots = [
+      // Top
+      [{ cx: CX - dotSpacing / 2, cy: CY - dotOffset }, { cx: CX + dotSpacing / 2, cy: CY - dotOffset }],
+      // Right
+      [{ cx: CX + dotOffset, cy: CY - dotSpacing / 2 }, { cx: CX + dotOffset, cy: CY + dotSpacing / 2 }],
+      // Bottom
+      [{ cx: CX - dotSpacing / 2, cy: CY + dotOffset }, { cx: CX + dotSpacing / 2, cy: CY + dotOffset }],
+      // Left
+      [{ cx: CX - dotOffset, cy: CY - dotSpacing / 2 }, { cx: CX - dotOffset, cy: CY + dotSpacing / 2 }]
+    ];
+
+    let sideCounts = [0, 0, 0, 0];
+    for (let i = 0; i < v; i++) {
+      let side = i % 4;
+      sideCounts[side]++;
+    }
+
+    // Draw dots
+    sideCounts.forEach((count, side) => {
+      if (count === 1) {
+        let cx = CX;
+        let cy = CY;
+        if (side === 0) cy = CY - dotOffset;
+        else if (side === 1) cx = CX + dotOffset;
+        else if (side === 2) cy = CY + dotOffset;
+        else if (side === 3) cx = CX - dotOffset;
+
+        svg.appendChild(createSVGElement("circle", {
+          cx: cx,
+          cy: cy,
+          r: dotRadius,
+          fill: "var(--accent)"
+        }));
+      } else if (count === 2) {
+        slots[side].forEach(slot => {
+          svg.appendChild(createSVGElement("circle", {
+            cx: slot.cx,
+            cy: slot.cy,
+            r: dotRadius,
+            fill: "var(--accent)"
+          }));
+        });
+      }
+    });
+
+    return svg;
+  }
+
+  // Draw lone pairs helper (based on bond angles)
+  function normalizeAngle(angle) {
+    let a = angle % (2 * Math.PI);
+    if (a < 0) a += 2 * Math.PI;
+    return a;
+  }
+
+  function getLonePairAngles(bondAngles, numPairs, isCardinal = false) {
+    const P = numPairs;
+    if (P <= 0) return [];
+
+    if (isCardinal) {
+      if (bondAngles.length === 0) {
+        if (P === 1) return [-Math.PI / 2];
+        if (P === 2) return [-Math.PI / 2, Math.PI / 2];
+        if (P === 3) return [0, -Math.PI / 2, Math.PI / 2];
+        return [0, Math.PI / 2, Math.PI, -Math.PI / 2];
+      }
+      if (bondAngles.length === 1) {
+        const beta = normalizeAngle(bondAngles[0]);
+        if (P === 1) return [normalizeAngle(beta + Math.PI)];
+        if (P === 2) return [normalizeAngle(beta + Math.PI / 2), normalizeAngle(beta - Math.PI / 2)];
+        if (P === 3) return [normalizeAngle(beta + Math.PI), normalizeAngle(beta + Math.PI / 2), normalizeAngle(beta - Math.PI / 2)];
+        return [normalizeAngle(beta + Math.PI), normalizeAngle(beta + Math.PI / 2), normalizeAngle(beta - Math.PI / 2), beta];
+      }
+      if (bondAngles.length === 2) {
+        const beta1 = normalizeAngle(bondAngles[0]);
+        const beta2 = normalizeAngle(bondAngles[1]);
+        const slots = [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2];
+        const unused = slots.filter(s => {
+          return Math.abs(normalizeAngle(s - beta1)) > 0.15 && Math.abs(normalizeAngle(s - beta2)) > 0.15;
+        });
+        return unused.slice(0, P);
+      }
+      if (bondAngles.length === 3) {
+        const beta1 = normalizeAngle(bondAngles[0]);
+        const beta2 = normalizeAngle(bondAngles[1]);
+        const beta3 = normalizeAngle(bondAngles[2]);
+        const slots = [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2];
+        const unused = slots.filter(s => {
+          return Math.abs(normalizeAngle(s - beta1)) > 0.15 && 
+                 Math.abs(normalizeAngle(s - beta2)) > 0.15 &&
+                 Math.abs(normalizeAngle(s - beta3)) > 0.15;
+        });
+        return unused.slice(0, P);
+      }
+    }
+
+    if (bondAngles.length === 0) {
+      if (P === 1) return [-Math.PI / 2];
+      if (P === 2) return [-Math.PI / 2, Math.PI / 2];
+      if (P === 3) return [0, (2 * Math.PI) / 3, (4 * Math.PI) / 3];
+      return [0, Math.PI / 2, Math.PI, (3 * Math.PI) / 2];
+    }
+
+    if (bondAngles.length === 1) {
+      const beta = bondAngles[0];
+      const alpha = normalizeAngle(beta + Math.PI);
+      if (P === 1) return [alpha];
+      if (P === 2) return [alpha - 0.6, alpha + 0.6];
+      if (P === 3) return [alpha - 0.75, alpha, alpha + 0.75];
+      return [alpha - 0.9, alpha - 0.3, alpha + 0.3, alpha + 0.9];
+    }
+
+    const sorted = [...bondAngles].map(normalizeAngle).sort((a, b) => a - b);
+    let maxGapSize = 0;
+    let gapStart = 0;
+
+    for (let i = 0; i < sorted.length; i++) {
+      const current = sorted[i];
+      const next = sorted[(i + 1) % sorted.length];
+      let gapSize = next - current;
+      if (gapSize < 0) gapSize += 2 * Math.PI;
+
+      if (gapSize > maxGapSize) {
+        maxGapSize = gapSize;
+        gapStart = current;
+      }
+    }
+
+    const gapMid = normalizeAngle(gapStart + maxGapSize / 2);
+    const spacing = Math.min(1.5, maxGapSize / (P + 1));
+    const angles = [];
+    for (let k = 0; k < P; k++) {
+      angles.push(normalizeAngle(gapMid + (k - (P - 1) / 2) * spacing));
+    }
+    return angles;
+  }
+
+  // ============================================================
+  // DIPOLE & PARTIAL CHARGE RENDERER
+  // ============================================================
+  function renderDipoleAnnotations(svg, data, scale, padding, options = {}) {
+    if (!data || !data.atoms || data.atoms.length === 0) return;
+
+    const showCharges = options.showPartialCharges || false;
+    const showBondDipoles = options.showBondDipoles || false;
+    const showNetDipole = options.showNetDipole || false;
+
+    if (!showCharges && !showBondDipoles && !showNetDipole) return;
+
+    // 1. Resolve electronegativities from periodic list
+    const atomList = data.atoms.map(a => {
+      const elData = EL.bySym[a.el];
+      const en = elData ? elData.en : null;
+      return {
+        ...a,
+        en: en,
+        x: a.x * scale,
+        y: a.y * scale,
+        radius: (a.el === "H") ? 5.0 : 7.5
+      };
+    });
+
+    const atomMap = {};
+    atomList.forEach(a => { atomMap[a.id] = a; });
+
+    // Add marker defs for arrowheads if they don't exist
+    let defs = svg.querySelector("defs");
+    if (!defs) {
+      defs = createSVGElement("defs");
+      svg.insertBefore(defs, svg.firstChild);
+    }
+
+    // Create markers
+    if (!defs.querySelector("#dipole-arrowhead")) {
+      const marker = createSVGElement("marker", {
+        id: "dipole-arrowhead",
+        markerWidth: 6,
+        markerHeight: 6,
+        refX: 5,
+        refY: 3,
+        orient: "auto",
+        viewBox: "0 0 6 6"
+      });
+      const path = createSVGElement("path", {
+        d: "M0 0 L6 3 L0 6 z",
+        fill: "var(--accent)"
+      });
+      marker.appendChild(path);
+      defs.appendChild(marker);
+    }
+
+    if (!defs.querySelector("#net-dipole-arrowhead")) {
+      const marker = createSVGElement("marker", {
+        id: "net-dipole-arrowhead",
+        markerWidth: 8,
+        markerHeight: 8,
+        refX: 6,
+        refY: 4,
+        orient: "auto",
+        viewBox: "0 0 8 8"
+      });
+      const path = createSVGElement("path", {
+        d: "M0 0 L8 4 L0 8 z",
+        fill: "var(--ink-mute)",
+        opacity: "0.35"
+      });
+      marker.appendChild(path);
+      defs.appendChild(marker);
+    }
+
+    const chargeScore = {};
+    atomList.forEach(a => { chargeScore[a.id] = 0; });
+
+    let netDx = 0;
+    let netDy = 0;
+
+    // Compute molecule centroid for outward-facing dipole arrow offset
+    let centroidX = 0, centroidY = 0;
+    atomList.forEach(a => { centroidX += a.x; centroidY += a.y; });
+    centroidX /= atomList.length;
+    centroidY /= atomList.length;
+
+    let polarBondIdx = 0;
+
+    if (data.bonds) {
+      data.bonds.forEach(bond => {
+        const a = atomMap[bond.a];
+        const b = atomMap[bond.b];
+        if (!a || !b) return;
+        if (a.en === null || b.en === null) return;
+
+        const dEN = Math.abs(a.en - b.en);
+        if (dEN >= 0.4) {
+          const pos = (a.en < b.en) ? a : b;
+          const neg = (a.en < b.en) ? b : a;
+
+          chargeScore[pos.id] += 1;
+          chargeScore[neg.id] -= 1;
+
+          const dx = neg.x - pos.x;
+          const dy = neg.y - pos.y;
+          const len = Math.hypot(dx, dy) || 1;
+          const ux = dx / len;
+          const uy = dy / len;
+
+          netDx += ux * dEN;
+          netDy += uy * dEN;
+
+          if (showBondDipoles) {
+            let nx = -uy;
+            let ny = ux;
+
+            // Flip normal to always point AWAY from molecule centroid (ensures symmetry)
+            const bondMidX = (pos.x + neg.x) / 2;
+            const bondMidY = (pos.y + neg.y) / 2;
+            const toCentroidX = centroidX - bondMidX;
+            const toCentroidY = centroidY - bondMidY;
+            const dot = nx * toCentroidX + ny * toCentroidY;
+            if (Math.abs(dot) < 0.01) {
+              // Collinear case (e.g. CO2): alternate sides for each polar bond
+              if (polarBondIdx % 2 === 1) {
+                nx = -nx;
+                ny = -ny;
+              }
+            } else if (dot > 0) {
+              nx = -nx;
+              ny = -ny;
+            }
+            
+            const offsetSide = 5.5;
+            const startDist = pos.radius + 3;
+            const endDist = neg.radius + 3;
+
+            const x1 = pos.x + ux * startDist + nx * offsetSide;
+            const y1 = pos.y + uy * startDist + ny * offsetSide;
+            const x2 = neg.x - ux * endDist + nx * offsetSide;
+            const y2 = neg.y - uy * endDist + ny * offsetSide;
+
+            // Dipole tail cross
+            const crossLen = 2.0;
+            svg.appendChild(createSVGElement("line", {
+              x1: (x1 - nx * crossLen).toFixed(1),
+              y1: (y1 - ny * crossLen).toFixed(1),
+              x2: (x1 + nx * crossLen).toFixed(1),
+              y2: (y1 + ny * crossLen).toFixed(1),
+              stroke: "var(--accent)",
+              "stroke-width": 0.8
+            }));
+
+            // Dipole arrow line
+            svg.appendChild(createSVGElement("line", {
+              x1: x1.toFixed(1),
+              y1: y1.toFixed(1),
+              x2: x2.toFixed(1),
+              y2: y2.toFixed(1),
+              stroke: "var(--accent)",
+              "stroke-width": 0.8,
+              "stroke-dasharray": "3 2",
+              "marker-end": "url(#dipole-arrowhead)"
+            }));
+            }
+            polarBondIdx++;
+          }
+      });
+    }
+
+    // Draw partial charges (delta positive/negative)
+    if (showCharges) {
+      atomList.forEach(a => {
+        const score = chargeScore[a.id];
+        if (score === 0) return;
+
+        const sign = score > 0 ? "+" : "−";
+        // Both delta signs render in the single accent color (Golden Rule 5:
+        // blue/red is reserved for sequential heat maps); the +/- sign
+        // already disambiguates positive from negative partial charge.
+        const color = "var(--accent)";
+
+        let sumBx = 0;
+        let sumBy = 0;
+        if (data.bonds) {
+          data.bonds.forEach(bond => {
+            if (bond.a === a.id || bond.b === a.id) {
+              const otherId = bond.a === a.id ? bond.b : bond.a;
+              const other = atomMap[otherId];
+              if (other) {
+                const dx = other.x - a.x;
+                const dy = other.y - a.y;
+                const len = Math.hypot(dx, dy) || 1;
+                sumBx += dx / len;
+                sumBy += dy / len;
+              }
+            }
+          });
+        }
+
+        let ux = 0;
+        let uy = -1;
+        const bondCount = Math.hypot(sumBx, sumBy);
+        if (bondCount > 0.05) {
+          ux = -sumBx / bondCount;
+          uy = -sumBy / bondCount;
+        }
+
+        const offsetDist = a.radius + 9;
+        const cx = a.x + ux * offsetDist;
+        const cy = a.y + uy * offsetDist;
+
+        const txt = createSVGElement("text", {
+          x: cx.toFixed(1),
+          y: (cy + 2.5).toFixed(1),
+          "text-anchor": "middle",
+          fill: color,
+          "font-family": "var(--mono)",
+          "font-weight": "700",
+          "font-size": "5px"
+        });
+        txt.textContent = "δ" + sign;
+        svg.appendChild(txt);
+      });
+    }
+
+    // Draw Net Molecular Dipole Arrow
+    const netLen = Math.hypot(netDx, netDy);
+    if (showNetDipole && netLen > 0.15) {
+      const ux = netDx / netLen;
+      const uy = netDy / netLen;
+      const nx = -uy;
+      const ny = ux;
+
+      let minX = Infinity, maxX = -Infinity;
+      let minY = Infinity, maxY = -Infinity;
+      atomList.forEach(a => {
+        minX = Math.min(minX, a.x);
+        maxX = Math.max(maxX, a.x);
+        minY = Math.min(minY, a.y);
+        maxY = Math.max(maxY, a.y);
+      });
+
+      let centerX, centerY;
+      if (options.netDipoleOffset) {
+        centerX = maxX + 22;
+        centerY = (minY + maxY) / 2;
+      } else {
+        centerX = (minX + maxX) / 2;
+        centerY = (minY + maxY) / 2;
+      }
+
+      const arrowLength = 25;
+      const x1 = centerX - ux * (arrowLength / 2);
+      const y1 = centerY - uy * (arrowLength / 2);
+      const x2 = centerX + ux * (arrowLength / 2);
+      const y2 = centerY + uy * (arrowLength / 2);
+
+      // Tail cross segment
+      const crossLen = 3.0;
+      svg.appendChild(createSVGElement("line", {
+        x1: (x1 - nx * crossLen).toFixed(1),
+        y1: (y1 - ny * crossLen).toFixed(1),
+        x2: (x1 + nx * crossLen).toFixed(1),
+        y2: (y1 + ny * crossLen).toFixed(1),
+        stroke: "var(--ink-mute)",
+        "stroke-width": 1.1,
+        opacity: "0.35"
+      }));
+
+      // Main arrow body
+      svg.appendChild(createSVGElement("line", {
+        x1: x1.toFixed(1),
+        y1: y1.toFixed(1),
+        x2: x2.toFixed(1),
+        y2: y2.toFixed(1),
+        stroke: "var(--ink-mute)",
+        "stroke-width": 1.1,
+        opacity: "0.35",
+        "marker-end": "url(#net-dipole-arrowhead)"
+      }));
+    }
+  }
+
+  // ============================================================
+  // ELECTRON DENSITY CLOUD RENDERER
+  // ============================================================
+  function renderElectronDensityClouds(svg, scaledAtoms, atomMap, data, options = {}) {
+    if (!options.showElectronClouds) return;
+
+    const cloudGroup = createSVGElement("g", { class: "electron-clouds" });
+
+    // Bond clouds: elongated ellipses along each bond
+    if (data.bonds) {
+      data.bonds.forEach(bond => {
+        const atomA = atomMap[bond.a];
+        const atomB = atomMap[bond.b];
+        if (!atomA || !atomB) return;
+
+        const mx = (atomA.x + atomB.x) / 2;
+        const my = (atomA.y + atomB.y) / 2;
+        const dx = atomB.x - atomA.x;
+        const dy = atomB.y - atomA.y;
+        const bondLen = Math.hypot(dx, dy);
+        if (bondLen === 0) return;
+
+        const angleDeg = Math.atan2(dy, dx) * (180 / Math.PI);
+        const rx = bondLen * 0.45; // semi-major along bond
+        const ry = 5.5;            // semi-minor perpendicular
+
+        const order = bond.order || 1;
+        const cloudColor = "var(--accent)";
+        const cloudOpacity = order === 1 ? 0.08 : (order === 2 ? 0.12 : 0.16);
+
+        cloudGroup.appendChild(createSVGElement("ellipse", {
+          cx: mx.toFixed(1),
+          cy: my.toFixed(1),
+          rx: rx.toFixed(1),
+          ry: ry.toFixed(1),
+          transform: `rotate(${angleDeg.toFixed(1)} ${mx.toFixed(1)} ${my.toFixed(1)})`,
+          fill: cloudColor,
+          opacity: cloudOpacity.toFixed(2),
+          stroke: "none"
+        }));
+      });
+    }
+
+    // Lone pair clouds: smaller ovals radiating outward from each atom
+    if (data.lonePairs) {
+      const isCardinal = (options.lewisLayout === "cardinal");
+
+      data.lonePairs.forEach(lp => {
+        const atom = atomMap[lp.on];
+        if (!atom) return;
+
+        const bondAngles = [];
+        if (data.bonds) {
+          data.bonds.forEach(bond => {
+            let otherId = null;
+            if (bond.a === atom.id) otherId = bond.b;
+            else if (bond.b === atom.id) otherId = bond.a;
+            if (otherId && atomMap[otherId]) {
+              const other = atomMap[otherId];
+              bondAngles.push(Math.atan2(other.y - atom.y, other.x - atom.x));
+            }
+          });
+        }
+
+        const angles = getLonePairAngles(bondAngles, lp.count, isCardinal);
+        const lpCloudDist = 10;
+        const lpCloudColor = "var(--cool)";
+
+        angles.forEach(alpha => {
+          const cx = atom.x + lpCloudDist * Math.cos(alpha);
+          const cy = atom.y + lpCloudDist * Math.sin(alpha);
+          const angleDeg = alpha * (180 / Math.PI);
+
+          cloudGroup.appendChild(createSVGElement("ellipse", {
+            cx: cx.toFixed(1),
+            cy: cy.toFixed(1),
+            rx: "6",
+            ry: "4",
+            transform: `rotate(${angleDeg.toFixed(1)} ${cx.toFixed(1)} ${cy.toFixed(1)})`,
+            fill: lpCloudColor,
+            opacity: "0.10",
+            stroke: "none"
+          }));
+        });
+      });
+    }
+
+    // Insert clouds BEHIND other elements (first child after any defs)
+    const defs = svg.querySelector("defs");
+    if (defs && defs.nextSibling) {
+      svg.insertBefore(cloudGroup, defs.nextSibling);
+    } else {
+      svg.insertBefore(cloudGroup, svg.firstChild);
+    }
+  }
+
+  // Metal-to-nonmetal bond = ionic (the class's framing per docs/archive/TEXTBOOK_TODO.md, section 4.2:
+  // H-F stays covalent despite dEN 1.78 because both are nonmetals, so
+  // bonding character is keyed off element `kind`, not dEN alone).
+  function isIonicPair(elSymA, elSymB) {
+    const a = EL.bySym[elSymA];
+    const b = EL.bySym[elSymB];
+    if (!a || !b) return false;
+    return (a.kind === "metal" && b.kind === "nonmetal") ||
+           (a.kind === "nonmetal" && b.kind === "metal");
+  }
+
+  // Ion-pair convention: cation is bare symbol + charge (no dots, no
+  // bracket); anion is bracketed with a full octet. Returns null if either
+  // element lacks a defined main-group tendency (falls back to covalent path).
+  function drawIonPairMolecule(data, options = {}) {
+    const [atomA, atomB] = data.atoms;
+    const elA = EL.bySym[atomA.el];
+    const elB = EL.bySym[atomB.el];
+    const [catEl, anEl] = (elA.kind === "metal") ? [elA, elB] : [elB, elA];
+
+    const catTend = window.GC_ELEMENTS.tendency(catEl);
+    const anTend = window.GC_ELEMENTS.tendency(anEl);
+    if (!catTend || !anTend || catTend.dir !== "lose" || anTend.dir !== "gain") return null;
+
+    const svg = createSVGElement("svg", {
+      viewBox: "0 0 300 150",
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    const inWater = options.inWater && options.showContainerFrame && options.showContainerFrame !== "none";
+    
+    // Draw container frame and water if selected
+    drawContainerFrame(svg, 0, 0, 300, 150, options);
+
+    let catX = 0;
+    let anX = 150;
+    
+    if (inWater) {
+      // Dissociate: separate them further
+      catX = -25;
+      anX = 175;
+    }
+
+    const catSvg = drawLewisAtom(catEl, catTend.need, { ...options, noBracket: true });
+    catSvg.setAttribute("x", catX.toString());
+    catSvg.setAttribute("y", "0");
+    catSvg.setAttribute("width", "150");
+    catSvg.setAttribute("height", "150");
+    svg.appendChild(catSvg);
+
+    const anSvg = drawLewisAtom(anEl, -anTend.need, options);
+    anSvg.setAttribute("x", anX.toString());
+    anSvg.setAttribute("y", "0");
+    anSvg.setAttribute("width", "150");
+    anSvg.setAttribute("height", "150");
+    svg.appendChild(anSvg);
+
+    if (inWater) {
+      // Cation centered at (catX + 75, 75)
+      // Anion centered at (anX + 75, 75)
+      const centers = [
+        { x: catX + 75, y: 75, el: catEl.sym, radius: 24 },
+        { x: anX + 75, y: 75, el: anEl.sym, radius: 24 }
+      ];
+      drawHydrationShells(svg, centers, options);
+    }
+
+    return svg;
+  }
+
+  // Electron-count self-check for a generated Lewis structure: does the
+  // drawn bond+lone-pair total match the valence electrons the atoms
+  // actually supply? Catches the generic parser fabricating structures
+  // that don't conserve electrons (e.g. SO3). Returns null when the check
+  // doesn't apply (a transition-metal atom with no valence, or an ionic pair).
+  function checkElectronCount(data) {
+    if (!data || !data.atoms || !data.bonds) return null;
+    if (data.atoms.some(a => { const el = EL.bySym[a.el]; return !el || el.valence == null; })) return null;
+    if (data.atoms.length === 2 && data.bonds.length === 1 && isIonicPair(data.atoms[0].el, data.atoms[1].el)) return null;
+
+    const drawn = 2 * data.bonds.reduce((s, b) => s + (b.order || 1), 0)
+                + 2 * (data.lonePairs || []).reduce((s, lp) => s + (lp.count || 0), 0);
+    const expected = data.atoms.reduce((s, a) => s + EL.bySym[a.el].valence, 0);
+    return { valid: drawn === expected, drawn, expected };
+  }
+
+  function drawLewisMolecule(data, options = {}) {
+    if (data && data.atoms && data.atoms.length === 2 && data.bonds && data.bonds.length === 1) {
+      const [a1, a2] = data.atoms;
+      if (isIonicPair(a1.el, a2.el)) {
+        const ionSvg = drawIonPairMolecule(data, options);
+        if (ionSvg) return ionSvg;
+      }
+    }
+
+    const svg = createSVGElement("svg", {
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    if (!data || !data.atoms || data.atoms.length === 0) return svg;
+
+    const scale = 22;
+    // Adjust padding to fit dipole markings
+    const padding = (options.showPartialCharges || options.showNetDipole) ? 26 : 20;
+
+    const isCardinal = (options.lewisLayout === "cardinal");
+    let snappedAngles = null;
+    const cardinalStyle = options.cardinalSnapStyle || "auto";
+
+    if (isCardinal && cardinalStyle !== "auto") {
+      const numOuter = data.atoms.length - 1;
+      if (numOuter === 2) {
+        const map = {
+          "bent-down": [Math.PI, Math.PI / 2],
+          "bent-right": [Math.PI / 2, 0],
+          "bent-up": [0, 3 * Math.PI / 2],
+          "bent-left": [3 * Math.PI / 2, Math.PI],
+          "linear-h": [Math.PI, 0],
+          "linear-v": [3 * Math.PI / 2, Math.PI / 2]
+        };
+        snappedAngles = map[cardinalStyle];
+      } else if (numOuter === 3) {
+        const map = {
+          "bent-down": [Math.PI, Math.PI / 2, 0],
+          "bent-right": [Math.PI / 2, 0, 3 * Math.PI / 2],
+          "bent-up": [0, 3 * Math.PI / 2, Math.PI],
+          "bent-left": [3 * Math.PI / 2, Math.PI, Math.PI / 2]
+        };
+        snappedAngles = map[cardinalStyle];
+      }
+    }
+
+    // 1. Calculate scaled coordinates and build atom index
+    const atomMap = {};
+    const scaledAtoms = data.atoms.map((atom, idx) => {
+      const isH = (atom.el === "H");
+      let x = atom.x * scale;
+      let y = atom.y * scale;
+
+      // If cardinal, snap outer atoms relative to central atom (first atom in list)
+      if (isCardinal && idx > 0 && data.atoms[0]) {
+        const central = data.atoms[0];
+        const dx = atom.x - central.x;
+        const dy = atom.y - central.y;
+        const len = Math.sqrt(dx * dx + dy * dy);
+        if (len > 0) {
+          let snapped;
+          if (snappedAngles && snappedAngles[idx - 1] !== undefined) {
+            snapped = snappedAngles[idx - 1];
+          } else {
+            const angle = Math.atan2(dy, dx);
+            snapped = Math.round(angle / (Math.PI / 2)) * (Math.PI / 2);
+          }
+          x = (central.x * scale) + (len * scale) * Math.cos(snapped);
+          y = (central.y * scale) + (len * scale) * Math.sin(snapped);
+        }
+      }
+
+      const scaled = {
+        id: atom.id,
+        el: atom.el,
+        x: x,
+        y: y,
+        radius: isH ? 5.0 : 7.5
+      };
+      atomMap[atom.id] = scaled;
+      return scaled;
+    });
+
+    // 2. Compute bounding box for viewBox sizing
+    let minX = Infinity, maxX = -Infinity;
+    let minY = Infinity, maxY = -Infinity;
+
+    scaledAtoms.forEach(atom => {
+      minX = Math.min(minX, atom.x);
+      maxX = Math.max(maxX, atom.x);
+      minY = Math.min(minY, atom.y);
+      maxY = Math.max(maxY, atom.y);
+    });
+
+    let boxW = (maxX - minX) + 2 * padding + 15;
+    let boxH = (maxY - minY) + 2 * padding + 22; 
+    let viewBoxX = minX - padding - 7.5;
+    let viewBoxY = minY - padding - 7.5;
+
+    if (options.showNetDipole && options.netDipoleOffset) {
+      boxW += 35; // extra width room on the right for offset net dipole arrow
+    }
+
+    svg.setAttribute("viewBox", `${viewBoxX} ${viewBoxY} ${boxW} ${boxH}`);
+
+    // Draw container and solvent framing if selected
+    drawContainerFrame(svg, viewBoxX, viewBoxY, boxW, boxH, options);
+
+    // 3. Draw Bonds (lines)
+    if (data.bonds) {
+      data.bonds.forEach(bond => {
+        const atomA = atomMap[bond.a];
+        const atomB = atomMap[bond.b];
+        if (!atomA || !atomB) return;
+
+        const dx = atomB.x - atomA.x;
+        const dy = atomB.y - atomA.y;
+        const len = Math.sqrt(dx * dx + dy * dy);
+        if (len === 0) return;
+
+        const ux = dx / len;
+        const uy = dy / len;
+        const nx = -uy;
+        const ny = ux;
+
+        const isVirtualA = (atomA.el === "" || atomA.el === "*" || atomA.el.startsWith("ext"));
+        const isVirtualB = (atomB.el === "" || atomB.el === "*" || atomB.el.startsWith("ext"));
+        const offsetA = isVirtualA ? 0 : 8.5;
+        const offsetB = isVirtualB ? 0 : 8.5;
+        
+        const x1 = atomA.x + ux * offsetA;
+        const y1 = atomA.y + uy * offsetA;
+        const x2 = atomB.x - ux * offsetB;
+        const y2 = atomB.y - uy * offsetB;
+
+        const order = bond.order || 1;
+        const isDashed = bond.style === "dashed" || isVirtualA || isVirtualB;
+
+        if (order === 1) {
+          const attrs = {
+            x1: x1.toFixed(1),
+            y1: y1.toFixed(1),
+            x2: x2.toFixed(1),
+            y2: y2.toFixed(1),
+            stroke: isDashed ? "var(--ink-mute, #6B756D)" : "var(--ink)",
+            "stroke-width": "var(--dia-stroke-bond)"
+          };
+          if (isDashed) {
+            attrs["stroke-dasharray"] = "3 3";
+          }
+          svg.appendChild(createSVGElement("line", attrs));
+        } else if (order === 2) {
+          const offset = 2.2;
+          const lines = [
+            { x1: x1 + nx * offset, y1: y1 + ny * offset, x2: x2 + nx * offset, y2: y2 + ny * offset },
+            { x1: x1 - nx * offset, y1: y1 - ny * offset, x2: x2 - nx * offset, y2: y2 - ny * offset }
+          ];
+          lines.forEach(l => {
+            svg.appendChild(createSVGElement("line", {
+              x1: l.x1.toFixed(1),
+              y1: l.y1.toFixed(1),
+              x2: l.x2.toFixed(1),
+              y2: l.y2.toFixed(1),
+              stroke: "var(--ink)",
+              "stroke-width": "var(--dia-stroke)"
+            }));
+          });
+        } else if (order === 3) {
+          const offset = 3.5;
+          const lines = [
+            { x1: x1, y1: y1, x2: x2, y2: y2 },
+            { x1: x1 + nx * offset, y1: y1 + ny * offset, x2: x2 + nx * offset, y2: y2 + ny * offset },
+            { x1: x1 - nx * offset, y1: y1 - ny * offset, x2: x2 - nx * offset, y2: y2 - ny * offset }
+          ];
+          lines.forEach(l => {
+            svg.appendChild(createSVGElement("line", {
+              x1: l.x1.toFixed(1),
+              y1: l.y1.toFixed(1),
+              x2: l.x2.toFixed(1),
+              y2: l.y2.toFixed(1),
+              stroke: "var(--ink)",
+              "stroke-width": "var(--dia-stroke)"
+            }));
+          });
+        }
+      });
+    }
+
+    // 4. Draw Lone Pairs
+    if (data.lonePairs) {
+      data.lonePairs.forEach(lp => {
+        const atom = atomMap[lp.on];
+        if (!atom) return;
+
+        const bondAngles = [];
+        if (data.bonds) {
+          data.bonds.forEach(bond => {
+            let otherId = null;
+            if (bond.a === atom.id) otherId = bond.b;
+            else if (bond.b === atom.id) otherId = bond.a;
+
+            if (otherId && atomMap[otherId]) {
+              const other = atomMap[otherId];
+              const dx = other.x - atom.x;
+              const dy = other.y - atom.y;
+              bondAngles.push(Math.atan2(dy, dx));
+            }
+          });
+        }
+
+        const angles = getLonePairAngles(bondAngles, lp.count, isCardinal);
+        const lpDist = 11.5;
+        const dotSpacing = 5.0; // Increased spacing between dots of lone pairs
+        const halfSpacing = dotSpacing / 2;
+
+        angles.forEach(alpha => {
+          const lpx = atom.x + lpDist * Math.cos(alpha);
+          const lpy = atom.y + lpDist * Math.sin(alpha);
+          const px = -Math.sin(alpha);
+          const py = Math.cos(alpha);
+
+          const dots = [
+            { x: lpx + px * halfSpacing, y: lpy + py * halfSpacing },
+            { x: lpx - px * halfSpacing, y: lpy - py * halfSpacing }
+          ];
+
+          dots.forEach(d => {
+            svg.appendChild(createSVGElement("circle", {
+              cx: d.x.toFixed(1),
+              cy: d.y.toFixed(1),
+              r: "var(--dia-r-particle)",
+              fill: "var(--accent)"
+            }));
+          });
+        });
+      });
+    }
+
+    // 5. Draw Atom Symbols
+    scaledAtoms.forEach(atom => {
+      if (atom.el === "" || atom.el === "*" || atom.el.startsWith("ext")) return;
+      let textFill = "var(--ink)";
+      if (options.useCPKColors) {
+        const cpk = getCPK(atom.el);
+        textFill = (atom.el === "H") ? "var(--ink)" : cpk.fill;
+      }
+      const text = createSVGElement("text", {
+        x: atom.x.toFixed(1),
+        y: (atom.y + 3.0).toFixed(1),
+        "text-anchor": "middle",
+        fill: textFill,
+        "font-family": "var(--mono)",
+        "font-weight": "700",
+        "font-size": "11px"
+      });
+      text.textContent = atom.el;
+      svg.appendChild(text);
+    });
+
+    // 6. Draw electron density clouds (behind everything else)
+    renderElectronDensityClouds(svg, scaledAtoms, atomMap, data, options);
+
+    // 7. Draw dipoles/partial charges
+    renderDipoleAnnotations(svg, data, scale, padding, options);
+
+    // Draw polymer brackets if present
+    if (data.brackets) {
+      data.brackets.forEach(b => {
+        const bx = b.x * scale;
+        const byMin = b.yMin * scale;
+        const byMax = b.yMax * scale;
+        const lip = b.lip !== undefined ? b.lip * scale : 4;
+        
+        let pathD = "";
+        if (b.type === "left" || bx < 0) {
+          pathD = `M ${bx + lip} ${byMin} L ${bx} ${byMin} L ${bx} ${byMax} L ${bx + lip} ${byMax}`;
+        } else {
+          pathD = `M ${bx - lip} ${byMin} L ${bx} ${byMin} L ${bx} ${byMax} L ${bx - lip} ${byMax}`;
+        }
+        
+        svg.appendChild(createSVGElement("path", {
+          d: pathD,
+          fill: "none",
+          stroke: "var(--ink)",
+          "stroke-width": 1.5,
+          "stroke-linecap": "round",
+          "stroke-linejoin": "round"
+        }));
+      });
+    }
+
+    return svg;
+  }
+
+  function drawMolecularModel(data, mode = "ball-and-stick", options = {}) {
+    const svg = createSVGElement("svg", {
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    if (!data || !data.atoms || data.atoms.length === 0) return svg;
+
+    const formula = (data && data.formula) || "";
+    const inWater = options.inWater && options.showContainerFrame && options.showContainerFrame !== "none";
+    const isDissociable = ["nacl", "hcl", "hbr", "hi"].includes(formula.toLowerCase());
+    
+    let activeData = data;
+    if (isDissociable && inWater) {
+      activeData = JSON.parse(JSON.stringify(data));
+      if (activeData.atoms && activeData.atoms.length === 2) {
+        activeData.atoms[0].x = -1.6;
+        activeData.atoms[0].y = -0.5;
+        activeData.atoms[1].x = 1.6;
+        activeData.atoms[1].y = 0.5;
+      }
+      activeData.bonds = [];
+    }
+
+    const scale = (mode === "particle") ? 18 : 22;
+    const padding = (options.showPartialCharges || options.showNetDipole) ? 26 : 20;
+
+    const sortedAtoms = [...activeData.atoms].sort((a, b) => {
+      if (a.el === "H" && b.el !== "H") return 1;
+      if (a.el !== "H" && b.el === "H") return -1;
+      return 0;
+    });
+
+    // 1. Calculate scaled coordinates and styles
+    const atomMap = {};
+    const scaledAtoms = sortedAtoms.map(atom => {
+      const cpk = getCPK(atom.el);
+      let radius = 7.5;
+      if (mode === "particle") {
+        radius = 10; // placeholder, will be recalculated below
+      } else {
+        radius = cpk.isSmall ? 5.0 : 7.5;
+      }
+
+      const scaled = {
+        id: atom.id,
+        el: atom.el,
+        x: atom.x * scale,
+        y: atom.y * scale,
+        radius: radius,
+        cpk: cpk
+      };
+      atomMap[atom.id] = scaled;
+      return scaled;
+    });
+
+    // For particle mode, compute radii so atoms never overlap
+    if (mode === "particle" && activeData.bonds && activeData.bonds.length > 0) {
+      // Size weights: H is smaller, everything else equal
+      const weight = (el) => el === "H" ? 0.6 : 1.0;
+
+      // For each atom, compute the max radius allowed by each of its bonds
+      const maxRadii = {};
+      scaledAtoms.forEach(sa => { maxRadii[sa.id] = Infinity; });
+
+      activeData.bonds.forEach(bond => {
+        const a = atomMap[bond.a];
+        const b = atomMap[bond.b];
+        if (!a || !b) return;
+        const d = Math.hypot(b.x - a.x, b.y - a.y);
+        if (d <= 0) return;
+
+        const wA = weight(a.el);
+        const wB = weight(b.el);
+        const rA = (wA / (wA + wB)) * d;
+        const rB = (wB / (wA + wB)) * d;
+
+        maxRadii[a.id] = Math.min(maxRadii[a.id], rA);
+        maxRadii[b.id] = Math.min(maxRadii[b.id], rB);
+      });
+
+      scaledAtoms.forEach(sa => {
+        sa.radius = Math.max(4, maxRadii[sa.id] !== Infinity ? maxRadii[sa.id] : 8);
+      });
+    }
+
+    const atomMapById = {};
+    scaledAtoms.forEach(sa => { atomMapById[sa.id] = sa; });
+
+    // 2. Compute bounding box for viewBox sizing
+    let minX = Infinity, maxX = -Infinity;
+    let minY = Infinity, maxY = -Infinity;
+
+    scaledAtoms.forEach(atom => {
+      minX = Math.min(minX, atom.x - atom.radius);
+      maxX = Math.max(maxX, atom.x + atom.radius);
+      minY = Math.min(minY, atom.y - atom.radius);
+      maxY = Math.max(maxY, atom.y + atom.radius);
+    });
+
+    let boxW = (maxX - minX) + 2 * padding;
+    let boxH = (maxY - minY) + 2 * padding + (options.showNetDipole ? 15 : 0);
+    let viewBoxX = minX - padding;
+    let viewBoxY = minY - padding;
+
+    if (options.showNetDipole && options.netDipoleOffset) {
+      boxW += 35; // extra width room on the right for offset net dipole arrow
+    }
+
+    svg.setAttribute("viewBox", `${viewBoxX} ${viewBoxY} ${boxW} ${boxH}`);
+
+    // Draw container and solvent framing if selected
+    drawContainerFrame(svg, viewBoxX, viewBoxY, boxW, boxH, options);
+
+    // 3. Draw Bonds (Ball & Stick mode only)
+    if (mode === "ball-and-stick" && activeData.bonds) {
+      activeData.bonds.forEach(bond => {
+        const atomA = atomMapById[bond.a];
+        const atomB = atomMapById[bond.b];
+        if (!atomA || !atomB) return;
+
+        const dx = atomB.x - atomA.x;
+        const dy = atomB.y - atomA.y;
+        const len = Math.sqrt(dx * dx + dy * dy);
+        if (len === 0) return;
+
+        const ux = dx / len;
+        const uy = dy / len;
+        const nx = -uy;
+        const ny = ux;
+
+        const isVirtualA = (atomA.el === "" || atomA.el === "*" || atomA.el.startsWith("ext"));
+        const isVirtualB = (atomB.el === "" || atomB.el === "*" || atomB.el.startsWith("ext"));
+        const rA = isVirtualA ? 0 : atomA.radius;
+        const rB = isVirtualB ? 0 : atomB.radius;
+        const x1 = atomA.x + ux * rA;
+        const y1 = atomA.y + uy * rA;
+        const x2 = atomB.x - ux * rB;
+        const y2 = atomB.y - uy * rB;
+
+        const order = bond.order || 1;
+        const isDashed = bond.style === "dashed" || isVirtualA || isVirtualB;
+
+        if (order === 1) {
+          const attrs = {
+            x1: x1.toFixed(1),
+            y1: y1.toFixed(1),
+            x2: x2.toFixed(1),
+            y2: y2.toFixed(1),
+            stroke: "var(--ink-mute)",
+            "stroke-width": "var(--dia-stroke-bond)"
+          };
+          if (isDashed) {
+            attrs["stroke-dasharray"] = "3 3";
+          }
+          svg.appendChild(createSVGElement("line", attrs));
+        } else if (order === 2) {
+          const offset = 2.2;
+          const lines = [
+            { x1: x1 + nx * offset, y1: y1 + ny * offset, x2: x2 + nx * offset, y2: y2 + ny * offset },
+            { x1: x1 - nx * offset, y1: y1 - ny * offset, x2: x2 - nx * offset, y2: y2 - ny * offset }
+          ];
+          lines.forEach(l => {
+            svg.appendChild(createSVGElement("line", {
+              x1: l.x1.toFixed(1),
+              y1: l.y1.toFixed(1),
+              x2: l.x2.toFixed(1),
+              y2: l.y2.toFixed(1),
+              stroke: "var(--ink-mute)",
+              "stroke-width": "var(--dia-stroke)"
+            }));
+          });
+        } else if (order === 3) {
+          const offset = 3.5;
+          const lines = [
+            { x1: x1, y1: y1, x2: x2, y2: y2 },
+            { x1: x1 + nx * offset, y1: y1 + ny * offset, x2: x2 + nx * offset, y2: y2 + ny * offset },
+            { x1: x1 - nx * offset, y1: y1 - ny * offset, x2: x2 - nx * offset, y2: y2 - ny * offset }
+          ];
+          lines.forEach(l => {
+            svg.appendChild(createSVGElement("line", {
+              x1: l.x1.toFixed(1),
+              y1: l.y1.toFixed(1),
+              x2: l.x2.toFixed(1),
+              y2: l.y2.toFixed(1),
+              stroke: "var(--ink-mute)",
+              "stroke-width": "var(--dia-stroke)"
+            }));
+          });
+        }
+      });
+    }
+
+    // 4. Draw Atoms
+    scaledAtoms.forEach(atom => {
+      svg.appendChild(createSVGElement("circle", {
+        cx: atom.x.toFixed(1),
+        cy: atom.y.toFixed(1),
+        r: atom.radius,
+        fill: atom.cpk.fill,
+        stroke: "var(--ink)",
+        "stroke-width": mode === "particle" ? "1.0" : "1.2"
+      }));
+
+      if (mode === "ball-and-stick" || mode === "particle") {
+        const dy = (mode === "particle") ? (atom.cpk.isSmall ? 2.0 : 3.0) : (atom.cpk.isSmall ? 2.2 : 2.8);
+        const text = createSVGElement("text", {
+          x: atom.x.toFixed(1),
+          y: (atom.y + dy).toFixed(1),
+          "text-anchor": "middle",
+          fill: atom.cpk.text,
+          "font-family": "var(--mono)",
+          "font-weight": "700",
+          "font-size": (mode === "particle") ? (atom.cpk.isSmall ? "6px" : "9px") : (atom.cpk.isSmall ? "var(--dia-caption-size)" : "var(--dia-label-size)")
+        });
+        text.textContent = atom.el;
+        svg.appendChild(text);
+      }
+    });
+
+    // 5. Draw dipoles/partial charges
+    renderDipoleAnnotations(svg, activeData, scale, padding, options);
+
+    // Draw hydration shells if dissociated and in water
+    if (inWater && isDissociable) {
+      drawHydrationShells(svg, scaledAtoms, options);
+    }
+
+    // Draw polymer brackets if present
+    if (activeData.brackets) {
+      activeData.brackets.forEach(b => {
+        const bx = b.x * scale;
+        const byMin = b.yMin * scale;
+        const byMax = b.yMax * scale;
+        const lip = b.lip !== undefined ? b.lip * scale : 4;
+        
+        let pathD = "";
+        if (b.type === "left" || bx < 0) {
+          pathD = `M ${bx + lip} ${byMin} L ${bx} ${byMin} L ${bx} ${byMax} L ${bx + lip} ${byMax}`;
+        } else {
+          pathD = `M ${bx - lip} ${byMin} L ${bx} ${byMin} L ${bx} ${byMax} L ${bx - lip} ${byMax}`;
+        }
+        
+        svg.appendChild(createSVGElement("path", {
+          d: pathD,
+          fill: "none",
+          stroke: "var(--ink)",
+          "stroke-width": 1.5,
+          "stroke-linecap": "round",
+          "stroke-linejoin": "round"
+        }));
+      });
+    }
+
+    return svg;
+  }
+
+  // ============================================================
+  // REACTION & PARTICLE DIAGRAM GENERATOR
+  // ============================================================
+  // Returns null (instead of a silently-empty/partial tally) when a token
+  // contains an unknown element symbol or characters the regex can't
+  // consume (e.g. a stray lowercase run like "h2o" matches nothing and
+  // previously fell through to an empty atom count, a typo that read as
+  // "balanced" with zero atoms on both sides).
+  function parseFormula(formula) {
+    const counts = {};
+    const regex = /([A-Z][a-z]*)(\d*)/g;
+    let match;
+    let consumedLength = 0;
+    while ((match = regex.exec(formula)) !== null) {
+      let element = match[1];
+      let count = match[2] ? parseInt(match[2]) : 1;
+      if (!EL.bySym[element]) return null;
+      counts[element] = (counts[element] || 0) + count;
+      consumedLength += match[0].length;
+    }
+    if (consumedLength !== formula.length) return null;
+    return counts;
+  }
+
+  function parseReaction(rxnStr) {
+    const sides = rxnStr.split(/->|→/);
+    if (sides.length !== 2) return null;
+
+    const parseSide = (sideText) => {
+      return sideText.split("+").map(term => {
+        term = term.trim();
+        const match = term.match(/^(\d*)\s*(.*)$/);
+        let coeff = match[1] ? parseInt(match[1]) : 1;
+        let formula = match[2].trim().replace(/\s/g, "");
+        return { coeff, formula };
+      }).filter(t => t.formula.length > 0);
+    };
+
+    const reactants = parseSide(sides[0]);
+    const products = parseSide(sides[1]);
+
+    // Validate every term up front so a bad token (unknown element, stray
+    // lowercase typo, or unsupported syntax like parentheses) is reported
+    // by name instead of silently tallying to zero atoms on both sides.
+    const badTerm = [...reactants, ...products].find(t => parseFormula(t.formula) === null);
+    if (badTerm) {
+      return { error: true, badToken: badTerm.formula };
+    }
+
+    const leftAtoms = {};
+    const rightAtoms = {};
+
+    reactants.forEach(r => {
+      const atomMap = parseFormula(r.formula);
+      for (const [el, count] of Object.entries(atomMap)) {
+        leftAtoms[el] = (leftAtoms[el] || 0) + count * r.coeff;
+      }
+    });
+
+    products.forEach(p => {
+      const atomMap = parseFormula(p.formula);
+      for (const [el, count] of Object.entries(atomMap)) {
+        rightAtoms[el] = (rightAtoms[el] || 0) + count * p.coeff;
+      }
+    });
+
+    let balanced = true;
+    const allElements = new Set([...Object.keys(leftAtoms), ...Object.keys(rightAtoms)]);
+    for (const el of allElements) {
+      if (leftAtoms[el] !== rightAtoms[el]) {
+        balanced = false;
+        break;
+      }
+    }
+
+    return { reactants, products, leftAtoms, rightAtoms, balanced };
+  }
+
+  function renderMoleculeToGroup(formula, scale = 16) {
+    const data = MOLECULE_TEMPLATES[formula];
+    const group = createSVGElement("g");
+
+    if (!data) {
+      const circle = createSVGElement("circle", {
+        cx: 0, cy: 0, r: 8,
+        fill: "var(--ink-mute)", stroke: "var(--ink)", "stroke-width": 1.0
+      });
+      group.appendChild(circle);
+      const text = createSVGElement("text", {
+        x: 0, y: 2.8, "text-anchor": "middle",
+        fill: "#fff", "font-family": "var(--mono)", "font-size": "8px", "font-weight": "700"
+      });
+      text.textContent = formula;
+      group.appendChild(text);
+      return group;
+    }
+
+    data.bonds.forEach(bond => {
+      const atomA = data.atoms.find(a => a.id === bond.a);
+      const atomB = data.atoms.find(a => a.id === bond.b);
+      if (!atomA || !atomB) return;
+
+      const dx = atomB.x - atomA.x;
+      const dy = atomB.y - atomA.y;
+      const len = Math.sqrt(dx * dx + dy * dy);
+      if (len === 0) return;
+
+      const ux = dx / len;
+      const uy = dy / len;
+      const nx = -uy;
+      const ny = ux;
+
+      const rA = (atomA.el === "H") ? 5.0 / 36 : 7.5 / 36;
+      const rB = (atomB.el === "H") ? 5.0 / 36 : 7.5 / 36;
+
+      const x1 = (atomA.x + ux * rA) * scale;
+      const y1 = (atomA.y + uy * rA) * scale;
+      const x2 = (atomB.x - ux * rB) * scale;
+      const y2 = (atomB.y - uy * rB) * scale;
+
+      const order = bond.order || 1;
+      const offset = 1.2;
+
+      if (order === 1) {
+        group.appendChild(createSVGElement("line", {
+          x1: x1, y1: y1, x2: x2, y2: y2,
+          stroke: "var(--ink-mute)", "stroke-width": 1.0
+        }));
+      } else if (order === 2) {
+        group.appendChild(createSVGElement("line", {
+          x1: x1 + nx * offset, y1: y1 + ny * offset, x2: x2 + nx * offset, y2: y2 + ny * offset,
+          stroke: "var(--ink-mute)", "stroke-width": 0.8
+        }));
+        group.appendChild(createSVGElement("line", {
+          x1: x1 - nx * offset, y1: y1 - ny * offset, x2: x2 - nx * offset, y2: y2 - ny * offset,
+          stroke: "var(--ink-mute)", "stroke-width": 0.8
+        }));
+      } else if (order === 3) {
+        group.appendChild(createSVGElement("line", {
+          x1: x1, y1: y1, x2: x2, y2: y2,
+          stroke: "var(--ink-mute)", "stroke-width": 0.8
+        }));
+        group.appendChild(createSVGElement("line", {
+          x1: x1 + nx * (offset * 1.5), y1: y1 + ny * (offset * 1.5), x2: x2 + nx * (offset * 1.5), y2: y2 + ny * (offset * 1.5),
+          stroke: "var(--ink-mute)", "stroke-width": 0.6
+        }));
+        group.appendChild(createSVGElement("line", {
+          x1: x1 - nx * (offset * 1.5), y1: y1 - ny * (offset * 1.5), x2: x2 - nx * (offset * 1.5), y2: y2 - ny * (offset * 1.5),
+          stroke: "var(--ink-mute)", "stroke-width": 0.6
+        }));
+      }
+    });
+
+    data.atoms.forEach(atom => {
+      const cpk = getCPK(atom.el);
+      const isH = (atom.el === "H");
+      const radius = isH ? 4.5 : 6.5;
+
+      group.appendChild(createSVGElement("circle", {
+        cx: atom.x * scale,
+        cy: atom.y * scale,
+        r: radius,
+        fill: cpk.fill,
+        stroke: "var(--ink)",
+        "stroke-width": 1.0
+      }));
+
+      const text = createSVGElement("text", {
+        x: atom.x * scale,
+        y: atom.y * scale + (isH ? 1.8 : 2.2),
+        "text-anchor": "middle",
+        fill: cpk.text,
+        "font-family": "var(--mono)",
+        "font-weight": "700",
+        "font-size": isH ? "5.5px" : "8px"
+      });
+      text.textContent = atom.el;
+      group.appendChild(text);
+    });
+
+    return group;
+  }
+
+  function drawReactionMolecules(rxn) {
+    const svg = createSVGElement("svg", {
+      viewBox: "0 0 520 120",
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    const scale = 14;
+    const CY = 60;
+
+    let currentX = 30;
+    
+    rxn.reactants.forEach((r, idx) => {
+      if (r.coeff > 1) {
+        const txt = createSVGElement("text", {
+          x: currentX, y: CY + 5,
+          "font-family": "var(--display)", "font-weight": "800", "font-size": "18px",
+          fill: "var(--ink)", "text-anchor": "middle"
+        });
+        txt.textContent = r.coeff;
+        svg.appendChild(txt);
+        currentX += 20;
+      }
+
+      for (let c = 0; c < r.coeff; c++) {
+        const molGroup = renderMoleculeToGroup(r.formula, scale);
+        let dx = 0;
+        let dy = 0;
+        if (r.coeff > 1) {
+          dx = (c - (r.coeff - 1) / 2) * 28;
+          dy = (c % 2 === 0) ? -10 : 10;
+        }
+        molGroup.setAttribute("transform", `translate(${currentX + dx}, ${CY + dy})`);
+        svg.appendChild(molGroup);
+      }
+
+      currentX += r.coeff > 1 ? (r.coeff - 1) * 28 + 30 : 30;
+
+      if (idx < rxn.reactants.length - 1) {
+        const plus = createSVGElement("text", {
+          x: currentX, y: CY + 5,
+          "font-family": "var(--display)", "font-weight": "800", "font-size": "16px",
+          fill: "var(--ink)", "text-anchor": "middle"
+        });
+        plus.textContent = "+";
+        svg.appendChild(plus);
+        currentX += 30;
+      }
+    });
+
+    const arrowX = currentX + 15;
+    svg.appendChild(createSVGElement("line", {
+      x1: arrowX, y1: CY, x2: arrowX + 30, y2: CY,
+      stroke: "var(--ink)", "stroke-width": 2, "stroke-linecap": "round"
+    }));
+    svg.appendChild(createSVGElement("path", {
+      d: `M ${arrowX + 25},${CY - 4} L ${arrowX + 31},${CY} L ${arrowX + 25},${CY + 4}`,
+      fill: "none", stroke: "var(--ink)", "stroke-width": 2, "stroke-linecap": "round", "stroke-linejoin": "round"
+    }));
+
+    currentX = arrowX + 45;
+
+    rxn.products.forEach((p, idx) => {
+      if (p.coeff > 1) {
+        const txt = createSVGElement("text", {
+          x: currentX, y: CY + 5,
+          "font-family": "var(--display)", "font-weight": "800", "font-size": "18px",
+          fill: "var(--ink)", "text-anchor": "middle"
+        });
+        txt.textContent = p.coeff;
+        svg.appendChild(txt);
+        currentX += 20;
+      }
+
+      for (let c = 0; c < p.coeff; c++) {
+        const molGroup = renderMoleculeToGroup(p.formula, scale);
+        let dx = 0;
+        let dy = 0;
+        if (p.coeff > 1) {
+          dx = (c - (p.coeff - 1) / 2) * 28;
+          dy = (c % 2 === 0) ? -10 : 10;
+        }
+        molGroup.setAttribute("transform", `translate(${currentX + dx}, ${CY + dy})`);
+        svg.appendChild(molGroup);
+      }
+
+      currentX += p.coeff > 1 ? (p.coeff - 1) * 28 + 30 : 30;
+
+      if (idx < rxn.products.length - 1) {
+        const plus = createSVGElement("text", {
+          x: currentX, y: CY + 5,
+          "font-family": "var(--display)", "font-weight": "800", "font-size": "16px",
+          fill: "var(--ink)", "text-anchor": "middle"
+        });
+        plus.textContent = "+";
+        svg.appendChild(plus);
+        currentX += 30;
+      }
+    });
+
+    svg.setAttribute("viewBox", `0 0 ${(currentX + 30).toFixed(0)} 120`);
+
+    return svg;
+  }
+
+  function drawMotionTails(svg, cx, cy, radius, energy = 1) {
+    const seed = Math.sin(cx * 12.9898 + cy * 78.233) * 43758.5453;
+    const angle = (seed - Math.floor(seed)) * 2 * Math.PI;
+    const dx = Math.cos(angle);
+    const dy = Math.sin(angle);
+    const px = -dy;
+    const py = dx;
+
+    const tailLenCenter = radius + 4 * energy;
+    svg.appendChild(createSVGElement("line", {
+      x1: (cx - radius * dx).toFixed(1),
+      y1: (cy - radius * dy).toFixed(1),
+      x2: (cx - tailLenCenter * dx).toFixed(1),
+      y2: (cy - tailLenCenter * dy).toFixed(1),
+      stroke: "var(--ink-mute)",
+      "stroke-width": 0.8,
+      opacity: 0.6,
+      "stroke-linecap": "round"
+    }));
+
+    if (energy >= 2) {
+      const tailLenSide = radius + 2.5 * energy;
+      svg.appendChild(createSVGElement("line", {
+        x1: (cx + 2.5 * px - radius * dx).toFixed(1),
+        y1: (cy + 2.5 * py - radius * dy).toFixed(1),
+        x2: (cx + 2.5 * px - tailLenSide * dx).toFixed(1),
+        y2: (cy + 2.5 * py - tailLenSide * dy).toFixed(1),
+        stroke: "var(--ink-mute)", "stroke-width": 0.6, opacity: 0.4, "stroke-linecap": "round"
+      }));
+    }
+  }
+
+  function drawVibrateBrackets(svg, cx, cy, radius) {
+    const d = radius + 2.5;
+    const h = 4;
+    svg.appendChild(createSVGElement("path", {
+      d: `M ${(cx - d + 1).toFixed(1)} ${(cy - h).toFixed(1)} H ${(cx - d).toFixed(1)} V ${(cy + h).toFixed(1)} H ${(cx - d + 1).toFixed(1)}`,
+      stroke: "var(--ink-mute)", "stroke-width": 0.6, fill: "none"
+    }));
+    svg.appendChild(createSVGElement("path", {
+      d: `M ${(cx + d - 1).toFixed(1)} ${(cy - h).toFixed(1)} H ${(cx + d).toFixed(1)} V ${(cy + h).toFixed(1)} H ${(cx + d - 1).toFixed(1)}`,
+      stroke: "var(--ink-mute)", "stroke-width": 0.6, fill: "none"
+    }));
+  }
+
+  function drawLiquidLump(svg, cx, cy, radius) {
+    const seed = Math.sin(cx * 12.9898 + cy * 78.233) * 43758.5453;
+    const isLeft = (seed - Math.floor(seed)) > 0.5;
+    const d = radius + 2.0;
+
+    const dStr = isLeft
+      ? `M ${(cx - d).toFixed(1)} ${(cy - 4).toFixed(1)} Q ${(cx - d - 1.5).toFixed(1)} ${cy.toFixed(1)} ${(cx - d).toFixed(1)} ${(cy + 4).toFixed(1)}`
+      : `M ${(cx + d).toFixed(1)} ${(cy - 4).toFixed(1)} Q ${(cx + d + 1.5).toFixed(1)} ${cy.toFixed(1)} ${(cx + d).toFixed(1)} ${(cy + 4).toFixed(1)}`;
+
+    svg.appendChild(createSVGElement("path", {
+      d: dStr, stroke: "var(--ink-mute)", "stroke-width": 0.6, fill: "none"
+    }));
+  }
+
+  function drawChamberMolecule(svg, formula, cx, cy, state = "gas") {
+    const data = MOLECULE_TEMPLATES[formula];
+    const scale = 8.5;
+
+    if (!data) {
+      svg.appendChild(createSVGElement("circle", {
+        cx: cx, cy: cy, r: 4.5,
+        fill: "var(--ink-mute)", stroke: "var(--ink)", "stroke-width": 1.0
+      }));
+      return;
+    }
+
+    if (state === "gas") {
+      drawMotionTails(svg, cx, cy, 6.5, 1);
+    } else if (state === "solid") {
+      drawVibrateBrackets(svg, cx, cy, 6.5);
+    } else if (state === "liquid") {
+      drawLiquidLump(svg, cx, cy, 6.5);
+    }
+
+    data.bonds.forEach(bond => {
+      const atomA = data.atoms.find(a => a.id === bond.a);
+      const atomB = data.atoms.find(a => a.id === bond.b);
+      if (!atomA || !atomB) return;
+
+      const x1 = cx + atomA.x * scale;
+      const y1 = cy + atomA.y * scale;
+      const x2 = cx + atomB.x * scale;
+      const y2 = cy + atomB.y * scale;
+
+      svg.appendChild(createSVGElement("line", {
+        x1: x1.toFixed(1), y1: y1.toFixed(1), x2: x2.toFixed(1), y2: y2.toFixed(1),
+        stroke: "var(--ink-mute)", "stroke-width": 0.7
+      }));
+    });
+
+    data.atoms.forEach(atom => {
+      const cpk = getCPK(atom.el);
+      const isH = (atom.el === "H");
+      const radius = isH ? 2.5 : 4.0;
+      const ax = cx + atom.x * scale;
+      const ay = cy + atom.y * scale;
+
+      svg.appendChild(createSVGElement("circle", {
+        cx: ax.toFixed(1), cy: ay.toFixed(1), r: radius,
+        fill: cpk.fill, stroke: "var(--ink)", "stroke-width": 0.8
+      }));
+    });
+  }
+
+  function drawParticleChambers(rxn, stateBefore = "gas", stateAfter = "gas") {
+    const svg = createSVGElement("svg", {
+      viewBox: "0 0 340 185",
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    const panelW = 150;
+    const panelH = 150;
+    const TY = 25;
+    const leftOffset = 10;
+    const rightOffset = 180;
+
+    svg.appendChild(createSVGElement("rect", {
+      x: leftOffset, y: TY, width: panelW, height: panelH, rx: 4,
+      class: "d-frame"
+    }));
+    const labelBefore = createSVGElement("text", {
+      x: leftOffset + panelW / 2, y: 18, "text-anchor": "middle", class: "d-label",
+      style: "font-size: var(--dia-label-size); font-weight: 600;"
+    });
+    labelBefore.textContent = "BEFORE";
+    svg.appendChild(labelBefore);
+
+    svg.appendChild(createSVGElement("rect", {
+      x: rightOffset, y: TY, width: panelW, height: panelH, rx: 4,
+      class: "d-frame"
+    }));
+    const labelAfter = createSVGElement("text", {
+      x: rightOffset + panelW / 2, y: 18, "text-anchor": "middle", class: "d-label",
+      style: "font-size: var(--dia-label-size); font-weight: 600;"
+    });
+    labelAfter.textContent = "AFTER";
+    svg.appendChild(labelAfter);
+
+    const positionsList = [
+      { x: 30, y: 35 }, { x: 120, y: 115 }, { x: 75, y: 75 },
+      { x: 115, y: 40 }, { x: 35, y: 110 }, { x: 75, y: 125 },
+      { x: 75, y: 30 }, { x: 30, y: 75 }, { x: 120, y: 75 }
+    ];
+
+    let beforeMols = [];
+    rxn.reactants.forEach(r => {
+      for (let k = 0; k < r.coeff; k++) {
+        beforeMols.push(r.formula);
+      }
+    });
+
+    beforeMols.forEach((formula, idx) => {
+      const pos = positionsList[idx % positionsList.length];
+      const cx = leftOffset + pos.x + (Math.sin(idx * 5) * 5);
+      const cy = TY + pos.y + (Math.cos(idx * 3) * 5);
+      drawChamberMolecule(svg, formula, cx, cy, stateBefore);
+    });
+
+    let afterMols = [];
+    rxn.products.forEach(p => {
+      for (let k = 0; k < p.coeff; k++) {
+        afterMols.push(p.formula);
+      }
+    });
+
+    afterMols.forEach((formula, idx) => {
+      const pos = positionsList[idx % positionsList.length];
+      const cx = rightOffset + pos.x + (Math.sin(idx * 8) * 5);
+      const cy = TY + pos.y + (Math.cos(idx * 4) * 5);
+      drawChamberMolecule(svg, formula, cx, cy, stateAfter);
+    });
+
+    return svg;
+  }
+
+  function parseMoleculeJson(inputStr) {
+    if (!inputStr || typeof inputStr !== "string") return null;
+    let str = inputStr.trim();
+    if (!str) return null;
+
+    if (!str.startsWith("{") && !str.startsWith("[")) return null;
+
+    let obj = null;
+    try {
+      obj = JSON.parse(str);
+    } catch (e1) {
+      try {
+        const sanitized = str
+          .replace(/'/g, '"')
+          .replace(/([{,]\s*)([a-zA-Z0-9_$]+)\s*:/g, '$1"$2":');
+        obj = JSON.parse(sanitized);
+      } catch (e2) {
+        return null;
+      }
+    }
+
+    if (!obj || typeof obj !== "object") return null;
+
+    if (Array.isArray(obj)) {
+      if (obj.length > 0 && obj[0] && (obj[0].el || obj[0].id)) {
+        return {
+          atoms: obj.map((a, i) => ({
+            id: a.id || (a.el ? a.el + (i + 1) : "A" + (i + 1)),
+            el: a.el || "",
+            x: typeof a.x === "number" ? a.x : 0,
+            y: typeof a.y === "number" ? a.y : 0
+          })),
+          bonds: [],
+          lonePairs: [],
+          brackets: []
+        };
+      }
+      return null;
+    }
+
+    let root = obj;
+    if (!root.atoms && typeof root === "object") {
+      const keys = Object.keys(root);
+      if (keys.length === 1 && root[keys[0]] && typeof root[keys[0]] === "object" && root[keys[0]].atoms) {
+        root = root[keys[0]];
+      }
+    }
+
+    if (Array.isArray(root.atoms) && root.atoms.length > 0) {
+      return {
+        atoms: root.atoms.map((a, i) => ({
+          id: a.id || (a.el ? a.el + (i + 1) : "A" + (i + 1)),
+          el: a.el || "",
+          x: typeof a.x === "number" ? a.x : 0,
+          y: typeof a.y === "number" ? a.y : 0
+        })),
+        bonds: Array.isArray(root.bonds) ? root.bonds : [],
+        lonePairs: Array.isArray(root.lonePairs) ? root.lonePairs : [],
+        brackets: Array.isArray(root.brackets) ? root.brackets : []
+      };
+    }
+
+    return null;
+  }
+
+  function parseFormulaToMolecule(inputStr) {
+    inputStr = inputStr.trim();
+    if (!inputStr) return null;
+
+    const jsonParsed = parseMoleculeJson(inputStr);
+    if (jsonParsed) {
+      return {
+        formula: "custom",
+        name: "Custom JSON Structure",
+        data: jsonParsed
+      };
+    }
+
+    const lowerInput = inputStr.toLowerCase();
+    let formula = NAME_TO_FORMULA[lowerInput] || inputStr;
+
+    // Check case-insensitive preset formulas
+    const presetKeys = Object.keys(MOLECULE_TEMPLATES);
+    const matchedKey = presetKeys.find(k => k.toLowerCase() === formula.toLowerCase());
+    if (matchedKey) {
+      return {
+        formula: matchedKey,
+        name: NAME_TO_FORMULA[lowerInput] ? inputStr : matchedKey,
+        data: MOLECULE_TEMPLATES[matchedKey]
+      };
+    }
+
+    // Parse chemical formula components
+    const regex = /([A-Z][a-z]*)(\d*)/g;
+    let match;
+    let totalAtoms = 0;
+    const elementCounts = {};
+
+    while ((match = regex.exec(formula)) !== null) {
+      const el = match[1];
+      const count = match[2] ? parseInt(match[2]) : 1;
+      
+      if (!window.GC_ELEMENTS.bySym[el]) {
+        return null; // Invalid element symbol
+      }
+      
+      elementCounts[el] = (elementCounts[el] || 0) + count;
+      totalAtoms += count;
+    }
+
+    if (totalAtoms === 0) return null;
+
+    // Monatomic fallback
+    if (totalAtoms === 1) {
+      const el = Object.keys(elementCounts)[0];
+      return {
+        formula: formula,
+        name: formula,
+        data: {
+          atoms: [{ id: el + "1", el: el, x: 0, y: 0 }],
+          bonds: [],
+          lonePairs: []
+        }
+      };
+    }
+
+    const elements = Object.keys(elementCounts);
+    
+    // Pattern 1: Diatomic (e.g. HCl, O2)
+    if (totalAtoms === 2) {
+      const elA = elements[0];
+      const elB = elements[1] || elA;
+      const valA = window.GC_ELEMENTS.bySym[elA].valence || 1;
+      const valB = window.GC_ELEMENTS.bySym[elB].valence || 1;
+      const isH = (elA === "H" || elB === "H");
+      const order = isH ? 1 : Math.min(8 - valA, 8 - valB);
+
+      const lpA = Math.max(0, Math.floor((valA - order) / 2));
+      const lpB = Math.max(0, Math.floor((valB - order) / 2));
+
+      return {
+        formula: formula,
+        name: formula,
+        data: {
+          atoms: [
+            { id: elA + "1", el: elA, x: -0.6, y: 0 },
+            { id: elB + "2", el: elB, x: 0.6, y: 0 }
+          ],
+          bonds: [
+            { a: elA + "1", b: elB + "2", order: order }
+          ],
+          lonePairs: [
+            ...(lpA > 0 ? [{ on: elA + "1", count: lpA }] : []),
+            ...(lpB > 0 ? [{ on: elB + "2", count: lpB }] : [])
+          ]
+        }
+      };
+    }
+
+    // Same-element polyatomics (e.g. O3/ozone) are resonance cases the
+    // central/outer AB(n) patterns below can't represent honestly: refuse
+    // rather than fabricate a structure (Golden Rule 4). Diatomics (O2, Cl2)
+    // are unaffected; the pattern above already handles those correctly.
+    if (elements.length === 1 && totalAtoms >= 3) return null;
+
+    // Pattern 2: Triatomic AB2 (e.g. H2O, CO2, SO2)
+    if (totalAtoms === 3) {
+      let central = null;
+      let outer = null;
+      for (const [el, cnt] of Object.entries(elementCounts)) {
+        if (cnt === 1) central = el;
+        if (cnt === 2) outer = el;
+      }
+      if (!central || !outer) {
+        central = elements[0];
+        outer = elements[1] || central;
+      }
+
+      const valA = window.GC_ELEMENTS.bySym[central].valence || 4;
+      const valB = window.GC_ELEMENTS.bySym[outer].valence || 1;
+      const isBent = ["O", "S", "Se", "Te"].includes(central) || (valA === 6) || ["H2O", "H2S", "SO2", "OF2", "O3"].includes(formula.toUpperCase());
+
+      let order = 1;
+      if (valB === 6 && valA >= 4) order = 2; // double bond to oxygen
+
+      const sumOrders = order * 2;
+      const lpA = Math.max(0, Math.floor((valA - sumOrders) / 2));
+      const lpB = Math.max(0, Math.floor((valB - order) / 2));
+
+      if (isBent) {
+        return {
+          formula: formula,
+          name: formula,
+          data: {
+            atoms: [
+              { id: central + "1", el: central, x: 0, y: -0.2 },
+              { id: outer + "2", el: outer, x: -0.9, y: 0.5 },
+              { id: outer + "3", el: outer, x: 0.9, y: 0.5 }
+            ],
+            bonds: [
+              { a: central + "1", b: outer + "2", order: order },
+              { a: central + "1", b: outer + "3", order: order }
+            ],
+            lonePairs: [
+              ...(lpA > 0 ? [{ on: central + "1", count: lpA }] : []),
+              { on: outer + "2", count: lpB },
+              { on: outer + "3", count: lpB }
+            ]
+          }
+        };
+      } else {
+        // Linear
+        return {
+          formula: formula,
+          name: formula,
+          data: {
+            atoms: [
+              { id: central + "1", el: central, x: 0, y: 0 },
+              { id: outer + "2", el: outer, x: -1.1, y: 0 },
+              { id: outer + "3", el: outer, x: 1.1, y: 0 }
+            ],
+            bonds: [
+              { a: central + "1", b: outer + "2", order: order },
+              { a: central + "1", b: outer + "3", order: order }
+            ],
+            lonePairs: [
+              ...(lpA > 0 ? [{ on: central + "1", count: lpA }] : []),
+              { on: outer + "2", count: lpB },
+              { on: outer + "3", count: lpB }
+            ]
+          }
+        };
+      }
+    }
+
+    // Pattern 3: Tetratomic AB3 (e.g. NH3, BF3, SO3)
+    if (totalAtoms === 4) {
+      let central = null;
+      let outer = null;
+      for (const [el, cnt] of Object.entries(elementCounts)) {
+        if (cnt === 1) central = el;
+        if (cnt === 3) outer = el;
+      }
+      if (!central || !outer) {
+        central = elements[0];
+        outer = elements[1] || central;
+      }
+
+      const valA = window.GC_ELEMENTS.bySym[central].valence || 5;
+      const valB = window.GC_ELEMENTS.bySym[outer].valence || 1;
+      const isPyramidal = ["N", "P", "As"].includes(central) || (valA === 5);
+
+      let order = 1;
+      const sumOrders = order * 3;
+      const lpA = Math.max(0, Math.floor((valA - sumOrders) / 2));
+      const lpB = Math.max(0, Math.floor((valB - order) / 2));
+
+      if (isPyramidal) {
+        return {
+          formula: formula,
+          name: formula,
+          data: {
+            atoms: [
+              { id: central + "1", el: central, x: 0, y: -0.2 },
+              { id: outer + "2", el: outer, x: -1.0, y: 0.4 },
+              { id: outer + "3", el: outer, x: 1.0, y: 0.4 },
+              { id: outer + "4", el: outer, x: 0, y: 0.9 }
+            ],
+            bonds: [
+              { a: central + "1", b: outer + "2", order: order },
+              { a: central + "1", b: outer + "3", order: order },
+              { a: central + "1", b: outer + "4", order: order }
+            ],
+            lonePairs: [
+              ...(lpA > 0 ? [{ on: central + "1", count: lpA }] : []),
+              { on: outer + "2", count: lpB },
+              { on: outer + "3", count: lpB },
+              { on: outer + "4", count: lpB }
+            ]
+          }
+        };
+      } else {
+        // Trigonal Planar
+        return {
+          formula: formula,
+          name: formula,
+          data: {
+            atoms: [
+              { id: central + "1", el: central, x: 0, y: 0 },
+              { id: outer + "2", el: outer, x: 0, y: -1.0 },
+              { id: outer + "3", el: outer, x: -0.86, y: 0.5 },
+              { id: outer + "4", el: outer, x: 0.86, y: 0.5 }
+            ],
+            bonds: [
+              { a: central + "1", b: outer + "2", order: order },
+              { a: central + "1", b: outer + "3", order: order },
+              { a: central + "1", b: outer + "4", order: order }
+            ],
+            lonePairs: [
+              ...(lpA > 0 ? [{ on: central + "1", count: lpA }] : []),
+              { on: outer + "2", count: lpB },
+              { on: outer + "3", count: lpB },
+              { on: outer + "4", count: lpB }
+            ]
+          }
+        };
+      }
+    }
+
+    // Pattern 4: Pentatomic AB4 (e.g. CH4, CF4)
+    if (totalAtoms === 5) {
+      let central = null;
+      let outer = null;
+      for (const [el, cnt] of Object.entries(elementCounts)) {
+        if (cnt === 1) central = el;
+        if (cnt === 4) outer = el;
+      }
+      if (!central || !outer) {
+        central = elements[0];
+        outer = elements[1] || central;
+      }
+
+      const valA = window.GC_ELEMENTS.bySym[central].valence || 4;
+      const valB = window.GC_ELEMENTS.bySym[outer].valence || 1;
+
+      let order = 1;
+      const sumOrders = order * 4;
+      const lpA = Math.max(0, Math.floor((valA - sumOrders) / 2));
+      const lpB = Math.max(0, Math.floor((valB - order) / 2));
+
+      return {
+        formula: formula,
+        name: formula,
+        data: {
+          atoms: [
+            { id: central + "1", el: central, x: 0, y: 0 },
+            { id: outer + "2", el: outer, x: -1.0, y: 0 },
+            { id: outer + "3", el: outer, x: 1.0, y: 0 },
+            { id: outer + "4", el: outer, x: 0, y: -1.0 },
+            { id: outer + "5", el: outer, x: 0, y: 1.0 }
+          ],
+          bonds: [
+            { a: central + "1", b: outer + "2", order: order },
+            { a: central + "1", b: outer + "3", order: order },
+            { a: central + "1", b: outer + "4", order: order },
+            { a: central + "1", b: outer + "5", order: order }
+          ],
+          lonePairs: [
+            ...(lpA > 0 ? [{ on: central + "1", count: lpA }] : []),
+            { on: outer + "2", count: lpB },
+            { on: outer + "3", count: lpB },
+            { on: outer + "4", count: lpB },
+            { on: outer + "5", count: lpB }
+          ]
+        }
+      };
+    }
+
+    return null;
+  }
+
+  // ============================================================
+  // ENERGY BAR DIAGRAMS (LOL CHARTS)
+  // ============================================================
+  function drawEnergyBarDiagram(opts = {}) {
+    const {
+      system = "System",
+      initial = { eth: 2, eph: 2, ech: 0 },
+      final = { eth: 2, eph: 1, ech: 0 },
+      flowDir = "out", // "in" | "out" | "none"
+      flowBars = 1
+    } = opts;
+
+    const svg = createSVGElement("svg", {
+      viewBox: "0 0 540 230",
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    // Color tokens for energies
+    const C_ETH = "var(--cool)";   // Thermal: blue/cool
+    const C_EPH = "var(--accent)"; // Phase: orange/hot
+    const C_ECH = "var(--good)";   // Chemical: emerald/green
+
+    const chartW = 140;
+    const chartH = 120;
+    const baseY = 170;
+    const barW = 28;
+    const colGap = 14;
+    const maxBars = 4;
+    const barUnitH = 25; // 4 bars = 100px
+
+    function renderBarGroup(startX, data, stateLabel) {
+      // Background / Grid frame
+      svg.appendChild(createSVGElement("rect", {
+        x: startX - 8, y: baseY - 110, width: chartW + 16, height: chartH + 20, rx: 6,
+        fill: "var(--card)", stroke: "var(--hair)", "stroke-width": 1
+      }));
+
+      // Title
+      const titleEl = createSVGElement("text", {
+        x: startX + chartW / 2, y: baseY - 90, "text-anchor": "middle",
+        fill: "var(--ink)", style: "font-family: var(--display); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;"
+      });
+      titleEl.textContent = stateLabel;
+      svg.appendChild(titleEl);
+
+      // Grid lines (1 to 4 bars)
+      for (let level = 1; level <= maxBars; level++) {
+        const lineY = baseY - level * barUnitH;
+        svg.appendChild(createSVGElement("line", {
+          x1: startX, y1: lineY, x2: startX + chartW, y2: lineY,
+          stroke: "var(--hair-soft)", "stroke-width": 0.8, "stroke-dasharray": "2 2"
+        }));
+        const numLabel = createSVGElement("text", {
+          x: startX - 2, y: lineY + 3, "text-anchor": "end",
+          fill: "var(--ink-mute)", style: "font-family: var(--mono); font-size: 8px;"
+        });
+        numLabel.textContent = level;
+        svg.appendChild(numLabel);
+      }
+
+      // Base line
+      svg.appendChild(createSVGElement("line", {
+        x1: startX - 4, y1: baseY, x2: startX + chartW + 4, y2: baseY,
+        stroke: "var(--ink)", "stroke-width": 1.4
+      }));
+
+      // Bars config: Eth, Eph, Ech
+      const bars = [
+        { label: "Eth", count: data.eth || 0, color: C_ETH, x: startX + 10 },
+        { label: "Eph", count: data.eph || 0, color: C_EPH, x: startX + 10 + barW + colGap },
+        { label: "Ech", count: data.ech || 0, color: C_ECH, x: startX + 10 + (barW + colGap) * 2 }
+      ];
+
+      bars.forEach(b => {
+        const val = Math.min(maxBars, Math.max(0, b.count));
+        const h = val * barUnitH;
+        if (h > 0) {
+          svg.appendChild(createSVGElement("rect", {
+            x: b.x, y: baseY - h, width: barW, height: h, rx: 3,
+            fill: b.color, stroke: "var(--ink)", "stroke-width": 1.2
+          }));
+          // Value text on bar
+          const valTxt = createSVGElement("text", {
+            x: b.x + barW / 2, y: baseY - h / 2 + 4, "text-anchor": "middle",
+            fill: "#ffffff", style: "font-family: var(--mono); font-size: 11px; font-weight: 700;"
+          });
+          valTxt.textContent = val;
+          svg.appendChild(valTxt);
+        }
+
+        // Bottom label
+        const lbl = createSVGElement("text", {
+          x: b.x + barW / 2, y: baseY + 14, "text-anchor": "middle",
+          fill: "var(--ink-soft)", style: "font-family: var(--display); font-size: 10px; font-weight: 700;"
+        });
+        lbl.textContent = b.label;
+        svg.appendChild(lbl);
+      });
+    }
+
+    // Render Initial State (Left: x = 30)
+    renderBarGroup(30, initial, "Initial State");
+
+    // Center "O" Circle (System)
+    const circleCX = 270;
+    const circleCY = 115;
+    const circleR = 48;
+
+    svg.appendChild(createSVGElement("circle", {
+      cx: circleCX, cy: circleCY, r: circleR,
+      fill: "var(--paper-2)", stroke: "var(--ink)", "stroke-width": 1.8
+    }));
+
+    // System name text
+    const sysTxt = createSVGElement("text", {
+      x: circleCX, y: circleCY - 6, "text-anchor": "middle",
+      fill: "var(--ink)", style: "font-family: var(--display); font-size: 11px; font-weight: 800;"
+    });
+    sysTxt.textContent = system;
+    svg.appendChild(sysTxt);
+
+    const sysSub = createSVGElement("text", {
+      x: circleCX, y: circleCY + 10, "text-anchor": "middle",
+      fill: "var(--ink-mute)", style: "font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: 0.08em;"
+    });
+    sysSub.textContent = "System Boundary";
+    svg.appendChild(sysSub);
+
+    // Energy Flow Arrow
+    if (flowDir === "out" && flowBars > 0) {
+      // Arrow pointing OUT to the bottom-right or top-right
+      const arrowPath = `M ${circleCX + 35} ${circleCY + 15} Q ${circleCX + 60} ${circleCY + 35} ${circleCX + 82} ${circleCY + 35}`;
+      svg.appendChild(createSVGElement("path", {
+        d: arrowPath, stroke: "var(--accent)", "stroke-width": 2.2, fill: "none"
+      }));
+      svg.appendChild(createSVGElement("polygon", {
+        points: `${circleCX + 80},${circleCY + 30} ${circleCX + 90},${circleCY + 35} ${circleCX + 80},${circleCY + 40}`,
+        fill: "var(--accent)"
+      }));
+      const flowTxt = createSVGElement("text", {
+        x: circleCX + 45, y: circleCY + 52, "text-anchor": "start",
+        fill: "var(--accent)", style: "font-family: var(--display); font-size: 9px; font-weight: 800;"
+      });
+      flowTxt.textContent = `${flowBars} Bar${flowBars > 1 ? 's' : ''} Lost (Heat)`;
+      svg.appendChild(flowTxt);
+    } else if (flowDir === "in" && flowBars > 0) {
+      // Arrow pointing IN from bottom-left
+      const arrowPath = `M ${circleCX - 85} ${circleCY + 35} Q ${circleCX - 60} ${circleCY + 35} ${circleCX - 35} ${circleCY + 15}`;
+      svg.appendChild(createSVGElement("path", {
+        d: arrowPath, stroke: "var(--cool)", "stroke-width": 2.2, fill: "none"
+      }));
+      svg.appendChild(createSVGElement("polygon", {
+        points: `${circleCX - 40},${circleCY + 10} ${circleCX - 32},${circleCY + 13} ${circleCX - 38},${circleCY + 22}`,
+        fill: "var(--cool)"
+      }));
+      const flowTxt = createSVGElement("text", {
+        x: circleCX - 45, y: circleCY + 52, "text-anchor": "end",
+        fill: "var(--cool)", style: "font-family: var(--display); font-size: 9px; font-weight: 800;"
+      });
+      flowTxt.textContent = `${flowBars} Bar${flowBars > 1 ? 's' : ''} In (Heat)`;
+      svg.appendChild(flowTxt);
+    } else {
+      const flowTxt = createSVGElement("text", {
+        x: circleCX, y: circleCY + 26, "text-anchor": "middle",
+        fill: "var(--ink-mute)", style: "font-family: var(--mono); font-size: 8px;"
+      });
+      flowTxt.textContent = "Isolated (ΔE = 0)";
+      svg.appendChild(flowTxt);
+    }
+
+    // Render Final State (Right: x = 370)
+    renderBarGroup(370, final, "Final State");
+
+    // Conservation check indicator at bottom
+    const totalInit = (initial.eth || 0) + (initial.eph || 0) + (initial.ech || 0);
+    const totalFinal = (final.eth || 0) + (final.eph || 0) + (final.ech || 0);
+    const flowDelta = flowDir === "in" ? flowBars : (flowDir === "out" ? -flowBars : 0);
+    const isConserved = (totalInit + flowDelta) === totalFinal;
+
+    const bannerY = 214;
+    const bannerTxt = createSVGElement("text", {
+      x: 270, y: bannerY, "text-anchor": "middle",
+      fill: isConserved ? "var(--good)" : "var(--accent)",
+      style: "font-family: var(--display); font-size: 10px; font-weight: 700;"
+    });
+    bannerTxt.textContent = isConserved
+      ? `✓ Energy Conserved: ${totalInit} bar${totalInit !== 1 ? 's' : ''} initial ${flowDelta >= 0 ? '+' : '-'} ${Math.abs(flowDelta)} flow = ${totalFinal} bar${totalFinal !== 1 ? 's' : ''} final`
+      : `⚠ Energy Balance Mismatch: Initial (${totalInit}) ${flowDelta >= 0 ? '+' : '-'} Flow (${Math.abs(flowDelta)}) ≠ Final (${totalFinal})`;
+    svg.appendChild(bannerTxt);
+
+    return svg;
+  }
+
+  // ============================================================
+  // SHOWING PHASE MOTION (DAVID'S CLASSROOM CONVENTION)
+  // ============================================================
+  function drawPhaseMotionDiagram(opts = {}) {
+    const {
+      phase = "liquid", // "solid" | "liquid" | "gas"
+      temp = "hot",     // "cold" | "hot"
+      container = "beaker", // "beaker" | "box" | "none"
+      substance = "Ar"   // "Ar" | "O2" | "H2O"
+    } = opts;
+
+    const svg = createSVGElement("svg", {
+      viewBox: "0 0 380 270",
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    const isHot = (temp === "hot");
+    const strokeColor = "var(--ink)";
+    const bracketColor = isHot ? "var(--accent)" : "var(--ink-mute)";
+    const motionColor = isHot ? "var(--accent)" : "var(--cool)";
+
+    // Vessel Dimensions
+    const vx = 40;
+    const vy = 40;
+    const vw = 300;
+    const vh = 190;
+
+    if (container === "beaker") {
+      // Draw Beaker outline with flared lip and pour spout
+      const beakerPath = `M ${vx - 6} ${vy} Q ${vx} ${vy + 8} ${vx} ${vy + 12} L ${vx} ${vy + vh - 10} Q ${vx} ${vy + vh} ${vx + 10} ${vy + vh} L ${vx + vw - 10} ${vy + vh} Q ${vx + vw} ${vy + vh} ${vx + vw} ${vy + vh - 10} L ${vx + vw} ${vy + 12} Q ${vx + vw} ${vy + 8} ${vx + vw + 6} ${vy}`;
+      svg.appendChild(createSVGElement("path", {
+        d: beakerPath, fill: "var(--card)", stroke: strokeColor, "stroke-width": 1.6
+      }));
+      // Graduations
+      for (let g = 1; g <= 4; g++) {
+        const gy = vy + vh - g * 35;
+        svg.appendChild(createSVGElement("line", {
+          x1: vx + 2, y1: gy, x2: vx + (g % 2 === 0 ? 20 : 12), y2: gy,
+          stroke: "var(--hair)", "stroke-width": 1.0
+        }));
+      }
+    } else if (container === "box") {
+      svg.appendChild(createSVGElement("rect", {
+        x: vx, y: vy, width: vw, height: vh, rx: 6,
+        fill: "var(--card)", stroke: strokeColor, "stroke-width": 1.5
+      }));
+    }
+
+    // Particle Drawing Helpers
+    function drawParticle(cx, cy, r = 7) {
+      if (substance === "O2") {
+        // Diatomic molecule
+        svg.appendChild(createSVGElement("circle", {
+          cx: cx - 4.5, cy: cy, r: 5.5, fill: "var(--accent)", stroke: strokeColor, "stroke-width": 1.0
+        }));
+        svg.appendChild(createSVGElement("circle", {
+          cx: cx + 4.5, cy: cy, r: 5.5, fill: "var(--accent)", stroke: strokeColor, "stroke-width": 1.0
+        }));
+      } else if (substance === "H2O") {
+        // Water molecule (bent Mickey)
+        svg.appendChild(createSVGElement("circle", {
+          cx: cx, cy: cy, r: 6.5, fill: "var(--accent)", stroke: strokeColor, "stroke-width": 1.0
+        }));
+        svg.appendChild(createSVGElement("circle", {
+          cx: cx - 5.5, cy: cy - 4.5, r: 3.5, fill: "#ffffff", stroke: strokeColor, "stroke-width": 0.9
+        }));
+        svg.appendChild(createSVGElement("circle", {
+          cx: cx + 5.5, cy: cy - 4.5, r: 3.5, fill: "#ffffff", stroke: strokeColor, "stroke-width": 0.9
+        }));
+      } else {
+        // Single atom (Argon / generic)
+        svg.appendChild(createSVGElement("circle", {
+          cx: cx, cy: cy, r: r, fill: "var(--cool)", stroke: strokeColor, "stroke-width": 1.2
+        }));
+      }
+    }
+
+    // SOLID: Vibration brackets ( )
+    if (phase === "solid") {
+      const rows = 4;
+      const cols = 6;
+      const spacingX = 26;
+      const spacingY = 24;
+      const startX = vx + (vw - (cols - 1) * spacingX) / 2;
+      const startY = vy + vh - rows * spacingY + 5;
+
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const px = startX + c * spacingX;
+          const py = startY + r * spacingY;
+          drawParticle(px, py, 6.5);
+
+          // Left bracket
+          svg.appendChild(createSVGElement("path", {
+            d: `M ${px - 9} ${py - 5} Q ${px - 11.5} ${py} ${px - 9} ${py + 5}`,
+            stroke: bracketColor, "stroke-width": 1.2, fill: "none"
+          }));
+          // Right bracket
+          svg.appendChild(createSVGElement("path", {
+            d: `M ${px + 9} ${py - 5} Q ${px + 11.5} ${py} ${px + 9} ${py + 5}`,
+            stroke: bracketColor, "stroke-width": 1.2, fill: "none"
+          }));
+
+          // If HOT: second outer bracket (( ))
+          if (isHot) {
+            svg.appendChild(createSVGElement("path", {
+              d: `M ${px - 12} ${py - 6.5} Q ${px - 15} ${py} ${px - 12} ${py + 6.5}`,
+              stroke: bracketColor, "stroke-width": 1.2, fill: "none"
+            }));
+            svg.appendChild(createSVGElement("path", {
+              d: `M ${px + 12} ${py - 6.5} Q ${px + 15} ${py} ${px + 12} ${py + 6.5}`,
+              stroke: bracketColor, "stroke-width": 1.2, fill: "none"
+            }));
+          }
+        }
+      }
+    }
+
+    // LIQUID: Slip-slide curved arcs / lumps
+    else if (phase === "liquid") {
+      // 20 slightly staggered particles settling at bottom
+      const coords = [
+        { x: 70, y: 195 }, { x: 95, y: 200 }, { x: 122, y: 197 }, { x: 148, y: 202 }, { x: 175, y: 198 },
+        { x: 202, y: 201 }, { x: 228, y: 196 }, { x: 255, y: 200 }, { x: 282, y: 195 }, { x: 305, y: 199 },
+        { x: 82, y: 172 }, { x: 110, y: 175 }, { x: 135, y: 168 }, { x: 162, y: 174 }, { x: 188, y: 170 },
+        { x: 215, y: 173 }, { x: 242, y: 169 }, { x: 270, y: 174 }, { x: 295, y: 171 }, { x: 150, y: 144 },
+        { x: 175, y: 142 }, { x: 200, y: 146 }, { x: 228, y: 143 }
+      ];
+
+      coords.forEach((pt, i) => {
+        drawParticle(pt.x, pt.y, 6.5);
+
+        // Curved slip-slide motion arc
+        const flip = (i % 2 === 0);
+        const arcY = pt.y + 7.5;
+        const dStr = flip
+          ? `M ${pt.x - 7} ${arcY} Q ${pt.x} ${arcY + 3.5} ${pt.x + 7} ${arcY}`
+          : `M ${pt.x + 7} ${arcY} Q ${pt.x} ${arcY + 3.5} ${pt.x - 7} ${arcY}`;
+
+        svg.appendChild(createSVGElement("path", {
+          d: dStr, stroke: motionColor, "stroke-width": 1.2, fill: "none"
+        }));
+
+        // If HOT: add second arc + small slip arrow
+        if (isHot) {
+          const arc2Y = pt.y - 7.5;
+          svg.appendChild(createSVGElement("path", {
+            d: `M ${pt.x - 6} ${arc2Y} Q ${pt.x} ${arc2Y - 3.5} ${pt.x + 6} ${arc2Y}`,
+            stroke: motionColor, "stroke-width": 1.1, fill: "none"
+          }));
+        }
+      });
+    }
+
+    // GAS: Velocity vectors / straight tails
+    else if (phase === "gas") {
+      const gasParticles = [
+        { x: 75, y: 70, angle: 40 },
+        { x: 145, y: 90, angle: -120 },
+        { x: 220, y: 65, angle: 160 },
+        { x: 290, y: 85, angle: -45 },
+        { x: 90, y: 140, angle: 130 },
+        { x: 170, y: 155, angle: -70 },
+        { x: 250, y: 135, angle: 30 },
+        { x: 310, y: 160, angle: -150 },
+        { x: 110, y: 205, angle: -20 },
+        { x: 200, y: 200, angle: 85 },
+        { x: 275, y: 205, angle: -110 }
+      ];
+
+      const vecLen = isHot ? 26 : 12; // Tail length: short for cold, long for hot
+
+      gasParticles.forEach(p => {
+        drawParticle(p.x, p.y, 6.5);
+
+        // Vector tail pointing in angle direction
+        const rad = (p.angle * Math.PI) / 180;
+        const tx = p.x + Math.cos(rad) * vecLen;
+        const ty = p.y + Math.sin(rad) * vecLen;
+
+        // Line
+        svg.appendChild(createSVGElement("line", {
+          x1: p.x, y1: p.y, x2: tx, y2: ty,
+          stroke: motionColor, "stroke-width": 1.4
+        }));
+
+        // Arrowhead
+        const headLen = isHot ? 5.5 : 4.0;
+        const arrowAngle1 = rad + Math.PI - 0.5;
+        const arrowAngle2 = rad + Math.PI + 0.5;
+        const ax1 = tx + Math.cos(arrowAngle1) * headLen;
+        const ay1 = ty + Math.sin(arrowAngle1) * headLen;
+        const ax2 = tx + Math.cos(arrowAngle2) * headLen;
+        const ay2 = ty + Math.sin(arrowAngle2) * headLen;
+
+        svg.appendChild(createSVGElement("polygon", {
+          points: `${tx},${ty} ${ax1},${ay1} ${ax2},${ay2}`,
+          fill: motionColor
+        }));
+      });
+    }
+
+    // Top Header / Legend Label
+    const phaseName = phase.charAt(0).toUpperCase() + phase.slice(1);
+    const tempName = isHot ? "Hot" : "Cold";
+    const motionDesc = phase === "solid"
+      ? (isHot ? "Double Brackets (( ))" : "Single Brackets ( )")
+      : (phase === "liquid" ? "Slip/Slide Arcs" : (isHot ? "Long Velocity Vectors" : "Short Velocity Vectors"));
+
+    const headerTxt = createSVGElement("text", {
+      x: 190, y: 22, "text-anchor": "middle",
+      fill: "var(--ink)", style: "font-family: var(--display); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;"
+    });
+    headerTxt.textContent = `${phaseName} State (${tempName}): ${motionDesc}`;
+    svg.appendChild(headerTxt);
+
+    return svg;
+  }
+
+  // ============================================================
+  // POTENTIAL ENERGY REACTION PROFILES
+  // ============================================================
+  function drawReactionCoordinateProfile(opts = {}) {
+    const {
+      type = "exothermic", // "exothermic" | "endothermic"
+      er = 70,             // Reactant energy (percentage)
+      ep = 30,             // Product energy (percentage)
+      ea = 60,             // Activation energy barrier height
+      catalyzed = true,
+      reactantLabel = "Reactants (A + B)",
+      productLabel = "Products (C + D)"
+    } = opts;
+
+    const svg = createSVGElement("svg", {
+      viewBox: "0 0 460 260",
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    const ox = 60;
+    const oy = 210;
+    const axisW = 360;
+    const axisH = 170;
+
+    // Y Axis (Potential Energy)
+    svg.appendChild(createSVGElement("line", {
+      x1: ox, y1: oy, x2: ox, y2: oy - axisH,
+      stroke: "var(--ink)", "stroke-width": 1.5
+    }));
+    svg.appendChild(createSVGElement("polygon", {
+      points: `${ox - 4},${oy - axisH + 6} ${ox},${oy - axisH} ${ox + 4},${oy - axisH + 6}`,
+      fill: "var(--ink)"
+    }));
+    const yLbl = createSVGElement("text", {
+      x: ox - 12, y: oy - axisH / 2, "text-anchor": "middle",
+      transform: `rotate(-90, ${ox - 12}, ${oy - axisH / 2})`,
+      fill: "var(--ink)", style: "font-family: var(--display); font-size: 10px; font-weight: 800; letter-spacing: 0.05em;"
+    });
+    yLbl.textContent = "Potential Energy (PE)";
+    svg.appendChild(yLbl);
+
+    // X Axis (Reaction Progress)
+    svg.appendChild(createSVGElement("line", {
+      x1: ox, y1: oy, x2: ox + axisW, y2: oy,
+      stroke: "var(--ink)", "stroke-width": 1.5
+    }));
+    svg.appendChild(createSVGElement("polygon", {
+      points: `${ox + axisW - 6},${oy - 4} ${ox + axisW},${oy} ${ox + axisW - 6},${oy + 4}`,
+      fill: "var(--ink)"
+    }));
+    const xLbl = createSVGElement("text", {
+      x: ox + axisW / 2, y: oy + 22, "text-anchor": "middle",
+      fill: "var(--ink)", style: "font-family: var(--display); font-size: 10px; font-weight: 800; letter-spacing: 0.05em;"
+    });
+    xLbl.textContent = "Reaction Progress ⟶";
+    svg.appendChild(xLbl);
+
+    // Convert energy percentages to pixels
+    const yReactants = oy - (er / 100) * (axisH - 30);
+    const yProducts = oy - (ep / 100) * (axisH - 30);
+    const yPeak = Math.max(oy - axisH + 15, yReactants - (ea / 100) * 80);
+
+    const xR1 = ox + 20;
+    const xR2 = ox + 80;
+    const xPeak = ox + 200;
+    const xP1 = ox + 300;
+    const xP2 = ox + 360;
+
+    // Reactant Plateau
+    svg.appendChild(createSVGElement("line", {
+      x1: xR1, y1: yReactants, x2: xR2, y2: yReactants,
+      stroke: "var(--ink)", "stroke-width": 2.2
+    }));
+    const rTxt = createSVGElement("text", {
+      x: (xR1 + xR2) / 2, y: yReactants - 8, "text-anchor": "middle",
+      fill: "var(--ink)", style: "font-family: var(--display); font-size: 10px; font-weight: 700;"
+    });
+    rTxt.textContent = reactantLabel;
+    svg.appendChild(rTxt);
+
+    // Product Plateau
+    svg.appendChild(createSVGElement("line", {
+      x1: xP1, y1: yProducts, x2: xP2, y2: yProducts,
+      stroke: "var(--ink)", "stroke-width": 2.2
+    }));
+    const pTxt = createSVGElement("text", {
+      x: (xP1 + xP2) / 2, y: yProducts - 8, "text-anchor": "middle",
+      fill: "var(--ink)", style: "font-family: var(--display); font-size: 10px; font-weight: 700;"
+    });
+    pTxt.textContent = productLabel;
+    svg.appendChild(pTxt);
+
+    // Uncatalyzed curve (Bold solid line)
+    const curvePath = `M ${xR2} ${yReactants} C ${xR2 + 45} ${yReactants} ${xPeak - 45} ${yPeak} ${xPeak} ${yPeak} C ${xPeak + 45} ${yPeak} ${xP1 - 45} ${yProducts} ${xP1} ${yProducts}`;
+    svg.appendChild(createSVGElement("path", {
+      d: curvePath, stroke: "var(--hot)", "stroke-width": 2.4, fill: "none"
+    }));
+
+    // Transition State Marker (‡)
+    const tsTxt = createSVGElement("text", {
+      x: xPeak, y: yPeak - 10, "text-anchor": "middle",
+      fill: "var(--hot)", style: "font-family: var(--serif); font-size: 14px; font-weight: 900;"
+    });
+    tsTxt.textContent = "Transition State [‡]";
+    svg.appendChild(tsTxt);
+
+    // Catalyzed curve (lowered peak)
+    if (catalyzed) {
+      const yCatPeak = yPeak + (yReactants - yPeak) * 0.45;
+      const catCurve = `M ${xR2} ${yReactants} C ${xR2 + 45} ${yReactants} ${xPeak - 40} ${yCatPeak} ${xPeak} ${yCatPeak} C ${xPeak + 40} ${yCatPeak} ${xP1 - 45} ${yProducts} ${xP1} ${yProducts}`;
+      svg.appendChild(createSVGElement("path", {
+        d: catCurve, stroke: "var(--good)", "stroke-width": 2.0, "stroke-dasharray": "4 3", fill: "none"
+      }));
+      const catTxt = createSVGElement("text", {
+        x: xPeak + 40, y: yCatPeak - 5, "text-anchor": "start",
+        fill: "var(--good)", style: "font-family: var(--display); font-size: 9px; font-weight: 700;"
+      });
+      catTxt.textContent = "Catalyzed (Lower Ea)";
+      svg.appendChild(catTxt);
+    }
+
+    // Ea Vertical Arrow (from yReactants to yPeak)
+    const arrowX = xR2 + 40;
+    svg.appendChild(createSVGElement("line", {
+      x1: arrowX, y1: yReactants, x2: arrowX, y2: yPeak,
+      stroke: "var(--cool)", "stroke-width": 1.4, "stroke-dasharray": "2 2"
+    }));
+    svg.appendChild(createSVGElement("polygon", {
+      points: `${arrowX - 3},${yPeak + 6} ${arrowX},${yPeak} ${arrowX + 3},${yPeak + 6}`,
+      fill: "var(--cool)"
+    }));
+    const eaTxt = createSVGElement("text", {
+      x: arrowX - 5, y: (yReactants + yPeak) / 2 + 3, "text-anchor": "end",
+      fill: "var(--cool)", style: "font-family: var(--mono); font-size: 9px; font-weight: 700;"
+    });
+    eaTxt.textContent = "Ea";
+    svg.appendChild(eaTxt);
+
+    // ΔH Vertical Arrow (from yReactants to yProducts)
+    const deltaX = xP1 - 25;
+    const isExo = (type === "exothermic");
+    svg.appendChild(createSVGElement("line", {
+      x1: deltaX, y1: yReactants, x2: deltaX, y2: yProducts,
+      stroke: isExo ? "var(--hot)" : "var(--cool)", "stroke-width": 1.6
+    }));
+    svg.appendChild(createSVGElement("polygon", {
+      points: isExo
+        ? `${deltaX - 3},${yProducts - 6} ${deltaX},${yProducts} ${deltaX + 3},${yProducts - 6}`
+        : `${deltaX - 3},${yProducts + 6} ${deltaX},${yProducts} ${deltaX + 3},${yProducts + 6}`,
+      fill: isExo ? "var(--hot)" : "var(--cool)"
+    }));
+    const dhTxt = createSVGElement("text", {
+      x: deltaX + 6, y: (yReactants + yProducts) / 2 + 3, "text-anchor": "start",
+      fill: isExo ? "var(--hot)" : "var(--cool)", style: "font-family: var(--mono); font-size: 9px; font-weight: 800;"
+    });
+    dhTxt.textContent = isExo ? "ΔH < 0 (Exothermic)" : "ΔH > 0 (Endothermic)";
+    svg.appendChild(dhTxt);
+
+    return svg;
+  }
+
+  // ============================================================
+  // NUCLEAR DECAY & TRANSMUTATION EQUATIONS
+  // ============================================================
+  function drawNuclearEquation(opts = {}) {
+    const {
+      parent = { a: 238, z: 92, sym: "U", name: "Uranium-238" },
+      daughter = { a: 234, z: 90, sym: "Th", name: "Thorium-234" },
+      particle = { a: 4, z: 2, sym: "α", name: "Alpha particle" },
+      mode = "alpha"
+    } = opts;
+
+    const svg = createSVGElement("svg", {
+      viewBox: "0 0 480 180",
+      preserveAspectRatio: "xMidYMid meet"
+    });
+
+    const midY = 85;
+
+    function renderNuclide(startX, a, z, sym, color) {
+      // Mass number A (superscript)
+      const aTxt = createSVGElement("text", {
+        x: startX, y: midY - 6, "text-anchor": "end",
+        fill: "var(--ink)", style: "font-family: var(--mono); font-size: 14px; font-weight: 800;"
+      });
+      aTxt.textContent = a;
+      svg.appendChild(aTxt);
+
+      // Atomic number Z (subscript)
+      const zTxt = createSVGElement("text", {
+        x: startX, y: midY + 14, "text-anchor": "end",
+        fill: "var(--ink-mute)", style: "font-family: var(--mono); font-size: 14px; font-weight: 800;"
+      });
+      zTxt.textContent = z;
+      svg.appendChild(zTxt);
+
+      // Chemical Symbol
+      const symTxt = createSVGElement("text", {
+        x: startX + 4, y: midY + 8, "text-anchor": "start",
+        fill: color || "var(--ink)", style: "font-family: var(--display); font-size: 28px; font-weight: 900;"
+      });
+      symTxt.textContent = sym;
+      svg.appendChild(symTxt);
+    }
+
+    // Parent Nuclide
+    renderNuclide(70, parent.a, parent.z, parent.sym, "var(--accent)");
+
+    // Reaction Arrow
+    const arrowStartX = 150;
+    const arrowEndX = 220;
+    svg.appendChild(createSVGElement("line", {
+      x1: arrowStartX, y1: midY - 2, x2: arrowEndX, y2: midY - 2,
+      stroke: "var(--ink)", "stroke-width": 2.0
+    }));
+    svg.appendChild(createSVGElement("polygon", {
+      points: `${arrowEndX - 6},${midY - 7} ${arrowEndX + 2},${midY - 2} ${arrowEndX - 6},${midY + 3}`,
+      fill: "var(--ink)"
+    }));
+
+    // Mode label above arrow
+    const modeTxt = createSVGElement("text", {
+      x: (arrowStartX + arrowEndX) / 2, y: midY - 14, "text-anchor": "middle",
+      fill: "var(--ink-soft)", style: "font-family: var(--display); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;"
+    });
+    modeTxt.textContent = `${mode} decay`;
+    svg.appendChild(modeTxt);
+
+    // Daughter Nuclide
+    renderNuclide(295, daughter.a, daughter.z, daughter.sym, "var(--cool)");
+
+    // Plus Sign
+    const plusTxt = createSVGElement("text", {
+      x: 355, y: midY + 6, "text-anchor": "middle",
+      fill: "var(--ink-mute)", style: "font-family: var(--display); font-size: 20px; font-weight: 800;"
+    });
+    plusTxt.textContent = "+";
+    svg.appendChild(plusTxt);
+
+    // Radiation Particle
+    renderNuclide(415, particle.a, particle.z, particle.sym, "var(--hot)");
+
+    // Conservation check banner at bottom
+    const aConserved = (parent.a === daughter.a + particle.a);
+    const zConserved = (parent.z === daughter.z + particle.z);
+    const valid = aConserved && zConserved;
+
+    const bannerTxt = createSVGElement("text", {
+      x: 240, y: 155, "text-anchor": "middle",
+      fill: valid ? "var(--good)" : "var(--accent)",
+      style: "font-family: var(--display); font-size: 10px; font-weight: 700;"
+    });
+    bannerTxt.textContent = valid
+      ? `✓ Conservation: Nucleons A (${parent.a} = ${daughter.a} + ${particle.a}) · Charge Z (${parent.z} = ${daughter.z} + ${particle.z})`
+      : `⚠ Conservation Error: Check atomic or mass numbers`;
+    svg.appendChild(bannerTxt);
+
+    return svg;
+  }
+
+  // Export classes to global namespace
+  window.ChemApp = {
+    getCPK,
+    TEMPLATES: MOLECULE_TEMPLATES,
+    exportPNG: exportSVGToPNG,
+    downloadSVG: downloadStandaloneSVG,
+    prepareStandaloneSVG,
+    drawBohrModel,
+    drawLewisAtom,
+    drawLewisMolecule,
+    drawMolecularModel,
+    parseReaction,
+    drawReactionMolecules,
+    drawParticleChambers,
+    calculateIonShells,
+    createSVGElement,
+    parseFormulaToMolecule,
+    parseMoleculeJson,
+    isIonicPair,
+    checkElectronCount,
+    COMMON_NAMES,
+    getDisplayName,
+    drawEnergyBarDiagram,
+    drawPhaseMotionDiagram,
+    drawReactionCoordinateProfile,
+    drawNuclearEquation
+  };
+})();
+

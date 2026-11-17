@@ -1,0 +1,49 @@
+/* ============================================================
+   GEN CHEM INTERACTIVES: BOOK TOKENS
+   The per-book tokens of docs/textbook/STYLE_STANDARD.md section 2.2, in both
+   themes, plus chem's subject families. Reset, page foundation, type scale and
+   fonts come from the shared runtime (public/textbook/base.css).
+
+   --bad is a text and outline colour only, and no subject colour shares its
+   value (standard, 2.2). The subject reds (nucleus, hot) are the accent
+   vermilion, so --bad is a deeper red in the light theme and a paler one in
+   the dark theme. Green means correct only. Zero em-dashes.
+   ============================================================ */
+
+:root {
+  /* paper and ink */
+  --paper: #EDF1EC; --paper-2: #E4EAE3; --card: #F5F8F4;
+  --ink: #16201C; --ink-soft: #3A463F; --ink-mute: #6B756D;
+
+  /* the accent (vermilion) and the semantic colours */
+  --accent: #D6452A; --accent-soft: #E68A77;
+  --good: #2E7D57;
+  --bad: #B3261E;
+  --warn: #D9822B;
+  --cool: #3E6FA5;
+
+  /* structure */
+  --hair: rgba(22, 32, 28, 0.16); --hair-soft: rgba(22, 32, 28, 0.09); --grid: rgba(22, 32, 28, 0.02);
+
+  /* chem families: diagrams and sims only */
+  --nucleus: #D6452A; --electron: #2E7D57; --shell: rgba(22, 32, 28, 0.35);
+  --hot: #D6452A; --water: #3E6FA5;
+  --good-soft: #6FAF8F; --paper-3: #DBE2D9;
+}
+
+:root.dark {
+  --paper: #131A17; --paper-2: #18211D; --card: #1B2420;
+  --ink: #E7EDE6; --ink-soft: #C3CCC2; --ink-mute: #8A948B;
+
+  --accent: #F26B4E; --accent-soft: #9E4636;
+  --good: #5FB088;
+  --bad: #FF9E94;
+  --warn: #EAA847;
+  --cool: #6B9BD0;
+
+  --hair: rgba(231, 237, 230, 0.16); --hair-soft: rgba(231, 237, 230, 0.08); --grid: rgba(231, 237, 230, 0.012);
+
+  --nucleus: #F26B4E; --electron: #5FB088; --shell: rgba(231, 237, 230, 0.32);
+  --hot: #F26B4E; --water: #6B9BD0;
+  --good-soft: #3A6B53; --paper-3: #1F2A25;
+}

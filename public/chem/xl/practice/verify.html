@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Teacher Verification Tool · XL Chemistry Practice</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="stylesheet" href="xl-practice.css">
+  <style>
+    .verify-container {
+      max-width: 40rem;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .verify-card {
+      background-color: var(--xl-surface);
+      border: 1px solid var(--xl-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .field-group label {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--xl-ink-mute);
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+    }
+    .status-badge {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body class="theme-auto">
+
+  <header class="station-header">
+    <div class="station-branding">
+      <a href="index.html" id="btnBackToOrigin" class="station-badge" style="text-decoration:none; display:inline-flex; align-items:center; gap:0.25rem;">&larr; XL Chem Hub</a>
+      <span class="station-badge">Instructor Tool</span>
+      <div>
+        <div class="station-title">Receipt Check</div>
+        <div class="station-subtitle">Accelerated Chemistry Practice</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="verify-container">
+    <div class="verify-card">
+      <div>
+        <span class="station-badge">Instructor Tool</span>
+        <h1 style="font-size:var(--text-xl); font-weight:800; margin-top:0.5rem;">Receipt Check</h1>
+        <p style="font-size:var(--text-sm); color:var(--xl-ink-mute); margin-top:0.25rem;">
+          Check that a printed receipt matches its code, or open the student's exact problem set. A match means nobody changed the score by hand. It does not prove who did the work.
+        </p>
+      </div>
+
+      <div class="field-group">
+        <label for="vUnit">Practice Suite Unit</label>
+        <select id="vUnit" class="modal-input" style="padding:0.6rem 0.8rem; background:var(--xl-card); color:var(--xl-ink);">
+          <option value="1">Unit 1: Atomic Structure &amp; Trends</option>
+          <option value="2">Unit 2: Measurement &amp; Matter</option>
+          <option value="3">Unit 3: Chemical Bonding &amp; IMFs</option>
+          <option value="4">Unit 4: Reactions &amp; Stoichiometry</option>
+          <option value="5">Unit 5: Kinetics &amp; Thermochemistry</option>
+          <option value="6">Unit 6: Solutions &amp; Equilibrium</option>
+          <option value="7">Unit 7: Acids &amp; Bases</option>
+          <option value="8">Unit 8: Gases &amp; Pressure</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="vName">Student Name</label>
+        <input type="text" id="vName" class="modal-input" placeholder="e.g. Maya Lin">
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem;">
+        <div class="field-group">
+          <label for="vScore">Reported Score</label>
+          <input type="number" id="vScore" class="modal-input" value="16" min="0" max="30">
+        </div>
+        <div class="field-group">
+          <label for="vTotal">Total Problems</label>
+          <input type="number" id="vTotal" class="modal-input" value="16" min="1" max="30">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label for="vSeal">Check code (from the receipt)</label>
+        <input type="text" id="vSeal" class="modal-input" placeholder="e.g. 9F2A-8C17" style="text-transform:uppercase; font-family:var(--font-mono);">
+      </div>
+
+      <div style="display:flex; gap:0.75rem; margin-top:0.5rem;">
+        <button type="button" class="btn btn-primary" id="btnVerify" style="flex:1;">Check receipt</button>
+        <button type="button" class="btn btn-secondary" id="btnInspect">Inspect Student Deck</button>
+      </div>
+
+      <div id="vResult" style="display:none; margin-top:0.5rem;"></div>
+
+      <div id="retakeSection" style="margin-top:1.25rem; padding:1.25rem; background:var(--xl-card); border:1px solid var(--xl-border); border-radius:var(--radius-md);">
+        <div style="font-weight:700; font-size:var(--text-base); color:var(--xl-ink);">Authorize Additional Practice Attempt</div>
+        <p style="font-size:var(--text-xs); color:var(--xl-ink-mute); margin:0.35rem 0 0.85rem 0;">
+          Generate an authorized retake link with a new randomized problem set for this student (Run 2, Run 3, etc.) while preserving previous attempt records.
+        </p>
+        <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
+          <label for="vRunNum" style="font-size:var(--text-xs); font-weight:700; text-transform:uppercase; color:var(--xl-ink-mute); font-family:var(--font-mono);">Practice Run:</label>
+          <input type="number" id="vRunNum" class="modal-input" value="2" min="2" max="10" style="width:70px; padding:0.4rem 0.6rem;">
+          <button type="button" class="btn btn-primary" id="btnGenerateRetake" style="padding:0.4rem 0.85rem;">Generate Retake Link</button>
+        </div>
+        <div id="retakeLinkBox" style="display:none; margin-top:0.75rem;">
+          <input type="text" id="retakeUrlInput" class="modal-input" readonly style="font-size:var(--text-xs); font-family:var(--font-mono); margin-bottom:0.5rem; background:var(--xl-surface);" onclick="this.select()">
+          <div style="display:flex; gap:0.5rem;">
+            <button type="button" class="btn btn-secondary btn-sm" id="btnCopyRetake">Copy Link</button>
+            <button type="button" class="btn btn-primary btn-sm" id="btnOpenRetake">Launch Student Run</button>
+          </div>
+          <div id="retakeCopyMsg" style="display:none; font-size:var(--text-2xs); color:var(--xl-primary); margin-top:0.25rem; font-family:var(--font-mono);">Copied to clipboard!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Everything shown in the result comes from the URL or the form, so it is escaped first.
+    function escapeHtml(value) {
+      return String(value == null ? '' : value)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    async function computeDigitalSeal(studentName, seed, score, total, dateStr) {
+      const secretSalt = 'XL-CHEM-2026-NIST-VERIFY';
+      const message = `${studentName.trim().toLowerCase()}:${seed}:${score}:${total}:${dateStr}:${secretSalt}`;
+      const msgBuffer = new TextEncoder().encode(message);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      return `${hex.slice(0, 4).toUpperCase()}-${hex.slice(4, 8).toUpperCase()}`;
+    }
+
+    document.getElementById('btnVerify').addEventListener('click', async () => {
+      const name = document.getElementById('vName').value.trim();
+      const score = document.getElementById('vScore').value.trim();
+      const total = document.getElementById('vTotal').value.trim();
+      const sealInput = document.getElementById('vSeal').value.trim().toUpperCase();
+      const resultBox = document.getElementById('vResult');
+
+      if (!name || !sealInput) {
+        alert('Type the student name and the check code.');
+        return;
+      }
+
+      const unit = document.getElementById('vUnit') ? document.getElementById('vUnit').value : '1';
+      const runParam = window.vRunParam || 1;
+      const seedBase = name.toLowerCase().replace(/[^a-z0-9]/g, '') + '-u' + unit;
+      const seed = runParam > 1 ? `${seedBase}-r${runParam}` : seedBase;
+      const today = new Date().toISOString().split('T')[0];
+
+      // Test today and past 14 days in case student completed it earlier
+      let matched = false;
+      let matchedDate = '';
+
+      for (let i = 0; i <= 14; i++) {
+        const d = new Date();
+        d.setDate(d.getDate() - i);
+        const dateStr = d.toISOString().split('T')[0];
+        const computed = await computeDigitalSeal(name, seed, score, total, dateStr);
+        if (computed === sealInput) {
+          matched = true;
+          matchedDate = dateStr;
+          break;
+        }
+      }
+
+      resultBox.style.display = 'block';
+      const stats = window.vAttemptStats;
+      const statsHTML = stats ? `
+        <div style="margin-top:0.4rem; padding-top:0.4rem; border-top:1px dashed rgba(255,255,255,0.2); font-family:var(--font-mono); font-size:0.8rem;">
+          <b>Attempt Breakdown:</b> 1st Try: ${escapeHtml(stats.att1)} | 2nd Try: ${escapeHtml(stats.att2)} | 3rd Try: ${escapeHtml(stats.att3)} | Missed: ${escapeHtml(stats.m)}
+        </div>
+      ` : '';
+
+      if (matched) {
+        resultBox.className = 'status-badge feedback-success';
+        resultBox.innerHTML = `
+          <div>
+            <div style="font-weight:700; font-size:1.1rem;">Matches (Unit ${escapeHtml(unit)})</div>
+            <div style="font-size:0.875rem; margin-top:0.25rem;">
+              Code <b>${escapeHtml(sealInput)}</b> matches <b>${escapeHtml(name)}</b> (Run ${escapeHtml(runParam)}) with score <b>${escapeHtml(score)}/${escapeHtml(total)}</b> (completed on ${escapeHtml(matchedDate)}). A match shows nobody edited the score by hand. It does not prove who did the work.
+            </div>
+            ${statsHTML}
+          </div>
+        `;
+      } else {
+        resultBox.className = 'status-badge feedback-error';
+        resultBox.innerHTML = `
+          <div>
+            <div style="font-weight:700; font-size:1.1rem;">Does not match</div>
+            <div style="font-size:0.875rem; margin-top:0.25rem;">
+              Code <b>${escapeHtml(sealInput)}</b> does not match <b>${escapeHtml(name)}</b> on Unit ${escapeHtml(unit)} with score <b>${escapeHtml(score)}/${escapeHtml(total)}</b> on any day in the last 14 days. Check each field against the receipt.
+            </div>
+            ${statsHTML}
+          </div>
+        `;
+      }
+    });
+
+    document.getElementById('btnInspect').addEventListener('click', () => {
+      const name = document.getElementById('vName').value.trim();
+      if (!name) {
+        alert('Enter a student name first.');
+        return;
+      }
+      const unit = document.getElementById('vUnit') ? document.getElementById('vUnit').value : '1';
+      const run = parseInt(document.getElementById('vRunNum') ? document.getElementById('vRunNum').value : '1', 10) || 1;
+      const seedBase = name.toLowerCase().replace(/[^a-z0-9]/g, '') + '-u' + unit;
+      const seed = run > 1 ? `${seedBase}-r${run}` : seedBase;
+      localStorage.setItem('xl_chem_student_name', name);
+      localStorage.setItem('xl_chem_seed', seed);
+      localStorage.setItem('xl_chem_run', String(run));
+      window.open(`unit${unit}.html?name=${encodeURIComponent(name)}&run=${run}`, '_blank');
+    });
+
+    document.getElementById('btnGenerateRetake').addEventListener('click', () => {
+      const name = document.getElementById('vName').value.trim();
+      if (!name) {
+        alert('Please enter a student name above.');
+        return;
+      }
+      const unit = document.getElementById('vUnit') ? document.getElementById('vUnit').value : '1';
+      const run = parseInt(document.getElementById('vRunNum').value, 10) || 2;
+      const baseUrl = window.location.href.split('?')[0].replace('verify.html', `unit${unit}.html`);
+      const retakeUrl = `${baseUrl}?name=${encodeURIComponent(name)}&run=${run}`;
+
+      const linkBox = document.getElementById('retakeLinkBox');
+      const input = document.getElementById('retakeUrlInput');
+      input.value = retakeUrl;
+      linkBox.style.display = 'block';
+    });
+
+    document.getElementById('btnCopyRetake').addEventListener('click', async () => {
+      const input = document.getElementById('retakeUrlInput');
+      if (input.value) {
+        try {
+          await navigator.clipboard.writeText(input.value);
+          const msg = document.getElementById('retakeCopyMsg');
+          msg.style.display = 'block';
+          setTimeout(() => { msg.style.display = 'none'; }, 2500);
+        } catch {
+          input.select();
+          document.execCommand('copy');
+        }
+      }
+    });
+
+    document.getElementById('btnOpenRetake').addEventListener('click', () => {
+      const input = document.getElementById('retakeUrlInput');
+      if (input.value) {
+        window.open(input.value, '_blank');
+      }
+    });
+
+    // Auto-verify on QR scan & dynamic back routing
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const originFrom = params.get('from');
+      const backBtn = document.getElementById('btnBackToOrigin');
+      if (backBtn) {
+        if (originFrom === 'resources') {
+          backBtn.href = '/?page=resources';
+          backBtn.innerHTML = '&larr; Back to Open Resources';
+        } else if (originFrom === 'teachers') {
+          backBtn.href = '/?page=teachers';
+          backBtn.innerHTML = '&larr; Back to Teacher Workspace';
+        } else if (document.referrer && (document.referrer.includes('page=resources') || document.referrer.includes('page=teachers'))) {
+          backBtn.href = document.referrer;
+          backBtn.innerHTML = document.referrer.includes('page=teachers') ? '&larr; Back to Teacher Workspace' : '&larr; Back to Open Resources';
+        }
+      }
+
+      if (params.has('unit')) {
+        const u = params.get('unit');
+        const sel = document.getElementById('vUnit');
+        if (sel) sel.value = u;
+      }
+      if (params.has('name') && params.has('seal')) {
+        document.getElementById('vName').value = params.get('name') || '';
+        document.getElementById('vScore').value = params.get('score') || '16';
+        document.getElementById('vTotal').value = params.get('total') || '16';
+        document.getElementById('vSeal').value = params.get('seal') || '';
+        window.vRunParam = parseInt(params.get('run'), 10) || 1;
+        if (params.has('run')) {
+          document.getElementById('vRunNum').value = String((window.vRunParam || 1) + 1);
+        }
+        if (params.has('att1')) {
+          window.vAttemptStats = {
+            att1: params.get('att1') || '0',
+            att2: params.get('att2') || '0',
+            att3: params.get('att3') || '0',
+            m: params.get('m') || '0'
+          };
+        }
+        document.getElementById('btnVerify').click();
+      }
+    });
+  </script>
+</body>
+</html>

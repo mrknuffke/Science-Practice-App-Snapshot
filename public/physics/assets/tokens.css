@@ -1,0 +1,48 @@
+/* ============================================================
+   MISSION: PHYSICA: BOOK TOKENS
+   The per-book tokens of docs/textbook/STYLE_STANDARD.md section 2.2, in both
+   themes, and nothing else. Reset, page foundation, type scale and fonts come
+   from the shared runtime (public/textbook/base.css).
+
+   --bad is a text and outline colour only, and no subject colour shares its
+   value (standard, 2.2). The subject reds (net force, heat) are lighter than
+   --bad in both themes. Zero em-dashes.
+   ============================================================ */
+
+:root {
+  /* paper and ink */
+  --paper: #EDF1F5; --paper-2: #E2E8F0; --card: #F8FAFC;
+  --ink: #0F172A; --ink-soft: #334155; --ink-mute: #64748B;
+
+  /* the accent (cobalt) and the semantic colours. Green means correct only. */
+  --accent: #2563EB; --accent-soft: #60A5FA;
+  --good: #2E7D57;
+  --bad: #B91C1C;
+  --warn: #D97706;
+  --cool: #2563EB;
+
+  /* structure */
+  --hair: rgba(15, 23, 42, 0.16); --hair-soft: rgba(15, 23, 42, 0.09); --grid: rgba(15, 23, 42, 0.02);
+
+  /* physics families: diagrams and sims only */
+  --vector: #2563EB; --vector-alt: #D97706; --vector-net: #DC2626;
+  --kinematics: #2563EB; --potential: #D97706; --kinetic: #2563EB;
+  --thermal: #DC2626; --hot: #DC2626;
+}
+
+:root.dark {
+  --paper: #0B0F17; --paper-2: #111827; --card: #151E2E;
+  --ink: #F1F5F9; --ink-soft: #CBD5E1; --ink-mute: #94A3B8;
+
+  --accent: #3B82F6; --accent-soft: #93C5FD;
+  --good: #34D399;
+  --bad: #FCA5A5;
+  --warn: #FBBF24;
+  --cool: #60A5FA;
+
+  --hair: rgba(241, 245, 249, 0.14); --hair-soft: rgba(241, 245, 249, 0.07); --grid: rgba(241, 245, 249, 0.03);
+
+  --vector: #60A5FA; --vector-alt: #FBBF24; --vector-net: #F87171;
+  --kinematics: #60A5FA; --potential: #FBBF24; --kinetic: #60A5FA;
+  --thermal: #F87171; --hot: #F87171;
+}

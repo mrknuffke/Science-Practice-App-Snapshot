@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Every push to main deploys sciencepractice.app and the textbook at /chem/, so
+# every push runs the full preflight first. Installed by `npm install` via the
+# `prepare` script (git config core.hooksPath .githooks), so it follows the repo
+# to the school machine and any other clone.
+#
+# Do not bypass with --no-verify. If preflight is wrong, fix preflight.
+set -euo pipefail
+echo "pre-push: running preflight (verify on Node 22 + edge check + public routes + browser smoke)..."
+npm run --silent preflight

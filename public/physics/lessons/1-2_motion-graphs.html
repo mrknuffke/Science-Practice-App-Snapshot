@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" data-book="physics" data-lesson="1-2">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Lesson 1-2: Motion Graphs & Uniform Acceleration | SAS General Physics</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+  <main>
+    <section class="hero" id="s-hero" data-toc="Opening">
+      <div>
+        <div class="label">Lesson 1-2 &middot; Motion Graphs &amp; Uniform Acceleration</div>
+        <h1>A number gives you one snapshot. A graph gives you the whole trip.</h1>
+        <p class="lede">A falling supply capsule does not move at constant speed. Gravity pulls it down with constant acceleration. In this lesson you read velocity from the slope of a position graph. You find distance from the area under a velocity graph.</p>
+        <div class="meta-strip">
+          <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS2-1</b>Analyze data to support the claim that Newton's second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration.</div></div>
+          <div class="meta-block"><div class="k">Objective</div><div class="v">You can read slope as velocity and area as displacement on motion graphs.</div></div>
+          <div class="meta-block"><div class="k">Scope</div><div class="v">Position-time and velocity-time graphs, slope, the area under a velocity graph, and uniform acceleration. One Enrichment block covers velocity at a single instant.</div></div>
+        </div>
+        <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+      </div>
+    </section>
+
+    <section id="sec-01" data-toc="Mission Briefing">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">01</span><span class="label">Hook</span></div>
+        <div class="brief"><div class="label">Mission</div><p><b>Operation Projectile Precision.</b> ISA Academy, Drop Zone Facility. A number gives you a single snapshot. A graph gives you the entire history of an object's motion at a glance.</p></div>
+        <p>
+          An ultrasonic motion detector sends out a sound pulse. It records the exact time the echo takes to bounce back from an object. The sensor software finds position hundreds of times each second and builds a live curve. To an untrained observer, squiggles on a screen look abstract. To a physicist, those lines reveal speed, direction, acceleration, and distance traveled with mathematical certainty.
+        </p>
+        <p>
+          This lesson builds two graphing relationships: <strong class="term" data-term="slope">slope</strong> (rate of change) and <strong class="term" data-term="area-under-curve">area under the curve</strong> (accumulated change).
+        </p>
+      </div>
+    </section>
+
+    <section id="sec-02" data-toc="Position vs. Time">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">02</span>
+          <span class="label">Position-time graphs</span>
+        </div>
+
+        <h2>Position vs. Time (x-t): The Slope is Velocity</h2>
+
+        <p>
+          On an x-t graph, position (x) goes on the vertical axis. Elapsed time (t) goes on the horizontal axis.
+        </p>
+        <p>
+          Recall the mathematical definition of <strong class="term" data-term="slope">slope</strong>: rise over run (&Delta;y / &Delta;x). On an x-t graph:
+        </p>
+
+        <div class="eq-display">
+          Slope = 
+          <span class="frac"><span>&Delta;x (Rise)</span><span>&Delta;t (Run)</span></span>
+          = Velocity (<span class="vbar">v</span>)
+        </div>
+
+        <p>
+          This single relationship unlocks the interpretation of every position-time graph:
+        </p>
+
+        
+        <figure class="figure figure--full"><div class="diagram"><svg viewBox="0 0 760 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+            
+            <rect x="20" y="20" width="720" height="180" fill="var(--paper)" rx="6" />
+
+            
+            <g transform="translate(40, 40)">
+              <line x1="20" y1="140" x2="180" y2="140" stroke="var(--ink)" stroke-width="1.5" />
+              <line x1="20" y1="20" x2="20" y2="140" stroke="var(--ink)" stroke-width="1.5" />
+              
+              <line x1="20" y1="70" x2="180" y2="70" stroke="var(--accent)" stroke-width="3" />
+              <text x="100" y="55" font-family="var(--display)" font-size="12" font-weight="700" text-anchor="middle" fill="var(--accent)">Horizontal (Slope = 0)</text>
+              <text x="100" y="160" font-family="var(--mono)" font-size="11" text-anchor="middle" fill="var(--ink-soft)">At Rest (v = 0 m/s)</text>
+              <text x="10" y="80" font-family="var(--mono)" font-size="10" text-anchor="middle" fill="var(--ink-mute)">x</text>
+              <text x="100" y="135" font-family="var(--mono)" font-size="10" text-anchor="middle" fill="var(--ink-mute)">t</text>
+            </g>
+
+            
+            <g transform="translate(280, 40)">
+              <line x1="20" y1="140" x2="180" y2="140" stroke="var(--ink)" stroke-width="1.5" />
+              <line x1="20" y1="20" x2="20" y2="140" stroke="var(--ink)" stroke-width="1.5" />
+              
+              <line x1="20" y1="130" x2="170" y2="30" stroke="var(--accent)" stroke-width="3" />
+              <text x="100" y="55" font-family="var(--display)" font-size="12" font-weight="700" text-anchor="middle" fill="var(--accent)">Straight Diagonal</text>
+              <text x="100" y="160" font-family="var(--mono)" font-size="11" text-anchor="middle" fill="var(--ink-soft)">Constant Velocity (v &gt; 0)</text>
+              <text x="10" y="80" font-family="var(--mono)" font-size="10" text-anchor="middle" fill="var(--ink-mute)">x</text>
+              <text x="100" y="135" font-family="var(--mono)" font-size="10" text-anchor="middle" fill="var(--ink-mute)">t</text>
+            </g>
+
+            
+            <g transform="translate(520, 40)">
+              <line x1="20" y1="140" x2="180" y2="140" stroke="var(--ink)" stroke-width="1.5" />
+              <line x1="20" y1="20" x2="20" y2="140" stroke="var(--ink)" stroke-width="1.5" />
+              
+              <path d="M 20 135 Q 90 130 170 30" fill="none" stroke="var(--good)" stroke-width="3" />
+              <text x="100" y="55" font-family="var(--display)" font-size="12" font-weight="700" text-anchor="middle" fill="var(--good)">Curved Parabola</text>
+              <text x="100" y="160" font-family="var(--mono)" font-size="11" text-anchor="middle" fill="var(--ink-soft)">Speeding Up (a &gt; 0)</text>
+              <text x="10" y="80" font-family="var(--mono)" font-size="10" text-anchor="middle" fill="var(--ink-mute)">x</text>
+              <text x="100" y="135" font-family="var(--mono)" font-size="10" text-anchor="middle" fill="var(--ink-mute)">t</text>
+            </g>
+          </svg></div><figcaption>The geometry of x-t graphs. Flat lines mean zero velocity (stopped). Straight diagonal lines mean constant speed. Curved lines mean changing slope (acceleration).</figcaption></figure>
+
+        <div class="callout"><div class="label">Common mistake</div><p>A flat line on a position-time graph does not mean the object moves at constant speed. It means the object is at rest.</p></div>
+
+        <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Instantaneous Velocity and Tangent Lines</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p><p>When an object accelerates, its position-time graph curves. Because the slope is constantly changing, the object does not have a single velocity.</p><p>To find the <strong class="term" data-term="instantaneous-velocity">instantaneous velocity</strong> at an exact second, draw a <strong class="term" data-term="tangent-line">tangent line</strong>. A tangent line brushes against the curve at that precise point. The slope of that tangent line equals the velocity at that moment.</p></details>
+
+        <div class="sim-box" data-sim="matcher">
+          <div class="label">Simulation</div>
+          <h4>Can you move so that your position-time graph matches a given walk?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: you will match Profile 3, &ldquo;Accelerate away from rest&rdquo;. Which part of the walk is the fastest?<\/p>",
+  "options": [
+    {
+      "label": "0 to 4 s, the start",
+      "correct": false,
+      "feedback": "The walker starts from rest, so the first part is the slowest. Acceleration means the speed grows."
+    },
+    {
+      "label": "4 to 7 s, the middle",
+      "correct": false,
+      "feedback": "The speed in the middle is between the other two. It keeps growing after 7 s."
+    },
+    {
+      "label": "7 to 10 s, the end",
+      "correct": true,
+      "feedback": "An accelerating walker speeds up all the way, so the last part is the fastest. On the graph it is the steepest part."
+    },
+    {
+      "label": "All three parts are equally fast",
+      "correct": false,
+      "feedback": "Equal speeds would be a straight line. A walk that accelerates from rest bends upward."
+    }
+  ],
+  "reveal": "<p>Now run the sim. Move the slider to follow the dashed line.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="wide"><canvas aria-label="A position-time graph. A dashed line is the target walk. A solid line is the trace you draw by moving the position slider."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="false" data-target="1">Profile 1: steady speed</button>
+            <button type="button" class="chip" aria-pressed="false" data-target="2">Profile 2: away, stop, return</button>
+            <button type="button" class="chip" aria-pressed="true" data-target="3">Profile 3: accelerate from rest</button>
+            <label class="slider-row" for="matcherPos"><span>Your position</span> <output>0.0 m</output>
+              <input type="range" id="matcherPos" min="0" max="25" step="0.5" value="0" data-unit="m" data-digits="1">
+            </label>
+            <button type="button" class="btn" data-start>Start run</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="time"><span class="readout-label">Time</span><span class="readout-value">0.0 s</span></div>
+            <div class="readout" data-readout="target"><span class="readout-label">Target position</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="you"><span class="readout-label">Your position</span><span class="readout-value">0.0 m</span></div>
+            <div class="readout" data-readout="score"><span class="readout-label">Score</span><span class="readout-value">&ndash;</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Press Start run</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="dash" data-token="cool"></span>Target walk</li>
+            <li><span class="key" data-shape="line" data-token="accent"></span>Your trace</li>
+            <li><span class="key" data-shape="dot" data-token="accent"></span>Where you are now</li>
+          </ul>
+          <ol class="try-this">
+            <li>Choose Profile 1 and press Start run. Slide your position so your line follows the dashed line. <b>Look for:</b> a straight trace when the speed is steady. Press Record when the run ends.</li>
+            <li>Choose Profile 2 and press Start run. <b>Look for:</b> a flat part of the line where you must keep still. Press Record.</li>
+            <li>Choose Profile 3 and press Start run. <b>Look for:</b> your slider must move faster toward the end. Press Record.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use only two rows of your record table. Which row shows the better match, and how can you tell?<\/p>",
+  "options": [
+    {
+      "label": "The row with the lower score, because the trace stayed closer to the target.",
+      "correct": false,
+      "feedback": "A lower score means less of the run stayed within 1 m of the target. That is the weaker match."
+    },
+    {
+      "label": "The row with the later Furthest off part, because it was nearer the end.",
+      "correct": false,
+      "feedback": "The Furthest off column names where the biggest miss happened. It does not say how well the whole run matched."
+    },
+    {
+      "label": "The row with the higher score, because more of the run stayed within 1 m of the target.",
+      "correct": true,
+      "feedback": "The score is the share of the run within 1 m of the target. A higher score means a better match over the whole run."
+    },
+    {
+      "label": "The row with the steeper target, because steeper lines are harder.",
+      "correct": false,
+      "feedback": "The steepness of the target tells you how hard the walk is, not how well you matched it."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. The score covers the whole run, not one lucky point.<\/p>"
+}
+</script>
+</div>
+      </div>
+    </section>
+
+    <section id="sec-03" data-toc="Velocity-Time & Area">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">03</span>
+          <span class="label">Velocity-time graphs</span>
+        </div>
+
+        <h2>Velocity vs. Time (v-t) & Acceleration</h2>
+
+        <p>
+          On a v-t graph, velocity (v) goes on the vertical axis and time (t) on the horizontal axis. The slope now has a new meaning:
+        </p>
+
+        <div class="eq-display">
+          Slope = 
+          <span class="frac"><span>&Delta;v (Rise)</span><span>&Delta;t (Run)</span></span>
+          = Acceleration (a)
+        </div>
+
+        <p>
+          If the v-t line is horizontal, the slope is zero (&Delta;v = 0), so acceleration is <b>0 m/s&sup2;</b>. If the line tilts upward, the object accelerates forward (+a). If it tilts downward, the acceleration is negative (&minus;a).
+        </p>
+
+        <h3>The Power of Area under the Curve</h3>
+        <p>
+          Slope is a division (&Delta;y / &Delta;x). The <strong class="term" data-term="area-under-curve">area under the curve</strong> is a geometric multiplication: height &times; width.
+        </p>
+        <p>
+          Consider the dimensional analysis of multiplying the units on a v-t graph:
+        </p>
+
+        <div class="eq-display">
+          (Vertical Unit) &times; (Horizontal Unit) = 
+          <span>(m/s) &times; s = meters (m) = Displacement (&Delta;x)</span>
+        </div>
+
+        <p>
+          The geometric area bounded between the graph line and the horizontal time axis <b>always equals the net displacement</b>:
+        </p>
+
+        <figure class="figure figure--md"><div class="diagram"><svg viewBox="0 0 540 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="500" height="180" fill="var(--paper)" rx="6" />
+
+            
+            <line x1="60" y1="170" x2="480" y2="170" stroke="var(--ink)" stroke-width="2" />
+            <line x1="60" y1="30" x2="60" y2="170" stroke="var(--ink)" stroke-width="2" />
+
+            
+            <polygon points="60,170 220,50 220,170" fill="rgba(37, 99, 235, 0.2)" stroke="var(--accent)" stroke-width="1.5" />
+            
+            <polygon points="220,50 460,50 460,170 220,170" fill="rgba(46, 125, 87, 0.2)" stroke="var(--good)" stroke-width="1.5" />
+
+            
+            <line x1="60" y1="170" x2="220" y2="50" stroke="var(--accent)" stroke-width="3" />
+            <line x1="220" y1="50" x2="460" y2="50" stroke="var(--good)" stroke-width="3" />
+
+            
+            <text x="60" y="190" font-family="var(--mono)" font-size="11" text-anchor="middle" fill="var(--ink)">0 s</text>
+            <text x="220" y="190" font-family="var(--mono)" font-size="11" text-anchor="middle" fill="var(--ink)">4 s</text>
+            <text x="460" y="190" font-family="var(--mono)" font-size="11" text-anchor="middle" fill="var(--ink)">10 s</text>
+            <text x="50" y="55" font-family="var(--mono)" font-size="11" text-anchor="end" fill="var(--ink)">12 m/s</text>
+
+            <text x="140" y="130" font-family="var(--display)" font-size="12" font-weight="700" text-anchor="middle" fill="var(--accent)">
+              Triangle Area = 24 m
+            </text>
+            <text x="140" y="146" font-family="var(--mono)" font-size="10" text-anchor="middle" fill="var(--ink-mute)">
+              &frac12; &times; 4s &times; 12m/s
+            </text>
+
+            <text x="340" y="110" font-family="var(--display)" font-size="12" font-weight="700" text-anchor="middle" fill="var(--good)">
+              Rectangle Area = 72 m
+            </text>
+            <text x="340" y="126" font-family="var(--mono)" font-size="10" text-anchor="middle" fill="var(--ink-mute)">
+              6s &times; 12m/s
+            </text>
+
+            <text x="260" y="205" font-family="var(--display)" font-size="12" font-weight="600" text-anchor="middle" fill="var(--ink)">
+              Total Displacement = 24 m + 72 m = 96 meters
+            </text>
+          </svg></div><figcaption>Calculating displacement from a piecewise v-t graph. Break the shape into triangles (&frac12; &times; base &times; height) and rectangles (base &times; height), then add their areas.</figcaption></figure>
+
+        
+        <div class="callout"><div class="label">Common mistake</div><p>A falling line on a velocity-time graph does not always mean the object is slowing down. Once the velocity is negative, a falling line means the speed is growing again, in reverse.</p></div>
+
+        <div class="sim-box" data-sim="decomposer">
+          <div class="label">Simulation</div>
+          <h4>How much distance does each part of the trip cover?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: the vehicle speeds up for 4 s to 12 m/s, cruises at 12 m/s for 6 s, then brakes to a stop in 4 s. How far does it travel in all?<\/p>",
+  "options": [
+    {
+      "label": "168 m",
+      "correct": false,
+      "feedback": "That is the top speed times the whole 14 s. The vehicle is only at 12 m/s for part of the trip, so this counts area it never covered."
+    },
+    {
+      "label": "120 m",
+      "correct": true,
+      "feedback": "Add the three areas under the graph: 24 m + 72 m + 24 m = 120 m."
+    },
+    {
+      "label": "96 m",
+      "correct": false,
+      "feedback": "This adds the first two parts and leaves out the braking part. Braking still carries the vehicle forward."
+    },
+    {
+      "label": "72 m",
+      "correct": false,
+      "feedback": "This is only the cruising rectangle. The speeding up and the braking add distance too."
+    }
+  ],
+  "reveal": "<p>Now check it. Select each segment to see its shape and its area.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="wide"><canvas aria-label="A velocity-time graph of a trip in three parts: speeding up to 12 meters per second in 4 seconds, cruising for 6 seconds, then braking to a stop in 4 seconds."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="false" data-seg="1">Segment 1 (0 to 4 s)</button>
+            <button type="button" class="chip" aria-pressed="false" data-seg="2">Segment 2 (4 to 10 s)</button>
+            <button type="button" class="chip" aria-pressed="false" data-seg="3">Segment 3 (10 to 14 s)</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="seg"><span class="readout-label">Segment</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="shape"><span class="readout-label">Shape</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="acc"><span class="readout-label">Slope (a)</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="area"><span class="readout-label">Area (&Delta;x)</span><span class="readout-value">&ndash;</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Select a segment</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="line" data-token="accent"></span>Velocity of the vehicle</li>
+            <li><span class="key" data-shape="square" data-token="accent"></span>The segment you selected</li>
+          </ul>
+          <ol class="try-this">
+            <li>Select Segment 1. <b>Look for:</b> a triangle under the line, and an area of 24 m. Press Record.</li>
+            <li>Select Segment 2. <b>Look for:</b> a rectangle, and an area of 72 m. Press Record.</li>
+            <li>Select Segment 3. <b>Look for:</b> a second triangle, and an area of 24 m. Press Record, then read the Running total column.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use only your record table. What does the Running total show after all three segments, and why is it not 168 m?<\/p>",
+  "options": [
+    {
+      "label": "It shows 96 m, because the braking part adds no distance.",
+      "correct": false,
+      "feedback": "Check your Segment 3 row. Its area is 24 m, so the braking part does add distance."
+    },
+    {
+      "label": "It shows 120 m. The 168 m would count area the vehicle never covered.",
+      "correct": true,
+      "feedback": "Your three areas add to 120 m. A rectangle of 12 m/s for 14 s (168 m) would include empty corners."
+    },
+    {
+      "label": "It shows 168 m, because the top speed lasts for the whole trip.",
+      "correct": false,
+      "feedback": "The top speed lasts only for Segment 2. In the other segments the vehicle is slower."
+    },
+    {
+      "label": "It shows 72 m, because only the cruising part counts.",
+      "correct": false,
+      "feedback": "Segments 1 and 3 each have an area of 24 m in your table, so they count too."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. The areas 24 m, 72 m and 24 m add to 120 m.<\/p>"
+}
+</script>
+</div>
+      </div>
+    </section>
+
+    <section id="sec-04" data-toc="Triple-Graph Studio">
+      <div class="narrow">
+          <div class="section-tag">
+            <span class="num">04</span>
+            <span class="label">Simulation</span>
+          </div>
+
+          <h2>Dynamic Triple-Graph Motion Studio</h2>
+          <p>See how the position, velocity and acceleration graphs of one motion line up. Choose a motion, then drag the time slider to move along all three graphs at once.</p>
+        <div class="sim-box" data-sim="studio">
+          <div class="label">Simulation</div>
+          <h4>How do the position, velocity and acceleration graphs of one motion relate?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a vehicle brakes steadily to a stop. Which description fits its position-time, velocity-time and acceleration-time graphs?<\/p>",
+  "options": [
+    {
+      "label": "x-t flattens out. v-t falls in a straight line. a-t sits below zero.",
+      "correct": true,
+      "feedback": "Braking slows the vehicle, so the velocity falls steadily. The slope of v-t is the acceleration, a constant negative value. The position keeps rising but more slowly."
+    },
+    {
+      "label": "x-t is a straight line. v-t is flat. a-t sits at zero.",
+      "correct": false,
+      "feedback": "That describes constant velocity. A braking vehicle changes its velocity, so v-t cannot be flat."
+    },
+    {
+      "label": "x-t curves up. v-t rises in a straight line. a-t sits above zero.",
+      "correct": false,
+      "feedback": "That describes speeding up. In braking the velocity falls and the acceleration is negative."
+    },
+    {
+      "label": "x-t falls downward. v-t stays flat. a-t falls below zero.",
+      "correct": false,
+      "feedback": "The vehicle still moves forward while it brakes, so the position keeps rising. Its velocity is not flat."
+    }
+  ],
+  "reveal": "<p>Now check it. Choose the Emergency Braking motion and drag the time slider.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="stack"><canvas aria-label="Three graphs of one motion, position-time, velocity-time and acceleration-time, with a view of the moving object below them."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="true" data-motion="1">1. Constant velocity</button>
+            <button type="button" class="chip" aria-pressed="false" data-motion="2">2. Forward acceleration</button>
+            <button type="button" class="chip" aria-pressed="false" data-motion="3">3. Emergency braking</button>
+            <button type="button" class="chip" aria-pressed="false" data-motion="4">4. Gravity drop</button>
+            <label class="slider-row" for="studioTime"><span>Time</span> <output>0.0 s</output>
+              <input type="range" id="studioTime" min="0" max="6" step="0.05" value="0" data-unit="s" data-digits="1">
+            </label>
+            <button type="button" class="chip" aria-pressed="true" data-show="area">Show shaded area</button>
+            <button type="button" class="chip" aria-pressed="false" data-show="tangent">Show tangent line <span class="tag-enrichment">Enrichment</span></button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="time"><span class="readout-label">Time</span><span class="readout-value">0.0 s</span></div>
+            <div class="readout" data-readout="x"><span class="readout-label">Position (x)</span><span class="readout-value">0.0 m</span></div>
+            <div class="readout" data-readout="v"><span class="readout-label">Velocity (v)</span><span class="readout-value">+4.0 m/s</span></div>
+            <div class="readout" data-readout="a"><span class="readout-label">Acceleration (a)</span><span class="readout-value">0.0 m/s&sup2;</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Constant velocity</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="line" data-token="accent"></span>Position-time</li>
+            <li><span class="key" data-shape="line" data-token="good"></span>Velocity-time</li>
+            <li><span class="key" data-shape="line" data-token="warn"></span>Acceleration-time</li>
+            <li><span class="key" data-shape="dot" data-token="ink"></span>The time you chose</li>
+            <li><span class="key" data-shape="square" data-token="good"></span>Area under the velocity line</li>
+            <li><span class="key" data-shape="dash" data-token="ink"></span>Tangent line (Enrichment)</li>
+          </ul>
+          <ol class="try-this">
+            <li>Choose motion 1 and drag the time slider. <b>Look for:</b> a straight x-t line, a flat v-t line and an a-t line at zero. Press Record.</li>
+            <li>Choose motion 3, Emergency braking. <b>Look for:</b> v-t falls in a straight line and a-t stays below zero. Press Record.</li>
+            <li>Choose motion 4, Gravity drop. <b>Look for:</b> the ball falls down the view, v-t falls and a-t stays at &minus;9.8 m/s&sup2;. Press Record.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use only your record table. Compare the v-t slope column with the a-t value for your rows. Which statement fits?<\/p>",
+  "options": [
+    {
+      "label": "The sign of the v-t slope is the sign of the acceleration in each row.",
+      "correct": true,
+      "feedback": "The slope of a velocity-time graph is the acceleration. Your rows show the same sign for both."
+    },
+    {
+      "label": "The v-t slope is positive in every row, because velocity is positive.",
+      "correct": false,
+      "feedback": "Look at the braking and gravity rows. Their v-t slope is negative, even when the velocity is positive."
+    },
+    {
+      "label": "The x-t slope is the acceleration, so it matches the a-t column.",
+      "correct": false,
+      "feedback": "The slope of x-t is the velocity. The acceleration is the slope of v-t."
+    },
+    {
+      "label": "The a-t graph always has a positive slope in a moving object.",
+      "correct": false,
+      "feedback": "In your rows the a-t line stays flat for each motion, so its slope is zero."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. The slope of each graph is the graph below it, one step along.<\/p>"
+}
+</script>
+</div>
+      </div>
+    </section>
+
+    <section id="sec-05" data-toc="Checkpoint Predictions">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">05</span>
+          <span class="label">Checkpoints</span>
+        </div>
+
+        <h2>Checkpoint Predictions</h2>
+        <p>
+          Before revealing the physical explanations, commit your reasoning below:
+        </p>
+
+        
+        <h3>Scenario A: Flat Lines on x-t vs. v-t</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Graph A shows a horizontal line at y = 5 on a position versus time (x-t) plot. Graph B shows a horizontal line at y = 5 on a velocity versus time (v-t) plot. What is the physical motion described by each graph?<\/p>",
+  "options": [
+    {
+      "label": "A is at rest at x = +5 m. B moves at a constant +5 m/s.",
+      "correct": true,
+      "feedback": "A flat line on an x-t graph has zero slope, so A is not moving. A flat line on a v-t graph means the velocity is a constant +5 m/s, so B moves forward."
+    },
+    {
+      "label": "Both objects move forward at a constant speed of 5 m/s.",
+      "correct": false,
+      "feedback": "Both lines are flat, but the axes differ. On the x-t graph, a flat line means the position never changes, so A is at rest."
+    },
+    {
+      "label": "A moves at +5 m/s. B is at rest at x = +5 m.",
+      "correct": false,
+      "feedback": "This swaps the graphs. The height of the x-t line is the position, not the velocity. The height of the v-t line is the velocity."
+    },
+    {
+      "label": "Both objects speed up at a rate of 5 m/s&sup2;.",
+      "correct": false,
+      "feedback": "A flat line has zero slope, so neither graph shows an acceleration. The number 5 is a position on A and a velocity on B."
+    }
+  ],
+  "reveal": "<p><b>A is at rest at x = +5 m. B moves forward at +5 m/s.<\/b><br>On an x-t graph, a horizontal line has zero slope (&Delta;x/&Delta;t = 0), so the object stays at x = +5 meters. On a v-t graph, a horizontal line means constant velocity (5 m/s). Its slope is zero (<em>a<\/em> = 0 m/s&sup2;).<\/p>"
+}
+</script>
+</div>
+
+        
+        <h3>Scenario B: Negative Slope on a Velocity-Time Graph</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A rover's velocity-time graph is a straight line with a constant negative slope (a = &minus;2.0 m/s&sup2;). At t = 0 s, its velocity is +6.0 m/s. At t = 5 s, its velocity is &minus;4.0 m/s.<\/p><p>How did the rover's speed (how fast it was moving) change between t = 0 s and t = 5 s?<\/p>",
+  "options": [
+    {
+      "label": "The rover slowed down for the whole 5 seconds.",
+      "correct": false,
+      "feedback": "That is true only until t = 3 s. After that the velocity becomes more negative, so the speed grows again."
+    },
+    {
+      "label": "The rover slowed to a stop, then sped up in reverse.",
+      "correct": true,
+      "feedback": "The velocity falls from +6 m/s to 0 at t = 3 s, so the rover slows to a stop. It then reaches &minus;4 m/s, so it speeds up in reverse."
+    },
+    {
+      "label": "The rover sped up in reverse for the whole 5 seconds.",
+      "correct": false,
+      "feedback": "The rover starts at +6 m/s, so it first moves forward. It can speed up in reverse only after it stops."
+    },
+    {
+      "label": "The rover kept the same speed for all 5 seconds.",
+      "correct": false,
+      "feedback": "The velocity changes by &minus;2.0 m/s every second, so the speed cannot stay the same."
+    }
+  ],
+  "reveal": "<p><b>The rover slowed from +6 to 0 m/s, then sped up in reverse from 0 to 4 m/s.<\/b><br>Speed is the size of the velocity, |v|. From t = 0 to 3 s, the velocity dropped from +6 to 0 m/s, so the speed fell from 6 to 0 m/s. At t = 3 s the rover stopped for an instant. From t = 3 to 5 s, the velocity became more negative and reached &minus;4 m/s. The speed grew from 0 to 4 m/s in reverse.<\/p>"
+}
+</script>
+</div>
+
+        
+        <h3>Scenario C: Dimensional Analysis of Graph Area</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "<p>A student asks why the area under a velocity-time graph gives meters and not square meters. Explain using the units of the axes.<\/p>",
+  "minChars": 15,
+  "reveal": "<p><b>The units of the axes decide the unit of the area.<\/b><br>In pure geometry, area is length &times; width (m &times; m = m&sup2;). On a physics graph, area is the vertical unit times the horizontal unit. On a v-t graph, the vertical unit is meters per second (m/s) and the horizontal unit is seconds (s). Multiplying them gives <b>(m/s) &times; s = meters (m)<\/b>. So the area is a displacement.<\/p>"
+}
+</script>
+</div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-06" data-toc="Retrieval & Practice">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">06</span>
+          <span class="label">Practice</span>
+        </div>
+
+        <h2>Rapid Retrieval & ECR Challenge</h2>
+
+        <p>
+          Complete the retrieval checks below to solidify the mathematical bridges between position, velocity, and acceleration graphs:
+        </p>
+
+        
+        <div class="recall">
+<div class="label">Recall</div>
+<ol class="recall-list">
+<li>The slope of a position versus time (x-t) graph represents the object's <input type="text" class="blank" data-answer="velocity|instantaneous velocity" placeholder="variable" aria-label="Blank 1">.</li>
+<li>The slope of a velocity versus time (v-t) graph represents the object's <input type="text" class="blank" data-answer="acceleration" placeholder="variable" aria-label="Blank 2">.</li>
+<li>The geometric area bounded between a velocity-time line and the time axis equals the object's <input type="text" class="blank" data-answer="displacement|net displacement" placeholder="quantity" aria-label="Blank 3">.</li>
+<li>The geometric area bounded between an acceleration-time line and the time axis represents the <input type="text" class="blank" data-answer="change in velocity|velocity change|delta v" placeholder="quantity" aria-label="Blank 4">.</li>
+</ol>
+<div class="recall-actions">
+<button class="btn" type="button" data-recall-check>Check</button>
+<button class="btn ghost" type="button" data-recall-reveal>Show answers</button>
+<button class="btn ghost" type="button" data-recall-reset>Reset</button>
+<span class="feedback" data-recall-feedback role="status"></span>
+</div>
+</div>
+
+        
+        <h3>Problem 1.4: Drop Zone Data Analysis</h3>
+<div class="exam-frame">
+<div class="exam-meta"><span class="exam-src">Written response</span><span class="exam-marks">4 marks</span></div>
+<p class="exam-q">During an aerial drop test, an autonomous parachute deployment vehicle records its velocity over an <b>8.0-second</b> interval.</p><p class="exam-q">The graph shows:</p><ul><li>Segment 1 (t = 0 to 4.0 s): Velocity increases linearly from 0 m/s to 16.0 m/s.</li><li>Segment 2 (t = 4.0 to 8.0 s): The parachute opens, and velocity decreases linearly from 16.0 m/s back down to 4.0 m/s.</li></ul><p class="exam-q">A student calculates a displacement of 128 meters by multiplying 16 m/s by 8 s.</p><p class="exam-q">Write an ECR argument (Evidence, Claim, Reasoning) that evaluates this calculation and finds the true displacement.</p>
+<textarea class="textbox" aria-label="Your answer"></textarea>
+<div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+<div class="scheme"><div class="scheme-card"><div class="label">Scoring guide</div><ul class="pts"><li><b>Method (1 mark):</b> You say displacement equals the area under the velocity-time graph.</li><li>You say multiplying 16 m/s by 8 s counts area that was never traveled.</li><li><b>Area 1 (1 mark):</b> You find the triangle in Segment 1: &frac12; &times; 4 &times; 16 = 32.0 m.</li><li><b>Area 2 (1 mark):</b> You find the trapezoid in Segment 2: 40.0 m.</li><li><b>Total (1 mark):</b> You add the areas to get <b>72.0 m</b>, with units.</li></ul></div>
+<div class="scheme-card"><div class="label">Model response (Evidence, Claim, Reasoning)</div><ul class="pts"><li><b>Evidence:</b> Segment 1 forms a triangle (base = 4.0 s, height = 16.0 m/s). Segment 2 forms a trapezoid (base = 4.0 s, initial height = 16.0 m/s, final height = 4.0 m/s).</li><li><b>Claim:</b> The student's calculation is incorrect. The formula (v<sub>max</sub> &times; &Delta;t = 128 m) assumes constant top speed. The true displacement is the total area under both segments, <b>72.0 meters</b>.</li><li><b>Reasoning:</b> Area 1 (triangle): &frac12; &times; (4.0 s) &times; (16.0 m/s) = <b>32.0 m</b>. Area 2 (rectangle plus triangle): (4.0 s &times; 4.0 m/s) + &frac12;(4.0 s &times; 12.0 m/s) = 16.0 m + 24.0 m = <b>40.0 m</b>. Total &Delta;x = 32.0 m + 40.0 m = <b>72.0 m</b>. Multiplying peak velocity by total time counts area that was never traveled.</li></ul></div></div>
+</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/book.js"></script>
+  <script src="../../textbook/core.js"></script>
+  <script src="../../textbook/widgets.js"></script>
+  <script src="../../textbook/sim.js"></script>
+  <script src="../assets/glossary.js"></script>
+  <script src="../assets/draw.js"></script>
+  <script src="../assets/reference-center.js"></script>
+  <script src="1-2.js"></script>
+</body>
+</html>

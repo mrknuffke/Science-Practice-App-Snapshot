@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-1b" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Periodic Trends &amp; Reactivity · Gen Chem 1-1b</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 1-1b &middot; Periodic Trends &amp; Reactivity</div>
+    <h1>One metal <span class="flip">explodes</span> in water. One sits in your wiring doing nothing.</h1>
+    <p class="lede">Drop a pea-sized lump of sodium into water and it skitters, hisses, and bursts into flame. Drop in a copper penny and&hellip; nothing. Same periodic table, different addresses. By the end of this page, you can predict that difference from an element's position alone.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-1</b>Use the periodic table as a model to predict the relative properties of elements based on the patterns of electrons in the outermost energy level of atoms.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can predict and compare the atomic radius, ionization energy, and electronegativity of two elements from their positions. You can explain how reactive each one is, and why.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Main-group elements through krypton (element 36). Transition metals come later, because their trends are messier. The numbers in the tables are supporting data. The target is the relative trend: higher or lower, not the exact value.</div></div>
+    </div>
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Atomic Radius:</strong> Decreases left to right, because more protons pull the same shell tighter. Increases top to bottom, because each row adds a new electron shell.</li>
+              <li><strong>Ionization Energy (IE):</strong> Energy to remove an electron. Increases left-to-right (tighter nuclear grip); decreases top-to-bottom (outer electrons farther and shielded).</li>
+              <li><strong>Electronegativity (EN):</strong> Atom's power to pull shared electrons. Follows the same trends as IE (excluding noble gases).</li>
+              <li><strong>Reactivity:</strong> Metals react by <em>losing</em> electrons (highest bottom-left); nonmetals react by <em>gaining</em> electrons (highest top-right).</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Trend Summary Map</h4>
+            <figure class="figure figure--sm">
+<div class="diagram">
+              <svg viewBox="0 0 280 150" role="img" aria-label="Periodic table trend compass: atomic radius increases toward the bottom-left; ionization energy and electronegativity increase toward the top-right.">
+                <defs>
+                  <marker id="syn-arr-radius" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+                    <path d="M0 0 L6 3 L0 6 z" fill="var(--ink)"/>
+                  </marker>
+                  <marker id="syn-arr-ie" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+                    <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+                  </marker>
+                </defs>
+
+                <!-- Periodic Table Stepped Silhouette -->
+                <path d="M 30,34 L 46,34 L 46,48 L 62,48 L 62,72 L 170,72 L 170,48 L 234,48 L 234,34 L 250,34 L 250,116 L 30,116 Z" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1.2"/>
+                
+                <!-- Landmark: He / F (Top-Right) -->
+                <circle cx="242" cy="41" r="3" fill="var(--accent)"/>
+                <text x="242" y="26" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono); font-weight:700;" fill="var(--accent)">F / He</text>
+
+                <!-- Landmark: Fr / Cs (Bottom-Left) -->
+                <circle cx="38" cy="104" r="6" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
+                <circle cx="38" cy="104" r="2" fill="var(--accent)"/>
+                <text x="38" y="130" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono); font-weight:700;" fill="var(--ink)">Fr / Cs</text>
+
+                <!-- Trend Vector 1: Atomic Radius (Increases down and to the left) -->
+                <path d="M 230,58 L 74,58 L 74,96" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#syn-arr-radius)"/>
+                <text x="78" y="52" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display); font-weight:600;" fill="var(--ink)">Radius increases</text>
+
+                <!-- Trend Vector 2: IE & EN (Increases up and to the right) -->
+                <path d="M 74,106 L 220,106 L 220,66" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#syn-arr-ie)"/>
+                <text x="96" y="118" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display); font-weight:700;" fill="var(--accent)">IE &amp; EN increase</text>
+              </svg>
+</div>
+<figcaption>Figure 1-1b.S: Atomic radius increases toward bottom-left (Fr/Cs); ionization energy and electronegativity increase toward top-right (He/F).</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> Recall trend direction for radius, IE, and EN.</li>
+              <li><input type="checkbox" disabled> Explain radius shrink using nuclear pull (protons) in same shell.</li>
+              <li><input type="checkbox" disabled> Explain shielding/distance effect on ionization energy down groups.</li>
+              <li><input type="checkbox" disabled> Contrast metal and nonmetal reactivity trends based on electron loss/gain.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 -->
+<section id="s-position" data-toc="Why position predicts">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Why position predicts anything at all</span></div>
+    <h2>An element's <em>address</em> on the table tells you how it behaves.</h2>
+    <p>Every periodic trend comes down to one tug-of-war over the outermost electrons. The positive nucleus pulls them in. Distance and the layers of inner electrons weaken that pull. Two things change the strength of the tug-of-war. They line up with the two directions you can move on the table.</p>
+    <div class="levers">
+      <div class="lever"><div class="arrow">→</div><h4>Across a period</h4>
+        <p>Each step right adds <strong>one proton</strong>, but the new electron joins the <strong>same shell</strong>. More pull at the same distance: the grip <strong>tightens</strong> and the atom shrinks.</p>
+        <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 280 125" role="img" aria-label="Atom shrinking across period 2 as protons are added to the same shell">
+          <!-- Lithium (3+) 2 shells (2, 1) -->
+          <g id="lev-li">
+            <circle class="d-shell" cx="55" cy="46" r="18"/><circle class="d-shell" cx="55" cy="46" r="36"/>
+            <circle class="d-nuc" cx="55" cy="46" style="r: var(--dia-r-atom)"/><text class="d-nuc-t" x="55" y="49" text-anchor="middle">3+</text>
+            <circle class="d-particle" cx="55" cy="28" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="55" cy="64" style="r: var(--dia-r-particle)"/>
+            <circle class="d-particle" cx="55" cy="10" style="r: var(--dia-r-particle)"/>
+            <text class="d-label" x="55" y="96" text-anchor="middle" style="font-size:var(--dia-label-size, 12px); font-family:var(--display);">Lithium (Li)</text>
+            <text class="d-sub" x="55" y="110" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);">152 pm</text>
+          </g>
+          
+          <!-- Transition arrow -->
+          <g id="lev-trans-p">
+            <line x1="104" y1="46" x2="160" y2="46" class="d-arrow" marker-end="url(#lev-arr)"/>
+            <text class="d-sub" x="132" y="38" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display);">+6 protons</text>
+            <text class="d-sub" x="132" y="62" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display);">same shell</text>
+          </g>
+          
+          <!-- Fluorine (9+) 2 shells (2, 7) tighter -->
+          <g id="lev-f">
+            <circle class="d-shell" cx="215" cy="46" r="13"/><circle class="d-shell" cx="215" cy="46" r="24"/>
+            <circle class="d-nuc" cx="215" cy="46" style="r: var(--dia-r-atom)"/><text class="d-nuc-t" x="215" y="49" text-anchor="middle">9+</text>
+            <circle class="d-particle" cx="215" cy="33" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="215" cy="59" style="r: var(--dia-r-particle)"/>
+            <circle class="d-particle" cx="215" cy="22" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="231" cy="28" style="r: var(--dia-r-particle)"/>
+            <circle class="d-particle" cx="239" cy="46" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="231" cy="64" style="r: var(--dia-r-particle)"/>
+            <circle class="d-particle" cx="215" cy="70" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="199" cy="64" style="r: var(--dia-r-particle)"/>
+            <circle class="d-particle" cx="191" cy="46" style="r: var(--dia-r-particle)"/>
+            <text class="d-label" x="215" y="96" text-anchor="middle" style="font-size:var(--dia-label-size, 12px); font-family:var(--display);">Fluorine (F)</text>
+            <text class="d-sub" x="215" y="110" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);">72 pm</text>
+          </g>
+          <defs><marker id="lev-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--ink)"/></marker></defs>
+        </svg>
+</div>
+<figcaption>Across a period: more protons pull the same shell inward, resulting in a smaller atomic radius.</figcaption>
+</figure>
+      </div>
+      <div class="lever"><div class="arrow">↓</div><h4>Down a group</h4>
+        <p>Each step down adds a whole <strong>new shell</strong>. The outer electrons sit farther out, and the inner electrons <strong>shield</strong> them. The grip <strong>loosens</strong> and the atom grows.</p>
+        <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 280 140" role="img" aria-label="Atom growing down Group 1 as new electron shells are added">
+          <!-- Lithium (3+) 2 shells -->
+          <g id="lev-li-g">
+            <circle class="d-shell" cx="55" cy="54" r="14"/><circle class="d-shell" cx="55" cy="54" r="26"/><circle class="d-nuc" cx="55" cy="54" style="r: var(--dia-r-atom)"/><text class="d-nuc-t" x="55" y="57" text-anchor="middle">3+</text>
+            <circle class="d-particle" cx="55" cy="40" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="55" cy="68" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="55" cy="28" style="r: var(--dia-r-particle)"/>
+            <text class="d-label" x="55" y="108" text-anchor="middle" style="font-size:var(--dia-label-size, 12px); font-family:var(--display);">Lithium (Li)</text>
+            <text class="d-sub" x="55" y="122" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);">2 shells · 152 pm</text>
+          </g>
+
+          <!-- Transition arrow -->
+          <g id="lev-trans-g">
+            <line x1="94" y1="54" x2="146" y2="54" class="d-arrow" marker-end="url(#lev-arr2)"/>
+            <text class="d-sub" x="120" y="44" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display);">+2 shells</text>
+            <text class="d-sub" x="120" y="68" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display);">shielded</text>
+          </g>
+
+          <!-- Potassium (19+) 4 shells -->
+          <g id="lev-k-g">
+            <circle class="d-shell" cx="210" cy="54" r="12"/><circle class="d-shell" cx="210" cy="54" r="23"/><circle class="d-shell" cx="210" cy="54" r="34"/><circle class="d-shell" cx="210" cy="54" r="44"/>
+            <circle class="d-nuc" cx="210" cy="54" style="r: var(--dia-r-atom)"/><text class="d-nuc-t" x="210" y="57" text-anchor="middle">19+</text>
+            <circle class="d-particle" cx="210" cy="42" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="210" cy="66" style="r: var(--dia-r-particle)"/>
+            <circle class="d-particle" cx="210" cy="31" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="226" cy="38" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="233" cy="54" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="226" cy="70" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="210" cy="77" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="194" cy="70" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="187" cy="54" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="194" cy="38" style="r: var(--dia-r-particle)"/>
+            <circle class="d-particle" cx="210" cy="20" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="234" cy="30" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="244" cy="54" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="234" cy="78" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="210" cy="88" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="186" cy="78" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="176" cy="54" style="r: var(--dia-r-particle)"/><circle class="d-particle" cx="186" cy="30" style="r: var(--dia-r-particle)"/>
+            <circle class="d-particle" cx="210" cy="10" style="r: var(--dia-r-particle)"/>
+            <text class="d-label" x="210" y="108" text-anchor="middle" style="font-size:var(--dia-label-size, 12px); font-family:var(--display);">Potassium (K)</text>
+            <text class="d-sub" x="210" y="122" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);">4 shells · 227 pm</text>
+          </g>
+          <defs><marker id="lev-arr2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--ink)"/></marker></defs>
+        </svg>
+</div>
+<figcaption>Down a group: each new row adds an electron shell, placing outer electrons farther away and more shielded.</figcaption>
+</figure>
+      </div>
+    </div>
+    <div class="callout"><div class="label">The one idea to hold onto</div>
+      <p>Tighter grip on the outer electrons → smaller atom, harder to remove an electron, stronger pull on shared electrons. Looser grip → all of that, reversed. Everything below is this idea from a different angle.</p></div>
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking more protons and electrons make a bigger atom. Across a period the new electrons join the same shell, and the extra protons pull that shell in.</p></div>
+  </div>
+</section>
+
+<!-- 02 ATOM BUILDER -->
+<section id="s-atom" data-toc="Atomic level: watch the levers">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Atomic level</span></div>
+    <h2>The same two levers, drawn as atoms.</h2>
+    <p>Step through the elements and watch what changes. Switch between the two directions to see why one shrinks the atom and the other grows it.</p>
+    <div class="sim-box" data-sim="atom">
+        <div class="label">Simulation</div>
+        <h4>Why does the atom shrink across a period and grow down a group?</h4>
+        <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: you step from lithium to neon across period 2, one proton at a time. What happens to the size of the atom?<\/p>",
+  "options": [
+    {
+      "label": "It grows, because each step adds a proton and an electron",
+      "correct": false,
+      "feedback": "More particles sounds like more size. But the new electrons join the same two shells, and the new protons pull those shells inward."
+    },
+    {
+      "label": "It shrinks, because the extra protons pull the same shells in",
+      "correct": true,
+      "feedback": "Each step adds a proton, but the new electron joins the same outer shell. More pull at the same distance shrinks the atom."
+    },
+    {
+      "label": "It stays the same, because the number of shells stays at 2",
+      "correct": false,
+      "feedback": "The shell count stays at 2, which makes this tempting. But size depends on how hard the nucleus pulls on those shells, and the pull grows with every proton."
+    }
+  ],
+  "reveal": "<p>Now check it. Choose Across a period and step from lithium to neon.<\/p>"
+}
+</script>
+</div>
+        <div class="sim-stage" data-ratio="wide"><canvas aria-label="A Bohr model of lithium: a nucleus with 3 protons and rings holding 2 and 1 electrons."></canvas></div>
+        <div class="sim-controls">
+          <button type="button" class="chip" aria-pressed="true" data-mode="period">Across a period</button>
+          <button type="button" class="chip" aria-pressed="false" data-mode="group">Down a group</button>
+          <label class="slider-row" for="atomIdx"><span>Element</span> <output>Lithium (Li)</output>
+            <input type="range" id="atomIdx" min="0" max="7" step="1" value="0" data-digits="0">
+          </label>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="el"><span class="readout-label">Element</span><span class="readout-value">Lithium</span></div>
+          <div class="readout" data-readout="z"><span class="readout-label">Protons</span><span class="readout-value">3</span></div>
+          <div class="readout" data-readout="shells"><span class="readout-label">Shells</span><span class="readout-value">2</span></div>
+          <div class="readout" data-readout="radius"><span class="readout-label">Atomic radius</span><span class="readout-value">167 pm</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Predict to start</span>
+        <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="ink-mute"></span>Inner electron</li>
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Outer-shell electron</li>
+          <li><span class="key" data-token="ink"></span>Nucleus, labeled with its protons</li>
+          <li><span class="key" data-shape="line" data-token="ink-mute"></span>Shell (the outer ring is drawn to the atomic radius)</li>
+        </ul>
+        <ol class="try-this">
+          <li>Choose Across a period. Step to lithium and press Record, then step to neon and press Record. <b>Look for:</b> the shell count stays at 2 while the outer ring shrinks.</li>
+          <li>Choose Down a group. Step from lithium to potassium and press Record at each element. <b>Look for:</b> every step adds a whole shell, and the outer ring grows.</li>
+        </ol>
+      </div>
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows for lithium and neon. Both have 2 shells. Why is neon so much smaller?<\/p>",
+  "options": [
+    {
+      "label": "Neon has more protons pulling on the same two shells.",
+      "correct": true,
+      "feedback": "Neon has 10 protons and lithium has 3. The extra pull at the same distance draws both shells in."
+    },
+    {
+      "label": "Neon has lost its outer shell.",
+      "correct": false,
+      "feedback": "Neon still has 2 shells. No shell was lost. Check the Shells column in your rows."
+    },
+    {
+      "label": "Neon has fewer electrons in its outer shell.",
+      "correct": false,
+      "feedback": "Neon has 8 outer electrons and lithium has 1, so this is backwards. The extra protons, not fewer electrons, shrink the atom."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Same shells, more protons, smaller atom.<\/p>"
+}
+</script>
+</div>
+  </div>
+</section>
+
+<!-- 03 TREND EXPLORER -->
+<section id="s-explorer" data-toc="Trend explorer">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Explore the trends</span></div>
+    <h2>Pick a property. Watch the table light up.</h2>
+    <p>Cool colors mark low values, and warm colors mark high values. The readout names the direction each property <em>increases</em>. Select any two elements to compare them head to head.</p>
+    <div class="sim-box" data-tool="trends">
+        <div class="label">Interactive tool</div>
+        <h4>Which way does each trend point on the periodic table?</h4>
+        <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: you move across a period, from left to right. What happens to the ionization energy?<\/p>",
+  "options": [
+    {
+      "label": "It falls, because the atoms get bigger",
+      "correct": false,
+      "feedback": "Atoms get smaller across a period, not bigger. A smaller atom holds its outer electron more tightly, so ionization energy rises."
+    },
+    {
+      "label": "It stays the same, because the shell number stays the same",
+      "correct": false,
+      "feedback": "The shell number stays the same, but the number of protons does not. More protons pull harder on that shell."
+    },
+    {
+      "label": "It rises, because the pull on the outer electrons tightens",
+      "correct": true,
+      "feedback": "More protons pull on the same shell, so the outer electrons are harder to remove. Ionization energy rises across a period."
+    }
+  ],
+  "reveal": "<p>Now check it. Choose Ionization energy and read across a row.<\/p>"
+}
+</script>
+</div>
+        <div class="sim-controls" role="group" aria-label="Property to show">
+          <button type="button" class="chip" aria-pressed="true" data-trend="radius">Atomic radius</button>
+          <button type="button" class="chip" aria-pressed="false" data-trend="ie">Ionization energy</button>
+          <button type="button" class="chip" aria-pressed="false" data-trend="en">Electronegativity</button>
+          <button type="button" class="chip" aria-pressed="false" data-trend="react">Reactivity</button>
+        </div>
+        <div class="ptable-scroll"><div class="ptable" id="ptable" role="group" aria-label="Periodic table, periods 1 to 4, main-group elements"></div></div>
+        <div class="legend" id="legend"></div>
+        <p class="hint">The numbers are supporting data. Read the pattern: which cells are higher or lower, not the exact value.</p>
+        <div class="sim-readouts" aria-live="polite">
+          <div class="readout" data-readout="prop"><span class="readout-label">Property</span><span class="readout-value" id="roName">Atomic radius</span></div>
+          <div class="readout" data-readout="across"><span class="readout-label">Across (&rarr;)</span><span class="readout-value" id="roAcross">decreases</span></div>
+          <div class="readout" data-readout="down"><span class="readout-label">Down (&darr;)</span><span class="readout-value" id="roDown">increases</span></div>
+        </div>
+        <p data-sim-note id="roText" aria-live="polite">The explanation appears after you predict.</p>
+        <p id="cmpOut" aria-live="polite">Select two elements to compare them.</p>
+        <ol class="try-this">
+          <li>Choose Ionization energy. Read across period 2, then down Group 1. <b>Look for:</b> the values rise across a period and fall down a group.</li>
+          <li>Choose Reactivity. <b>Look for:</b> the colors split. Metals are strongest toward the bottom left, and nonmetals toward the top right.</li>
+        </ol>
+      </div>
+  </div>
+</section>
+
+<!-- 04 PREDICT SIZE -->
+<section id="s-predict-size" data-toc="Predict: which is bigger?">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Check the explorer</span></div>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Use the radius view of the explorer. Sodium (Na) and chlorine (Cl) sit in the same period. Which atom is <em>bigger<\/em>?",
+  "options": [
+    {
+      "label": "Cl: it has more protons and electrons",
+      "correct": false,
+      "feedback": "More particles sounds like a bigger atom. But the extra electrons go into the <em>same<\/em> shell, and the extra protons pull that shell inward. Cl is the smaller atom."
+    },
+    {
+      "label": "Na: it has fewer protons pulling in",
+      "correct": true,
+      "feedback": "Both atoms fill the same shell. Na has 11 protons pulling on it and Cl has 17, so Cl pulls that shell in tighter. Na is bigger."
+    },
+    {
+      "label": "Same size: both are in period 3",
+      "correct": false,
+      "feedback": "The same period means the same number of shells, not the same size. Size depends on how hard the nucleus pulls on those shells."
+    }
+  ],
+  "reveal": "<h4>Why<\/h4>\n<p><strong>Na is bigger.<\/strong> More protons and electrons might seem to mean a larger atom. But across a period the extra electrons enter the <em>same<\/em> shell, where additional protons pull them inward. So the atom <em>shrinks<\/em> from left to right. Cl has more protons than Na pulling on that same outer shell, so Cl is the smaller atom even though it is heavier.<\/p>"
+}
+</script>
+</div>
+  </div>
+</section>
+
+<!-- 05 REACTIVITY -->
+<section id="s-reactivity" data-toc="The trend that flips">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">The trend that flips</span></div>
+    <h2>Reactivity isn't one arrow. It depends on whether the atom <em>wants to lose</em> or <em>wants to gain</em> electrons.</h2>
+    <p><strong class="term">Atomic radius</strong>, <strong class="term">ionization energy</strong> (IE), and <strong class="term">electronegativity</strong> (EN) each run in one consistent direction. Reactivity does not, and that is what trips people up. Stop asking "is it reactive?" Start asking "<em>reactive how?</em>"</p>
+    <figure class="figure figure--full">
+<div class="diagram"><svg viewBox="0 0 420 230" role="img" aria-label="A simplified periodic table: metallic reactivity increases toward the bottom-left, nonmetallic reactivity toward the top-right, noble gases inert on the far right.">
+      <g id="compassCells">
+        <g stroke="var(--hair)" style="stroke-width: var(--dia-stroke)">
+          <!-- Row 1 (Period 1): H & He -->
+          <rect x="22" y="40" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="379" y="40" width="18" height="18" fill="var(--card)"/>
+
+          <!-- Row 2 (Period 2): Li, Be, B, C, N, O, F, Ne -->
+          <rect x="22" y="61" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="43" y="61" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="274" y="61" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="295" y="61" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="316" y="61" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="337" y="61" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="358" y="61" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="379" y="61" width="18" height="18" fill="var(--card)"/>
+
+          <!-- Row 3 (Period 3): Na, Mg, Al, Si, P, S, Cl, Ar -->
+          <rect x="22" y="82" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="43" y="82" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="274" y="82" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="295" y="82" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="316" y="82" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="337" y="82" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="358" y="82" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="379" y="82" width="18" height="18" fill="var(--card)"/>
+
+          <!-- Row 4 (Period 4): K, Ca, Sc-Zn (transition metals in paper-2), Ga-Kr -->
+          <rect x="22" y="103" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="43" y="103" width="18" height="18" fill="var(--paper-3)"/>
+          <!-- transition metals (Cols 3-12) -->
+          <rect x="64" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <rect x="85" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <rect x="106" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <rect x="127" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <rect x="148" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <rect x="169" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <rect x="190" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <rect x="211" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <rect x="232" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <rect x="253" y="103" width="18" height="18" fill="var(--paper-2)"/>
+          <!-- main-group -->
+          <rect x="274" y="103" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="295" y="103" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="316" y="103" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="337" y="103" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="358" y="103" width="18" height="18" fill="var(--paper-3)"/>
+          <rect x="379" y="103" width="18" height="18" fill="var(--card)"/>
+        </g>
+        <text class="d-sub" x="388" y="136" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display);">noble gases</text>
+        <text class="d-sub" x="388" y="148" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);">inert (8e⁻)</text>
+      </g>
+
+      <!-- Key element landmarks -->
+      <text x="31" y="115" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono); font-weight:700;" fill="var(--accent)">K</text>
+      <text x="367" y="73" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono); font-weight:700;" fill="var(--cool)">F</text>
+      <text x="388" y="52" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink-mute)">He</text>
+      <text x="388" y="73" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink-mute)">Ne</text>
+      <text x="388" y="94" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink-mute)">Ar</text>
+      <text x="388" y="115" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink-mute)">Kr</text>
+
+      <!-- Metals trend vector: pointing down-left -->
+      <line x1="105" y1="58" x2="30" y2="128" marker-end="url(#cm-m)" stroke-width="2.2" stroke="var(--accent)"/>
+      <text class="d-label" x="112" y="50" fill="var(--accent)" style="font-size:var(--dia-label-size, 12px); font-family:var(--display); font-weight:700;">metals: lose e⁻</text>
+      <text class="d-sub" x="112" y="64" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display);">most reactive ↙ bottom-left</text>
+      
+      <!-- Nonmetals trend vector: pointing up-right -->
+      <line x1="260" y1="125" x2="345" y2="65" marker-end="url(#cm-n)" stroke-width="2.2" stroke="var(--cool)"/>
+      <text class="d-label" x="250" y="170" text-anchor="middle" fill="var(--cool)" style="font-size:var(--dia-label-size, 12px); font-family:var(--display); font-weight:700;">nonmetals: gain e⁻</text>
+      <text class="d-sub" x="250" y="184" text-anchor="middle" fill="var(--cool)" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display);">most reactive ↗ top-right (F)</text>
+      <defs>
+        <marker id="cm-m" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/></marker>
+        <marker id="cm-n" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6"><path d="M0 0 L6 3 L0 6 z" fill="var(--cool)"/></marker>
+      </defs>
+    </svg>
+</div>
+<figcaption>Figure 1-1b.1: Periodic reactivity compass: metallic reactivity increases toward bottom-left (electron loss); nonmetallic reactivity increases toward top-right (electron gain). Noble gases remain inert.</figcaption>
+</figure>
+    <div class="step bullet"><p><strong>Metals lose electrons.</strong> Most reactive where that is easiest (<strong>low ionization energy</strong>), so down a group and to the left. The alkali metals (Li → Na → K) are the wild ones.</p></div>
+    <div class="step bullet"><p><strong>Nonmetals gain electrons.</strong> Most reactive where the pull is strongest (<strong>high electronegativity</strong>), so up a group and to the right. Fluorine is the champion.</p></div>
+    <div class="step bullet"><p><strong>Noble gases barely react.</strong> A full outer shell means no reason to lose or gain. The far-right column stays calm.</p></div>
+    <div class="callout"><div class="label">Common mistake</div><p>Reading reactivity as one trend. Metals get more reactive toward the bottom left. Nonmetals get more reactive toward the top right.</p></div>
+    <div class="callout"><div class="label">Flip the Reactivity tab above</div>
+      <p>In the explorer, select <span class="chem">Reactivity</span>. The coloring <em>splits</em> (metals one way, nonmetals the other) instead of a single gradient.</p></div>
+  </div>
+</section>
+
+<!-- 06 PREDICT REACT -->
+<section id="s-predict-react" data-toc="Predict: which is more reactive?">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Check the explorer</span></div>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Use the reactivity view of the explorer. Lithium (Li) and potassium (K) are both alkali metals in Group 1. Which reacts more <em>violently<\/em> with water?",
+  "options": [
+    {
+      "label": "Li: it is smaller and denser",
+      "correct": false,
+      "feedback": "Size and density are real properties, but they do not drive this reaction. What matters is how easily the atom lets go of its outer electron, and Li holds on tighter than K."
+    },
+    {
+      "label": "Both the same: they are in Group 1",
+      "correct": false,
+      "feedback": "The same group means the same pattern, not the same strength. Down the group, the outer electron sits farther out and is easier to remove, so the reactions get stronger."
+    },
+    {
+      "label": "K: it loses its outer electron more easily",
+      "correct": true,
+      "feedback": "K's outer electron sits in a higher, more shielded shell, so its ionization energy is lower. A looser grip means a more violent reaction."
+    }
+  ],
+  "reveal": "<h4>Why<\/h4>\n<p><strong>K reacts more violently.<\/strong> Metallic reactivity is about how easily the atom <em>lets go<\/em> of its outer electron. K's valence electron sits in a higher, more shielded shell than Li's. Its ionization energy is therefore lower, so it releases the electron more easily. Lower in the group means a looser grip, which means a more violent reaction. (Rubidium and cesium are more dramatic still.)<\/p>\n      <p>Size and density are real properties, but the ease of losing the electron is what drives this reaction.<\/p>"
+}
+</script>
+</div>
+  </div>
+</section>
+
+<!-- 07 CAUSAL CHAIN BUILDER (PS1-1.5 / Block 1.4) -->
+<section id="s-causal-chain" data-toc="Reactivity Causal Chain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Building the 5-Step Causal Chain</span></div>
+    <h2>Build the 5-step explanation chain.</h2>
+    <p>To explain why one element is more reactive than another, never jump straight from position to behavior. Build a connected chain of five steps. It links atomic structure to ionization energy and to electron loss or gain.</p>
+
+    <div class="sim-box" data-tool="chain">
+      <div class="label">Interactive tool</div>
+      <h4>Why does one metal fizz gently and another explode in water?</h4>
+      <p>Select an element to trace its 5-step causal chain. Notice how Group 1 metals (electron loss) contrast with Group 17 nonmetals (electron gain).</p>
+      <div class="sim-controls">
+        <label class="tool-field"><span class="label">Category</span>
+          <select id="causalCategory" class="form-select">
+            <option value="metals">Alkali Metals (Group 1: Electron Loss)</option>
+            <option value="nonmetals">Halogens (Group 17: Electron Gain)</option>
+          </select>
+        </label>
+        <label class="tool-field"><span class="label">Element</span>
+          <select id="causalElement" class="form-select"></select>
+        </label>
+      </div>
+      <ol class="chain-steps" id="causalChainDisplay" aria-live="polite"></ol>
+      <div class="chain-guess">
+        <label class="tool-field" for="causalSeverityGuess"><span class="label">Your prediction</span>Based on steps 1 to 4, how strongly do you predict this element reacts?</label>
+        <div class="sim-controls">
+          <select id="causalSeverityGuess" class="form-select" aria-label="Predicted reaction strength"></select>
+          <button class="btn" id="causalCheckBtn" type="button" disabled>Check and show step 5</button>
+        </div>
+        <p id="causalGuessFeedback" role="status"></p>
+      </div>
+      <div id="causalStep5Wrapper" hidden>
+        <ol class="chain-steps" id="causalStep5"></ol>
+        <div class="callout"><div class="label" id="causalSummaryTitle">Reaction severity</div><p id="causalSummaryText"></p></div>
+      </div>
+    </div>
+
+    <h3>Case study: why Mg fizzes in acid but Cu does nothing</h3>
+    <p>In Block 1.4, you drop strips of magnesium (Mg) and copper (Cu) into dilute hydrochloric acid (HCl).</p>
+    <figure class="figure figure--full">
+<div class="diagram">
+        <svg viewBox="0 0 560 250" role="img" aria-label="Johnstone's Triangle comparison: Macroscopic observation and submicroscopic particle mechanism for magnesium versus copper in acid">
+          <defs>
+            <marker id="mg-arr-e" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+              <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+            </marker>
+            <marker id="cu-arr-rebound" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+              <path d="M0 0 L6 3 L0 6 z" fill="var(--ink-mute)"/>
+            </marker>
+          </defs>
+
+          <!-- Center divider -->
+          <line x1="280" y1="20" x2="280" y2="230" stroke="var(--hair)" stroke-dasharray="3 3"/>
+
+          <!-- LEFT: Magnesium (Reaction Occurs) -->
+          <g id="fig-mg-acid">
+            <text x="140" y="24" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-header-size, 14px);" fill="var(--ink)" text-anchor="middle">Magnesium in 1 M HCl</text>
+            
+            <!-- Macroscopic Test Tube -->
+            <path d="M 50,40 L 50,170 A 20,20 0 0,0 90,170 L 90,40" fill="none" stroke="var(--ink-mute)" stroke-width="1.6"/>
+            <path d="M 51,75 Q 70,80 89,75 L 89,170 A 19,19 0 0,1 51,170 Z" fill="color-mix(in srgb, var(--water) 18%, transparent)"/>
+            <rect x="67" y="115" width="6" height="48" rx="1" fill="var(--ink-mute)" stroke="var(--ink)" stroke-width="1"/>
+            
+            <!-- Bubbles -->
+            <circle cx="64" cy="100" r="2.5" fill="none" stroke="var(--water)" stroke-width="1"/>
+            <circle cx="74" cy="90" r="3.2" fill="none" stroke="var(--water)" stroke-width="1"/>
+            <circle cx="67" cy="74" r="2.8" fill="none" stroke="var(--water)" stroke-width="1"/>
+            <circle cx="75" cy="56" r="3.5" fill="none" stroke="var(--water)" stroke-width="1"/>
+            <text x="70" y="34" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono); font-weight:700;" fill="var(--accent)">H₂ (g) ↑</text>
+            <text x="70" y="200" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display); font-weight:600;" fill="var(--ink)">Vigorous fizzing</text>
+            <text x="70" y="214" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink-mute)">H₂ gas evolution</text>
+
+            <!-- Submicroscopic Particulate Magnifier -->
+            <circle cx="195" cy="115" r="55" fill="var(--paper-2)" stroke="var(--hair, var(--hair))" stroke-width="1.5"/>
+            <line x1="75" y1="135" x2="142" y2="120" stroke="var(--hair)" stroke-dasharray="2 2"/>
+            
+            <!-- Mg lattice atoms -->
+            <circle cx="170" cy="146" r="9" class="d-metal"/>
+            <circle cx="195" cy="132" r="9" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+            <circle cx="220" cy="146" r="9" class="d-metal"/>
+            <text x="195" y="136" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono); font-weight:700;" fill="var(--accent)">Mg</text>
+
+            <!-- 2e- transfer to H+ -->
+            <path d="M 195,123 Q 190,105 202,96" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 2" marker-end="url(#mg-arr-e)"/>
+            <text x="176" y="112" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono); font-weight:700;" fill="var(--accent)">2e⁻ &rarr;</text>
+            <circle cx="212" cy="94" r="6" fill="var(--water)" fill-opacity="0.3" stroke="var(--water)" stroke-width="1"/>
+            <text x="212" y="97" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink)" text-anchor="middle">H⁺</text>
+            <circle cx="224" cy="74" r="9" fill="none" stroke="var(--accent)" stroke-dasharray="2 2"/>
+            <text x="224" y="78" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono); font-weight:700;" fill="var(--accent)" text-anchor="middle">H₂</text>
+
+            <text x="195" y="185" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display); font-weight:600;" fill="var(--accent)">Low IE: outer e⁻ lost to H⁺</text>
+            <text x="140" y="235" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink-mute)">Mg(s) + 2H⁺(aq) &rarr; Mg²⁺(aq) + H₂(g)</text>
+          </g>
+
+          <!-- RIGHT: Copper (No Reaction) -->
+          <g id="fig-cu-acid">
+            <text x="420" y="24" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-header-size, 14px);" fill="var(--ink)" text-anchor="middle">Copper in 1 M HCl</text>
+            
+            <!-- Macroscopic Test Tube -->
+            <path d="M 330,40 L 330,170 A 20,20 0 0,0 370,170 L 370,40" fill="none" stroke="var(--ink-mute)" stroke-width="1.6"/>
+            <path d="M 331,75 Q 350,80 369,75 L 369,170 A 19,19 0 0,1 331,170 Z" fill="color-mix(in srgb, var(--water) 18%, transparent)"/>
+            <rect x="347" y="125" width="6" height="42" rx="1" fill="var(--warn)" fill-opacity="0.8" stroke="var(--ink)" stroke-width="1"/>
+            
+            <text x="350" y="200" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display); font-weight:600;" fill="var(--ink)">No reaction</text>
+            <text x="350" y="214" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink-mute)">Strip unchanged</text>
+
+            <!-- Submicroscopic Particulate Magnifier -->
+            <circle cx="475" cy="115" r="55" fill="var(--paper-2)" stroke="var(--hair, var(--hair))" stroke-width="1.5"/>
+            <line x1="355" y1="140" x2="422" y2="120" stroke="var(--hair)" stroke-dasharray="2 2"/>
+
+            <!-- Cu lattice atoms -->
+            <circle cx="452" cy="146" r="9" fill="var(--warn)" fill-opacity="0.4" stroke="var(--ink)" stroke-width="1"/>
+            <circle cx="475" cy="138" r="9" fill="var(--warn)" fill-opacity="0.4" stroke="var(--ink)" stroke-width="1"/>
+            <circle cx="498" cy="146" r="9" fill="var(--warn)" fill-opacity="0.4" stroke="var(--ink)" stroke-width="1"/>
+            <text x="475" y="142" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono); font-weight:700;" fill="var(--ink)">Cu</text>
+
+            <!-- Colliding H+ ion bouncing off -->
+            <circle cx="475" cy="94" r="6" fill="var(--water)" fill-opacity="0.3" stroke="var(--water)" stroke-width="1"/>
+            <text x="475" y="97" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink)" text-anchor="middle">H⁺</text>
+            <path d="M 466,80 Q 475,90 484,80" fill="none" stroke="var(--ink-mute)" stroke-width="1.5" marker-end="url(#cu-arr-rebound)"/>
+
+            <text x="475" y="185" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display); font-weight:600;" fill="var(--ink)">High IE: Cu retains electrons</text>
+            <text x="420" y="235" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);" fill="var(--ink-mute)">Cu(s) + H⁺(aq) &rarr; no reaction</text>
+          </g>
+        </svg>
+</div>
+<figcaption>Figure 1-1b.2: Johnstone's Triangle: Macroscopic observation (left test tubes) and submicroscopic particle mechanism (right callouts) for magnesium versus copper in dilute acid.</figcaption>
+</figure>
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>Magnesium and copper in dilute hydrochloric acid</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Magnesium (Mg + 2 HCl)</th><th scope="col">Copper (Cu + HCl)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Observation</th><td>Vigorous fizzing and gas evolution (H<sub>2</sub> gas).</td><td>No reaction. The strip stays shiny.</td></tr>
+          <tr><th scope="row">Reasoning</th><td>Low ionization energy. Mg easily sheds 2 valence electrons to H<sup>+</sup> ions: Mg(s) + 2 H<sup>+</sup>(aq) &rarr; Mg<sup>2+</sup>(aq) + H<sub>2</sub>(g).</td><td>High ionization energy. Copper holds its valence electrons tightly, and H<sup>+</sup> ions cannot pull electrons away from Cu.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- 08 HAZARD (single-particle) -->
+<section id="s-hazard" data-toc="From position to the label">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">08</span><span class="label">From position to the hazard label</span></div>
+    <h2>This is why you can read a hazard <em>off the table</em>, before you ever see the bottle.</h2>
+    <p>Back to where we started, and now the address explains it. At the particulate level, sodium loosely holds its single outer electron. Its low ionization energy allows that electron to leave with minimal energy input. That eagerness to lose an electron is what makes sodium tear into water. Copper is a transition metal, outside our main-group scope. It holds its electrons far more tightly, so it just sits there.</p>
+    <figure class="figure figure--full">
+<div class="diagram">
+      <svg viewBox="0 0 540 220" role="img" aria-label="A single sodium atom losing its loosely-held outer electron to become a sodium cation and a free electron.">
+        <defs>
+          <marker id="na-arr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" viewBox="0 0 7 7">
+            <path d="M0 0 L7 3.5 L0 7 z" fill="var(--ink)"/>
+          </marker>
+          <marker id="na-arr-accent" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+            <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+          </marker>
+        </defs>
+
+        <!-- REACTANT: Neutral Sodium Atom (Na) -->
+        <g id="na-atom">
+          <!-- Shells -->
+          <circle class="d-shell" cx="110" cy="100" r="26"/>
+          <circle class="d-shell" cx="110" cy="100" r="50"/>
+          <circle class="d-shell" cx="110" cy="100" r="74" stroke-dasharray="3 3"/>
+          <!-- Nucleus -->
+          <circle class="d-nuc" cx="110" cy="100" style="r: var(--dia-r-atom)"/>
+          <text class="d-nuc-t" x="110" y="103" text-anchor="middle">11+</text>
+          <!-- Shell 1 (2 e-) -->
+          <circle class="d-particle" cx="110" cy="74" r="3.5"/>
+          <circle class="d-particle" cx="110" cy="126" r="3.5"/>
+          <!-- Shell 2 (8 e-) -->
+          <circle class="d-particle" cx="110" cy="50" r="3.5"/>
+          <circle class="d-particle" cx="145" cy="65" r="3.5"/>
+          <circle class="d-particle" cx="160" cy="100" r="3.5"/>
+          <circle class="d-particle" cx="145" cy="135" r="3.5"/>
+          <circle class="d-particle" cx="110" cy="150" r="3.5"/>
+          <circle class="d-particle" cx="75" cy="135" r="3.5"/>
+          <circle class="d-particle" cx="60" cy="100" r="3.5"/>
+          <circle class="d-particle" cx="75" cy="65" r="3.5"/>
+          <!-- Shell 3 (1 valence e-) -->
+          <circle class="d-particle atom-e-val" cx="110" cy="26" r="3.5"/>
+          <!-- Labels -->
+          <text class="d-label" x="110" y="192" text-anchor="middle" style="font-size:var(--dia-label-size, 12px); font-family:var(--display); font-weight:600;">Neutral Sodium (Na)</text>
+          <text class="d-sub" x="110" y="208" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);">Configuration: 2, 8, 1</text>
+        </g>
+
+        <!-- ELECTRON EJECTION TRAJECTORY -->
+        <path d="M110 22 C200 4, 380 12, 476 88" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#na-arr-accent)"/>
+
+        <!-- REACTION ARROW -->
+        <g id="na-reaction-step">
+          <line x1="205" y1="100" x2="255" y2="100" stroke="var(--ink)" stroke-width="1.8" marker-end="url(#na-arr)"/>
+          <text class="d-label" x="230" y="80" text-anchor="middle" fill="var(--accent)" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display); font-weight:700;">Loses 1 e⁻</text>
+          <text class="d-sub" x="230" y="94" text-anchor="middle" fill="var(--accent)" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);">IE = 496 kJ/mol</text>
+          <text class="d-sub" x="230" y="118" text-anchor="middle" fill="var(--ink-mute)" style="font-size:var(--dia-caption-size, 10px); font-family:var(--display);">(low energy cost)</text>
+        </g>
+
+        <!-- PRODUCT: Sodium Cation [Na]+ -->
+        <g id="na-ion">
+          <!-- Shells (Shell 3 is gone) -->
+          <circle class="d-shell" cx="355" cy="100" r="26"/>
+          <circle class="d-shell" cx="355" cy="100" r="50"/>
+          <!-- Nucleus -->
+          <circle class="d-nuc" cx="355" cy="100" style="r: var(--dia-r-atom)"/>
+          <text class="d-nuc-t" x="355" y="103" text-anchor="middle">11+</text>
+          <!-- Shell 1 (2 e-) -->
+          <circle class="d-particle" cx="355" cy="74" r="3.5"/>
+          <circle class="d-particle" cx="355" cy="126" r="3.5"/>
+          <!-- Shell 2 (8 e-) -->
+          <circle class="d-particle" cx="355" cy="50" r="3.5"/>
+          <circle class="d-particle" cx="390" cy="65" r="3.5"/>
+          <circle class="d-particle" cx="405" cy="100" r="3.5"/>
+          <circle class="d-particle" cx="390" cy="135" r="3.5"/>
+          <circle class="d-particle" cx="355" cy="150" r="3.5"/>
+          <circle class="d-particle" cx="320" cy="135" r="3.5"/>
+          <circle class="d-particle" cx="305" cy="100" r="3.5"/>
+          <circle class="d-particle" cx="320" cy="65" r="3.5"/>
+
+          <!-- Brackets around cation -->
+          <path d="M292 40 L282 40 L282 160 L292 160" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <path d="M418 40 L428 40 L428 160 L418 160" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <text class="d-label" x="434" y="52" fill="var(--accent)" style="font-size:var(--dia-header-size, 14px); font-family:var(--mono); font-weight:700;">+</text>
+
+          <!-- Labels -->
+          <text class="d-label" x="355" y="192" text-anchor="middle" style="font-size:var(--dia-label-size, 12px); font-family:var(--display); font-weight:600;">Sodium Cation (Na⁺)</text>
+          <text class="d-sub" x="355" y="208" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);">Configuration: 2, 8 (stable octet)</text>
+        </g>
+
+        <!-- PLUS SIGN -->
+        <text class="d-label" x="454" y="105" text-anchor="middle" fill="var(--ink)" style="font-size:var(--dia-atom-size, 22px); font-family:var(--mono); font-weight:700;">+</text>
+
+        <!-- PRODUCT: Free Electron -->
+        <g id="na-free-electron">
+          <circle class="d-particle atom-e-val" cx="484" cy="98" r="4"/>
+          <text class="d-label" x="502" y="102" fill="var(--accent)" style="font-size:var(--dia-label-size, 12px); font-family:var(--display); font-weight:700;">e⁻</text>
+          <text class="d-sub" x="493" y="122" text-anchor="middle" style="font-size:var(--dia-caption-size, 10px); font-family:var(--mono);">free electron</text>
+        </g>
+      </svg>
+</div>
+<figcaption>Figure 1-1b.3: A neutral sodium atom (2, 8, 1) loses its 3s valence electron. This yields a stable sodium cation Na⁺ (2, 8) and a free electron.</figcaption>
+</figure>
+    <div class="more-wrap">
+      <button class="more-toggle" data-more="the rough hazard map">Show the rough hazard map →</button>
+      <div class="more-body">
+        <p><strong>Bottom-left metals</strong> → flagged reactive or water-reactive. <strong>Top-right nonmetals</strong> (fluorine, chlorine) → corrosive, aggressive oxidizers. <strong>Far-right noble gases</strong> → inert and safe. Position first, label second.</p>
+        <p>For example, you need to know the exact hazard profile for elemental <strong>sodium (Na)</strong>. Sodium reacts violently with water and carries two GHS pictograms. The <strong>Flame</strong> marks extreme water reactivity and flammable hydrogen release. The <strong>Corrosion</strong> symbol marks generated sodium hydroxide, a caustic base causing severe tissue damage.</p>
+      </div>
+    </div>
+    <div class="callout"><div class="label">The limit: say it out loud</div>
+      <p>Position predicts <em>intrinsic</em> reactivity: what an element tends to do. It does <strong>not</strong> tell you concentration, quantity, or context. A trace behind glass can be safe; a drum of a "mild" element may not be. The table predicts the tendency, not the situation.</p></div>
+  </div>
+</section>
+
+<!-- 09 RECALL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">09</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      Moving <strong>across</strong> a period, each atom gains a proton in the same shell, so atomic radius
+      <input class="blank" data-answer="decreases" placeholder="?"> and ionization energy
+      <input class="blank" data-answer="increases" placeholder="?">.
+      Moving <strong>down</strong> a group, each atom adds a new shell, so the outer electrons are held more
+      <input class="blank" data-answer="weakly|loosely" placeholder="?">.
+      Metals are most reactive at the <input class="blank" data-answer="bottom-left|bottom left|lower-left|lower left" placeholder="?"> of the table, because they lose electrons most easily.
+      The most reactive nonmetal is
+      <input class="blank" data-answer="fluorine|f" placeholder="?">.
+    </p>
+    <div class="actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 10 SELF EXPLAIN -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">10</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark"><p>Ionization energy <em>increases</em> across a period but <em>decreases</em> down a group. In your own words, why do those two directions go opposite ways?</p></div>
+    <p class="hint">No one is grading this. Writing the reasoning out moves it from "I recognize it" to "I can produce it." Then compare with a model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="Because ionization energy is about how hard it is to remove an electron, which depends on&hellip;"></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>Ionization energy is the energy needed to remove an outer electron, so it tracks how tightly that electron is held. <strong>Across</strong> a period, protons pile up in the same shell. The pull tightens, the electron is harder to remove, and ionization energy rises. <strong>Down</strong> a group, the outer electron sits in a farther, shielded shell. The nuclear pull loosens, the electron leaves more easily, and ionization energy drops. Same tug-of-war, two different things changing.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 EXAM -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">11</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+    <div class="exam-frame">
+      <div class="exam-meta"><span class="exam-src">Gen Chem · HS-PS1-1 · constructed response</span><span class="exam-marks">[4 marks]</span></div>
+      <p class="exam-q">Rubidium (Rb) sits directly below potassium (K) in Group 1.
+        <span class="sub">Predict whether Rb or K reacts more vigorously with water, and explain your reasoning using periodic trends. Then state one thing this prediction does <em>not</em> tell you about handling the actual substance.</span></p>
+      <textarea class="textbox" id="examAns" placeholder="Prediction + reasoning + limit&hellip;"></textarea>
+      <div class="actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Prediction (1 mark):</b> You say Rb reacts more vigorously than K.</li>
+          <li><b>Position (1 mark):</b> You say Rb sits lower, so its valence electron is farther out and more shielded.</li>
+          <li><b>Link (1 mark):</b> You say Rb has a lower ionization energy, so it loses the electron more easily.</li>
+          <li><b>Limit (1 mark):</b> You say the trend shows what an element tends to do, not its quantity or storage.</li>
+        </ul></div></div>
+          <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why This Matters</div>
+        <p>Lithium battery technology relies on periodic trends. Lithium's extremely low ionization energy and small atomic radius make it incredibly eager to shed its single valence electron. This high electron-releasing drive is what makes lithium the optimal anode material for the lightweight, high-energy rechargeable batteries in our smartphones.</p>
+      </div>
+</div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-1 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-1</h3>
+    <p>
+      Test your mastery of atomic radius, ionization energy, electronegativity, and periodic trends one question at a time. The adaptive engine identifies individual skill gaps, provides tutoring hints on missed questions, and awards an official authenticated completion receipt.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-1" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem · Semester 1 · 1-1b</div>
+  <p>Position first, label second. Next: how those same outer electrons decide what <em>bonds</em> an atom will form.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="../assets/elements.js"></script>
+<script src="../assets/bohr.js"></script>
+<script src="1-1b.js"></script>
+</body>
+</html>

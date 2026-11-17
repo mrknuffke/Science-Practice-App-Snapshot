@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-book="physics" data-page="about">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>How This Book Was Built · SAS General Physics</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script src="../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../textbook/base.css">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/components.css">
+</head>
+<body class="colophon">
+
+  <!-- HERO -->
+  <section class="hero-block">
+    <div class="wrap narrow">
+      <h1>How this book was <span class="flip">built</span>.</h1>
+      <p class="lede">A textbook usually arrives with no account of where it came from. This one has an account, because how it was made shapes what you should trust it for. Below: what exists so far, who wrote what, the rules it is held to, what it still cannot do, and a dated record of everything that has shipped.</p>
+
+      <div class="meta-strip">
+        <div class="meta-block">
+          <div class="k">Scope</div>
+          <div class="v"><b>Level 1 &amp; 2 · 8 lessons and 2 reviews</b>Kinematics and Dynamics: motion graphs, projectile models, Newton's laws, friction, and coupled Atwood systems. Aligned to NGSS HS-PS2-1.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Built for</div>
+          <div class="v"><b>Singapore American School</b>Written for the General Physics course. Open to anyone: no account, no sign-in, no cost.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Licence</div>
+          <div class="v"><b>CC BY-NC-SA 4.0</b>Take it, adapt it, teach with it. Credit the source, do not sell it, and share your version on the same terms.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">01</span><h2>What this is, and what it isn't</h2></div>
+      <div class="stack">
+        <p>These pages are for retrieval practice and re-narration <em>after</em> class, not instead of it. They assume you have already met the ideas once, with a teacher, and they are built to make you commit to an answer before they show you one.</p>
+        <p>It is not a reference text. It does not cover the whole of physics, or even the whole of mechanics. As of today it covers Level 1 only. If you are looking for material on forces, energy, fields or waves, it is not here yet, and this page will say so plainly until it is.</p>
+        <p>It is also not adaptive, and it does not know who you are. Nothing you do here leaves your browser and there is no account to create.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">02</span><h2>Who wrote what</h2></div>
+      <div class="stack">
+        <p>Built by one teacher working with AI coding agents, on the same division of labour as the <a href="/chem/about.html">General Chemistry book</a>. The specific tools have changed several times already and will change again, so naming them is not useful. The split is the part that matters.</p>
+      </div>
+
+      <div class="split">
+        <div class="split-col">
+          <h3>The teacher</h3>
+          <ul>
+            <li>Decides what a lesson is for and what a student should be able to do at the end of it.</li>
+            <li>Writes and checks the physics: every value, every sign convention, every worked solution in the review.</li>
+            <li>Names the misconceptions. The line that predicts your wrong move before you make it comes from watching students make exactly that move.</li>
+            <li>Reads every page in a browser, in both themes, before it ships. Most defects here are visual, and only a person looking at the screen catches those.</li>
+            <li>Signs off. Nothing goes live unreviewed.</li>
+          </ul>
+        </div>
+        <div class="split-col">
+          <h3>The AI</h3>
+          <ul>
+            <li>Writes the code: page structure, styling, the graphing and simulation canvases, the Reference Center drawer, the progress logic.</li>
+            <li>Drafts prose against a written voice contract, then gets edited.</li>
+            <li>Does the tedious sweeps that people do badly: retrofitting a token across a thousand lines, auditing every glossary link, finding the canvas that quietly stopped drawing.</li>
+            <li>Works under constraints written to catch the specific ways these models fail: inventing plausible-looking physics, over-building a simple thing, silently "improving" code nobody asked it to touch.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stack stack--after-split">
+        <p>The honest summary is the same as the chemistry book's: the AI is why this exists at all, and it also introduced a fair share of the defects listed below. Both are true, and the history at the bottom of this page is deliberately unflattering about it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">03</span><h2>The rules it is held to</h2></div>
+      <p>Shared with the chemistry book, because they were learned the same way: each one was broken at least once and the result was worse than the rule.</p>
+
+      <ul class="rules">
+        <li><b>Verify all physics. Never trust memory.</b> Any number that reaches a student page is checked, not recalled. A confident, wrong, nicely formatted physics claim is the worst thing this project could produce.</li>
+        <li><b>Commit before reveal.</b> No widget shows its answer to a student who has not answered. Every simulation asks for a prediction first, and it stays locked until you commit one.</li>
+        <li><b>Wrong-answer feedback teaches or it does not ship.</b> "Incorrect, review the section above" is banned. Feedback has to name why that particular wrong answer was tempting.</li>
+        <li><b>Honest beats pretty.</b> If a diagram cannot be made correct at the level shown, the claim gets simplified rather than fudged.</li>
+        <li><b>Explain the concept before naming it.</b> Terms are defined in plain English first, then labelled. Defined terms carry a dotted underline and a hover definition.</li>
+        <li><b>Render before declaring it done.</b> Open it in a browser, in both themes, at both widths, and look at it. A surprising number of defects are found only by somebody finally doing this.</li>
+        <li><b>No build step.</b> Static HTML, CSS and JavaScript, no framework and no bundler, so it will still open in a browser in ten years.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">04</span><h2>What's underneath</h2></div>
+      <div class="stack">
+        <p>A deliberately small stack. The chemistry book's runtime is around 4,500 lines; this one is around 350. That is a choice, not an unfinished state: this book needs graphing canvases and a reference drawer, and it does not need chemistry's widget framework, so it does not carry it.</p>
+        <p>Four files do the work. <code>tokens.css</code> holds the cobalt and electric-blue theme, the type scale and the diagram geometry. <code>components.css</code> holds the layout primitives, figure tiers and mathematical typography. <code>core.js</code> runs the dynamic table of contents, the reveal observer and the commit-before-reveal gates. <code>reference-center.js</code> is the slide-out drawer: Level 1 equations, physical constants, a six-pattern graphing and linearization matrix, and a scientific calculator, available from every page.</p>
+        <p>Since 20 September 2026 every page here is checked automatically before any deploy: each lesson is requested along with every script it loads, and each is opened in a real browser to confirm it raises no errors and renders no stray markup. Before that date nothing checked this book at all, and it could have broken without anyone finding out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">05</span><h2>What it still gets wrong</h2></div>
+      <div class="stack">
+        <p>Listed because a colophon that only says flattering things is not worth reading.</p>
+      </div>
+      <ul class="gap-list">
+        <li><b>It covers Levels 1 and 2 so far.</b> Eight lessons and two reviews. The dashboard describes a course covering mechanics, energy, fields and waves; Levels 3 through 5 are in active development.</li>
+        <li><b>No spaced repetition.</b> The chemistry book schedules your review for you. This one does not. You get retrieval practice inside a lesson, and then it is on you to come back.</li>
+        <li><b>No print or export path for lessons.</b> The review prints properly, on purpose. The interactive lessons do not.</li>
+        <li><s><b>The dashboard's lesson list is hand-maintained.</b></s> <b>Resolved 27 September 2026.</b> The dashboard now renders directly from the curriculum manifest (<code>lessons.json</code>) at runtime, so lessons populate and update automatically without markup duplication.</li>
+        <li><b>Nobody has taught a full cycle with it yet.</b> The chemistry book has been through real classes and carries the scars. This one has been through review cycles and a request for teacher feedback. Expect the pacing to be wrong in places.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">06</span><h2>Version history</h2></div>
+      <div class="stack">
+        <p>Every student-visible change, dated, newest first.</p>
+      </div>
+
+      <div class="ver">
+        <span class="date">8 November 2026</span>
+        <h3>Teacher materials no longer posted</h3>
+        <ul>
+          <li><b>Reference files.</b> The Mission Logbooks and other reference files are no longer posted on this site. They stay with the teachers who wrote them. The dashboard's staging note no longer names a folder.</li>
+        </ul>
+      </div>
+      <div class="ver">
+        <span class="date">28 October 2026</span>
+        <h3>One name for the book</h3>
+        <ul>
+          <li><b>SAS General Physics.</b> The book now uses one name everywhere: the dashboard heading, every lesson's tab title and this page, matching SAS General Chemistry and SAS General Biology. Level and mission names are unchanged.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">23 October 2026</span>
+        <h3>All thirteen simulations rebuilt</h3>
+        <ul>
+          <li><b>A question, a prediction, then the sim.</b> Each simulation now opens with the question it answers. You commit a prediction before the controls and the readings unlock.</li>
+          <li><b>Try this and Record.</b> Each simulation has numbered steps that say what to change and what to look for. A Record button saves a row of readings, and a question after the sim asks you to compare two recorded rows.</li>
+          <li><b>Pause and reduced motion.</b> Every moving simulation has a Pause button. If your device asks for less motion, it starts paused and offers a Step button.</li>
+          <li><b>Models fixed.</b> Friction now slows a moving cart that is pushed less than it is held back. A sliding block slows down when you lower the ramp. The force collider shows a force only while the bumpers touch, and it keeps the momentum it started with. One value of g (9.8 N/kg) is used in every sim and every checkpoint.</li>
+          <li><b>Changed.</b> The Level 1 Boss Challenge is now Projectile Precision, and its answer is printed after each launch. The acceleration-angle graph in the ramp sim is part of the Enrichment view. The rocket burn-off mode in the acceleration rig is gone.</li>
+        </ul>
+      </div>
+      <div class="ver">
+        <span class="date">22 October 2026</span>
+        <h3>Plainer words, new checks and optional depth</h3>
+        <ul>
+          <li><b>Every lesson opens with a question.</b> Each lesson has a new opening title and a short plain statement of what you will be able to do.</li>
+          <li><b>Feedback tells you why.</b> Each answer choice now has its own feedback, and the correct answer is no longer always in the same place.</li>
+          <li><b>Optional depth is marked.</b> Material beyond the core, such as two-dimensional launches, forces at angles and the trigonometry of ramps, sits in dashed boxes tagged Enrichment. The core lesson works without it.</li>
+          <li><b>New in the core.</b> Lesson 1-3 now stays in one dimension. Lesson 2-3 teaches conservation of momentum. Lesson 2-4 describes a block on a ramp in words.</li>
+          <li><b>Reviews start with quick checks.</b> Both review pages open with questions the page marks for you.</li>
+          <li><b>Key terms.</b> Level 2 lessons now have glossary terms you can tap for a definition.</li>
+        </ul>
+      </div>
+      <div class="ver">
+        <span class="date">22 October 2026</span>
+        <h3>One set of parts for every lesson</h3>
+        <ul>
+          <li><b>Same look as the other books.</b> Every physics page now uses the same page parts as the chemistry and biology books: the same top bar, headings, question boxes and buttons, in light and dark mode.</li>
+          <li><b>Questions open after you answer.</b> Each checkpoint now shows its explanation only after you pick an answer. Fill-in blanks and the scoring guide wait until you have tried.</li>
+          <li><b>Lesson 1-3 fixed.</b> The theme button, the contents menu, the checkpoint explanations, the fill-in blanks and the Continue buttons did not work on this page. They work now.</li>
+          <li><b>Phone width.</b> Pages fit a 360 pixel screen with no sideways scrolling.</li>
+        </ul>
+      </div>
+      <div class="ver">
+        <span class="date">8 October 2026</span>
+        <h3>Readability and theme fixes</h3>
+        <ul>
+          <li><b>Light and dark mode.</b> The page colour now follows the book's own theme switch, not your computer's appearance setting.</li>
+          <li><b>Larger reading text.</b> Lesson text is now 20px, and cards and text boxes stay inside their columns.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">7 October 2026</span>
+        <h3>Universal Review Standardization &middot; Theme Synchronization</h3>
+        <ul>
+          <li><b>Review terminology standardized.</b> Conformed all Level 1 and Level 2 Solo Trial review materials to universal "Review" nomenclature across the course index, navigation bars, manifests, and printable headers.</li>
+          <li><b>Universal theme persistence.</b> Synchronized theme storage keys with the Science Practice App ecosystem and added synchronous anti-flash initialization across all lesson pages.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">5 October 2026</span>
+        <h3>Level 2 Solo Trial Review &middot; Level 2 Complete</h3>
+        <ul>
+          <li><b>Review deployed.</b> Shipped comprehensive Level 2 Solo Trial Review (<code>2-review_packet.html</code>) covering translational equilibrium, Newton's laws, friction models, inclined planes, and coupled Atwood systems.</li>
+          <li><b>Formula Digest &amp; Remediation Practice.</b> Added 7-row dynamics formula synthesis table and 5 tiered remediation practice problems with toggleable worked solutions and printable worksheet export.</li>
+          <li><b>Level 2 (Force Frontier) Completed.</b> All five interactive textbook lessons (2-1 through 2-5) and summative review fully deployed with interactive simulations and rigorous physics models.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">5 October 2026</span>
+        <h3>Lesson 2-5: Coupled Systems &amp; Atwood Machines</h3>
+        <ul>
+          <li><b>Lesson 2-5 deployed.</b> Added whole-system acceleration method (&Sigma;<em>F</em><sub>ext</sub> / <em>m</em><sub>total</sub>), internal cord tension isolation, classical vertical Atwood derivation, and cable safety engineering.</li>
+          <li><b>Coupled Systems &amp; Atwood Machine Simulator.</b> Dual-mode interactive simulation engine (Vertical Atwood vs. Half-Atwood Table Rig) with surface friction, real-time velocity curves, cord tension vectors, and 4 guided inquiry missions.</li>
+          <li><b>Concept Checkpoints &amp; Crane Hoist ECR.</b> Gated commit-before-reveal physical predictions and skyscraper construction crane hoist design ECR task.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">5 October 2026</span>
+        <h3>Lesson 2-4: Friction Models &amp; Inclined Planes</h3>
+        <ul>
+          <li><b>Lesson 2-4 deployed.</b> Added static and kinetic friction models, surface contact asperities, tilted reference frames, and critical slip angle derivation (tan&theta;<sub>c</sub> = &mu;<sub>s</sub>).</li>
+          <li><b>Inclined Plane Friction Sandbox.</b> Interactive dual-canvas simulator with variable ramp angle, friction levers, material presets, real-time acceleration curves, and 4 guided inquiry missions.</li>
+          <li><b>Concept Checkpoints &amp; Escape Ramp ECR.</b> Gated commit-before-reveal physical predictions and highway emergency escape ramp design ECR task.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">5 October 2026</span>
+        <h3>Lesson 2-3: Newton's Third Law &amp; Action-Reaction</h3>
+        <ul>
+          <li><b>Lesson 2-3 deployed.</b> Added Newton's Third Law (<b>F</b><sub>A on B</sub> = &minus;<b>F</b><sub>B on A</sub>), four invariant pair criteria, resolution of the horse-and-cart paradox, and vacuum rocket propulsion.</li>
+          <li><b>Dual-Sensor Force Collider.</b> Interactive dual-canvas simulator featuring colliding carts, digital force sensors, real-time <em>F</em>-<em>t</em> graph plotting, and 4 guided inquiry missions.</li>
+          <li><b>Concept Checkpoints &amp; Space Tug ECR.</b> Gated commit-before-reveal physical predictions and orbital docking ECR performance task.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">5 October 2026</span>
+        <h3>Lesson 2-2: Newton's Second Law &amp; Acceleration</h3>
+        <ul>
+          <li><b>Lesson 2-2 deployed.</b> Added Newton's Second Law (&Sigma;<em>F</em> = <em>ma</em>), direct and inverse proportional reasoning, component equations in 2D (&Sigma;<em>F</em><sub>x</sub> = <em>ma</em><sub>x</sub>, &Sigma;<em>F</em><sub>y</sub> = <em>ma</em><sub>y</sub>), and apparent elevator weight.</li>
+          <li><b>Dynamic Acceleration Rig.</b> Interactive dual-canvas simulator featuring a 100-meter test track, real-time <em>v</em>-<em>t</em> graph plotting, mass propellant burn-off mode, and 4 guided inquiry missions.</li>
+          <li><b>Concept Checkpoints &amp; Mars Rover ECR.</b> Gated commit-before-reveal physical predictions and emergency braking ECR performance task.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">5 October 2026</span>
+        <h3>Level 2 launch &middot; Lesson 2-1: Newton's First Law &amp; Inertia &middot; Voice pass</h3>
+        <ul>
+          <li><b>Lesson 2-1 deployed.</b> Initiated Unit 2 (Dynamics &amp; Forces) with Newton's First Law, inertia, contact vs. field forces, and translational equilibrium (&Sigma;<em>F</em> = 0).</li>
+          <li><b>Interactive 2D Force Vector Balancer.</b> Live canvas simulator for balancing orthogonal and angled force vectors, with real-time net force summation, equilibrium telemetry, and 4 guided inquiry missions.</li>
+          <li><b>FBD Force Selector &amp; Misconception Buster.</b> Interactive tool training authentic Free Body Diagram conventions and dispelling the &ldquo;forward force of motion&rdquo; fallacy.</li>
+          <li><b>Reference Drawer &amp; Glossary updates.</b> Added Level 2 Dynamics formulas to the Reference Center drawer and expanded the glossary with core force definitions.</li>
+          <li><b>Simplified Technical English standards.</b> Standardized all Level 1 and Level 2 copy to strict sentence-length ceilings (under 20 words for prompts, under 25 words for physical explanations) with zero em-dashes.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">27 September 2026</span>
+        <h3>Responsive mobile layout pass &amp; dynamic manifest loading</h3>
+        <ul>
+          <li><b>Dynamic dashboard manifest.</b> The course homepage now loads and renders directly from <code>lessons.json</code> at runtime, automatically grouping lessons by unit, highlighting active units, and preventing out-of-step link errors.</li>
+          <li>Fixed horizontal page scrolling on phones: the dashboard, colophon, and all lessons now scale cleanly down to 420px viewports without clipping.</li>
+          <li>Top navigation bar now collapses to compact icon buttons on smaller screens, keeping all tools and the reference drawer accessible on mobile.</li>
+          <li>Added automated viewport smoke checks to ensure no page overflows on mobile devices.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">20 September 2026</span>
+        <h3>Brought under automated checks, and this page</h3>
+        <ul>
+          <li>Added this colophon.</li>
+          <li>Every lesson is now requested and opened in a browser before any deploy, alongside the chemistry book. Until this date, nothing checked these pages automatically.</li>
+          <li>Added checks that every lesson in the manifest exists and is reachable from the dashboard, so a lesson cannot ship that no student can open.</li>
+        </ul>
+      </div>
+
+      <div class="ver">
+        <span class="date">19 September 2026</span>
+        <h3>Level 1 launch</h3>
+        <ul>
+          <li><b>Foundations.</b> Cobalt and electric-blue theme, layout primitives, figure tiers and mathematical typography. Core runtime with a dynamic table of contents, a reveal observer and commit-before-reveal gates. Kinematics terminology tooltips. A slide-out Reference Center with Level 1 equations, physical constants, a six-pattern graphing and linearization matrix, and a scientific calculator.</li>
+          <li><b>Lesson 1-1, Constant Velocity and 1D Motion.</b> Mars rover hook set at Elysium Planitia, a vector direction builder, a metres-per-second to kilometres-per-hour converter, and a rover navigator simulation with a live coordinate track and a real-time position-time graph.</li>
+          <li><b>Lesson 1-2, Motion Graphs and Uniform Acceleration.</b> Sonic ranger hook, slope and curvature analysis on position-time graphs, slope and area on velocity-time graphs, and a triple-graph studio with synchronized position-time, velocity-time and acceleration-time plots across five mission presets.</li>
+          <li><b>Lesson 1-3, Kinematics Equations and 2D Projectiles.</b> The simultaneous drop versus horizontal fire puzzle, the three kinematics equations with a five-variable ledger, an equation selector and solver, a strobe experiment canvas for coordinate independence, and a Level 1 boss challenge that will not animate the flight until you have committed to a calculation.</li>
+          <li><b>Solo Trial review and retake.</b> A four-pillar synthesis digest and five tiered practice problems with worked solutions you can toggle, formatted to print as a student worksheet.</li>
+        </ul>
+      </div>
+
+      <div class="footnote">
+        <p>Engineering detail for every change, including the parts students never see, is kept in the project's development changelog.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 -->
+  <section>
+    <div class="wrap narrow">
+      <div class="sec-head"><span class="num">07</span><h2>Credit and licence</h2></div>
+      <div class="stack">
+        <p>Written by David Knuffke for Singapore American School, and released under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a> licence. Take it, adapt it, teach with it. Credit the source, do not sell it, and share what you make on the same terms.</p>
+        <p>Part of <a href="/">Science Practice Partner</a>, alongside the <a href="/chem/">General Chemistry book</a> and a set of free interactive simulations.</p>
+        <p>The code behind this book, the main app and its simulations is free on GitHub: <a href="https://github.com/mrknuffke/Science-Practice-App-Snapshot-" target="_blank" rel="noopener noreferrer">Science Practice App snapshot</a>. The code is MIT licensed, so you can reuse it anywhere. The teaching content keeps the licence above.</p>
+        <p>Found something wrong? Corrections are welcome and genuinely useful, particularly on the physics itself.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/book.js"></script>
+  <script src="../textbook/core.js"></script>
+</body>
+</html>

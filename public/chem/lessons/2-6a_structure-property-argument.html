@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="2-6a" data-book="chem">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Structure &rarr; Property &rarr; Argument · Gen Chem 2-6a</title>
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+  <!-- HERO -->
+<main>
+
+  <section id="s-hero" class="hero" data-toc="Opening">
+    <div>
+      <div class="label">Lesson 2-6a &middot; Structure &rarr; Property &rarr; Argument</div>
+      <h1>Explain the macro using the <span class="flip">micro</span>.</h1>
+      <p class="lede">Chemists explain a material with a chain of three ideas. A molecule's shape decides how closely it can pack against its neighbors. Packing sets the strength of the intermolecular forces (IMFs). Those forces set properties such as melting point and food texture. You communicate the chain with a five-part argument. Here you practice it on saturated and unsaturated fats.</p>
+      <div class="meta-strip">
+        <div class="meta-block">
+          <div class="k">Alignment</div>
+          <div class="v"><b>HS-PS2-6</b> Communicate scientific and technical information about why the molecular-level structure is important in the functioning of designed materials.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Objective</div>
+          <div class="v">You can contrast straight saturated chains with kinked unsaturated chains. You can link packing to London dispersion forces. You can write a five-part material design argument.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Scope</div>
+          <div class="v">Saturated and unsaturated fats, London dispersion forces, packing, and the five-part argument (feature, force, property, function, trade-off).</div>
+        </div>
+      </div>
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Molecular shape:</strong> Saturated fatty acids are straight hydrocarbon chains. Unsaturated fatty acids have double bonds that add rigid kinks.</li>
+              <li><strong>Packing:</strong> Straight saturated chains pack tightly and touch along their length. Kinked unsaturated chains cannot pack tightly.</li>
+              <li><strong>Forces and properties:</strong> Tighter packing gives stronger London dispersion forces (LDFs) and a higher melting point, so the fat is solid at room temperature.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Saturated vs. unsaturated packing</h4>
+            <svg viewBox="0 0 240 130" role="img" aria-label="Comparison of fatty acid packing: straight saturated chains pack tightly with dense LDF attractions, while kinked unsaturated chains leave gaps and experience weak LDFs.">
+              <!-- Saturated Group (Left) -->
+              <g fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+                <!-- 3 tightly packed zig-zag chains -->
+                <polyline points="16,30 26,24 36,30 46,24 56,30 66,24 76,30 86,24 96,30 106,24"/>
+                <polyline points="16,46 26,40 36,46 46,40 56,46 66,40 76,46 86,40 96,46 106,40"/>
+                <polyline points="16,62 26,56 36,62 46,56 56,62 66,56 76,62 86,56 96,62 106,56"/>
+              </g>
+              <!-- LDF dashed lines between saturated chains -->
+              <g stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="2 2" opacity="0.85">
+                <line x1="36" y1="30" x2="36" y2="40"/>
+                <line x1="56" y1="30" x2="56" y2="40"/>
+                <line x1="76" y1="30" x2="76" y2="40"/>
+                <line x1="96" y1="30" x2="96" y2="40"/>
+                <line x1="36" y1="46" x2="36" y2="56"/>
+                <line x1="56" y1="46" x2="56" y2="56"/>
+                <line x1="76" y1="46" x2="76" y2="56"/>
+                <line x1="96" y1="46" x2="96" y2="56"/>
+              </g>
+              <text x="61" y="86" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" fill="var(--ink)">Saturated (Straight)</text>
+              <text x="61" y="100" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" text-anchor="middle" fill="var(--accent)">Dense LDFs · Solid</text>
+
+              <!-- Divider -->
+              <line x1="120" y1="18" x2="120" y2="108" stroke="var(--hair-soft)" stroke-dasharray="3 3"/>
+
+              <!-- Unsaturated Group (Right, kinked) -->
+              <g fill="none" stroke="var(--ink)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+                <!-- Chain 1 with cis-double bond kink -->
+                <polyline points="134,30 144,24 154,30 164,24 172,30 182,24 192,42 200,56 210,50 220,62"/>
+                <!-- Chain 2 with cis-double bond kink pushed away -->
+                <polyline points="134,58 144,52 154,58 164,52 174,58 184,52 196,68 206,82 216,76 226,88"/>
+              </g>
+              <!-- Sparse LDF lines -->
+              <g stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="2 2" opacity="0.5">
+                <line x1="144" y1="24" x2="144" y2="52"/>
+                <line x1="164" y1="24" x2="164" y2="52"/>
+              </g>
+              <text x="180" y="98" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" font-weight="700" text-anchor="middle" fill="var(--ink)">Unsaturated (Kinked)</text>
+              <text x="180" y="112" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" text-anchor="middle" fill="var(--ink-mute)">Gaps · Weak LDFs · Liquid</text>
+            </svg>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> Relate single and double bonds to the shape of a chain.</li>
+              <li><input type="checkbox" disabled> Link packing to the total strength of the LDFs.</li>
+              <li><input type="checkbox" disabled> Write a claim that connects structure to a physical property.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+    </div>
+  </section>
+
+  <!-- 01 SATURATED VS UNSATURATED -->
+  <section id="s-structure" data-toc="Fat structures">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">01</span><span class="label">Microscopic shape</span></div>
+      <h2>Straight lines and double-bond kinks.</h2>
+      <p>Fats and oils are made of long hydrocarbon chains called fatty acids. Butter or ghee is a solid and olive oil is a liquid. The difference comes from the geometry of the carbon chain.</p>
+      
+      <p>A <strong class="term">saturated fat</strong> has carbon chains with only single bonds. Every carbon holds as many hydrogens as it can, so the chain is "saturated" with hydrogen. Single bonds rotate freely and form a zig-zag, so the chain is <strong>straight and linear</strong>.</p>
+      
+      <p>An <strong class="term">unsaturated fat</strong> has one or more double bonds between carbon atoms. A rigid double bond locks the chain into a bend. This makes a permanent <strong>kink</strong> in the middle of the chain.</p>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Thinking the double bond weakens the molecule. It does not. The bond inside the molecule is fine. The kink only changes the shape, and the shape decides how well the chains pack.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 02 PACKING, IMFS & MELTING POINT -->
+  <section id="s-imfs" data-toc="Packing and forces">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">02</span><span class="label">Intermolecular forces</span></div>
+      <h2>Tighter packing makes stronger forces.</h2>
+      <p>How does shape change a melting point? A melting point reflects how tightly the molecules pack and how strong the <strong class="term">London dispersion forces</strong> (LDFs) are between the nonpolar chains.</p>
+      
+      <div class="callout">
+        <div class="label">The Velcro analogy</div>
+        <p>Think of London dispersion forces as Velcro. Two flat, straight strips press together and grip strongly. Two crumpled strips barely touch and grip weakly.</p>
+      </div>
+
+      <p>Saturated fat chains are straight, so they pack tightly side by side. That maximizes the contact between molecules. LDFs are strongest at close contact, so they hold the molecules in a solid grid at room temperature.</p>
+      
+      <p>Unsaturated fat chains have rigid kinks, so they cannot pack tightly. The kinks push neighbors apart and leave gaps. The larger distance weakens the LDFs. Weak forces take little energy to overcome, so unsaturated fats melt at lower temperatures and are liquids at room temperature.</p>
+
+      <div class="callout">
+        <div class="label">On the grill</div>
+        <p>Ghee on a hot griddle shows this. It melts and flows into the folds of the dough. As it cools, it re-solidifies into thin films. Those films separate the layers and make the final product flake apart. Step through the three scales below to see why.</p>
+      </div>
+
+      <div class="figure figure--full" data-motion="step" data-step-count="3" data-step-labels="1. Macro: Hot Grill|2. Meso: Dough Stratification|3. Particulate: Fatty Acid LDFs">
+        <!-- Step 1: Macro -->
+        <div data-step="1">
+          <svg viewBox="0 0 540 220" role="img" aria-label="Macro scale: Ghee melting on a hot grill and flowing into layered paratha flatbread dough.">
+            <defs>
+              <linearGradient id="grillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="var(--paper-3)"/>
+                <stop offset="100%" stop-color="var(--card)"/>
+              </linearGradient>
+            </defs>
+            <!-- Heavy cast-iron grill pan -->
+            <path d="M 60,165 Q 270,185 480,165 L 485,175 Q 270,195 55,175 Z" fill="var(--ink)" />
+            <path d="M 60,168 Q 20,158 5,148" stroke="var(--ink)" stroke-width="6" stroke-linecap="round" fill="none" />
+            <!-- Hot pan surface indicator -->
+            <text x="270" y="208" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Hot Cooking Surface (~180°C)</text>
+
+            <!-- Dough Flatbread -->
+            <ellipse cx="270" cy="130" rx="170" ry="34" fill="url(#grillGrad)" stroke="var(--ink)" stroke-width="2"/>
+            <!-- Layer folds inside dough -->
+            <path d="M 140,126 Q 270,140 400,126" fill="none" stroke="var(--ink-soft)" stroke-dasharray="4 4" stroke-width="1.5"/>
+            <path d="M 160,136 Q 270,148 380,136" fill="none" stroke="var(--ink-soft)" stroke-dasharray="4 4" stroke-width="1.5"/>
+
+            <!-- Melting ghee pool -->
+            <ellipse cx="270" cy="120" rx="42" ry="12" fill="color-mix(in srgb, var(--accent) 18%, var(--card))" stroke="var(--accent)" stroke-width="2"/>
+            <text x="270" y="124" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">Molten Ghee</text>
+            
+            <!-- Flow arrows into dough folds -->
+            <path d="M 220,123 Q 190,128 170,132" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#m-arr)"/>
+            <path d="M 320,123 Q 350,128 370,132" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#m-arr)"/>
+            <defs>
+              <marker id="m-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                <polygon points="0,0 6,3 0,6" fill="var(--accent)"/>
+              </marker>
+            </defs>
+
+            <!-- Callout pill top -->
+            <rect x="155" y="20" width="230" height="30" rx="4" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+            <text x="270" y="40" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink)" font-weight="600" text-anchor="middle">Macro Scale: Phase Transition</text>
+          </svg>
+          <div class="diagram-cap"><strong>Macro Scale:</strong> On the hot griddle (~180°C), solid fat rapidly absorbs thermal energy and melts into a low-viscosity liquid, flowing into the dough folds.</div>
+        </div>
+
+        <!-- Step 2: Meso -->
+        <div data-step="2">
+          <svg viewBox="0 0 540 220" role="img" aria-label="Meso scale: Alternating microscopic layers of wheat dough and solid ghee barrier films.">
+            <!-- Title Header -->
+            <rect x="135" y="16" width="270" height="28" rx="4" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+            <text x="270" y="35" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink)" font-weight="600" text-anchor="middle">Meso Scale: Dough &amp; Lipid Stratification</text>
+
+            <!-- Top Dough Sheet -->
+            <rect x="70" y="56" width="400" height="26" rx="4" fill="var(--card)" stroke="var(--hair)" stroke-width="1.4"/>
+            <text x="270" y="73" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" text-anchor="middle">Flour and Water Dough Sheet</text>
+
+            <!-- Re-solidified Ghee Film 1 -->
+            <rect x="70" y="88" width="400" height="14" rx="2" fill="color-mix(in srgb, var(--accent) 15%, var(--card))" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="4 2"/>
+            <text x="270" y="99" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">Re-solidified Ghee Barrier Film (&lt; 35°C)</text>
+
+            <!-- Middle Dough Sheet -->
+            <rect x="70" y="108" width="400" height="26" rx="4" fill="var(--card)" stroke="var(--hair)" stroke-width="1.4"/>
+            <text x="270" y="125" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" text-anchor="middle">Flour and Water Dough Sheet</text>
+
+            <!-- Re-solidified Ghee Film 2 -->
+            <rect x="70" y="140" width="400" height="14" rx="2" fill="color-mix(in srgb, var(--accent) 15%, var(--card))" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="4 2"/>
+            <text x="270" y="151" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">Solid Lipid Barrier Prevents Sheet Fusion</text>
+
+            <!-- Bottom Dough Sheet -->
+            <rect x="70" y="160" width="400" height="26" rx="4" fill="var(--card)" stroke="var(--hair)" stroke-width="1.4"/>
+            <text x="270" y="177" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" text-anchor="middle">Flour and Water Dough Sheet</text>
+
+            <!-- Left annotation label -->
+            <line x1="56" y1="56" x2="56" y2="186" stroke="var(--ink-soft)" stroke-width="1.5"/>
+            <text x="44" y="125" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle" transform="rotate(-90 44 125)">Laminated Layers</text>
+          </svg>
+          <div class="diagram-cap"><strong>Meso Scale:</strong> As dough cools below 35°C, the saturated fat re-solidifies into continuous lipid films. These physical barriers keep the dough sheets separated so the baked flatbread flakes into crisp, discrete layers.</div>
+        </div>
+
+        <!-- Step 3: Particulate -->
+        <div data-step="3">
+          <svg viewBox="0 0 540 220" role="img" aria-label="Particulate scale: Straight saturated fatty acid chains packing closely with parallel London dispersion force bridges.">
+            <!-- Title Header -->
+            <rect x="120" y="14" width="300" height="28" rx="4" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+            <text x="270" y="33" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink)" font-weight="600" text-anchor="middle">Particulate Scale: Saturated Fatty Acid Chains</text>
+
+            <!-- Hydrocarbon Chains (Straight Palmitic Acid) -->
+            <!-- Chain 1 -->
+            <polyline points="60,65 90,52 120,65 150,52 180,65 210,52 240,65 270,52 300,65 330,52 360,65 390,52 420,65 450,52 480,65" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Chain 2 -->
+            <polyline points="60,115 90,102 120,115 150,102 180,115 210,102 240,115 270,102 300,115 330,102 360,115 390,102 420,115 450,102 480,115" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Chain 3 -->
+            <polyline points="60,165 90,152 120,165 150,152 180,165 210,152 240,165 270,152 300,165 330,152 360,165 390,152 420,165 450,152 480,165" fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <!-- Dense LDF Bridges between chains -->
+            <g stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="3 3">
+              <!-- Between 1 and 2 -->
+              <line x1="90" y1="56" x2="90" y2="98"/>
+              <line x1="150" y1="56" x2="150" y2="98"/>
+              <line x1="210" y1="56" x2="210" y2="98"/>
+              <line x1="270" y1="56" x2="270" y2="98"/>
+              <line x1="330" y1="56" x2="330" y2="98"/>
+              <line x1="390" y1="56" x2="390" y2="98"/>
+              <line x1="450" y1="56" x2="450" y2="98"/>
+
+              <!-- Between 2 and 3 -->
+              <line x1="120" y1="119" x2="120" y2="161"/>
+              <line x1="180" y1="119" x2="180" y2="161"/>
+              <line x1="240" y1="119" x2="240" y2="161"/>
+              <line x1="300" y1="119" x2="300" y2="161"/>
+              <line x1="360" y1="119" x2="360" y2="161"/>
+              <line x1="420" y1="119" x2="420" y2="161"/>
+              <line x1="480" y1="119" x2="480" y2="161"/>
+            </g>
+
+            <!-- LDF callout badge -->
+            <rect x="185" y="188" width="170" height="24" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="1.2"/>
+            <text x="270" y="204" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">Dense Cumulative LDFs</text>
+          </svg>
+          <div class="diagram-cap"><strong>Particulate Scale:</strong> Straight saturated hydrocarbon chains pack with maximum surface area contact. Trillions of parallel London dispersion forces sum together into a strong collective attraction, holding the lipid in a solid crystalline lattice at room temperature.</div>
+        </div>
+      </div>
+      <p class="diagram-cap">melt and flow (pan) &rarr; thin films (layers) &rarr; tightly packed straight chains · kinked chains pack loosely, so no solid film forms and no layers flake</p>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Thinking a longer chain always wins. Stearic acid and oleic acid both have 18 carbons. The shape, not the size, changes how well they pack.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 03 THE DESIGNED FOOD ARGUMENT -->
+  <section id="s-argument" data-toc="Scientific arguments">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03</span><span class="label">Scientific writing</span></div>
+      <h2>Feature &rarr; IMF &rarr; Property &rarr; Function &rarr; Trade-off.</h2>
+      <p>Chemists do not just list facts. They build a chain of claims. When you design a material, such as swapping a cooking ingredient, follow a five-part argument:</p>
+      
+      <ol class="arg-steps">
+        <li class="arg-step">
+          <h4><span class="arg-num">1</span> Structural feature</h4>
+          <p>Name the shape of the molecules, such as straight saturated chains or kinked unsaturated chains.</p>
+        </li>
+        <li class="arg-step">
+          <h4><span class="arg-num">2</span> IMF strength</h4>
+          <p>Link the shape to packing and force strength. Tight packing gives stronger London dispersion forces.</p>
+        </li>
+        <li class="arg-step">
+          <h4><span class="arg-num">3</span> Macroscopic property</h4>
+          <p>Explain how force strength sets the physical state. Stronger forces take more thermal energy to break, so the fat stays solid at room temperature.</p>
+        </li>
+        <li class="arg-step">
+          <h4><span class="arg-num">4</span> Material function</h4>
+          <p>Connect the property to a use. Solid fats trap air and support dough, which makes flaky pastry.</p>
+        </li>
+        <li class="arg-step">
+          <h4><span class="arg-num">5</span> <strong class="term" data-term="design-trade-off">Design trade-off</strong></h4>
+          <p>Judge what happens when you swap an ingredient. A healthier structure can weaken the physical performance.</p>
+        </li>
+      </ol>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Skipping the packing step. A claim that jumps from "kinked" straight to "liquid" is missing the link. The kink stops tight packing, which weakens the forces.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 04 SIGNATURE INTERACTIVE: EXPLORER & BUILDER -->
+  <section id="s-explorer" data-toc="Interactive explorer">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04</span><span class="label">Chain simulator and argument builder</span></div>
+      <h2>Heat the chains. Build the argument.</h2>
+      <p>Compare two kinds of chain side by side. One temperature slider heats both chambers, so you can see how packing sets a melting or boiling point. Below the simulation, choose the statements that build a complete scientific argument.</p>
+
+      <div class="sim-box" data-sim="chains">
+        <div class="label">Simulation</div>
+        <h4>Why do straight chains stay solid to a higher temperature than kinked chains?</h4>
+        <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: the left chamber holds straight saturated fat chains and the right chamber holds kinked unsaturated fat chains. At 20&deg;C, which chamber is liquid?<\/p>",
+  "options": [
+    {
+      "label": "The kinked chains on the right",
+      "correct": true,
+      "feedback": "Kinks stop the chains from packing, so the dispersion forces are weak. Oleic acid melts at 13&deg;C, which is below 20&deg;C, so the kinked chains are liquid."
+    },
+    {
+      "label": "The straight chains on the left",
+      "correct": false,
+      "feedback": "Straight chains look smooth and slippery, which makes them tempting. But they pack tightly, and stearic acid does not melt until 69&deg;C. At 20&deg;C they are solid."
+    },
+    {
+      "label": "Both chambers are liquid at 20&deg;C",
+      "correct": false,
+      "feedback": "Both chains have 18 carbons, so the temperature can feel alike for them. But the shape changes the packing and the melting point. 69&deg;C is far above 20&deg;C."
+    }
+  ],
+  "reveal": "<p>Now check it. Read both chambers at 20&deg;C, then heat them.<\/p>"
+}
+</script>
+</div>
+        <div class="sim-stage" data-ratio="pair"><canvas aria-label="Two chambers of molecule chains. Choose a path and set the temperature."></canvas></div>
+        <div class="sim-controls" role="group" aria-label="Choose a path and set the temperature">
+          <button type="button" class="chip" aria-pressed="true" data-path="lipids">Fats: saturated and unsaturated</button>
+          <button type="button" class="chip" aria-pressed="false" data-path="alkanes">Alkanes: propane and octane</button>
+          <label class="slider-row">Temperature <output>20 °C</output>
+            <input type="range" id="tempInput" min="0" max="100" step="1" value="20" data-unit="°C">
+          </label>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="temp"><span class="readout-label">Temperature</span><span class="readout-value">20°C</span></div>
+          <div class="readout" data-readout="left"><span class="readout-label">Saturated fat</span><span class="readout-value">Solid</span></div>
+          <div class="readout" data-readout="right"><span class="readout-label">Unsaturated fat</span><span class="readout-value">Liquid</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Predict to start</span>
+        <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="ink-mute"></span>Carbon atom (hydrogens are not drawn)</li>
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Carbon atoms of the double bond</li>
+          <li><span class="key" data-shape="dash" data-token="accent"></span>London dispersion force between chains</li>
+        </ul>
+        <ol class="try-this">
+          <li>Load fats at 20°C, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="lipids:20">Load fats, 20°C</button> <b>Look for:</b> the kinked chains slide as a liquid, while the straight chains sit packed in a grid.</li>
+          <li>Load fats at 45°C, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="lipids:45">Load fats, 45°C</button> <b>Look for:</b> the kinked chains are still liquid, and the straight chains are still solid.</li>
+          <li>Load fats at 75°C, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="lipids:75">Load fats, 75°C</button> <b>Look for:</b> both chambers are liquid now, because 75°C is above 69°C.</li>
+          <li>Load alkanes at 20°C, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="alkanes:20">Load alkanes, 20°C</button> <b>Look for:</b> short propane is a gas, and long octane is a liquid.</li>
+        </ol>
+      </div>
+
+      <h3>Use your evidence</h3>
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows for fats at 20&deg;C, 45&deg;C and 75&deg;C. Which statement fits all three rows?<\/p>",
+  "options": [
+    {
+      "label": "Heat changes the shape of the chains, so the kinks melt away",
+      "correct": false,
+      "feedback": "The chains keep their shape in every row. Only their motion and spacing change. Heat loosens the grid, and it does not straighten a kink."
+    },
+    {
+      "label": "Both fats melt at the same temperature, but the kinks hide it",
+      "correct": false,
+      "feedback": "Your rows show the chambers changing at different temperatures. The kinked fat is liquid by 20°C, and the straight fat is solid until 45°C."
+    },
+    {
+      "label": "The kinked fat is liquid at a lower temperature than the straight fat",
+      "correct": true,
+      "feedback": "The kinked fat is already liquid at 20°C. The straight fat stays solid at 20°C and 45°C and melts only by 75°C. Weaker forces need less heat to overcome."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Weaker dispersion forces between kinked chains take less thermal energy to overcome.</p>"
+}
+</script>
+</div>
+
+      <div class="sim-box" data-tool="argument">
+        <div class="label">Interactive tool</div>
+        <h4>Which statements build a complete argument?</h4>
+        <p class="hint">This argument follows the path you chose in the simulation: <b id="argPath">fats</b>. <span class="status-pill" id="argStatus" data-state="neutral">Pending</span></p>
+        <div class="argument-steps">
+          <div class="argument-step">
+            <label class="step-header" for="step1">1. Structural feature</label>
+            <select class="step-select" id="step1"></select>
+          </div>
+          <div class="argument-step">
+            <label class="step-header" for="step2">2. Packing and forces</label>
+            <select class="step-select" id="step2"></select>
+          </div>
+          <div class="argument-step">
+            <label class="step-header" for="step3">3. Macroscopic property</label>
+            <select class="step-select" id="step3"></select>
+          </div>
+          <div class="argument-step">
+            <label class="step-header" for="step4">4. Practical function</label>
+            <select class="step-select" id="step4"></select>
+          </div>
+          <div class="argument-step">
+            <label class="step-header" for="step5">5. Design trade-off</label>
+            <select class="step-select" id="step5"></select>
+          </div>
+        </div>
+        <div class="paragraph-output" id="paragraphOutput" aria-live="polite">
+          <p id="paragraphText">Select a statement for each step above to build your argument.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04b GHS HAZARD ARGUMENT & LIMITATIONS (PS2-6.1 / PS2-6.2 / Block 1.12) -->
+  <section id="s-ghs-hazard" data-toc="GHS hazard arguments">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04b</span><span class="label">Structure &rarr; property &rarr; GHS hazard</span></div>
+      <h2>Build a chemical safety argument from molecular structure.</h2>
+      <p>A hazard label follows from structure too. Build a four-layer argument that connects a chemical's structure to its GHS hazard pictogram. Then see what structure cannot tell you.</p>
+
+      <div class="sim-box" data-tool="ghs">
+        <div class="label">Interactive tool</div>
+        <h4>Which four statements connect structure to a hazard label?</h4>
+        <div class="sim-controls">
+          <label class="tool-field" for="ghsChemSelect"><span class="label">Chemical</span>
+            <select id="ghsChemSelect" class="form-select">
+              <option value="acetone">Acetone (C₃H₆O): flammable liquid</option>
+              <option value="naoh">Sodium hydroxide (NaOH): corrosive base</option>
+              <option value="co">Carbon monoxide (CO): toxic gas</option>
+            </select>
+          </label>
+        </div>
+        <div class="argument-steps">
+          <div class="argument-step">
+            <label class="step-header" for="ghsLayer1">Layer 1: Molecular structure</label>
+            <select class="step-select" id="ghsLayer1"></select>
+          </div>
+          <div class="argument-step">
+            <label class="step-header" for="ghsLayer2">Layer 2: Forces or bond type</label>
+            <select class="step-select" id="ghsLayer2"></select>
+          </div>
+          <div class="argument-step">
+            <label class="step-header" for="ghsLayer3">Layer 3: Physical property</label>
+            <select class="step-select" id="ghsLayer3"></select>
+          </div>
+          <div class="argument-step">
+            <label class="step-header" for="ghsLayer4">Layer 4: GHS hazard category</label>
+            <select class="step-select" id="ghsLayer4"></select>
+          </div>
+        </div>
+        <div class="sim-controls">
+          <button type="button" class="btn" id="checkGhsBtn">Check my argument</button>
+          <span class="status-pill" id="ghsPill" data-state="neutral" hidden></span>
+        </div>
+        <div class="paragraph-output" id="ghsParagraphOutput" aria-live="polite" hidden></div>
+      </div>
+
+      <div class="interactive">
+        <h3>What structure can and cannot predict</h3>
+        <p>A full scientific argument states its limits. Structure tells you the nature of a chemical. It does not tell you the situation it is used in.</p>
+        <div class="predict-grid">
+          <div class="predict-can">
+            <h4>Structure can predict</h4>
+            <ul>
+              <li>The physical state at room temperature (gas, liquid or solid)</li>
+              <li>Relative boiling points and vapor pressure</li>
+              <li>Solubility in water and in other polar solvents</li>
+              <li>The hazard category of the chemical itself (flammable, corrosive)</li>
+            </ul>
+          </div>
+          <div class="predict-cannot">
+            <h4>Structure cannot predict</h4>
+            <ul>
+              <li>The concentration of a solution (0.01 M or 12 M acid)</li>
+              <li>The quantity present (a drop or a 55-gallon drum)</li>
+              <li>The setting: ventilation, storage and handling</li>
+              <li>The chance of a spill or a human error</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 PREDICT FIRST -->
+  <section id="s-predict" data-toc="Check yourself">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">05</span><span class="label">Check yourself</span></div>
+      <h2>Predict the property trend.</h2>
+
+      <!-- Q1 -->
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<strong>1. Comparing IMF strengths:</strong> Stearic acid is a saturated fatty acid with a straight 18-carbon chain. Oleic acid is an unsaturated fatty acid with 18 carbons and a double-bond kink in the middle. Which compound has stronger intermolecular forces between its molecules?",
+  "options": [
+    {"label": "Oleic acid (unsaturated)", "correct": false, "feedback": "Oleic acid has the same 18 carbons, which can make it look equal or stronger. But the kink keeps its chains from lining up. Less contact means weaker dispersion forces."},
+    {"label": "Both are equal", "correct": false, "feedback": "Both chains have 18 carbons, which makes equal strength tempting. But shape matters. A straight chain touches its neighbors along its whole length. A kinked chain does not."},
+    {"label": "Stearic acid (saturated)", "correct": true, "feedback": "The straight chain packs tightly and touches its neighbors along its whole length. More contact means stronger London dispersion forces."}
+  ],
+  "reveal": "<h4>The answer: stearic acid (saturated)</h4>\n<p>Stearic acid molecules are straight, so they pack tightly side by side and touch along their length. That maximizes the London dispersion forces between them. The kink in oleic acid pushes molecules apart and weakens the LDFs.</p>"
+}
+</script>
+</div>
+
+      <!-- Q2 -->
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<strong>2. Predicting states:</strong> Use the IMF strengths above. Which acid has the higher melting point and stays solid at room temperature (20&deg;C)?",
+  "options": [
+    {"label": "Oleic acid (unsaturated)", "correct": false, "feedback": "Oils such as olive oil are mostly oleic acid, and they pour at room temperature. Oleic acid melts at 13&deg;C, which is below 20&deg;C, so it is a liquid."},
+    {"label": "Stearic acid (saturated)", "correct": true, "feedback": "Stearic acid melts at 69&deg;C, far above 20&deg;C. Its stronger dispersion forces take more energy to break, so it stays solid."}
+  ],
+  "reveal": "<h4>The answer: stearic acid (saturated)</h4>\n<p>Stearic acid has stronger London dispersion forces, so it takes more thermal energy to melt. Its melting point is 69&deg;C, so it is a solid at room temperature. Oleic acid has weaker forces and melts at 13&deg;C, so it is a liquid oil at room temperature.</p>"
+}
+</script>
+</div>
+
+    </div>
+  </section>
+
+  <!-- 06 RECALL -->
+  <section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">06</span><span class="label">Say it back</span></div>
+      <h2>Fill the blanks from memory.</h2>
+      <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+      <p class="recall-sentence">
+        Saturated fatty acids have only single bonds, so their shape is <input class="blank" data-answer="straight|linear" placeholder="?">.
+        Unsaturated fatty acids have double bonds that add a permanent <input class="blank" data-answer="kink|bend" placeholder="?">.
+        The weak forces that attract nonpolar hydrocarbon chains are <input class="blank" data-answer="london dispersion forces|ldf|ldfs|dispersion forces" placeholder="?">.
+        Straight molecules pack closely, which increases their <input class="blank" data-answer="contact surface area|surface area|contact area|contact" placeholder="?">.
+        In a material design argument, the last step weighs the drawbacks. It is the <input class="blank" data-answer="trade-off|tradeoff" placeholder="?">.
+      </p>
+      <div class="recall-actions">
+        <button class="btn" data-recall-check>Check</button>
+        <button class="btn ghost" data-recall-reveal>Show answers</button>
+        <button class="btn ghost" data-recall-reset>Reset</button>
+        <span class="feedback" data-recall-feedback></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 SELF-EXPLAIN -->
+  <section id="s-selfx" data-toc="Self-explain">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">07</span><span class="label">Explain it to yourself</span></div>
+      <div class="selfx-mark"><p>Explain why an unsaturated fat has a lower melting point than a saturated fat. Use shape, packing and force strength.</p></div>
+      <p class="hint">Writing it out forces your brain to organize the idea. Write your answer first, then peek and compare.</p>
+      <textarea class="textbox" id="selfx" placeholder="The kinks lower the melting point because..."></textarea>
+      <div>
+        <button class="btn ghost" data-peek>Compare with a model answer</button>
+        <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+          <p>Straight carbon chains in saturated fats pack tightly side by side. That maximizes contact and gives strong London dispersion forces. It takes a lot of thermal energy to overcome them, so the melting point is high. Unsaturated fats have rigid double-bond kinks that prevent tight packing and leave gaps between molecules. The larger distance weakens the London dispersion forces. Little thermal energy separates the chains, so the melting point is low and the fat is a liquid oil at room temperature.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 EXAM PRACTICE -->
+  <section id="s-exam" data-toc="Exam practice">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">08</span><span class="label">Now the way it's marked</span></div>
+      <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+      <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+      <div class="exam-frame">
+        <div class="exam-meta"><span class="exam-src">Gen Chem · HS-PS2-6 · constructed response</span><span class="exam-marks">[5 marks]</span></div>
+        <p class="exam-q">A bakery wants a healthier recipe. It swaps liquid canola oil (unsaturated fat) for solid shortening or butter (saturated fat).
+          <span class="sub">Write a five-part material design argument. Cover the structures, the properties, the use in baking and the trade-off of the swap.</span></p>
+        <textarea class="textbox" id="examAns" placeholder="Write your constructed response here..."></textarea>
+        <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+        <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 5 marks</div>
+          <ul class="pts">
+            <li><b>Structure (1 mark):</b> You say shortening has straight saturated chains and canola oil has kinked chains.</li>
+            <li><b>Packing (1 mark):</b> You say straight chains pack tightly and kinked chains leave gaps.</li>
+            <li><b>Forces (1 mark):</b> You link close contact to strong LDFs and gaps to weak LDFs.</li>
+            <li><b>Property (1 mark):</b> You say strong LDFs keep shortening solid and weak LDFs leave canola oil liquid.</li>
+            <li><b>Function and trade-off (1 mark):</b> You say solid fat traps air for flakiness and oil gives a flat pastry.</li>
+          </ul></div></div>
+        <div class="callout">
+          <div class="label">Why This Matters</div>
+          <p>Saturated and unsaturated fats affect cardiovascular health. Saturated fatty acids have straight chains that pack tightly, maximize LDFs and stay solid at body temperature, like butter. Kinked unsaturated fats stay liquid, like olive oil, and prevent arterial clogging.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS2-6 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS2-6</h3>
+    <p>
+      Construct multi-step arguments linking molecular structure, intermolecular attractions, and macroscopic properties. Practice targeted CER reasoning and earn a verified performance receipt.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS2-6" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+  <div class="footer">
+    <div class="label">Gen Chem · Unit 2 · 2-6a</div>
+    <p>Structure &rarr; Property &rarr; Argument. Interactive Text.</p>
+  </div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="2-6a.js"></script>
+</body>
+</html>

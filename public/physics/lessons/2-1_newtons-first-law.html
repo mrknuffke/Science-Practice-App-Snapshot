@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" data-book="physics" data-lesson="2-1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Lesson 2-1: Newton's First Law &amp; Inertia | SAS General Physics</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+  <main>
+    <section class="hero" id="s-hero" data-toc="Opening">
+      <div>
+        <div class="label">Lesson 2-1 &middot; Newton's First Law &amp; Inertia</div>
+        <h1>No engine has pushed Voyager 1 for decades. It has not slowed down.</h1>
+        <p class="lede">In Level 1, you learned to describe motion. Now you study dynamics: what causes a change in motion. This lesson starts with a spacecraft that keeps moving while no engine pushes it.</p>
+        <div class="meta-strip">
+          <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS2-1</b>Analyze data to support the claim that Newton's second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration.</div></div>
+          <div class="meta-block"><div class="k">Objective</div><div class="v">You can draw a free-body diagram and decide whether the forces on an object are balanced.</div></div>
+          <div class="meta-block"><div class="k">Scope</div><div class="v">Contact and field forces, inertia and mass, net force, balanced forces, and free-body diagrams. Angled forces are Enrichment.</div></div>
+        </div>
+        <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+      </div>
+    </section>
+
+    <section id="sec-01" data-toc="Mission Briefing">
+      <div class="narrow">
+        <div class="section-tag"><span class="num">01</span><span class="label">Hook</span></div>
+        <div class="brief"><div class="label">Mission</div><p><b>Level 2: Force Frontier.</b> Deep Space Readings, Heliosphere Boundary. Voyager 1 is more than 24 billion kilometers from Earth. It is coasting through interstellar space at 17 kilometers per second.</p></div>
+        <p>
+          Its main thrusters fired their last burn decades ago. No engine pushes it. Yet it moves forward through the dark without slowing down.
+        </p>
+        <p>
+          For two thousand years, scholars followed Aristotle's claim: motion requires an ongoing push. Galileo and Newton overturned this idea: <b>motion requires no cause</b>.
+        </p>
+        <p>
+          Velocity remains constant on its own. Only a change in velocity (an acceleration) requires an unbalanced external force.
+        </p>
+      </div>
+    </section>
+
+    <section id="sec-02" data-toc="Force &amp; Inertia">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">02</span>
+          <span class="label">Force and inertia</span>
+        </div>
+
+        <h2>What Is a Force?</h2>
+        <p>
+          In physics, a <strong class="term" data-term="force">force</strong> is an interaction between two objects consisting of a push or a pull. Forces are vectors with magnitude and direction.
+        </p>
+        <p>
+          The SI unit of force is the <strong class="term" data-term="newton">newton (N)</strong>. One newton is the force that accelerates a 1-kilogram mass at 1 meter per second squared:
+        </p>
+
+        <div class="eq-display">
+          1 N = 1 kg &middot; m/s&sup2;
+        </div>
+
+        
+        <div class="pair-grid">
+          <div class="card">
+            <h4>Contact Forces</h4>
+            <p>Forces produced when two macroscopic surfaces or objects physically touch:</p>
+            <ul>
+              <li><strong class="term" data-term="normal-force">Normal Force</strong> (<em>F</em><sub>N</sub>): Perpendicular support push from a surface.</li>
+              <li><strong class="term" data-term="tension">Tension</strong> (<em>F</em><sub>T</sub>): Pull transmitted through a taut string or cable.</li>
+              <li><strong class="term" data-term="friction">Friction</strong> (<em>f</em>): Tangential drag opposing sliding motion.</li>
+              <li><b>Applied Force (<em>F</em><sub>app</sub>):</b> Direct physical push by a motor or person.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Field Forces (Action-at-a-Distance)</h4>
+            <p>Forces exerted across space without physical contact via invisible fields:</p>
+            <ul>
+              <li><b>Gravity (<em>F</em><sub>g</sub>):</b> Downward attraction toward a planetary mass.</li>
+              <li><b>Electrostatic (<em>F</em><sub>e</sub>):</b> Attraction or repulsion between electric charges.</li>
+              <li><b>Magnetic (<em>F</em><sub>B</sub>):</b> Force between magnetic poles and moving charges.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Inertia and Mass</h3>
+        <p>
+          <strong class="term" data-term="inertia">Inertia</strong> is the natural tendency of an object to resist changes in its velocity. An object at rest resists moving. An object in motion resists stopping.
+        </p>
+        <p>
+          <strong class="term" data-term="mass">Mass</strong> (<em>m</em>) is the quantitative measure of inertia. The more mass an object has, the harder it is to change its speed or direction.
+        </p>
+
+        <div class="callout"><div class="label">Common mistake</div><p><b>Mass versus weight: do not mix them up.</b><br><br>
+            <strong class="term" data-term="mass">Mass</strong> is an intrinsic scalar property measured in kilograms (kg). It never changes with location.
+            <br><br>
+            <strong class="term" data-term="weight">Weight</strong> is the downward gravitational pull on that mass: <em>F</em><sub>g</sub> = <em>m</em> &middot; <em>g</em> (measured in newtons). On the Moon, your mass stays the same, but your weight drops by 83%.
+          </p></div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-03" data-toc="Newton's First Law">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">03</span>
+          <span class="label">Newton's first law</span>
+        </div>
+
+        <h2>The Law of Inertia</h2>
+        <p>
+          Newton's First Law describes what an object does when the forces on it balance:
+        </p>
+
+        
+        <div class="callout"><div class="label">Newton's First Law</div><p>An object at rest remains at rest. An object in motion continues at constant velocity, unless acted upon by a non-zero net external force.</p></div>
+
+        <p>
+          The key term is <strong class="term" data-term="net-force">net force</strong> (&Sigma;<em>F</em>). Net force is the vector sum of all external forces on the object at the same moment.
+        </p>
+
+        <div class="eq-display">
+          &Sigma;<b>F</b> = <b>F</b><sub>1</sub> + <b>F</b><sub>2</sub> + ... + <b>F</b><sub>n</sub>
+        </div>
+
+        <h3>Balanced Forces and Equilibrium</h3>
+        <p>
+          When the forces are <strong class="term" data-term="balanced-forces">balanced</strong>, the vector sum of all external forces equals zero. The object is in <strong class="term" data-term="equilibrium">equilibrium</strong>. Because the net force is zero, the acceleration is zero:
+        </p>
+
+        <div class="eq-display">
+          &Sigma;<em>F</em><sub>x</sub> = 0 &emsp; and &emsp; &Sigma;<em>F</em><sub>y</sub> = 0 &emsp; &DoubleRightArrow; &emsp; <em>a</em> = 0
+        </div>
+
+        
+        <div class="table-wrap">
+          <table class="data-table">
+            <caption>Two kinds of equilibrium</caption>
+            <thead>
+              <tr>
+                <th scope="col">Equilibrium State</th>
+                <th scope="col">Velocity (<em>v</em>)</th>
+                <th scope="col">Acceleration (<em>a</em>)</th>
+                <th scope="col">Net Force (&Sigma;<em>F</em>)</th>
+                <th scope="col">Real-World Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Static Equilibrium</th>
+                <td><em>v</em> = 0 (At rest)</td>
+                <td><em>a</em> = 0</td>
+                <td>&Sigma;<em>F</em> = 0</td>
+                <td>A parked car; a book resting on a table.</td>
+              </tr>
+              <tr>
+                <th scope="row">Dynamic Equilibrium</th>
+                <td><em>v</em> = constant &ne; 0</td>
+                <td><em>a</em> = 0</td>
+                <td>&Sigma;<em>F</em> = 0</td>
+                <td>A cruiser at 100 km/h; skydiver at terminal speed.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The key takeaway: <b>constant velocity means zero net force</b>. If an object moves at a steady speed without turning, all the forces on it cancel.</p>
+
+        <div class="callout"><div class="label">Common mistake</div><p>Many students think an object needs a force to keep moving. It does not. A force is needed only to change the motion.</p></div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-04" data-toc="Interactive Balancer">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">04</span>
+          <span class="label">Simulation</span>
+        </div>
+
+        <h2>Interactive 2D Force Vector Balancer</h2>
+        <p>
+          Investigate how forces combine. Change the size of each force and test when the net force on the cargo pod is zero.
+        </p>
+
+        
+        <div class="sim-box" data-sim="balancer">
+          <div class="label">Simulation</div>
+          <h4>When is the net force on the pod zero, and what does the pod do then?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a pod moves right at 4 m/s. The forces on it add up to zero. What does the pod do?<\/p>",
+  "options": [
+    {
+      "label": "It slows down and stops, because nothing pushes it forward.",
+      "correct": false,
+      "feedback": "A moving object does not need a push to keep moving. With zero net force its velocity does not change, so it does not slow down."
+    },
+    {
+      "label": "It keeps moving right at the same speed.",
+      "correct": true,
+      "feedback": "Zero net force means zero acceleration. The velocity stays the same, so the pod keeps moving right at 4 m/s."
+    },
+    {
+      "label": "It speeds up, because the forces keep it moving.",
+      "correct": false,
+      "feedback": "Balanced forces cancel. They give no net push, so there is nothing to speed the pod up."
+    },
+    {
+      "label": "It stops at once, because the forces cancel.",
+      "correct": false,
+      "feedback": "Cancelling forces remove the net push. They do not remove the motion the pod already has."
+    }
+  ],
+  "reveal": "<p>Now try it. Load a preset, press Play and watch the pod. Then change a force size.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="wide"><canvas aria-label="A cargo pod with force arrows for right, left, up and down, a dashed arrow for the net force, and a velocity arrow. The pod comes back in on one edge when it leaves the other."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="false" data-preset="coast">Coasting in space</button>
+            <button type="button" class="chip" aria-pressed="false" data-preset="crate">Hanging crate</button>
+            <button type="button" class="chip" aria-pressed="false" data-preset="cruise">Highway cruise</button>
+            <label class="slider-row" for="fRight"><span>Right (thrust)</span> <output>0 N</output>
+              <input type="range" id="fRight" min="0" max="200" step="1" value="0" data-unit="N" data-digits="0">
+            </label>
+            <label class="slider-row" for="fLeft"><span>Left (drag or wall)</span> <output>0 N</output>
+              <input type="range" id="fLeft" min="0" max="200" step="1" value="0" data-unit="N" data-digits="0">
+            </label>
+            <label class="slider-row" for="fUp"><span>Up (support or cable)</span> <output>98 N</output>
+              <input type="range" id="fUp" min="0" max="200" step="1" value="98" data-unit="N" data-digits="0">
+            </label>
+            <label class="slider-row" for="fDown"><span>Down (gravity)</span> <output>98 N</output>
+              <input type="range" id="fDown" min="0" max="200" step="1" value="98" data-unit="N" data-digits="0">
+            </label>
+            <button type="button" class="chip" aria-pressed="false" data-angled>Angled forces <span class="tag-enrichment">Enrichment</span></button>
+            <div class="angled-controls" hidden>
+              <button type="button" class="chip" aria-pressed="false" data-preset="angled">Angled cable</button>
+              <label class="slider-row" for="fCable"><span>Cable size</span> <output>0 N</output>
+                <input type="range" id="fCable" min="0" max="200" step="1" value="0" data-unit="N" data-digits="0">
+              </label>
+              <label class="slider-row" for="aCable"><span>Cable angle above the right</span> <output>30&deg;</output>
+                <input type="range" id="aCable" min="0" max="90" step="1" value="30" data-unit="&deg;" data-digits="0">
+              </label>
+            </div>
+            <button type="button" class="btn ghost" data-restart>Reset pod</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="fx"><span class="readout-label">Net force across (&Sigma;F<sub>x</sub>)</span><span class="readout-value">0.0 N</span></div>
+            <div class="readout" data-readout="fy"><span class="readout-label">Net force up and down (&Sigma;F<sub>y</sub>)</span><span class="readout-value">0.0 N</span></div>
+            <div class="readout" data-readout="acc"><span class="readout-label">Acceleration</span><span class="readout-value">0.00 m/s&sup2;</span></div>
+            <div class="readout" data-readout="vel"><span class="readout-label">Velocity</span><span class="readout-value">0.0 m/s</span></div>
+          </div>
+          <span class="status-pill" data-state="ok">Forces balance. The velocity stays the same.</span>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="line" data-token="accent"></span>A force on the pod</li>
+            <li><span class="key" data-shape="dash" data-token="warn"></span>Net force (the sum of all forces)</li>
+            <li><span class="key" data-shape="line" data-token="cool"></span>Velocity of the pod</li>
+            <li>The pod comes back in on the opposite edge when it leaves the view. The scale bar shows 50 N.</li>
+          </ul>
+          <ol class="try-this">
+            <li>Load Coasting in space and press Play. <b>Look for:</b> all forces are zero, and the pod keeps its velocity. Press Record.</li>
+            <li>Load Hanging crate. <b>Look for:</b> gravity and support are both 98 N, so the net force is zero and the pod stays at rest. Press Record.</li>
+            <li>Load Highway cruise. <b>Look for:</b> thrust and drag cancel, and the pod keeps moving at constant velocity. Then raise Right to 90 N. <b>Look for:</b> the net force turns on and the velocity changes. Press Record.</li>
+            <li>Enrichment: turn on Angled forces and load Angled cable. Change the cable size and the Left force until the pod stays at rest. <b>Look for:</b> the up part of the cable must equal gravity. Press Record.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use your record table. Look at the rows where the net force was zero. What is the same in those rows?<\/p>",
+  "options": [
+    {
+      "label": "The velocity did not change, whether the pod moved or stayed at rest.",
+      "correct": true,
+      "feedback": "Zero net force means zero acceleration. Your rows show a pod at constant velocity, and a pod at rest is the case where that velocity is zero."
+    },
+    {
+      "label": "The pod always came to a stop.",
+      "correct": false,
+      "feedback": "Check your coasting row. The pod kept moving. Zero net force does not stop a moving pod."
+    },
+    {
+      "label": "The pod always kept moving.",
+      "correct": false,
+      "feedback": "Check your hanging crate row. The pod stayed at rest. Rest is also constant velocity."
+    },
+    {
+      "label": "The pod always sped up slowly.",
+      "correct": false,
+      "feedback": "Speeding up needs a net force. In these rows the net force was zero."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Zero net force never changes the velocity. The pod either keeps moving or stays at rest.<\/p>"
+}
+</script>
+</div>
+      </div>
+    </section>
+
+    <section id="sec-05" data-toc="Free Body Diagrams">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">05</span>
+          <span class="label">Free-body diagrams</span>
+        </div>
+
+        <h2>The Authentic Free Body Diagram Protocol</h2>
+        <p>
+          A <strong class="term" data-term="free-body-diagram">free body diagram (FBD)</strong> is a simplified picture of one isolated object. It reveals every external force vector acting on the body:
+        </p>
+
+        
+        <div class="card">
+          <h4>The 4 Rules of Authentic Free Body Diagrams</h4>
+          <ol>
+            <li><b>Isolate the Object:</b> Model the body as a point mass or a simple box separated from its surroundings.</li>
+            <li><b>Draw Vectors Outward:</b> Every force arrow starts on the object and points away, in the direction of the push or pull.</li>
+            <li><b>Scale Arrow Length:</b> The length of each arrow must reflect its relative magnitude (equal forces have equal lengths).</li>
+            <li><b>Include Forces Acting ON the Body Only:</b> Never draw forces exerted <em>by</em> the object, and never draw velocity or inertia vectors.</li>
+          </ol>
+        </div>
+
+        <div class="callout"><div class="label">Common mistake</div><p>Do not draw a "force of motion" or a "force of inertia". Inertia is not a force, and an object does not need a forward force to keep moving.</p></div>
+
+        <div class="sim-box" data-sim="fbd">
+          <div class="label">Simulation</div>
+          <h4>Which forces belong on the diagram?</h4>
+<div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: a hockey puck glides across frictionless ice. How many forces act on it?<\/p>",
+  "options": [
+    {
+      "label": "None, because nothing pushes it.",
+      "correct": false,
+      "feedback": "Gravity pulls on the puck and the ice pushes back up. Both are forces, even though neither one is a push forward."
+    },
+    {
+      "label": "One, a forward force from its motion.",
+      "correct": false,
+      "feedback": "Motion is not a force. The puck keeps gliding because of inertia, and nothing has to push it forward."
+    },
+    {
+      "label": "Two, gravity and the ice pushing up.",
+      "correct": true,
+      "feedback": "Gravity pulls down and the ice pushes up. Frictionless ice gives no force along the ice, so the puck glides at constant velocity."
+    },
+    {
+      "label": "Three, with a forward force of inertia.",
+      "correct": false,
+      "feedback": "Inertia is not a force. It is the way a mass resists a change in its motion, so it never goes on a diagram."
+    }
+  ],
+  "reveal": "<p>Now build the diagram. Choose a scenario and tick the forces that belong.<\/p>"
+}
+</script>
+</div>
+          <div class="sim-stage" data-ratio="wide"><canvas aria-label="A free-body diagram of the object in the chosen scenario, with an arrow for each force you tick."></canvas></div>
+          <div class="sim-controls">
+            <button type="button" class="chip" aria-pressed="true" data-scenario="puck">Hockey puck on frictionless ice</button>
+            <button type="button" class="chip" aria-pressed="false" data-scenario="skydiver">Skydiver at constant speed</button>
+            <button type="button" class="chip" aria-pressed="false" data-scenario="crate">Crate resting on a floor</button>
+            <div class="check-grid">
+              <label class="check-row"><input type="checkbox" value="fg"><span>Gravity (pulls down)</span></label>
+              <label class="check-row"><input type="checkbox" value="fn"><span>Normal force (a surface pushes up)</span></label>
+              <label class="check-row"><input type="checkbox" value="drag"><span>Air drag (pushes up against the fall)</span></label>
+              <label class="check-row"><input type="checkbox" value="motion"><span>Forward force of motion</span></label>
+              <label class="check-row"><input type="checkbox" value="inertia"><span>Force of inertia</span></label>
+              <label class="check-row"><input type="checkbox" value="fall"><span>Force of downward fall</span></label>
+            </div>
+            <button type="button" class="btn" data-check>Check my diagram</button>
+            <button type="button" class="btn ghost" data-clear>Clear ticks</button>
+          </div>
+          <div class="sim-readouts">
+            <div class="readout" data-readout="scenario"><span class="readout-label">Scenario</span><span class="readout-value">&ndash;</span></div>
+            <div class="readout" data-readout="ticked"><span class="readout-label">Forces ticked</span><span class="readout-value">0</span></div>
+            <div class="readout" data-readout="result"><span class="readout-label">Result</span><span class="readout-value">&ndash;</span></div>
+          </div>
+          <span class="status-pill" data-state="neutral">Tick the forces, then press Check</span>
+          <div class="solver-output" data-work aria-live="polite"></div>
+          <ul class="sim-legend">
+            <li><span class="key" data-shape="line" data-token="accent"></span>A force you ticked</li>
+          </ul>
+          <ol class="try-this">
+            <li>With the puck chosen, tick the forces you think act on it and press Check. <b>Look for:</b> the message names any tick that does not belong. Press Record.</li>
+            <li>Choose the skydiver and tick again. <b>Look for:</b> a skydiver touches no surface, so there is no normal force. Press Record.</li>
+            <li>Choose the crate and tick again. <b>Look for:</b> the crate is at rest, so its forces must cancel. Press Record.</li>
+          </ol>
+        </div>
+        <h3>Use your evidence</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Use two rows of your record table with correct diagrams. What do the forces in those rows have in common?<\/p>",
+  "options": [
+    {
+      "label": "Each force comes from another object that touches or pulls on it.",
+      "correct": true,
+      "feedback": "Gravity comes from Earth. The normal force comes from a surface. Drag comes from the air. Each one has a source outside the object."
+    },
+    {
+      "label": "Each diagram has a force in the direction of motion.",
+      "correct": false,
+      "feedback": "Your puck row has no force along the motion, yet the puck keeps gliding."
+    },
+    {
+      "label": "Each diagram has a normal force from a surface.",
+      "correct": false,
+      "feedback": "Your skydiver row has no surface, so it has no normal force."
+    },
+    {
+      "label": "Each diagram has the same two forces.",
+      "correct": false,
+      "feedback": "The skydiver row shows air drag in place of the normal force."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Every force on a diagram has a source outside the object.<\/p>"
+}
+</script>
+</div>
+        
+      </div>
+    </section>
+
+    <section id="sec-06" data-toc="Predictions">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">06</span>
+          <span class="label">Checkpoints</span>
+        </div>
+
+        <h2>Conceptual Prediction Gates</h2>
+        <p>
+          Before testing your intuition against formal equations, commit your reasoning. In physics, committing an answer first forces your brain to test its internal model against evidence:
+        </p>
+
+        
+        <h3>Scenario A: Hovering Drone vs. Moving Glider</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Drone A hovers motionless in the air. Drone B moves horizontally at a constant speed of 12 m/s in a straight line. How do the net forces on the two drones compare?<\/p>",
+  "options": [
+    {
+      "label": "Drone B has a larger net force because it is moving.",
+      "correct": false,
+      "feedback": "Moving at a constant velocity does not need a net force. Only a change in velocity does."
+    },
+    {
+      "label": "Drone A has zero net force. Drone B has a net force upward.",
+      "correct": false,
+      "feedback": "Drone B moves in a straight line at constant speed, so its velocity does not change in any direction. It has no net force up or down."
+    },
+    {
+      "label": "Drone A has a net force from gravity. Drone B has a net force from thrust.",
+      "correct": false,
+      "feedback": "Gravity and thrust are real forces, but each is balanced by another force. Drone A hovers, so an upward force balances gravity. Drone B has constant velocity, so drag balances its thrust."
+    },
+    {
+      "label": "Both drones have a net force of exactly zero.",
+      "correct": true,
+      "feedback": "Drone A is at rest and Drone B has constant velocity. Both accelerations are zero, so both net forces are zero."
+    }
+  ],
+  "reveal": "<p><b>Both drones have zero net force (&Sigma;F = 0).<\/b><br>Acceleration is zero for both drones. Drone A is at rest (a = 0, static equilibrium). Drone B moves at constant velocity (a = 0, dynamic equilibrium). By Newton's First Law, constant velocity requires zero net force.<\/p>"
+}
+</script>
+</div>
+
+        
+        <h3>Scenario B: The Cut Engine Probe</h3>
+<div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>A deep-space probe fires its ion engine to accelerate forward. Then the engine shuts off completely. What happens to the probe's speed after the burn ends?<\/p>",
+  "options": [
+    {
+      "label": "It keeps moving at its final speed forever.",
+      "correct": true,
+      "feedback": "With the engine off in deep space, no net force acts on the probe. Its velocity cannot change, so it keeps its final speed."
+    },
+    {
+      "label": "It stops at once because the engine is off.",
+      "correct": false,
+      "feedback": "Stopping needs a force too. With no net force, the probe has no reason to stop."
+    },
+    {
+      "label": "It slows down slowly because nothing pushes it forward.",
+      "correct": false,
+      "feedback": "A force is not needed to keep moving. Slowing down also needs a net force, and in deep space there is none."
+    },
+    {
+      "label": "It keeps speeding up because inertia pushes it forward.",
+      "correct": false,
+      "feedback": "Inertia is not a force. It cannot push the probe or make it speed up."
+    }
+  ],
+  "reveal": "<p><b>It keeps moving at its final speed forever.<\/b><br>In deep space, friction and gravity are negligible. When the engine cuts out, the net force becomes zero. With no net force to change its velocity, the probe's inertia keeps it moving at constant velocity indefinitely.<\/p>"
+}
+</script>
+</div>
+
+        
+      </div>
+    </section>
+
+    <section id="sec-07" data-toc="Retrieval &amp; Practice">
+      <div class="narrow">
+        <div class="section-tag">
+          <span class="num">07</span>
+          <span class="label">Practice</span>
+        </div>
+
+        <h2>Retrieval Practice &amp; ECR Protocol</h2>
+        <p>
+          Solidify the core concepts of Newton's First Law and balanced forces before advancing to Newton's Second Law.
+        </p>
+
+        
+        <div class="recall">
+<div class="label">Recall</div>
+<ol class="recall-list">
+<li>The quantitative physical measure of an object's inertia is its <input type="text" class="blank" data-answer="mass" aria-label="Blank 1"> (measured in kilograms).</li>
+<li>When the vector sum of all external forces acting on an object equals zero, the net force is <input type="text" class="blank" data-answer="0|zero|0 N" aria-label="Blank 2"> Newtons.</li>
+<li>An object moving in a straight line at constant speed has an acceleration of <input type="text" class="blank" data-answer="0|zero|0 m/s2" aria-label="Blank 3"> m/s&sup2;.</li>
+<li>A perpendicular contact force exerted by a support surface is called the <input type="text" class="blank" data-answer="normal|normal force" aria-label="Blank 4"> force.</li>
+<li>The pulling force transmitted through a taut cord or cable is called <input type="text" class="blank" data-answer="tension" aria-label="Blank 5">.</li>
+</ol>
+<div class="recall-actions">
+<button class="btn" type="button" data-recall-check>Check</button>
+<button class="btn ghost" type="button" data-recall-reveal>Show answers</button>
+<button class="btn ghost" type="button" data-recall-reset>Reset</button>
+<span class="feedback" data-recall-feedback role="status"></span>
+</div>
+</div>
+
+        
+        <h3>Problem 2.1: Terminal Velocity of a Skydiver</h3>
+<div class="exam-frame">
+<div class="exam-meta"><span class="exam-src">Written response</span><span class="exam-marks">3 marks</span></div>
+<p class="exam-q">A skydiver with mass 75 kg jumps from an aircraft. After falling for several seconds, she reaches a constant terminal velocity of 54 m/s downward.</p><p class="exam-q">A classmate argues: <em>"The skydiver is falling very rapidly at 54 m/s. Therefore, the downward force of gravity must be much larger than upward air drag."</em></p><p class="exam-q">Evaluate this statement using the <b>Evidence &rarr; Claim &rarr; Reasoning (ECR)</b> framework.</p>
+
+<textarea class="textbox" aria-label="Your answer"></textarea>
+<div class="exam-actions"><button class="btn ghost" type="button" data-scheme disabled>Show scoring guide</button></div>
+<div class="scheme"><div class="scheme-card"><div class="label">Scoring guide</div><ul class="pts"><li><b>Evidence (1 mark):</b> You say her velocity is constant at 54 m/s downward, so her acceleration is 0 m/s&sup2;.</li><li><b>Claim (1 mark):</b> You say the upward drag equals her weight: F<sub>drag</sub> = F<sub>g</sub> = 75 kg &times; 9.8 m/s&sup2; = 735 N.</li><li><b>Reasoning (1 mark):</b> You say zero acceleration needs zero net force (&Sigma;F = 0).</li><li>You say the forces are balanced even though she moves fast.</li></ul></div><div class="scheme-card"><div class="label">Model response (Evidence, Claim, Reasoning)</div><ul class="pts"><li><b>Evidence:</b> The skydiver falls at a constant velocity of 54 m/s downward. Her velocity is not changing (&Delta;v = 0), so her acceleration is 0 m/s&sup2;.</li><li><b>Claim:</b> The classmate's statement is incorrect. Upward air resistance equals downward gravity in magnitude (Fdrag = Fg = 735 N).</li><li><b>Reasoning:</b> By Newton's First Law, constant velocity requires zero net force (&Sigma;F = 0). If gravity exceeded drag, the skydiver would accelerate. Because speed is constant, the upward and downward forces balance completely.</li></ul></div></div>
+</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/book.js"></script>
+  <script src="../../textbook/core.js"></script>
+  <script src="../../textbook/widgets.js"></script>
+  <script src="../../textbook/sim.js"></script>
+  <script src="../assets/glossary.js"></script>
+  <script src="../assets/draw.js"></script>
+  <script src="../assets/reference-center.js"></script>
+  <script src="2-1.js"></script>
+</body>
+</html>

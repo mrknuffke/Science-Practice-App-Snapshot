@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-6a" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Dynamic Equilibrium &amp; Le Chatelier · Gen Chem 4-6a</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 4-6a &middot; Dynamic Equilibrium &amp; Le Chatelier&rsquo;s Principle</div>
+    <h1>Nearly half the nitrogen in your body came from a reaction that <span class="flip">never finishes</span>.</h1>
+    <p class="lede">Nearly half the nitrogen atoms in your proteins were fixed from the air by the Haber-Bosch process: N<sub>2</sub>(g) + 3 H<sub>2</sub>(g) &rightleftharpoons; 2 NH<sub>3</sub>(g) + heat. As soon as ammonia forms, collisions between ammonia molecules break some of it apart again. In a closed vessel, the forward and reverse reactions settle at the same rate. Engineers then push on that balance with temperature, pressure and product removal, and make millions of tons of ammonia.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-6</b> Refine the design of a chemical system by specifying a change in conditions that would produce increased amounts of products at equilibrium.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can describe equilibrium as two reactions that run at the same rate. You can predict which way a system shifts when you change one condition. You can use that to make more product.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Reversible reactions, and why an equilibrium looks steady. One change at a time: more reactant, less product, a new temperature, or a new pressure. Why the Haber process is a compromise.</div></div>
+    </div>
+
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Dynamic equilibrium.</strong> In a closed system, a <strong class="term">reversible reaction</strong> reaches <strong class="term">dynamic equilibrium</strong> when the forward and reverse rates are equal and not zero.</li>
+              <li><strong>Steady, yet busy.</strong> At equilibrium the amounts of reactants and products stay constant, even though both reactions keep running at the particle level.</li>
+              <li><strong>Le Chatelier&rsquo;s principle.</strong> When a change disturbs a system at equilibrium, the system shifts to work against the change. The changes are concentration, temperature and pressure.</li>
+              <li><strong>Concentration.</strong> Adding reactant or removing product makes the forward rate larger than the reverse rate. The system shifts right, toward more products.</li>
+              <li><strong>Temperature.</strong> Treat heat as a product of an exothermic reaction. Heating shifts the system left. Cooling shifts it right.</li>
+              <li><strong>Pressure.</strong> Compressing a gas mixture shifts the system toward the side with fewer moles of gas.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Equal rates, constant amounts</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 300 160" font-family="var(--display)" role="img" aria-label="Graph of reaction rate against time. The forward rate falls and the reverse rate rises until the two curves meet. After that both stay at the same value">
+              <line x1="40" y1="130" x2="290" y2="130" stroke="var(--ink-mute)" stroke-width="1.2"/>
+              <line x1="40" y1="130" x2="40" y2="14" stroke="var(--ink-mute)" stroke-width="1.2"/>
+              <text x="165" y="153" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Time &rarr;</text>
+              <text x="14" y="72" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle" transform="rotate(-90 14 72)">Rate</text>
+              <path d="M 40 30 Q 100 80 280 80" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+              <path d="M 40 125 Q 100 80 280 80" fill="none" stroke="var(--good)" stroke-width="2.5"/>
+              <line x1="170" y1="14" x2="170" y2="130" stroke="var(--ink-mute)" stroke-width="1" stroke-dasharray="3 3"/>
+              <text x="52" y="24" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">forward</text>
+              <text x="52" y="120" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--good)">reverse</text>
+              <text x="228" y="70" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">equal</text>
+            </svg>
+</div>
+<figcaption>the forward and reverse rates meet · after that the amounts stop changing</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> <span>Describe dynamic equilibrium for the particles and for the whole system.</span></li>
+              <li><input type="checkbox" disabled> <span>Predict the shift when you add a reactant or remove a product.</span></li>
+              <li><input type="checkbox" disabled> <span>Explain how heating or cooling shifts an exothermic equilibrium.</span></li>
+              <li><input type="checkbox" disabled> <span>Explain why a catalyst does not change the amounts at equilibrium.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 THE DYNAMIC NATURE OF EQUILIBRIUM -->
+<section id="s-nature" data-toc="Dynamic equilibrium">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Two reactions at the same rate</span></div>
+    <h2>Running on a molecular treadmill: the rate balance.</h2>
+    <p>Imagine walking forward on a treadmill. You walk at 4.0 miles per hour and the belt moves backward at 4.0 miles per hour. You stay in the same place. A person across the room sees nothing change. Your legs are working hard, though. If you or the belt speeds up, your position shifts at once.</p>
+    <p>A <strong class="term">reversible reaction</strong> at <strong class="term">dynamic equilibrium</strong> works the same way.</p>
+
+    <figure class="figure figure--full">
+<div class="diagram">
+      <svg viewBox="0 0 540 220" font-family="var(--display)" role="img" aria-label="Two graphs side by side. Left: the forward rate falls and the reverse rate rises until they are equal. Right: the amount of reactants falls and the amount of products rises until both stay constant">
+        <rect x="10" y="10" width="520" height="200" rx="8" fill="var(--card)" stroke="var(--hair)" stroke-width="1"/>
+
+        <!-- Left: rates vs time -->
+        <g transform="translate(10, 0)">
+          <line x1="50" y1="170" x2="240" y2="170" stroke="var(--ink-mute)" stroke-width="1.5"/>
+          <line x1="50" y1="35" x2="50" y2="170" stroke="var(--ink-mute)" stroke-width="1.5"/>
+          <text x="50" y="28" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)">Reaction rate</text>
+          <text x="145" y="192" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Time &rarr;</text>
+
+          <path d="M 50 50 Q 110 110, 240 110" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+          <text x="58" y="46" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">forward</text>
+
+          <path d="M 50 170 Q 110 110, 240 110" fill="none" stroke="var(--good)" stroke-width="2.5"/>
+          <text x="58" y="164" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--good)">reverse</text>
+
+          <text x="195" y="100" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">equal</text>
+          <line x1="145" y1="35" x2="145" y2="170" stroke="var(--ink-mute)" stroke-width="1" stroke-dasharray="3,3"/>
+        </g>
+
+        <!-- Right: amounts vs time -->
+        <g transform="translate(260, 0)">
+          <line x1="50" y1="170" x2="240" y2="170" stroke="var(--ink-mute)" stroke-width="1.5"/>
+          <line x1="50" y1="35" x2="50" y2="170" stroke="var(--ink-mute)" stroke-width="1.5"/>
+          <text x="50" y="28" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)">Amount</text>
+          <text x="145" y="192" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Time &rarr;</text>
+
+          <path d="M 50 50 Q 110 130, 240 130" fill="none" stroke="var(--ink-soft)" stroke-width="2.5"/>
+          <text x="58" y="44" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink-soft)">reactants</text>
+
+          <path d="M 50 170 Q 110 90, 240 90" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+          <text x="58" y="164" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">products</text>
+
+          <text x="195" y="112" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">constant</text>
+          <line x1="145" y1="35" x2="145" y2="170" stroke="var(--ink-mute)" stroke-width="1" stroke-dasharray="3,3"/>
+        </g>
+      </svg>
+</div>
+<figcaption><b>Figure 4.4.</b> left: the forward and reverse rates become equal · right: the amounts become constant, but they are rarely equal to each other</figcaption>
+</figure>
+
+    <div class="callout">
+      <div class="label">The one idea to hold onto</div>
+      <p>At equilibrium the forward and reverse rates are equal, and they are not zero. The amounts stay constant, but they are not always equal.</p>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking equilibrium means the reactions have stopped, or that reactants and products must be equal in amount. Both reactions keep running at the same rate. A mixture at equilibrium can hold 99% products or 99% reactants.</p></div>
+  </div>
+</section>
+
+<!-- 02 LE CHATELIER'S PRINCIPLE -->
+<section id="s-lechatelier" data-toc="Le Chatelier's Principle">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">How a system pushes back</span></div>
+    <h2>Le Chatelier&rsquo;s Principle: nature&rsquo;s chemical pushback.</h2>
+    <p>In 1884 the French chemist Henri Louis Le Chatelier described how a system at equilibrium answers a change. His idea is called <strong class="term">Le Chatelier&rsquo;s Principle</strong>.</p>
+
+    <div class="callout">
+      <div class="label">Le Chatelier&rsquo;s Principle</div>
+      <p><em>When a change disturbs a system at equilibrium, the system shifts its reaction rates in the direction that works against the change.</em></p>
+    </div>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>1. Changing a concentration</h4>
+        <p><b>Add reactant.</b> More reactant means more collisions between reactant molecules. The forward rate rises above the reverse rate, and the system <b>shifts right (&rarr;)</b> toward products.<br>
+        <b>Remove product.</b> With less product around, fewer product molecules collide, so the reverse rate drops. The forward rate is now larger, and the system keeps <b>shifting right (&rarr;)</b> to replace the missing product.</p>
+      </div>
+
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>2. Changing the temperature</h4>
+        <p>To predict a temperature shift, treat heat as a reactant or a product.<br>
+        &bull; <b>Exothermic:</b> Reactants &rightleftharpoons; Products + heat. Heating adds heat, so the system shifts <b>left (&larr;)</b> to use it up. Cooling shifts it <b>right (&rarr;)</b>.<br>
+        &bull; <b>Endothermic:</b> Reactants + heat &rightleftharpoons; Products. Heating shifts it <b>right (&rarr;)</b>. Cooling shifts it <b>left (&larr;)</b>.<br>
+        Temperature is the only change that alters the value of the equilibrium constant.</p>
+      </div>
+
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>3. Changing the pressure or volume of a gas</h4>
+        <p>Compressing the vessel raises the pressure and packs the gas particles closer. The system works against this by shifting toward the side with <b>fewer moles of gas</b>.<br>
+        In the Haber process, N<sub>2</sub>(g) + 3 H<sub>2</sub>(g) is 4 moles of gas and 2 NH<sub>3</sub>(g) is 2 moles. Raising the pressure shifts the system <b>right (&rarr;)</b>, toward the 2-mole side.</p>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking the system shifts toward the side that just grew. The system works against the change. Adding reactant shifts it right, toward the products.</p></div>
+  </div>
+</section>
+
+<!-- 03 INDUSTRIAL OPTIMIZATION: HABER-BOSCH -->
+<section id="s-haber" data-toc="Haber-Bosch case study">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">An engineering compromise</span></div>
+    <h2>The Haber-Bosch dilemma: cold favors yield, heat favors speed.</h2>
+    <p>Here is the reaction that feeds the world:</p>
+
+    <div class="eq-display">N<sub>2</sub>(g) + 3 H<sub>2</sub>(g) &rightleftharpoons; 2 NH<sub>3</sub>(g) + 92.4&nbsp;kJ &emsp; (&Delta;<em>H</em> = &minus;92.4&nbsp;kJ/mol)</div>
+
+    <p>An engineer who designs an ammonia plant faces a trade-off.</p>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Cold gives more ammonia, slowly</h4>
+        <p>The reaction is exothermic, so cooling shifts the equilibrium right. At room temperature (25&nbsp;&deg;C) and 1 atmosphere, the mixture holds over <strong>90% ammonia</strong>. But the N&equiv;N triple bond (945&nbsp;kJ/mol) is hard to break. At 25&nbsp;&deg;C the reaction takes years to reach equilibrium.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Heat and a catalyst give speed, with less ammonia</h4>
+        <p>To reach equilibrium fast, engineers heat the gases to about 450&nbsp;&deg;C and pass them over an iron catalyst. The catalyst speeds up both directions equally, so it helps the system reach equilibrium sooner. It does not change the amount of ammonia at equilibrium. But at 450&nbsp;&deg;C and 1 atmosphere, the shift to the left leaves under <strong>1% ammonia</strong>.</p>
+        <p>Engineers win some of it back. They raise the pressure to <strong>200 atmospheres</strong>, which shifts the system right, toward fewer moles of gas. At 450&nbsp;&deg;C that lifts the yield to about 25%. They also cool the gas to liquefy the ammonia and remove it, then recycle the unreacted N<sub>2</sub> and H<sub>2</sub>.</p>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a catalyst raises the amount of ammonia at equilibrium. A catalyst speeds up both directions equally. The mixture reaches equilibrium sooner, and the equilibrium amount stays the same.</p></div>
+  </div>
+</section>
+
+<!-- 04 THE EQUILIBRIUM CHAMBER -->
+<section id="s-sandbox" data-toc="Equilibrium chamber">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Try it</span></div>
+    <h2>Change one condition at a time.</h2>
+    <p>The chamber starts at equilibrium. Make one change and watch which way the mixture shifts. The other controls stay locked until the forward and reverse rates are equal again.</p>
+
+    <div class="sim-box" data-sim="equilibrium">
+      <div class="label">Simulation</div>
+      <h4>When you disturb an equilibrium, which way does it move?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: the Haber mixture is at equilibrium. You add more N<sub>2</sub> and H<sub>2</sub>. Which way does the system shift?</p>",
+  "options": [
+    {
+      "label": "It does not shift, because the mixture is already at equilibrium",
+      "correct": false,
+      "feedback": "Equilibrium means the two rates are equal, not that nothing can change. Extra reactant raises the forward rate above the reverse rate, so the amounts start to move."
+    },
+    {
+      "label": "Right, toward more NH<sub>3</sub>, to use up the extra N<sub>2</sub> and H<sub>2</sub>",
+      "correct": true,
+      "feedback": "More reactant means more collisions between reactant molecules, so the forward rate rises above the reverse rate. The system shifts right until the two rates are equal again."
+    },
+    {
+      "label": "Left, toward more N<sub>2</sub> and H<sub>2</sub>, because that side just grew",
+      "correct": false,
+      "feedback": "The system works against a change. It does not follow it. The side that just grew has extra molecules to use up, so the shift goes toward the product."
+    }
+  ],
+  "reveal": "<p>Now check it. Add the reactants and watch the three amounts and the two rates.</p>"
+}
+</script>
+</div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="A vessel of nitrogen, hydrogen and ammonia molecules with a movable piston, beside a chart of the three amounts over time. Make one change with the buttons."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Make one change">
+        <button type="button" class="btn" data-change="add">Add N₂ and H₂</button>
+        <button type="button" class="btn" data-change="remove">Remove NH₃</button>
+        <button type="button" class="btn" data-change="heat">Heat by 50 °C</button>
+        <button type="button" class="btn" data-change="cool">Cool by 50 °C</button>
+        <button type="button" class="btn" data-change="compress">Compress</button>
+        <button type="button" class="btn" data-change="expand">Expand</button>
+        <button type="button" class="btn ghost" id="btnResetEq">Start over</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="temp"><span class="readout-label">Temperature</span><span class="readout-value">450 °C</span></div>
+        <div class="readout" data-readout="press"><span class="readout-label">Pressure</span><span class="readout-value">200 atm</span></div>
+        <div class="readout" data-readout="nh3"><span class="readout-label">Ammonia molecules</span><span class="readout-value">10</span></div>
+        <div class="readout" data-readout="fwd"><span class="readout-label">Forward reactions</span><span class="readout-value">1.2 a second</span></div>
+        <div class="readout" data-readout="rev"><span class="readout-label">Reverse reactions</span><span class="readout-value">1.2 a second</span></div>
+        <div class="readout" data-readout="shift"><span class="readout-label">Shift</span><span class="readout-value">None</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="cool"></span>Nitrogen, N₂ (two joined circles)</li>
+        <li><span class="key" data-shape="dot" data-token="ink-soft"></span>Hydrogen, H₂ (two small joined circles)</li>
+        <li><span class="key" data-shape="dot" data-token="accent"></span>Ammonia, NH₃ (a large circle with three small ones)</li>
+        <li><span class="key" data-shape="line" data-token="accent"></span>Ring: a forward reaction. A green ring is a reverse reaction.</li>
+        <li><span class="key" data-shape="dash" data-token="ink-mute"></span>The moment you made a change</li>
+      </ul>
+      <ol class="try-this">
+        <li>Press Start over, then press Add N₂ and H₂. Wait for Settled, then press Record. <b>Look for:</b> a shift to the right. NH₃ rises from 10 to 16 molecules.</li>
+        <li>Press Start over, then press Remove NH₃. Wait for Settled, then press Record. <b>Look for:</b> NH₃ drops to 5 at once, then climbs back to 7 as the system shifts right.</li>
+        <li>Press Start over, then press Heat by 50 &deg;C. Wait for Settled, then press Record. <b>Look for:</b> a shift to the left. NH₃ falls from 10 to 8.</li>
+        <li>Press Start over, then press Compress. Wait for Settled, then press Record. <b>Look for:</b> a shift to the right as the piston squeezes the gas. NH₃ rises from 10 to 13.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your row for Add N<sub>2</sub> and H<sub>2</sub> with your row for Heat by 50&nbsp;&deg;C. The first shifted right and the second shifted left. Why?</p>",
+  "options": [
+    {
+      "label": "The reaction gives out heat, so heating shifts it left and adding reactant shifts it right",
+      "correct": true,
+      "feedback": "The forward reaction releases heat, so heat acts like a product. Adding a product shifts the system left, away from it. Adding a reactant shifts it right."
+    },
+    {
+      "label": "Heating speeds up only the reverse reaction, and adding reactant speeds up only the forward one",
+      "correct": false,
+      "feedback": "Heat speeds up both reactions. The two rates then settle at a new balance. Your Heat row shows less NH<sub>3</sub> because the reverse rate gains more than the forward rate."
+    },
+    {
+      "label": "Adding heat always pushes a reaction toward its products, just like adding reactant",
+      "correct": false,
+      "feedback": "Heat helps the products only in an endothermic reaction. This reaction releases heat, so extra heat pushes the system back toward the reactants."
+    }
+  ],
+  "reveal": "<p>Only the two recorded rows answer this. The direction of a temperature shift depends on whether the reaction gives out or takes in heat.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 05 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. A system reaches chemical equilibrium when the rate of the forward reaction equals the rate of the <input class="blank" data-answer="reverse reaction|reverse" placeholder="?">.<br>
+      2. At dynamic equilibrium the amounts of reactants and products stay <input class="blank" data-answer="constant|unchanged" placeholder="?">, even though collisions continue in both directions.<br>
+      3. When you add extra reactant, the system shifts <input class="blank" data-answer="right|forward|toward products" placeholder="?">.<br>
+      4. Compressing a gas mixture shifts the equilibrium toward the side with <input class="blank" data-answer="fewer moles of gas|fewer gas moles|fewer moles" placeholder="?">.<br>
+      5. In an exothermic reaction, raising the temperature shifts the equilibrium to the <input class="blank" data-answer="left|reverse|toward reactants" placeholder="?">.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 SELF-EXPLANATION: THE HABER COMPROMISE, ONE VARIABLE AT A TIME -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Explain it to yourself</span></div>
+    <h2>Two questions about the Haber process.</h2>
+    <p>Each question changes one condition. Write your answer first, then open the key points.</p>
+
+    <h3>Temperature</h3>
+    <div data-widget="commit-reveal">
+      <script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "A lower temperature gives a higher yield of NH<sub>3</sub> at equilibrium. Industrial plants still run at about 450&nbsp;&deg;C. Explain why they do not run at 25&nbsp;&deg;C.",
+  "minChars": 40,
+  "reveal": "<p><b>Key points:</b></p><ul><li>The reaction is exothermic, so cooling shifts the equilibrium right. At 25&nbsp;&deg;C the equilibrium holds the most ammonia.</li><li>The N&equiv;N bond (945&nbsp;kJ/mol) is strong. At 25&nbsp;&deg;C almost no collisions have enough energy to break it, so the reaction takes years to reach equilibrium.</li><li>At 450&nbsp;&deg;C, with an iron catalyst, the mixture reaches equilibrium quickly. The yield is lower, but the plant makes ammonia at a useful speed.</li></ul>"
+}
+      </script>
+    </div>
+
+    <h3>Pressure</h3>
+    <div data-widget="commit-reveal">
+      <script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "Plants run the reaction at 200 atmospheres. Use the gas particles in N<sub>2</sub>(g) + 3 H<sub>2</sub>(g) &rightleftharpoons; 2 NH<sub>3</sub>(g) to explain why raising the pressure increases the amount of ammonia.",
+  "minChars": 40,
+  "reveal": "<p><b>Key points:</b></p><ul><li>The left side has 4 moles of gas (1 N<sub>2</sub> and 3 H<sub>2</sub>). The right side has 2 moles of gas (2 NH<sub>3</sub>).</li><li>Raising the pressure packs the gas particles closer together. The system works against this by making fewer particles, so it shifts right.</li><li>When the system settles, a larger share of the mixture is NH<sub>3</sub>.</li></ul>"
+}
+      </script>
+    </div>
+  </div>
+</section>
+
+<!-- 07 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS1-6 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks]</span>
+      </div>
+      <div class="exam-q">
+        <p>Dinitrogen tetroxide (N<sub>2</sub>O<sub>4</sub>) and nitrogen dioxide (NO<sub>2</sub>) reach dynamic equilibrium in a sealed glass syringe:</p>
+        <div class="eq-display">N<sub>2</sub>O<sub>4</sub>(g) [colorless] + 57.2&nbsp;kJ &rightleftharpoons; 2 NO<sub>2</sub>(g) [dark brown]</div>
+        <p>A student does two experiments with this mixture at 25&nbsp;&deg;C.</p>
+        <p><b>Experiment 1 (temperature):</b> The student puts the sealed syringe in ice water at 0&nbsp;&deg;C. Within two minutes the dark brown gas turns almost colorless.</p>
+        <p><b>Experiment 2 (pressure):</b> The student pushes the plunger in and halves the gas volume from 60&nbsp;mL to 30&nbsp;mL. The gas flashes darker brown for one second. Over the next 15 seconds the brown color fades until the gas is lighter than it was at the start.</p>
+        <p class="sub"><b>(a)</b> Use Le Chatelier&rsquo;s principle and the heat in the equation to explain why the gas turns colorless in Experiment 1. [1 mark]</p>
+        <p class="sub"><b>(b)</b> Explain why the gas flashes darker the instant the plunger moves in Experiment 2. [1 mark]</p>
+        <p class="sub"><b>(c)</b> Explain why the color fades over the next 15 seconds. Use the moles of gas and Le Chatelier&rsquo;s principle. [2 marks]</p>
+      </div>
+      <textarea class="textbox" id="examAns" placeholder="Write your answers for (a), (b) and (c)..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Cooling (1 mark):</b> You say cooling shifts the endothermic reaction left, which makes colorless N<sub>2</sub>O<sub>4</sub>.</li>
+          <li><b>Flash (1 mark):</b> You say halving the volume doubles the particles per volume at once, before any shift.</li>
+          <li><b>Moles of gas (1 mark):</b> You say N<sub>2</sub>O<sub>4</sub> is 1 mole of gas and 2 NO<sub>2</sub> is 2 moles.</li>
+          <li><b>Shift (1 mark):</b> You say pressure shifts it toward fewer moles, so NO<sub>2</sub> becomes N<sub>2</sub>O<sub>4</sub> and the color fades.</li>
+        </ul></div></div>
+
+      <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>Equilibria also set the carbon cycle of the planet. Carbon dioxide from the air dissolves in the oceans: CO<sub>2</sub>(g) &rightleftharpoons; CO<sub>2</sub>(aq) &rightleftharpoons; H<sub>2</sub>CO<sub>3</sub>(aq) &rightleftharpoons; H<sup>+</sup> + HCO<sub>3</sub><sup>&minus;</sup>. Rising CO<sub>2</sub> in the air raises the pressure of the gas. Under Le Chatelier&rsquo;s principle, more CO<sub>2</sub> dissolves in seawater. The forward shift releases H<sup>+</sup> ions, which acidify the ocean and threaten coral reefs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-6 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-6</h3>
+    <p>
+      Test your mastery of reversible reactions and Le Chatelier shifts one question at a time. The adaptive engine covers equal rates at equilibrium, concentration changes, temperature shifts with heat as a reactant or product, gas compression, and industrial yield.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-6" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 4 &middot; 4-6a</div>
+  <p>Next, 4-6b: <strong>Human Equilibrium &amp; Blood Buffers</strong> shows an equilibrium inside your own blood.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="4-6a.js"></script>
+</body>
+</html>

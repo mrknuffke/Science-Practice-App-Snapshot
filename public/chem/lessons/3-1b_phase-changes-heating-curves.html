@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="3-1b" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Heating Curves &amp; Phase Changes · Gen Chem 3-1b</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 3-1b &middot; Heating Curves &amp; Phase Changes</div>
+    <h1>Turn up the stove all you want: boiling water will <span class="flip">never</span> get hotter than 100&nbsp;&deg;C.</h1>
+    <p class="lede">You turn a burner from low to high and pour five times more heat into a pot. The thermometer in the rolling boil does not rise past 100&nbsp;&deg;C. Where does the energy go? This page separates two kinds of energy: faster particles (thermal energy) and particles pulling apart (phase energy). You use that split to read heating curves and to add up the heat for every stage.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS3-1</b> Create a computational model to calculate the change in the energy of one component in a system when the change in energy of the other component(s) and energy flows in and out of the system are known.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can read a heating curve and say where the energy goes on a slope and on a plateau. You can calculate the heat for each stage and add the stages.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Heating curves of water, heat of fusion (334&nbsp;J/g), heat of vaporization (2,260&nbsp;J/g), and evaporative cooling.</div></div>
+    </div>
+
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Slopes and plateaus.</strong> On a slope, added energy speeds up the particles (thermal energy, <em>E</em><sub>th</sub>) and the temperature rises: <em>q</em> = <em>mc</em>&Delta;<em>T</em>. On a plateau, added energy pulls particles apart (phase energy, <em>E</em><sub>ph</sub>) and the temperature stays constant.</li>
+              <li><strong>One temperature during a change.</strong> While a phase change runs, two states of matter coexist. All the added heat (latent heat) separates particles. The average kinetic energy does not change.</li>
+              <li><strong>Boiling takes more than melting.</strong> Vaporization (&Delta;<em>H</em><sub>v</sub> = 2,260&nbsp;J/g) takes nearly 7 times the energy of fusion (&Delta;<em>H</em><sub>f</sub> = 334&nbsp;J/g). Melting loosens the lattice but the molecules stay in contact. Boiling pulls them apart completely.</li>
+              <li><strong>Bonds stay whole.</strong> A phase change disrupts the attractions between molecules, such as hydrogen bonds. It never breaks the covalent bonds inside a molecule. Steam is still H<sub>2</sub>O.</li>
+              <li><strong>Add the stages.</strong> To find the heat across several stages, calculate each slope and each plateau separately. Then add them: <em>q</em><sub>total</sub> = &sum; <em>q</em><sub>i</sub>.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Heating curve layout</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 300 170" font-family="var(--display)" role="img" aria-label="Heating curve with three slopes for solid, liquid and gas and two plateaus for melting and boiling">
+              <!-- Axes -->
+              <line x1="40" y1="140" x2="290" y2="140" stroke="var(--ink)" stroke-width="1.5"/>
+              <line x1="40" y1="140" x2="40" y2="15" stroke="var(--ink)" stroke-width="1.5"/>
+              <text x="165" y="162" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Heat added</text>
+              <text x="14" y="78" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle" transform="rotate(-90 14 78)">Temperature</text>
+
+              <!-- Curve segments -->
+              <line x1="40" y1="128" x2="70" y2="108" stroke="var(--accent)" stroke-width="2"/>
+              <line x1="70" y1="108" x2="105" y2="108" stroke="var(--ink)" stroke-width="2.5"/>
+              <line x1="105" y1="108" x2="140" y2="66" stroke="var(--accent)" stroke-width="2"/>
+              <line x1="140" y1="66" x2="225" y2="66" stroke="var(--ink)" stroke-width="2.5"/>
+              <line x1="225" y1="66" x2="270" y2="32" stroke="var(--accent)" stroke-width="2"/>
+
+              <!-- Labels -->
+              <text x="46" y="98" style="font-size:var(--dia-caption-size);" fill="var(--accent)">Solid</text>
+              <text x="88" y="100" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Melt</text>
+              <text x="124" y="124" style="font-size:var(--dia-caption-size);" fill="var(--accent)">Liquid</text>
+              <text x="182" y="58" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Boil</text>
+              <text x="262" y="56" style="font-size:var(--dia-caption-size);" fill="var(--accent)" text-anchor="middle">Gas</text>
+            </svg>
+</div>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> <span>Explain why the temperature stays constant during melting and boiling.</span></li>
+              <li><input type="checkbox" disabled> <span>Contrast thermal energy (<em>E</em><sub>th</sub>) with phase energy (<em>E</em><sub>ph</sub>).</span></li>
+              <li><input type="checkbox" disabled> <span>Explain why &Delta;<em>H</em><sub>v</sub> is much larger than &Delta;<em>H</em><sub>f</sub> for water.</span></li>
+              <li><input type="checkbox" disabled> <span>Calculate the total heat for a process that crosses phase boundaries.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 SLOPES VS PLATEAUS -->
+<section id="s-anatomy" data-toc="Slopes vs. plateaus">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Anatomy of a heating curve</span></div>
+    <h2>Why the thermometer stops rising.</h2>
+    <p>Heat ice at &minus;20&nbsp;&deg;C with constant power. The temperature does not climb steadily. The thermometer traces a staircase called a <strong class="term">heating curve</strong>.</p>
+
+    <!-- 5-STAGE HEATING CURVE DIAGRAM -->
+    <figure class="figure figure--full">
+<div class="diagram">
+      <svg viewBox="0 0 680 340" font-family="var(--display)" role="img" aria-label="Five-stage heating curve of water from ice at -20 degrees C to steam at 120 degrees C, with a plateau at 0 degrees C and a longer plateau at 100 degrees C">
+        <rect x="0" y="0" width="680" height="340" fill="var(--card)" rx="8" stroke="var(--hair)" stroke-width="1"/>
+
+        <!-- Grid lines -->
+        <line x1="70" y1="280" x2="640" y2="280" stroke="var(--hair)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="70" y1="220" x2="640" y2="220" stroke="var(--hair)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="70" y1="90" x2="640" y2="90" stroke="var(--hair)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="70" y1="40" x2="640" y2="40" stroke="var(--hair)" stroke-width="1" stroke-dasharray="4 4"/>
+
+        <!-- Axes -->
+        <line x1="70" y1="290" x2="640" y2="290" stroke="var(--ink)" stroke-width="1.8"/>
+        <line x1="70" y1="290" x2="70" y2="30" stroke="var(--ink)" stroke-width="1.8"/>
+
+        <!-- Y-axis ticks and labels -->
+        <text x="62" y="284" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--ink-soft)" text-anchor="end">&minus;20 &deg;C</text>
+        <text x="62" y="224" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="end">0 &deg;C</text>
+        <text x="62" y="94" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="end">100 &deg;C</text>
+        <text x="62" y="44" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--ink-soft)" text-anchor="end">120 &deg;C</text>
+        <text x="14" y="150" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle" transform="rotate(-90 14 150)">Temperature</text>
+
+        <!-- X-axis label -->
+        <text x="355" y="320" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Heat added (kJ) &rarr;</text>
+
+        <!-- Shaded plateau bands -->
+        <rect x="130" y="30" width="70" height="260" fill="var(--accent)" opacity="0.06"/>
+        <rect x="290" y="30" width="260" height="260" fill="var(--accent)" opacity="0.06"/>
+
+        <!-- The curve -->
+        <line x1="70" y1="280" x2="130" y2="220" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="130" y1="220" x2="200" y2="220" stroke="var(--ink)" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="200" y1="220" x2="290" y2="90" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="290" y1="90" x2="550" y2="90" stroke="var(--ink)" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="550" y1="90" x2="620" y2="40" stroke="var(--accent)" stroke-width="3.5" stroke-linecap="round"/>
+
+        <!-- Nodes at the transitions -->
+        <circle cx="70" cy="280" r="4" fill="var(--accent)"/>
+        <circle cx="130" cy="220" r="5" fill="var(--ink)"/>
+        <circle cx="200" cy="220" r="5" fill="var(--ink)"/>
+        <circle cx="290" cy="90" r="5" fill="var(--ink)"/>
+        <circle cx="550" cy="90" r="5" fill="var(--ink)"/>
+        <circle cx="620" cy="40" r="4" fill="var(--accent)"/>
+
+        <!-- Stage labels -->
+        <text x="165" y="262" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">I. Ice</text>
+        <text x="165" y="277" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--ink-soft)" text-anchor="middle">q = mc&Delta;T</text>
+
+        <text x="165" y="190" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">II. Melting</text>
+        <text x="165" y="205" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--accent)" text-anchor="middle">q = m&Delta;Hf</text>
+
+        <text x="300" y="175" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">III. Water</text>
+        <text x="300" y="190" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--ink-soft)" text-anchor="middle">q = mc&Delta;T</text>
+
+        <text x="420" y="62" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">IV. Boiling</text>
+        <text x="420" y="78" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--accent)" text-anchor="middle">q = m&Delta;Hv</text>
+
+        <text x="598" y="113" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">V. Steam</text>
+        <text x="598" y="128" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" fill="var(--ink-soft)" text-anchor="middle">q = mc&Delta;T</text>
+      </svg>
+</div>
+<figcaption><b>Figure 3.1.</b> slopes are single phases where particles speed up (<em>E</em><sub>th</sub>) · plateaus are phase changes where phase energy (<em>E</em><sub>ph</sub>) rises at constant temperature · horizontal lengths are not to scale</figcaption>
+</figure>
+
+    <p>A heating curve has two kinds of region.</p>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&Delta;<em>T</em> &ne; 0</div>
+        <h4>Slopes: thermal energy (<em>E</em><sub>th</sub>)</h4>
+        <p>In regions I (ice), III (liquid water), and V (steam), the substance stays in one state. Every joule you add speeds up the particles, so the temperature rises. The heat follows <em>q</em> = <em>m</em> &times; <em>c</em> &times; &Delta;<em>T</em>.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&Delta;<em>T</em> = 0</div>
+        <h4>Plateaus: phase energy (<em>E</em><sub>ph</sub>)</h4>
+        <p>In regions II (melting at 0&nbsp;&deg;C) and IV (boiling at 100&nbsp;&deg;C), heat keeps entering but the temperature stays fixed. The added energy is <strong>latent heat</strong>. It pulls particles apart against the <strong class="term">intermolecular forces</strong>. The particles do not speed up, so the energy is stored as potential phase energy. The heat follows <em>q</em> = <em>m</em> &times; &Delta;<em>H</em><sub>f</sub> for melting and <em>q</em> = <em>m</em> &times; &Delta;<em>H</em><sub>v</sub> for boiling.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="label">Common mistake</div>
+      <p>Thinking boiling tears H<sub>2</sub>O molecules into hydrogen and oxygen. It does not. The covalent bonds inside a molecule (<strong class="term">intramolecular forces</strong>) need about 460&nbsp;kJ/mol to break. A phase change only overcomes the weaker attractions <em>between</em> molecules (<strong class="term">intermolecular forces</strong>), such as hydrogen bonds at about 20&nbsp;kJ/mol. Steam from a kettle is still H<sub>2</sub>O. The molecules are just far apart.</p>
+    </div>
+
+    <!-- PREDICT CHECK (COMMIT-BEFORE-REVEAL) -->
+    <div data-widget="commit-reveal" class="widget-section">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "An insulated container holds 50&nbsp;g of ice and 50&nbsp;g of liquid water at 0&nbsp;&deg;C. You add 500&nbsp;J of heat. That is not enough to melt all the ice. What is the temperature of the mixture afterward?",
+  "options": [
+    {
+      "label": "It rises to about 2.4&nbsp;&deg;C, because the water absorbed the heat.",
+      "correct": false,
+      "feedback": "Absorbing heat does not always raise the temperature. While ice and water coexist, the added energy loosens the ice lattice instead of speeding up molecules. The mixture stays at 0&nbsp;&deg;C."
+    },
+    {
+      "label": "It stays at 0&nbsp;&deg;C until all of the ice has melted.",
+      "correct": true,
+      "feedback": "Ice and liquid water coexist, so the mixture sits on the melting plateau. The added energy loosens hydrogen bonds in the lattice. It does not speed up the molecules."
+    },
+    {
+      "label": "It drops below 0&nbsp;&deg;C, because melting takes energy from the liquid.",
+      "correct": false,
+      "feedback": "Melting does take energy, but here the energy comes from your 500&nbsp;J, not from the liquid. The heat arrives from outside the container, so the mixture cannot cool. It stays at 0&nbsp;&deg;C."
+    }
+  ],
+  "reveal": "<p>Ice and liquid water coexist at 0&nbsp;&deg;C, so the mixture stays on the melting plateau. The added energy overcomes hydrogen bonds in the ice lattice. That raises the potential energy (<em>E</em><sub>ph</sub>). It does not speed up the molecules (<em>E</em><sub>th</sub>). The temperature rises only after the last ice crystal melts.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 02 INTERACTIVE HEATING CURVE & PARTICLE SANDBOX -->
+<section id="s-interactive-curve" data-toc="Curve and particles">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Heat a 50.0 g sample</span></div>
+    <h2>Heating curve and particle explorer.</h2>
+    <p>Add heat to a 50.0&nbsp;g sample of water. Drag the heat slider or press a preset. Watch the particle picture change as the sample moves along the curve.</p>
+
+    <div class="sim-box" data-sim="heating-curve">
+      <div class="label">Simulation</div>
+      <h4>Why does the temperature stop rising while ice melts?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: you add 10&nbsp;kJ of heat to 50&nbsp;g of ice at &minus;20&nbsp;&deg;C. What is the temperature of the sample?</p>",
+  "options": [
+    {
+      "label": "0 &deg;C, because the ice is melting",
+      "correct": true,
+      "feedback": "The first 2.09&nbsp;kJ warms the ice to 0&nbsp;&deg;C. The rest of the 10&nbsp;kJ melts it, and the temperature holds at 0&nbsp;&deg;C while ice and water coexist."
+    },
+    {
+      "label": "28 &deg;C, because all 10&nbsp;kJ warms the sample",
+      "correct": false,
+      "feedback": "28&nbsp;&deg;C comes from using water&rsquo;s specific heat for all 10&nbsp;kJ. That skips the melting. Only 2.09&nbsp;kJ warms the ice, and the rest breaks up the lattice with no temperature change."
+    },
+    {
+      "label": "&minus;20 &deg;C, because ice must melt before it warms",
+      "correct": false,
+      "feedback": "Ice does warm first. Heat raises its temperature from &minus;20&nbsp;&deg;C to 0&nbsp;&deg;C before any melting starts. Then 10&nbsp;kJ is more than enough to start melting."
+    }
+  ],
+  "reveal": "<p>Now check it. Drag the heat slider and watch the curve and the molecules.</p>"
+}
+</script>
+</div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="A heating curve for 50 grams of water and a picture of its molecules. Set the heat added."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Set the heat added to the sample">
+        <label class="slider-row">Heat added <output>0.0 kJ</output>
+          <input type="range" id="heatSlider" min="0" max="155" step="0.1" value="0" data-unit="kJ" data-digits="1">
+        </label>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="heat"><span class="readout-label">Heat added</span><span class="readout-value">0.0 kJ</span></div>
+        <div class="readout" data-readout="temp"><span class="readout-label">Temperature</span><span class="readout-value">-20.0 °C</span></div>
+        <div class="readout" data-readout="stage"><span class="readout-label">Stage</span><span class="readout-value">Ice warming</span></div>
+        <div class="readout" data-readout="goes"><span class="readout-label">Energy goes to</span><span class="readout-value">Faster molecules</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="accent"></span>One water molecule (24 stand for 50 g)</li>
+        <li><span class="key" data-shape="dash" data-token="ink-mute"></span>Hydrogen bond between molecules in ice</li>
+        <li><span class="key" data-shape="line" data-token="accent"></span>The heating curve so far, with a dot at the sample</li>
+      </ul>
+      <ol class="try-this">
+        <li>Add 10 kJ, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="10">Load 10 kJ</button> <b>Look for:</b> the temperature sits at 0.0 °C while the lattice loosens.</li>
+        <li>Add 30 kJ, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="30">Load 30 kJ</button> <b>Look for:</b> all the ice has melted and the water has warmed to about 54 °C.</li>
+        <li>Add 100 kJ, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="100">Load 100 kJ</button> <b>Look for:</b> the temperature sits at 100.0 °C while molecules leave the liquid.</li>
+        <li>Add 154 kJ, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="154">Load 154 kJ</button> <b>Look for:</b> every molecule is a gas and the temperature rises again.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows. Which statement fits them?</p>",
+  "options": [
+    {
+      "label": "Each extra 10&nbsp;kJ of heat raised the temperature by about 10&nbsp;&deg;C",
+      "correct": false,
+      "feedback": "Your rows do not show a steady rise. From 10&nbsp;kJ to 30&nbsp;kJ, 20&nbsp;kJ raised the temperature by 54&nbsp;&deg;C. From 30&nbsp;kJ to 100&nbsp;kJ, 70&nbsp;kJ raised it by only 46&nbsp;&deg;C."
+    },
+    {
+      "label": "The temperature rose fastest during the boiling plateau, because boiling is hot",
+      "correct": false,
+      "feedback": "Boiling is where the temperature reaches 100&nbsp;&deg;C, which makes this tempting. But the 100&nbsp;kJ row sits on the plateau. The temperature stops there while the heat keeps coming."
+    },
+    {
+      "label": "Between 30&nbsp;kJ and 100&nbsp;kJ the temperature rose only 46&nbsp;&deg;C, because boiling took the heat",
+      "correct": true,
+      "feedback": "70&nbsp;kJ went in between those rows, yet the temperature rose just 46&nbsp;&deg;C. Most of that heat pulled molecules apart during boiling. It did not speed them up."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Heat that changes the phase does not change the temperature.</p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 03 THE 7X ENERGY ASYMMETRY -->
+<section id="s-latent-asymmetry" data-toc="Why boiling takes more">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Melting versus boiling</span></div>
+    <h2>Why boiling takes 7 times more energy than melting.</h2>
+    <p>Look at the curve for 50&nbsp;g of water. Melting takes <strong>16.7&nbsp;kJ</strong>. Boiling takes <strong>113.0&nbsp;kJ</strong>. The <strong class="term">heat of vaporization</strong> (&Delta;<em>H</em><sub>v</sub> = 2,260&nbsp;J/g) is <strong>6.8 times</strong> the <strong class="term">heat of fusion</strong> (&Delta;<em>H</em><sub>f</sub> = 334&nbsp;J/g). Why does turning liquid into gas take so much more energy than turning solid into liquid?</p>
+
+    <!-- MOLECULAR COMPARISON DIAGRAM -->
+    <figure class="figure figure--full">
+<div class="diagram">
+      <svg viewBox="0 0 660 220" font-family="var(--display)" role="img" aria-label="Particle comparison of solid ice, liquid water and steam showing the distance between molecules">
+        <rect x="0" y="0" width="660" height="220" fill="var(--card)" rx="8" stroke="var(--hair)" stroke-width="1"/>
+
+        <!-- Box 1: ice -->
+        <rect x="25" y="45" width="165" height="135" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1.2"/>
+        <text x="107" y="32" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Solid ice (0 &deg;C)</text>
+        <!-- Rigid lattice of H2O molecules joined by hydrogen bonds -->
+        <g stroke="var(--ink-mute)" stroke-width="1" stroke-dasharray="2 2">
+          <line x1="65" y1="75" x2="110" y2="75"/><line x1="110" y1="75" x2="155" y2="75"/>
+          <line x1="65" y1="115" x2="110" y2="115"/><line x1="110" y1="115" x2="155" y2="115"/>
+          <line x1="65" y1="155" x2="110" y2="155"/><line x1="110" y1="155" x2="155" y2="155"/>
+          <line x1="65" y1="75" x2="65" y2="115"/><line x1="65" y1="115" x2="65" y2="155"/>
+          <line x1="110" y1="75" x2="110" y2="115"/><line x1="110" y1="115" x2="110" y2="155"/>
+          <line x1="155" y1="75" x2="155" y2="115"/><line x1="155" y1="115" x2="155" y2="155"/>
+        </g>
+        <g transform="translate(65, 75)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(110, 75)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(155, 75)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(65, 115)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(110, 115)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(155, 115)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(65, 155)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(110, 155)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(155, 155)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <text x="107" y="200" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">all IMFs hold the lattice</text>
+
+        <!-- Arrow 1: melting -->
+        <path d="M198 112 L238 112" stroke="var(--ink)" stroke-width="2" marker-end="url(#arr-asym)"/>
+        <text x="218" y="98" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink)" text-anchor="middle">&Delta;Hf</text>
+        <text x="218" y="132" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">334 J/g</text>
+
+        <!-- Box 2: liquid water -->
+        <g transform="translate(46, 0)">
+        <rect x="230" y="45" width="165" height="135" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1.2"/>
+        <text x="312" y="32" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Liquid water (100 &deg;C)</text>
+        <!-- Liquid molecules with short-lived hydrogen bonds -->
+        <g stroke="var(--ink-mute)" stroke-width="0.8" stroke-dasharray="2 2" opacity="0.6">
+          <line x1="260" y1="85" x2="285" y2="75"/><line x1="285" y1="75" x2="320" y2="85"/>
+          <line x1="320" y1="85" x2="355" y2="80"/><line x1="270" y1="120" x2="300" y2="115"/>
+          <line x1="300" y1="115" x2="335" y2="125"/><line x1="335" y1="125" x2="365" y2="110"/>
+        </g>
+        <g transform="translate(260, 85)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-3" cy="4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="3" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(285, 75)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="4" cy="-3" r="2.8" fill="var(--ink-soft)"/><circle cx="-4" cy="-3" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(320, 85)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="3" r="2.8" fill="var(--ink-soft)"/><circle cx="3" cy="4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(355, 80)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="4" cy="-3" r="2.8" fill="var(--ink-soft)"/><circle cx="-3" cy="-4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(270, 120)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-3" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-2" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(300, 115)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="3" cy="4" r="2.8" fill="var(--ink-soft)"/><circle cx="-4" cy="3" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(335, 125)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-3" cy="-4" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-3" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(365, 110)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="3" r="2.8" fill="var(--ink-soft)"/><circle cx="3" cy="4" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(285, 155)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="-4" cy="-3" r="2.8" fill="var(--ink-soft)"/><circle cx="4" cy="-3" r="2.8" fill="var(--ink-soft)"/></g>
+        <g transform="translate(330, 160)"><circle cx="0" cy="0" r="5" fill="var(--accent)"/><circle cx="3" cy="4" r="2.8" fill="var(--ink-soft)"/><circle cx="-4" cy="3" r="2.8" fill="var(--ink-soft)"/></g>
+        <text x="312" y="200" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">about 85% of H-bonds kept</text>
+        </g>
+
+        <!-- Arrow 2: boiling -->
+        <path d="M451 112 L497 112" stroke="var(--accent)" stroke-width="2.5" marker-end="url(#arr-asym-red)"/>
+        <text x="474" y="98" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--accent)" text-anchor="middle">&Delta;Hv</text>
+        <text x="474" y="132" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">2,260 J/g</text>
+
+        <!-- Box 3: steam -->
+        <g transform="translate(66, 0)">
+        <rect x="438" y="45" width="165" height="135" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1.2"/>
+        <text x="520" y="32" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Steam (above 100 &deg;C)</text>
+        <!-- Widely spaced H2O molecules with trajectories -->
+        <g transform="translate(465, 68)"><circle cx="0" cy="0" r="5" fill="var(--ink-soft)"/><circle cx="-4" cy="-3" r="2.8" fill="var(--hair)"/><circle cx="4" cy="-3" r="2.8" fill="var(--hair)"/><line x1="0" y1="0" x2="-15" y2="12" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="2 2"/></g>
+        <g transform="translate(560, 85)"><circle cx="0" cy="0" r="5" fill="var(--ink-soft)"/><circle cx="3" cy="4" r="2.8" fill="var(--hair)"/><circle cx="-4" cy="3" r="2.8" fill="var(--hair)"/><line x1="0" y1="0" x2="16" y2="-10" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="2 2"/></g>
+        <g transform="translate(495, 135)"><circle cx="0" cy="0" r="5" fill="var(--ink-soft)"/><circle cx="-3" cy="-4" r="2.8" fill="var(--hair)"/><circle cx="4" cy="-3" r="2.8" fill="var(--hair)"/><line x1="0" y1="0" x2="-12" y2="-14" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="2 2"/></g>
+        <g transform="translate(575, 155)"><circle cx="0" cy="0" r="5" fill="var(--ink-soft)"/><circle cx="4" cy="-3" r="2.8" fill="var(--hair)"/><circle cx="-3" cy="-4" r="2.8" fill="var(--hair)"/><line x1="0" y1="0" x2="14" y2="12" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="2 2"/></g>
+        <text x="520" y="200" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">no IMFs · free molecules</text>
+        </g>
+
+        <defs>
+          <marker id="arr-asym" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+            <path d="M0 0 L6 3 L0 6 z" fill="var(--ink)"/>
+          </marker>
+          <marker id="arr-asym-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+            <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+          </marker>
+        </defs>
+      </svg>
+</div>
+<figcaption><b>Figure 3.2.</b> melting loosens the lattice, but molecules keep contact and most hydrogen bonds · boiling pulls them fully apart</figcaption>
+</figure>
+
+    <p>The reason is the distance between molecules.</p>
+    <ul>
+      <li><strong>Melting (&Delta;<em>H</em><sub>f</sub> = 334&nbsp;J/g).</strong> The rigid ice lattice collapses into a fluid. The molecules stay packed together. Liquid water is even denser than ice. The molecules keep about 85% of the hydrogen bonds that ice has. The energy only disrupts the ordered arrangement. It does not separate the molecules.</li>
+      <li><strong>Vaporization (&Delta;<em>H</em><sub>v</sub> = 2,260&nbsp;J/g).</strong> Liquid molecules must separate completely. The average distance between molecules grows about tenfold. The volume grows over 1,600 times. Overcoming <b>all</b> the intermolecular attractions takes nearly 7 times the energy of melting.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="label">Why steam scalds worse than boiling water</div>
+      <p>One gram of boiling water cools from 100&nbsp;&deg;C to skin temperature (37&nbsp;&deg;C) and releases 264&nbsp;J. Here <em>q</em> = 1&nbsp;g &times; 4.184&nbsp;J/(g&middot;&deg;C) &times; (37 &minus; 100&nbsp;&deg;C) = &minus;264&nbsp;J. One gram of steam at 100&nbsp;&deg;C must condense first. It dumps 2,260&nbsp;J into the skin before the liquid starts to cool. In total the steam releases 2,260 + 264 = <strong>2,524&nbsp;J</strong>, nearly 10 times as much as boiling water.</p>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Expecting boiling to cost about the same as melting because both are &ldquo;just a phase change.&rdquo; Boiling takes nearly 7 times more energy per gram. Melting only loosens the molecules. Boiling pulls them completely apart.</p></div>
+
+    <h3>Constants for water (H<sub>2</sub>O)</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>Specific heats, heat of fusion and heat of vaporization of water</caption>
+        <thead>
+          <tr>
+            <th scope="col">Quantity</th>
+            <th scope="col">Symbol</th>
+            <th scope="col" class="num">Value</th>
+            <th scope="col">Where it is used on the curve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Specific heat of ice</td>
+            <td><em>c</em><sub>ice</sub></td>
+            <td class="num">2.09 J/(g&middot;&deg;C)</td>
+            <td>Region I (ice warming, below 0&nbsp;&deg;C)</td>
+          </tr>
+          <tr>
+            <td>Heat of fusion</td>
+            <td>&Delta;<em>H</em><sub>f</sub></td>
+            <td class="num">334 J/g (6.01 kJ/mol)</td>
+            <td>Region II (melting plateau at 0&nbsp;&deg;C)</td>
+          </tr>
+          <tr>
+            <td>Specific heat of liquid water</td>
+            <td><em>c</em><sub>liquid</sub></td>
+            <td class="num">4.184 J/(g&middot;&deg;C)</td>
+            <td>Region III (liquid warming, 0 to 100&nbsp;&deg;C)</td>
+          </tr>
+          <tr>
+            <td>Heat of vaporization</td>
+            <td>&Delta;<em>H</em><sub>v</sub></td>
+            <td class="num">2,260 J/g (40.7 kJ/mol)</td>
+            <td>Region IV (boiling plateau at 100&nbsp;&deg;C)</td>
+          </tr>
+          <tr>
+            <td>Specific heat of steam</td>
+            <td><em>c</em><sub>steam</sub></td>
+            <td class="num">2.01 J/(g&middot;&deg;C)</td>
+            <td>Region V (steam warming, above 100&nbsp;&deg;C)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- 04 COMPUTATIONAL ENGINE: MULTI-STAGE CALCULATOR -->
+<section id="s-computational-engine" data-toc="Multi-stage calculator">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Adding up the stages</span></div>
+    <h2>Multi-stage phase change calculator.</h2>
+    <p>A sample that changes temperature <em>and</em> phase needs more than one equation. Build a roadmap: one equation for each stage, then add the results.</p>
+
+    <div class="eq-display"><em>q</em><sub>total</sub> = <em>q</em><sub>1</sub> + <em>q</em><sub>2</sub> + <em>q</em><sub>3</sub> + <em>q</em><sub>4</sub> + <em>q</em><sub>5</sub></div>
+    <ul>
+      <li><b>Slope stage:</b> <em>q</em> = <em>m</em> &times; <em>c</em> &times; &Delta;<em>T</em></li>
+      <li><b>Plateau stage:</b> <em>q</em> = <em>m</em> &times; &Delta;<em>H</em></li>
+    </ul>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Using <em>q</em> = <em>mc</em>&Delta;<em>T</em> across a plateau. The temperature does not change on a plateau, so &Delta;<em>T</em> = 0 and the formula gives zero. A phase change needs <em>q</em> = <em>m</em>&Delta;<em>H</em>.</p></div>
+
+    <div class="sim-box" data-tool="stages">
+      <div class="label">Interactive tool</div>
+      <h4>How much heat does a multi-stage change need?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: you heat 25&nbsp;g of ice at &minus;15&nbsp;&deg;C until it becomes steam at 110&nbsp;&deg;C. How many separate <em>q</em> calculations do you add?</p>",
+  "options": [
+    {
+      "label": "One, using <em>q</em> = <em>mc</em>&Delta;<em>T</em> with the specific heat of water",
+      "correct": false,
+      "feedback": "One equation cannot cover the plateaus. The temperature does not change while the ice melts or the water boils, so &Delta;<em>T</em> is zero there and the formula gives zero."
+    },
+    {
+      "label": "Five: ice warming, melting, water warming, boiling, and steam warming",
+      "correct": true,
+      "feedback": "The sample crosses three slopes and two plateaus. Each slope uses <em>mc</em>&Delta;<em>T</em>. Each plateau uses <em>m</em>&Delta;<em>H</em>. You add all five."
+    },
+    {
+      "label": "Three, one for each state of matter: solid, liquid, and gas",
+      "correct": false,
+      "feedback": "Three states is tempting, because the sample ends as steam. But melting and boiling cost energy too. Those two plateaus add two more calculations."
+    }
+  ],
+  "reveal": "<p>Now check it. Press a preset and count the stages.</p>"
+}
+</script>
+</div>
+      <div class="sim-controls" role="group" aria-label="Load a practice case">
+        <button type="button" class="chip" aria-pressed="false" data-preset="melt">Melting ice: 25 g, &minus;15 to 0 °C</button>
+        <button type="button" class="chip" aria-pressed="false" data-preset="full">Five stages: 25 g, &minus;15 to 110 °C</button>
+        <button type="button" class="chip" aria-pressed="false" data-preset="ethanol">Warming ethanol: 50 g, 20 to 78 °C</button>
+      </div>
+      <div class="sim-controls" role="group" aria-label="Set the sample">
+        <label class="tool-field" for="multiSubstance"><span class="label">Substance</span>
+          <select id="multiSubstance" class="form-select">
+            <option value="water" selected>Water: melts at 0 °C, boils at 100 °C</option>
+            <option value="ethanol">Ethanol: melts at −114 °C, boils at 78.4 °C</option>
+          </select>
+        </label>
+        <label class="tool-field" for="multiMass"><span class="label">Mass (g)</span>
+          <input type="number" id="multiMass" class="formula-input" value="25" min="0.1" max="1000" step="0.5">
+        </label>
+        <label class="tool-field" for="multiTi"><span class="label">Starting temperature (°C)</span>
+          <input type="number" id="multiTi" class="formula-input" value="-15" step="0.5">
+        </label>
+        <label class="tool-field" for="multiTf"><span class="label">Final temperature (°C)</span>
+          <input type="number" id="multiTf" class="formula-input" value="110" step="0.5">
+        </label>
+      </div>
+      <div data-results hidden>
+        <div class="calc-steps" data-steps aria-live="polite"></div>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="total"><span class="readout-label">Total heat</span><span class="readout-value">+76.60 kJ</span></div>
+        <div class="readout" data-readout="count"><span class="readout-label">Stages added</span><span class="readout-value">5</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="line" data-token="ink-mute"></span>A slope stage: the heat changes the temperature, <em>q</em> = <em>mc</em>&Delta;<em>T</em></li>
+        <li><span class="key" data-shape="line" data-token="accent"></span>A plateau stage: the heat changes the phase, <em>q</em> = <em>m</em>&Delta;<em>H</em></li>
+      </ul>
+      <ol class="try-this">
+        <li>Load the melting ice case. <b>Look for:</b> two stages, a warming slope and a melting plateau.</li>
+        <li>Load the five-stage case. <b>Look for:</b> five stages, and the boiling plateau is the largest.</li>
+        <li>Load the ethanol case. <b>Look for:</b> one stage only, because 78 °C is below the boiling point of 78.4 °C.</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<!-- 05 REAL-WORLD PHENOMENA: EVAPORATIVE COOLING & PCMs -->
+<section id="s-evaporative-cooling" data-toc="Evaporative cooling">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Latent heat at work</span></div>
+    <h2>Using latent heat: sweat, coolers, and smart materials.</h2>
+    <p>Water's high heat of vaporization (&Delta;<em>H</em><sub>v</sub> = 2,260&nbsp;J/g) does real work. It helps your body shed heat, and it can cool a building without electricity.</p>
+
+    <div class="levers">
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Evaporative cooling in your body</h4>
+        <p>Sprint on a 35&nbsp;&deg;C day and your muscles make extra thermal energy. Your skin releases sweat. The fastest surface molecules escape as vapor. Each gram of sweat that evaporates takes <strong>2,260&nbsp;J</strong> of thermal energy from your body. The slower molecules stay behind, so your skin cools and your organs stay safe.</p>
+      </div>
+      <div class="lever">
+        <div class="arrow">&rarr;</div>
+        <h4>Phase change materials (PCMs)</h4>
+        <p>Some builders put microencapsulated paraffin wax into walls and ceilings. When a room warms to about 23&nbsp;&deg;C, the wax begins to melt. It absorbs hundreds of kilojoules of latent heat while the room stays at the same temperature. At night the wax freezes and gives the energy back, so the building needs less air conditioning.</p>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking sweat cools you because sweat is cold. Sweat cools you only when it evaporates. Sweat that drips off takes no energy with it.</p></div>
+
+    <!-- EVAPORATIVE CHILLERS DIAGRAM -->
+    <figure class="figure figure--wide">
+<div class="diagram">
+      <svg viewBox="0 0 600 210" font-family="var(--display)" role="img" aria-label="A Zeer pot cooler: an inner pot inside an outer clay pot with wet sand between them, and water vapor leaving the outer wall">
+        <rect x="0" y="0" width="600" height="210" fill="var(--card)" rx="8" stroke="var(--hair)" stroke-width="1"/>
+
+        <!-- Outer porous clay pot -->
+        <path d="M75 55 L65 155 Q135 182 205 155 L195 55 Z" fill="var(--card)" stroke="var(--ink)" stroke-width="1.8"/>
+        <!-- Wet sand between the pots -->
+        <path d="M90 55 L82 150 Q135 172 188 150 L180 55 Z" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1"/>
+        <!-- Inner storage pot -->
+        <path d="M105 55 L98 140 Q135 160 172 140 L165 55 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/>
+
+        <!-- Stored food -->
+        <circle cx="125" cy="112" r="10" fill="var(--accent)"/>
+        <circle cx="145" cy="110" r="9" fill="var(--good)"/>
+        <circle cx="135" cy="128" r="8" fill="var(--accent)"/>
+
+        <!-- Vapor leaving the outer wall -->
+        <g stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="3 3">
+          <path d="M55 85 Q35 70 20 50" marker-end="url(#evap-arr)"/>
+          <path d="M52 120 Q30 110 15 95" marker-end="url(#evap-arr)"/>
+          <path d="M215 85 Q235 70 250 50" marker-end="url(#evap-arr)"/>
+          <path d="M218 120 Q240 110 255 95" marker-end="url(#evap-arr)"/>
+        </g>
+        <text x="135" y="30" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">Water evaporates</text>
+
+        <!-- Explanation panel -->
+        <rect x="275" y="15" width="315" height="180" rx="6" fill="var(--paper)" stroke="var(--hair)" stroke-width="1"/>
+        <text x="290" y="40" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)">The Zeer pot refrigerator</text>
+        <text x="290" y="66" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">1. Water in the wet sand evaporates</text>
+        <text x="290" y="82" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">    through the porous clay.</text>
+        <text x="290" y="104" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">2. Each gram that evaporates takes 2,260 J</text>
+        <text x="290" y="120" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">    from the food in the inner pot.</text>
+        <text x="290" y="146" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Keeps food at 15 &deg;C in 45 &deg;C desert air</text>
+        <text x="290" y="168" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)">It needs no electric power.</text>
+
+        <defs>
+          <marker id="evap-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+            <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+          </marker>
+        </defs>
+      </svg>
+</div>
+<figcaption><b>Figure 3.3.</b> water evaporating from the wet sand takes 2,260 J from the food side for every gram that leaves</figcaption>
+</figure>
+
+  </div>
+</section>
+
+<!-- 06 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. On a heating curve, the flat plateaus show a change in <input class="blank" data-answer="phase energy|potential energy|Eph" placeholder="?"> while the temperature stays constant.<br>
+      2. The energy that melts 1&nbsp;g of a solid at its melting point is the heat of <input class="blank" data-answer="fusion|fusion (Hf)" placeholder="?">.<br>
+      3. For water, the heat of vaporization (&Delta;<em>H</em><sub>v</sub>) is about <input class="blank" data-answer="7|6.8|7 times" placeholder="?"> times the heat of fusion (&Delta;<em>H</em><sub>f</sub>).<br>
+      4. Boiling water does not break <input class="blank" data-answer="covalent|covalent bonds|intramolecular" placeholder="?"> bonds. It only overcomes attractions between molecules.<br>
+      5. Sweating cools you because each gram of evaporating water absorbs <input class="blank" data-answer="2260|2,260|2260 J/g|latent heat" placeholder="?"> J from your skin.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 07 SELF-EXPLANATION -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark">
+      <p>A student watches a pot of water boil and says two things:</p>
+      <p><em>&ldquo;First, if I turn the heat to maximum, the water will reach 110&nbsp;&deg;C and cook the pasta faster. Second, the bubbles at the bottom are hydrogen and oxygen gas that the heat has split apart.&rdquo;</em></p>
+      <p>Critique both parts. Use what you know about temperature during a phase change and about particles.</p>
+    </div>
+    <p class="hint">Say what happens to the temperature during a phase change, where the burner's energy goes, and what the gas in the bubbles is. Write your answer first, then compare it with the model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="First, turning up the heat cannot raise the temperature because... Second, the bubbles are not hydrogen and oxygen because..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>Both claims are wrong. First, liquid water cannot get hotter than 100&nbsp;&deg;C at normal pressure. A higher flame raises the heat flow, not the temperature. The extra energy goes into phase energy (<em>E</em><sub>ph</sub>), so the water boils faster at the same 100&nbsp;&deg;C. The pasta cooks at the same temperature.</p>
+        <p>Second, boiling is a physical change. The energy supplied is far too small to break the O&ndash;H bonds inside water molecules (about 460&nbsp;kJ/mol). The bubbles hold water vapor, made of H<sub>2</sub>O molecules. They do not hold H<sub>2</sub> or O<sub>2</sub> gas.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">08</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS3-1 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks]</span>
+      </div>
+      <div class="exam-q">
+        <p>A student heats a 30.0&nbsp;g sample of ice that starts at &minus;15.0&nbsp;&deg;C.</p>
+        <p><b>Data for H<sub>2</sub>O:</b><br>
+        &bull; <em>c</em><sub>ice</sub> = 2.09 J/(g&middot;&deg;C)<br>
+        &bull; <em>c</em><sub>liquid</sub> = 4.184 J/(g&middot;&deg;C)<br>
+        &bull; &Delta;<em>H</em><sub>f</sub> = 334 J/g<br>
+        &bull; &Delta;<em>H</em><sub>v</sub> = 2,260 J/g</p>
+        <p class="sub"><b>(a)</b> Calculate the total energy in joules to warm the ice to 0.0&nbsp;&deg;C and melt it. Show each step. [2 marks]</p>
+        <p class="sub"><b>(b)</b> The student then boils the 30.0&nbsp;g of liquid water at 100.0&nbsp;&deg;C. Calculate the heat needed to boil it (<em>q</em> = <em>m</em>&Delta;<em>H</em><sub>v</sub>). Then explain with particles why boiling takes over six times more energy than melting. [2 marks]</p>
+      </div>
+      <textarea class="textbox" id="examAns" rows="5" placeholder="Part (a): write q1 (ice warming) + q2 (melting) = total heat. Part (b): write the boiling heat and your particle explanation..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Ice warming (1 mark):</b> You calculate <em>q</em><sub>1</sub> = 30.0 &times; 2.09 &times; 15.0 = 940.5&nbsp;J.</li>
+          <li><b>Melting and total (1 mark):</b> You find <em>q</em><sub>2</sub> = 10,020&nbsp;J and a total of 10,960.5&nbsp;J.</li>
+          <li><b>Boiling heat (1 mark):</b> You calculate <em>q</em> = 30.0 &times; 2,260 = 67,800&nbsp;J.</li>
+          <li><b>Particle reason (1 mark):</b> You say melting keeps molecules in contact, and boiling separates them completely.</li>
+        </ul></div></div>
+
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>Hurricanes run on the phase change of water. Tropical oceans at 27&nbsp;&deg;C or warmer evaporate huge amounts of water. The moist air rises, cools, and condenses into clouds. Each kilogram of water that condenses releases <strong>2.26 million joules</strong> into the air. That energy drives the storm's updrafts and winds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS3-1 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS3-1</h3>
+    <p>
+      Test your mastery of phase transitions and heating curves. The adaptive engine models plateau regions, latent heat of fusion and vaporization (q = m&Delta;H), multi-stage energy summations (&Sigma;q), and slope variations from specific heat differences.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS3-1" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 3 &middot; 3-1b</div>
+  <p>Next, 3-1c: <strong>Calorimetry &amp; Energy Systems</strong> tracks energy between interacting thermal systems.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="3-1b.js"></script>
+</body>
+</html>

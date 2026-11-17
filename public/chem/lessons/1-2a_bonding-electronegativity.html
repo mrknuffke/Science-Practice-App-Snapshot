@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-2a" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Bonding &amp; Electronegativity · Gen Chem 1-2a</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 1-2a &middot; Bonding &amp; Electronegativity</div>
+    <h1>It's not a stick. It's an <span class="flip">electrical attraction</span>.</h1>
+    <p class="lede">In middle school, chemical bonds are often drawn as solid lines or sticks connecting balls. In reality, a bond is a balance of electrical charges. Opposites attract, likes repel, and electrons are caught in a tug-of-war. By the end, you can use an element's position to predict how it shares electrons and what bond it forms.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-2</b> Construct and revise an explanation for the outcome of a simple chemical reaction based on the outermost electron states of atoms, trends in the periodic table, and knowledge of the patterns of chemical properties.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can explain a bond as an electrical force between charges. You can use the electronegativity difference to predict the bond type.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Main-group elements through krypton (element 36), plus the transition metals scandium to zinc for metallic bonding. Noble gases are left out because they do not bond.</div></div>
+    </div>
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Electrostatics:</strong> Chemical bonds are attractive electrostatic forces between opposite charges (positive nuclei pulling negative electrons).</li>
+              <li><strong>Electronegativity Difference (&Delta;EN):</strong> Determines how valence electrons are distributed.</li>
+              <li><strong>Covalent Sharing:</strong> Forms between nonmetals. Shared equally in nonpolar covalent (&Delta;EN &lt; 0.5), shared unequally in polar covalent (0.5 &le; &Delta;EN &lt; 1.7).</li>
+              <li><strong>Ionic Transfer:</strong> Metal transfers electrons to nonmetal (&Delta;EN &ge; 1.7), creating charged ions that attract.</li>
+              <li><strong>Metallic Lattice:</strong> Metal atoms share delocalized valence electrons in a collective "sea of electrons."</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Bonding Types Map</h4>
+            <figure class="figure figure--full">
+<div class="diagram">
+              <svg viewBox="0 0 360 170" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Bonding spectrum comparing covalent electron sharing, ionic electron transfer, and metallic delocalized electron sea.">
+                <!-- Background frame -->
+                <rect x="2" y="2" width="356" height="166" rx="6" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1"/>
+
+                <!-- Divider lines between 3 columns -->
+                <line x1="120" y1="12" x2="120" y2="158" stroke="var(--hair)" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="240" y1="12" x2="240" y2="158" stroke="var(--hair)" stroke-width="1" stroke-dasharray="3 3"/>
+
+                <!-- PANEL 1: Covalent (Share) -->
+                <g id="syn-covalent">
+                  <text x="60" y="24" font-family="var(--display)" style="font-size:var(--dia-label-size, 12px);" font-weight="700" fill="var(--ink)" text-anchor="middle">Covalent</text>
+                  <text x="60" y="38" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--accent)" font-weight="600" text-anchor="middle">&Delta;EN &lt; 1.7</text>
+                  
+                  <!-- Atoms with overlapping covalent sharing -->
+                  <circle cx="44" cy="74" r="20" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+                  <circle cx="76" cy="74" r="20" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+                  
+                  <!-- Shared electron pair in overlap lens -->
+                  <circle cx="60" cy="69" r="3" fill="var(--accent)"/>
+                  <circle cx="60" cy="79" r="3" fill="var(--accent)"/>
+
+                  <text x="60" y="122" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px); font-weight:700;" font-weight="600" fill="var(--ink)" text-anchor="middle">Valence Sharing</text>
+                  <text x="60" y="136" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)" text-anchor="middle">Nonmetal + Nonmetal</text>
+                  <text x="60" y="149" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-mute)" text-anchor="middle">Equal (NP) or Unequal (P)</text>
+                </g>
+
+                <!-- PANEL 2: Ionic (Transfer) -->
+                <g id="syn-ionic">
+                  <text x="180" y="24" font-family="var(--display)" style="font-size:var(--dia-label-size, 12px);" font-weight="700" fill="var(--ink)" text-anchor="middle">Ionic</text>
+                  <text x="180" y="38" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--cool)" font-weight="600" text-anchor="middle">&Delta;EN &ge; 1.7</text>
+
+                  <!-- Cation (+) -->
+                  <circle cx="156" cy="74" r="14" fill="var(--card)" stroke="var(--ink)" stroke-width="1.2"/>
+                  <text x="156" y="78" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" font-weight="700" fill="var(--ink)" text-anchor="middle">+</text>
+
+                  <!-- Transfer arrow with transferred electron -->
+                  <path d="M172 66 Q180 56 188 66" fill="none" stroke="var(--accent)" stroke-width="1.4" marker-end="url(#syn-arr-12a)"/>
+                  <circle cx="180" cy="58" r="2.5" fill="var(--accent)"/>
+
+                  <!-- Anion (-) -->
+                  <circle cx="204" cy="74" r="19" fill="color-mix(in srgb, var(--cool) 14%, var(--card))" stroke="var(--cool)" stroke-width="1.4"/>
+                  <text x="204" y="78" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" font-weight="700" fill="var(--cool)" text-anchor="middle">&minus;</text>
+
+                  <text x="180" y="122" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px); font-weight:700;" font-weight="600" fill="var(--ink)" text-anchor="middle">Electron Transfer</text>
+                  <text x="180" y="136" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)" text-anchor="middle">Metal + Nonmetal</text>
+                  <text x="180" y="149" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-mute)" text-anchor="middle">Opposite ions attract</text>
+                </g>
+
+                <!-- PANEL 3: Metallic (Delocalized) -->
+                <g id="syn-metallic">
+                  <text x="300" y="24" font-family="var(--display)" style="font-size:var(--dia-label-size, 12px);" font-weight="700" fill="var(--ink)" text-anchor="middle">Metallic</text>
+                  <text x="300" y="38" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-mute)" font-weight="600" text-anchor="middle">Low EN Atoms</text>
+
+                  <!-- Mini lattice container -->
+                  <rect x="252" y="50" width="96" height="48" rx="4" fill="color-mix(in srgb, var(--paper) 40%, var(--card))" stroke="var(--hair-soft)" stroke-width="1"/>
+
+                  <!-- Metal cation nodes (2 rows of 3) -->
+                  <circle cx="268" cy="62" r="7.5" fill="var(--card)" stroke="var(--ink)" stroke-width="1"/>
+                  <text x="268" y="65" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--ink)" text-anchor="middle">+</text>
+
+                  <circle cx="300" cy="62" r="7.5" fill="var(--card)" stroke="var(--ink)" stroke-width="1"/>
+                  <text x="300" y="65" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--ink)" text-anchor="middle">+</text>
+
+                  <circle cx="332" cy="62" r="7.5" fill="var(--card)" stroke="var(--ink)" stroke-width="1"/>
+                  <text x="332" y="65" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--ink)" text-anchor="middle">+</text>
+
+                  <circle cx="268" cy="84" r="7.5" fill="var(--card)" stroke="var(--ink)" stroke-width="1"/>
+                  <text x="268" y="87" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--ink)" text-anchor="middle">+</text>
+
+                  <circle cx="300" cy="84" r="7.5" fill="var(--card)" stroke="var(--ink)" stroke-width="1"/>
+                  <text x="300" y="87" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--ink)" text-anchor="middle">+</text>
+
+                  <circle cx="332" cy="84" r="7.5" fill="var(--card)" stroke="var(--ink)" stroke-width="1"/>
+                  <text x="332" y="87" font-family="var(--mono)" style="font-size:var(--dia-caption-size, 10px);" font-weight="700" fill="var(--ink)" text-anchor="middle">+</text>
+
+                  <!-- Delocalized electron sea dots -->
+                  <circle cx="284" cy="56" r="2" fill="var(--accent)"/>
+                  <circle cx="316" cy="56" r="2" fill="var(--accent)"/>
+                  <circle cx="284" cy="73" r="2" fill="var(--accent)"/>
+                  <circle cx="316" cy="73" r="2" fill="var(--accent)"/>
+                  <circle cx="284" cy="90" r="2" fill="var(--accent)"/>
+                  <circle cx="316" cy="90" r="2" fill="var(--accent)"/>
+
+                  <text x="300" y="122" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px); font-weight:700;" font-weight="600" fill="var(--ink)" text-anchor="middle">Sea of Electrons</text>
+                  <text x="300" y="136" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-soft)" text-anchor="middle">Metal + Metal</text>
+                  <text x="300" y="149" font-family="var(--display)" style="font-size:var(--dia-caption-size, 10px);" fill="var(--ink-mute)" text-anchor="middle">Delocalized pool</text>
+                </g>
+
+                <defs>
+                  <marker id="syn-arr-12a" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto" viewBox="0 0 5 5">
+                    <path d="M0 0 L5 2.5 L0 5 z" fill="var(--accent)"/>
+                  </marker>
+                </defs>
+              </svg>
+</div>
+<figcaption>Bonding spectrum: shared pairs (covalent), transfer between ions (ionic), and delocalized sea (metallic)</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox"> Classify bond type using electronegativity differences (&Delta;EN).</li>
+              <li><input type="checkbox"> Differentiate covalent, ionic, and metallic bonding models.</li>
+              <li><input type="checkbox"> Explain how low electronegativity in metals leads to a delocalized sea of electrons and metallic properties.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 FORCE DEFINITION -->
+<section id="s-forces" data-toc="Origin of the force">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Origin of the force</span></div>
+    <h2>What actually holds two atoms together?</h2>
+    <p>A chemical bond is not a physical joint or glue. It is a push or pull between charges: an <strong class="term">electrostatic force</strong>. Every atom has a positive nucleus (protons) and a cloud of negative electrons. When two atoms get close, they experience both attraction and repulsion:</p>
+    
+    <div class="figure figure--full" data-motion="step" data-step-count="3" data-step-start="1" data-step-labels="1. Attraction dominates (pulls together)|2. Repulsion explodes (pushes back)|3. Stable balance point (forms bond)">
+      <!-- Step 1: Attraction -->
+      <div class="diagram" data-step="1">
+        <svg viewBox="0 0 640 280" role="img" aria-label="Stage 1: Attractive electrostatic forces pull approaching atoms together.">
+          <defs>
+            <marker id="f-att1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+              <path d="M0 0 L6 3 L0 6 z" fill="var(--good)"/>
+            </marker>
+          </defs>
+
+          <!-- Top Stage Pill -->
+          <rect x="130" y="14" width="380" height="28" rx="14" fill="var(--card)" stroke="var(--good)" stroke-width="1.5"/>
+          <text x="320" y="32" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:700;letter-spacing:0.04em;" text-anchor="middle">Stage 1: Attraction Dominates</text>
+
+          <!-- Atom A (Left) -->
+          <circle cx="150" cy="130" r="85" fill="var(--ink-mute)" fill-opacity="0.04" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="4 4"/>
+          <circle cx="150" cy="130" r="20" fill="var(--accent)" stroke="var(--paper)" stroke-width="2"/>
+          <text x="150" y="136" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-base)" font-family="var(--display)">+</text>
+          <text x="150" y="172" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:700;" text-anchor="middle">Atom A</text>
+
+          <!-- Electron A -->
+          <circle cx="225" cy="105" r="7" fill="var(--ink)"/>
+          <text x="225" y="108.5" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-3xs)" font-family="var(--mono)">&minus;</text>
+          <text x="225" y="90" fill="var(--ink-soft)" style="font-family:var(--mono);font-size:var(--dia-caption-size, 10px);" text-anchor="middle">e&minus; (A)</text>
+
+          <!-- Atom B (Right) -->
+          <circle cx="490" cy="130" r="85" fill="var(--ink-mute)" fill-opacity="0.04" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="4 4"/>
+          <circle cx="490" cy="130" r="20" fill="var(--accent)" stroke="var(--paper)" stroke-width="2"/>
+          <text x="490" y="136" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-base)" font-family="var(--display)">+</text>
+          <text x="490" y="172" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:700;" text-anchor="middle">Atom B</text>
+
+          <!-- Electron B -->
+          <circle cx="415" cy="155" r="7" fill="var(--ink)"/>
+          <text x="415" y="158.5" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-3xs)" font-family="var(--mono)">&minus;</text>
+          <text x="415" y="178" fill="var(--ink-soft)" style="font-family:var(--mono);font-size:var(--dia-caption-size, 10px);" text-anchor="middle">e&minus; (B)</text>
+
+          <!-- Vector 1: Nucleus B attracts Electron A -->
+          <line x1="470" y1="126" x2="237" y2="107" stroke="var(--good)" stroke-width="2.2" marker-end="url(#f-att1)"/>
+          <text x="340" y="86" fill="var(--good)" text-anchor="middle" font-weight="700" font-size="var(--text-2xs)" font-family="var(--mono)">&larr; Nucleus B attracts e&minus; (A)</text>
+
+          <!-- Vector 2: Nucleus A attracts Electron B -->
+          <line x1="170" y1="134" x2="403" y2="153" stroke="var(--good)" stroke-width="2.2" marker-end="url(#f-att1)"/>
+          <text x="300" y="174" fill="var(--good)" text-anchor="middle" font-weight="700" font-size="var(--text-2xs)" font-family="var(--mono)">Nucleus A attracts e&minus; (B) &rarr;</text>
+
+          <!-- Bottom Net Force Banner -->
+          <rect x="70" y="226" width="500" height="34" rx="6" fill="var(--card)" stroke="var(--good)" stroke-width="1.2"/>
+          <text x="320" y="248" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:600;" text-anchor="middle">Long range: Inward pull draws atoms together</text>
+        </svg>
+        <div class="diagram-cap">Stage 1: The positive nucleus of each atom attracts the negative electron of the neighboring atom, pulling them together.</div>
+      </div>
+
+      <!-- Step 2: Repulsion -->
+      <div class="diagram" data-step="2">
+        <svg viewBox="0 0 640 280" role="img" aria-label="Stage 2: Like charges repel as atoms get too close.">
+          <defs>
+            <marker id="f-rep2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+              <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+            </marker>
+          </defs>
+
+          <!-- Top Stage Pill -->
+          <rect x="130" y="14" width="380" height="28" rx="14" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5"/>
+          <text x="320" y="32" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:700;letter-spacing:0.04em;" text-anchor="middle">Stage 2: Repulsion Explodes</text>
+
+          <!-- Atom A Cloud -->
+          <circle cx="255" cy="130" r="85" fill="var(--accent)" fill-opacity="0.04" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="4 4"/>
+          <!-- Atom B Cloud -->
+          <circle cx="385" cy="130" r="85" fill="var(--accent)" fill-opacity="0.04" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="4 4"/>
+
+          <!-- Outward Nuclear Repulsion Vectors -->
+          <line x1="233" y1="130" x2="155" y2="130" stroke="var(--accent)" stroke-width="3" marker-end="url(#f-rep2)"/>
+          <line x1="407" y1="130" x2="485" y2="130" stroke="var(--accent)" stroke-width="3" marker-end="url(#f-rep2)"/>
+
+          <!-- Outward Nuclear Labels -->
+          <text x="145" y="112" fill="var(--accent)" style="font-family:var(--mono);font-size:var(--dia-caption-size, 10px);font-weight:700;" text-anchor="end">&larr; Nucleus Repulsion (+/+)</text>
+          <text x="495" y="112" fill="var(--accent)" style="font-family:var(--mono);font-size:var(--dia-caption-size, 10px);font-weight:700;" text-anchor="start">Nucleus Repulsion (+/+) &rarr;</text>
+
+          <!-- Center Nuclear Warning Pill -->
+          <rect x="290" y="118" width="60" height="24" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="1"/>
+          <text x="320" y="134" fill="var(--accent)" text-anchor="middle" font-weight="700" font-size="var(--text-3xs)" font-family="var(--mono)">+/+ push</text>
+
+          <!-- Nucleus A -->
+          <circle cx="255" cy="130" r="20" fill="var(--accent)" stroke="var(--paper)" stroke-width="2"/>
+          <text x="255" y="136" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-base)" font-family="var(--display)">+</text>
+          <text x="255" y="165" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:700;" text-anchor="middle">Nucleus A</text>
+
+          <!-- Nucleus B -->
+          <circle cx="385" cy="130" r="20" fill="var(--accent)" stroke="var(--paper)" stroke-width="2"/>
+          <text x="385" y="136" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-base)" font-family="var(--display)">+</text>
+          <text x="385" y="165" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:700;" text-anchor="middle">Nucleus B</text>
+
+          <!-- Top Repelled Electron -->
+          <circle cx="320" cy="82" r="7" fill="var(--ink)"/>
+          <text x="320" y="85.5" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-3xs)" font-family="var(--mono)">&minus;</text>
+          <line x1="320" y1="73" x2="320" y2="55" stroke="var(--accent)" stroke-width="2.2" marker-end="url(#f-rep2)"/>
+          <text x="334" y="68" fill="var(--accent)" style="font-family:var(--mono);font-size:var(--dia-caption-size, 10px);font-weight:700;" text-anchor="start">&uarr; e&minus; / e&minus; push</text>
+
+          <!-- Bottom Repelled Electron -->
+          <circle cx="320" cy="186" r="7" fill="var(--ink)"/>
+          <text x="320" y="189.5" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-3xs)" font-family="var(--mono)">&minus;</text>
+          <line x1="320" y1="195" x2="320" y2="213" stroke="var(--accent)" stroke-width="2.2" marker-end="url(#f-rep2)"/>
+          <text x="334" y="206" fill="var(--accent)" style="font-family:var(--mono);font-size:var(--dia-caption-size, 10px);font-weight:700;" text-anchor="start">&darr; e&minus; / e&minus; push</text>
+
+          <!-- Bottom Net Force Banner -->
+          <rect x="70" y="226" width="500" height="34" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.2"/>
+          <text x="320" y="248" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:600;" text-anchor="middle">Too close: Nuclear repulsions push apart</text>
+        </svg>
+        <div class="diagram-cap">Stage 2: Squeezing the atoms too close causes positive nuclei and negative electrons to strongly repel, resisting collapse.</div>
+      </div>
+
+      <!-- Step 3: Balance / Bond -->
+      <div class="diagram" data-step="3">
+        <svg viewBox="0 0 640 280" role="img" aria-label="Stage 3: A stable chemical bond forms where attraction balances repulsion.">
+          <defs>
+            <marker id="f-att3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+              <path d="M0 0 L6 3 L0 6 z" fill="var(--good)"/>
+            </marker>
+            <marker id="f-rep3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+              <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)"/>
+            </marker>
+          </defs>
+
+          <!-- Top Stage Pill -->
+          <rect x="130" y="14" width="380" height="28" rx="14" fill="var(--card)" stroke="var(--hair)" stroke-width="1.5"/>
+          <text x="320" y="32" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:700;letter-spacing:0.04em;" text-anchor="middle">Stage 3: Equilibrium Bond Distance</text>
+
+          <!-- Atom A Valence Shell Circle -->
+          <circle cx="240" cy="130" r="95" fill="none" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <!-- Atom B Valence Shell Circle -->
+          <circle cx="400" cy="130" r="95" fill="none" stroke="var(--ink-mute)" stroke-width="1.2" stroke-dasharray="5 4"/>
+
+          <!-- True Co-valent Overlap Region (Lens) -->
+          <path d="M 320 80 A 95 95 0 0 1 320 180 A 95 95 0 0 1 320 80 Z" fill="var(--good)" fill-opacity="0.18" stroke="var(--good)" stroke-width="1.8"/>
+
+          <!-- Shared Electron Pair Inside Overlap Zone -->
+          <circle cx="313" cy="120" r="7" fill="var(--ink)"/>
+          <text x="313" y="123.5" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-3xs)" font-family="var(--mono)">&minus;</text>
+          <circle cx="327" cy="140" r="7" fill="var(--ink)"/>
+          <text x="327" y="143.5" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-3xs)" font-family="var(--mono)">&minus;</text>
+
+          <!-- Shared Overlap Zone Pill Label -->
+          <rect x="220" y="52" width="200" height="22" rx="4" fill="var(--card)" stroke="var(--good)" stroke-width="1"/>
+          <text x="320" y="67" fill="var(--good)" style="font-family:var(--mono);font-size:var(--dia-caption-size, 10px);font-weight:700;" text-anchor="middle">Shared Valence Overlap (Bond)</text>
+
+          <!-- Nucleus A -->
+          <circle cx="240" cy="130" r="20" fill="var(--accent)" stroke="var(--paper)" stroke-width="2"/>
+          <text x="240" y="136" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-base)" font-family="var(--display)">+</text>
+          <text x="240" y="172" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:700;" text-anchor="middle">Nucleus A (+)</text>
+
+          <!-- Nucleus B -->
+          <circle cx="400" cy="130" r="20" fill="var(--accent)" stroke="var(--paper)" stroke-width="2"/>
+          <text x="400" y="136" fill="var(--paper)" text-anchor="middle" font-weight="700" font-size="var(--text-base)" font-family="var(--display)">+</text>
+          <text x="400" y="172" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:700;" text-anchor="middle">Nucleus B (+)</text>
+
+          <!-- Inward Attraction Vectors Pulling on Shared Pair -->
+          <line x1="262" y1="130" x2="304" y2="130" stroke="var(--good)" stroke-width="2.8" marker-end="url(#f-att3)"/>
+          <line x1="378" y1="130" x2="336" y2="130" stroke="var(--good)" stroke-width="2.8" marker-end="url(#f-att3)"/>
+
+          <!-- Balancing Outward Repulsion Vectors -->
+          <line x1="218" y1="130" x2="188" y2="130" stroke="var(--accent)" stroke-width="2.2" marker-end="url(#f-rep3)"/>
+          <line x1="422" y1="130" x2="452" y2="130" stroke="var(--accent)" stroke-width="2.2" marker-end="url(#f-rep3)"/>
+          <text x="178" y="118" fill="var(--accent)" style="font-family:var(--mono);font-size:var(--dia-caption-size, 10px);font-weight:700;" text-anchor="end">&larr; Repulsion</text>
+          <text x="462" y="118" fill="var(--accent)" style="font-family:var(--mono);font-size:var(--dia-caption-size, 10px);font-weight:700;" text-anchor="start">Repulsion &rarr;</text>
+
+          <!-- Bottom Net Force Banner -->
+          <rect x="70" y="226" width="500" height="34" rx="6" fill="var(--card)" stroke="var(--good)" stroke-width="1.2"/>
+          <text x="320" y="248" fill="var(--ink)" style="font-family:var(--display);font-size:var(--dia-label-size, 12px);font-weight:600;" text-anchor="middle">Equilibrium: Net force is zero</text>
+        </svg>
+        <div class="diagram-cap">Stage 3: Inward attractive pull balances outward repulsive push exactly, settling the atoms into minimum potential energy.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="label">The one idea to hold onto</div>
+      <p>A chemical bond is not a rigid stick. It is a balance of electrical forces. Attraction pulls the atoms together until repulsion pushes back. The bond sits at the distance where the two balance, which is the lowest-energy state.</p>
+    </div>
+    <div class="callout"><div class="label">Common mistake</div><p>Picturing a bond as a stick or a piece of glue. A bond is a push and pull between charges.</p></div>
+  </div>
+    
+  </div>
+</section>
+
+<!-- 02 THE TUG-OF-WAR -->
+<section id="s-tug" data-toc="The electronegativity tug-of-war">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Tug-of-war</span></div>
+    <h2>How do different atoms share? It depends on their electronegativity.</h2>
+    <p>Not all atoms pull on electrons with the same strength. An atom's power to attract shared electrons is called its <strong class="term">electronegativity</strong>. Small, tight atoms with many protons (like fluorine) have very high electronegativity. Large atoms with shielded outer shells (like sodium) have very low electronegativity.</p>
+    <p>When two atoms bond, their <strong class="term">electronegativity difference</strong> (&Delta;<span class="chem">EN</span>) governs electron distribution. This difference produces four distinct bond types:</p>
+    
+    <div class="levers">
+      <div class="lever">
+        <div class="lever-symbol-wrap">
+          <div class="lever-symbol">&harr;</div>
+          <div class="lever-symbol-sub">Balanced pull (&Delta;EN &lt; 0.5)</div>
+        </div>
+        <h4>Nonpolar Covalent</h4>
+        <p><strong>Equal sharing.</strong> Two nonmetals with similar strength (&Delta;<span class="chem">EN</span> &lt; 0.5). Electrons spend equal time between the two nuclei. A <strong class="term">nonpolar covalent bond</strong> has no charge separation.</p>
+      </div>
+      <div class="lever">
+        <div class="lever-symbol-wrap">
+          <div class="lever-symbol">&rarr;</div>
+          <div class="lever-symbol-sub">Shifted pull (0.5 &le; &Delta;EN &lt; 1.7)</div>
+        </div>
+        <h4>Polar Covalent</h4>
+        <p><strong>Unequal sharing.</strong> Two nonmetals with mismatched strength (0.5 &le; &Delta;<span class="chem">EN</span> &lt; 1.7). The hungrier atom pulls the electrons closer. It gets a partial negative charge (&delta;&minus;), and the other atom gets a partial positive charge (&delta;+). This is a <strong class="term">polar covalent bond</strong>.</p>
+      </div>
+      <div class="lever">
+        <div class="lever-symbol-wrap">
+          <div class="lever-symbol">&rArr;</div>
+          <div class="lever-symbol-sub">Complete transfer (&Delta;EN &ge; 1.7)</div>
+        </div>
+        <h4>Ionic</h4>
+        <p><strong>Electron transfer.</strong> A metal (low EN) and a nonmetal (high EN) with a huge strength mismatch (&Delta;<span class="chem">EN</span> &ge; 1.7). The nonmetal pulls the electron completely away. That forms positive and negative ions, which attract each other. This is an <strong class="term">ionic bond</strong>.</p>
+      </div>
+      <div class="lever">
+        <div class="lever-symbol-wrap">
+          <div class="lever-symbol">&sim;</div>
+          <div class="lever-symbol-sub">Delocalized sea (Low EN + Low EN)</div>
+        </div>
+        <h4>Metallic</h4>
+        <p><strong>Delocalized sea.</strong> Two metal atoms (both low EN). Neither atom holds its outer electrons tightly, so they let go. The valence electrons float free among a grid of positive metal cores. This shared attraction is a <strong class="term">metallic bond</strong>, and the free electrons form a <strong class="term">sea of electrons</strong>.</p>
+      </div>
+    </div>
+
+    <p>Those four categories are not four separate rules. They are checkpoints along one continuous slide. Drag &Delta;<span class="chem">EN</span> below and watch the same electron cloud shift from centered, to lopsided, to gone.</p>
+    <div class="figure figure--md" data-motion="scrub" data-scrub-fn="den-cloud" data-scrub-min="0" data-scrub-max="3.5" data-scrub-step="0.05" data-scrub-value="0" data-scrub-label="&Delta;EN" data-scrub-marks="0.0:0.0|0.5:0.5|1.7:1.7">
+      <div>
+        <svg viewBox="0 0 200 100">
+          <defs>
+            <radialGradient id="cloudGrad12a" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <circle class="cloud-gradient" cx="50%" cy="50%" r="40" fill="url(#cloudGrad12a)"/>
+          <circle class="atom-l" cx="50" cy="50" r="15" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text class="charge-l" x="50" y="55" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--accent)"></text>
+          <text x="50" y="30" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-caption-size, 10px);" font-weight="700">A</text>
+          <circle class="atom-r" cx="150" cy="50" r="15" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text class="charge-r" x="150" y="55" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-label-size, 12px);" fill="var(--accent)"></text>
+          <text x="150" y="30" text-anchor="middle" font-family="var(--display)" font-weight="700" style="font-size:var(--dia-caption-size, 10px);" font-weight="700">B</text>
+        </svg>
+      </div>
+      <div class="diagram-cap">The cloud drifts toward whichever atom pulls harder: past 1.7 it stops sharing and the charges go from &delta; to full.</div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Calling every bond above &Delta;EN = 1.7 ionic. Two nonmetals, such as H and F, still share electrons, so HF is polar covalent.</p></div>
+
+  </div>
+</section>
+
+<!-- 03 BOND EXPLORER -->
+<section id="s-interactive" data-toc="Interactive bond explorer">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Bond explorer</span></div>
+    <h2>Select two elements. Watch their bond form.</h2>
+    <p>Pick Element A and Element B from the lists. The explorer reads their electronegativities, calculates the difference (&Delta;<span class="chem">EN</span>), predicts the bond, and shows the electrons at the atomic level.</p>
+    <div class="sim-box" data-sim="bond">
+        <div class="label">Simulation</div>
+        <h4>When two atoms bond, which one ends up holding the shared electrons?</h4>
+        <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: carbon (EN 2.55) bonds with oxygen (EN 3.44). Which bond type will the explorer report?<\/p>",
+  "options": [
+    {
+      "label": "Nonpolar covalent",
+      "correct": false,
+      "feedback": "Both atoms are nonmetals, which makes equal sharing tempting. But the difference is 0.89, above 0.5, so oxygen pulls the electrons harder."
+    },
+    {
+      "label": "Polar covalent",
+      "correct": true,
+      "feedback": "The difference is 3.44 − 2.55 = 0.89. That is between 0.5 and 1.7, so the electrons are shared unequally."
+    },
+    {
+      "label": "Ionic",
+      "correct": false,
+      "feedback": "Ionic bonding needs a much bigger mismatch, 1.7 or more. At 0.89 the electrons are still shared, just unequally."
+    }
+  ],
+  "reveal": "<p>Now check it. Pick carbon and oxygen in the two lists.<\/p>"
+}
+</script>
+</div>
+        <div class="sim-stage" data-ratio="wide"><canvas aria-label="Two atoms and the electrons between them. Choose two elements to see how the electrons are shared."></canvas></div>
+        <div class="sim-controls">
+          <label class="tool-field" for="selectA"><span class="label">Element A</span>
+            <select id="selectA" class="form-select"></select>
+          </label>
+          <label class="tool-field" for="selectB"><span class="label">Element B</span>
+            <select id="selectB" class="form-select"></select>
+          </label>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="endiff"><span class="readout-label">&Delta;EN</span><span class="readout-value">2.23</span></div>
+          <div class="readout" data-readout="type"><span class="readout-label">Bond type</span><span class="readout-value">Ionic</span></div>
+          <div class="readout" data-readout="ena"><span class="readout-label">EN of A</span><span class="readout-value">0.93</span></div>
+          <div class="readout" data-readout="enb"><span class="readout-label">EN of B</span><span class="readout-value">3.16</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Predict to start</span>
+        <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="ink"></span>Nonmetal nucleus</li>
+          <li><span class="key" data-token="ink"></span>Metal nucleus</li>
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Bonding electron</li>
+          <li><span class="key" data-shape="square" data-token="accent"></span>Shared electron cloud (shifts toward the stronger atom)</li>
+          <li><span class="key" data-shape="line" data-token="ink-mute"></span>Shell</li>
+        </ul>
+        <ol class="try-this">
+          <li>Load H and H, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="H-H">Load H and H</button> <b>Look for:</b> the cloud sits in the middle and &Delta;EN is 0.</li>
+          <li>Load C and O, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="C-O">Load C and O</button> <b>Look for:</b> the cloud leans toward oxygen, and the status says polar covalent.</li>
+          <li>Load H and F, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="H-F">Load H and F</button> <b>Look for:</b> &Delta;EN is just over 1.7, but both atoms are nonmetals, so the bond is still polar covalent.</li>
+          <li>Load Na and Cl, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="Na-Cl">Load Na and Cl</button> <b>Look for:</b> the electron moves onto chlorine, and the atoms show + and &minus;.</li>
+        </ol>
+      </div>
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows for H&ndash;H, C&ndash;O, and Na&ndash;Cl. What happens to the shared electrons as &Delta;EN grows?<\/p>",
+  "options": [
+    {
+      "label": "They stay in the middle, because both atoms share them equally.",
+      "correct": false,
+      "feedback": "That is true only at the start. In H&ndash;H the electrons sit in the middle, but in C&ndash;O they lean toward oxygen, and in Na&ndash;Cl they leave sodium."
+    },
+    {
+      "label": "They leave both atoms and form a sea around the nuclei.",
+      "correct": false,
+      "feedback": "A sea of electrons belongs to bonds between two metals. None of your three rows were metal plus metal."
+    },
+    {
+      "label": "They move toward the atom that pulls harder, until one atom takes them.",
+      "correct": true,
+      "feedback": "At &Delta;EN = 0 the cloud is centered. At 0.89 it leans toward oxygen. At 2.23 sodium gives up its electron completely."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. A bigger difference moves the electrons farther toward the stronger atom.<\/p>"
+}
+</script>
+</div>
+  </div>
+</section>
+
+<!-- 04 PREDICT -->
+<section id="s-predict" data-toc="Predict: test your intuition">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Check yourself</span></div>
+    
+    <!-- Q1 -->
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Carbon (C, EN = 2.55) and hydrogen (H, EN = 2.20) are both nonmetals. What type of bond holds a carbon-hydrogen (C–H) bond together in methane (CH<sub>4<\/sub>)?",
+  "options": [
+    {
+      "label": "Nonpolar covalent: shared almost equally",
+      "correct": true,
+      "feedback": "&Delta;EN = 2.55 &minus; 2.20 = 0.35, which is below the 0.5 line. Both nuclei pull almost equally, so the electrons sit near the middle."
+    },
+    {
+      "label": "Polar covalent: hydrogen attracts electrons more strongly",
+      "correct": false,
+      "feedback": "Carbon pulls slightly harder than hydrogen, not the other way round. And a difference of 0.35 is too small to make the bond polar."
+    },
+    {
+      "label": "Ionic: carbon strips hydrogen's electron completely",
+      "correct": false,
+      "feedback": "Ionic bonds need a big mismatch, &Delta;EN of 1.7 or more, and usually a metal. Carbon and hydrogen are both nonmetals, and 0.35 is tiny."
+    }
+  ],
+  "reveal": "<h4>Why<\/h4>\n<p><strong>C-H is nonpolar covalent.<\/strong> The electronegativity difference is &Delta;<span class=\"chem\">EN<\/span> = 2.55 &minus; 2.20 = 0.35. That is less than the 0.5 threshold, so the electrostatic pull from both nuclei is nearly equal. The atoms share the electrons almost perfectly in the middle. This is why organic compounds like oils and fats (made of C-H bonds) are nonpolar and do not mix with water.<\/p>"
+}
+</script>
+</div>
+      
+    
+    <!-- Q2 -->
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Hydrogen (H, EN = 2.20) and fluorine (F, EN = 3.98) react to form hydrogen fluoride (HF, &Delta;<span class=\"chem\">EN<\/span> = 1.78). Both are nonmetals. What type of bond is this?",
+  "options": [
+    {
+      "label": "Ionic: because &Delta;EN (1.78) is greater than 1.7.",
+      "correct": false,
+      "feedback": "1.78 is just over 1.7, which makes this tempting. But H and F are both nonmetals, and neither gives up an electron completely. The 1.7 line is a guideline, not a law."
+    },
+    {
+      "label": "Polar covalent: they share electrons, even though the sharing is heavily lopsided.",
+      "correct": true,
+      "feedback": "H and F share electrons, but F pulls much harder. The bond is polar covalent, with strong partial charges."
+    },
+    {
+      "label": "Metallic: both let go of their electrons to form a sea.",
+      "correct": false,
+      "feedback": "A metallic bond needs metal atoms. H and F are nonmetals that hold their electrons tightly, so there is no sea of loose electrons."
+    }
+  ],
+  "reveal": "<h4>Why<\/h4>\n<p><strong>H-F is polar covalent.<\/strong> This is a key boundary case. The 1.7 threshold is a guideline, not a strict law. Hydrogen and fluorine are both nonmetals with high ionization energies. Neither atom releases an electron completely to form separate ions. They share electrons, but fluorine pulls them unevenly. That makes an extremely polar bond with strong charge separation.<\/p>"
+}
+</script>
+</div>
+
+
+    <!-- Q3 -->
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Copper (Cu, EN = 1.90) and zinc (Zn, EN = 1.65) are melted together to form brass. What type of bond holds the copper and zinc atoms together in the solid alloy?",
+  "options": [
+    {
+      "label": "Covalent: they share electrons in fixed pairs",
+      "correct": false,
+      "feedback": "Covalent sharing needs atoms that hold electrons between two nuclei. Cu and Zn are metals with low electronegativity, so their electrons are not locked in pairs."
+    },
+    {
+      "label": "Ionic: copper strips electrons from zinc",
+      "correct": false,
+      "feedback": "Ionic transfer needs a big &Delta;EN. Cu is 1.90 and Zn is 1.65, a difference of 0.25. Neither atom can strip electrons from the other."
+    },
+    {
+      "label": "Metallic: valence electrons flow around both nuclei",
+      "correct": true,
+      "feedback": "Both are metals with low electronegativity. Neither holds its outer electrons tightly, so the electrons form a shared sea around both nuclei."
+    }
+  ],
+  "reveal": "<h4>Why<\/h4>\n<p><strong>It is a metallic bond.<\/strong> Both copper and zinc are metal atoms with low electronegativities. Neither nucleus pulls strongly enough to hold its outer electrons in place. The valence shells merge, so electrons flow freely through the metal lattice. This shared attraction holds the alloy together and makes brass malleable and a good conductor.<\/p>"
+}
+</script>
+</div>
+
+  </div>
+</section>
+
+<!-- 05 RECALL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      A chemical bond is actually an <input class="blank" data-answer="electrostatic|electrical" placeholder="?"> force of attraction between the positive nuclei and negative electrons.
+      An atom's power to pull shared electrons is its <input class="blank" data-answer="electronegativity" placeholder="?">.
+      When two nonmetals share electrons equally, they form a <input class="blank" data-answer="nonpolar covalent" placeholder="?"> bond.
+      If sharing is unequal, the bond is <input class="blank" data-answer="polar covalent" placeholder="?">, which creates partial charges.
+      When a metal and a nonmetal bond, electrons are fully <input class="blank" data-answer="transferred|lost|gained" placeholder="?"> to form ions in an <input class="blank" data-answer="ionic" placeholder="?"> bond.
+      When metals bond together, their loose outer electrons form a delocalized <input class="blank" data-answer="sea of electrons|sea" placeholder="?"> in a <input class="blank" data-answer="metallic" placeholder="?"> bond.
+    </p>
+    <div class="actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 SELF EXPLAIN -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark"><p>Explain how the electronegativities of two metal atoms create a "sea of electrons" instead of an ionic or covalent bond.</p></div>
+    <p class="hint">Writing it out forces your brain to organize the concept. Write your answer first, then peek and compare.</p>
+    <textarea class="textbox" id="selfx" placeholder="Because metals have low electronegativity, meaning..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>Metals have <strong>low electronegativity</strong>, meaning their nuclei exert a very weak grip on their valence electrons. When metal atoms meet, neither atom can lock its outer electrons in place, so there is no covalent sharing. Neither can strip electrons from its neighbor, so there is no ionic transfer. The valence electrons spread out into a <strong>sea of electrons</strong>. This mobile sea attracts the positive metal cores and holds them together.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+    <div class="exam-frame">
+      <div class="exam-meta"><span class="exam-src">Gen Chem · HS-PS1-2 · constructed response</span><span class="exam-marks">[4 marks]</span></div>
+      <p class="exam-q">Contrast electron behavior and electrostatic forces in a covalent water bond (H<sub>2</sub>O) versus a metallic aluminum bond (Al).
+        <span class="sub">Contrast where the valence electrons live in each. Explain how the electrostatic force holds each substance together, and link it to electronegativity. Then name one physical property of aluminum that results from this difference.</span></p>
+      <textarea class="textbox" id="examAns" placeholder="Covalent vs metallic force, electron location, electronegativity link, and macroscopic property..."></textarea>
+      <div class="actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Covalent water (1 mark):</b> You say the valence electrons are localized and shared between specific hydrogen and oxygen nuclei.</li>
+          <li><b>Metallic aluminum (1 mark):</b> You say the valence electrons are delocalized, flowing as a sea around positive aluminum cations.</li>
+          <li><b>Electronegativity link (1 mark):</b> You say high-EN nonmetals in water keep electrons local, while low-EN aluminum releases its electrons.</li>
+          <li><b>Property (1 mark):</b> You name conductivity or malleability, and tie it to the mobile electrons.</li>
+        </ul></div></div>
+          <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why This Matters</div>
+        <p>Dental crowns and joint replacements utilize custom bond properties. Biocompatible dental ceramics use ionic bonds that resist thermal shock and acids. In contrast, titanium implants use delocalized metallic electron seas to absorb stress and bond with bone.</p>
+      </div>
+</div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-1 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-1</h3>
+    <p>
+      Test your mastery of electronegativity differences, bond classification, and periodic trends one question at a time. The adaptive engine identifies individual skill gaps, provides tutoring hints on missed questions, and awards an official authenticated completion receipt.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-1" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem · Semester 1 · 1-2a</div>
+  <p>Electrical force holds everything together. Next: how we draw these shared electrons using Lewis dot structures.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="../assets/elements.js"></script>
+<script src="1-2a.js"></script>
+</body>
+</html>

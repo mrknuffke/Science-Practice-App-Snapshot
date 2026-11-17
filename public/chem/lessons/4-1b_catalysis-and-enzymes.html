@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-5b" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>Catalysis &amp; Enzymes · Gen Chem 4-1b</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 4-1b &middot; Catalysis &amp; Enzymes</div>
+    <h1>Hydrogen peroxide keeps for months. Add a pinch of <span class="flip">powder</span> and it fizzes at once.</h1>
+    <p class="lede">A bottle of hydrogen peroxide keeps for months. Drop in a pinch of manganese dioxide and the liquid fizzes at once. When the fizzing stops, the manganese dioxide is still there. Catalytic converters, fertilizer plants and the cells in your body all use this trick. A catalyst lowers the energy barrier of a reaction. It leaves the energy released unchanged.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-5</b> Apply scientific principles and evidence to provide an explanation about the effects of changing the temperature or concentration of the reacting particles on the rate at which a reaction occurs.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can say what a catalyst changes and what it leaves alone. You can read a reaction profile with and without a catalyst. You know that enzymes are the catalysts of living things.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">What a catalyst does, and enzymes as the catalysts of living things. How enzymes work, and the enzyme simulator, are Enrichment.</div></div>
+    </div>
+
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>It lowers the barrier.</strong> A <strong class="term">catalyst</strong> speeds up a reaction by giving it a path with a lower <strong class="term">activation energy</strong> (<em>E</em><sub>a</sub>).</li>
+              <li><strong>It is not used up.</strong> The catalyst comes out of the reaction unchanged, so it works again and again.</li>
+              <li><strong>It leaves the energy released unchanged.</strong> The reactants and the products have the same energy with or without a catalyst, so &Delta;<em>H</em> stays the same.</li>
+              <li><strong>Enzymes.</strong> An <strong class="term">enzyme</strong> is a protein that acts as a catalyst in living things.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>With and without a catalyst</h4>
+            <figure class="figure figure--sm">
+<div class="diagram"><svg viewBox="0 0 300 170" font-family="var(--display)" role="img" aria-label="Two reaction profiles from the same reactants to the same products. The path without a catalyst has a high peak. The path with a catalyst has a lower peak">
+              <line x1="30" y1="140" x2="290" y2="140" stroke="var(--ink-mute)" stroke-width="1.2"/>
+              <line x1="30" y1="140" x2="30" y2="15" stroke="var(--ink-mute)" stroke-width="1.2"/>
+              <text x="160" y="162" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">Reaction coordinate</text>
+              <text x="12" y="78" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle" transform="rotate(-90 12 78)">PE</text>
+
+              <line x1="30" y1="90" x2="80" y2="90" stroke="var(--ink)" stroke-width="2.5"/>
+              <line x1="230" y1="110" x2="285" y2="110" stroke="var(--ink)" stroke-width="2.5"/>
+              <line x1="80" y1="90" x2="230" y2="90" stroke="var(--ink-mute)" stroke-width="0.8" stroke-dasharray="2 2"/>
+
+              <path d="M 80 90 C 110 14 190 14 230 110" fill="none" stroke="var(--ink-mute)" stroke-width="1.8" stroke-dasharray="4 3"/>
+              <path d="M 80 90 C 110 50 190 50 230 110" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+
+              <text x="151" y="24" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">no catalyst</text>
+              <text x="151" y="57" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">catalyst</text>
+              <text x="34" y="106" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Reactants</text>
+              <text x="232" y="128" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Products</text>
+            </svg>
+</div>
+<figcaption>a catalyst lowers the peak · the reactants and the products stay at the same energies</figcaption>
+</figure>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> <span>Compare the energy profile of a reaction with and without a catalyst.</span></li>
+              <li><input type="checkbox" disabled> <span>Explain why a catalyst does not change &Delta;<em>H</em>.</span></li>
+              <li><input type="checkbox" disabled> <span>Say what an enzyme is and what it does.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 WHAT IS A CATALYST? -->
+<section id="s-catalysts" data-toc="What a catalyst does">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Energy barriers</span></div>
+    <h2>Lowering the hurdle without changing the start or finish line.</h2>
+    <p>In Lesson 4-1a you saw that only collisions with at least the <strong class="term">activation energy</strong> (<em>E</em><sub>a</sub>) can react. If <em>E</em><sub>a</sub> is high, only a tiny share of the collisions can react. The rate is too slow to notice.</p>
+    <p>A <strong class="term">catalyst</strong> speeds up a reaction by giving it a different path with a lower activation energy. At the same temperature, more collisions have enough energy to react. A catalyst does three things.</p>
+    <ul>
+      <li><b>It lowers the barrier.</b> The peak of the energy profile is lower, so more collisions get over it.</li>
+      <li><b>It is not used up.</b> The catalyst comes out of the reaction unchanged, so it works again and again.</li>
+      <li><b>It leaves the energy released unchanged.</b> The reactants and the products sit at the same energies, so &Delta;<em>H</em> stays the same.</li>
+    </ul>
+
+    <figure class="figure figure--full">
+<div class="diagram">
+      <svg viewBox="0 0 540 240" font-family="var(--display)" role="img" aria-label="Potential energy diagram. The path without a catalyst has a high peak. The path with a catalyst has a lower peak. Both paths start at the same reactants and end at the same products">
+        <rect x="10" y="10" width="520" height="220" rx="8" fill="var(--card)" stroke="var(--hair)" stroke-width="1"/>
+        <!-- Axes -->
+        <line x1="60" y1="200" x2="490" y2="200" stroke="var(--ink-mute)" stroke-width="1.5"/>
+        <line x1="60" y1="30" x2="60" y2="200" stroke="var(--ink-mute)" stroke-width="1.5"/>
+        <text x="28" y="115" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle" transform="rotate(-90 28 115)">Potential energy</text>
+        <text x="275" y="222" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Reaction progress &rarr;</text>
+
+        <!-- Reactant line -->
+        <line x1="60" y1="140" x2="130" y2="140" stroke="var(--ink)" stroke-width="2.5"/>
+        <text x="66" y="130" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)">Reactants</text>
+        <line x1="130" y1="140" x2="410" y2="140" stroke="var(--ink-mute)" stroke-width="1" stroke-dasharray="3 3"/>
+
+        <!-- Product line (exothermic) -->
+        <line x1="390" y1="175" x2="460" y2="175" stroke="var(--ink)" stroke-width="2.5"/>
+        <text x="396" y="166" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)">Products</text>
+
+        <!-- Uncatalyzed curve -->
+        <path d="M 130 140 C 175 40, 295 40, 390 175" fill="none" stroke="var(--ink-mute)" stroke-width="2.2" stroke-dasharray="5,4"/>
+        <!-- Catalyzed curve -->
+        <path d="M 130 140 C 180 92, 290 92, 390 175" fill="none" stroke="var(--accent)" stroke-width="2.8"/>
+
+        <!-- Ea arrows -->
+        <line x1="210" y1="140" x2="210" y2="52" stroke="var(--ink-soft)" stroke-width="1.5"/>
+        <polyline points="206,58 210,50 214,58" fill="none" stroke="var(--ink-soft)" stroke-width="1.5"/>
+        <text x="200" y="100" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--ink-soft)" text-anchor="end">Ea</text>
+
+        <line x1="260" y1="140" x2="260" y2="100" stroke="var(--accent)" stroke-width="2"/>
+        <polyline points="256,106 260,98 264,106" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        <text x="270" y="124" style="font-size:var(--dia-caption-size);" font-family="var(--mono)" font-weight="700" fill="var(--accent)">Ea</text>
+
+        <!-- Legend -->
+        <line x1="330" y1="36" x2="360" y2="36" stroke="var(--ink-mute)" stroke-width="2.2" stroke-dasharray="5,4"/>
+        <text x="368" y="40" style="font-size:var(--dia-caption-size);" fill="var(--ink)">No catalyst</text>
+        <line x1="330" y1="58" x2="360" y2="58" stroke="var(--accent)" stroke-width="2.8"/>
+        <text x="368" y="62" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--accent)">With a catalyst</text>
+
+        <!-- Delta H bracket -->
+        <line x1="478" y1="140" x2="478" y2="175" stroke="var(--good)" stroke-width="2"/>
+        <polyline points="474,146 478,138 482,146" fill="none" stroke="var(--good)" stroke-width="2"/>
+        <polyline points="474,169 478,177 482,169" fill="none" stroke="var(--good)" stroke-width="2"/>
+        <text x="430" y="196" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--good)" text-anchor="middle">&Delta;H unchanged</text>
+      </svg>
+</div>
+<figcaption><b>Figure 4.2.</b> a catalyst gives the reaction a lower peak · the reactants and the products stay put, so &Delta;<em>H</em> does not change</figcaption>
+</figure>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking a catalyst adds energy to the reactants or heats the mixture. A catalyst does not speed up the particles. It gives them an easier path, so a collision needs less energy to react.</p></div>
+
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Metal surfaces and the final yield</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+    <p><b>On a metal surface.</b> Solid metals such as platinum, palladium and iron are catalysts. Reactant molecules stick to the metal surface. The surface weakens their bonds and holds them in a position that favors reaction.</p>
+    <p><b>At equilibrium.</b> A catalyst lowers the barrier for the reverse reaction by the same amount, so it speeds up both directions equally. A reaction reaches equilibrium sooner, but the final yield is the same.</p>
+    </details>
+
+  </div>
+</section>
+
+<!-- 02 CATALYSTS IN LIVING THINGS -->
+<section id="s-living" data-toc="Catalysts in living things">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Catalysts in cells</span></div>
+    <h2>Your cells run on catalysts too.</h2>
+    <p>A metal catalyst in a factory works at hundreds of degrees. A living cell has to work in water at about 37&nbsp;&deg;C. Its catalysts are <strong class="term">enzymes</strong>. Each enzyme is a large protein molecule shaped to speed up one reaction. An enzyme lowers the activation energy just as any catalyst does, and it comes out of the reaction unchanged.</p>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking an enzyme is used up, like a reactant. An enzyme is a catalyst. It comes out of the reaction unchanged and works again.</p></div>
+
+  </div>
+</section>
+
+<!-- 03 HOW ENZYMES WORK (Enrichment) -->
+<section id="s-enzymes" data-toc="How enzymes work" data-enrichment>
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">Inside an enzyme</span><span class="tag-enrichment">Enrichment</span></div>
+    <h2>How enzymes work: a pocket, a shape, and a top speed.</h2>
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>The active site, damage from heat and pH, and top speed</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+
+    <h3>The active site</h3>
+    <p>An enzyme is a protein folded into a particular three-dimensional shape. It has a pocket called the <strong class="term">active site</strong>. The molecule that reacts, the <strong class="term">substrate</strong>, fits into this pocket.</p>
+    <p>One early model, lock and key, pictured the substrate fitting the pocket like a key in a lock. The modern model, induced fit, says the pocket changes shape a little when the substrate arrives. The pocket then holds the substrate snugly and strains its bonds toward the transition state. That strain lowers <em>E</em><sub>a</sub>.</p>
+    <ol>
+      <li><b>Binding.</b> The substrate enters the active site.</li>
+      <li><b>Strain.</b> The side chains of the amino acids in the pocket strain the substrate toward the transition state.</li>
+      <li><b>Reaction.</b> Bonds break and new bonds form.</li>
+      <li><b>Release.</b> The products have a different shape and leave. The pocket is ready for the next substrate.</li>
+    </ol>
+
+    <h3>Damage from heat and pH</h3>
+    <p>An enzyme works only while it keeps its shape. From 0&nbsp;&deg;C to 37&nbsp;&deg;C the rate rises, because faster molecules collide more often and more of the collisions have enough energy. Above the best temperature (about 40 to 45&nbsp;&deg;C for many human enzymes), the particles shake the folded protein apart. The pocket unravels and the enzyme stops working.</p>
+    <p>A large change in pH does the same thing. The amino acids in the pocket (aspartate, glutamate, lysine) have side chains that gain or lose H<sup>+</sup>. Extra H<sup>+</sup> or OH<sup>&minus;</sup> changes their charges, so the pocket pushes the substrate away or unfolds. The permanent loss of shape is called <strong class="term">denaturation</strong>.</p>
+
+    <h3>Top speed</h3>
+    <p>Double the reactant in an uncatalyzed reaction and the rate doubles, because collisions happen twice as often. An enzyme reaction behaves differently. At first the rate rises with the amount of substrate. Then it levels off at a top speed.</p>
+
+    <figure class="figure figure--full">
+<div class="diagram">
+      <svg viewBox="0 0 540 230" font-family="var(--display)" role="img" aria-label="Graph of reaction speed against substrate amount for an enzyme. The speed rises steeply at first, then levels off at a dashed top-speed line">
+        <rect x="10" y="10" width="520" height="210" rx="8" fill="var(--card)" stroke="var(--hair)" stroke-width="1"/>
+        <line x1="60" y1="180" x2="490" y2="180" stroke="var(--ink-mute)" stroke-width="1.5"/>
+        <line x1="60" y1="30" x2="60" y2="180" stroke="var(--ink-mute)" stroke-width="1.5"/>
+        <text x="28" y="105" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle" transform="rotate(-90 28 105)">Reaction speed</text>
+        <text x="275" y="204" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink)" text-anchor="middle">Substrate amount &rarr;</text>
+
+        <!-- Top speed -->
+        <line x1="60" y1="60" x2="490" y2="60" stroke="var(--ink-mute)" stroke-width="1.5" stroke-dasharray="4,4"/>
+        <text x="486" y="52" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink-soft)" text-anchor="end">Top speed</text>
+
+        <!-- Saturation curve -->
+        <path d="M 60 180 L 75 152 L 90 135 L 110 120 L 135 108 L 160 100 L 210 90 L 260 84 L 360 77 L 490 72" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linejoin="round"/>
+
+        <text x="90" y="82" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">Low substrate:</text>
+        <text x="90" y="98" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">many sites empty</text>
+        <text x="300" y="140" style="font-size:var(--dia-caption-size);" font-weight="700" fill="var(--ink)">High substrate:</text>
+        <text x="300" y="156" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)">every site busy</text>
+      </svg>
+</div>
+<figcaption><b>Figure 4.3.</b> the speed rises with the substrate, then levels off · every active site is busy, so extra substrate has to wait</figcaption>
+</figure>
+
+    <p>Think of enzymes as cashiers at a busy grocery store. With 10 open registers and 2 shoppers in line, more shoppers means more checkouts. With 200 shoppers, every cashier is already scanning as fast as possible. Adding 50 more shoppers does not speed anything up. The only way to raise the speed is to hire more cashiers. In chemistry, that means adding more enzyme.</p>
+    </details>
+
+  </div>
+</section>
+
+<!-- 04 THE ENZYME SIMULATOR (Enrichment) -->
+<section id="s-sandbox" data-toc="Enzyme simulator" data-enrichment>
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Try it</span><span class="tag-enrichment">Enrichment</span></div>
+    <h2>Interactive enzyme simulator.</h2>
+    <details class="enrichment"><summary><span class="tag-enrichment">Enrichment</span><h4>Substrate, temperature, pH and the top speed</h4></summary><p class="hint">Extra depth. The rest of the lesson works without it.</p>
+    <p>Change the substrate, the temperature and the pH. Watch the active sites fill, and watch the speed level off.</p>
+
+    <div class="sim-box" data-sim="enzyme">
+      <div class="label">Simulation</div>
+      <h4>Why does adding more substrate stop speeding up the reaction?</h4>
+      <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: you run the simulator with 10, 40 and 80 substrate particles and count the reactions in 10 seconds each time. What pattern do the three rates make?</p>",
+  "options": [
+    {
+      "label": "The rate grows in proportion to the substrate, so 80 gives eight times the rate of 10",
+      "correct": false,
+      "feedback": "That pattern holds for an uncatalyzed reaction, where twice as many collisions means twice the rate. An enzyme has only a few active sites. Once they are all busy, more substrate cannot raise the rate."
+    },
+    {
+      "label": "The rate rises quickly, then levels off near a top value",
+      "correct": true,
+      "feedback": "With little substrate many sites sit empty, so more substrate means more reactions. With a lot, nearly every site is busy all the time. The rate then levels off at the enzyme's top speed."
+    },
+    {
+      "label": "The rate stays the same, because the enzyme works at its own fixed speed",
+      "correct": false,
+      "feedback": "An enzyme does have a top speed, which makes this tempting. But below that speed, empty active sites are waiting for substrate, so adding substrate does raise the rate. It stops rising only when every site is busy."
+    }
+  ],
+  "reveal": "<p>Now check it. Run the three amounts and compare the reactions in 10 seconds.</p>"
+}
+</script>
+</div>
+      <div class="sim-stage" data-ratio="pair"><canvas aria-label="A vessel of enzyme molecules and substrate particles beside a graph of reactions against substrate amount. Set the substrate, temperature, pH and enzyme amount, then press Start run."></canvas></div>
+      <div class="sim-controls" role="group" aria-label="Set up a run">
+        <label class="slider-row">Substrate <output>20 particles</output>
+          <input type="range" id="eSubstrate" min="10" max="80" step="10" value="20" data-unit="particles">
+        </label>
+        <label class="slider-row">Temperature <output>37 °C</output>
+          <input type="range" id="eTemp" min="5" max="75" step="1" value="37" data-unit="°C">
+        </label>
+        <label class="slider-row">pH <output>7.4</output>
+          <input type="range" id="ePh" min="2" max="12" step="0.2" value="7.4" data-digits="1">
+        </label>
+        <label class="slider-row">Enzyme molecules <output>8 molecules</output>
+          <input type="range" id="eEnz" min="4" max="12" step="4" value="8" data-unit="molecules">
+        </label>
+        <button type="button" class="btn" id="btnStartEnzyme">Start run</button>
+        <button type="button" class="btn ghost" id="btnResetEnzyme">Start over</button>
+      </div>
+      <div class="sim-readouts">
+        <div class="readout" data-readout="time"><span class="readout-label">Time</span><span class="readout-value">0.0 s</span></div>
+        <div class="readout" data-readout="react"><span class="readout-label">Reactions in 10 s</span><span class="readout-value">0 so far</span></div>
+        <div class="readout" data-readout="sites"><span class="readout-label">Active sites in use</span><span class="readout-value">–</span></div>
+        <div class="readout" data-readout="shape"><span class="readout-label">Enzyme shape</span><span class="readout-value">Native fold</span></div>
+      </div>
+      <span class="status-pill" data-state="neutral">Predict to start</span>
+      <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+      <ul class="sim-legend">
+        <li><span class="key" data-shape="dot" data-token="accent"></span>Substrate; filled in a pocket, it marks a busy active site</li>
+        <li><span class="key" data-shape="dot" data-token="good"></span>Product, released when a site finishes</li>
+        <li><span class="key" data-shape="square"></span>Enzyme with a working pocket (an amber outline is strained, a dashed red outline is unfolded)</li>
+        <li><span class="key" data-shape="dash" data-token="ink-mute"></span>Top speed, with every site busy all the time</li>
+      </ul>
+      <ol class="try-this">
+        <li>Run three amounts of substrate and press Record after each. <button type="button" class="chip" aria-pressed="false" data-preset="s10">Load 10 particles</button> <button type="button" class="chip" aria-pressed="false" data-preset="s40">Load 40 particles</button> <button type="button" class="chip" aria-pressed="false" data-preset="s80">Load 80 particles</button> <b>Look for:</b> 17, 30 and 33 reactions. The sites in use climb from 47% to 92%, and the dots level off under the top-speed line.</li>
+        <li>Heat the enzyme. Load 70 &deg;C, press Start run, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="hot">Load 70 &deg;C</button> <b>Look for:</b> 0 reactions. The outline turns dashed and the pockets collapse, because heat unfolds the protein.</li>
+        <li>Add strong acid. Load pH 2.4, press Start run, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="acid">Load pH 2.4</button> <b>Look for:</b> 0 reactions. This enzyme works best near pH 7.4. Pepsin in your stomach has a different shape and works in acid. This model enzyme does not.</li>
+      </ol>
+    </div>
+
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your rows for 40 and 80 substrate particles. The substrate doubled, but the rate rose by only a few reactions. Why?</p>",
+  "options": [
+    {
+      "label": "The extra substrate crowded the vessel, so the molecules blocked each other",
+      "correct": false,
+      "feedback": "Crowding is tempting, but the substrate particles in this model pass each other freely. Your rows show a different cause: the share of sites in use was already high at 40."
+    },
+    {
+      "label": "The enzyme got tired and slowed down as the run went on",
+      "correct": false,
+      "feedback": "An enzyme does not wear out in a run. It comes out of each reaction unchanged. Your 80-particle row shows the sites busy almost all the time, which is a limit on the sites, not on the enzyme."
+    },
+    {
+      "label": "Most active sites were already busy at 40, so extra substrate had to wait",
+      "correct": true,
+      "feedback": "At 40 particles the sites were already in use about 88% of the time. The rate can rise only a little more once almost every site is busy."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. The enzyme has a fixed number of active sites, and that sets its top speed.</p>"
+}
+</script>
+</div>
+
+    <h3>Explain the top speed</h3>
+    <div data-widget="commit-reveal">
+      <script type="application/json" class="w-config">
+{
+  "mode": "free",
+  "prompt": "A student uses a platinum wire as a catalyst for a gas reaction. Doubling the gas pressure doubles the rate. The student then tests an enzyme. Adding 500% more substrate does not change the rate. Explain at the particle level why the two catalysts behave differently. Then say how you could make the enzyme reaction speed up again.",
+  "minChars": 40,
+  "reveal": "<p><b>Key points:</b></p><ul><li>The enzyme has a limited number of active sites. With this much substrate, almost every site is busy all the time. Extra substrate molecules have to wait.</li><li>On the platinum wire many places on the surface are still open. More gas pressure sends more molecules to those places, so the rate rises.</li><li>To speed up the enzyme reaction again, add more enzyme. More enzyme means more active sites for the waiting substrate.</li></ul>"
+}
+      </script>
+    </div>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS1-5 &middot; constructed response</span>
+        <span class="exam-marks">[3 marks] <span class="tag-enrichment">Enrichment</span></span>
+      </div>
+      <div class="exam-q">
+        <p>Hydrogen peroxide breaks down: 2 H<sub>2</sub>O<sub>2</sub>(aq) &rarr; 2 H<sub>2</sub>O(l) + O<sub>2</sub>(g)</p>
+        <p>A student tests two catalysts at 25&nbsp;&deg;C. Catalase, an enzyme from liver, makes 14.2&nbsp;mL of O<sub>2</sub> per minute. Manganese dioxide (MnO<sub>2</sub>), a solid, makes 12.8&nbsp;mL per minute. The student boils each catalyst at 100&nbsp;&deg;C for 15 minutes, cools it to 25&nbsp;&deg;C and adds it to fresh H<sub>2</sub>O<sub>2</sub>.</p>
+        <p class="sub"><b>(a)</b> Predict the result for the boiled catalase and for the boiled MnO<sub>2</sub>. Explain the difference between an enzyme and a solid catalyst. [2 marks]</p>
+        <p class="sub"><b>(b)</b> In a fourth trial the student raises the H<sub>2</sub>O<sub>2</sub> to 12.0% with fresh catalase. The rate rises at first, then levels off. Explain why. [1 mark]</p>
+      </div>
+      <textarea class="textbox" id="examAnsEnr" placeholder="Write your predictions and your explanations..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 3 marks</div>
+        <ul class="pts">
+          <li><b>Catalase (1 mark):</b> You predict no oxygen, because boiling unfolds the enzyme and destroys its active site.</li>
+          <li><b>MnO<sub>2</sub> (1 mark):</b> You predict the same rate, because a solid has no folded shape to lose.</li>
+          <li><b>Top speed (1 mark):</b> You say every active site is busy, so extra substrate cannot raise the rate.</li>
+        </ul></div></div>
+    </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- 05 RAPID RETRIEVAL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      1. A catalyst speeds up a reaction by giving it a path with a lower <input class="blank" data-answer="activation energy|Ea" placeholder="?">.<br>
+      2. A catalyst is not used up, so it comes out of the reaction <input class="blank" data-answer="unchanged|the same|regenerated" placeholder="?">.<br>
+      3. A catalyst leaves the energy released by the reaction <input class="blank" data-answer="unchanged|the same|constant|unaffected" placeholder="?">.<br>
+      4. With a lower barrier, a larger share of the collisions has enough energy to <input class="blank" data-answer="react|get over the barrier" placeholder="?">.<br>
+      5. The catalysts of living things are proteins called <input class="blank" data-answer="enzymes|enzyme" placeholder="?">.
+    </p>
+    <div class="recall-actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 SELF-EXPLANATION -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark">
+      <p>A student says: <em>&ldquo;A catalyst makes a reaction release more energy, because the reaction goes faster.&rdquo;</em></p>
+      <p>Say whether the student is right. Explain what a catalyst changes and what it leaves alone.</p>
+    </div>
+    <p class="hint">Use the energy profile. Compare the height of the peak with the levels of the reactants and the products. Write your answer first, then compare it with the model answer.</p>
+    <textarea class="textbox" id="selfx" placeholder="The student is wrong, because a catalyst changes the peak but..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>The student is wrong. A catalyst changes only the path. It lowers the activation energy, so more collisions have enough energy to react and the rate goes up.</p>
+        <p>The reactants and the products sit at the same energies as before, so &Delta;<em>H</em> does not change. A faster reaction releases its energy sooner. It does not release more of it.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+    <div class="exam-frame">
+      <div class="exam-meta">
+        <span class="exam-src">Gen Chem &middot; HS-PS1-5 &middot; constructed response</span>
+        <span class="exam-marks">[4 marks]</span>
+      </div>
+      <div class="exam-q">
+        <p>Hydrogen peroxide breaks down into water and oxygen:</p>
+        <div class="eq-display">2 H<sub>2</sub>O<sub>2</sub>(aq) &rarr; 2 H<sub>2</sub>O(l) + O<sub>2</sub>(g) &emsp; &Delta;<em>H</em> = &minus;196&nbsp;kJ/mol</div>
+        <p>At 25&nbsp;&deg;C the uncatalyzed reaction is too slow to notice, because its activation energy is about 75&nbsp;kJ/mol. A student adds 0.5&nbsp;g of solid manganese dioxide (MnO<sub>2</sub>) to 50&nbsp;mL of 3.0% H<sub>2</sub>O<sub>2</sub>. The mixture makes 12.8&nbsp;mL of O<sub>2</sub> per minute.</p>
+        <p class="sub"><b>(a)</b> Explain at the particle level how MnO<sub>2</sub> makes the reaction faster. [2 marks]</p>
+        <p class="sub"><b>(b)</b> State what happens to &Delta;<em>H</em> when MnO<sub>2</sub> is added. Say why. [1 mark]</p>
+        <p class="sub"><b>(c)</b> At the end the student filters out the MnO<sub>2</sub>, dries it and weighs it. Predict its mass and explain why. [1 mark]</p>
+      </div>
+      <textarea class="textbox" id="examAns" placeholder="Write your answers for (a), (b) and (c)..."></textarea>
+      <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Barrier (1 mark):</b> You say MnO<sub>2</sub> gives the reaction a path with a lower activation energy.</li>
+          <li><b>Collisions (1 mark):</b> You say more collisions have enough energy to react, so the rate rises.</li>
+          <li><b>Energy released (1 mark):</b> You say &Delta;<em>H</em> stays at &minus;196&nbsp;kJ/mol, because the reactants and products do not change.</li>
+          <li><b>Not used up (1 mark):</b> You say the mass is the same, because a catalyst comes out unchanged.</li>
+        </ul></div></div>
+
+      <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why this matters</div>
+        <p>Many factories use harsh conditions: toxic metal catalysts, high pressure and temperatures above 400&nbsp;&deg;C. Engineered enzymes now replace some of them. An enzyme built for 30&nbsp;&deg;C water cuts the energy a factory uses and avoids toxic solvents. Some of these reactions reach 99.9% purity with no hazardous byproducts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-5 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-5</h3>
+    <p>
+      Test your mastery of reaction rates and catalysis one question at a time. The adaptive engine covers alternative reaction pathways with lower activation energies, catalysts, enzyme denaturation, and experimental reaction progress curves.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-5" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem &middot; Unit 4 &middot; 4-1b</div>
+  <p>Next, 4-6a: <strong>Dynamic Equilibrium &amp; Le Chatelier&rsquo;s Principle</strong> asks what happens when a reaction can run in both directions.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="4-1b.js"></script>
+</body>
+</html>

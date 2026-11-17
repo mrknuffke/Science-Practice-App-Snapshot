@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en" data-book="chem" data-page="index">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>SAS General Chemistry</title>
+<script>
+    if (location.pathname === '/chem') {
+      location.replace('/chem/' + location.search + location.hash);
+    }
+  </script>
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <script src="../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../textbook/base.css">
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/components.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+
+  <!-- Header -->
+  <header class="dashboard-header">
+    <h1>SAS General Chemistry</h1>
+    <p class="lede">Active retrieval practice and visual particle models aligned to the General Chemistry curriculum for Singapore American School, an NGSS-aligned course organized in unit storylines. Move at your own pace, complete the checkpoints, and build solid scientific arguments.</p>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+      <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" />
+        <path d="M21 21l-4.3-4.3" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <input type="text" class="search-input" id="searchInput" placeholder="Search lessons, terms, or study topics...">
+    </div>
+  </header>
+
+  <!-- Sticky Tabs -->
+  <div class="dashboard-tabs-wrap">
+    <div class="dashboard-tabs">
+      <button class="dashboard-tab active" data-panel="lessons">Lessons</button>
+      <button class="dashboard-tab" data-panel="concept-map">Concept Map</button>
+      <button class="dashboard-tab" data-panel="glossary">Glossary</button>
+      <div class="dashboard-tab-dropdown" id="resourcesDropdownWrap">
+        <button class="dashboard-tab dropdown-trigger" id="resourcesDropdownBtn" aria-haspopup="true" aria-expanded="false" type="button">
+          <span>Resources</span> <span class="caret">▾</span>
+        </button>
+        <div class="dropdown-menu" id="resourcesDropdownMenu">
+          <button type="button" class="dropdown-item" data-panel="unit1-res">Unit 1: Chemical Hygiene</button>
+          <button type="button" class="dropdown-item" data-panel="unit2-res">Unit 2: Prata Problems</button>
+          <button type="button" class="dropdown-item" data-panel="unit3-res">Unit 3: Energy</button>
+          <button type="button" class="dropdown-item" data-panel="unit4-res">Unit 4: Human Equilibrium</button>
+          <button type="button" class="dropdown-item" data-panel="unit5-res">Unit 5: Origin of the Elements</button>
+          <div class="dropdown-divider"></div>
+          <button type="button" class="dropdown-item" data-panel="pe-res">🎯 All Resources by Standard (PE)</button>
+        </div>
+      </div>
+      <button class="dashboard-tab" data-panel="cram-mode">Cram Mode</button>
+      <button class="dashboard-tab" data-panel="practice-review">Practice &amp; Review</button>
+    </div>
+  </div>
+
+  <!-- Main Content Panels -->
+  <main class="dashboard-container">
+    
+        <!-- ================= LESSONS PANEL ================= -->
+    <div class="dashboard-panel active" id="panel-lessons">
+      
+      <!-- View Mode Toggle -->
+      <div class="view-mode-bar">
+        <div class="view-mode-meta" id="viewModeMeta">
+          Showing: Unit Storylines
+        </div>
+        <div class="view-toggle-group" role="radiogroup" aria-label="Group lessons by">
+          <button type="button" class="view-toggle-btn active" id="btnGroupUnit" data-mode="unit" aria-pressed="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Unit Storylines
+          </button>
+          <button type="button" class="view-toggle-btn" id="btnGroupPE" data-mode="pe" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Performance Expectations
+          </button>
+        </div>
+      </div>
+
+            <div id="viewContainerUnit" class="lessons-view-container">
+        <!-- Unit 1 -->
+        <section class="unit-section" data-unit="1">
+          <h2>Unit 1: Chemical Hygiene · Atomic Structure & Bonding <span>7 Lessons · Atomic Architecture, Trends & Bonding</span></h2>
+          <p class="unit-storyline xdash-01">Storyline Anchor: &ldquo;What makes a chemical hazardous, and how can we know before we even open the bottle?&rdquo;</p>
+          <div class="lessons-grid" data-unit-grid="1" data-unit-lessons="1"></div>
+        </section>
+        <!-- Unit 2 -->
+        <section class="unit-section" data-unit="2">
+          <h2>Unit 2: Prata Problems · Matter, Reactions & The Mole <span>6 Lessons · Physical/Chemical Transformations & Stoichiometry</span></h2>
+          <p class="unit-storyline xdash-01">Storyline Anchor: &ldquo;Why does roti prata taste different after it hits the grill?&rdquo;</p>
+          <div class="lessons-grid" data-unit-grid="2" data-unit-lessons="2"></div>
+        </section>
+        <!-- Unit 3 -->
+        <section class="unit-section" data-unit="3">
+          <h2>Unit 3: Energy · Heat, Phase & Reaction Energetics <span>5 Lessons · Thermal Equilibrium, Phase Changes & Enthalpy</span></h2>
+          <p class="unit-storyline xdash-01">Storyline Anchor: &ldquo;How can you stay cool in Singapore without breaking the bank?&rdquo;</p>
+          <div class="lessons-grid" data-unit-grid="3" data-unit-lessons="3"></div>
+        </section>
+        <!-- Unit 4 -->
+        <section class="unit-section" data-unit="4">
+          <h2>Unit 4: Human Equilibrium · Speed, Balance & Homeostasis <span>4 Lessons · Kinetics, Catalysts, Le Chatelier & Buffers</span></h2>
+          <p class="unit-storyline xdash-01">Storyline Anchor: &ldquo;How does your body control its chemistry?&rdquo;</p>
+          <div class="lessons-grid" data-unit-grid="4" data-unit-lessons="4"></div>
+        </section>
+        <!-- Unit 5 -->
+        <section class="unit-section" data-unit="5">
+          <h2>Unit 5: Origin of the Elements · Stars, Space & Nuclear Physics <span>5 Lessons · Stellar Fusion, Big Bang Evidence & Radioactivity</span></h2>
+          <p class="unit-storyline xdash-01">Storyline Anchor: &ldquo;Where did the atoms in your body come from?&rdquo;</p>
+          <div class="lessons-grid" data-unit-grid="5" data-unit-lessons="5"></div>
+        </section>
+      </div>
+
+      <div id="viewContainerPE" class="lessons-view-container xdash-02">
+        <!-- HS-PS1-1 -->
+        <section class="unit-section pe-section" data-pe="HS-PS1-1">
+          <h2>HS-PS1-1: Valence Electrons & Periodic Trends <span>2 Lessons</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Use the periodic table as a model to predict the relative properties of elements based on the patterns of electrons in the outermost energy level of atoms.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS1-1 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 6 core skills sequentially. Rapid diagnostic checks identify skill deficits, followed by targeted adaptive practice and a verified PDF receipt.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS1-1" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS1-1">
+          </div>
+        </section>
+        <!-- HS-PS1-2 -->
+        <section class="unit-section pe-section" data-pe="HS-PS1-2">
+          <h2>HS-PS1-2: Simple Chemical Reactions & Bonding <span>5 Lessons</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Construct and revise an explanation for the outcome of a simple chemical reaction based on the outermost electron states of atoms, trends in the periodic table, and knowledge of the patterns of chemical properties.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS1-2 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 6 core skills covering bond types, molecular polarity, nomenclature, physical vs. chemical change, reaction types, and stoichiometric equation balancing.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS1-2" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS1-2">
+          </div>
+        </section>
+        <!-- HS-PS1-3 -->
+        <section class="unit-section pe-section" data-pe="HS-PS1-3">
+          <h2>HS-PS1-3: Electrical Forces & Intermolecular Forces <span>2 Lessons</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Plan and conduct an investigation to gather evidence to compare the structure of substances at the bulk scale to infer the strength of electrical forces between particles.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS1-3 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 8 core skills covering molecular polarity, electrical forces, bulk properties, and IMFs with adaptive scaffolding and verified PDF receipt.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS1-3" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS1-3">
+          </div>
+        </section>
+        <!-- HS-PS1-4 -->
+        <section class="unit-section pe-section" data-pe="HS-PS1-4">
+          <h2>HS-PS1-4: Bond Energy & Reaction Energetics <span>1 Lesson</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Develop a model to illustrate that the release or absorption of energy from a chemical reaction system depends upon the changes in total bond energy.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS1-4 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 6 core skills covering bond breaking and forming, reaction coordinate energy profiles, bond enthalpy calculations, system-surroundings thermal flow, bond stability, and collision transition states.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS1-4" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS1-4">
+          </div>
+        </section>
+        <!-- HS-PS1-5 -->
+        <section class="unit-section pe-section" data-pe="HS-PS1-5">
+          <h2>HS-PS1-5: Collision Theory, Rates & Catalysis <span>2 Lessons</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Apply scientific principles and evidence to provide an explanation about the effects of changing the temperature or concentration of the reacting particles on the rate at which a reaction occurs.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS1-5 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 6 core skills covering collision theory requirements, Maxwell-Boltzmann kinetic energy distributions, concentration and pressure, surface area, catalyst pathways, and experimental rate data.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS1-5" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS1-5">
+          </div>
+        </section>
+        <!-- HS-PS1-6 -->
+        <section class="unit-section pe-section" data-pe="HS-PS1-6">
+          <h2>HS-PS1-6: Dynamic Equilibrium & Le Chatelier <span>2 Lessons</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Refine the design of a chemical system by specifying a change in conditions that would produce increased amounts of products at equilibrium.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS1-6 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 6 core skills covering dynamic rate balance, concentration stresses, endothermic/exothermic temperature shifts, gas volume and pressure, the Haber-Bosch process, and coupled blood buffer equilibria.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS1-6" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS1-6">
+          </div>
+        </section>
+        <!-- HS-PS1-7 -->
+        <section class="unit-section pe-section" data-pe="HS-PS1-7">
+          <h2>HS-PS1-7: Conservation of Atoms & The Mole <span>3 Lessons</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Use mathematical representations to support the claim that atoms, and therefore mass, are conserved during a chemical reaction.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS1-7 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 6 core skills covering Avogadro's scale bridge, molar mass, unit conversions, stoichiometric mole ratios, BCA tables, and percent yield.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS1-7" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS1-7">
+          </div>
+        </section>
+        <!-- HS-PS1-8 -->
+        <section class="unit-section pe-section" data-pe="HS-PS1-8">
+          <h2>HS-PS1-8: Nuclear Processes, Decay & Energy <span>1 Lesson</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Develop models to illustrate the changes in the composition of the nucleus of the atom and the energy released during the processes of fission, fusion, and radioactive decay.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS1-8 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 6 core skills covering nuclear composition, alpha/beta decay balancing, gamma shielding, half-life kinetics, induced fission chain reactions, and solar fusion mass defect.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS1-8" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS1-8">
+          </div>
+        </section>
+        <!-- HS-PS2-6 -->
+        <section class="unit-section pe-section" data-pe="HS-PS2-6">
+          <h2>HS-PS2-6: Molecular Structure & Bulk Properties <span>1 Lesson</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Communicate scientific and technical information about why the molecular-level structure is important in the functioning of designed materials.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS2-6 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 5 core skills covering fatty acid geometry, London dispersion forces, melting points, 5-step material design arguments, and GHS safety.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS2-6" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS2-6">
+          </div>
+        </section>
+        <!-- HS-PS3-1 -->
+        <section class="unit-section pe-section" data-pe="HS-PS3-1">
+          <h2>HS-PS3-1: Computational Thermal Energy & Calorimetry <span>3 Lessons</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Create a computational model to calculate the change in the energy of one component in a system when the change in energy of the other component(s) and energy flows in and out of the system are known.&rdquo;</p>
+          <div class="pe-practice-card xdash-03">
+            <div class="xdash-04">
+              <div class="xdash-05">
+                <span class="label label-accent xdash-06">Interactive Practice Suite</span>
+                <span class="xdash-07">Diagnostic + Adaptive &middot; Verified Seal</span>
+              </div>
+              <h3 class="xdash-08">HS-PS3-1 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Practice 6 core skills covering thermal energy vs temperature, specific heat capacity (q = mc&Delta;T), phase transitions and latent heats (q = m&Delta;H), multi-stage heating curves, coffee-cup calorimetry, and LOL energy diagrams.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS3-1" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS3-1">
+          </div>
+        </section>
+        <!-- HS-PS3-4 -->
+        <section class="unit-section pe-section" data-pe="HS-PS3-4">
+          <h2>HS-PS3-4: Thermal Equilibrium in Closed Systems <span>1 Lesson</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Plan and conduct an investigation to provide evidence that the transfer of thermal energy when two components of different temperature are combined within a closed system results in a more uniform energy distribution among the components in the system.&rdquo;</p>
+          <div class="pe-practice-card xdash-11">
+            <div>
+              <div class="xdash-05">
+                <span class="label label-accent xdash-12">Adaptive Module Live</span>
+                <span class="practice-card-note">Verified PDF Certificate Available</span>
+              </div>
+              <h3 class="xdash-08">HS-PS3-4 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Investigate thermal energy transfers in closed systems: Second Law of Thermodynamics, particulate collision impulse forces, dynamic thermal equilibrium, Maxwell-Boltzmann velocity dispersion, and mathematical equilibrium modeling (q_lost = -q_gained).
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS3-4" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS3-4">
+          </div>
+        </section>
+        <!-- HS-PS4-4 -->
+        <section class="unit-section pe-section" data-pe="HS-PS4-4">
+          <h2>HS-PS4-4: Electromagnetic Radiation & Matter <span>1 Lesson</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Evaluate the validity and reliability of claims in published materials of the effects that different frequencies of electromagnetic radiation have when absorbed by matter.&rdquo;</p>
+          <div class="pe-practice-card xdash-11">
+            <div>
+              <div class="xdash-05">
+                <span class="label label-accent xdash-12">Adaptive Module Live</span>
+                <span class="practice-card-note">Verified PDF Certificate Available</span>
+              </div>
+              <h3 class="xdash-08">HS-PS4-4 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Evaluate electromagnetic radiation claims: Planck-Einstein photon energy (E = h&nu;), molecular rotation, vibration, and electron transitions, the 10 eV ionization divide, semiconductor sunscreen nanoparticle physics, and epidemiological risk analysis.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-PS4-4" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-PS4-4">
+          </div>
+        </section>
+        <!-- HS-ESS1-1 -->
+        <section class="unit-section pe-section" data-pe="HS-ESS1-1">
+          <h2>HS-ESS1-1: Solar Fusion & Lifespan of the Sun <span>1 Lesson</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Develop a model based on evidence to illustrate the life span of the sun and the role of nuclear fusion in the sun’s core to release energy that eventually reaches Earth in the form of radiation.&rdquo;</p>
+          <div class="pe-practice-card xdash-11">
+            <div>
+              <div class="xdash-05">
+                <span class="label label-accent xdash-12">Adaptive Module Live</span>
+                <span class="practice-card-note">Verified PDF Certificate Available</span>
+              </div>
+              <h3 class="xdash-08">HS-ESS1-1 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Model solar nuclear fusion and stellar lifespan: hydrostatic equilibrium thermostat dynamics, proton-proton fusion chain steps, mass defect (E = &Delta;m &middot; c&sup2;), photon diffusion through the radiative zone vs. neutrino escape, and stellar mass-luminosity scaling.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-ESS1-1" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-ESS1-1">
+          </div>
+        </section>
+        <!-- HS-ESS1-2 -->
+        <section class="unit-section pe-section" data-pe="HS-ESS1-2">
+          <h2>HS-ESS1-2: The Big Bang & Astronomical Evidence <span>1 Lesson</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Construct an explanation of the Big Bang theory based on astronomical evidence of light spectra, motion of distant galaxies, and composition of matter in the universe.&rdquo;</p>
+          <div class="pe-practice-card xdash-11">
+            <div>
+              <div class="xdash-05">
+                <span class="label label-accent xdash-12">Adaptive Module Live</span>
+                <span class="practice-card-note">Verified PDF Certificate Available</span>
+              </div>
+              <h3 class="xdash-08">HS-ESS1-2 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Analyze empirical evidence for the Big Bang: cosmological galactic redshift (z = &Delta;&lambda; / &lambda;), Hubble's Law (v = H&#8320; &middot; d), Big Bang nucleosynthesis (75% H / 25% He), the 2.725 K Cosmic Microwave Background relic blackbody radiation, and cosmic lookback time.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-ESS1-2" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-ESS1-2">
+          </div>
+        </section>
+        <!-- HS-ESS1-3 -->
+        <section class="unit-section pe-section" data-pe="HS-ESS1-3">
+          <h2>HS-ESS1-3: Stellar Nucleosynthesis of Elements <span>1 Lesson</span></h2>
+          <p class="unit-storyline xdash-01">Standard: &ldquo;Communicate scientific ideas about the way stars, over their life cycle, produce elements.&rdquo;</p>
+          <div class="pe-practice-card xdash-11">
+            <div>
+              <div class="xdash-05">
+                <span class="label label-accent xdash-12">Adaptive Module Live</span>
+                <span class="practice-card-note">Verified PDF Certificate Available</span>
+              </div>
+              <h3 class="xdash-08">HS-ESS1-3 Adaptive Competency Station</h3>
+              <p class="xdash-09">
+                Track elemental origin nucleosynthetic pathways across stellar life cycles: stellar mass thresholds and Coulomb barriers, concentric onion fusion shells in supergiants, the iron-56 peak binding energy per nucleon barrier, core-collapse supernovae, slow (s-process) and rapid (r-process) neutron capture, and cosmic recycling of enriched stardust.
+              </p>
+            </div>
+            <a href="pe/index.html?pe=HS-ESS1-3" class="btn xdash-10">
+              Launch Practice &rarr;
+            </a>
+          </div>
+          <div class="lessons-grid" data-pe-grid="HS-ESS1-3">
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ================= CONCEPT MAP PANEL ================= -->
+    <div class="dashboard-panel" id="panel-concept-map">
+      <div class="concept-map-container">
+        <h2 class="concept-map-title">Concept Mastery Map</h2>
+        <div class="concept-map-legend">
+          <div class="legend-item">
+            <span class="legend-color not-started"></span> Not Started
+          </div>
+          <div class="legend-item">
+            <span class="legend-color in-progress"></span> In Progress
+          </div>
+          <div class="legend-item">
+            <span class="legend-color completed"></span> Completed
+          </div>
+        </div>
+        <svg class="concept-map-svg" viewBox="0 0 1060 860" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <marker id="arrow-mute" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" viewBox="0 0 7 7">
+              <path d="M0 1 L6 3.5 L0 6 z" fill="var(--ink-mute)" />
+            </marker>
+            <marker id="arrow-in-progress" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" viewBox="0 0 7 7">
+              <path d="M0 1 L6 3.5 L0 6 z" fill="var(--accent)" />
+            </marker>
+            <marker id="arrow-completed" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" viewBox="0 0 7 7">
+              <path d="M0 1 L6 3.5 L0 6 z" fill="var(--good)" />
+            </marker>
+          </defs>
+          <!-- Unit Cluster Lanes -->
+          <rect x="15" y="15" width="1030" height="175" rx="8" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1" opacity="0.6" />
+          <text x="30" y="33" font-family="var(--mono)" font-size="10" font-weight="700" letter-spacing="0.06em" text-transform="uppercase" fill="var(--ink-mute)">Unit 1 · Chemical Hygiene · Atomic Structure & Bonding</text>
+          <rect x="15" y="200" width="1030" height="150" rx="8" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1" opacity="0.6" />
+          <text x="30" y="218" font-family="var(--mono)" font-size="10" font-weight="700" letter-spacing="0.06em" text-transform="uppercase" fill="var(--ink-mute)">Unit 2 · Prata Problems · Matter, Reactions & The Mole</text>
+          <rect x="15" y="360" width="1030" height="165" rx="8" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1" opacity="0.6" />
+          <text x="30" y="378" font-family="var(--mono)" font-size="10" font-weight="700" letter-spacing="0.06em" text-transform="uppercase" fill="var(--ink-mute)">Unit 3 · Energy · Heat, Phase & Reaction Energetics</text>
+          <rect x="15" y="535" width="1030" height="150" rx="8" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1" opacity="0.6" />
+          <text x="30" y="553" font-family="var(--mono)" font-size="10" font-weight="700" letter-spacing="0.06em" text-transform="uppercase" fill="var(--ink-mute)">Unit 4 · Human Equilibrium · Speed, Balance & Homeostasis</text>
+          <rect x="15" y="695" width="1030" height="150" rx="8" fill="var(--paper-2)" stroke="var(--hair)" stroke-width="1" opacity="0.6" />
+          <text x="30" y="713" font-family="var(--mono)" font-size="10" font-weight="700" letter-spacing="0.06em" text-transform="uppercase" fill="var(--ink-mute)">Unit 5 · Origin of the Elements · Stars & Nuclear Physics</text>
+          <!-- Prerequisite Connections -->
+          <line x1="159" y1="69" x2="205" y2="69" class="d-arrow" data-from="1-1a" data-to="1-1b" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="329" y1="69" x2="375" y2="69" class="d-arrow" data-from="1-1b" data-to="1-2a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="499" y1="69" x2="545" y2="69" class="d-arrow" data-from="1-2a" data-to="1-2c" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="159" y1="85" x2="205" y2="135" class="d-arrow" data-from="1-1a" data-to="1-3a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="329" y1="149" x2="375" y2="149" class="d-arrow" data-from="1-3a" data-to="1-2b" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="437" y1="93" x2="437" y2="125" class="d-arrow" data-from="1-2a" data-to="1-2b" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="499" y1="149" x2="545" y2="149" class="d-arrow" data-from="1-2b" data-to="1-3b" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="669" y1="149" x2="715" y2="149" class="d-arrow" data-from="1-3b" data-to="2-6a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="135" y1="93" x2="205" y2="240" class="d-arrow" data-from="1-1a" data-to="1-2d" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="585" y1="93" x2="470" y2="235" class="d-arrow" data-from="1-2c" data-to="1-2e" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="329" y1="259" x2="375" y2="259" class="d-arrow" data-from="1-2d" data-to="1-2e" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="499" y1="259" x2="545" y2="259" class="d-arrow" data-from="1-2e" data-to="1-7a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="669" y1="259" x2="715" y2="259" class="d-arrow" data-from="1-7a" data-to="1-7b" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="839" y1="259" x2="885" y2="259" class="d-arrow" data-from="1-7b" data-to="1-7c" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="267" y1="283" x2="267" y2="395" class="d-arrow" data-from="1-2d" data-to="3-1a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="580" y1="173" x2="455" y2="395" class="d-arrow" data-from="1-3b" data-to="3-1b" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="329" y1="419" x2="375" y2="419" class="d-arrow" data-from="3-1a" data-to="3-1b" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="499" y1="419" x2="545" y2="419" class="d-arrow" data-from="3-1b" data-to="3-1c" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="669" y1="419" x2="715" y2="419" class="d-arrow" data-from="3-1c" data-to="3-4a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="437" y1="283" x2="437" y2="465" class="d-arrow" data-from="1-2e" data-to="1-4a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="267" y1="443" x2="267" y2="570" class="d-arrow" data-from="3-1a" data-to="1-5a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="329" y1="594" x2="375" y2="594" class="d-arrow" data-from="1-5a" data-to="1-5b" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="499" y1="489" x2="560" y2="570" class="d-arrow" data-from="1-4a" data-to="1-6a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="499" y1="594" x2="545" y2="594" class="d-arrow" data-from="1-5b" data-to="1-6a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="669" y1="594" x2="715" y2="594" class="d-arrow" data-from="1-6a" data-to="1-6b" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="97" y1="93" x2="97" y2="730" class="d-arrow" data-from="1-1a" data-to="1-8a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="159" y1="754" x2="205" y2="754" class="d-arrow" data-from="1-8a" data-to="E1-1a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="329" y1="754" x2="375" y2="754" class="d-arrow" data-from="E1-1a" data-to="E1-3a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="499" y1="754" x2="545" y2="754" class="d-arrow" data-from="E1-3a" data-to="E1-2a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="329" y1="765" x2="715" y2="765" class="d-arrow" data-from="E1-1a" data-to="4-4a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <line x1="715" y1="745" x2="669" y2="745" class="d-arrow" data-from="4-4a" data-to="E1-2a" marker-end="url(#arrow-mute)" stroke="var(--ink-mute)" stroke-width="1.5" />
+          <!-- Lesson Nodes -->
+          <a href="lessons/1-1a_atomic-structure-electron-config.html">
+            <g class="concept-node" data-lesson="1-1a">
+              <rect x="35" y="45" width="124" height="48" rx="6" class="node-bg" />
+              <text x="97" y="62" class="node-badge-text" text-anchor="middle">1-1a · PS1-1</text>
+              <text x="97" y="79" class="node-title-text" text-anchor="middle">Atomic Structure</text>
+            </g>
+          </a>
+          <a href="lessons/1-1b_periodic-trends-reactivity.html">
+            <g class="concept-node" data-lesson="1-1b">
+              <rect x="205" y="45" width="124" height="48" rx="6" class="node-bg" />
+              <text x="267" y="62" class="node-badge-text" text-anchor="middle">1-1b · PS1-1</text>
+              <text x="267" y="79" class="node-title-text" text-anchor="middle">Periodic Trends</text>
+            </g>
+          </a>
+          <a href="lessons/1-2a_bonding-electronegativity.html">
+            <g class="concept-node" data-lesson="1-2a">
+              <rect x="375" y="45" width="124" height="48" rx="6" class="node-bg" />
+              <text x="437" y="62" class="node-badge-text" text-anchor="middle">1-2a · PS1-2</text>
+              <text x="437" y="79" class="node-title-text" text-anchor="middle">Bonding Character</text>
+            </g>
+          </a>
+          <a href="lessons/1-2c_chemical-nomenclature.html">
+            <g class="concept-node" data-lesson="1-2c">
+              <rect x="545" y="45" width="124" height="48" rx="6" class="node-bg" />
+              <text x="607" y="62" class="node-badge-text" text-anchor="middle">1-2c · PS1-2</text>
+              <text x="607" y="79" class="node-title-text" text-anchor="middle">Nomenclature</text>
+            </g>
+          </a>
+          <a href="lessons/1-3a_lewis-structures.html">
+            <g class="concept-node" data-lesson="1-3a">
+              <rect x="205" y="125" width="124" height="48" rx="6" class="node-bg" />
+              <text x="267" y="142" class="node-badge-text" text-anchor="middle">1-3a · PS1-3</text>
+              <text x="267" y="159" class="node-title-text" text-anchor="middle">Lewis Structures</text>
+            </g>
+          </a>
+          <a href="lessons/1-2b_molecular-polarity.html">
+            <g class="concept-node" data-lesson="1-2b">
+              <rect x="375" y="125" width="124" height="48" rx="6" class="node-bg" />
+              <text x="437" y="142" class="node-badge-text" text-anchor="middle">1-2b · PS1-2</text>
+              <text x="437" y="159" class="node-title-text" text-anchor="middle">Molecular Polarity</text>
+            </g>
+          </a>
+          <a href="lessons/1-3b_imfs-properties.html">
+            <g class="concept-node" data-lesson="1-3b">
+              <rect x="545" y="125" width="124" height="48" rx="6" class="node-bg" />
+              <text x="607" y="142" class="node-badge-text" text-anchor="middle">1-3b · PS1-3</text>
+              <text x="607" y="159" class="node-title-text" text-anchor="middle">Intermolecular Forces</text>
+            </g>
+          </a>
+          <a href="lessons/2-6a_structure-property-argument.html">
+            <g class="concept-node" data-lesson="2-6a">
+              <rect x="715" y="125" width="124" height="48" rx="6" class="node-bg" />
+              <text x="777" y="142" class="node-badge-text" text-anchor="middle">2-6a · PS2-6</text>
+              <text x="777" y="159" class="node-title-text" text-anchor="middle">Structure → Property</text>
+            </g>
+          </a>
+          <a href="lessons/2-2a_physical-chemical-change.html">
+            <g class="concept-node" data-lesson="1-2d">
+              <rect x="205" y="235" width="124" height="48" rx="6" class="node-bg" />
+              <text x="267" y="252" class="node-badge-text" text-anchor="middle">1-2d · PS1-2</text>
+              <text x="267" y="269" class="node-title-text" text-anchor="middle">Physical / Chemical</text>
+            </g>
+          </a>
+          <a href="lessons/1-2e_reaction-types-balancing.html">
+            <g class="concept-node" data-lesson="1-2e">
+              <rect x="375" y="235" width="124" height="48" rx="6" class="node-bg" />
+              <text x="437" y="252" class="node-badge-text" text-anchor="middle">1-2e · PS1-2</text>
+              <text x="437" y="269" class="node-title-text" text-anchor="middle">Reaction Balancing</text>
+            </g>
+          </a>
+          <a href="lessons/2-7a_mole-molar-mass.html">
+            <g class="concept-node" data-lesson="1-7a">
+              <rect x="545" y="235" width="124" height="48" rx="6" class="node-bg" />
+              <text x="607" y="252" class="node-badge-text" text-anchor="middle">1-7a · PS1-7</text>
+              <text x="607" y="269" class="node-title-text" text-anchor="middle">The Mole & Mass</text>
+            </g>
+          </a>
+          <a href="lessons/2-7b_mole-conversions.html">
+            <g class="concept-node" data-lesson="1-7b">
+              <rect x="715" y="235" width="124" height="48" rx="6" class="node-bg" />
+              <text x="777" y="252" class="node-badge-text" text-anchor="middle">1-7b · PS1-7</text>
+              <text x="777" y="269" class="node-title-text" text-anchor="middle">Mole Conversions</text>
+            </g>
+          </a>
+          <a href="lessons/2-7c_stoichiometry.html">
+            <g class="concept-node" data-lesson="1-7c">
+              <rect x="885" y="235" width="124" height="48" rx="6" class="node-bg" />
+              <text x="947" y="252" class="node-badge-text" text-anchor="middle">1-7c · PS1-7</text>
+              <text x="947" y="269" class="node-title-text" text-anchor="middle">Stoichiometry</text>
+            </g>
+          </a>
+          <a href="lessons/3-1a_temperature-heat-specific-heat.html">
+            <g class="concept-node" data-lesson="3-1a">
+              <rect x="205" y="395" width="124" height="48" rx="6" class="node-bg" />
+              <text x="267" y="412" class="node-badge-text" text-anchor="middle">3-1a · PS3-1</text>
+              <text x="267" y="429" class="node-title-text" text-anchor="middle">Temp & Specific Heat</text>
+            </g>
+          </a>
+          <a href="lessons/3-1b_phase-changes-heating-curves.html">
+            <g class="concept-node" data-lesson="3-1b">
+              <rect x="375" y="395" width="124" height="48" rx="6" class="node-bg" />
+              <text x="437" y="412" class="node-badge-text" text-anchor="middle">3-1b · PS3-1</text>
+              <text x="437" y="429" class="node-title-text" text-anchor="middle">Heating Curves</text>
+            </g>
+          </a>
+          <a href="lessons/3-1c_calorimetry-energy-systems.html">
+            <g class="concept-node" data-lesson="3-1c">
+              <rect x="545" y="395" width="124" height="48" rx="6" class="node-bg" />
+              <text x="607" y="412" class="node-badge-text" text-anchor="middle">3-1c · PS3-1</text>
+              <text x="607" y="429" class="node-title-text" text-anchor="middle">Calorimetry & Systems</text>
+            </g>
+          </a>
+          <a href="lessons/3-4a_thermal-equilibrium-heat-transfer.html">
+            <g class="concept-node" data-lesson="3-4a">
+              <rect x="715" y="395" width="124" height="48" rx="6" class="node-bg" />
+              <text x="777" y="412" class="node-badge-text" text-anchor="middle">3-4a · PS3-4</text>
+              <text x="777" y="429" class="node-title-text" text-anchor="middle">Thermal Equilibrium</text>
+            </g>
+          </a>
+          <a href="lessons/3-14a_bond-energy-reaction-profiles.html">
+            <g class="concept-node" data-lesson="1-4a">
+              <rect x="375" y="465" width="124" height="48" rx="6" class="node-bg" />
+              <text x="437" y="482" class="node-badge-text" text-anchor="middle">1-4a · PS1-4</text>
+              <text x="437" y="499" class="node-title-text" text-anchor="middle">Bond Energy & Profiles</text>
+            </g>
+          </a>
+          <a href="lessons/4-1a_reaction-rates-collision-theory.html">
+            <g class="concept-node" data-lesson="1-5a">
+              <rect x="205" y="570" width="124" height="48" rx="6" class="node-bg" />
+              <text x="267" y="587" class="node-badge-text" text-anchor="middle">1-5a · PS1-5</text>
+              <text x="267" y="604" class="node-title-text" text-anchor="middle">Reaction Rates & KMT</text>
+            </g>
+          </a>
+          <a href="lessons/4-1b_catalysis-and-enzymes.html">
+            <g class="concept-node" data-lesson="1-5b">
+              <rect x="375" y="570" width="124" height="48" rx="6" class="node-bg" />
+              <text x="437" y="587" class="node-badge-text" text-anchor="middle">1-5b · PS1-5</text>
+              <text x="437" y="604" class="node-title-text" text-anchor="middle">Catalysts & Enzymes</text>
+            </g>
+          </a>
+          <a href="lessons/4-6a_dynamic-equilibrium-le-chatelier.html">
+            <g class="concept-node" data-lesson="1-6a">
+              <rect x="545" y="570" width="124" height="48" rx="6" class="node-bg" />
+              <text x="607" y="587" class="node-badge-text" text-anchor="middle">1-6a · PS1-6</text>
+              <text x="607" y="604" class="node-title-text" text-anchor="middle">Dynamic Equilibrium</text>
+            </g>
+          </a>
+          <a href="lessons/4-6b_human-equilibrium-blood-buffers.html">
+            <g class="concept-node" data-lesson="1-6b">
+              <rect x="715" y="570" width="124" height="48" rx="6" class="node-bg" />
+              <text x="777" y="587" class="node-badge-text" text-anchor="middle">1-6b · PS1-6</text>
+              <text x="777" y="604" class="node-title-text" text-anchor="middle">Blood Buffers</text>
+            </g>
+          </a>
+          <a href="lessons/5-8a_nuclear-reactions-radioactive-decay.html">
+            <g class="concept-node" data-lesson="1-8a">
+              <rect x="35" y="730" width="124" height="48" rx="6" class="node-bg" />
+              <text x="97" y="747" class="node-badge-text" text-anchor="middle">1-8a · PS1-8</text>
+              <text x="97" y="764" class="node-title-text" text-anchor="middle">Nuclear Reactions</text>
+            </g>
+          </a>
+          <a href="lessons/5-1a_stellar-fusion-solar-energy.html">
+            <g class="concept-node" data-lesson="E1-1a">
+              <rect x="205" y="730" width="124" height="48" rx="6" class="node-bg" />
+              <text x="267" y="747" class="node-badge-text" text-anchor="middle">E1-1a · ESS1-1</text>
+              <text x="267" y="764" class="node-title-text" text-anchor="middle">Stellar Fusion & Sun</text>
+            </g>
+          </a>
+          <a href="lessons/5-3a_stellar-nucleosynthesis-element-origins.html">
+            <g class="concept-node" data-lesson="E1-3a">
+              <rect x="375" y="730" width="124" height="48" rx="6" class="node-bg" />
+              <text x="437" y="747" class="node-badge-text" text-anchor="middle">E1-3a · ESS1-3</text>
+              <text x="437" y="764" class="node-title-text" text-anchor="middle">Nucleosynthesis</text>
+            </g>
+          </a>
+          <a href="lessons/5-2a_big-bang-cosmic-evidence.html">
+            <g class="concept-node" data-lesson="E1-2a">
+              <rect x="545" y="730" width="124" height="48" rx="6" class="node-bg" />
+              <text x="607" y="747" class="node-badge-text" text-anchor="middle">E1-2a · ESS1-2</text>
+              <text x="607" y="764" class="node-title-text" text-anchor="middle">Big Bang Evidence</text>
+            </g>
+          </a>
+          <a href="lessons/5-4a_electromagnetic-radiation-matter.html">
+            <g class="concept-node" data-lesson="4-4a">
+              <rect x="715" y="730" width="124" height="48" rx="6" class="node-bg" />
+              <text x="777" y="747" class="node-badge-text" text-anchor="middle">4-4a · PS4-4</text>
+              <text x="777" y="764" class="node-title-text" text-anchor="middle">EM Radiation & Matter</text>
+            </g>
+          </a>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ================= GLOSSARY PANEL ================= -->
+    <div class="dashboard-panel" id="panel-glossary">
+      <div class="glossary-grid" id="glossaryGrid">
+        <!-- Alphabetical terms dynamically generated and filtered -->
+      </div>
+    </div>
+
+    <!-- ================= UNIT 1 RESOURCES PANEL ================= -->
+    <div class="dashboard-panel" id="panel-unit1-res">
+      <div class="view-mode-bar">
+        <div class="view-mode-meta res-view-mode-meta">Showing: Unit Storylines</div>
+        <div class="view-toggle-group" role="radiogroup" aria-label="Group resources by">
+          <button type="button" class="view-toggle-btn active btn-res-group-unit" data-mode="unit" aria-pressed="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Unit Storylines
+          </button>
+          <button type="button" class="view-toggle-btn btn-res-group-pe" data-mode="pe" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Performance Expectations
+          </button>
+        </div>
+      </div>
+      <div class="callout xdash-13">
+        <div class="label label-accent">Unit 1 Reference Note</div>
+        <p class="xdash-14">
+          Supplemental simulations, video tutorials, and textbook readings for Unit 1 (Chemical Hygiene: Atomic Structure &amp; Bonding).<br>
+          <strong class="xdash-15">SciencePractice.app:</strong> Access <a href="/" target="_blank" class="xdash-16">sciencepractice.app</a> directly for interactive drills. Sign in with your school Google account.
+        </p>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-group">
+          <h3>Videos</h3>
+          <div class="resource-list" id="unit1-videos-list"></div>
+        </div>
+        <div class="resource-group">
+          <h3>Readings &amp; Simulations</h3>
+          <div class="resource-list" id="unit1-texts-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= UNIT 2 RESOURCES PANEL ================= -->
+    <div class="dashboard-panel" id="panel-unit2-res">
+      <div class="view-mode-bar">
+        <div class="view-mode-meta res-view-mode-meta">Showing: Unit Storylines</div>
+        <div class="view-toggle-group" role="radiogroup" aria-label="Group resources by">
+          <button type="button" class="view-toggle-btn active btn-res-group-unit" data-mode="unit" aria-pressed="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Unit Storylines
+          </button>
+          <button type="button" class="view-toggle-btn btn-res-group-pe" data-mode="pe" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Performance Expectations
+          </button>
+        </div>
+      </div>
+      <div class="callout xdash-13">
+        <div class="label label-accent">Unit 2 Reference Note</div>
+        <p class="xdash-14">
+          Supplemental simulations, video tutorials, and textbook readings for Unit 2 (Prata Problems: Conservation of Mass, Reactions &amp; Stoichiometry).<br>
+          <strong class="xdash-15">SciencePractice.app:</strong> Access <a href="/" target="_blank" class="xdash-16">sciencepractice.app</a> directly for interactive drills. Sign in with your school Google account.
+        </p>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-group">
+          <h3>Videos</h3>
+          <div class="resource-list" id="unit2-videos-list"></div>
+        </div>
+        <div class="resource-group">
+          <h3>Readings &amp; Simulations</h3>
+          <div class="resource-list" id="unit2-texts-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= UNIT 3 RESOURCES PANEL ================= -->
+    <div class="dashboard-panel" id="panel-unit3-res">
+      <div class="view-mode-bar">
+        <div class="view-mode-meta res-view-mode-meta">Showing: Unit Storylines</div>
+        <div class="view-toggle-group" role="radiogroup" aria-label="Group resources by">
+          <button type="button" class="view-toggle-btn active btn-res-group-unit" data-mode="unit" aria-pressed="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Unit Storylines
+          </button>
+          <button type="button" class="view-toggle-btn btn-res-group-pe" data-mode="pe" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Performance Expectations
+          </button>
+        </div>
+      </div>
+      <div class="callout xdash-13">
+        <div class="label label-accent">Unit 3 Reference Note</div>
+        <p class="xdash-14">
+          Supplemental simulations, video tutorials, and textbook readings for Unit 3 (Energy: Heat, Phase Changes, and Reaction Energetics).<br>
+          <strong class="xdash-15">SciencePractice.app:</strong> Use <a href="/" target="_blank" class="xdash-16">sciencepractice.app</a> for targeted interactive drills.
+        </p>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-group">
+          <h3>Videos</h3>
+          <div class="resource-list" id="unit3-videos-list"></div>
+        </div>
+        <div class="resource-group">
+          <h3>Readings &amp; Simulations</h3>
+          <div class="resource-list" id="unit3-texts-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= UNIT 4 RESOURCES PANEL ================= -->
+    <div class="dashboard-panel" id="panel-unit4-res">
+      <div class="view-mode-bar">
+        <div class="view-mode-meta res-view-mode-meta">Showing: Unit Storylines</div>
+        <div class="view-toggle-group" role="radiogroup" aria-label="Group resources by">
+          <button type="button" class="view-toggle-btn active btn-res-group-unit" data-mode="unit" aria-pressed="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Unit Storylines
+          </button>
+          <button type="button" class="view-toggle-btn btn-res-group-pe" data-mode="pe" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Performance Expectations
+          </button>
+        </div>
+      </div>
+      <div class="callout xdash-13">
+        <div class="label label-accent">Unit 4 Reference Note</div>
+        <p class="xdash-14">
+          Supplemental simulations, video tutorials, and textbook readings for Unit 4 (Human Equilibrium: Kinetics, Le Chatelier, and Blood Buffers).<br>
+          <strong class="xdash-15">SciencePractice.app:</strong> Use <a href="/" target="_blank" class="xdash-16">sciencepractice.app</a> for targeted interactive drills.
+        </p>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-group">
+          <h3>Videos</h3>
+          <div class="resource-list" id="unit4-videos-list"></div>
+        </div>
+        <div class="resource-group">
+          <h3>Readings &amp; Simulations</h3>
+          <div class="resource-list" id="unit4-texts-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= UNIT 5 RESOURCES PANEL ================= -->
+    <div class="dashboard-panel" id="panel-unit5-res">
+      <div class="view-mode-bar">
+        <div class="view-mode-meta res-view-mode-meta">Showing: Unit Storylines</div>
+        <div class="view-toggle-group" role="radiogroup" aria-label="Group resources by">
+          <button type="button" class="view-toggle-btn active btn-res-group-unit" data-mode="unit" aria-pressed="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Unit Storylines
+          </button>
+          <button type="button" class="view-toggle-btn btn-res-group-pe" data-mode="pe" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Performance Expectations
+          </button>
+        </div>
+      </div>
+      <div class="callout xdash-13">
+        <div class="label label-accent">Unit 5 Reference Note</div>
+        <p class="xdash-14">
+          Supplemental simulations, video tutorials, and textbook readings for Unit 5 (Origin of the Elements: Stellar Fusion, Big Bang Evidence, and Nuclear Decay).<br>
+          <strong class="xdash-15">SciencePractice.app:</strong> Use <a href="/" target="_blank" class="xdash-16">sciencepractice.app</a> for targeted interactive drills.
+        </p>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-group">
+          <h3>Videos</h3>
+          <div class="resource-list" id="unit5-videos-list"></div>
+        </div>
+        <div class="resource-group">
+          <h3>Readings &amp; Simulations</h3>
+          <div class="resource-list" id="unit5-texts-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= PE RESOURCES PANEL ================= -->
+    <div class="dashboard-panel" id="panel-pe-res">
+      <div class="view-mode-bar">
+        <div class="view-mode-meta res-view-mode-meta">Showing: Performance Expectations (NGSS)</div>
+        <div class="view-toggle-group" role="radiogroup" aria-label="Group resources by">
+          <button type="button" class="view-toggle-btn btn-res-group-unit" data-mode="unit" aria-pressed="false">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Unit Storylines
+          </button>
+          <button type="button" class="view-toggle-btn active btn-res-group-pe" data-mode="pe" aria-pressed="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Performance Expectations
+          </button>
+        </div>
+      </div>
+      <div class="callout xdash-13">
+        <div class="label label-accent">NGSS Performance Expectations</div>
+        <p class="xdash-14">
+          Curated simulations, video tutorials, and textbook readings mapped directly across all 15 High School Chemistry Performance Expectations (HS-PS1, HS-PS2, HS-PS3, HS-PS4, and HS-ESS1).<br>
+          <strong class="xdash-15">SciencePractice.app:</strong> Use <a href="/" target="_blank" class="xdash-16">sciencepractice.app</a> for interactive AI-powered quizzes, FRQs, and specialized simulations.
+        </p>
+      </div>
+      <div id="peResourcesList"></div>
+    </div>
+
+    <!-- ================= CRAM MODE PANEL ================= -->
+    <div class="dashboard-panel" id="panel-cram-mode">
+      <div>
+        <h2>Cram Mode Review</h2>
+        <p class="lede">Solve the written-response exam question from any lesson, then grade yourself against its scoring guide, all in one place.</p>
+      </div>
+      <div id="cramSpinner" class="cram-spinner-container">
+        <div class="cram-spinner"></div>
+        <div class="xdash-17">Compiling exam questions...</div>
+      </div>
+      <div id="cramList" class="xdash-18"></div>
+    </div>
+
+    <!-- ================= PRACTICE & REVIEW PANEL ================= -->
+    <div class="dashboard-panel" id="panel-practice-review">
+      <div>
+        <h2>Practice &amp; Review</h2>
+        <p class="lede">Strengthen your long-term memory with Spaced Repetition reviews and Interleaved Mixed Practice drills.</p>
+      </div>
+
+      <div class="practice-dashboard-grid">
+        <!-- Spaced Repetition Card -->
+        <div class="practice-main-card">
+          <div class="practice-card-header">
+            <svg class="practice-icon xdash-19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <h3>Spaced Retrieval (Due Today)</h3>
+            <span class="practice-badge zero" id="dueCountBadge">0 Due</span>
+          </div>
+          <div id="spacedReviewArea" class="practice-card-content">
+            <div class="practice-placeholder-text">Checking completed checkpoints...</div>
+          </div>
+        </div>
+
+        <!-- Mixed Practice Card -->
+        <div class="practice-main-card">
+          <div class="practice-card-header">
+            <svg class="practice-icon xdash-19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            <h3>Mixed Review Drill</h3>
+            <button class="btn btn-sm xdash-20" id="startMixedReviewBtn">Start Drill</button>
+          </div>
+          <div id="mixedReviewArea" class="practice-card-content">
+            <div class="practice-placeholder-text">Click "Start Drill" to load a random sample of 5 recall and exam questions across all units.</div>
+          </div>
+        </div>
+
+        <!-- Adaptive PE Competency Suites Card -->
+        <div class="practice-main-card">
+          <div class="practice-card-header">
+            <svg class="practice-icon xdash-19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <h3>Adaptive PE Mastery Suites</h3>
+            <a href="pe/index.html" class="btn btn-sm xdash-21">Launch Hub &rarr;</a>
+          </div>
+          <div class="practice-card-content">
+            <p class="xdash-22">
+              Sequential competency practice targeting individual Next Generation Science Standards with diagnostic checks, tutoring hints, and cryptographically signed PDF receipts.
+            </p>
+            <div class="xdash-23">
+              <a href="pe/index.html?pe=HS-PS1-1" class="btn btn-sm xdash-24">HS-PS1-1: Periodic Trends</a>
+              <a href="pe/index.html?pe=HS-PS1-2" class="btn btn-sm xdash-24">HS-PS1-2: Reactions &amp; Bonding</a>
+              <a href="pe/index.html?pe=HS-PS1-3" class="btn btn-sm xdash-24">HS-PS1-3: Electrical &amp; IMFs</a>
+              <a href="pe/index.html?pe=HS-PS1-4" class="btn btn-sm xdash-24">HS-PS1-4: Bond Energy &amp; Energetics</a>
+              <a href="pe/index.html?pe=HS-PS1-5" class="btn btn-sm xdash-24">HS-PS1-5: Reaction Rates &amp; Catalysis</a>
+              <a href="pe/index.html?pe=HS-PS1-6" class="btn btn-sm xdash-24">HS-PS1-6: Dynamic Equilibrium</a>
+              <a href="pe/index.html?pe=HS-PS1-7" class="btn btn-sm xdash-24">HS-PS1-7: The Mole &amp; Stoichiometry</a>
+              <a href="pe/index.html?pe=HS-PS1-8" class="btn btn-sm xdash-24">HS-PS1-8: Nuclear Decay &amp; Processes</a>
+              <a href="pe/index.html?pe=HS-PS2-6" class="btn btn-sm xdash-24">HS-PS2-6: Structure-Property Arguments</a>
+              <a href="pe/index.html?pe=HS-PS3-1" class="btn btn-sm xdash-24">HS-PS3-1: Thermal Energy &amp; Calorimetry</a>
+              <a href="pe/index.html?pe=HS-PS3-4" class="btn btn-sm xdash-24">HS-PS3-4: Thermal Equilibrium</a>
+              <a href="pe/index.html?pe=HS-PS4-4" class="btn btn-sm xdash-24">HS-PS4-4: EM Radiation &amp; Matter</a>
+              <a href="pe/index.html?pe=HS-ESS1-1" class="btn btn-sm xdash-24">HS-ESS1-1: Solar Fusion &amp; Lifespan</a>
+              <a href="pe/index.html?pe=HS-ESS1-2" class="btn btn-sm xdash-24">HS-ESS1-2: Big Bang Evidence</a>
+              <a href="pe/index.html?pe=HS-ESS1-3" class="btn btn-sm xdash-24">HS-ESS1-3: Stellar Nucleosynthesis</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accelerated Chemistry Practice Suites Card -->
+        <div class="practice-main-card xdash-25">
+          <div class="practice-card-header">
+            <svg class="practice-icon xdash-19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <h3>Accelerated Chemistry Practice Suites</h3>
+            <a href="xl/practice/" class="btn btn-sm xdash-26">Launch Studio &rarr;</a>
+          </div>
+          <div class="practice-card-content">
+            <p class="xdash-22">
+              Deterministic, quantitative problem sets developed for Accelerated Chemistry students. Seeded PRNG decks, multi-attempt grading (5 attempts on math), worked solutions, and single-page certified receipts with anti-tamper SHA-256 verification seals.
+            </p>
+            <div class="xdash-23">
+              <a href="xl/practice/unit1.html" class="btn btn-sm xdash-24">Unit 1: Atomic Structure</a>
+              <a href="xl/practice/unit2.html" class="btn btn-sm xdash-24">Unit 2: Measurement &amp; Matter</a>
+              <a href="xl/practice/unit3.html" class="btn btn-sm xdash-24">Unit 3: Chemical Bonding &amp; IMFs</a>
+              <a href="xl/practice/unit4.html" class="btn btn-sm xdash-24">Unit 4: Reactions &amp; Stoichiometry</a>
+              <a href="xl/practice/unit5.html" class="btn btn-sm xdash-24">Unit 5: Kinetics &amp; Thermochem</a>
+              <a href="xl/practice/unit6.html" class="btn btn-sm xdash-24">Unit 6: Solutions &amp; Equilibrium</a>
+              <a href="xl/practice/unit7.html" class="btn btn-sm xdash-24">Unit 7: Acids &amp; Bases</a>
+              <a href="xl/practice/unit8.html" class="btn btn-sm xdash-24">Unit 8: Gases &amp; Pressure</a>
+              <a href="xl/practice/verify.html" class="btn btn-sm xdash-27">Instructor Verifier</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+<script src="assets/book.js"></script>
+<script src="../textbook/core.js"></script>
+<script src="assets/reference-center.js"></script>
+<script src="assets/glossary.js"></script>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Background rounded squircle gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18231E"/>
+      <stop offset="100%" stop-color="#0E1612"/>
+    </linearGradient>
+
+    <!-- Liquid vermilion gradient -->
+    <linearGradient id="liquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F26B4E"/>
+      <stop offset="100%" stop-color="#D6452A"/>
+    </linearGradient>
+
+    <!-- Glass reflection shine -->
+    <linearGradient id="glassShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <!-- Subtle glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Flask internal clipping path for liquid -->
+    <clipPath id="flaskClip">
+      <path d="M26.5 24 L37.5 24 L49.5 48 C50.4 49.8 49.1 52 47 52 L17 52 C14.9 52 13.6 49.8 14.5 48 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Container badge: dark obsidian squircle with subtle border -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="#2B3C33" stroke-width="1.5"/>
+
+  <!-- Subtle ambient glow at bottom of flask -->
+  <radialGradient id="ambientGlow" cx="50%" cy="80%" r="50%">
+    <stop offset="0%" stop-color="#D6452A" stop-opacity="0.25"/>
+    <stop offset="100%" stop-color="#D6452A" stop-opacity="0"/>
+  </radialGradient>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#ambientGlow)"/>
+
+  <!-- Flask Liquid Fill -->
+  <g clip-path="url(#flaskClip)">
+    <!-- Reactive liquid body -->
+    <path d="M12 35.5 Q32 32.5 52 35.5 L52 54 L12 54 Z" fill="url(#liquidGrad)"/>
+    <!-- Liquid meniscus surface -->
+    <ellipse cx="32" cy="35.5" rx="13" ry="2.2" fill="#FFA390" opacity="0.6"/>
+  </g>
+
+  <!-- Flask Glass Contour -->
+  <!-- Lip / Rim at neck top -->
+  <rect x="25" y="11" width="14" height="3" rx="1.5" fill="#E7EDE6" stroke="#C3CCC2" stroke-width="0.5"/>
+  <!-- Neck & Conical Body Outline -->
+  <path d="M27 14 L27 24 L14.5 48 C13.6 49.8 14.8 52 16.8 52 L47.2 52 C49.2 52 50.4 49.8 49.5 48 L37 24 L37 14" 
+        fill="none" 
+        stroke="#E7EDE6" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+
+  <!-- Glass inner reflection line along left slant -->
+  <path d="M20 47.5 L28.5 28" stroke="url(#glassShine)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Floating reaction particles & bubbles -->
+  <!-- In liquid -->
+  <circle cx="27.5" cy="43.5" r="1.8" fill="#FFCDC4" opacity="0.9"/>
+  <!-- At surface -->
+  <circle cx="36" cy="37" r="2.2" fill="#FFFFFF" opacity="0.95" filter="url(#glow)"/>
+  <!-- In neck -->
+  <circle cx="31" cy="24" r="1.6" fill="#F26B4E" opacity="0.9" filter="url(#glow)"/>
+  <!-- Escaping rim -->
+  <circle cx="35" cy="15" r="2" fill="#5FB088" opacity="0.95" filter="url(#glow)"/>
+  <!-- Above flask -->
+  <circle cx="28" cy="8" r="2.2" fill="#5FB088" opacity="0.9" filter="url(#glow)"/>
+  <circle cx="38" cy="7" r="1.4" fill="#F26B4E" opacity="0.85"/>
+</svg>

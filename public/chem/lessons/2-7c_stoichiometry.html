@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-7c" data-book="chem">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Stoichiometry &amp; BCA Tables · Gen Chem 1-7c</title>
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script src="../../textbook/theme-boot.js"></script>
+  <link rel="stylesheet" href="../../textbook/base.css">
+  <link rel="stylesheet" href="../../textbook/lesson.css">
+  <link rel="stylesheet" href="../assets/tokens.css">
+  <link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+  <!-- HERO -->
+<main>
+
+  <section id="s-hero" class="hero" data-toc="Opening">
+    <div>
+      <div class="label">Lesson 1-7c &middot; Stoichiometry &amp; BCA Tables</div>
+      <h1>Predict yields, and <span class="flip">find what runs out</span>.</h1>
+      <p class="lede">A balanced equation is an atomic recipe. In the lab you rarely mix the reactants in the exact ratio the recipe needs. One reactant runs out first and stops the reaction. A BCA (Before-Change-After) table tracks what is used up and what forms. Work in moles and coefficients, and you can predict how much product forms and what is left over.</p>
+      <div class="meta-strip">
+        <div class="meta-block">
+          <div class="k">Alignment</div>
+          <div class="v"><b>HS-PS1-7</b> Use mathematical representations to support the claim that atoms, and therefore mass, are conserved during a chemical reaction.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Objective</div>
+          <div class="v">You can complete a BCA table for a reaction. You can name the limiting reactant. You can calculate the product yield and the excess left over.</div>
+        </div>
+        <div class="meta-block">
+          <div class="k">Scope</div>
+          <div class="v">Mole-to-mole stoichiometry, BCA tables, limiting and excess reactants, and the conservation of atoms.</div>
+        </div>
+      </div>
+      <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Mole ratios:</strong> The coefficients of a balanced equation give the exact ratio of moles between reactants and products.</li>
+              <li><strong>BCA tables:</strong> A Before-Change-After table tracks the moles of every substance. The Change row follows the coefficients.</li>
+              <li><strong>Limiting reactant:</strong> The reactant that runs out first stops the reaction and sets the maximum yield. The other reactants are in excess.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Reaction yield map</h4>
+            <svg viewBox="0 0 210 135" role="img" aria-label="Reaction yield diagram: Before state with 2 A limiting and 4 B excess reacts to produce 2 AB products and 2 B excess leftover.">
+              <defs>
+                <marker id="sym-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+                  <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" />
+                </marker>
+              </defs>
+              <!-- Before Box -->
+              <rect x="6" y="10" width="90" height="78" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1" />
+              <text x="51" y="24" text-anchor="middle" font-family="var(--display)" font-size="8" font-weight="700" fill="var(--ink)">Before: 2A + 4B</text>
+              <!-- 2 A particles (limiting) -->
+              <circle cx="28" cy="46" r="6" fill="var(--accent)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="28" y="48.5" font-family="var(--mono)" font-size="6.5" fill="var(--paper)" font-weight="700" text-anchor="middle">A</text>
+              <circle cx="44" cy="46" r="6" fill="var(--accent)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="44" y="48.5" font-family="var(--mono)" font-size="6.5" fill="var(--paper)" font-weight="700" text-anchor="middle">A</text>
+              <!-- 4 B particles (excess) -->
+              <circle cx="62" cy="40" r="5" fill="var(--good)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="62" y="42.5" font-family="var(--mono)" font-size="6" fill="var(--paper)" font-weight="700" text-anchor="middle">B</text>
+              <circle cx="76" cy="40" r="5" fill="var(--good)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="76" y="42.5" font-family="var(--mono)" font-size="6" fill="var(--paper)" font-weight="700" text-anchor="middle">B</text>
+              <circle cx="62" cy="54" r="5" fill="var(--good)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="62" y="56.5" font-family="var(--mono)" font-size="6" fill="var(--paper)" font-weight="700" text-anchor="middle">B</text>
+              <circle cx="76" cy="54" r="5" fill="var(--good)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="76" y="56.5" font-family="var(--mono)" font-size="6" fill="var(--paper)" font-weight="700" text-anchor="middle">B</text>
+              <text x="51" y="76" text-anchor="middle" font-family="var(--mono)" font-size="7" fill="var(--accent)" font-weight="700">A runs out first</text>
+
+              <!-- Reaction Arrow -->
+              <path d="M 99,49 L 111,49" fill="none" stroke="var(--accent)" stroke-width="1.5" marker-end="url(#sym-arr)" />
+
+              <!-- After Box -->
+              <rect x="114" y="10" width="90" height="78" rx="4" fill="var(--card)" stroke="var(--ink)" stroke-width="1" />
+              <text x="159" y="24" text-anchor="middle" font-family="var(--display)" font-size="8" font-weight="700" fill="var(--ink)">After: 2AB + 2B</text>
+              <!-- 2 AB product pairs -->
+              <circle cx="132" cy="42" r="6" fill="var(--accent)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="132" y="44.5" font-family="var(--mono)" font-size="6.5" fill="var(--paper)" font-weight="700" text-anchor="middle">A</text>
+              <circle cx="142" cy="42" r="5" fill="var(--good)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="142" y="44.5" font-family="var(--mono)" font-size="6" fill="var(--paper)" font-weight="700" text-anchor="middle">B</text>
+
+              <circle cx="132" cy="56" r="6" fill="var(--accent)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="132" y="58.5" font-family="var(--mono)" font-size="6.5" fill="var(--paper)" font-weight="700" text-anchor="middle">A</text>
+              <circle cx="142" cy="56" r="5" fill="var(--good)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="142" y="58.5" font-family="var(--mono)" font-size="6" fill="var(--paper)" font-weight="700" text-anchor="middle">B</text>
+              <!-- 2 B leftover excess -->
+              <circle cx="168" cy="42" r="5" fill="var(--good)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="168" y="44.5" font-family="var(--mono)" font-size="6" fill="var(--paper)" font-weight="700" text-anchor="middle">B</text>
+              <circle cx="182" cy="42" r="5" fill="var(--good)" stroke="var(--ink)" stroke-width="0.8" />
+              <text x="182" y="44.5" font-family="var(--mono)" font-size="6" fill="var(--paper)" font-weight="700" text-anchor="middle">B</text>
+              <text x="159" y="76" text-anchor="middle" font-family="var(--mono)" font-size="7" fill="var(--good)" font-weight="700">2 B left unreacted</text>
+
+              <!-- Bottom Summary Callout -->
+              <rect x="6" y="94" width="198" height="32" rx="3" fill="var(--paper-2)" stroke="var(--hair-soft)" stroke-width="0.8" />
+              <text x="105" y="108" text-anchor="middle" font-family="var(--mono)" font-size="7.5" font-weight="700" fill="var(--ink)">Theoretical Yield: 2 AB products</text>
+              <text x="105" y="119" text-anchor="middle" font-family="var(--mono)" font-size="6.5" fill="var(--ink-soft)">Limiting reactant A sets maximum yield</text>
+            </svg>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> Solve a stoichiometry problem with a BCA table.</li>
+              <li><input type="checkbox" disabled> Name the limiting and excess reactants from starting moles.</li>
+              <li><input type="checkbox" disabled> Calculate the moles left over when the reaction ends.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+    </div>
+  </section>
+
+  <!-- 01 THE CHEMICAL RECIPE -->
+  <section id="s-recipe" data-toc="The recipe ratio">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">01</span><span class="label">Proportion</span></div>
+      <h2>Coefficients are scaling factors.</h2>
+      <p>A sandwich recipe: 1 slice of cheese + 2 slices of bread &rarr; 1 sandwich. The ratio of cheese to bread is 1:2. With 5 slices of cheese and 6 slices of bread, you can make only 3 sandwiches. The bread runs out first and leaves 2 slices of cheese.</p>
+      
+      <p>In chemistry, the coefficients of a balanced equation give the same kind of proportion, measured in moles. Consider the combustion of methane gas:</p>
+
+      <div class="equation-display">
+        CH<sub>4</sub> + <span class="coeff">2</span> O<sub>2</sub> &rarr; CO<sub>2</sub> + <span class="coeff">2</span> H<sub>2</sub>O
+      </div>
+
+      <p>This equation shows that <strong>1 mole of methane</strong> reacts with <strong>2 moles of oxygen</strong>. It makes 1 mole of carbon dioxide and 2 moles of water. This is the <strong class="term">mole ratio</strong>. Reacting 3 moles of CH<sub>4</sub> takes 6 moles of O<sub>2</sub>. It makes 3 moles of CO<sub>2</sub> and 6 moles of H<sub>2</sub>O.</p>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Reading a coefficient as grams. The 2 in front of O<sub>2</sub> means 2 moles of O<sub>2</sub> for every 1 mole of CH<sub>4</sub>.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 02 THE BCA TABLE -->
+  <section id="s-bca" data-toc="BCA tables">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">02</span><span class="label">Before-Change-After</span></div>
+      <h2>The accounting table of chemistry.</h2>
+      <p>To find a reaction yield, set up a <strong class="term">BCA table</strong> (Before, Change, After). A BCA table tracks every substance at the same time:</p>
+      
+      <ul>
+        <li><strong>Before (B):</strong> The starting moles of the reactants before the reaction begins. The products start at 0.</li>
+        <li><strong>Change (C):</strong> The moles used up (negative) or made (positive). The values in this row must scale in the exact ratio of the equation's coefficients.</li>
+        <li><strong>After (A):</strong> The moles left when the reaction ends (Before + Change).</li>
+      </ul>
+
+      <p>Here is a balanced BCA table. 2.0 moles of CH<sub>4</sub> and 4.0 moles of O<sub>2</sub> are mixed in the exact 1:2 ratio. Both reactants are fully consumed:</p>
+
+      <div class="figure figure--full" data-motion="step" data-step-count="3" data-step-labels="1. Before: starting amounts|2. Change: scaled by coefficients|3. After: final amounts">
+        <div data-step="1">
+          <div class="table-wrap">
+            <table class="bca-table">
+              <thead>
+                <tr>
+                  <th class="rxn-header">Row</th>
+                  <th>CH<sub>4</sub></th>
+                  <th>+ 2 O<sub>2</sub></th>
+                  <th>&rarr; CO<sub>2</sub></th>
+                  <th>+ 2 H<sub>2</sub>O</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="row-label">Before (B)</td>
+                  <td class="input-val">2.0 mol</td>
+                  <td class="input-val">4.0 mol</td>
+                  <td>0 mol</td>
+                  <td>0 mol</td>
+                </tr>
+                <tr>
+                  <td class="row-label">Change (C)</td>
+                  <td><span class="placeholder-dash">--</span></td>
+                  <td><span class="placeholder-dash">--</span></td>
+                  <td><span class="placeholder-dash">--</span></td>
+                  <td><span class="placeholder-dash">--</span></td>
+                </tr>
+                <tr class="row-pending">
+                  <td class="row-label">After (A)</td>
+                  <td><span class="placeholder-dash">--</span></td>
+                  <td><span class="placeholder-dash">--</span></td>
+                  <td><span class="placeholder-dash">--</span></td>
+                  <td><span class="placeholder-dash">--</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="diagram-cap">2.0 mol CH<sub>4</sub> and 4.0 mol O<sub>2</sub> are mixed and nothing has reacted yet, so the products start at 0.</div>
+        </div>
+
+        <div data-step="2">
+          <div class="table-wrap">
+            <table class="bca-table">
+              <thead>
+                <tr>
+                  <th class="rxn-header">Row</th>
+                  <th>CH<sub>4</sub></th>
+                  <th>+ 2 O<sub>2</sub></th>
+                  <th>&rarr; CO<sub>2</sub></th>
+                  <th>+ 2 H<sub>2</sub>O</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="row-label">Before (B)</td>
+                  <td class="input-val">2.0 mol</td>
+                  <td class="input-val">4.0 mol</td>
+                  <td>0 mol</td>
+                  <td>0 mol</td>
+                </tr>
+                <tr class="row-change">
+                  <td class="row-label">Change (C)</td>
+                  <td>&minus;2.0 mol</td>
+                  <td>&minus;4.0 mol</td>
+                  <td>+2.0 mol</td>
+                  <td>+4.0 mol</td>
+                </tr>
+                <tr class="row-pending">
+                  <td class="row-label">After (A)</td>
+                  <td><span class="placeholder-dash">--</span></td>
+                  <td><span class="placeholder-dash">--</span></td>
+                  <td><span class="placeholder-dash">--</span></td>
+                  <td><span class="placeholder-dash">--</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="diagram-cap">The Change row is locked to the 1:2:1:2 coefficient ratio: reactants fall and products rise in that exact proportion.</div>
+        </div>
+
+        <div data-step="3">
+          <div class="table-wrap">
+            <table class="bca-table">
+              <thead>
+                <tr>
+                  <th class="rxn-header">Row</th>
+                  <th>CH<sub>4</sub></th>
+                  <th>+ 2 O<sub>2</sub></th>
+                  <th>&rarr; CO<sub>2</sub></th>
+                  <th>+ 2 H<sub>2</sub>O</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="row-label">Before (B)</td>
+                  <td class="input-val">2.0 mol</td>
+                  <td class="input-val">4.0 mol</td>
+                  <td>0 mol</td>
+                  <td>0 mol</td>
+                </tr>
+                <tr class="row-change">
+                  <td class="row-label">Change (C)</td>
+                  <td>&minus;2.0 mol</td>
+                  <td>&minus;4.0 mol</td>
+                  <td>+2.0 mol</td>
+                  <td>+4.0 mol</td>
+                </tr>
+                <tr class="row-after">
+                  <td class="row-label">After (A)</td>
+                  <td>0 mol</td>
+                  <td>0 mol</td>
+                  <td>2.0 mol</td>
+                  <td>4.0 mol</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="diagram-cap">Before + Change = After. 2.0 mol CH<sub>4</sub> and 4.0 mol O<sub>2</sub> are in the exact 1:2 ratio. Both reactants reach zero together, and nothing is left over.</div>
+        </div>
+      </div>
+
+      <p>Notice that the Change row values (&minus;2.0, &minus;4.0, +2.0, +4.0) match the 1:2:1:2 coefficient ratio of the equation. Reactants are consumed and products are built in locked step.</p>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Filling the Change row with equal numbers. The row follows the coefficients: &minus;2.0 mol CH<sub>4</sub> goes with &minus;4.0 mol O<sub>2</sub>, not &minus;2.0 mol.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 03 LIMITING & EXCESS -->
+  <section id="s-limiting" data-toc="Limiting reactants">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03</span><span class="label">What runs out?</span></div>
+      <h2>The limiting reactant sets the limit.</h2>
+      <p>What if you mix 2.0 moles of CH<sub>4</sub> with 5.0 moles of O<sub>2</sub>? There is not enough methane to react with all of the oxygen. Methane runs out first.</p>
+      
+      <p>The reactant that is completely consumed first is the <strong class="term">limiting reactant</strong>. It limits how much product can form. The reactant that remains after the reaction halts is the <strong class="term">excess reactant</strong>.</p>
+      
+      <p>To find the limiting reactant with a BCA table, test which reactant would hit 0 first if it were fully consumed. The one with the smaller Change row multiplier is the limiting reactant. When it hits 0 in the After row, the reaction stops. The excess reactant stays in the container unchanged.</p>
+
+      <div class="callout"><div class="label">Common mistake</div><p>Picking the reactant with the fewest moles. In Question 1 below, 3.0 mol CH<sub>4</sub> is less than 4.0 mol O<sub>2</sub>, yet O<sub>2</sub> runs out first, because each CH<sub>4</sub> needs 2 O<sub>2</sub>.</p></div>
+
+    </div>
+  </section>
+
+  <!-- 03b SMORES LIMITING REACTANT INTERACTIVE (PS1-7.5 / Block 2.8) -->
+  <section id="s-smores" data-toc="S'mores: limiting reactant">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">03b</span><span class="label">The s'mores mistake</span></div>
+      <h2>The fewest pieces is not always the limiting reactant.</h2>
+      <p>Many students think the reactant with the smallest amount always runs out first. The s'mores test shows why that is wrong. Each s'more needs <strong>2 graham crackers + 1 marshmallow + 1 chocolate square</strong>. Having the fewest marshmallows does not make them limiting. You have to check the recipe ratio.</p>
+
+      <figure class="figure figure--full">
+<div class="diagram">
+          <svg viewBox="0 0 520 110" role="img" aria-label="The s'mores recipe as a particle equation: 2 graham crackers plus 1 marshmallow plus 1 chocolate square make 1 assembled s'more.">
+            <g transform="translate(10, 5)">
+              <text x="35" y="16" text-anchor="middle" fill="var(--accent)" style="font-size:var(--dia-label-size);" font-family="var(--mono)" font-weight="700">2 Gc</text>
+              <rect x="10" y="24" width="46" height="30" rx="3" fill="var(--warn)" stroke="var(--ink-mute)" stroke-width="1.2" />
+              <rect x="18" y="34" width="46" height="30" rx="3" fill="var(--warn)" stroke="var(--ink-mute)" stroke-width="1.2" />
+              <line x1="18" y1="49" x2="64" y2="49" stroke="var(--ink-mute)" stroke-width="0.8" stroke-dasharray="2 2" />
+              <text x="38" y="84" text-anchor="middle" fill="var(--ink-soft)" style="font-size:var(--dia-caption-size);" font-family="var(--display)" font-weight="600">Crackers</text>
+            </g>
+            <text x="110" y="48" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-header-size);" font-weight="700" fill="var(--ink-mute)">+</text>
+            <g transform="translate(130, 5)">
+              <text x="32" y="16" text-anchor="middle" fill="var(--accent)" style="font-size:var(--dia-label-size);" font-family="var(--mono)" font-weight="700">1 M</text>
+              <rect x="14" y="28" width="36" height="36" rx="10" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2" />
+              <text x="32" y="84" text-anchor="middle" fill="var(--ink-soft)" style="font-size:var(--dia-caption-size);" font-family="var(--display)" font-weight="600">Marshmallow</text>
+            </g>
+            <text x="212" y="48" text-anchor="middle" font-family="var(--mono)" style="font-size:var(--dia-header-size);" font-weight="700" fill="var(--ink-mute)">+</text>
+            <g transform="translate(232, 5)">
+              <text x="32" y="16" text-anchor="middle" fill="var(--accent)" style="font-size:var(--dia-label-size);" font-family="var(--mono)" font-weight="700">1 Ch</text>
+              <rect x="14" y="28" width="36" height="36" rx="3" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.2" />
+              <line x1="32" y1="28" x2="32" y2="64" stroke="var(--paper)" stroke-width="1" />
+              <line x1="14" y1="46" x2="50" y2="46" stroke="var(--paper)" stroke-width="1" />
+              <text x="32" y="84" text-anchor="middle" fill="var(--ink-soft)" style="font-size:var(--dia-caption-size);" font-family="var(--display)" font-weight="600">Chocolate</text>
+            </g>
+            <g transform="translate(305, 5)">
+              <defs>
+                <marker id="smores-arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto" viewBox="0 0 6 6">
+                  <path d="M0 0 L6 3 L0 6 z" fill="var(--accent)" />
+                </marker>
+              </defs>
+              <path d="M 5,43 L 45,43" fill="none" stroke="var(--accent)" stroke-width="2" marker-end="url(#smores-arr)" />
+            </g>
+            <g transform="translate(365, 5)">
+              <text x="50" y="16" text-anchor="middle" fill="var(--good)" style="font-size:var(--dia-label-size);" font-family="var(--mono)" font-weight="700">1 S'more</text>
+              <rect x="12" y="24" width="76" height="8" rx="2" fill="var(--warn)" stroke="var(--ink-mute)" stroke-width="1.2" />
+              <rect x="18" y="33" width="64" height="7" rx="1.5" fill="var(--ink)" stroke="var(--ink)" stroke-width="0.8" />
+              <rect x="15" y="41" width="70" height="15" rx="5" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1" />
+              <rect x="12" y="57" width="76" height="8" rx="2" fill="var(--warn)" stroke="var(--ink-mute)" stroke-width="1.2" />
+            </g>
+          </svg>
+</div>
+<figcaption>2 graham crackers + 1 marshmallow + 1 chocolate square make 1 s'more</figcaption>
+</figure>
+
+      <div class="sim-box" data-tool="smores">
+        <div class="label">Interactive tool</div>
+        <h4>Which ingredient runs out first?</h4>
+        <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: the factory starts with 10 graham crackers, 6 marshmallows and 8 chocolate squares. Which ingredient runs out first?<\/p>",
+  "options": [
+    {
+      "label": "The marshmallows, because there are the fewest",
+      "correct": false,
+      "feedback": "Six is the smallest count, which makes marshmallows tempting. But each s'more uses only 1 marshmallow, so 6 marshmallows make 6 s'mores. Crackers run out sooner."
+    },
+    {
+      "label": "The graham crackers, because each s'more needs 2",
+      "correct": true,
+      "feedback": "10 crackers ÷ 2 per s'more = 5 s'mores. That is fewer than 6 from the marshmallows or 8 from the chocolate, so the crackers run out first."
+    },
+    {
+      "label": "The chocolate squares, because each s'more needs 1",
+      "correct": false,
+      "feedback": "Chocolate has 8 squares and needs only 1 per s'more, so it could make 8 s'mores. That is more than the crackers or the marshmallows allow."
+    }
+  ],
+  "reveal": "<p>Now check it. Move the sliders and read the three quotients.<\/p>"
+}
+</script>
+</div>
+        <div class="sim-controls" role="group" aria-label="Ingredient amounts">
+          <label class="slider-row">Graham crackers <output>10</output>
+            <input type="range" id="smorGraham" min="2" max="20" step="2" value="10">
+          </label>
+          <label class="slider-row">Marshmallows <output>6</output>
+            <input type="range" id="smorMarshmallow" min="1" max="12" step="1" value="6">
+          </label>
+          <label class="slider-row">Chocolate squares <output>8</output>
+            <input type="range" id="smorChocolate" min="1" max="12" step="1" value="8">
+          </label>
+        </div>
+        <div data-results hidden>
+          <div class="smor-bars">
+            <div class="smor-bar" data-ing="graham" data-level="0" data-limiting="false"><span class="label">Crackers ÷ 2</span><div class="smor-track"><div class="smor-fill"></div></div><span class="smor-ratio">= 0</span></div>
+            <div class="smor-bar" data-ing="marsh" data-level="0" data-limiting="false"><span class="label">Marshmallows ÷ 1</span><div class="smor-track"><div class="smor-fill"></div></div><span class="smor-ratio">= 0</span></div>
+            <div class="smor-bar" data-ing="choco" data-level="0" data-limiting="false"><span class="label">Chocolate ÷ 1</span><div class="smor-track"><div class="smor-fill"></div></div><span class="smor-ratio">= 0</span></div>
+          </div>
+          <div class="smor-tray" id="smorVisualTray" aria-hidden="true"></div>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="made"><span class="readout-label">S'mores made</span><span class="readout-value">5</span></div>
+          <div class="readout" data-readout="limiting"><span class="readout-label">Limiting ingredient</span><span class="readout-value">Graham crackers</span></div>
+          <div class="readout" data-readout="left"><span class="readout-label">Left over</span><span class="readout-value">1 marshmallow, 3 chocolate squares</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Predict to start</span>
+        <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="square" data-token="warn"></span>Graham cracker</li>
+          <li><span class="key" data-shape="dot" data-token="paper-3"></span>Marshmallow</li>
+          <li><span class="key" data-shape="square" data-token="ink"></span>Chocolate square</li>
+          <li><span class="key" data-shape="square" data-token="accent"></span>The limiting ingredient's bar</li>
+        </ul>
+        <ol class="try-this">
+          <li>Raise the marshmallows to 12. <b>Look for:</b> the limiting ingredient does not change, because the crackers still make only 5 s'mores.</li>
+          <li>Lower the crackers to 6, with 6 marshmallows and 8 chocolate squares. <b>Look for:</b> the limiting ingredient changes, even though crackers are still the largest count.</li>
+        </ol>
+      </div>
+
+      <div class="interactive">
+        <h3>From s'mores to chemistry: the BCA ratio method</h3>
+        <p>Every limiting reactant problem follows the same logic. Divide each reactant's available moles by its coefficient. The smallest quotient identifies the limiting reactant.</p>
+        <div class="callout">
+          <div class="label">General rule</div>
+          <p>The limiting reactant has the smallest value of: available moles ÷ coefficient.</p>
+        </div>
+        <p>The s'mores check: crackers ÷ 2 = 5, marshmallows ÷ 1 = 6, chocolate ÷ 1 = 8. The crackers are limiting, because 5 is the smallest.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 SIGNATURE INTERACTIVE: BCA SIMULATOR -->
+  <section id="s-simulator" data-toc="BCA simulator">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">04</span><span class="label">BCA table simulator</span></div>
+      <h2>Slide the progress. Watch the atoms rearrange.</h2>
+      <p>Set the starting moles of methane (CH<sub>4</sub>) and oxygen (O<sub>2</sub>). Slide the reaction progress to watch the molecules burn, and read the moles in the BCA table as they change. One drawn molecule stands for half a mole.</p>
+
+      <div class="sim-box" data-sim="stoichiometry">
+        <div class="label">Simulation</div>
+        <h4>How much of each substance is left when the reaction stops?</h4>
+        <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: you start with 2.0 mol of CH<sub>4</sub> and 5.0 mol of O<sub>2</sub>. The recipe is CH<sub>4</sub> + 2 O<sub>2</sub> &rarr; CO<sub>2</sub> + 2 H<sub>2</sub>O. How much O<sub>2</sub> is left when the reaction stops?<\/p>",
+  "options": [
+    {
+      "label": "1.0 mol, because 2.0 mol of CH₄ uses only 4.0 mol of O₂",
+      "correct": true,
+      "feedback": "2.0 mol of CH₄ reacts with 2 × 2.0 = 4.0 mol of O₂. That leaves 5.0 − 4.0 = 1.0 mol of O₂, and the methane is used up first."
+    },
+    {
+      "label": "0 mol, because both reactants are used up",
+      "correct": false,
+      "feedback": "Both are used up only in an exact 1:2 ratio. Here 2.0 mol of CH₄ needs just 4.0 mol of O₂, so some oxygen stays."
+    },
+    {
+      "label": "3.0 mol, because 2.0 mol of O₂ is taken away",
+      "correct": false,
+      "feedback": "3.0 comes from taking 2.0 away from 5.0, as if one O₂ reacted with each CH₄. The equation uses 2 O₂ for each CH₄, so 4.0 mol of O₂ is used."
+    }
+  ],
+  "reveal": "<p>Now check it. Set the reaction progress to 100% and read the After row.<\/p>"
+}
+</script>
+</div>
+        <div class="sim-stage"><canvas aria-label="A chamber of eight bays holding methane and oxygen molecules. Move the sliders to set the amounts and run the reaction."></canvas></div>
+        <div class="sim-controls">
+          <label class="slider-row">Starting methane (CH₄) <output>2 mol</output>
+            <input type="range" id="ch4Input" min="0" max="4" step="1" value="2" data-unit="mol">
+          </label>
+          <label class="slider-row">Starting oxygen (O₂) <output>5 mol</output>
+            <input type="range" id="o2Input" min="0" max="8" step="1" value="5" data-unit="mol">
+          </label>
+          <label class="slider-row">Reaction progress <output>0 %</output>
+            <input type="range" id="progressInput" min="0" max="100" step="5" value="0" data-unit="%">
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table class="bca-table">
+            <caption>BCA mole table (mol)</caption>
+            <thead>
+              <tr><th scope="col" class="rxn-header">Row</th><th scope="col">CH<sub>4</sub></th><th scope="col">+ 2 O<sub>2</sub></th><th scope="col">&rarr; CO<sub>2</sub></th><th scope="col">+ 2 H<sub>2</sub>O</th></tr>
+            </thead>
+            <tbody>
+              <tr id="rowBefore"><td class="row-label">Before (B)</td><td class="input-val" id="bCH4">–</td><td class="input-val" id="bO2">–</td><td>0.00</td><td>0.00</td></tr>
+              <tr id="rowChange" class="row-change"><td class="row-label">Change (C)</td><td id="cCH4">–</td><td id="cO2">–</td><td id="cCO2">–</td><td id="cH2O">–</td></tr>
+              <tr id="rowAfter" class="row-after"><td class="row-label">After (A)</td><td id="aCH4" data-limiting="false">–</td><td id="aO2" data-limiting="false">–</td><td id="aCO2">–</td><td id="aH2O">–</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="progress"><span class="readout-label">Progress</span><span class="readout-value">0%</span></div>
+          <div class="readout" data-readout="limiting"><span class="readout-label">Limiting reactant</span><span class="readout-value">Run the reaction</span></div>
+          <div class="readout" data-readout="water"><span class="readout-label">H₂O made</span><span class="readout-value">0.00 mol</span></div>
+          <div class="readout" data-readout="left"><span class="readout-label">Left over</span><span class="readout-value">–</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Predict to start</span>
+        <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="ink"></span>Carbon atom</li>
+          <li><span class="key" data-shape="dot" data-token="paper-3"></span>Hydrogen atom</li>
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Oxygen atom</li>
+          <li><span class="key" data-shape="square" data-token="accent"></span>Flame: a reaction in progress</li>
+        </ul>
+        <ol class="try-this">
+          <li>Load 2.0 mol CH<sub>4</sub> with 5.0 mol O<sub>2</sub>, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="2:5:100">Load 2 CH₄, 5 O₂</button> <b>Look for:</b> CH<sub>4</sub> reaches 0, and 1.00 mol of O<sub>2</sub> is left over.</li>
+          <li>Load 3.0 mol CH<sub>4</sub> with 4.0 mol O<sub>2</sub>, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="3:4:100">Load 3 CH₄, 4 O₂</button> <b>Look for:</b> now O<sub>2</sub> reaches 0, and 1.00 mol of CH<sub>4</sub> is left over.</li>
+          <li>Load 2.0 mol CH<sub>4</sub> with 4.0 mol O<sub>2</sub>, then press Record. <button type="button" class="chip" aria-pressed="false" data-preset="2:4:100">Load 2 CH₄, 4 O₂</button> <b>Look for:</b> both reach 0, because the amounts are in the exact 1:2 ratio.</li>
+        </ol>
+      </div>
+
+      <h3>Use your evidence</h3>
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your rows for 2.0 mol CH<sub>4</sub> with 5.0 mol O<sub>2</sub> and for 3.0 mol CH<sub>4</sub> with 4.0 mol O<sub>2</sub>. What decides which reactant is limiting?<\/p>",
+  "options": [
+    {
+      "label": "The reactant with fewer moles always runs out first",
+      "correct": false,
+      "feedback": "In the first row methane has fewer moles and runs out first, which fits. In the second row methane still has fewer moles (3.0 against 4.0), but oxygen runs out first."
+    },
+    {
+      "label": "The reactant listed first in the equation runs out first",
+      "correct": false,
+      "feedback": "Methane is listed first, and it is limiting in the first row. In the second row it is not. The order on the page does not decide."
+    },
+    {
+      "label": "The reactant with the smaller moles ÷ coefficient value runs out first",
+      "correct": true,
+      "feedback": "First row: CH₄ 2.0 ÷ 1 = 2.0 and O₂ 5.0 ÷ 2 = 2.5, so CH₄ is limiting. Second row: CH₄ 3.0 ÷ 1 = 3.0 and O₂ 4.0 ÷ 2 = 2.0, so O₂ is limiting."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Divide each amount by its coefficient. The smaller quotient runs out first.</p>"
+}
+</script>
+</div>
+
+    </div>
+  </section>
+
+  <!-- 05 PREDICT FIRST -->
+  <section id="s-predict" data-toc="Check yourself">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">05</span><span class="label">Check yourself</span></div>
+      <h2>Predict the reaction yield.</h2>
+
+      <!-- Q1 -->
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<strong>1. Limiting reactant:</strong> You mix 3.0 moles of CH<sub>4</sub> with 4.0 moles of O<sub>2</sub>. The recipe is CH<sub>4</sub> + 2 O<sub>2</sub> &rarr; CO<sub>2</sub> + 2 H<sub>2</sub>O. Which reactant is limiting and runs out first?",
+  "options": [
+    {"label": "Methane (CH<sub>4</sub>)", "correct": false, "feedback": "Methane has fewer moles (3.0 against 4.0), which makes it tempting. But each CH<sub>4</sub> needs 2 O<sub>2</sub>. Reacting 3.0 mol CH<sub>4</sub> would take 6.0 mol O<sub>2</sub>, and only 4.0 mol is available."},
+    {"label": "Oxygen (O<sub>2</sub>)", "correct": true, "feedback": "3.0 mol CH<sub>4</sub> would need 6.0 mol O<sub>2</sub>, but only 4.0 mol is available. Oxygen runs out first, and 1.0 mol of CH<sub>4</sub> is left over."},
+    {"label": "Neither, the ratio is exact", "correct": false, "feedback": "An exact ratio would need twice as many moles of O<sub>2</sub> as CH<sub>4</sub>. Here the amounts are 4.0 and 3.0, so one reactant must run out first."}
+  ],
+  "reveal": "<h4>The answer: oxygen (O<sub>2</sub>)</h4>\n<p>Each mole of methane needs 2 moles of oxygen. Reacting all 3.0 moles of CH<sub>4</sub> would take 6.0 moles of O<sub>2</sub>. You have only 4.0 moles, so the oxygen runs out first. Methane is in excess, and 1.0 mole of CH<sub>4</sub> remains.</p>"
+}
+</script>
+</div>
+
+      <!-- Q2 -->
+      <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<strong>2. Product yield:</strong> With 3.0 moles of CH<sub>4</sub> and 4.0 moles of O<sub>2</sub>, what is the maximum amount of water (H<sub>2</sub>O) that can form?",
+  "options": [
+    {"label": "2.0 moles", "correct": false, "feedback": "2.0 mol is the CO<sub>2</sub> that forms and the CH<sub>4</sub> that reacts. Water has a coefficient of 2, so it forms twice as many moles."},
+    {"label": "6.0 moles", "correct": false, "feedback": "6.0 mol of water would need all 3.0 mol of CH<sub>4</sub> to react. But the oxygen runs out first, so only 2.0 mol of CH<sub>4</sub> reacts."},
+    {"label": "4.0 moles", "correct": true, "feedback": "O<sub>2</sub> is limiting, so all 4.0 mol of it is used. The ratio of O<sub>2</sub> to H<sub>2</sub>O is 2:2, so 4.0 mol of H<sub>2</sub>O forms."}
+  ],
+  "reveal": "<h4>The answer: 4.0 moles of H₂O</h4>\n<p>Oxygen is limiting, so the reaction stops when all 4.0 moles of O<sub>2</sub> are used. The ratio of O<sub>2</sub> to H<sub>2</sub>O is 2:2 (1:1). Using 4.0 moles of O<sub>2</sub> makes 4.0 moles of H<sub>2</sub>O. The excess methane adds nothing more.</p>"
+}
+</script>
+</div>
+
+    </div>
+  </section>
+
+  <!-- 06 RECALL -->
+  <section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">06</span><span class="label">Say it back</span></div>
+      <h2>Fill the blanks from memory.</h2>
+      <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+      <p class="recall-sentence">
+        The study of the amounts of reactants and products in a reaction is <input class="blank" data-answer="stoichiometry" placeholder="?">.
+        The reactant that is used up first and limits the product is the <input class="blank" data-answer="limiting reactant|limiting reagent" placeholder="?">.
+        The reactant left over when the reaction stops is the <input class="blank" data-answer="excess reactant|excess reagent" placeholder="?">.
+        In a BCA table, the letter B stands for <input class="blank" data-answer="before" placeholder="?">.
+        The Change row of a BCA table must match the ratio of the equation's <input class="blank" data-answer="coefficients" placeholder="?">.
+      </p>
+      <div class="recall-actions">
+        <button class="btn" data-recall-check>Check</button>
+        <button class="btn ghost" data-recall-reveal>Show answers</button>
+        <button class="btn ghost" data-recall-reset>Reset</button>
+        <span class="feedback" data-recall-feedback></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 SELF-EXPLAIN -->
+  <section id="s-selfx" data-toc="Self-explain">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">07</span><span class="label">Explain it to yourself</span></div>
+      <div class="selfx-mark"><p>Explain why the Change row must match the equation's coefficients, even when the Before amounts differ.</p></div>
+      <p class="hint">Writing it out forces your brain to organize the idea. Write your answer first, then peek and compare.</p>
+      <textarea class="textbox" id="selfx" placeholder="The Change row follows the coefficients because..."></textarea>
+      <div>
+        <button class="btn ghost" data-peek>Compare with a model answer</button>
+        <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+          <p>The Before row holds whatever amounts you happened to mix. But molecules react in fixed proportions set by the balanced equation. Each CH<sub>4</sub> molecule needs 2 O<sub>2</sub> molecules and makes 1 CO<sub>2</sub> and 2 H<sub>2</sub>O. So the particles used up and made always follow the coefficient ratio. The Change row tracks that, so it must match the coefficients exactly.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 EXAM PRACTICE -->
+  <section id="s-exam" data-toc="Exam practice">
+    <div class="narrow">
+      <div class="section-tag"><span class="num">08</span><span class="label">Now the way it's marked</span></div>
+      <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+      <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+
+      <div class="exam-frame">
+        <div class="exam-meta"><span class="exam-src">Gen Chem · HS-PS1-7 · constructed response</span><span class="exam-marks">[4 marks]</span></div>
+        <p class="exam-q">A mixture holds 1.50 moles of methane (CH<sub>4</sub>) and 2.00 moles of oxygen (O<sub>2</sub>). They react: CH<sub>4</sub> + 2 O<sub>2</sub> &rarr; CO<sub>2</sub> + 2 H<sub>2</sub>O.
+          <span class="sub">Name the limiting reactant. Calculate the maximum moles of H<sub>2</sub>O formed. Find the moles of excess reactant left over. Show all work.</span></p>
+        <textarea class="textbox" id="examAns" placeholder="Write your constructed response here..."></textarea>
+        <div class="exam-actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+        <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+          <ul class="pts">
+            <li><b>Setup (1 mark):</b> You list the starting amounts: 1.50 mol CH<sub>4</sub>, 2.00 mol O<sub>2</sub> and 0 mol H<sub>2</sub>O.</li>
+            <li><b>Limiting reactant (1 mark):</b> You name O<sub>2</sub> and show that 1.50 mol CH<sub>4</sub> needs 3.00 mol O<sub>2</sub>.</li>
+            <li><b>Yield (1 mark):</b> You find 2.00 mol H<sub>2</sub>O, from 2.00 mol O<sub>2</sub> in a 2:2 ratio.</li>
+            <li><b>Excess (1 mark):</b> You find 0.50 mol CH<sub>4</sub> left over (1.50 mol minus 1.00 mol reacted).</li>
+          </ul></div></div>
+        <div class="callout">
+          <div class="label">Why This Matters</div>
+          <p>Fertilizer depends on stoichiometry. The Haber-Bosch process makes ammonia (N₂ + 3 H₂ &rarr; 2 NH₃), and ammonia fertilizer feeds half the world's population. Mixing the reactants in the exact 1:3 ratio wastes none of them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-7 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-7</h3>
+    <p>
+      Solve stoichiometry ratios, limiting reactant scenarios, and theoretical percent yields with adaptive support. Gain instant feedback and an authenticated completion seal.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-7" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+  <div class="footer">
+    <div class="label">Gen Chem · Semester 1 · 1-7c</div>
+    <p>Stoichiometry &amp; BCA Tables. Next: categorizing general chemical reaction types and balancing equations visually.</p>
+  </div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="2-7c.js"></script>
+</body>
+</html>

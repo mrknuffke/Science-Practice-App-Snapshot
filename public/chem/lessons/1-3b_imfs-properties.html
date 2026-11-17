@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en" data-lesson="1-3b" data-book="chem">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>IMFs &amp; Properties · Gen Chem 1-3b</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="alternate icon" type="image/x-icon" href="../favicon.ico">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script src="../../textbook/theme-boot.js"></script>
+<link rel="stylesheet" href="../../textbook/base.css">
+<link rel="stylesheet" href="../../textbook/lesson.css">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/components.css">
+</head>
+<body>
+
+
+<!-- HERO -->
+<main>
+
+<section id="s-hero" class="hero" data-toc="Opening">
+  <div>
+    <div class="label">Lesson 1-3b &middot; IMFs &amp; Properties</div>
+    <h1>Water sits as a liquid. Air floats as a gas. The difference is the <span class="flip">attraction between</span> them.</h1>
+    <p class="lede">Covalent bonds hold individual molecules together, but they do not decide if a substance is a solid, liquid, or gas at room temperature. That role belongs to the electrostatic forces of attraction between neighboring molecules. By the end, you can name three intermolecular forces, rank their strengths, and predict boiling point, vapor pressure, and solubility.</p>
+    <div class="meta-strip">
+      <div class="meta-block"><div class="k">Alignment</div><div class="v"><b>HS-PS1-3</b> Plan and conduct an investigation to gather evidence to compare the structure of substances at the bulk scale to infer the strength of electrical forces between particles.</div></div>
+      <div class="meta-block"><div class="k">Objective</div><div class="v">You can name London dispersion, dipole-dipole, and hydrogen bonding forces and compare their strengths. You can predict relative boiling points, vapor pressures, and solubility.</div></div>
+      <div class="meta-block"><div class="k">Scope</div><div class="v">Covalent molecular compounds of main-group elements through krypton (element 36). The page focuses on forces between molecules. Molecular shapes appear only as inputs.</div></div>
+    </div>
+    <!-- SYNOPSIS collapsible -->
+    <div class="synopsis-wrapper">
+      <button class="btn ghost" data-more="Synopsis" type="button">Show Synopsis &rarr;</button>
+      <div class="more-body synopsis-body">
+        <div class="synopsis-grid">
+          <div class="synopsis-claims">
+            <h4>Core Claims</h4>
+            <ul>
+              <li><strong>Bonds vs. IMFs:</strong> Intramolecular bonds hold atoms together <em>within</em> a molecule. Intermolecular forces (IMFs) are weaker electrical attractions <em>between</em> molecules.</li>
+              <li><strong>IMF Types:</strong> London dispersion (LDF, in all molecules), dipole-dipole (between polar molecules), and hydrogen bonding (strongest, H-O, H-N, H-F).</li>
+              <li><strong>Bulk Properties:</strong> Phase transitions disrupt IMFs, not covalent bonds. Stronger IMFs result in higher boiling/melting points and lower evaporation rates.</li>
+            </ul>
+          </div>
+          <div class="synopsis-figure">
+            <h4>Intermolecular Attractions</h4>
+            <svg viewBox="0 0 240 135" role="img" aria-label="Two water molecules interacting via a dashed intermolecular hydrogen bond between oxygen lone pair and neighboring hydrogen proton.">
+              <!-- Left Water Molecule (H2O) -->
+              <line x1="36" y1="46" x2="54" y2="58" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="36" y1="88" x2="54" y2="76" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+              <text x="64" y="67" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--accent)" text-anchor="middle" dominant-baseline="central">O</text>
+              <text x="24" y="42" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+              <text x="24" y="92" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+              <!-- Lone pairs on Left O (North-west and East-facing neighbor) -->
+              <circle cx="58" cy="48" r="2.4" fill="var(--accent)"/>
+              <circle cx="68" cy="48" r="2.4" fill="var(--accent)"/>
+              <circle cx="78" cy="62" r="2.4" fill="var(--accent)"/>
+              <circle cx="78" cy="72" r="2.4" fill="var(--accent)"/>
+              <!-- Charges Left -->
+              <text x="64" y="32" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+              <text x="14" y="38" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+              <text x="14" y="96" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+
+              <!-- Right Water Molecule (H2O in bent orientation) -->
+              <line x1="134" y1="67" x2="160" y2="67" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="182" y1="74" x2="198" y2="92" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+              <text x="124" y="67" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+              <text x="172" y="67" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--accent)" text-anchor="middle" dominant-baseline="central">O</text>
+              <text x="206" y="98" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+              <!-- Lone pairs on Right O (symmetrical up and down) -->
+              <circle cx="166" cy="48" r="2.4" fill="var(--accent)"/>
+              <circle cx="178" cy="48" r="2.4" fill="var(--accent)"/>
+              <circle cx="166" cy="86" r="2.4" fill="var(--accent)"/>
+              <circle cx="178" cy="86" r="2.4" fill="var(--accent)"/>
+              <!-- Charges Right -->
+              <text x="124" y="48" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+              <text x="172" y="32" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+              <text x="218" y="102" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+
+              <!-- Intermolecular Force (Hydrogen bond dashed line) -->
+              <line x1="84" y1="67" x2="114" y2="67" stroke="var(--accent)" stroke-width="2.2" stroke-dasharray="3 2"/>
+              <text x="99" y="56" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)" text-anchor="middle">IMF</text>
+              <text x="99" y="85" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">(H-bond)</text>
+
+              <!-- Intramolecular pointer -->
+              <text x="44" y="14" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">covalent bond</text>
+              <path d="M44 18 Q 44 32 44 50" fill="none" stroke="var(--ink-mute)" stroke-dasharray="2 1" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="synopsis-checklist">
+            <h4>Retrieval Checklist</h4>
+            <ul>
+              <li><input type="checkbox" disabled> Identify the types of IMFs present in a compound.</li>
+              <li><input type="checkbox" disabled> Relate IMF strength to boiling points and evaporation rates.</li>
+              <li><input type="checkbox" disabled> Explain phase changes as spacing transitions without breaking bonds.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-actions"><button class="btn" type="button" data-next>Start</button></div>
+  </div>
+</section>
+
+<!-- 01 INTRA VS INTER -->
+<section id="s-attraction" data-toc="Bonds vs IMFs">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">01</span><span class="label">Bonds vs IMFs</span></div>
+    <h2>Inside the molecule vs between them.</h2>
+    <p>Two different electrical forces act in a substance. The strong covalent bonds holding the hydrogen and oxygen atoms together <em>inside</em> one water molecule are <strong class="term">intramolecular bonds</strong>. They take a large amount of energy to break.</p>
+    <p>Weaker electrical attractions pull neighboring water molecules toward one another. These are <strong class="term" data-term="intermolecular-force">intermolecular forces</strong> (IMFs). You overcome them during physical phase changes.</p>
+    
+    <figure class="figure figure--full">
+<div class="diagram"><svg viewBox="0 0 520 180" role="img" aria-label="Comparison showing strong intramolecular covalent bonds inside a water molecule vs weak intermolecular forces attracting separate water molecules.">
+      <!-- Left Water Molecule (H2O) -->
+      <line x1="68" y1="62" x2="94" y2="82" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="68" y1="118" x2="94" y2="98" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="106" y="90" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--accent)" text-anchor="middle" dominant-baseline="central">O</text>
+      <text x="54" y="55" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+      <text x="54" y="125" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+      
+      <!-- Lone pairs on Left O (pointing toward right neighbor but clear of center) -->
+      <circle cx="118" cy="72" r="2.6" fill="var(--accent)"/>
+      <circle cx="130" cy="72" r="2.6" fill="var(--accent)"/>
+      <circle cx="118" cy="108" r="2.6" fill="var(--accent)"/>
+      <circle cx="130" cy="108" r="2.6" fill="var(--accent)"/>
+      
+      <!-- Partial charges Left -->
+      <text x="106" y="52" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+      <text x="34" y="55" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+      <text x="34" y="125" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+
+      <!-- Label and pointer for Covalent Bond -->
+      <text x="78" y="20" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="600" fill="var(--ink-soft)" text-anchor="middle">Covalent Bond</text>
+      <text x="78" y="34" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Intramolecular: ~460 kJ/mol</text>
+      <path d="M78 38 Q 80 50 80 70" fill="none" stroke="var(--ink-mute)" stroke-dasharray="2 1" style="stroke-width: var(--dia-stroke)"/>
+
+      <!-- Right Water Molecule (H2O) -->
+      <line x1="262" y1="90" x2="292" y2="90" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+      <line x1="316" y1="98" x2="344" y2="118" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="250" y="90" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+      <text x="304" y="90" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--accent)" text-anchor="middle" dominant-baseline="central">O</text>
+      <text x="354" y="125" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+      
+      <!-- Lone pairs on Right O (North and South) -->
+      <circle cx="304" cy="72" r="2.6" fill="var(--accent)"/>
+      <circle cx="316" cy="72" r="2.6" fill="var(--accent)"/>
+      <circle cx="304" cy="108" r="2.6" fill="var(--accent)"/>
+      <circle cx="316" cy="108" r="2.6" fill="var(--accent)"/>
+
+      <!-- Partial charges Right -->
+      <text x="250" y="68" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+      <text x="304" y="52" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+      <text x="372" y="125" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+
+      <!-- Intermolecular Force Connection (Hydrogen Bond) -->
+      <line x1="126" y1="90" x2="238" y2="90" stroke="var(--accent)" stroke-width="2.4" stroke-dasharray="5 3"/>
+      <text x="182" y="62" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">Intermolecular Force (IMF)</text>
+      <text x="182" y="78" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Hydrogen Bond: ~25 kJ/mol</text>
+      <path d="M182 81 V86" fill="none" stroke="var(--accent)" style="stroke-width: var(--dia-stroke)"/>
+
+      <!-- Comparison badges at bottom -->
+      <rect x="30" y="148" width="200" height="22" rx="4" fill="var(--card)" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+      <text x="130" y="163" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">STRONG: Preserved in boiling</text>
+      
+      <rect x="290" y="148" width="200" height="22" rx="4" fill="var(--card)" stroke="var(--accent-soft)" style="stroke-width: var(--dia-stroke)"/>
+      <text x="390" y="163" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)" text-anchor="middle">WEAK: Overcome in boiling</text>
+    </svg>
+</div>
+<figcaption>Solid lines = strong intramolecular covalent bonds · Dashed line = weak intermolecular attraction</figcaption>
+</figure>
+
+    <p>When you boil a kettle of water, the steam rising from the spout is still H<sub>2</sub>O. You have not broken the covalent bonds to separate hydrogen and oxygen gas. You have only added enough thermal energy to break the weak IMFs, so individual water molecules escape from each other into the air.</p>
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking that boiling breaks the O&ndash;H bonds inside water. Boiling overcomes the forces <em>between</em> molecules, and steam is still H<sub>2</sub>O.</p></div>
+  </div>
+</section>
+
+<!-- 02 TYPES OF IMFS -->
+<section id="s-types" data-toc="The three IMF types">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">02</span><span class="label">Three IMF types</span></div>
+    <h2>The electrostatic hierarchy.</h2>
+    <p>Covalent substances experience three primary types of intermolecular forces. They are all electrostatic (opposite charges attracting), but they differ in how their charges are created and how long they last.</p>
+    
+    <div class="lever">
+      <h4>1. London Dispersion Forces (LDF)</h4>
+      <p><strong>Temporary, induced dipoles.</strong> Electrons are in constant motion. Random electron movement occasionally clusters charge on one side of a molecule. This creates a temporary partial negative charge (&delta;&minus;) and opposite positive charge (&delta;+). This temporary dipole repels electrons in a neighboring molecule, inducing a matching dipole. The resulting weak attraction is a <strong class="term">London dispersion force</strong> (or <strong>LDF</strong>). LDF is present in <strong>all</strong> molecules. Larger electron clouds (heavier atoms or more atoms) shift more easily, leading to stronger LDF.</p>
+      
+      <figure class="figure figure--full">
+<div class="diagram"><svg viewBox="0 0 360 125" role="img" aria-label="London dispersion forces diagram: temporary dipole shifts in two adjacent neutral atoms.">
+        <defs>
+          <radialGradient id="cloudGrad" cx="65%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.28"/>
+            <stop offset="70%" stop-color="var(--accent)" stop-opacity="0.06"/>
+            <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Atom 1 (Electron cloud shifted right) -->
+        <circle cx="90" cy="65" r="38" fill="url(#cloudGrad)"/>
+        <circle cx="90" cy="65" r="38" fill="none" stroke="var(--hair)" stroke-dasharray="3 3" stroke-width="1.2"/>
+        <circle cx="90" cy="65" r="7.5" style="r: var(--dia-r-atom);" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="90" y="68" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--ink)" text-anchor="middle">+</text>
+
+        <!-- Atom 2 (Induced dipole, cloud shifted right) -->
+        <circle cx="270" cy="65" r="38" fill="url(#cloudGrad)"/>
+        <circle cx="270" cy="65" r="38" fill="none" stroke="var(--hair)" stroke-dasharray="3 3" stroke-width="1.2"/>
+        <circle cx="270" cy="65" r="7.5" style="r: var(--dia-r-atom);" fill="var(--paper-3)" stroke="var(--ink)" stroke-width="1.2"/>
+        <text x="270" y="68" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--ink)" text-anchor="middle">+</text>
+
+        <!-- Charges aligned cleanly above the atoms -->
+        <text x="60" y="20" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+        <text x="120" y="20" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+        <text x="240" y="20" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+        <text x="300" y="20" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+
+        <!-- Dashed IMF -->
+        <line x1="128" y1="65" x2="232" y2="65" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="180" y="56" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">temporary LDF attraction</text>
+      </svg>
+</div>
+</figure>
+    </div>
+    
+    <div class="lever">
+      <h4>2. Dipole-Dipole Forces</h4>
+      <p><strong>Permanent polar attractions.</strong> If two nonmetals have mismatched electronegativities, they share electrons unequally. This permanent polar bond creates permanent partial charges (&delta;+ and &delta;&minus;). When polar molecules get close, they align so their opposite poles attract. This permanent electrostatic pull is a <strong class="term">dipole-dipole force</strong>.</p>
+      
+      <figure class="figure figure--full">
+<div class="diagram"><svg viewBox="0 0 380 130" role="img" aria-label="Dipole-dipole forces diagram: permanent polar alignment of two HCl molecules in 2D Lewis dot structures.">
+        <defs>
+          <radialGradient id="clCloudGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.22"/>
+            <stop offset="70%" stop-color="var(--accent)" stop-opacity="0.06"/>
+            <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="hCloudGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--paper-3)" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="var(--paper-3)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Mol 1 (H-Cl) -->
+        <circle cx="126" cy="65" r="32" fill="url(#clCloudGrad)"/>
+        <circle cx="50" cy="65" r="16" fill="url(#hCloudGrad)"/>
+        <line x1="62" y1="65" x2="110" y2="65" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+        <text x="50" y="65" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+        <text x="126" y="65" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--accent)" text-anchor="middle" dominant-baseline="central">Cl</text>
+        <!-- Lone pairs on Chlorine 1 (North, South, East) -->
+        <circle cx="120" cy="48" r="2.4" fill="var(--accent)"/>
+        <circle cx="132" cy="48" r="2.4" fill="var(--accent)"/>
+        <circle cx="120" cy="82" r="2.4" fill="var(--accent)"/>
+        <circle cx="132" cy="82" r="2.4" fill="var(--accent)"/>
+        <circle cx="142" cy="60" r="2.4" fill="var(--accent)"/>
+        <circle cx="142" cy="70" r="2.4" fill="var(--accent)"/>
+
+        <!-- Mol 2 (H-Cl) -->
+        <circle cx="304" cy="65" r="32" fill="url(#clCloudGrad)"/>
+        <circle cx="228" cy="65" r="16" fill="url(#hCloudGrad)"/>
+        <line x1="240" y1="65" x2="288" y2="65" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+        <text x="228" y="65" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+        <text x="304" y="65" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--accent)" text-anchor="middle" dominant-baseline="central">Cl</text>
+        <!-- Lone pairs on Chlorine 2 (North, South, East) -->
+        <circle cx="298" cy="48" r="2.4" fill="var(--accent)"/>
+        <circle cx="310" cy="48" r="2.4" fill="var(--accent)"/>
+        <circle cx="298" cy="82" r="2.4" fill="var(--accent)"/>
+        <circle cx="310" cy="82" r="2.4" fill="var(--accent)"/>
+        <circle cx="320" cy="60" r="2.4" fill="var(--accent)"/>
+        <circle cx="320" cy="70" r="2.4" fill="var(--accent)"/>
+
+        <!-- Charges cleanly aligned above the atoms -->
+        <text x="50" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+        <text x="126" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+        <text x="228" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+        <text x="304" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+        
+        <!-- IMF line with clean spacing -->
+        <line x1="152" y1="65" x2="216" y2="65" stroke="var(--accent)" stroke-width="2.2" stroke-dasharray="4 3"/>
+        <text x="184" y="52" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">dipole-dipole</text>
+      </svg>
+</div>
+</figure>
+    </div>
+
+    <div class="lever">
+      <h4>3. Hydrogen Bonding</h4>
+      <p><strong>The strongest polar attraction.</strong> When hydrogen bonds directly to nitrogen, oxygen, or fluorine, the electronegativity differences are large. The concentrated lone pairs on these atoms produce strong electrostatic attractions. The electronegative atom pulls shared electron density away, leaving hydrogen's single proton unshielded. This bare, positive hydrogen attracts a negative lone pair on a neighboring molecule. Despite the name, <strong class="term">hydrogen bonding</strong> is not a true chemical bond; it is a very strong intermolecular force.</p>
+      
+      <figure class="figure figure--full">
+<div class="diagram"><svg viewBox="0 0 380 135" role="img" aria-label="Hydrogen bonding diagram: attraction between hydrogen of one water molecule and the lone pair of oxygen on another in 2D Lewis structures.">
+        <defs>
+          <radialGradient id="oCloudGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.18"/>
+            <stop offset="70%" stop-color="var(--accent)" stop-opacity="0.04"/>
+            <stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Water Left -->
+        <circle cx="95" cy="70" r="28" fill="url(#oCloudGrad)"/>
+        <line x1="60" y1="46" x2="82" y2="62" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="60" y1="94" x2="82" y2="78" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+        <text x="95" y="70" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--accent)" text-anchor="middle" dominant-baseline="central">O</text>
+        <text x="48" y="42" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+        <text x="48" y="98" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+        <!-- Lone pairs on Left Oxygen (symmetrical up and down) -->
+        <circle cx="89" cy="52" r="2.4" fill="var(--accent)"/>
+        <circle cx="101" cy="52" r="2.4" fill="var(--accent)"/>
+        <circle cx="89" cy="88" r="2.4" fill="var(--accent)"/>
+        <circle cx="101" cy="88" r="2.4" fill="var(--accent)"/>
+        
+        <!-- Water Right (bent orientation) -->
+        <circle cx="265" cy="70" r="28" fill="url(#oCloudGrad)"/>
+        <line x1="225" y1="70" x2="252" y2="70" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="276" y1="78" x2="298" y2="98" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round"/>
+        <text x="214" y="70" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+        <text x="265" y="70" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--accent)" text-anchor="middle" dominant-baseline="central">O</text>
+        <text x="308" y="104" font-family="var(--mono)" font-weight="700" style="font-size:var(--dia-atom-size, 22px);" fill="var(--ink)" text-anchor="middle" dominant-baseline="central">H</text>
+        <!-- Lone pairs on Right Oxygen (symmetrical up and down) -->
+        <circle cx="259" cy="52" r="2.4" fill="var(--accent)"/>
+        <circle cx="271" cy="52" r="2.4" fill="var(--accent)"/>
+        <circle cx="259" cy="88" r="2.4" fill="var(--accent)"/>
+        <circle cx="271" cy="88" r="2.4" fill="var(--accent)"/>
+        
+        <!-- Charges cleanly aligned -->
+        <text x="95" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+        <text x="48" y="20" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+        <text x="48" y="118" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+        
+        <text x="214" y="48" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+        <text x="265" y="24" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">δ−</text>
+        <text x="320" y="118" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">δ+</text>
+        
+        <!-- H-bond line -->
+        <line x1="112" y1="70" x2="202" y2="70" stroke="var(--accent)" stroke-width="2.4" stroke-dasharray="4 2"/>
+        <text x="157" y="56" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">Hydrogen Bond</text>
+      </svg>
+</div>
+</figure>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Thinking any molecule that contains hydrogen forms hydrogen bonds. Hydrogen must be bonded directly to nitrogen, oxygen, or fluorine. HCl and CH<sub>2</sub>O do not qualify.</p></div>
+
+    <!-- NEW INTERACTIVE: SORT & CLASSIFY DOMINANT IMFS -->
+    <div>
+      <div class="section-tag"><span class="num">02b</span><span class="label">Check your sorting</span></div>
+      <h3>Classify Dominant Intermolecular Forces</h3>
+      <p>Every molecule experiences London dispersion forces, but bulk behavior is dominated by the strongest attraction present. Sort each substance into its primary IMF category.</p>
+      
+      <div data-widget="sort-classify">
+        <script type="application/json" class="w-config">
+{
+  "categories": [
+    {
+      "id": "ldf",
+      "label": "London Dispersion (LDF Only)"
+    },
+    {
+      "id": "dipole",
+      "label": "Dipole-Dipole"
+    },
+    {
+      "id": "hbond",
+      "label": "Hydrogen Bonding"
+    }
+  ],
+  "items": [
+    {
+      "text": "<strong>Methane, CH<sub>4<\/sub><\/strong>: Four polar C–H bonds arranged in a perfectly symmetric tetrahedral geometry.",
+      "category": "ldf",
+      "feedback_right": "Methane is perfectly symmetrical, so its bond dipoles cancel completely. It is nonpolar and held together only by weak London dispersion forces.",
+      "feedback_wrong": "Tetrahedral symmetry cancels all the dipoles, which leaves methane nonpolar (LDF only)."
+    },
+    {
+      "text": "<strong>Hydrogen chloride, HCl<\/strong>: A linear diatomic molecule with a polar H–Cl bond (&Delta;EN = 0.96).",
+      "category": "dipole",
+      "feedback_right": "The unequal sharing makes a permanent dipole. Hydrogen is bonded to chlorine, not N, O, or F, so HCl forms dipole-dipole attractions.",
+      "feedback_wrong": "Hydrogen is bonded to chlorine, not nitrogen, oxygen, or fluorine. That gives standard dipole-dipole attractions, not hydrogen bonds."
+    },
+    {
+      "text": "<strong>Water, H<sub>2<\/sub>O<\/strong>: Bent molecular geometry containing polar O–H bonds with lone pairs on oxygen.",
+      "category": "hbond",
+      "feedback_right": "Hydrogen bonded directly to oxygen meets the classic criterion for hydrogen bonding: a strongly polar bond plus lone pairs on N, O, or F.",
+      "feedback_wrong": "O&ndash;H bonds form hydrogen bonds, the strongest category of intermolecular force."
+    },
+    {
+      "text": "<strong>Nitrogen gas, N<sub>2<\/sub><\/strong>: Two identical nitrogen atoms joined by a triple covalent bond (&Delta;EN = 0.00).",
+      "category": "ldf",
+      "feedback_right": "Identical atoms share electrons equally (&Delta;EN = 0), so N₂ is nonpolar. Its molecules attract only through London dispersion forces.",
+      "feedback_wrong": "Pure N₂ has no hydrogen and a &Delta;EN of zero. It is nonpolar, so it has LDF only."
+    },
+    {
+      "text": "<strong>Ammonia, NH<sub>3<\/sub><\/strong>: Trigonal pyramidal geometry with three polar N–H bonds and a lone pair on nitrogen.",
+      "category": "hbond",
+      "feedback_right": "Hydrogen bonded directly to nitrogen leaves a nearly bare proton. It strongly attracts the lone pairs on neighboring ammonia molecules.",
+      "feedback_wrong": "Hydrogen bonded directly to nitrogen makes strong hydrogen bonds."
+    },
+    {
+      "text": "<strong>Carbon dioxide, CO<sub>2<\/sub><\/strong>: Two polar C=O double bonds arranged in a 180° linear geometry.",
+      "category": "ldf",
+      "feedback_right": "Both C=O bonds are polar, but the 180° linear shape makes the two dipoles cancel completely. CO₂ is nonpolar (LDF only).",
+      "feedback_wrong": "The linear shape makes the two polar C=O pulls cancel in opposite directions, so CO₂ is nonpolar (LDF only)."
+    },
+    {
+      "text": "<strong>Formaldehyde, CH<sub>2<\/sub>O<\/strong>: Trigonal planar shape with two C–H bonds and one polar C=O double bond.",
+      "category": "dipole",
+      "feedback_right": "The polar C=O bond gives formaldehyde a permanent dipole. Its hydrogens are bonded to carbon, not oxygen, so it forms only dipole-dipole attractions.",
+      "feedback_wrong": "The hydrogens are attached to carbon, not oxygen. Without an H&ndash;O, H&ndash;N, or H&ndash;F bond, formaldehyde forms only dipole-dipole attractions."
+    },
+    {
+      "text": "<strong>Hydrogen fluoride, HF<\/strong>: Extreme electronegativity difference between hydrogen and fluorine (&Delta;EN = 1.78).",
+      "category": "hbond",
+      "feedback_right": "Fluorine is the most electronegative element, so the H&ndash;F bond makes especially strong hydrogen bonds.",
+      "feedback_wrong": "Hydrogen bonded directly to fluorine forms the strongest type of hydrogen bond."
+    }
+  ],
+  "reveal": "<h4>The IMF decision tree<\/h4><ol><li><strong>Is the molecule nonpolar?<\/strong> Symmetric cancelation (like CO₂ and CH₄) or identical atoms (like N₂) gives <strong>London dispersion forces (LDF only)<\/strong>.<\/li><li><strong>Is the molecule polar?<\/strong> Check for hydrogen bonding partners:<ul><li>Hydrogen bonded directly to N, O, or F gives <strong>hydrogen bonding<\/strong>.<\/li><li>No H&ndash;N, H&ndash;O, or H&ndash;F bond gives <strong>dipole-dipole forces<\/strong>.<\/li><\/ul><\/li><\/ol>"
+}
+</script>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- 03 IMF AND PHASE LAB -->
+<section id="s-interactive" data-toc="IMF &amp; phase lab">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">03</span><span class="label">IMF and phase lab</span></div>
+    <h2>Thermal energy against intermolecular attractions.</h2>
+    <p>Change the temperature and the substance. Compare carbon dioxide, acetone, and water at room temperature (+20 &deg;C). Thermal energy easily vaporizes nonpolar CO<sub>2</sub>. It evaporates polar acetone moderately. It leaves hydrogen-bonded water as a cohesive liquid.</p>
+    <div class="sim-box" data-sim="phase">
+        <div class="label">Simulation</div>
+        <h4>Why does a liquid with stronger attractions have less vapor above it at the same temperature?</h4>
+        <div data-widget="commit-reveal" data-sim-gate>
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Predict: at 20 &deg;C, which liquid has more vapor above it, acetone or water?<\/p>",
+  "options": [
+    {
+      "label": "Water, because its molecules are smaller",
+      "correct": false,
+      "feedback": "Size is not the reason. Water's hydrogen bonds hold its molecules in the liquid far more tightly than acetone's attractions do, so less water escapes."
+    },
+    {
+      "label": "Both the same, because the temperature is the same",
+      "correct": false,
+      "feedback": "The same temperature gives the molecules the same average energy, but not the same chance of escaping. Stronger attractions make escape harder."
+    },
+    {
+      "label": "Acetone, because its attractions are weaker",
+      "correct": true,
+      "feedback": "Acetone's dipole-dipole forces are weaker than water's hydrogen bonds, so more acetone molecules escape into the vapor at the same temperature."
+    }
+  ],
+  "reveal": "<p>Now check it. Load acetone and water at 20 &deg;C and compare the vapor pressure column.<\/p>"
+}
+</script>
+</div>
+        <div class="sim-stage" data-ratio="wide"><canvas aria-label="A closed chamber of molecules with a vapor pressure column on the right. Choose a substance and a temperature."></canvas></div>
+        <div class="sim-controls">
+          <button type="button" class="chip" aria-pressed="false" data-sub="CO2">Carbon dioxide (CO&#8322;)</button>
+          <button type="button" class="chip" aria-pressed="true" data-sub="acetone">Acetone (C&#8323;H&#8326;O)</button>
+          <button type="button" class="chip" aria-pressed="false" data-sub="H2O">Water (H&#8322;O)</button>
+          <label class="slider-row" for="tempSlider"><span>Temperature</span> <output>+20 &deg;C</output>
+            <input type="range" id="tempSlider" min="-100" max="120" step="1" value="20" data-digits="0">
+          </label>
+        </div>
+        <div class="sim-readouts">
+          <div class="readout" data-readout="sub"><span class="readout-label">Substance</span><span class="readout-value">C&#8323;H&#8326;O</span></div>
+          <div class="readout" data-readout="phase"><span class="readout-label">Phase</span><span class="readout-value">Liquid</span></div>
+          <div class="readout" data-readout="vp"><span class="readout-label">Vapor pressure</span><span class="readout-value">24.0 kPa</span></div>
+          <div class="readout" data-readout="imf"><span class="readout-label">Main force</span><span class="readout-value">Dipole-dipole</span></div>
+          <div class="readout" data-readout="point"><span class="readout-label">Boiling point</span><span class="readout-value">56 &deg;C</span></div>
+        </div>
+        <span class="status-pill" data-state="neutral">Predict to start</span>
+        <p data-sim-note aria-live="polite">The explanation appears after you predict.</p>
+        <ul class="sim-legend">
+          <li><span class="key" data-shape="dot" data-token="accent"></span>Oxygen atom</li>
+          <li><span class="key" data-shape="dot" data-token="ink-mute"></span>Carbon atom</li>
+          <li><span class="key" data-token="ink"></span>Hydrogen atom</li>
+          <li><span class="key" data-shape="line" data-token="ink"></span>Covalent bond (inside a molecule)</li>
+          <li><span class="key" data-shape="dash" data-token="accent"></span>Attraction between molecules</li>
+          <li><span class="key" data-shape="square" data-token="cool"></span>Vapor pressure column (full at 1 atm)</li>
+        </ul>
+        <ol class="try-this">
+          <li>Load acetone at 20 &deg;C and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="acetone@20">Load acetone, 20 &deg;C</button> <b>Look for:</b> a vapor pressure near 24 kPa, with several molecules in the vapor above the liquid.</li>
+          <li>Load water at 20 &deg;C and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="H2O@20">Load water, 20 &deg;C</button> <b>Look for:</b> a vapor pressure near 2.3 kPa, with fewer molecules in the vapor.</li>
+          <li>Load acetone at 56 &deg;C and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="acetone@56">Load acetone, 56 &deg;C</button> <b>Look for:</b> the column reaches the 1 atm line. The vapor pressure equals the air pressure, and the liquid boils.</li>
+          <li>Load water at 100 &deg;C and press Record. <button type="button" class="chip" aria-pressed="false" data-preset="H2O@100">Load water, 100 &deg;C</button> <b>Look for:</b> water needs a much higher temperature than acetone to reach the 1 atm line.</li>
+        </ol>
+      </div>
+    <h3>Use your evidence</h3>
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "<p>Compare your recorded rows for acetone and water at 20 &deg;C. What do the rows show about stronger attractions?<\/p>",
+  "options": [
+    {
+      "label": "Water has the lower vapor pressure, because its hydrogen bonds hold molecules in the liquid.",
+      "correct": true,
+      "feedback": "Water is about 2.3 kPa and acetone is about 24 kPa. The stronger the attractions, the fewer molecules escape, so the vapor pressure is lower."
+    },
+    {
+      "label": "Acetone has the lower vapor pressure, because its molecules are heavier.",
+      "correct": false,
+      "feedback": "Mass is not the cause. Acetone is heavier than water, but it has the higher vapor pressure because its attractions are weaker."
+    },
+    {
+      "label": "The vapor pressures are the same, because the temperature is the same.",
+      "correct": false,
+      "feedback": "Your rows show different values at the same temperature. The substance, through its attractions, sets the vapor pressure."
+    }
+  ],
+  "reveal": "<p>Only the recorded rows answer this. Weaker attractions give more vapor at the same temperature.<\/p>"
+}
+</script>
+</div>
+  </div>
+</section>
+
+<!-- 04 BULK SCALE EVIDENCE -->
+<section id="s-bulk" data-toc="Bulk scale evidence">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">04</span><span class="label">Bulk evidence</span></div>
+    <h2>How we measure the invisible.</h2>
+    <p>We cannot see individual molecules, so we infer their attraction from bulk investigations. Two classic lab tests gather this evidence: evaporation cooling and surface-tension beads.</p>
+    
+    <h3>1. Evaporation Cooling Curves</h3>
+    <p>When a liquid evaporates, it absorbs energy from its surroundings to break its IMFs. The faster it evaporates, the more rapidly it cools. A thermometer bulb wrapped in a soaked tissue will register a temperature drop. Liquids with weaker IMFs evaporate much faster, creating steeper temperature drops.</p>
+    
+    <figure class="figure figure--full">
+<div class="diagram"><svg viewBox="0 0 540 240" role="img" aria-label="Graph of temperature over time for evaporation rates of Hexane, Acetone, and Water. Hexane drops steeply, Acetone moderately, Water slowly.">
+      <!-- Axes -->
+      <line x1="70" y1="190" x2="380" y2="190" stroke="var(--ink)" stroke-width="1.8"/>
+      <line x1="70" y1="30" x2="70" y2="190" stroke="var(--ink)" stroke-width="1.8"/>
+      <!-- Axis labels -->
+      <text x="225" y="218" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink)" text-anchor="middle">Time (seconds)</text>
+      <text x="24" y="110" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink)" text-anchor="middle" transform="rotate(-90 24 110)">Temperature (°C)</text>
+      <!-- Grid lines -->
+      <line x1="70" y1="140" x2="380" y2="140" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+      <line x1="70" y1="80" x2="380" y2="80" stroke="var(--hair-soft)" style="stroke-width: var(--dia-stroke)"/>
+      <text x="62" y="144" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="end">15°</text>
+      <text x="62" y="84" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="end">22° (Room)</text>
+      
+      <!-- Water Curve (strong IMFs, slow evaporation, tiny temp drop) -->
+      <path d="M70 80 Q 180 90, 380 96" fill="none" stroke="var(--cool)" stroke-width="2.5"/>
+      <text x="392" y="94" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--cool)">Water (H₂O)</text>
+      <text x="392" y="108" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--cool)">H-bonds · slowest</text>
+      
+      <!-- Acetone Curve (moderate IMFs, moderate temp drop) -->
+      <path d="M70 80 Q 180 115, 380 138" fill="none" stroke="var(--ink-mute)" stroke-width="2.5"/>
+      <text x="392" y="138" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--ink-soft)">Acetone (C₃H₆O)</text>
+      <text x="392" y="152" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)">Dipole · moderate</text>
+      
+      <!-- Hexane Curve (weak IMFs, rapid evaporation, steep temp drop) -->
+      <path d="M70 80 Q 140 135, 230 174 L 380 178" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+      <text x="392" y="178" font-family="var(--display)" style="font-size:var(--dia-label-size);" font-weight="700" fill="var(--accent)">Hexane (C₆H₁₄)</text>
+      <text x="392" y="192" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)">LDF only · steepest</text>
+    </svg>
+</div>
+<figcaption>Bulk scale cooling: Weaker IMFs produce faster evaporation and steeper temperature drops</figcaption>
+</figure>
+
+    <h3>2. Surface Tension Beads</h3>
+    <p>Molecules on the surface of a liquid are pulled inward by attractions from neighboring molecules below them. This inward force is <strong class="term">surface tension</strong>. When placed on a flat coin, water molecules pull on each other so strongly that they bead up into a high, rounded dome. Acetone, with weaker forces, spreads out flat and spills off the edge.</p>
+
+    <div class="macro-micro-grid">
+      <!-- Left: Macroscopic Observation -->
+      <div class="macro-micro-cell">
+        <div class="macro-micro-header">
+          <span>📷</span> Macroscopic Observation
+        </div>
+        <div class="macro-micro-body">
+          <img src="../assets/photos/penny_surface_tension.jpg" 
+               alt="Macro photograph of water beading on a penny due to high surface tension" 
+               class="photo-img"
+               loading="lazy" 
+               decoding="async">
+        </div>
+        <div class="macro-micro-caption">
+          <strong>Laboratory Observation</strong>: Cohesive attractions pull surface water molecules inward, sustaining a convex bead on a coin before overflowing. (Photo: &ldquo;Drops on a Penny Macro&rdquo; by John Flinchbaugh, CC BY-NC-SA 2.0 via Flickr).
+        </div>
+      </div>
+
+      <!-- Right: Submicroscopic Model -->
+      <div class="macro-micro-cell">
+        <div class="macro-micro-header">
+          <span>🔬</span> Submicroscopic Model
+        </div>
+        <div class="macro-micro-body">
+          <svg viewBox="0 0 360 140" role="img" aria-label="Diagram showing water beading high on a penny vs acetone spreading flat.">
+            <defs>
+              <linearGradient id="pennyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="var(--paper-3)"/>
+                <stop offset="40%" stop-color="var(--card)"/>
+                <stop offset="100%" stop-color="var(--ink-mute)"/>
+              </linearGradient>
+            </defs>
+            
+            <!-- Penny left -->
+            <rect x="20" y="110" width="140" height="8" rx="3" fill="url(#pennyGrad)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="90" y="132" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" text-anchor="middle">Penny (Water)</text>
+            <!-- Water Dome -->
+            <path d="M25 110 Q 90 35, 155 110 Z" fill="color-mix(in srgb, var(--cool) 20%, transparent)" stroke="var(--cool)" stroke-width="2"/>
+            <text x="90" y="55" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">High Surface Tension</text>
+            
+            <!-- Penny right -->
+            <rect x="200" y="110" width="140" height="8" rx="3" fill="url(#pennyGrad)" stroke="var(--ink)" style="stroke-width: var(--dia-stroke)"/>
+            <text x="270" y="132" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" text-anchor="middle">Penny (Acetone)</text>
+            <!-- Acetone Dome (flat) -->
+            <path d="M202 110 Q 270 95, 338 110 Z" fill="color-mix(in srgb, var(--accent) 10%, transparent)" stroke="var(--accent)" stroke-width="2"/>
+            <text x="270" y="85" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="600" text-anchor="middle">Low Surface Tension</text>
+          </svg>
+        </div>
+        <div class="macro-micro-caption">
+          <strong>Molecular Mechanism</strong>: Strong hydrogen bonds pull water molecules inward toward the liquid bulk. Weaker dipole attractions in acetone allow the droplet to spread flat.
+        </div>
+      </div>
+    </div>
+
+    <div class="callout"><div class="label">Common mistake</div><p>Assuming a heavier molecule always has stronger attractions. CO<sub>2</sub> is heavier than H<sub>2</sub>O, but the hydrogen bonds in water make it far harder to pull apart.</p></div>
+
+    <h3>3. The IMF Causal Chain</h3>
+    <p>Five steps connect molecular structure to bulk properties. Walk through them for two isomers with the same formula (C&#8322;H&#8326;O): ethanol and dimethyl ether.</p>
+
+    <figure class="figure figure--full" id="causalChainSvg">
+<div class="diagram">
+      <svg viewBox="0 0 540 220" role="img" aria-label="Step-by-step visual comparing ethanol and dimethyl ether across the 5 stages of the causal chain.">
+        <!-- Center Divider -->
+        <line x1="270" y1="15" x2="270" y2="205" stroke="var(--hair-soft)" stroke-dasharray="4 4" stroke-width="1.2"/>
+
+        <!-- State 1: Molecular Structure & Connectivity -->
+        <g id="state-step1" class="svg-step-layer">
+          <!-- Ethanol Header -->
+          <text x="135" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--cool)" font-weight="700" text-anchor="middle">Ethanol (C₂H₅OH)</text>
+          <text x="135" y="50" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Molar Mass: 46.07 g/mol</text>
+          
+          <!-- Ethanol Structure (C-C-O-H) -->
+          <text x="50" y="115" font-family="var(--mono, var(--mono))" style="font-size:var(--dia-atom-size);" fill="var(--ink)" text-anchor="middle">H₃C</text>
+          <line x1="72" y1="110" x2="105" y2="110" stroke="var(--ink)" stroke-width="2"/>
+          <text x="120" y="115" font-family="var(--mono, var(--mono))" style="font-size:var(--dia-atom-size);" fill="var(--ink)" text-anchor="middle">CH₂</text>
+          <line x1="138" y1="110" x2="168" y2="110" stroke="var(--ink)" stroke-width="2"/>
+          <!-- O-H Highlight Box -->
+          <rect x="175" y="75" width="80" height="68" rx="6" fill="color-mix(in srgb, var(--cool) 12%, transparent)" stroke="var(--cool)" stroke-width="1.8" stroke-dasharray="3 3"/>
+          <text x="195" y="115" font-family="var(--mono, var(--mono))" style="font-size:var(--dia-atom-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">O</text>
+          <!-- Two lone pairs on Ethanol O (symmetric top and bottom) -->
+          <circle cx="189" cy="95" r="2.2" fill="var(--accent)"/>
+          <circle cx="201" cy="95" r="2.2" fill="var(--accent)"/>
+          <circle cx="189" cy="127" r="2.2" fill="var(--accent)"/>
+          <circle cx="201" cy="127" r="2.2" fill="var(--accent)"/>
+          <line x1="205" y1="110" x2="232" y2="110" stroke="var(--ink)" stroke-width="2"/>
+          <text x="242" y="115" font-family="var(--mono, var(--mono))" style="font-size:var(--dia-atom-size);" fill="var(--cool)" font-weight="700" text-anchor="middle">H</text>
+          
+          <rect x="50" y="160" width="170" height="34" rx="4" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+          <text x="135" y="181" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="600" text-anchor="middle">Key: Polar -OH Group</text>
+
+          <!-- Dimethyl Ether Header -->
+          <text x="405" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--ink-soft)" font-weight="700" text-anchor="middle">Dimethyl Ether (CH₃OCH₃)</text>
+          <text x="405" y="50" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Molar Mass: 46.07 g/mol</text>
+
+          <!-- Dimethyl Ether Structure (C-O-C) -->
+          <text x="320" y="115" font-family="var(--mono, var(--mono))" style="font-size:var(--dia-atom-size);" fill="var(--ink)" text-anchor="middle">H₃C</text>
+          <line x1="342" y1="110" x2="385" y2="110" stroke="var(--ink)" stroke-width="2"/>
+          <text x="405" y="115" font-family="var(--mono, var(--mono))" style="font-size:var(--dia-atom-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">O</text>
+          <!-- Two lone pairs on Dimethyl Ether O (symmetric top and bottom) -->
+          <circle cx="399" cy="95" r="2.2" fill="var(--accent)"/>
+          <circle cx="411" cy="95" r="2.2" fill="var(--accent)"/>
+          <circle cx="399" cy="127" r="2.2" fill="var(--accent)"/>
+          <circle cx="411" cy="127" r="2.2" fill="var(--accent)"/>
+          <line x1="425" y1="110" x2="468" y2="110" stroke="var(--ink)" stroke-width="2"/>
+          <text x="490" y="115" font-family="var(--mono, var(--mono))" style="font-size:var(--dia-atom-size);" fill="var(--ink)" text-anchor="middle">CH₃</text>
+
+          <rect x="320" y="160" width="170" height="34" rx="4" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+          <text x="405" y="181" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" font-weight="600" text-anchor="middle">Key: C-O-C Ether Linkage</text>
+        </g>
+
+        <!-- State 2: Bond Polarity & Partial Charges -->
+        <g id="state-step2" class="svg-step-layer" opacity="0" display="none">
+          <text x="135" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--cool)" font-weight="700" text-anchor="middle">Ethanol: High Local Polarity</text>
+          <text x="110" y="105" font-family="var(--mono)" style="font-size:var(--dia-atom-size);" fill="var(--accent)" font-weight="700">O</text>
+          <text x="96" y="88" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="700">δ−</text>
+          <line x1="130" y1="100" x2="175" y2="100" stroke="var(--ink)" stroke-width="2.2"/>
+          <text x="185" y="105" font-family="var(--mono)" style="font-size:var(--dia-atom-size);" fill="var(--cool)" font-weight="700">H</text>
+          <text x="195" y="88" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="700">δ+</text>
+          <!-- Dipole vector arrow -->
+          <line x1="180" y1="130" x2="115" y2="130" stroke="var(--cool)" stroke-width="2"/>
+          <line x1="175" y1="123" x2="175" y2="137" stroke="var(--cool)" stroke-width="2"/>
+          <polygon points="115,126 105,130 115,134" fill="var(--cool)"/>
+          <text x="135" y="152" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--cool)" text-anchor="middle">Large ΔEN = 1.4 (Unshielded H)</text>
+          <text x="135" y="185" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" text-anchor="middle">Concentrated partial charge on tiny proton</text>
+
+          <text x="405" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--ink-soft)" font-weight="700" text-anchor="middle">Dimethyl Ether: Moderate Polarity</text>
+          <text x="350" y="115" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">H₃C</text>
+          <text x="405" y="95" font-family="var(--mono)" style="font-size:var(--dia-atom-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">O</text>
+          <text x="405" y="75" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">δ−</text>
+          <text x="450" y="115" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">CH₃</text>
+          <line x1="375" y1="108" x2="395" y2="98" stroke="var(--ink)" stroke-width="1.8"/>
+          <line x1="435" y1="108" x2="415" y2="98" stroke="var(--ink)" stroke-width="1.8"/>
+          <!-- Net dipole arrow upward -->
+          <line x1="405" y1="140" x2="405" y2="115" stroke="var(--ink-soft)" stroke-width="2"/>
+          <line x1="398" y1="140" x2="412" y2="140" stroke="var(--ink-soft)" stroke-width="2"/>
+          <polygon points="401,115 405,107 409,115" fill="var(--ink-soft)"/>
+          <text x="405" y="160" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Moderate Net Dipole (ΔEN = 0.9)</text>
+          <text x="405" y="185" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" text-anchor="middle">Charge diffuse across methyl groups</text>
+        </g>
+
+        <!-- State 3: Dominant Intermolecular Forces -->
+        <g id="state-step3" class="svg-step-layer" opacity="0" display="none">
+          <text x="135" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--cool)" font-weight="700" text-anchor="middle">Ethanol: Hydrogen Bonding</text>
+          <text x="45" y="95" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">Et-</text>
+          <text x="75" y="95" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="700">O</text>
+          <line x1="90" y1="91" x2="110" y2="91" stroke="var(--ink)" stroke-width="2"/>
+          <text x="118" y="95" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="700">H</text>
+          <!-- H-bond dashed line -->
+          <line x1="130" y1="91" x2="170" y2="91" stroke="var(--cool)" stroke-width="2.5" stroke-dasharray="4 3"/>
+          <text x="180" y="95" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="700">:O</text>
+          <line x1="198" y1="91" x2="218" y2="91" stroke="var(--ink)" stroke-width="2"/>
+          <text x="225" y="95" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--ink-mute)">-Et</text>
+
+          <rect x="40" y="130" width="190" height="42" rx="4" fill="color-mix(in srgb, var(--cool) 15%, transparent)" stroke="var(--cool)" stroke-width="1.5"/>
+          <text x="135" y="148" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="700" text-anchor="middle">Intermolecular H-Bond</text>
+          <text x="135" y="164" font-family="var(--display)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">~20 kJ/mol attraction</text>
+
+          <text x="405" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--ink-soft)" font-weight="700" text-anchor="middle">Ether: Dipole-Dipole</text>
+          <rect x="300" y="80" width="70" height="25" rx="3" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+          <text x="315" y="97" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--cool)">δ+</text>
+          <text x="350" y="97" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)">δ−</text>
+          <!-- Dipole attraction connector -->
+          <line x1="375" y1="92" x2="425" y2="92" stroke="var(--ink-mute)" stroke-width="2" stroke-dasharray="3 3"/>
+          <rect x="430" y="80" width="70" height="25" rx="3" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1"/>
+          <text x="445" y="97" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--cool)">δ+</text>
+          <text x="480" y="97" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--accent)">δ−</text>
+
+          <rect x="310" y="130" width="190" height="42" rx="4" fill="var(--card)" stroke="var(--hair-soft)" stroke-width="1.5"/>
+          <text x="405" y="148" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" font-weight="700" text-anchor="middle">Dipole-Dipole Attraction</text>
+          <text x="405" y="164" font-family="var(--display)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">~3 kJ/mol attraction</text>
+        </g>
+
+        <!-- State 4: Electrostatic Potential Energy Well -->
+        <g id="state-step4" class="svg-step-layer" opacity="0" display="none">
+          <text x="135" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--cool)" font-weight="700" text-anchor="middle">Ethanol: High Energy Barrier</text>
+          <path d="M40 70 Q 70 70, 100 160 Q 135 185, 170 160 Q 200 70, 230 70" fill="none" stroke="var(--cool)" stroke-width="2.5"/>
+          <line x1="40" y1="70" x2="230" y2="70" stroke="var(--hair-soft)" stroke-dasharray="3 3" stroke-width="1"/>
+          <text x="135" y="62" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Separated Vapor State (0 kJ)</text>
+          <text x="135" y="155" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="700" text-anchor="middle">Deep Potential Well</text>
+          <text x="135" y="172" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-soft)" text-anchor="middle">ΔH_vap = 38.6 kJ/mol</text>
+
+          <text x="405" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--ink-soft)" font-weight="700" text-anchor="middle">Ether: Shallow Energy Barrier</text>
+          <path d="M310 70 Q 340 70, 370 115 Q 405 130, 440 115 Q 470 70, 500 70" fill="none" stroke="var(--ink-soft)" stroke-width="2.5"/>
+          <line x1="310" y1="70" x2="500" y2="70" stroke="var(--hair-soft)" stroke-dasharray="3 3" stroke-width="1"/>
+          <text x="405" y="62" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">Separated Vapor State (0 kJ)</text>
+          <text x="405" y="115" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)" font-weight="700" text-anchor="middle">Shallow Potential Well</text>
+          <text x="405" y="155" font-family="var(--mono)" style="font-size:var(--dia-caption-size);" fill="var(--ink-mute)" text-anchor="middle">ΔH_vap = 21.5 kJ/mol</text>
+        </g>
+
+        <!-- State 5: Bulk Physical Properties -->
+        <g id="state-step5" class="svg-step-layer" opacity="0" display="none">
+          <text x="135" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--cool)" font-weight="700" text-anchor="middle">Ethanol: High BP &amp; Low VP</text>
+          <rect x="45" y="60" width="180" height="120" rx="6" fill="var(--card)" stroke="var(--cool)" stroke-width="1.5"/>
+          <text x="60" y="85" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)">Normal Boiling Pt:</text>
+          <text x="210" y="85" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="700" text-anchor="end">+78°C</text>
+          <text x="60" y="115" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)">Vapor Pressure (20°C):</text>
+          <text x="210" y="115" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--cool)" font-weight="700" text-anchor="end">5.95 kPa</text>
+          <text x="60" y="145" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)">Room Temp State:</text>
+          <text x="210" y="145" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--ink)" font-weight="600" text-anchor="end">Stable Liquid</text>
+          <text x="135" y="168" font-family="var(--display)" style="font-size:var(--dia-caption-size);" fill="var(--cool)" text-anchor="middle">Slow Evaporation / High Surface Tension</text>
+
+          <text x="405" y="32" font-family="var(--display)" style="font-size:var(--dia-header-size);" fill="var(--accent)" font-weight="700" text-anchor="middle">Ether: Low BP &amp; High VP</text>
+          <rect x="315" y="60" width="180" height="120" rx="6" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5"/>
+          <text x="330" y="85" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)">Normal Boiling Pt:</text>
+          <text x="480" y="85" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="700" text-anchor="end">−24°C</text>
+          <text x="330" y="115" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)">Vapor Pressure (20°C):</text>
+          <text x="480" y="115" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--accent)" font-weight="700" text-anchor="end">530 kPa</text>
+          <text x="330" y="145" font-family="var(--display)" style="font-size:var(--dia-label-size);" fill="var(--ink-soft)">Room Temp State:</text>
+          <text x="480" y="145" font-family="var(--mono)" style="font-size:var(--dia-label-size);" fill="var(--ink)" font-weight="600" text-anchor="end">Vigorous Gas</text>
+          <text x="405" y="168" font-family="var(--display)" style="font-size:var(--dia-caption-size);" fill="var(--accent)" text-anchor="middle">Instant Volatilization / Zero Retention</text>
+        </g>
+      </svg>
+</div>
+<figcaption>The Causal Chain: Submicroscopic structure directly dictates macroscopic bulk behavior</figcaption>
+</figure>
+
+    <!-- Step Builder Widget -->
+    <div data-widget="step-builder">
+      <script type="application/json" class="w-config">
+{
+  "diagramId": "causalChainSvg",
+  "steps": [
+    {
+      "state": "state-step1",
+      "question": "Step 1 (Connectivity): Ethanol (C₂H₅OH) and dimethyl ether (CH₃OCH₃) are constitutional isomers with the exact same chemical formula (C₂H₆O) and molar mass (46.07 g/mol). What is the key structural difference between them?",
+      "options": [
+        {
+          "label": "Ethanol possesses a polar O–H bond; dimethyl ether has its oxygen atom bonded only between two carbons (C–O–C).",
+          "correct": true,
+          "feedback": "Ethanol has an &ndash;OH group, while dimethyl ether has a C&ndash;O&ndash;C ether link."
+        },
+        {
+          "label": "Dimethyl ether has significantly more valence electrons than ethanol, creating larger electron clouds.",
+          "correct": false,
+          "feedback": "The two are isomers, so they have the same number of valence electrons. The difference is how the atoms connect."
+        }
+      ]
+    },
+    {
+      "state": "state-step2",
+      "question": "Step 2 (Polarity): How does this connectivity difference affect molecular polarity and partial charges?",
+      "options": [
+        {
+          "label": "The O&ndash;H bond in ethanol has an intense dipole (&delta;&minus; on O, &delta;+ on H). Dimethyl ether has only moderate C&ndash;O dipoles.",
+          "correct": true,
+          "feedback": "Oxygen's high electronegativity pulls electron density off the hydrogen in ethanol's O&ndash;H bond, which leaves that hydrogen nearly bare."
+        },
+        {
+          "label": "Dimethyl ether is completely nonpolar because the two symmetric methyl groups cancel all dipoles entirely.",
+          "correct": false,
+          "feedback": "Dimethyl ether is not symmetric. Its bent C&ndash;O&ndash;C shape gives it a net dipole, but it lacks the intense dipole of an O&ndash;H bond."
+        }
+      ]
+    },
+    {
+      "state": "state-step3",
+      "question": "Step 3 (Dominant IMF): What is the dominant intermolecular force operating between molecules in each pure liquid?",
+      "options": [
+        {
+          "label": "Ethanol forms strong hydrogen bonds; dimethyl ether forms moderate dipole-dipole attractions.",
+          "correct": true,
+          "feedback": "Hydrogen bonding needs hydrogen bonded directly to N, O, or F. Ethanol has that, and dimethyl ether does not."
+        },
+        {
+          "label": "Both liquids are held together primarily by London dispersion forces of equal strength.",
+          "correct": false,
+          "feedback": "Both liquids have similar LDF because their masses are identical, but their strongest attractions differ in kind."
+        }
+      ]
+    },
+    {
+      "state": "state-step4",
+      "question": "Step 4 (Binding Energy): At the submicroscopic level, how do these forces affect the energy required to pull molecules apart into the gas phase?",
+      "options": [
+        {
+          "label": "Hydrogen bonds create a much deeper electrostatic potential energy well, requiring substantially more thermal kinetic energy to overcome.",
+          "correct": true,
+          "feedback": "Hydrogen bonds hold molecules more tightly, so it takes far more thermal energy to pull ethanol molecules apart."
+        },
+        {
+          "label": "Dipole-dipole attractions require more energy because the two bulky methyl groups lock together mechanically.",
+          "correct": false,
+          "feedback": "Molecules do not lock together mechanically. Electrostatic attractions govern phase changes, and hydrogen bonding is stronger than ordinary dipole attraction."
+        }
+      ]
+    },
+    {
+      "state": "state-step5",
+      "question": "Step 5 (Bulk Property Prediction): Synthesizing this entire causal chain, what bulk physical properties do you predict for ethanol compared to dimethyl ether?",
+      "options": [
+        {
+          "label": "Ethanol has a much higher boiling point (78°C vs −24°C) and a much lower vapor pressure at room temperature.",
+          "correct": true,
+          "feedback": "Tighter binding between molecules gives ethanol a higher boiling point, slower evaporation, and a lower vapor pressure."
+        },
+        {
+          "label": "Dimethyl ether has a higher boiling point because its oxygen is shielded between two carbon atoms.",
+          "correct": false,
+          "feedback": "Weaker forces let dimethyl ether vaporize at a much lower temperature (&minus;24&deg;C), so its boiling point is lower, not higher."
+        }
+      ]
+    }
+  ],
+  "finale": "<div class=\"callout\"><div class=\"label\">The 5-step causal chain<\/div><p><strong>Structure &rarr; Polarity &rarr; IMF type &rarr; Electrostatic strength &rarr; Bulk property.<\/strong> Do not skip steps in a written response. Trace from molecular connectivity and bond polarity to the IMF. Then connect the binding energy to phase-change temperatures and vapor pressures.<\/p><\/div>"
+}
+</script>
+    </div>
+
+  </div>
+</section>
+
+<!-- 05 PREDICT -->
+<section id="s-predict" data-toc="Predict: ranking properties">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">05</span><span class="label">Predict first</span></div>
+    
+    <!-- Q1 -->
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Consider three molecules of similar size: methane (CH₄, nonpolar), hydrogen chloride (HCl, polar), and ammonia (NH₃, polar with N–H bonds). Rank them in order of increasing boiling point.",
+  "options": [
+    {
+      "label": "NH₃ < HCl < CH₄",
+      "correct": false,
+      "feedback": "This order is reversed. It puts the strongest forces at the lowest boiling point, but stronger IMFs mean a higher boiling point."
+    },
+    {
+      "label": "CH₄ < HCl < NH₃",
+      "correct": true,
+      "feedback": "Methane has only weak LDF. HCl adds dipole-dipole forces, and NH₃ adds hydrogen bonding. Each step up needs more energy to boil."
+    },
+    {
+      "label": "HCl < CH₄ < NH₃",
+      "correct": false,
+      "feedback": "This puts HCl below methane. HCl is polar, so its dipole-dipole forces are stronger than methane's LDF, and HCl boils higher."
+    }
+  ],
+  "reveal": "<h4>Why<\/h4>\n<p><strong>CH₄ (LDF, weakest) &lt; HCl (dipole-dipole, moderate) &lt; NH₃ (hydrogen bonding, strongest).<\/strong> Methane is nonpolar, so its molecules attract only through weak London dispersion forces. It boils at &minus;161&deg;C. Polar HCl molecules line up dipole to dipole, and HCl boils at &minus;85&deg;C. Ammonia's polar N&ndash;H bonds form strong hydrogen bonds. They need the most thermal energy to break, so ammonia boils at &minus;33&deg;C.<\/p>"
+}
+</script>
+</div>
+    
+    <!-- Q2 -->
+    <div data-widget="commit-reveal">
+<script type="application/json" class="w-config">
+{
+  "mode": "choice",
+  "prompt": "Hexane (C₆H₁₄) is a completely nonpolar solvent found in gasoline. If you drop a nonpolar oil stain into water (polar) and into hexane (nonpolar), where will the oil dissolve?",
+  "options": [
+    {
+      "label": "In both: nonpolar oils mix easily with every liquid.",
+      "correct": false,
+      "feedback": "Oil mixes only where the attractions allow it. Water holds onto water with hydrogen bonds, and oil cannot offer anything as strong, so water pushes it out."
+    },
+    {
+      "label": "Only in water: water is the universal solvent.",
+      "correct": false,
+      "feedback": "&ldquo;Universal solvent&rdquo; is a slogan, not a rule. Water dissolves polar and ionic substances because it can attract them. It has nothing strong to offer a nonpolar oil."
+    },
+    {
+      "label": "Only in hexane: like dissolves like.",
+      "correct": true,
+      "feedback": "Hexane and oil both attract only through LDF, so mixing costs nothing. Water would have to give up hydrogen bonds to make room, so it refuses."
+    }
+  ],
+  "reveal": "<h4>Why<\/h4>\n<p><strong>Oil dissolves only in hexane.<\/strong> The solubility rule is &ldquo;like dissolves like.&rdquo; Polar water molecules form strong hydrogen bonds with each other. They squeeze nonpolar oil molecules out, because water cannot form favorable attractions with oil. Nonpolar hexane molecules attract oil through LDF, so they mix freely. That is why water alone cannot wash grease off your hands.<\/p>"
+}
+</script>
+</div>
+
+    <!-- Diagnose the Error Widget -->
+    <div data-widget="diagnose-error">
+      <script type="application/json" class="w-config">
+{
+  "spots": [
+    {
+      "id": "temp",
+      "correct": false,
+      "feedback": "100°C is the normal boiling point of pure water at 1 atm, so this phrase is accurate."
+    },
+    {
+      "id": "bonds-broken",
+      "correct": true,
+      "feedback": "This is the error. Boiling is a physical change that overcomes the hydrogen bonds between molecules. It never breaks the covalent O–H bonds inside molecules. Steam is intact H₂O."
+    },
+    {
+      "id": "molecules",
+      "correct": false,
+      "feedback": "Calling water H₂O molecules is accurate chemistry."
+    },
+    {
+      "id": "atoms",
+      "correct": false,
+      "feedback": "This follows from the error. Look for the phrase that claims bond breaking."
+    },
+    {
+      "id": "steam",
+      "correct": false,
+      "feedback": "Steam is the correct everyday term for water vapor."
+    }
+  ],
+  "reveal": "<div class=\"callout\"><div class=\"label\">Common mistake<\/div><p><strong>Phase changes overcome intermolecular forces, never covalent bonds.<\/strong> Breaking the covalent O–H bonds inside a water molecule takes about 460 kJ/mol. That needs a chemical reaction, at temperatures well over 2,000°C or by electrolysis. Boiling water takes only 40.7 kJ/mol, enough to overcome the hydrogen bonds between molecules. Steam is individual, intact H₂O gas molecules.<\/p><\/div>"
+}
+</script>
+      
+      <div class="w-prompt"><strong>Diagnose the Error:</strong> A student wrote the following explanation on a chemistry quiz. Click the phrase containing the fatal conceptual misconception:</div>
+      <div class="w-workspace">
+        <p>
+          "When liquid water is heated to <span class="w-spot" data-spot-id="temp">100°C</span>, thermal kinetic energy causes rapid boiling. During boiling, added heat <span class="w-spot" data-spot-id="bonds-broken">breaks the strong covalent O–H bonds</span> inside each <span class="w-spot" data-spot-id="molecules">H<sub>2</sub>O molecule</span>. This separates the liquid into <span class="w-spot" data-spot-id="atoms">individual hydrogen and oxygen atoms</span> that bubble away as <span class="w-spot" data-spot-id="steam">steam</span>."
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 06 RECALL -->
+<section id="s-recall" class="recall-section recall" data-toc="Recall: fill the blanks">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">06</span><span class="label">Say it back</span></div>
+    <h2>Fill the blanks from memory.</h2>
+    <p class="lede">Type each blank from memory, then press Check. Press Show answers after your first check if you are stuck.</p>
+    <p class="recall-sentence">
+      Covalent bonds inside a molecule are <input class="blank" data-answer="intramolecular bonds|intramolecular" placeholder="?">.
+      The attractions between separate molecules are <input class="blank" data-answer="intermolecular forces|IMFs" placeholder="?">.
+      Temporary attractions from shifting electron clouds are <input class="blank" data-answer="London dispersion forces|LDF" placeholder="?">.
+      Attractions between permanently polar molecules are <input class="blank" data-answer="dipole-dipole forces|dipole-dipole" placeholder="?">.
+      The exceptionally strong IMF that forms when hydrogen bonds directly to N, O, or F is <input class="blank" data-answer="hydrogen bonding" placeholder="?">.
+      Stronger IMFs hold molecules tighter, leading to a higher <input class="blank" data-answer="boiling point" placeholder="?"> but a lower <input class="blank" data-answer="vapor pressure" placeholder="?">.
+      The inward pull on a liquid's surface that makes water form beads is <input class="blank" data-answer="surface tension" placeholder="?">.
+    </p>
+    <div class="actions">
+      <button class="btn" data-recall-check>Check</button>
+      <button class="btn ghost" data-recall-reveal>Show answers</button>
+      <button class="btn ghost" data-recall-reset>Reset</button>
+      <span class="feedback" data-recall-feedback></span>
+    </div>
+  </div>
+</section>
+
+<!-- 07 SELF EXPLAIN -->
+<section id="s-selfx" data-toc="Self-explain">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">07</span><span class="label">Explain it to yourself</span></div>
+    <div class="selfx-mark"><p>Explain why water (H₂O) has a much higher boiling point than carbon dioxide (CO₂), even though carbon dioxide is a much larger and heavier molecule.</p></div>
+    <p class="hint">Explain it in plain English. Link the types of forces to the energy needed to boil the liquid.</p>
+    <textarea class="textbox" id="selfx" placeholder="Water forms... while carbon dioxide..."></textarea>
+    <div>
+      <button class="btn ghost" data-peek>Compare with a model answer</button>
+      <div class="peek-box"><div class="callout"><div class="label">One way to say it</div>
+        <p>Water molecules can form <strong>hydrogen bonds</strong> (O–H bonds present), which are exceptionally strong intermolecular attractions. Carbon dioxide is a nonpolar molecule and can only form weak <strong>London dispersion forces (LDF)</strong>. Even though CO₂ has a larger electron cloud, London dispersion forces break easily. In contrast, water's strong hydrogen bonds require far more thermal energy to disrupt.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 EXAM PRACTICE -->
+<section id="s-exam" data-toc="Exam practice">
+  <div class="narrow">
+    <div class="section-tag"><span class="num">08</span><span class="label">Now the way it's marked</span></div>
+    <h2>Write your answer first. <em>Then</em> grade yourself.</h2>
+    <p class="lede">Give yourself 1 mark for each idea you wrote down.</p>
+    <div class="exam-frame">
+      <div class="exam-meta"><span class="exam-src">Gen Chem · HS-PS1-3 · constructed response</span><span class="exam-marks">[4 marks]</span></div>
+      <p class="exam-q">Acetone (C₃H₆O) forms dipole-dipole attractions. Ethanol (C₂H₅OH) forms hydrogen bonds.
+        <span class="sub">Compare their intermolecular force strengths, predict which substance evaporates faster at room temperature, and explain how evaporation rate relates to vapor pressure.</span></p>
+      <textarea class="textbox" id="examAns" placeholder="Relative IMF strengths, evaporation prediction, and how it relates to vapor pressure..."></textarea>
+      <div class="actions"><button class="btn ghost" data-scheme>Show scoring guide</button></div>
+      <div class="scheme"><div class="scheme-card"><div class="label">Scoring guide: 4 marks</div>
+        <ul class="pts">
+          <li><b>Strengths (1 mark):</b> You say ethanol forms hydrogen bonds (strongest) and acetone forms dipole-dipole forces (moderate).</li>
+          <li><b>Prediction (1 mark):</b> You say acetone evaporates faster, because its weaker forces are easier for thermal energy to break.</li>
+          <li><b>Escape (1 mark):</b> You say weaker forces let more molecules leave the surface at a given temperature.</li>
+          <li><b>Vapor pressure (1 mark):</b> You link more gas molecules above the liquid to a higher vapor pressure for acetone.</li>
+        </ul></div></div>
+          <!-- Why This Matters Payoff -->
+      <div class="callout">
+        <div class="label">Why This Matters</div>
+        <p>Geckos walk on glass using intermolecular forces. Geckos scale sheer vertical walls using millions of microscopic hairs (setae) on their feet. Because the hairs can get incredibly close to smooth glass, the gecko's grip relies entirely on the weak, collective attraction of London dispersion forces (LDFs).</p>
+      </div>
+</div>
+  </div>
+</section>
+
+<!-- ADAPTIVE PE PRACTICE -->
+<section class="narrow">
+  <div class="practice-card">
+    <div class="practice-card-head">
+      <span class="label">HS-PS1-3 Practice Suite</span>
+      <span class="practice-card-note">Adaptive Diagnostic &middot; Verified PDF Seal</span>
+    </div>
+    <h3>Adaptive Competency Practice: HS-PS1-3</h3>
+    <p>
+      Test your mastery of intermolecular forces, bulk properties (boiling point, vapor pressure, evaporation), and experimental limitations one question at a time. The adaptive engine identifies individual skill gaps, provides tutoring hints on missed questions, and awards an official authenticated completion receipt.
+    </p>
+    <div>
+      <a href="../pe/index.html?pe=HS-PS1-3" class="btn">
+        Launch Adaptive Practice &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer">
+  <div class="label">Gen Chem · Semester 1 · 1-3b</div>
+  <p>IMFs determine bulk physical properties. Next unit: physical vs chemical changes and balancing equations.</p>
+</div>
+
+<script src="../assets/book.js"></script>
+<script src="../../textbook/core.js"></script>
+<script src="../../textbook/widgets.js"></script>
+<script src="../../textbook/sim.js"></script>
+<script src="../assets/glossary.js"></script>
+<script src="../assets/reference-center.js"></script>
+<script src="1-3b.js"></script>
+</body>
+</html>
